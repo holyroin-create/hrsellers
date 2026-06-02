@@ -1,0 +1,161 @@
+{
+  "slug": "fba-reimbursements-2026",
+  "category": "fees-reimbursements",
+  "title": "The FBA Reimbursement Money Most Sellers Never Claim",
+  "excerpt": "Amazon owes more sellers more money than they realize — but the 2025 rule changes mean the old playbook no longer works. Here is what to do now.",
+  "time": "8 min",
+  "updated": "May 2026",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Every month, Amazon absorbs money that belongs to sellers: units lost on the way into a fulfillment center, inventory damaged in the warehouse, customer returns that never make it back to sellable stock, and fee overcharges from wrong dimensions. Individually they're small. Over a year, they add up to real money."
+    },
+    {
+      "type": "p",
+      "text": "But the rules changed dramatically in 2025, and most advice online is still describing the old system. If you're working from a guide written before 2025, you're working from a map that no longer matches the territory."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "title": "Two changes that rewrote the playbook",
+      "text": "First, the claim window collapsed from 18 months to just 60 days (effective October 2024). Second, from March 2025, reimbursements for inventory lost or damaged before a customer order are based on your manufacturing cost, not the retail price — which can cut payouts by 50–75% on high-margin products."
+    },
+    {
+      "type": "keynum",
+      "items": [
+        {
+          "num": "60 days",
+          "label": "New claim window for most FBA issues (was 18 months)"
+        },
+        {
+          "num": "Cost-based",
+          "label": "Reimbursements now use manufacturing cost, not retail"
+        },
+        {
+          "num": "20–30%",
+          "label": "How much lower Amazon’s estimate runs if you don’t upload costs"
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "The single most important thing to do right now"
+    },
+    {
+      "type": "p",
+      "text": "Upload your real manufacturing cost for every SKU. Under the new policy, if you don't provide your sourcing cost, Amazon estimates it — and that estimate is typically 20–30% below what you actually paid. For inventory lost before a customer order, that estimate is what you'll be reimbursed. Uploading accurate cost data is now the difference between fair recovery and leaving money on the table on every single claim."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "title": "Do this first",
+      "text": "Find the cost-of-goods upload in your reimbursement/inventory-defect settings and enter accurate per-unit manufacturing costs for all active SKUs. Keep supplier invoices on hand — documentation requirements are stricter now."
+    },
+    {
+      "type": "h2",
+      "text": "Where the money still hides"
+    },
+    {
+      "type": "p",
+      "text": "Amazon now auto-reimburses many warehouse lost-and-damaged cases without you filing anything. That's genuinely helpful — but it does not eliminate the need to audit. Auto-reimbursements can be missed, miscalculated, or based on Amazon's low cost estimate. And several categories still require you to file manually and on time."
+    },
+    {
+      "type": "table",
+      "caption": "Claim types and filing windows (US, verified May 2026 — confirm current rules in Seller Central)",
+      "headers": [
+        "Claim type",
+        "How it works now",
+        "Window"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Warehouse lost / damaged",
+            "Mostly auto-reimbursed; file manually if missed",
+            "60 days"
+          ]
+        },
+        {
+          "cells": [
+            "FBA customer returns",
+            "File manually — returned but not restocked",
+            "45–105 days"
+          ]
+        },
+        {
+          "cells": [
+            "Removal / disposal",
+            "Always filed manually",
+            "15–75 days"
+          ]
+        },
+        {
+          "cells": [
+            "Fee / dimension overcharges",
+            "Dispute with measurements",
+            "Ongoing"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "A realistic monthly routine"
+    },
+    {
+      "type": "p",
+      "text": "Because the window is now 60 days, the old habit of an annual audit guarantees you miss claims. A monthly cadence catches issues before they expire:"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Confirm cost data is current",
+          "text": "Check that every active SKU has an accurate manufacturing cost on file before anything else."
+        },
+        {
+          "title": "Pull inventory adjustments",
+          "text": "Filter for reason codes that indicate Amazon-side loss or damage, and cross-check against auto-reimbursements you actually received."
+        },
+        {
+          "title": "Reconcile inbound shipments",
+          "text": "Match units sent vs. units received; flag anything still short after the reconciliation window."
+        },
+        {
+          "title": "Check returns",
+          "text": "Cross-reference refunded orders against returned-to-sellable inventory."
+        },
+        {
+          "title": "File within the window",
+          "text": "Submit legitimate claims with supporting reports and invoices — before the 60 days lapse."
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "When a tool earns its cost"
+    },
+    {
+      "type": "p",
+      "text": "At low volume, the manual routine above is enough. Once you're moving meaningful inventory, the math shifts — a tighter window plus cost-based payouts means missed claims are both more likely and harder to recover. This is exactly the kind of rule-based, time-sensitive work software handles better than a human auditing at midnight."
+    },
+    {
+      "type": "p",
+      "text": "Full suites like Helium 10 include reimbursement features alongside broader research tools, which makes sense if you'd use the rest anyway. Dedicated recovery services also exist, usually taking a percentage of what they recover — which aligns their incentives with yours. See our research-suite reviews to weigh the options."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "title": "The principle hasn’t changed",
+      "text": "Reimbursement money is real and it's yours — but the window is short and the payout now depends on your cost data. Build the monthly routine, upload your costs, and act before claims expire."
+    }
+  ],
+  "related": [
+    "shipment-discrepancy-claims"
+  ],
+  "tools": [
+    "Helium 10",
+    "Dedicated reimbursement services"
+  ],
+  "order": 1
+}

@@ -1,0 +1,207 @@
+---
+import Base from '../../layouts/Base.astro';
+import { marketplaces, getMarketplace } from '../../data/marketplaces.mjs';
+
+export function getStaticPaths() {
+  return marketplaces.map(m => ({ params: { slug: m.slug }, props: { m } }));
+}
+const { m } = Astro.props;
+const others = marketplaces.filter(x => x.slug !== m.slug).slice(0, 4);
+---
+<Base title={`Selling on ${m.name} — Fees, Tools & Getting Started`} description={m.intro.slice(0, 150)}>
+  <!-- hero -->
+  <section class="mp-hero" style={`--c:${m.color};--cd:${m.dark};--cs:${m.soft}`}>
+    <div class="container mp-hero-in">
+      <div class="mp-hero-copy">
+        <a href="/marketplaces/" class="back">← All marketplaces</a>
+        <div class="mp-hero-id">
+          <span class="mp-hero-logo" style={`background:${m.color}`}>{m.letter}</span>
+          <div>
+            <h1 class="display-lg">Selling on {m.name}</h1>
+            <p class="mp-hero-tag">{m.tagline}</p>
+          </div>
+        </div>
+        <p class="lead">{m.intro}</p>
+        <div class="mp-hero-aud"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="m6.5 10 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> {m.audience}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- how it works flow -->
+  <section class="section-sm">
+    <div class="container">
+      <span class="h-eyebrow">How it works</span>
+      <h2 class="display-md" style="margin:10px 0 32px;">From listing to payout</h2>
+      <div class="flow">
+        {m.howItWorks.map((step, i) => (
+          <>
+            <div class="flow-step">
+              <span class="flow-num" style={`background:${m.color}`}>{i + 1}</span>
+              <span class="flow-label">{step}</span>
+            </div>
+            {i < m.howItWorks.length - 1 && (
+              <svg class="flow-arr" viewBox="0 0 32 16" fill="none"><path d="M2 8h26M22 3l6 5-6 5" stroke="#C2CBD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            )}
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- fees -->
+  <section class="section-sm bg-2">
+    <div class="container">
+      <div class="split">
+        <div class="split-l">
+          <span class="h-eyebrow">Fee structure</span>
+          <h2 class="display-md" style="margin:10px 0 14px;">What {m.name} costs</h2>
+          <p class="muted">Headline US rates, verified May 2026. Effective cost depends on category, item size, and fulfillment. Confirm current rates on {m.name}'s official fee page.</p>
+        </div>
+        <div class="split-r">
+          <table class="fee-table">
+            <tbody>
+              {m.fees.map(([k, v]) => (
+                <tr><th>{k}</th><td>{v}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- getting started -->
+  <section class="section-sm">
+    <div class="container">
+      <span class="h-eyebrow">Getting started</span>
+      <h2 class="display-md" style="margin:10px 0 32px;">Your first steps on {m.name}</h2>
+      <div class="steps">
+        {m.howItWorks.map((step, i) => (
+          <div class="step-card">
+            <span class="step-idx" style={`color:${m.color};border-color:${m.color}`}>{String(i + 1).padStart(2, '0')}</span>
+            <p>{step}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- pros / cons -->
+  <section class="section-sm bg-2">
+    <div class="container">
+      <div class="pc-grid">
+        <div class="pc-col pc-pro">
+          <h3><span class="pc-ico pro">+</span> Strengths</h3>
+          <ul>{m.pros.map(p => <li>{p}</li>)}</ul>
+        </div>
+        <div class="pc-col pc-con">
+          <h3><span class="pc-ico con">–</span> Trade-offs</h3>
+          <ul>{m.cons.map(c => <li>{c}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- tools + guides -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="tg-grid">
+        <div>
+          <span class="h-eyebrow">Recommended tools</span>
+          <h2 class="display-md" style="margin:10px 0 20px;">Tools for {m.name} sellers</h2>
+          <div class="tg-tools">
+            {m.tools.map(t => (
+              <a href="/reviews/" class="tg-tool"><span class="tg-dot" style={`background:${m.color}`}></span>{t}<span class="tg-go">→</span></a>
+            ))}
+          </div>
+        </div>
+        <div>
+          <span class="h-eyebrow">Related guides</span>
+          <h2 class="display-md" style="margin:10px 0 20px;">Go deeper</h2>
+          <div class="tg-guides">
+            {m.guides.map(g => (
+              <a href={g.href} class="tg-guide"><span>{g.t}</span><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- other marketplaces -->
+  <section class="section-sm bg-2">
+    <div class="container">
+      <h2 class="display-md" style="margin-bottom:24px;">Explore other marketplaces</h2>
+      <div class="other-grid">
+        {others.map(o => (
+          <a href={`/marketplaces/${o.slug}/`} class="other"><span class="other-logo" style={`background:${o.color}`}>{o.letter}</span>{o.name}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .mp-hero { background: var(--cs); padding: 40px 0 56px; }
+    .back { font-size: 0.9rem; font-weight: 600; color: var(--cd); }
+    .mp-hero-id { display: flex; align-items: center; gap: 18px; margin: 22px 0 20px; }
+    .mp-hero-logo { width: 64px; height: 64px; border-radius: 16px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 2rem; display: grid; place-items: center; box-shadow: var(--sh-md); flex-shrink: 0; }
+    .mp-hero-tag { font-size: 1.05rem; color: var(--cd); font-weight: 600; margin-top: 4px; }
+    .mp-hero-copy .lead { max-width: 64ch; color: var(--ink-2); }
+    .mp-hero-aud { display: inline-flex; align-items: center; gap: 9px; margin-top: 22px; padding: 10px 16px; background: rgba(255,255,255,.7); border-radius: 100px; font-size: 0.9rem; font-weight: 600; color: var(--cd); }
+    .mp-hero-aud svg { width: 18px; height: 18px; }
+
+    .flow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .flow-step { display: flex; flex-direction: column; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 22px 20px; flex: 1; min-width: 130px; }
+    .flow-num { width: 38px; height: 38px; border-radius: 50%; color: #fff; font-family: var(--display); font-weight: 800; display: grid; place-items: center; }
+    .flow-label { font-weight: 600; font-size: 0.92rem; text-align: center; }
+    .flow-arr { width: 32px; height: 16px; flex-shrink: 0; }
+
+    .split { display: grid; grid-template-columns: 1fr 1.2fr; gap: 44px; align-items: start; }
+    .split-l .muted { font-size: 0.92rem; }
+    .fee-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+    .fee-table th, .fee-table td { padding: 16px 18px; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.94rem; }
+    .fee-table tr:last-child th, .fee-table tr:last-child td { border-bottom: none; }
+    .fee-table th { font-weight: 700; color: var(--ink); width: 38%; background: var(--bg-2); }
+    .fee-table td { color: var(--ink-2); }
+
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 22px; }
+    .step-idx { display: inline-block; font-family: var(--display); font-weight: 800; font-size: 1.1rem; border: 2px solid; border-radius: 9px; padding: 4px 10px; margin-bottom: 14px; }
+    .step-card p { font-size: 0.95rem; font-weight: 500; }
+
+    .pc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .pc-col { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px; }
+    .pc-col h3 { font-family: var(--sans); font-size: 1.15rem; display: flex; align-items: center; gap: 11px; margin-bottom: 18px; }
+    .pc-ico { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font-weight: 800; font-size: 1.1rem; }
+    .pc-ico.pro { background: var(--brand-soft); color: var(--brand); }
+    .pc-ico.con { background: var(--accent-soft); color: var(--accent-dark); }
+    .pc-col ul { list-style: none; }
+    .pc-col li { padding: 10px 0 10px 26px; position: relative; font-size: 0.96rem; color: var(--ink-2); border-bottom: 1px solid var(--line-soft); }
+    .pc-col li:last-child { border-bottom: none; }
+    .pc-pro li::before { content: '✓'; position: absolute; left: 0; color: var(--brand); font-weight: 800; }
+    .pc-con li::before { content: '!'; position: absolute; left: 4px; color: var(--accent-dark); font-weight: 800; }
+
+    .tg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+    .tg-tools, .tg-guides { display: flex; flex-direction: column; gap: 10px; }
+    .tg-tool { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 15px 18px; font-weight: 600; transition: border-color .15s, transform .15s; }
+    .tg-tool:hover { border-color: var(--brand); transform: translateX(3px); }
+    .tg-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .tg-go { margin-left: auto; color: var(--brand); }
+    .tg-guide { display: flex; align-items: center; justify-content: space-between; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 15px 18px; font-weight: 500; color: var(--ink-2); transition: border-color .15s, transform .15s; }
+    .tg-guide:hover { border-color: var(--brand); transform: translateX(3px); color: var(--brand); }
+    .tg-guide svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--brand); }
+
+    .other-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .other { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; font-weight: 600; transition: transform .15s, box-shadow .15s; }
+    .other:hover { transform: translateY(-3px); box-shadow: var(--sh-sm); }
+    .other-logo { width: 36px; height: 36px; border-radius: 9px; color: #fff; font-family: var(--display); font-weight: 800; display: grid; place-items: center; }
+
+    @media (max-width: 860px) {
+      .split { grid-template-columns: 1fr; gap: 28px; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .pc-grid, .tg-grid { grid-template-columns: 1fr; gap: 22px; }
+      .other-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px) { .steps { grid-template-columns: 1fr; } }
+  </style>
+</Base>

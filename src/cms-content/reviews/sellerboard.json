@@ -1,0 +1,74 @@
+{
+  "slug": "sellerboard",
+  "name": "Sellerboard",
+  "category": "accounting-tax",
+  "color": "#2563EB",
+  "url": "https://sellerboard.com",
+  "status": "full",
+  "featured": true,
+  "editorsChoice": false,
+  "rating": 4.5,
+  "best": "Best profit analytics",
+  "oneLiner": "Accurate, real-time profit tracking that pays for itself.",
+  "summary": "Sellerboard is a low-cost profit-analytics tool that gives you an accurate, real-time picture of what you're actually earning per SKU — accounting for 100+ Amazon fee types, COGS, PPC, and refunds. It bundles inventory management, review-request automation, and reimbursement alerts, and even covers Shopify. For the price, the clarity it brings to your numbers is hard to beat.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4.4
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.6
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.4
+    },
+    {
+      "label": "Value",
+      "value": 4.8
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Standard",
+      "price": "$19/mo",
+      "note": "Up to 3,000 orders/mo",
+      "popular": false
+    },
+    {
+      "tier": "Professional",
+      "price": "$29/mo",
+      "note": "Real-time dashboard, more accounts",
+      "popular": true
+    },
+    {
+      "tier": "Business",
+      "price": "$39/mo",
+      "note": "Automated reports, PPC optimization",
+      "popular": false
+    },
+    {
+      "tier": "Enterprise",
+      "price": "$79/mo",
+      "note": "Up to 50,000 orders, unlimited users",
+      "popular": false
+    }
+  ],
+  "pros": [
+    "Accurate per-SKU profit in real time",
+    "Covers 100+ Amazon fee types",
+    "Very affordable for what it does",
+    "Inventory, autoresponder & reimbursement alerts",
+    "Mobile app + Shopify support"
+  ],
+  "cons": [
+    "Analytics-focused — not a research tool",
+    "Interface prioritizes function over polish",
+    "Order limits tier the pricing"
+  ],
+  "bestFor": "Any seller who wants to know their true profit per product instead of guessing from top-line sales.",
+  "verdict": "If you can't say what each SKU actually nets you after fees and ads, Sellerboard fixes that for the price of a couple of coffees a month. One of the highest value-for-money tools a seller can run.",
+  "affiliate": "Recurring commission via the official affiliate program.",
+  "order": 6
+}

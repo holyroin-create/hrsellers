@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro';
+import { categories, reviews, reviewsByCategory } from '../../data/reviews.mjs';
+
+const idMap = { 'research-tools': 'research-tools', 'reimbursement-tools': 'reimbursement-tools', 'repricing-tools': 'repricing-tools', 'accounting-tax': 'accounting-tax' };
+---
+<Base title="Tool Reviews — Honest Seller Software Reviews" description="Independent, research-backed reviews of Amazon and marketplace seller tools. Compare Helium 10, Jungle Scout, Sellerboard, Aura, GETIDA and more." hideToolband={true}>
+  <section class="page-hero">
+    <div class="container">
+      <span class="pill"><span class="dot"></span> Independent reviews</span>
+      <h1 class="display-xl">Software reviews you can actually trust.</h1>
+      <p class="lead">We rate tools on the problem they solve — not the commission they pay. Every affiliate relationship is disclosed. Browse {reviews.length} in-depth reviews across {categories.length} categories.</p>
+    </div>
+  </section>
+
+  {categories.map((cat, ci) => {
+    const list = reviewsByCategory(cat.id);
+    if (list.length === 0) return null;
+    return (
+      <section class={`section-sm rev-cat${ci % 2 ? ' bg-2' : ''}`} id={idMap[cat.id]}>
+        <div class="container">
+          <span class="h-eyebrow">{cat.name}</span>
+          <h2 class="display-md" style="margin:10px 0 6px;">{cat.name}</h2>
+          <p class="muted" style="margin-bottom:28px;">{cat.desc}</p>
+          <div class="rev-grid">
+            {list.map(r => (
+              <a href={`/reviews/${r.slug}/`} class={`rev-card${r.editorsChoice ? ' rev-feat' : ''}`}>
+                {r.editorsChoice && <span class="rev-ribbon">★ Editor's choice</span>}
+                <div class="rev-head">
+                  <span class="rev-logo" style={`background:${r.color}`}>{r.name.charAt(0)}</span>
+                  <div><h3>{r.name}</h3><span class="rev-best">{r.best}</span></div>
+                </div>
+                <div class="rev-rating"><span class="stars" style={`--pct:${(r.rating/5)*100}%`}>★★★★★</span><span>{r.rating.toFixed(1)}</span></div>
+                <p class="rev-one">{r.oneLiner}</p>
+                <div class="rev-foot">
+                  <span class="rev-price">{r.pricing[0].price === '$0' ? 'Free plan' : `from ${r.pricing[0].price}`}</span>
+                  <span class="rev-link">Read review →</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="section-sm">
+    <div class="container">
+      <p class="cmp-note">Pricing and ratings verified May 2026. Plans and discounts change frequently — confirm current rates on each vendor's site. We may earn a commission if you subscribe through our links, at no extra cost to you. See our <a href="/affiliate-disclosure/">affiliate disclosure</a>.</p>
+    </div>
+  </section>
+
+  <style>
+    .page-hero { padding: 72px 0 40px; background: radial-gradient(60% 60% at 80% 0%, rgba(14,124,102,.08), transparent 70%); }
+    .page-hero h1 { margin: 20px 0 18px; max-width: 18ch; }
+    .page-hero .lead { max-width: 60ch; }
+    .rev-cat { scroll-margin-top: 96px; }
+    .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .rev-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px; display: flex; flex-direction: column; position: relative; transition: transform .18s, box-shadow .18s; }
+    .rev-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); }
+    .rev-feat { border: 2px solid var(--brand); }
+    .rev-ribbon { position: absolute; top: -12px; left: 28px; background: var(--brand); color: #fff; font-size: 0.74rem; font-weight: 700; padding: 5px 14px; border-radius: 100px; }
+    .rev-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .rev-logo { width: 50px; height: 50px; border-radius: 13px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 1.5rem; display: grid; place-items: center; flex-shrink: 0; }
+    .rev-head h3 { font-size: 1.22rem; }
+    .rev-best { font-size: 0.82rem; color: var(--ink-3); font-weight: 600; }
+    .rev-rating { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-weight: 700; }
+    .stars { position: relative; font-size: 1.05rem; letter-spacing: 2px; color: var(--bg-3); }
+    .stars::before { content: '★★★★★'; position: absolute; left: 0; top: 0; width: var(--pct); overflow: hidden; color: var(--gold); white-space: nowrap; }
+    .rev-one { color: var(--ink-2); font-size: 0.95rem; flex-grow: 1; margin-bottom: 18px; }
+    .rev-foot { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 14px; }
+    .rev-price { font-size: 0.85rem; font-weight: 700; color: var(--ink-2); }
+    .rev-link { font-weight: 600; color: var(--brand); font-size: 0.9rem; }
+    .cmp-note { font-size: 0.84rem; color: var(--ink-3); line-height: 1.6; max-width: 80ch; }
+    .cmp-note a { color: var(--brand); font-weight: 600; }
+    @media (max-width: 920px) { .rev-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .rev-grid { grid-template-columns: 1fr; } }
+  </style>
+</Base>

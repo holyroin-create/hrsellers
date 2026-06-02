@@ -1,0 +1,60 @@
+---
+import Base from './Base.astro';
+const { title, updated, intro, sections } = Astro.props;
+---
+<Base title={title} description={`${title} — HRSellers`}>
+  <section class="legal-hero">
+    <div class="container">
+      <span class="pill"><span class="dot"></span> Legal</span>
+      <h1 class="display-lg">{title}</h1>
+      <p class="legal-updated">Last updated: {updated}</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container legal-wrap">
+      <aside class="legal-toc">
+        <span class="toc-label">On this page</span>
+        <nav>
+          {sections.map(s => <a href={`#${s.id}`}>{s.h}</a>)}
+        </nav>
+      </aside>
+      <div class="legal-body">
+        {intro && <p class="legal-intro">{intro}</p>}
+        {sections.map(s => (
+          <div class="legal-sec" id={s.id}>
+            <h2>{s.h}</h2>
+            {s.body.map(para => <p>{para}</p>)}
+            {s.list && <ul>{s.list.map(li => <li>{li}</li>)}</ul>}
+          </div>
+        ))}
+        <div class="legal-note">This document is a general template provided for convenience. It is not legal advice. Review and adapt it for your business and jurisdiction — and consult a qualified professional where appropriate.</div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .legal-hero { padding: 64px 0 32px; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+    .legal-hero h1 { margin: 18px 0 10px; }
+    .legal-updated { color: var(--ink-3); font-size: 0.92rem; }
+    .legal-wrap { display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; }
+    .legal-toc { position: sticky; top: 96px; }
+    .toc-label { font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); display: block; margin-bottom: 14px; }
+    .legal-toc nav { display: flex; flex-direction: column; gap: 4px; border-left: 2px solid var(--line); }
+    .legal-toc a { font-size: 0.9rem; color: var(--ink-2); padding: 7px 0 7px 16px; margin-left: -2px; border-left: 2px solid transparent; transition: color .15s, border-color .15s; }
+    .legal-toc a:hover { color: var(--brand); border-left-color: var(--brand); }
+    .legal-intro { font-size: 1.1rem; color: var(--ink-2); line-height: 1.65; margin-bottom: 8px; }
+    .legal-sec { scroll-margin-top: 96px; padding-top: 28px; }
+    .legal-sec h2 { font-family: var(--display); font-size: 1.5rem; margin-bottom: 12px; }
+    .legal-sec p { color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+    .legal-sec ul { margin: 0 0 16px 22px; color: var(--ink-2); }
+    .legal-sec li { margin-bottom: 8px; line-height: 1.6; }
+    .legal-note { margin-top: 36px; padding: 18px 20px; background: var(--gold-soft); border: 1px solid #F0E2C8; border-radius: var(--r-md); font-size: 0.88rem; color: #8a6314; line-height: 1.55; }
+    @media (max-width: 820px) {
+      .legal-wrap { grid-template-columns: 1fr; gap: 24px; }
+      .legal-toc { position: static; }
+      .legal-toc nav { flex-flow: row wrap; border-left: none; gap: 8px; }
+      .legal-toc a { border: 1px solid var(--line); border-radius: 100px; padding: 7px 14px; margin: 0; }
+    }
+  </style>
+</Base>

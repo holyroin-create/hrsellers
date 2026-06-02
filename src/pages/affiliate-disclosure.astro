@@ -1,0 +1,21 @@
+---
+import Legal from '../layouts/Legal.astro';
+const sections = [
+  { id: 'overview', h: 'Overview', body: [
+    "HRSellers is a free resource supported in part by affiliate commissions. This page explains, in plain language, how that works and what it means for you.",
+    "In short: some links on this site are affiliate links. If you click one and sign up for or purchase a product, we may receive a commission. This never costs you anything extra, and it never changes our editorial opinion." ] },
+  { id: 'what-are', h: 'What affiliate links are', body: [
+    "An affiliate link is a special URL that lets a company know a visitor came from our site. If that visitor becomes a customer, the company pays us a referral fee — often a percentage of the sale, and sometimes a recurring percentage for subscription products.",
+    "Examples of partners we may have affiliate relationships with include seller-software providers such as research suites and reimbursement services, and marketplace affiliate programs such as the Amazon Associates program." ] },
+  { id: 'independence', h: 'Editorial independence', body: [
+    "Our ratings, rankings, and recommendations are based on the merits of each product — the problem it solves, how well it works, and who it suits. Commission rates play no part in whether a tool is recommended or how it scores.",
+    "Where we have an affiliate relationship with a product we discuss, that relationship is disclosed on the relevant page. The presence or absence of an affiliate relationship does not influence our coverage." ] },
+  { id: 'amazon', h: 'Amazon Associates', body: [
+    "HRSellers is a participant in the Amazon Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon properties. As an Amazon Associate we earn from qualifying purchases." ] },
+  { id: 'questions', h: 'Questions', body: [
+    "If you have any questions about our affiliate relationships or how we make money, please reach out through our contact page. We're happy to be transparent about how this site is funded." ] },
+];
+---
+<Legal title="Affiliate Disclosure" updated="May 2026"
+  intro="Transparency matters. Here's exactly how HRSellers earns money and how we keep our recommendations honest."
+  sections={sections} />

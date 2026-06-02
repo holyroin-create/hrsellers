@@ -1,0 +1,75 @@
+{
+  "slug": "helium-10",
+  "name": "Helium 10",
+  "category": "research-tools",
+  "color": "#1E1B4B",
+  "url": "https://i.helium10.com/c/7363542/3314049/37271",
+  "status": "full",
+  "featured": true,
+  "editorsChoice": true,
+  "rating": 4.5,
+  "best": "Best overall",
+  "oneLiner": "The deepest all-in-one suite for Amazon sellers — at a premium price.",
+  "summary": "Helium 10 is the most comprehensive Amazon seller toolkit on the market, bundling product research (Black Box), keyword tools (Cerebro, Magnet), listing optimization, inventory management, PPC, and even refund recovery into one platform. It replaces five or six separate subscriptions — which is exactly why its higher price can still be the better value for active sellers.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4.8
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.6
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.1
+    },
+    {
+      "label": "Value",
+      "value": 4.2
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Free",
+      "price": "$0",
+      "note": "Limited tools, no card required",
+      "popular": false
+    },
+    {
+      "tier": "Platinum",
+      "price": "$129/mo",
+      "note": "$99/mo billed annually",
+      "popular": true
+    },
+    {
+      "tier": "Diamond",
+      "price": "$279/mo",
+      "note": "For scaling multi-product sellers",
+      "popular": false
+    },
+    {
+      "tier": "Enterprise",
+      "price": "Custom",
+      "note": "Agencies & large catalogs",
+      "popular": false
+    }
+  ],
+  "pros": [
+    "Most complete toolset — replaces multiple subscriptions",
+    "Industry-leading keyword tools (Cerebro, Magnet)",
+    "Built-in PPC and refund recovery",
+    "Robust free plan to test before paying",
+    "Supports Amazon and Walmart"
+  ],
+  "cons": [
+    "Higher sticker price than rivals",
+    "2% fee on PPC ad spend managed through the platform",
+    "Steeper learning curve given the depth",
+    "Starter plan discontinued — no cheap entry tier"
+  ],
+  "bestFor": "Active and scaling Amazon sellers who want one platform instead of five — and will actually use the depth.",
+  "verdict": "If you only need basic product research, Helium 10 is overkill and you'll pay for tools you won't touch. But for sellers running an active business, the breadth genuinely consolidates your stack and earns its cost. The free plan makes it risk-free to evaluate.",
+  "affiliate": "25% recurring commission (plus new-customer bounties) via the official affiliate program.",
+  "order": 1
+}

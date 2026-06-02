@@ -1,0 +1,124 @@
+{
+  "slug": "choosing-first-marketplace",
+  "category": "getting-started",
+  "title": "Choosing Your First Marketplace: A Decision Framework",
+  "excerpt": "Amazon, eBay, Shopify, Etsy, Walmart — the \"best\" platform depends entirely on what you sell and what you can bring. Here is how to decide.",
+  "time": "7 min",
+  "updated": "May 2026",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "New sellers often pick a marketplace based on which one they've heard of most — usually Amazon — and then discover the fees, competition, or rules don't fit their product. The better approach is to start from what you're selling and what you can bring, then match that to a platform."
+    },
+    {
+      "type": "h2",
+      "text": "Start with three questions"
+    },
+    {
+      "type": "flow",
+      "label": "The decision path",
+      "steps": [
+        "What do you sell?",
+        "Can you drive traffic?",
+        "How hands-on?",
+        "Pick platform"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Your answers narrow the field fast. Handmade or vintage points to Etsy. A brand you want to own end-to-end points to Shopify. Mass-market products where discovery matters point to Amazon or Walmart. Used goods and collectibles point to eBay."
+    },
+    {
+      "type": "table",
+      "caption": "Beginner fit by platform (see each platform guide for full fee detail)",
+      "headers": [
+        "If you...",
+        "Start with",
+        "Why"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Sell handmade / vintage",
+            "Etsy",
+            "Built-in audience for craft; simple fees"
+          ]
+        },
+        {
+          "cells": [
+            "Want to own your brand & customers",
+            "Shopify",
+            "Lowest fees, full control — but you drive traffic"
+          ]
+        },
+        {
+          "cells": [
+            "Sell mass-market & want discovery",
+            "Amazon",
+            "Largest audience; FBA handles logistics"
+          ]
+        },
+        {
+          "cells": [
+            "Sell used / collectibles",
+            "eBay",
+            "New and used; lower barrier to entry"
+          ]
+        },
+        {
+          "cells": [
+            "Are established & want lower fees",
+            "Walmart",
+            "Seller-friendly fees, less competition"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "title": "Traffic is the hidden variable",
+      "text": "Marketplaces (Amazon, eBay, Walmart) give you a built-in audience but charge for it. Your own store (Shopify) has the lowest fees but no audience — you pay in marketing instead. Neither is free; the cost just shows up in a different column."
+    },
+    {
+      "type": "h2",
+      "text": "How to actually decide"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Define your product category",
+          "text": "Be specific — \"handmade candles\" or \"refurbished electronics,\" not just \"products.\" Category drives platform fit and fees."
+        },
+        {
+          "title": "Be honest about traffic",
+          "text": "If you can’t yet drive your own traffic, a marketplace’s built-in audience is worth the higher fee. If you can, a store keeps more margin."
+        },
+        {
+          "title": "Run the fee math on your price point",
+          "text": "Use each platform guide to estimate the all-in fee on your actual selling price. A 13% vs. 30% gap changes everything."
+        },
+        {
+          "title": "Start with one, master it, then expand",
+          "text": "Don’t spread thin across channels on day one. Prove the model on one platform before adding a second."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "title": "One platform first",
+      "text": "Every successful multi-channel seller started by mastering a single channel. Pick the best fit, learn its rules deeply, then expand when you have a working playbook to copy."
+    },
+    {
+      "type": "p",
+      "text": "When you're ready to compare specifics, our marketplace guides break down fees, fulfillment, and getting-started steps for each platform side by side."
+    }
+  ],
+  "related": [
+    "second-sales-channel"
+  ],
+  "tools": [],
+  "order": 3
+}

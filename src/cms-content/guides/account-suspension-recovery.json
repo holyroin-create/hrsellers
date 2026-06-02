@@ -1,0 +1,89 @@
+{
+  "slug": "account-suspension-recovery",
+  "category": "account-management",
+  "title": "What to Do If Your Amazon Account Is Suspended",
+  "excerpt": "A suspension is frightening but often recoverable. Here is how a Plan of Action works and how to give yourself the best chance of reinstatement.",
+  "time": "8 min",
+  "updated": "May 2026",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Few things rattle a seller like a suspension notice. The instinct is to fire off an emotional appeal immediately — which is usually the worst move. Reinstatement comes from a calm, structured Plan of Action (POA) that shows Amazon you understand what went wrong and have fixed it."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "title": "The clock is running",
+      "text": "When suspended, you typically have a limited window — often around 17 calendar days, and in some 2026 enforcement cases as little as 72 hours — to submit your Plan of Action. Read the notice carefully for your specific deadline and don't let it lapse."
+    },
+    {
+      "type": "h2",
+      "text": "First: understand exactly why"
+    },
+    {
+      "type": "p",
+      "text": "Don't guess. Open Account Health and read the specific violation, the affected metric or policy, and the timeframe. A POA that addresses the wrong issue gets rejected. Identify whether it's a performance metric, a policy violation, or a product-authenticity/IP complaint — each needs a different response."
+    },
+    {
+      "type": "flow",
+      "label": "The reinstatement path",
+      "steps": [
+        "Read the notice",
+        "Find root cause",
+        "Write the POA",
+        "Submit & wait",
+        "Reinstated"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "What a Plan of Action contains"
+    },
+    {
+      "type": "p",
+      "text": "Amazon expects three parts, in plain, specific language — no excuses, no blame-shifting:"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Root cause",
+          "text": "An honest analysis of what actually caused the problem. Be specific and take responsibility rather than blaming buyers or Amazon."
+        },
+        {
+          "title": "Corrective actions already taken",
+          "text": "Concrete steps you have already completed to fix the immediate issue — not what you plan to do."
+        },
+        {
+          "title": "Preventive measures",
+          "text": "Systems and changes that stop it recurring. This is what convinces Amazon the problem is genuinely solved."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "title": "Tone and format matter",
+      "text": "Keep it factual, concise, and structured. Lead with accountability, support claims with evidence (invoices, tracking, supplier docs), and avoid emotional language. Bullet points and clear headers help reviewers find what they need."
+    },
+    {
+      "type": "h2",
+      "text": "After you submit"
+    },
+    {
+      "type": "p",
+      "text": "Responses can take days. If rejected, you usually get another chance — refine the POA based on the feedback rather than resubmitting the same document. Many sellers succeed on a second, sharper attempt. For high-value accounts or complex IP cases, professional reinstatement help can be worth the cost."
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "title": "Prevention is the real strategy",
+      "text": "The best suspension is the one that never happens. Once reinstated, build the weekly health routine so you catch issues long before they reach this point."
+    }
+  ],
+  "related": [
+    "amazon-account-health"
+  ],
+  "tools": [],
+  "order": 6
+}

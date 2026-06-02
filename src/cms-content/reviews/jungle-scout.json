@@ -1,0 +1,69 @@
+{
+  "slug": "jungle-scout",
+  "name": "Jungle Scout",
+  "category": "research-tools",
+  "color": "#3DAE2B",
+  "url": "https://www.junglescout.com",
+  "status": "full",
+  "featured": true,
+  "editorsChoice": false,
+  "rating": 4.6,
+  "best": "Best for research",
+  "oneLiner": "Cleaner, cheaper, and easier than the competition for core research.",
+  "summary": "Jungle Scout focuses on doing product and market research exceptionally well, with a clean interface that's easier for newcomers than Helium 10. It's cheaper at every tier and is widely trusted for its sales estimates and supplier database. The trade-off is less depth — no built-in refund recovery and a thinner all-in-one story.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4.4
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.6
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.7
+    },
+    {
+      "label": "Value",
+      "value": 4.6
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Starter",
+      "price": "$49/mo",
+      "note": "Core research, single user",
+      "popular": false
+    },
+    {
+      "tier": "Growth Accelerator",
+      "price": "$79/mo",
+      "note": "Most popular — tracks 150 products",
+      "popular": true
+    },
+    {
+      "tier": "Brand Owner + CI",
+      "price": "$149/mo",
+      "note": "Competitive intelligence for brands",
+      "popular": false
+    }
+  ],
+  "pros": [
+    "Cleaner, more beginner-friendly interface",
+    "Cheaper than Helium 10 at every tier",
+    "Trusted sales estimates & supplier database",
+    "7-day money-back guarantee",
+    "Strong onboarding & education"
+  ],
+  "cons": [
+    "Less depth than Helium 10 overall",
+    "No free plan (only money-back guarantee)",
+    "No built-in refund recovery",
+    "Advanced features gated to top tier"
+  ],
+  "bestFor": "New and intermediate sellers who want accurate research without the complexity or cost of a full suite.",
+  "verdict": "For most sellers whose main need is finding and validating products, Jungle Scout is the easier, more affordable choice — and the one we'd point a beginner to first. Power users running PPC and inventory at scale may still outgrow it.",
+  "affiliate": "25–30% recurring commission via PartnerStack.",
+  "order": 2
+}

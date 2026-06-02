@@ -1,0 +1,24 @@
+---
+import Legal from '../layouts/Legal.astro';
+const sections = [
+  { id: 'acceptance', h: 'Acceptance of terms', body: [
+    "By accessing HRSellers, you agree to these Terms of Service. If you do not agree, please do not use the site." ] },
+  { id: 'use', h: 'Use of the site', body: [
+    "HRSellers provides educational content, guides, and product reviews for informational purposes. You may use the site for your personal, non-commercial reference.",
+    "You agree not to misuse the site, including attempting to disrupt it, scrape it at scale, or republish its content without permission." ] },
+  { id: 'no-advice', h: 'No professional advice', body: [
+    "Content on this site is general information, not professional, financial, legal, or tax advice. Marketplace rules, fees, and policies change frequently and vary by region. Always verify current details with the relevant platform and consult a qualified professional before making business decisions.",
+    "Figures, fees, and pricing mentioned are accurate to the best of our knowledge at the time of writing but may change without notice." ] },
+  { id: 'affiliate', h: 'Affiliate relationships', body: [
+    "This site contains affiliate links and earns commissions on qualifying actions, as described in our Affiliate Disclosure. This does not affect the price you pay or our editorial independence." ] },
+  { id: 'third-party', h: 'Third-party links', body: [
+    "We link to third-party websites and tools for your convenience. We are not responsible for the content, products, or practices of those third parties, and a link does not imply endorsement of everything on the linked site." ] },
+  { id: 'liability', h: 'Limitation of liability', body: [
+    "The site is provided \u201cas is\u201d without warranties of any kind. To the fullest extent permitted by law, HRSellers is not liable for any loss or damage arising from your use of, or reliance on, the site or its content." ] },
+  { id: 'changes', h: 'Changes to these terms', body: [
+    "We may update these terms from time to time. Continued use of the site after changes means you accept the revised terms." ] },
+];
+---
+<Legal title="Terms of Service" updated="May 2026"
+  intro="The ground rules for using HRSellers. Please read them before relying on anything here."
+  sections={sections} />

@@ -1,0 +1,133 @@
+{
+  "slug": "second-sales-channel",
+  "category": "scaling",
+  "title": "When to Add a Second Sales Channel (and Which One)",
+  "excerpt": "Expanding to a second marketplace can unlock growth — or stretch you thin. Here is how to know you are ready, and how to pick the next channel.",
+  "time": "9 min",
+  "updated": "May 2026",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Adding a second sales channel is one of the most common growth moves — and one of the most commonly mistimed. Expand too early and you dilute the focus that made your first channel work. Expand too late and you leave growth on the table while competitors diversify."
+    },
+    {
+      "type": "h2",
+      "text": "Signs you’re actually ready"
+    },
+    {
+      "type": "checklist",
+      "items": [
+        "Your first channel is consistently profitable, not just generating revenue",
+        "Your operations (inventory, fulfillment, support) run without constant firefighting",
+        "You have documented processes you could hand to someone else",
+        "You have inventory headroom to stock a second channel without starving the first"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "title": "Revenue is not readiness",
+      "text": "A channel doing high revenue but thin or negative margin is not a foundation to expand from — it's a problem to fix first. Profit and operational stability are the real signals, not top-line sales."
+    },
+    {
+      "type": "h2",
+      "text": "Picking the next channel"
+    },
+    {
+      "type": "p",
+      "text": "The best second channel usually complements the first rather than duplicating it. If you've mastered a marketplace's built-in audience, your own Shopify store lets you capture margin and own the customer. If you started on Shopify, a marketplace adds discovery you've been paying ads for."
+    },
+    {
+      "type": "flow",
+      "label": "A common expansion path",
+      "steps": [
+        "Master channel 1",
+        "Stabilize ops",
+        "Add complementary channel",
+        "Sync inventory"
+      ]
+    },
+    {
+      "type": "table",
+      "caption": "Complementary second-channel moves",
+      "headers": [
+        "You started on",
+        "Natural next step",
+        "What it adds"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Amazon",
+            "Your own Shopify store",
+            "Margin + owned customer relationship"
+          ]
+        },
+        {
+          "cells": [
+            "Shopify",
+            "Amazon or Walmart",
+            "Built-in discovery & traffic"
+          ]
+        },
+        {
+          "cells": [
+            "Etsy",
+            "Shopify",
+            "Brand control beyond the marketplace"
+          ]
+        },
+        {
+          "cells": [
+            "eBay",
+            "Amazon",
+            "Larger audience for scalable SKUs"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "What changes when you go multi-channel"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Inventory gets harder",
+          "text": "Two channels drawing from one pool means you need sync to avoid overselling. This is where most multi-channel pain originates."
+        },
+        {
+          "title": "Pricing needs per-channel logic",
+          "text": "If fees are 30% on one channel and 5% on another, identical pricing erodes margin on the expensive one."
+        },
+        {
+          "title": "Reporting fragments",
+          "text": "Each channel has its own reports and payout timing. Consolidated accounting becomes worth the effort."
+        },
+        {
+          "title": "Support multiplies",
+          "text": "More channels means more customer touchpoints and policies to track."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "title": "Add tooling deliberately",
+      "text": "Multi-channel is where inventory-sync and accounting tools stop being optional. Add them as you expand, not after an overselling incident forces the issue."
+    },
+    {
+      "type": "p",
+      "text": "Use our marketplace guides to compare the fee math and requirements of your candidate second channel before committing inventory to it."
+    }
+  ],
+  "related": [
+    "choosing-first-marketplace"
+  ],
+  "tools": [
+    "Inventory sync tools",
+    "Accounting integrations"
+  ],
+  "order": 4
+}

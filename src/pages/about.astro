@@ -1,0 +1,99 @@
+---
+import about from '../cms-content/site/about.json';
+import Base from '../layouts/Base.astro';
+const values = [
+  { icon: 'search', t: 'Research first', d: 'Every figure is checked against primary sources — marketplace fee schedules and policy pages, not recycled blog posts.' },
+  { icon: 'shield', t: 'Independent', d: 'Recommendations are based on merit. Commission rates never decide what we recommend or how it scores.' },
+  { icon: 'flask', t: 'Tested in reality', d: 'Tools are judged against the actual jobs sellers hire them for, not feature checklists.' },
+  { icon: 'eye', t: 'Transparent', d: 'Affiliate relationships are disclosed on every relevant page. You always know how we make money.' },
+];
+const ICONS = {
+  search: '<svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m17 17 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  flask: '<svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 15h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  eye: '<svg viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>',
+};
+---
+<Base title="About" description="Who's behind HRSellers and why you can trust the guides and reviews.">
+  <section class="page-hero">
+    <div class="container ab-hero">
+      <div>
+        <span class="pill"><span class="dot"></span> Our story</span>
+        <h1 class="display-xl">{about.title}</h1>
+        <p class="lead">{about.lead}</p>
+      </div>
+      <div class="ab-art" aria-hidden="true">
+        <svg viewBox="0 0 240 220" fill="none">
+          <rect x="30" y="40" width="180" height="130" rx="16" fill="#fff" stroke="#E3E8EC"/>
+          <rect x="30" y="40" width="180" height="34" rx="16" fill="#E7F4F0"/><rect x="30" y="58" width="180" height="16" fill="#E7F4F0"/>
+          <circle cx="48" cy="57" r="4" fill="#0E7C66"/><circle cx="62" cy="57" r="4" fill="#E8A33D"/><circle cx="76" cy="57" r="4" fill="#FF6A45"/>
+          <rect x="48" y="92" width="80" height="9" rx="4" fill="#0F1B2D"/>
+          <rect x="48" y="110" width="140" height="6" rx="3" fill="#E3E8EC"/>
+          <rect x="48" y="124" width="120" height="6" rx="3" fill="#E3E8EC"/>
+          <rect x="48" y="142" width="56" height="18" rx="9" fill="#0E7C66"/>
+          <circle cx="196" cy="44" r="20" fill="#FF6A45" stroke="#fff" stroke-width="3"/><path d="M188 44l5 5 10-11" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container-narrow">
+      <div class="ab-text">
+        <h2>{about.bodyHeading}</h2>
+        <p>{about.bodyP1}</p>
+        <p>{about.bodyP2}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm bg-2">
+    <div class="container">
+      <div class="sec-head"><div><span class="h-eyebrow">What we stand for</span><h2 class="display-lg">Four principles</h2></div></div>
+      <div class="val-grid">
+        {values.map(v => (
+          <div class="val-card">
+            <span class="val-ico" set:html={ICONS[v.icon]} />
+            <h3>{v.t}</h3>
+            <p>{v.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container-narrow">
+      <div class="ab-fund">
+        <h2>How we're funded</h2>
+        <p>HRSellers is free to read, with no paywall and no email gate. We're supported by affiliate commissions: when you sign up for a tool through one of our links, the company may pay us a referral fee at no extra cost to you.</p>
+        <p>Crucially, this never changes our recommendations. A tool's commission rate has no bearing on whether we recommend it or how it scores. Where we have an affiliate relationship, we disclose it. You can read the full details in our affiliate disclosure.</p>
+        <div class="ab-links">
+          <a href="/affiliate-disclosure/" class="btn btn-ghost">Affiliate disclosure →</a>
+          <a href="/editorial-standards/" class="btn btn-ghost">Editorial standards →</a>
+          <a href="/contact/" class="btn btn-primary">Get in touch →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .page-hero { padding: 72px 0 40px; background: radial-gradient(60% 60% at 85% 0%, rgba(14,124,102,.08), transparent 70%); }
+    .ab-hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+    .ab-hero h1 { margin: 18px 0 18px; }
+    .ab-hero .lead { max-width: 52ch; }
+    .ab-art svg { width: 100%; max-width: 320px; margin-left: auto; filter: drop-shadow(0 20px 40px rgba(15,27,45,.1)); }
+    .ab-text h2 { font-family: var(--display); font-size: 1.7rem; margin-bottom: 14px; }
+    .ab-text p { font-size: 1.12rem; line-height: 1.7; color: #2a2620; margin-bottom: 18px; }
+    .val-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .val-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px; }
+    .val-ico { width: 48px; height: 48px; border-radius: 12px; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; margin-bottom: 16px; }
+    .val-ico svg { width: 24px; height: 24px; }
+    .val-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .val-card p { color: var(--ink-3); font-size: 0.95rem; line-height: 1.55; }
+    .ab-fund h2 { font-family: var(--display); font-size: 1.7rem; margin-bottom: 14px; }
+    .ab-fund p { font-size: 1.08rem; line-height: 1.7; color: #2a2620; margin-bottom: 16px; }
+    .ab-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    @media (max-width: 820px) { .ab-hero { grid-template-columns: 1fr; } .ab-art { display: none; } .val-grid { grid-template-columns: 1fr; } }
+  </style>
+</Base>

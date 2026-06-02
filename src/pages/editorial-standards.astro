@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+const principles = [
+  { t: 'Primary sources over hearsay', d: 'Fees, policies, and figures are verified against official marketplace documentation, not other blogs. When we cite a number, it comes from the source.' },
+  { t: 'Recency matters', d: 'Marketplace rules change constantly. We date our guides, note when policies shifted, and revisit content to keep it current.' },
+  { t: 'Merit-based recommendations', d: 'A tool is recommended because it solves a real problem well — never because it pays the most commission.' },
+  { t: 'Clear disclosure', d: 'Affiliate relationships are disclosed on every relevant page, in line with FTC guidance.' },
+  { t: 'Honest trade-offs', d: 'Every tool and platform has downsides. We name them. A review without cons isn\u2019t a review.' },
+  { t: 'Corrections welcome', d: 'If we get something wrong, tell us and we\u2019ll fix it. Accuracy beats ego.' },
+];
+---
+<Base title="Editorial Standards" description="How HRSellers researches, writes, and reviews — and how we keep recommendations honest.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="pill"><span class="dot"></span> How we work</span>
+      <h1 class="display-xl">Editorial standards.</h1>
+      <p class="lead">Trust is earned through process. Here's exactly how content gets researched, written, reviewed, and kept current at HRSellers.</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <span class="h-eyebrow">Our process</span>
+      <h2 class="display-md" style="margin:10px 0 32px;">From question to published guide</h2>
+      <div class="es-flow">
+        {[
+          { n: 1, t: 'Research', d: 'Gather facts from primary sources' },
+          { n: 2, t: 'Verify', d: 'Cross-check figures & policies' },
+          { n: 3, t: 'Write', d: 'Explain in plain, useful language' },
+          { n: 4, t: 'Review', d: 'Check for accuracy & balance' },
+          { n: 5, t: 'Update', d: 'Revisit as rules change' },
+        ].map((s, i, arr) => (
+          <>
+            <div class="es-node">
+              <span class="es-num">{s.n}</span>
+              <span class="es-t">{s.t}</span>
+              <span class="es-d">{s.d}</span>
+            </div>
+            {i < arr.length - 1 && <svg class="es-arr" viewBox="0 0 28 14" fill="none"><path d="M2 7h22M19 3l5 4-5 4" stroke="#C2CBD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>}
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm bg-2">
+    <div class="container">
+      <div class="sec-head"><div><span class="h-eyebrow">The rules we follow</span><h2 class="display-lg">Six commitments</h2></div></div>
+      <div class="es-grid">
+        {principles.map((p, i) => (
+          <div class="es-card">
+            <span class="es-idx">{String(i + 1).padStart(2, '0')}</span>
+            <div><h3>{p.t}</h3><p>{p.d}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container-narrow">
+      <div class="es-cta">
+        <h2>Spot something wrong?</h2>
+        <p>We'd rather know. If a figure is out of date or a claim looks off, tell us and we'll verify and correct it.</p>
+        <a href="/contact/" class="btn btn-primary">Contact us →</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .page-hero { padding: 72px 0 40px; background: radial-gradient(60% 60% at 80% 0%, rgba(14,124,102,.08), transparent 70%); }
+    .page-hero h1 { margin: 20px 0 18px; }
+    .page-hero .lead { max-width: 56ch; }
+    .es-flow { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; }
+    .es-node { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 22px 18px; flex: 1; min-width: 130px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+    .es-num { width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-family: var(--display); font-weight: 800; display: grid; place-items: center; }
+    .es-t { font-weight: 700; font-size: 1.02rem; }
+    .es-d { font-size: 0.85rem; color: var(--ink-3); line-height: 1.4; }
+    .es-arr { width: 28px; align-self: center; flex-shrink: 0; }
+    .es-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .es-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; display: flex; gap: 18px; }
+    .es-idx { font-family: var(--display); font-weight: 800; font-size: 1.4rem; color: var(--brand-soft2); flex-shrink: 0; }
+    .es-card h3 { font-size: 1.15rem; margin-bottom: 6px; }
+    .es-card p { color: var(--ink-3); font-size: 0.94rem; line-height: 1.55; }
+    .es-cta { text-align: center; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 36px; }
+    .es-cta h2 { font-family: var(--display); font-size: 1.6rem; margin-bottom: 10px; }
+    .es-cta p { color: var(--ink-2); margin-bottom: 22px; max-width: 46ch; margin-inline: auto; }
+    @media (max-width: 760px) { .es-flow { flex-direction: column; } .es-arr { transform: rotate(90deg); } .es-grid { grid-template-columns: 1fr; } }
+  </style>
+</Base>

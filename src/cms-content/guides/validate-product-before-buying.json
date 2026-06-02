@@ -1,0 +1,125 @@
+{
+  "slug": "validate-product-before-buying",
+  "category": "getting-started",
+  "title": "How to Validate a Product Before You Buy Inventory",
+  "excerpt": "Most failed products were doomed at the sourcing stage. Here is a practical framework to pressure-test demand and margin before you spend a cent on stock.",
+  "time": "8 min",
+  "updated": "May 2026",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "The most expensive mistake new sellers make happens before the first sale: buying inventory for a product nobody wants, or one whose margins collapse once real costs are counted. Validation is the cheap insurance that prevents it — and it's mostly research, not money."
+    },
+    {
+      "type": "flow",
+      "label": "The validation funnel",
+      "steps": [
+        "Demand?",
+        "Competition?",
+        "Margin?",
+        "Logistics?",
+        "Decide"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 1 — Is there real demand?"
+    },
+    {
+      "type": "p",
+      "text": "Demand is the first filter because nothing else matters without it. You're looking for consistent, year-round interest — not a single viral spike. Research tools estimate sales volume for a product and its competitors; steady monthly sales across several sellers is a healthier signal than one listing dominating everything."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "title": "Beware seasonal mirages",
+      "text": "A product that sells beautifully in December and nowhere else ties up cash for eleven months. Unless you specifically want a seasonal play, favor steady demand you can sell into all year."
+    },
+    {
+      "type": "h2",
+      "text": "Step 2 — Can you compete?"
+    },
+    {
+      "type": "p",
+      "text": "High demand with entrenched competition is a trap for newcomers. Look at the established listings: how many reviews do the top sellers have, and how strong are their listings? Thousands of reviews on the leaders means you'll spend heavily just to be seen. The sweet spot is real demand with beatable competition."
+    },
+    {
+      "type": "table",
+      "caption": "Quick competition read",
+      "headers": [
+        "Signal",
+        "Good for a newcomer",
+        "Hard for a newcomer"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Top-seller review counts",
+            "Dozens to low hundreds",
+            "Many thousands"
+          ]
+        },
+        {
+          "cells": [
+            "Listing quality",
+            "Mediocre, improvable",
+            "Polished, professional"
+          ]
+        },
+        {
+          "cells": [
+            "Price range",
+            "Healthy margin room",
+            "Race to the bottom"
+          ]
+        },
+        {
+          "cells": [
+            "Number of sellers",
+            "A few credible options",
+            "Saturated"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 3 — Does the margin survive reality?"
+    },
+    {
+      "type": "p",
+      "text": "This is where paper profits die. Take the realistic selling price and subtract the full fee stack, your landed cost, and an allowance for advertising and returns. If there's healthy margin left after all of that, the product has a chance. If it's thin before ad spend, walk away."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "title": "Use the full stack, not the headline",
+      "text": "See our Amazon fees guide for the complete cost picture. The common mistake is subtracting only the referral percentage and ignoring fulfillment, storage, returns, and PPC."
+    },
+    {
+      "type": "h2",
+      "text": "Step 4 — Can you actually ship it?"
+    },
+    {
+      "type": "checklist",
+      "items": [
+        "Size and weight don’t make fulfillment fees eat the margin",
+        "It’s not fragile, hazardous, or restricted in your category",
+        "You can source it reliably and reorder before stockouts",
+        "It’s not so cheap that fees dwarf the sale price"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Clear all four filters and you have a product worth backing with real inventory. Fail any one and it's far cheaper to learn that now. When you're ready to choose tools for this research, our reviews compare the main options."
+    }
+  ],
+  "related": [
+    "choosing-first-marketplace"
+  ],
+  "tools": [
+    "Helium 10",
+    "Jungle Scout"
+  ],
+  "order": 8
+}

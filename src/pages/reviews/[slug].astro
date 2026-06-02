@@ -1,0 +1,207 @@
+---
+import Base from '../../layouts/Base.astro';
+import { reviews, getReview } from '../../data/reviews.mjs';
+
+export function getStaticPaths() {
+  return reviews.map(r => ({ params: { slug: r.slug }, props: { r } }));
+}
+const { r } = Astro.props;
+const others = reviews.filter(x => x.slug !== r.slug);
+const pct = (n) => `${(n/5)*100}%`;
+---
+<Base title={`${r.name} Review (2026) — Pricing, Pros & Cons`} description={r.summary.slice(0, 150)}>
+  <!-- affiliate disclosure -->
+  <div class="disc-bar">
+    <div class="container">
+      <span><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.3"/><path d="M8 7v4M8 5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> This review contains affiliate links. If you subscribe through them we may earn a commission at no extra cost to you. Our rating is independent.</span>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <section class="rev-hero">
+    <div class="container rev-hero-in">
+      <div class="rev-hero-main">
+        <a href="/reviews/" class="back">← All reviews</a>
+        <div class="rev-id">
+          <span class="rev-hero-logo" style={`background:${r.color}`}>{r.name.charAt(0)}</span>
+          <div>
+            <div class="rev-crumbs">{r.best}{r.editorsChoice ? ' · ★ Editor\u2019s choice' : ''}</div>
+            <h1 class="display-lg">{r.name} Review</h1>
+          </div>
+        </div>
+        <p class="lead">{r.oneLiner}</p>
+      </div>
+      <aside class="rev-scorecard">
+        <div class="sc-top">
+          <span class="sc-num">{r.rating.toFixed(1)}</span>
+          <div><span class="stars sc-stars" style={`--pct:${pct(r.rating)}`}>★★★★★</span><span class="sc-of">out of 5</span></div>
+        </div>
+        <div class="sc-scores">
+          {r.scores.map((sc) => { const label = Array.isArray(sc) ? sc[0] : sc.label; const val = Array.isArray(sc) ? sc[1] : sc.value; return (
+            <div class="sc-row">
+              <span class="sc-label">{label}</span>
+              <span class="sc-bar"><span class="sc-fill" style={`width:${pct(val)};background:${r.color}`}></span></span>
+              <span class="sc-val">{val.toFixed(1)}</span>
+            </div>
+          ); })}
+        </div>
+        <a href="#pricing" class="btn btn-primary sc-cta">See pricing</a>
+        <span class="sc-best">Best for: {r.bestFor}</span>
+      </aside>
+    </div>
+  </section>
+
+  <!-- summary -->
+  <section class="section-sm">
+    <div class="container-narrow">
+      <div class="rev-body">
+        <h2>Overview</h2>
+        <p>{r.summary}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- pros / cons -->
+  <section class="section-sm bg-2">
+    <div class="container">
+      <div class="pc-grid">
+        <div class="pc-col pc-pro">
+          <h3><span class="pc-ico pro">+</span> What we like</h3>
+          <ul>{r.pros.map(p => <li>{p}</li>)}</ul>
+        </div>
+        <div class="pc-col pc-con">
+          <h3><span class="pc-ico con">–</span> What to watch</h3>
+          <ul>{r.cons.map(c => <li>{c}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- pricing -->
+  <section class="section-sm" id="pricing">
+    <div class="container">
+      <span class="h-eyebrow">Pricing</span>
+      <h2 class="display-md" style="margin:10px 0 6px;">{r.name} plans</h2>
+      <p class="muted" style="margin-bottom:28px;">Verified May 2026 — confirm current rates on the official site.</p>
+      <div class="price-grid">
+        {r.pricing.map(p => (
+          <div class={`price-card${p.popular ? ' price-pop' : ''}`}>
+            {p.popular && <span class="price-tag">Most popular</span>}
+            <span class="price-tier">{p.tier}</span>
+            <span class="price-amt" style={p.popular ? `color:${r.color}` : ''}>{p.price}</span>
+            <span class="price-note">{p.note}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- verdict -->
+  <section class="section-sm">
+    <div class="container-narrow">
+      <div class="verdict" style={`--c:${r.color}`}>
+        <div class="verdict-score">
+          <span class="vs-num">{r.rating.toFixed(1)}</span>
+          <span class="vs-stars stars" style={`--pct:${pct(r.rating)}`}>★★★★★</span>
+        </div>
+        <div class="verdict-copy">
+          <h3>The verdict</h3>
+          <p>{r.verdict}</p>
+          <a href={r.url || '#'} target="_blank" rel="sponsored noopener" class="btn btn-accent btn-lg verdict-cta">Visit {r.name} →</a>
+          <span class="verdict-aff">{r.affiliate}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- compare others -->
+  <section class="section-sm bg-2">
+    <div class="container">
+      <h2 class="display-md" style="margin-bottom:24px;">Compare with other tools</h2>
+      <div class="other-grid">
+        {others.map(o => (
+          <a href={`/reviews/${o.slug}/`} class="other">
+            <span class="other-logo" style={`background:${o.color}`}>{o.name.charAt(0)}</span>
+            <div><strong>{o.name}</strong><span class="other-rating">★ {o.rating.toFixed(1)} · {o.best}</span></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .disc-bar { background: var(--gold-soft); border-bottom: 1px solid #F0E2C8; padding: 11px 0; }
+    .disc-bar span { display: inline-flex; align-items: center; gap: 9px; font-size: 0.84rem; color: #8a6314; line-height: 1.4; }
+    .disc-bar svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .rev-hero { padding: 36px 0 48px; background: radial-gradient(70% 70% at 85% 0%, rgba(14,124,102,.06), transparent 70%); }
+    .rev-hero-in { display: grid; grid-template-columns: 1fr 360px; gap: 44px; align-items: start; }
+    .back { font-size: 0.9rem; font-weight: 600; color: var(--brand); }
+    .rev-id { display: flex; align-items: center; gap: 18px; margin: 22px 0 20px; }
+    .rev-hero-logo { width: 68px; height: 68px; border-radius: 17px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 2.1rem; display: grid; place-items: center; box-shadow: var(--sh-md); }
+    .rev-crumbs { font-size: 0.85rem; font-weight: 600; color: var(--ink-3); margin-bottom: 6px; }
+    .rev-hero-main .lead { max-width: 52ch; }
+
+    .rev-scorecard { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; box-shadow: var(--sh-md); position: sticky; top: 90px; }
+    .sc-top { display: flex; align-items: center; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+    .sc-num { font-family: var(--display); font-weight: 800; font-size: 3rem; line-height: 1; color: var(--ink); }
+    .sc-stars { font-size: 1.1rem; letter-spacing: 2px; display: block; }
+    .sc-of { font-size: 0.82rem; color: var(--ink-3); }
+    .sc-scores { display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
+    .sc-row { display: grid; grid-template-columns: 90px 1fr 32px; align-items: center; gap: 10px; }
+    .sc-label { font-size: 0.85rem; color: var(--ink-2); font-weight: 500; }
+    .sc-bar { height: 8px; background: var(--bg-3); border-radius: 100px; overflow: hidden; }
+    .sc-fill { display: block; height: 100%; border-radius: 100px; }
+    .sc-val { font-size: 0.85rem; font-weight: 700; text-align: right; }
+    .sc-cta { width: 100%; margin-bottom: 16px; }
+    .sc-best { font-size: 0.84rem; color: var(--ink-3); line-height: 1.45; display: block; }
+
+    .rev-body h2 { font-family: var(--display); font-size: 1.7rem; margin-bottom: 14px; }
+    .rev-body p { font-size: 1.12rem; line-height: 1.7; color: #2a2620; }
+
+    .pc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .pc-col { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px; }
+    .pc-col h3 { font-family: var(--sans); font-size: 1.15rem; display: flex; align-items: center; gap: 11px; margin-bottom: 18px; }
+    .pc-ico { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font-weight: 800; font-size: 1.1rem; }
+    .pc-ico.pro { background: var(--brand-soft); color: var(--brand); }
+    .pc-ico.con { background: var(--accent-soft); color: var(--accent-dark); }
+    .pc-col ul { list-style: none; }
+    .pc-col li { padding: 10px 0 10px 26px; position: relative; font-size: 0.96rem; color: var(--ink-2); border-bottom: 1px solid var(--line-soft); }
+    .pc-col li:last-child { border-bottom: none; }
+    .pc-pro li::before { content: '✓'; position: absolute; left: 0; color: var(--brand); font-weight: 800; }
+    .pc-con li::before { content: '!'; position: absolute; left: 4px; color: var(--accent-dark); font-weight: 800; }
+
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+    .price-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; text-align: center; position: relative; display: flex; flex-direction: column; gap: 8px; }
+    .price-pop { border: 2px solid var(--brand); box-shadow: var(--sh-md); }
+    .price-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--brand); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 100px; white-space: nowrap; }
+    .price-tier { font-weight: 700; color: var(--ink-2); font-size: 0.95rem; }
+    .price-amt { font-family: var(--display); font-weight: 800; font-size: 1.9rem; color: var(--ink); }
+    .price-note { font-size: 0.84rem; color: var(--ink-3); }
+
+    .verdict { display: grid; grid-template-columns: auto 1fr; gap: 28px; background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--c); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--sh-sm); }
+    .verdict-score { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 16px; border-right: 1px solid var(--line); }
+    .vs-num { font-family: var(--display); font-weight: 800; font-size: 3.2rem; line-height: 1; color: var(--c); }
+    .vs-stars { font-size: 1rem; letter-spacing: 1px; margin-top: 6px; }
+    .verdict-copy h3 { font-family: var(--display); font-size: 1.5rem; margin-bottom: 10px; }
+    .verdict-copy p { color: var(--ink-2); margin-bottom: 18px; }
+    .verdict-cta { margin-bottom: 10px; }
+    .verdict-aff { display: block; font-size: 0.8rem; color: var(--ink-3); }
+
+    .other-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .other { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 18px; transition: transform .15s, box-shadow .15s; }
+    .other:hover { transform: translateY(-3px); box-shadow: var(--sh-sm); }
+    .other-logo { width: 44px; height: 44px; border-radius: 11px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 1.3rem; display: grid; place-items: center; flex-shrink: 0; }
+    .other strong { display: block; font-size: 1.05rem; }
+    .other-rating { font-size: 0.84rem; color: var(--ink-3); }
+
+    @media (max-width: 860px) {
+      .rev-hero-in { grid-template-columns: 1fr; gap: 28px; }
+      .rev-scorecard { position: static; }
+      .pc-grid { grid-template-columns: 1fr; }
+      .verdict { grid-template-columns: 1fr; gap: 20px; }
+      .verdict-score { flex-direction: row; gap: 14px; border-right: none; border-bottom: 1px solid var(--line); padding: 0 0 16px; justify-content: flex-start; }
+      .other-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</Base>

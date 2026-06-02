@@ -1,0 +1,204 @@
+# HRSellers — Yönetici Paneli yapılandırması (Decap CMS)
+#
+# ÖNEMLI: Aşağıdaki iki yeri kendine göre düzenle:
+#   1) backend.repo  -> GitHub kullanıcı adın / depo adın  (örn: holyroin-create/hrsellers)
+#   2) backend.base_url -> kuracağın Cloudflare OAuth Worker adresi
+#      (KILAVUZ.md Bölüm F'deki adımlar bunu sana verecek)
+
+backend:
+  name: github
+  repo: holyroin-create/hrsellers      # <-- KENDI DEPONLA DEĞİŞTİR
+  branch: main
+  base_url: https://BURAYA-WORKER-ADRESI.workers.dev   # <-- WORKER ADRESINLE DEĞİŞTİR
+  auth_endpoint: auth
+
+# Commit mesajları (Türkçe)
+backend_commit_messages: &dummy {}
+
+publish_mode: simple
+locale: tr
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://fbatactics.com
+
+collections:
+  # ===================== REHBERLER =====================
+  - name: guides
+    label: "Rehberler"
+    label_singular: "Rehber"
+    description: "Sitedeki rehber makaleleri. Yeni ekleyebilir, var olanı düzenleyebilirsin."
+    folder: "src/cms-content/guides"
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}  ·  {{category}}"
+    sortable_fields: [order, title, updated]
+    fields:
+      - { label: "Sıra (küçük = önce)", name: order, widget: number, value_type: int, required: false, default: 50 }
+      - { label: "URL adı (slug)", name: slug, widget: string, hint: "Küçük harf ve tire. Örn: fba-reimbursements-2026" }
+      - label: "Kategori"
+        name: category
+        widget: select
+        options:
+          - { label: "Getting Started", value: "getting-started" }
+          - { label: "Shipping & Logistics", value: "shipping-logistics" }
+          - { label: "Fees & Reimbursements", value: "fees-reimbursements" }
+          - { label: "Account Management", value: "account-management" }
+          - { label: "Scaling Your Business", value: "scaling" }
+      - { label: "Başlık", name: title, widget: string }
+      - { label: "Özet (kart altında görünür)", name: excerpt, widget: text }
+      - { label: "Okuma süresi", name: time, widget: string, default: "7 min" }
+      - { label: "Güncelleme tarihi", name: updated, widget: string, default: "May 2026" }
+      - label: "İçerik blokları (sürükleyerek sıralayabilirsin)"
+        name: blocks
+        widget: list
+        types:
+          - label: "Paragraf"
+            name: p
+            widget: object
+            summary: "{{fields.text}}"
+            fields:
+              - { label: "Metin", name: text, widget: text }
+          - label: "Başlık (H2)"
+            name: h2
+            widget: object
+            summary: "▸ {{fields.text}}"
+            fields:
+              - { label: "Başlık", name: text, widget: string }
+          - label: "Bilgi kutusu"
+            name: callout
+            widget: object
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Tür", name: variant, widget: select, options: ["tip", "warning", "info"], default: "tip" }
+              - { label: "Kutu başlığı", name: title, widget: string, required: false }
+              - { label: "Metin", name: text, widget: text }
+          - label: "Adımlar (numaralı)"
+            name: steps
+            widget: object
+            fields:
+              - label: "Adımlar"
+                name: items
+                widget: list
+                fields:
+                  - { label: "Adım başlığı", name: title, widget: string }
+                  - { label: "Açıklama", name: text, widget: text }
+          - label: "Onay listesi"
+            name: checklist
+            widget: object
+            fields:
+              - { label: "Maddeler", name: items, widget: list, field: { label: "Madde", name: item, widget: string } }
+          - label: "Tablo"
+            name: table
+            widget: object
+            fields:
+              - { label: "Tablo açıklaması", name: caption, widget: string, required: false }
+              - { label: "Sütun başlıkları", name: headers, widget: list, field: { label: "Başlık", name: h, widget: string } }
+              - label: "Satırlar"
+                name: rows
+                widget: list
+                label_singular: "Satır"
+                fields:
+                  - { label: "Hücreler (sütun sırasıyla)", name: cells, widget: list, field: { label: "Hücre", name: c, widget: string } }
+          - label: "Akış şeması"
+            name: flow
+            widget: object
+            fields:
+              - { label: "Üst etiket", name: label, widget: string, required: false }
+              - { label: "Adımlar", name: steps, widget: list, field: { label: "Adım", name: s, widget: string } }
+          - label: "Vurgu istatistikleri"
+            name: keynum
+            widget: object
+            fields:
+              - label: "İstatistikler"
+                name: items
+                widget: list
+                fields:
+                  - { label: "Sayı / kısa metin", name: num, widget: string }
+                  - { label: "Açıklama", name: label, widget: string }
+      - { label: "İlgili rehber slug'ları", name: related, widget: list, required: false, field: { label: "Slug", name: slug, widget: string } }
+      - { label: "Bahsedilen araçlar", name: tools, widget: list, required: false, field: { label: "Araç adı", name: tool, widget: string } }
+
+  # ===================== ARAÇ İNCELEMELERİ =====================
+  - name: reviews
+    label: "Araç İncelemeleri"
+    label_singular: "İnceleme"
+    description: "Araç inceleme sayfaları."
+    folder: "src/cms-content/reviews"
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}}  ·  ⭐ {{rating}}"
+    sortable_fields: [order, name, rating]
+    fields:
+      - { label: "Sıra (küçük = önce)", name: order, widget: number, value_type: int, required: false, default: 50 }
+      - { label: "URL adı (slug)", name: slug, widget: string, hint: "Örn: helium-10" }
+      - { label: "Araç adı", name: name, widget: string }
+      - label: "Kategori"
+        name: category
+        widget: select
+        options:
+          - { label: "Research Tools", value: "research-tools" }
+          - { label: "Reimbursement Tools", value: "reimbursement-tools" }
+          - { label: "Repricing Tools", value: "repricing-tools" }
+          - { label: "Accounting & Tax", value: "accounting-tax" }
+      - { label: "Marka rengi (hex)", name: color, widget: string, default: "#0E7C66", hint: "Örn: #1E1B4B" }
+      - { label: "Resmi site / Visit linki", name: url, widget: string, required: false, hint: "Onaylanınca buraya affiliate linkini koy" }
+      - { label: "Durum", name: status, widget: hidden, default: "full" }
+      - { label: "Öne çıkan?", name: featured, widget: boolean, default: false }
+      - { label: "Editör seçimi? (yıldız rozet)", name: editorsChoice, widget: boolean, default: false }
+      - { label: "Puan (0-5)", name: rating, widget: number, value_type: float, min: 0, max: 5, step: 0.1 }
+      - { label: "Kısa etiket (best)", name: best, widget: string, hint: "Örn: Best overall" }
+      - { label: "Tek cümle özet", name: oneLiner, widget: string }
+      - { label: "Genel açıklama (Overview)", name: summary, widget: text }
+      - label: "Puan kırılımı (bar grafikler)"
+        name: scores
+        widget: list
+        fields:
+          - { label: "Kriter", name: label, widget: string }
+          - { label: "Puan (0-5)", name: value, widget: number, value_type: float, min: 0, max: 5, step: 0.1 }
+      - label: "Fiyat planları"
+        name: pricing
+        widget: list
+        label_singular: "Plan"
+        fields:
+          - { label: "Plan adı", name: tier, widget: string }
+          - { label: "Fiyat", name: price, widget: string }
+          - { label: "Not", name: note, widget: string, required: false }
+          - { label: "En popüler?", name: popular, widget: boolean, default: false }
+      - { label: "Artılar", name: pros, widget: list, field: { label: "Artı", name: pro, widget: string } }
+      - { label: "Eksiler", name: cons, widget: list, field: { label: "Eksi", name: con, widget: string } }
+      - { label: "Kime uygun (bestFor)", name: bestFor, widget: text }
+      - { label: "Sonuç (verdict)", name: verdict, widget: text }
+      - { label: "Affiliate notu", name: affiliate, widget: string, required: false }
+
+  # ===================== SAYFA METİNLERİ =====================
+  - name: site
+    label: "Sayfa Metinleri"
+    description: "Ana sayfa ve Hakkımızda sayfasının ana metinleri."
+    files:
+      - name: home
+        label: "Ana Sayfa (Hero)"
+        file: "src/cms-content/site/home.json"
+        fields:
+          - { label: "Üst rozet", name: heroPill, widget: string }
+          - { label: "Başlık (1. kısım)", name: heroTitle, widget: string, hint: "Sonunda boşluk bırak" }
+          - { label: "Başlık (renkli kısım)", name: heroTitleHighlight, widget: string }
+          - { label: "Alt metin", name: heroSubtitle, widget: text }
+          - { label: "Birincil buton yazısı", name: heroPrimaryCta, widget: string }
+          - { label: "İkincil buton yazısı", name: heroSecondaryCta, widget: string }
+      - name: about
+        label: "Hakkımızda Sayfası"
+        file: "src/cms-content/site/about.json"
+        fields:
+          - { label: "Başlık", name: title, widget: string }
+          - { label: "Giriş (lead)", name: lead, widget: text }
+          - { label: "Bölüm başlığı", name: bodyHeading, widget: string }
+          - { label: "Paragraf 1", name: bodyP1, widget: text }
+          - { label: "Paragraf 2", name: bodyP2, widget: text }

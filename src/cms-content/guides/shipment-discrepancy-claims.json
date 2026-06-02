@@ -1,0 +1,120 @@
+{
+  "slug": "shipment-discrepancy-claims",
+  "category": "shipping-logistics",
+  "title": "How to File Amazon Shipment Discrepancy Claims",
+  "excerpt": "You sent 500 units; Amazon received 488. Here is how to catch shorted shipments and recover the units that never got checked in.",
+  "time": "6 min",
+  "updated": "May 2026",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "A shipment discrepancy is the gap between what you sent to a fulfillment center and what Amazon recorded as received. Sometimes missing units arrive late and reconcile on their own. Sometimes they don't — and that's owed inventory you can claim, if you catch it in time."
+    },
+    {
+      "type": "flow",
+      "label": "The discrepancy lifecycle",
+      "steps": [
+        "You ship",
+        "Amazon receives",
+        "Reconcile counts",
+        "File if short",
+        "Reimbursed"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "What counts as a discrepancy"
+    },
+    {
+      "type": "p",
+      "text": "Not every mismatch is claimable, and not immediately. Amazon gives received quantities time to catch up as units are processed across the network. The claimable cases are the ones that remain short after that reconciliation period closes."
+    },
+    {
+      "type": "table",
+      "caption": "Common inbound discrepancy situations",
+      "headers": [
+        "Situation",
+        "Claimable?"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Units received < units shipped, after reconciliation window",
+            "Yes — file a claim"
+          ]
+        },
+        {
+          "cells": [
+            "Units still being checked in (within window)",
+            "Wait — may self-reconcile"
+          ]
+        },
+        {
+          "cells": [
+            "Carrier lost the shipment in transit",
+            "Depends on who arranged carrier"
+          ]
+        },
+        {
+          "cells": [
+            "Wrong items received / mixed SKUs",
+            "Yes — with evidence"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "How to reconcile and file"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Keep proof of what you sent",
+          "text": "Retain your shipment plan, packing list, and carrier documentation. Without proof of shipped quantity, you cannot substantiate a claim."
+        },
+        {
+          "title": "Wait out the reconciliation window",
+          "text": "Give Amazon the stated time to finish receiving before treating a shortage as final."
+        },
+        {
+          "title": "Pull the reconciliation view",
+          "text": "Compare shipped vs. received per SKU and identify what remains short."
+        },
+        {
+          "title": "Open a claim with evidence",
+          "text": "Attach your packing list and carrier proof. Be specific about SKU and quantity."
+        },
+        {
+          "title": "Track to resolution",
+          "text": "Follow up if the case stalls; note the response for your records."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "title": "Mind the clock",
+      "text": "With Amazon's shorter claim windows, an annual reconciliation will miss valid shortages. Check inbound shipments monthly so nothing expires unclaimed."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "title": "Make it routine",
+      "text": "Fold shipment reconciliation into the same monthly session you use for reimbursements. The data lives in adjacent reports, so doing them together saves time."
+    },
+    {
+      "type": "p",
+      "text": "For sellers with steady inbound volume, reconciliation tooling automates the matching and flags shortages automatically — worth it once the manual check outgrows a quick monthly pass."
+    }
+  ],
+  "related": [
+    "fba-reimbursements-2026"
+  ],
+  "tools": [
+    "Helium 10",
+    "Reconciliation tools"
+  ],
+  "order": 2
+}

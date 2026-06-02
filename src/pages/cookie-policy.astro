@@ -1,0 +1,22 @@
+---
+import Legal from '../layouts/Legal.astro';
+const sections = [
+  { id: 'what', h: 'What cookies are', body: [
+    "Cookies are small text files stored on your device when you visit a website. They help sites function, remember preferences, and understand usage." ] },
+  { id: 'how-we-use', h: 'How we use cookies', body: [
+    "We keep cookie use to a minimum. We may use:" ],
+    list: [
+      "Essential cookies that make the site work correctly.",
+      "Privacy-respecting analytics to understand which content is useful, ideally without tracking you across other sites.",
+      "Affiliate cookies set when you click an affiliate link, which let a partner attribute a referral to us. These are controlled by the partner, not by us." ] },
+  { id: 'managing', h: 'Managing cookies', body: [
+    "You can control or delete cookies through your browser settings, and set your browser to refuse cookies. Note that disabling some cookies may affect how parts of this or other sites function." ] },
+  { id: 'third-party', h: 'Third-party cookies', body: [
+    "When you click through to an affiliate partner or other third-party site, that site may set its own cookies under its own policy. We have no control over third-party cookies and encourage you to review those sites' policies." ] },
+  { id: 'updates', h: 'Updates', body: [
+    "We may update this Cookie Policy as our practices or applicable laws change. The date above reflects the latest revision." ] },
+];
+---
+<Legal title="Cookie Policy" updated="May 2026"
+  intro="How HRSellers uses cookies — kept as minimal and transparent as possible."
+  sections={sections} />

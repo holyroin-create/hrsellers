@@ -1,0 +1,109 @@
+---
+import Base from '../../layouts/Base.astro';
+import { marketplaces } from '../../data/marketplaces.mjs';
+
+const compareRows = [
+  { label: 'Monthly fee', key: 'monthly' },
+  { label: 'Selling fee', key: 'selling' },
+  { label: 'Fulfillment', key: 'fulfill' },
+  { label: 'Built-in traffic', key: 'traffic' },
+  { label: 'Best for', key: 'bestfor' },
+];
+const compare = {
+  amazon:      { monthly: '$39.99', selling: '8–15%+', fulfill: 'FBA', traffic: 'Highest', bestfor: 'Scale' },
+  ebay:        { monthly: 'From $5.95', selling: '~13.25%', fulfill: 'Self', traffic: 'High', bestfor: 'Resale' },
+  shopify:     { monthly: 'From $5', selling: '~3.2% all-in', fulfill: 'Self/3PL', traffic: 'You drive it', bestfor: 'Brands' },
+  etsy:        { monthly: '$0', selling: '~9.5%', fulfill: 'Self', traffic: 'Niche', bestfor: 'Handmade' },
+  walmart:     { monthly: '$0', selling: '6–15%', fulfill: 'WFS', traffic: 'Growing', bestfor: 'Expansion' },
+  aliexpress:  { monthly: '$0', selling: '5–10%', fulfill: 'Supplier', traffic: 'Global', bestfor: 'Dropship' },
+  'tiktok-shop': { monthly: '$0', selling: '~6–8%', fulfill: 'FBT', traffic: 'Viral', bestfor: 'Creators' },
+};
+---
+<Base title="Marketplaces — Compare Fees, Tools & Guides" description="Compare seller fees, fulfillment, and tools across Amazon, eBay, Shopify, Etsy, Walmart, AliExpress and TikTok Shop.">
+  <!-- page hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="pill"><span class="dot"></span> 7 platforms compared</span>
+      <h1 class="display-xl">Every marketplace, side by side.</h1>
+      <p class="lead">Each platform has its own fee math, audience, and rules. Use this as your map — then dive into a dedicated guide for the one you sell on.</p>
+    </div>
+  </section>
+
+  <!-- comparison table -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="table-wrap">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th class="cmp-corner">Platform</th>
+              {marketplaces.map(m => (
+                <th><span class="cmp-logo" style={`background:${m.color}`}>{m.letter}</span><span class="cmp-name">{m.name}</span></th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {compareRows.map(row => (
+              <tr>
+                <td class="cmp-label">{row.label}</td>
+                {marketplaces.map(m => (
+                  <td>{compare[m.slug][row.key]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="cmp-note">Figures are headline US rates verified May 2026 and simplified for comparison. Effective costs vary by category, size, and fulfillment choice — always confirm current rates on each platform's official fee page.</p>
+    </div>
+  </section>
+
+  <!-- cards -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head"><div><span class="h-eyebrow">Dedicated guides</span><h2 class="display-lg">Open a platform.</h2></div></div>
+      <div class="mp-cards">
+        {marketplaces.map(m => (
+          <a href={`/marketplaces/${m.slug}/`} class="mpc" style={`--c:${m.color}`}>
+            <span class="mpc-logo" style={`background:${m.color}`}>{m.letter}</span>
+            <div class="mpc-body">
+              <h3>{m.name}</h3>
+              <p>{m.tagline}</p>
+            </div>
+            <svg class="mpc-arr" viewBox="0 0 20 20" fill="none"><path d="M5 10h10M10 5l5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .page-hero { padding: 72px 0 40px; background: radial-gradient(60% 60% at 80% 0%, rgba(14,124,102,.08), transparent 70%); }
+    .page-hero h1 { margin: 20px 0 18px; max-width: 16ch; }
+    .page-hero .lead { max-width: 56ch; }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; box-shadow: var(--sh-sm); }
+    table.cmp { width: 100%; border-collapse: collapse; min-width: 860px; }
+    .cmp th, .cmp td { padding: 16px 18px; text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--line); }
+    .cmp thead th { background: var(--bg-2); vertical-align: bottom; }
+    .cmp-corner, .cmp-label { text-align: left !important; font-weight: 700; color: var(--ink); }
+    .cmp-label { background: #fff; }
+    .cmp-logo { display: block; width: 34px; height: 34px; border-radius: 9px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 1rem; display: grid; place-items: center; margin: 0 auto 8px; }
+    .cmp-name { font-weight: 700; color: var(--ink); font-size: 0.86rem; }
+    .cmp tbody tr:hover { background: var(--brand-soft); }
+    .cmp tbody td { color: var(--ink-2); }
+    .cmp-note { font-size: 0.82rem; color: var(--ink-3); margin-top: 16px; line-height: 1.5; max-width: 80ch; }
+
+    .mp-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .mpc { display: flex; align-items: center; gap: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px 24px; transition: transform .16s, box-shadow .16s, border-color .16s; }
+    .mpc:hover { transform: translateY(-3px); box-shadow: var(--sh-md); border-color: var(--c); }
+    .mpc-logo { width: 52px; height: 52px; border-radius: 13px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 1.5rem; display: grid; place-items: center; flex-shrink: 0; }
+    .mpc-body { flex-grow: 1; }
+    .mpc-body h3 { font-size: 1.2rem; margin-bottom: 3px; }
+    .mpc-body p { font-size: 0.9rem; color: var(--ink-3); }
+    .mpc-arr { width: 22px; height: 22px; color: var(--c); flex-shrink: 0; transition: transform .16s; }
+    .mpc:hover .mpc-arr { transform: translateX(4px); }
+
+    @media (max-width: 720px) { .mp-cards { grid-template-columns: 1fr; } }
+  </style>
+</Base>

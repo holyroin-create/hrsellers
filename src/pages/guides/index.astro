@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import { guideCategories, guides, guidesByCategory } from '../../data/guides.mjs';
+
+const ICONS = {
+  refund: '<svg viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4l2.5 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  truck: '<svg viewBox="0 0 24 24" fill="none"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="6" cy="18" r="2" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="18" r="2" stroke="currentColor" stroke-width="2"/></svg>',
+  rocket: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 3c3 1 5 4 5 8l-2 3H9l-2-3c0-4 2-7 5-8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9" r="1.6" fill="currentColor"/><path d="M9 17c-1 1-1.5 3-1.5 4 1 0 3-.5 4-1.5M15 17c1 1 1.5 3 1.5 4-1 0-3-.5-4-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  chart: '<svg viewBox="0 0 24 24" fill="none"><path d="M4 20V4M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 16l3-4 3 2 4-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+const featured = guides.slice(0, 4);
+---
+<Base title="Guides — Operational Playbooks for Sellers" description="Research-backed guides on FBA reimbursements, shipping discrepancies, marketplace selection, and scaling across platforms.">
+  <section class="page-hero">
+    <div class="container">
+      <span class="pill"><span class="dot"></span> The playbook</span>
+      <h1 class="display-xl">Operational guides that pay for themselves.</h1>
+      <p class="lead">No fluff, no recycled tips. The unglamorous mechanics of running a profitable marketplace business — grounded in real operations and kept current.</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="gc-grid">
+        {guideCategories.map(c => {
+          const count = guidesByCategory(c.id).length;
+          return (
+            <a href={`/guides/${c.id}/`} class="gc-card">
+              <span class="gc-icon" style={`background:${c.soft};color:${c.color}`} set:html={ICONS[c.icon]} />
+              <h3>{c.name}</h3>
+              <p>{c.desc}</p>
+              <span class="gc-count">{count > 0 ? `${count} guide${count > 1 ? 's' : ''}` : 'Coming soon'}</span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm bg-2">
+    <div class="container">
+      <div class="sec-head"><div><span class="h-eyebrow">Latest</span><h2 class="display-lg">Featured guides</h2></div></div>
+      <div class="ga-grid">
+        {featured.map(g => {
+          const cat = guideCategories.find(c => c.id === g.category);
+          return (
+            <a href={`/guides/${g.category}/${g.slug}/`} class="ga-card">
+              <div class="ga-thumb" style={`background:${cat.soft}`}>
+                <span class="ga-icon" style={`background:${cat.color}`} set:html={ICONS[cat.icon]} />
+              </div>
+              <div class="ga-body">
+                <span class="ga-cat" style={`color:${cat.color}`}>{cat.name}</span>
+                <h3>{g.title}</h3>
+                <p>{g.excerpt}</p>
+                <div class="ga-meta"><span>{g.time} read</span><span class="ga-arr">Read →</span></div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .page-hero { padding: 72px 0 40px; background: radial-gradient(60% 60% at 80% 0%, rgba(14,124,102,.08), transparent 70%); }
+    .page-hero h1 { margin: 20px 0 18px; max-width: 18ch; }
+    .page-hero .lead { max-width: 58ch; }
+    .gc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .gc-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px; transition: transform .16s, box-shadow .16s; }
+    .gc-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); }
+    .gc-icon { width: 52px; height: 52px; border-radius: 13px; display: grid; place-items: center; margin-bottom: 16px; }
+    .gc-icon svg { width: 26px; height: 26px; }
+    .gc-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .gc-card p { font-size: 0.92rem; color: var(--ink-3); margin-bottom: 16px; line-height: 1.55; }
+    .gc-count { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--brand-dark); background: var(--brand-soft); padding: 5px 12px; border-radius: 100px; }
+    .ga-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .ga-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; display: flex; flex-direction: column; transition: transform .18s, box-shadow .18s; }
+    .ga-card:hover { transform: translateY(-5px); box-shadow: var(--sh-md); }
+    .ga-thumb { height: 120px; display: grid; place-items: center; }
+    .ga-icon { width: 54px; height: 54px; border-radius: 14px; color: #fff; display: grid; place-items: center; box-shadow: var(--sh-sm); }
+    .ga-icon svg { width: 27px; height: 27px; }
+    .ga-body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+    .ga-cat { font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 9px; }
+    .ga-body h3 { font-size: 1.05rem; line-height: 1.25; margin-bottom: 8px; }
+    .ga-body p { font-size: 0.86rem; color: var(--ink-3); flex-grow: 1; line-height: 1.5; }
+    .ga-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 0.82rem; color: var(--ink-3); }
+    .ga-arr { color: var(--brand); font-weight: 600; }
+    @media (max-width: 980px) { .gc-grid { grid-template-columns: repeat(2, 1fr); } .ga-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .gc-grid, .ga-grid { grid-template-columns: 1fr; } }
+  </style>
+</Base>

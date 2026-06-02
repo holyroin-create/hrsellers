@@ -1,0 +1,29 @@
+---
+import Legal from '../layouts/Legal.astro';
+const sections = [
+  { id: 'intro', h: 'Introduction', body: [
+    "This Privacy Policy explains how HRSellers (\u201cwe\u201d, \u201cus\u201d) collects, uses, and protects information when you visit our website. By using the site, you agree to the practices described here." ] },
+  { id: 'data-we-collect', h: 'Information we collect', body: [
+    "We aim to collect as little personal data as possible. Depending on how you use the site, this may include:" ],
+    list: [
+      "Information you provide voluntarily, such as your email address when you subscribe to our newsletter or your message when you contact us.",
+      "Basic, privacy-respecting analytics about how the site is used (such as page views and general region), collected in aggregate.",
+      "Technical data such as browser type, sent automatically by your device when you load any website." ] },
+  { id: 'how-we-use', h: 'How we use information', body: [
+    "We use the limited information we collect to operate and improve the site, respond to your messages, send the newsletter you requested, and understand which content is useful.",
+    "We do not sell your personal information." ] },
+  { id: 'cookies', h: 'Cookies', body: [
+    "We use a minimal set of cookies and similar technologies. For details, see our Cookie Policy. Affiliate partners may set their own cookies when you click an affiliate link; those are governed by the partner's privacy policy." ] },
+  { id: 'third-parties', h: 'Third parties', body: [
+    "When you click an affiliate link or visit a linked site, that third party collects and processes data under its own privacy policy. We encourage you to review the policies of any site you visit.",
+    "We may use reputable service providers for analytics and email delivery; these providers process data on our behalf under their own terms." ] },
+  { id: 'your-rights', h: 'Your rights', body: [
+    "Depending on your location, you may have rights to access, correct, or delete your personal data, or to unsubscribe from communications at any time. To exercise any of these, contact us through the contact page.",
+    "You can unsubscribe from the newsletter using the link in any email we send." ] },
+  { id: 'contact', h: 'Contact', body: [
+    "For any privacy questions, reach us via the contact page or at the email address listed there." ] },
+];
+---
+<Legal title="Privacy Policy" updated="May 2026"
+  intro="We respect your privacy and collect as little data as we can. This policy explains what we collect and why."
+  sections={sections} />

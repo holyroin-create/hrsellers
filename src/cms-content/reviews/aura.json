@@ -1,0 +1,74 @@
+{
+  "slug": "aura",
+  "name": "Aura",
+  "category": "repricing-tools",
+  "color": "#7C3AED",
+  "url": "https://goaura.com",
+  "status": "full",
+  "featured": true,
+  "editorsChoice": false,
+  "rating": 4.3,
+  "best": "Best repricer",
+  "oneLiner": "AI-driven repricing built to win and hold the Buy Box.",
+  "summary": "Aura is an automated repricer that adjusts your prices in real time to compete for the Buy Box without constant manual monitoring. Its AI strategies and Hyperdrive feature react quickly to market changes, and pricing is tiered by your sales volume rather than listing count, with unlimited listings on every plan. It's a focused tool that earns its keep once you're competing on price.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4.3
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.2
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.4
+    },
+    {
+      "label": "Value",
+      "value": 4.2
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Early Stage",
+      "price": "$27/mo",
+      "note": "Up to $10K monthly sales",
+      "popular": false
+    },
+    {
+      "tier": "Essential",
+      "price": "$97/mo",
+      "note": "Up to $50K monthly sales",
+      "popular": true
+    },
+    {
+      "tier": "Plus",
+      "price": "$197/mo",
+      "note": "Up to $250K monthly sales",
+      "popular": false
+    },
+    {
+      "tier": "Pro",
+      "price": "$397/mo",
+      "note": "Up to $1M monthly sales",
+      "popular": false
+    }
+  ],
+  "pros": [
+    "AI repricing aimed at Buy Box win-rate",
+    "Unlimited listings on all plans",
+    "14-day free trial, no card required",
+    "Multi-marketplace support",
+    "17% discount on annual billing"
+  ],
+  "cons": [
+    "Only worth it once you compete on price",
+    "Higher tiers get expensive at volume",
+    "Repricing only — not an all-in-one"
+  ],
+  "bestFor": "Sellers competing for the Buy Box on contested listings who want pricing handled automatically.",
+  "verdict": "Skip repricing until you're holding the Buy Box consistently — but once you are, an automated repricer like Aura can lift win-rate meaningfully. Start on the trial and size your plan to your sales volume.",
+  "affiliate": "Recurring commission via the official affiliate program.",
+  "order": 8
+}

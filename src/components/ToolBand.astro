@@ -1,0 +1,51 @@
+---
+// "Full reviews" band — shown near the bottom of every page for tool discovery.
+import { reviews } from '../data/reviews.mjs';
+const list = reviews.filter(r => r.status === 'full');
+---
+<section class="toolband">
+  <div class="container">
+    <div class="tb-head">
+      <div>
+        <span class="h-eyebrow">Recommended tools</span>
+        <h2 class="display-md">Full reviews</h2>
+      </div>
+      <a href="/reviews/" class="tb-all">Compare all {list.length} →</a>
+    </div>
+    <div class="tb-scroll">
+      {list.map(r => (
+        <a href={`/reviews/${r.slug}/`} class="tb-card">
+          <div class="tb-top">
+            <span class="tb-logo" style={`background:${r.color}`}>{r.name.charAt(0)}</span>
+            {r.editorsChoice && <span class="tb-star">★</span>}
+          </div>
+          <h3 class="notranslate" translate="no">{r.name}</h3>
+          <span class="tb-rating"><span class="stars" style={`--pct:${(r.rating/5)*100}%`}>★★★★★</span> {r.rating.toFixed(1)}</span>
+          <span class="tb-best">{r.best}</span>
+          <span class="tb-link">Read review →</span>
+        </a>
+      ))}
+    </div>
+    <p class="tb-disc">Affiliate links — we may earn a commission at no extra cost to you. <a href="/affiliate-disclosure/">Disclosure</a>.</p>
+  </div>
+
+  <style>
+    .toolband { padding: 56px 0; background: var(--bg-2); border-top: 1px solid var(--line); }
+    .tb-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 24px; gap: 16px; }
+    .tb-all { font-weight: 600; color: var(--brand); white-space: nowrap; }
+    .tb-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(190px, 1fr); gap: 14px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+    .tb-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 18px; display: flex; flex-direction: column; scroll-snap-align: start; transition: transform .15s, box-shadow .15s, border-color .15s; }
+    .tb-card:hover { transform: translateY(-3px); box-shadow: var(--sh-md); border-color: var(--brand-soft2); }
+    .tb-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .tb-logo { width: 40px; height: 40px; border-radius: 10px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 1.2rem; display: grid; place-items: center; }
+    .tb-star { color: var(--gold); font-size: 1rem; }
+    .tb-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .tb-rating { font-size: 0.82rem; color: var(--ink-2); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+    .stars { position: relative; font-size: 0.88rem; letter-spacing: 1px; color: var(--bg-3); }
+    .stars::before { content: '★★★★★'; position: absolute; left: 0; top: 0; width: var(--pct); overflow: hidden; color: var(--gold); white-space: nowrap; }
+    .tb-best { font-size: 0.8rem; color: var(--ink-3); margin-bottom: 14px; flex-grow: 1; }
+    .tb-link { font-size: 0.85rem; font-weight: 600; color: var(--brand); }
+    .tb-disc { font-size: 0.8rem; color: var(--ink-3); margin-top: 16px; }
+    .tb-disc a { color: var(--brand); font-weight: 600; }
+  </style>
+</section>

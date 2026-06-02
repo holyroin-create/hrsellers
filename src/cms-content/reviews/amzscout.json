@@ -1,0 +1,61 @@
+{
+  "slug": "amzscout",
+  "name": "AMZScout",
+  "category": "research-tools",
+  "color": "#FF6A45",
+  "url": "https://www.amzscout.net",
+  "status": "full",
+  "featured": false,
+  "editorsChoice": false,
+  "rating": 4.3,
+  "best": "Budget pick",
+  "oneLiner": "A lower-cost entry point for product validation.",
+  "summary": "AMZScout covers the research essentials — product database, sales estimates, and a Chrome extension — at a friendlier price point than the big two, and frequently runs lifetime-deal promotions. It's a sensible starting tool for sellers validating their first products who don't yet need a full suite.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4.1
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.2
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.4
+    },
+    {
+      "label": "Value",
+      "value": 4.5
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Subscription",
+      "price": "Varies",
+      "note": "Confirm current rate on site",
+      "popular": false
+    },
+    {
+      "tier": "Lifetime deal",
+      "price": "Promo",
+      "note": "Often available — one-time payment",
+      "popular": true
+    }
+  ],
+  "pros": [
+    "Lower cost than Helium 10 / Jungle Scout",
+    "Frequent lifetime-deal promotions",
+    "Simple, approachable for beginners",
+    "Solid Chrome extension"
+  ],
+  "cons": [
+    "Less depth and fewer advanced tools",
+    "Smaller ecosystem & community",
+    "Data less battle-tested than market leaders"
+  ],
+  "bestFor": "Budget-conscious beginners validating their first products.",
+  "verdict": "Not the most powerful, but an honest budget option — especially if you can catch a lifetime deal. Verify current pricing on AMZScout's site, as it changes frequently.",
+  "affiliate": "30% commission via the official affiliate program.",
+  "order": 3
+}

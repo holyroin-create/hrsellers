@@ -1,0 +1,61 @@
+{
+  "slug": "getida",
+  "name": "GETIDA",
+  "category": "reimbursement-tools",
+  "color": "#0E7C66",
+  "url": "https://getida.com",
+  "status": "full",
+  "featured": true,
+  "editorsChoice": false,
+  "rating": 4.2,
+  "best": "Best reimbursement service",
+  "oneLiner": "Hands-off FBA reimbursement recovery on a success-fee model.",
+  "summary": "GETIDA is a dedicated FBA reimbursement service that audits your account for lost and damaged inventory and files claims on your behalf. It works on a commission model — you pay a percentage only on funds it actually recovers, with a free entry threshold — which aligns its incentives with yours. For sellers who don't want to run the monthly audit themselves, it's a genuinely hands-off way to recover money Amazon owes.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4.2
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.3
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.5
+    },
+    {
+      "label": "Value",
+      "value": 4.2
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Success fee",
+      "price": "% of recovery",
+      "note": "You pay only on funds recovered",
+      "popular": true
+    },
+    {
+      "tier": "Free threshold",
+      "price": "Free to start",
+      "note": "Confirm current terms on site",
+      "popular": false
+    }
+  ],
+  "pros": [
+    "Fully hands-off — they audit and file for you",
+    "Pay only on what they recover (aligned incentives)",
+    "Free to start below a threshold",
+    "Specialists in the tighter 2025+ claim rules"
+  ],
+  "cons": [
+    "Commission means less than 100% of recovery",
+    "Less control than filing claims yourself",
+    "Most valuable at higher inventory volume"
+  ],
+  "bestFor": "Sellers with steady FBA volume who would rather outsource reimbursement recovery than run it monthly.",
+  "verdict": "If you're leaving reimbursement money unclaimed because you don't have time to audit, a success-fee service like GETIDA is close to free money — you only pay when they win. Confirm current commission terms before signing up.",
+  "affiliate": "Referral program available — confirm current terms.",
+  "order": 9
+}

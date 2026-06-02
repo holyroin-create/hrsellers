@@ -1,0 +1,61 @@
+{
+  "slug": "keepa",
+  "name": "Keepa",
+  "category": "research-tools",
+  "color": "#FF8C1A",
+  "url": "https://keepa.com",
+  "status": "full",
+  "featured": false,
+  "editorsChoice": false,
+  "rating": 4.4,
+  "best": "Best for price tracking",
+  "oneLiner": "The definitive Amazon price-history and sales-rank tracker.",
+  "summary": "Keepa does one thing better than anyone: it shows you how a product's price and sales rank have moved over time. The free Chrome extension overlays history charts directly on Amazon listings; the paid plan adds price-drop alerts, stock monitoring, and category-wide tracking. It has no keyword or PPC tools — but for sourcing, arbitrage, and wholesale decisions, it's indispensable.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.8
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.4
+    },
+    {
+      "label": "Value",
+      "value": 4.7
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Free",
+      "price": "$0",
+      "note": "History charts via Chrome extension",
+      "popular": false
+    },
+    {
+      "tier": "Paid",
+      "price": "~$20/mo",
+      "note": "Alerts, stock & category tracking",
+      "popular": true
+    }
+  ],
+  "pros": [
+    "Unmatched price & sales-rank history",
+    "Generous free Chrome extension",
+    "Inexpensive paid plan",
+    "Essential for arbitrage & wholesale sourcing"
+  ],
+  "cons": [
+    "No keyword research",
+    "No PPC or listing tools",
+    "Narrow scope — a specialist, not a suite"
+  ],
+  "bestFor": "Arbitrage, wholesale, and any seller making sourcing or pricing decisions from historical data.",
+  "verdict": "Not a research suite and doesn't try to be. As a price-history specialist it's the best there is, and the price makes it an easy addition to almost any seller's stack.",
+  "affiliate": "Affiliate availability varies — confirm on Keepa’s site.",
+  "order": 5
+}

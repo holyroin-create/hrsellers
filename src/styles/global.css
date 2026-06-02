@@ -1,0 +1,131 @@
+/* ============================================================
+   DESIGN SYSTEM — Marketplace seller platform
+   Corporate, clean, premium. Light theme.
+   ============================================================ */
+
+:root {
+  /* ---- Color: ink / text ---- */
+  --ink:        #0F1B2D;   /* near-black, deep navy */
+  --ink-2:      #38485C;   /* secondary text */
+  --ink-3:      #6B7A8D;   /* muted / captions */
+  --ink-inv:    #FFFFFF;
+
+  /* ---- Color: brand (deep emerald = commerce / growth / trust) ---- */
+  --brand:      #0E7C66;
+  --brand-dark: #0A5B4B;
+  --brand-700:  #0C6B58;
+  --brand-soft: #E7F4F0;
+  --brand-soft2:#D3EAE3;
+
+  /* ---- Color: accent (warm coral = CTA pop) ---- */
+  --accent:     #FF6A45;
+  --accent-dark:#E5512E;
+  --accent-soft:#FFEDE7;
+
+  /* ---- Color: support ---- */
+  --gold:       #E8A33D;
+  --gold-soft:  #FBF0DC;
+
+  /* ---- Surfaces ---- */
+  --bg:         #FFFFFF;
+  --bg-2:       #F6F8F9;   /* cool light section bg */
+  --bg-3:       #EDF1F3;
+  --bg-ink:     #0F1B2D;   /* dark footer */
+
+  /* ---- Lines ---- */
+  --line:       #E3E8EC;
+  --line-2:     #D2DAE0;
+
+  /* ---- Type ---- */
+  --display: 'Bricolage Grotesque', Georgia, serif;
+  --sans:    'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+
+  /* ---- Radius ---- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 26px;
+
+  /* ---- Shadow ---- */
+  --sh-sm: 0 1px 2px rgba(15,27,45,.05), 0 1px 3px rgba(15,27,45,.07);
+  --sh-md: 0 4px 10px rgba(15,27,45,.06), 0 12px 28px rgba(15,27,45,.07);
+  --sh-lg: 0 24px 60px rgba(15,27,45,.13);
+
+  /* ---- Layout ---- */
+  --maxw: 1180px;
+  --pad: 32px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.62;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ---- Layout helpers ---- */
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 var(--pad); }
+.section { padding: 88px 0; }
+.section-sm { padding: 56px 0; }
+.bg-2 { background: var(--bg-2); }
+.bg-3 { background: var(--bg-3); }
+
+/* ---- Typography scale ---- */
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); }
+.display-xl { font-size: clamp(2.6rem, 5.2vw, 4.1rem); line-height: 1.02; letter-spacing: -0.03em; }
+.display-lg { font-size: clamp(2rem, 4vw, 3rem); }
+.display-md { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.h-eyebrow {
+  font-family: var(--sans); font-weight: 600; font-size: 0.82rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand);
+}
+.lead { font-size: clamp(1.08rem, 1.6vw, 1.28rem); color: var(--ink-2); line-height: 1.6; }
+.muted { color: var(--ink-3); }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  font-family: var(--sans); font-weight: 600; font-size: 0.97rem;
+  padding: 14px 26px; border-radius: var(--r-md); border: 1.5px solid transparent;
+  cursor: pointer; transition: transform .16s ease, box-shadow .16s ease, background .16s, border-color .16s, color .16s;
+  white-space: nowrap;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn-primary { background: var(--brand); color: #fff; box-shadow: var(--sh-sm); }
+.btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); box-shadow: var(--sh-md); }
+.btn-accent { background: var(--accent); color: #fff; box-shadow: var(--sh-sm); }
+.btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--sh-md); }
+.btn-ghost { background: #fff; color: var(--ink); border-color: var(--line-2); }
+.btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+.btn-lg { padding: 16px 32px; font-size: 1.04rem; }
+
+/* ---- Pills / badges ---- */
+.pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 100px;
+  background: var(--brand-soft); color: var(--brand-dark);
+}
+.pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brand); }
+.pill-accent { background: var(--accent-soft); color: var(--accent-dark); }
+.pill-gold { background: var(--gold-soft); color: #9a6612; }
+
+/* ---- Reveal animation ---- */
+.reveal { opacity: 0; transform: translateY(18px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+.d1 { animation-delay: .07s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .21s; }
+.d4 { animation-delay: .28s; } .d5 { animation-delay: .35s; } .d6 { animation-delay: .42s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
+
+@media (max-width: 720px) {
+  :root { --pad: 20px; }
+  .section { padding: 56px 0; }
+  body { font-size: 16px; }
+}

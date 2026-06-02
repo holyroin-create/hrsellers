@@ -1,0 +1,61 @@
+{
+  "slug": "zonguru",
+  "name": "ZonGuru",
+  "category": "research-tools",
+  "color": "#00B5B0",
+  "url": "https://www.zonguru.com",
+  "status": "full",
+  "featured": false,
+  "editorsChoice": false,
+  "rating": 4.2,
+  "best": "Beginner-friendly research",
+  "oneLiner": "A slick research suite with standout review-sentiment analysis.",
+  "summary": "ZonGuru blends product and keyword research with listing optimization in a clean, approachable dashboard. Its standout is the Love/Hate tool, which mines competitor review sentiment to surface specific product-improvement opportunities. It's a genuine alternative to the big suites, though its keyword index is smaller, so sellers in obscure niches may hit data gaps.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4.2
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.1
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.5
+    },
+    {
+      "label": "Value",
+      "value": 4.3
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Researcher",
+      "price": "$39/mo",
+      "note": "Research & listing tools",
+      "popular": true
+    },
+    {
+      "tier": "Seller",
+      "price": "$49/mo",
+      "note": "Advanced optimization suite",
+      "popular": false
+    }
+  ],
+  "pros": [
+    "Clean, beginner-friendly interface",
+    "Love/Hate review-sentiment analysis",
+    "Interactive demo + 7-day free trial",
+    "Hijacker and rank-change alerts"
+  ],
+  "cons": [
+    "Smaller keyword index than Helium 10",
+    "Fewer tools than the top all-in-one suites",
+    "Data gaps possible in niche categories"
+  ],
+  "bestFor": "New private-label sellers who want research plus listing tools in one simple dashboard.",
+  "verdict": "A polished, approachable suite that punches above its price — especially for sellers who value review-sentiment insight. Power users may still prefer the depth of the market leaders.",
+  "affiliate": "Recurring commission via the official affiliate program.",
+  "order": 4
+}

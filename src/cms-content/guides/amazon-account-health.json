@@ -1,0 +1,146 @@
+{
+  "slug": "amazon-account-health",
+  "category": "account-management",
+  "title": "Amazon Account Health: The Metrics That Keep You Selling",
+  "excerpt": "One bad metric can suppress your listings or suspend your account. Here are the 2026 thresholds that matter and how to stay safely inside them.",
+  "time": "7 min",
+  "updated": "May 2026",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Your Account Health Rating (AHR) is the single number Amazon uses to decide whether you keep selling. It rolls up customer-service, shipping, and policy-compliance metrics into a score, and crossing the wrong threshold can suppress listings, cost you the Buy Box, or deactivate your account — sometimes before any warning email arrives."
+    },
+    {
+      "type": "keynum",
+      "items": [
+        {
+          "num": "200+",
+          "label": "AHR score for healthy standing (scale 0–1000); new sellers start at 200"
+        },
+        {
+          "num": "< 1%",
+          "label": "Order Defect Rate ceiling — aim for under 0.5%"
+        },
+        {
+          "num": "60-day",
+          "label": "Rolling window most customer metrics are measured over"
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "The thresholds that matter in 2026"
+    },
+    {
+      "type": "p",
+      "text": "Each metric has a hard line. Falling below standard on even one can trigger review across your whole account. These are the current US thresholds — verify them in your Account Health dashboard, as Amazon adjusts enforcement periodically."
+    },
+    {
+      "type": "table",
+      "caption": "Key Amazon seller metrics and thresholds (verified May 2026 — confirm in Seller Central)",
+      "headers": [
+        "Metric",
+        "Threshold",
+        "What it measures"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Order Defect Rate (ODR)",
+            "Below 1%",
+            "Negative feedback, A-to-Z claims, chargebacks"
+          ]
+        },
+        {
+          "cells": [
+            "Pre-fulfillment cancel rate",
+            "Below 2.5%",
+            "Orders you cancel before shipping"
+          ]
+        },
+        {
+          "cells": [
+            "Late Shipment Rate",
+            "Below 4%",
+            "Orders confirmed after the ship-by date"
+          ]
+        },
+        {
+          "cells": [
+            "Valid Tracking Rate",
+            "Above 95%",
+            "Shipments with working tracking (all carriers)"
+          ]
+        },
+        {
+          "cells": [
+            "On-Time Delivery Rate",
+            "Above 90%",
+            "Deliveries arriving by the promised date"
+          ]
+        },
+        {
+          "cells": [
+            "Invoice Defect Rate (B2B)",
+            "Below 5%",
+            "Missing/late invoices on Business orders"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "title": "FBA removes three of these",
+      "text": "If you use FBA, Amazon handles fulfillment and delivery — so the shipping metrics (late shipment, tracking, on-time delivery) come off your risk profile. One reason FBA sellers get smoother metrics automatically."
+    },
+    {
+      "type": "h2",
+      "text": "ODR is the one to guard most"
+    },
+    {
+      "type": "p",
+      "text": "Order Defect Rate is the heavyweight. It combines 1- and 2-star feedback, A-to-Z Guarantee claims, and chargebacks over a rolling 60-day window. Multiple problems on one order count as a single defect. The math is unforgiving at low volume: with 1,000 orders, just 11 defects puts you over 1%."
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "title": "The cost hits before any warning",
+      "text": "Sellers above 1% ODR are automatically disqualified from the Buy Box — and roughly 82% of Amazon sales go through it. You lose most of your sales before Amazon sends a single email. That's why prevention beats appeals."
+    },
+    {
+      "type": "h2",
+      "text": "A weekly health routine"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Open the dashboard weekly, not monthly",
+          "text": "A violation caught on Tuesday is far cheaper to fix than one Amazon flags on Friday. Check the Account Health page every week."
+        },
+        {
+          "title": "Reply to customers within 24 hours",
+          "text": "Fast responses prevent complaints from escalating into A-to-Z claims and negative feedback — including weekends."
+        },
+        {
+          "title": "Watch policy compliance, not just service",
+          "text": "Most sellers fixate on ODR and shipping, then get blindsided by an IP or restricted-product warning. These can hit hard."
+        },
+        {
+          "title": "Keep a buffer",
+          "text": "Target metrics well below the limits (ODR under 0.5%, late shipment under 2%) so a single bad week doesn’t push you over."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "If your account is already flagged, the next guide walks through building a Plan of Action to recover."
+    }
+  ],
+  "related": [
+    "account-suspension-recovery"
+  ],
+  "tools": [],
+  "order": 5
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "a2x",
+  "name": "A2X",
+  "category": "accounting-tax",
+  "color": "#0071DC",
+  "url": "https://www.a2xaccounting.com",
+  "status": "full",
+  "featured": false,
+  "editorsChoice": false,
+  "rating": 4.4,
+  "best": "Best for clean books",
+  "oneLiner": "The bridge between your marketplace payouts and your accounting software.",
+  "summary": "A2X solves a specific, painful problem: marketplace payouts arrive as lump sums that mix sales, fees, taxes, and refunds. A2X automatically breaks those payouts down and posts them cleanly into QuickBooks or Xero, so your books actually reconcile. For sellers (or their accountants) who care about accurate financials, it removes hours of manual categorization.",
+  "scores": [
+    {
+      "label": "Features",
+      "value": 4.3
+    },
+    {
+      "label": "Data accuracy",
+      "value": 4.7
+    },
+    {
+      "label": "Ease of use",
+      "value": 4.2
+    },
+    {
+      "label": "Value",
+      "value": 4.3
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Entry",
+      "price": "From ~$19/mo",
+      "note": "One channel, low order volume",
+      "popular": true
+    },
+    {
+      "tier": "Scales up",
+      "price": "To $899/mo",
+      "note": "Multiple channels, high volume",
+      "popular": false
+    }
+  ],
+  "pros": [
+    "Accurate payout reconciliation into QuickBooks/Xero",
+    "Separates sales, fees, taxes & refunds correctly",
+    "Supports Amazon, Shopify, and more",
+    "Saves accountants significant manual work"
+  ],
+  "cons": [
+    "Does one job — needs accounting software alongside it",
+    "Pricing scales steeply with order volume",
+    "Overkill for very small sellers"
+  ],
+  "bestFor": "Sellers who use QuickBooks or Xero and want their marketplace numbers to reconcile properly.",
+  "verdict": "If you take your bookkeeping seriously, A2X is close to essential — it turns messy lump-sum payouts into clean, accurate entries. Tiny sellers can wait; everyone else benefits.",
+  "affiliate": "Recurring commission via the official partner program.",
+  "order": 7
+}

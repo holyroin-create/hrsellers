@@ -1,0 +1,383 @@
+---
+import home from '../cms-content/site/home.json';
+import Base from '../layouts/Base.astro';
+
+const ICONS = {
+  refund: '<svg viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4l2.5 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  truck: '<svg viewBox="0 0 24 24" fill="none"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="6" cy="18" r="2" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="18" r="2" stroke="currentColor" stroke-width="2"/></svg>',
+  rocket: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 3c3 1 5 4 5 8l-2 3H9l-2-3c0-4 2-7 5-8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9" r="1.6" fill="currentColor"/><path d="M9 17c-1 1-1.5 3-1.5 4 1 0 3-.5 4-1.5M15 17c1 1 1.5 3 1.5 4-1 0-3-.5-4-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  chart: '<svg viewBox="0 0 24 24" fill="none"><path d="M4 20V4M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 16l3-4 3 2 4-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  search: '<svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m17 17 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  flask: '<svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 15h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  eye: '<svg viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>',
+};
+const iconSvg = (k) => ICONS[k] || '';
+
+const marketplaces = [
+  { slug: 'amazon', name: 'Amazon', color: '#FF9900', letter: 'a', blurb: 'FBA, fees, reimbursements & research tools', tag: 'Most covered', feat: true },
+  { slug: 'ebay', name: 'eBay', color: '#E53238', letter: 'e', blurb: 'Listings, promoted ads & seller standards' },
+  { slug: 'shopify', name: 'Shopify', color: '#5E8E3E', letter: 'S', blurb: 'Store setup, apps & conversion' },
+  { slug: 'etsy', name: 'Etsy', color: '#F1641E', letter: 'E', blurb: 'Handmade, SEO & fee math' },
+  { slug: 'walmart', name: 'Walmart', color: '#0071DC', letter: 'W', blurb: 'WFS, approval & catalog' },
+  { slug: 'aliexpress', name: 'AliExpress', color: '#E62E04', letter: 'A', blurb: 'Sourcing & dropshipping' },
+  { slug: 'tiktok-shop', name: 'TikTok Shop', color: '#111', letter: 'T', blurb: 'Social commerce & creators' },
+];
+
+const guides = [
+  { cat: 'Fees & Reimbursements', color: '#0E7C66', soft: '#E7F4F0', icon: 'refund', title: 'The FBA Reimbursement Money Most Sellers Never Claim', time: '8 min', href: '/guides/fees-reimbursements/fba-reimbursements-2026/' },
+  { cat: 'Shipping & Logistics', color: '#0071DC', soft: '#E6F1FB', icon: 'truck', title: 'How to File Amazon Shipment Discrepancy Claims', time: '6 min', href: '/guides/shipping-logistics/shipment-discrepancy-claims/' },
+  { cat: 'Getting Started', color: '#F1641E', soft: '#FFEDE4', icon: 'rocket', title: 'Choosing Your First Marketplace: A Decision Framework', time: '7 min', href: '/guides/getting-started/choosing-first-marketplace/' },
+  { cat: 'Scaling', color: '#E8A33D', soft: '#FBF0DC', icon: 'chart', title: 'When to Add a Second Sales Channel (and Which One)', time: '9 min', href: '/guides/scaling/second-sales-channel/' },
+];
+
+const tools = [
+  { name: 'Helium 10', color: '#1E1B4B', rating: 4.8, blurb: 'The all-in-one research suite most sellers benchmark against.', stat: '25% recurring', best: 'Best overall', feat: true },
+  { name: 'Jungle Scout', color: '#3DAE2B', rating: 4.6, blurb: 'Clean product & market intelligence for sourcing decisions.', stat: '100% first sale', best: 'Best for research' },
+  { name: 'AMZScout', color: '#FF6A45', rating: 4.3, blurb: 'A lower-cost entry point for product validation.', stat: '30% commission', best: 'Budget pick' },
+];
+---
+<Base>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="pill reveal"><span class="dot"></span> {home.heroPill}</span>
+        <h1 class="display-xl reveal d1">{home.heroTitle}<span class="grad">{home.heroTitleHighlight}</span></h1>
+        <p class="lead reveal d2">{home.heroSubtitle}</p>
+        <div class="hero-cta reveal d3">
+          <a href="/guides/" class="btn btn-primary btn-lg">{home.heroPrimaryCta}
+            <svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="/reviews/" class="btn btn-ghost btn-lg">{home.heroSecondaryCta}</a>
+        </div>
+        <div class="hero-trust reveal d4">
+          <div class="ht-item"><span class="ht-num">7</span><span class="ht-lbl">marketplaces<br/>covered</span></div>
+          <div class="ht-sep"></div>
+          <div class="ht-item"><span class="ht-num">100%</span><span class="ht-lbl">independent<br/>research</span></div>
+          <div class="ht-sep"></div>
+          <div class="ht-item"><span class="ht-num">Free</span><span class="ht-lbl">no paywall,<br/>no email gate</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art reveal d3" aria-hidden="true">
+        <svg viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E7C66"/><stop offset="1" stop-color="#0A5B4B"/></linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A6B"/><stop offset="1" stop-color="#FF6A45"/></linearGradient>
+          </defs>
+          <rect x="36" y="60" width="388" height="300" rx="20" fill="#fff" stroke="#E3E8EC"/>
+          <rect x="36" y="60" width="388" height="56" rx="20" fill="#F6F8F9"/><rect x="36" y="96" width="388" height="20" fill="#F6F8F9"/>
+          <circle cx="62" cy="88" r="5" fill="#FF6A45"/><circle cx="80" cy="88" r="5" fill="#E8A33D"/><circle cx="98" cy="88" r="5" fill="#0E7C66"/>
+          <rect x="300" y="80" width="100" height="16" rx="8" fill="#E3E8EC"/>
+          <text x="64" y="150" font-family="IBM Plex Sans" font-size="11" font-weight="600" fill="#6B7A8D">REVENUE · 30 DAYS</text>
+          <text x="64" y="178" font-family="Bricolage Grotesque" font-size="26" font-weight="800" fill="#0F1B2D">$48,920</text>
+          <rect x="200" y="158" width="60" height="20" rx="10" fill="#E7F4F0"/><text x="212" y="172" font-family="IBM Plex Sans" font-size="11" font-weight="700" fill="#0A5B4B">+18%</text>
+          <rect x="64" y="250" width="22" height="56" rx="5" fill="#D3EAE3"/><rect x="94" y="232" width="22" height="74" rx="5" fill="#D3EAE3"/><rect x="124" y="244" width="22" height="62" rx="5" fill="#D3EAE3"/><rect x="154" y="214" width="22" height="92" rx="5" fill="url(#g1)"/><rect x="184" y="226" width="22" height="80" rx="5" fill="#D3EAE3"/><rect x="214" y="200" width="22" height="106" rx="5" fill="url(#g1)"/><rect x="244" y="222" width="22" height="84" rx="5" fill="#D3EAE3"/>
+          <path d="M286 250 L316 232 L346 240 L376 206 L400 220" stroke="url(#g2)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="376" cy="206" r="5" fill="#FF6A45" stroke="#fff" stroke-width="2"/>
+          <rect x="300" y="120" width="108" height="92" rx="14" fill="#fff" stroke="#E3E8EC"/>
+          <text x="316" y="142" font-family="IBM Plex Sans" font-size="10" font-weight="600" fill="#6B7A8D">CHANNELS</text>
+          <rect x="316" y="152" width="20" height="20" rx="5" fill="#FF9900"/><text x="322" y="167" font-family="Bricolage Grotesque" font-size="12" font-weight="800" fill="#fff">a</text>
+          <rect x="342" y="152" width="20" height="20" rx="5" fill="#E53238"/><text x="349" y="167" font-family="Bricolage Grotesque" font-size="11" font-weight="800" fill="#fff">e</text>
+          <rect x="368" y="152" width="20" height="20" rx="5" fill="#5E8E3E"/><text x="374" y="167" font-family="Bricolage Grotesque" font-size="11" font-weight="800" fill="#fff">S</text>
+          <rect x="316" y="178" width="20" height="20" rx="5" fill="#F1641E"/><text x="323" y="193" font-family="Bricolage Grotesque" font-size="11" font-weight="800" fill="#fff">E</text>
+          <rect x="342" y="178" width="20" height="20" rx="5" fill="#0071DC"/><text x="348" y="193" font-family="Bricolage Grotesque" font-size="11" font-weight="800" fill="#fff">W</text>
+          <rect x="368" y="178" width="20" height="20" rx="5" fill="#111"/><text x="375" y="193" font-family="Bricolage Grotesque" font-size="11" font-weight="800" fill="#fff">T</text>
+          <g class="float-badge">
+            <rect x="20" y="300" width="168" height="74" rx="16" fill="#0F1B2D"/>
+            <circle cx="52" cy="337" r="18" fill="#0E7C66"/><path d="M45 337l5 5 9-10" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="80" y="330" font-family="IBM Plex Sans" font-size="10" font-weight="600" fill="#8B97A4">RECOVERED</text>
+            <text x="80" y="352" font-family="Bricolage Grotesque" font-size="18" font-weight="800" fill="#fff">$3,140</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="logo-strip reveal d5">
+        <span class="ls-label">Guides &amp; reviews covering</span>
+        <div class="ls-items">
+          {marketplaces.map(m => (
+            <span class="ls-item"><span class="ls-ico" style={`background:${m.color}`}>{m.letter}</span> {m.name}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARKETPLACES ===== -->
+  <section class="section" id="home-marketplaces">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="h-eyebrow">Explore by marketplace</span>
+          <h2 class="display-lg">Pick your platform, get the playbook.</h2>
+        </div>
+        <p class="sec-head-sub">Every marketplace has its own rules, fees, and quirks. Start where you sell — or where you're thinking of expanding.</p>
+      </div>
+
+      <div class="mp-grid">
+        {marketplaces.map(m => (
+          <a href={`/marketplaces/${m.slug}/`} class={`mp-card${m.feat ? ' mp-feat' : ''}`}>
+            <div class="mp-top">
+              <span class="mp-logo" style={`background:${m.color}`}>{m.letter}</span>
+              {m.tag && <span class="mp-tag">{m.tag}</span>}
+            </div>
+            <h3 class="mp-name">{m.name}</h3>
+            <p class="mp-blurb">{m.blurb}</p>
+            <span class="mp-link">Open guide
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        ))}
+        <a href="/marketplaces/" class="mp-card mp-all">
+          <div class="mp-all-inner">
+            <span class="mp-all-plus">+</span>
+            <h3 class="mp-name">All marketplaces</h3>
+            <p class="mp-blurb">Compare fees &amp; tools across platforms</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED GUIDES ===== -->
+  <section class="section bg-2" id="home-guides">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="h-eyebrow">From the playbook</span>
+          <h2 class="display-lg">Operational guides that pay for themselves.</h2>
+        </div>
+        <a href="/guides/" class="btn btn-ghost">All guides →</a>
+      </div>
+
+      <div class="guide-grid">
+        {guides.map(g => (
+          <a href={g.href} class="guide-card">
+            <div class="guide-thumb" style={`background:${g.soft}`}>
+              <span class="guide-icon" style={`background:${g.color}`} set:html={iconSvg(g.icon)} />
+            </div>
+            <div class="guide-body">
+              <span class="guide-cat" style={`color:${g.color}`}>{g.cat}</span>
+              <h3 class="guide-title">{g.title}</h3>
+              <div class="guide-meta"><span class="gm-time">{g.time} read</span><span class="gm-arrow">Read →</span></div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOOL COMPARISON ===== -->
+  <section class="section" id="home-tools">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="h-eyebrow">Tool reviews</span>
+          <h2 class="display-lg">The software worth the money.</h2>
+        </div>
+        <p class="sec-head-sub">Judged on the problem each one solves — not the commission it pays. Affiliate links are always disclosed.</p>
+      </div>
+
+      <div class="tool-grid">
+        {tools.map(t => (
+          <div class={`tool-card${t.feat ? ' tool-feat' : ''}`}>
+            {t.feat && <span class="tool-ribbon">★ Editor's choice</span>}
+            <div class="tool-head">
+              <span class="tool-logo" style={`background:${t.color}`}>{t.name.charAt(0)}</span>
+              <div>
+                <h3 class="tool-name">{t.name}</h3>
+                <span class="tool-best">{t.best}</span>
+              </div>
+            </div>
+            <div class="tool-rating">
+              <span class="stars" style={`--pct:${(t.rating/5)*100}%`} aria-label={`${t.rating} out of 5`}>★★★★★</span>
+              <span class="rating-num">{t.rating.toFixed(1)}</span>
+            </div>
+            <p class="tool-blurb">{t.blurb}</p>
+            <div class="tool-stat">
+              <span class="ts-dot"></span>
+              <span><strong>{t.stat}</strong> affiliate payout</span>
+            </div>
+            <a href="/reviews/" class={`btn ${t.feat ? 'btn-primary' : 'btn-ghost'} tool-btn`}>Read full review</a>
+          </div>
+        ))}
+      </div>
+      <div class="tool-compare-cta">
+        <a href="/reviews/" class="btn btn-accent btn-lg">See the full comparison table →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST / EDITORIAL ===== -->
+  <section class="section bg-2">
+    <div class="container">
+      <div class="trust-wrap">
+        <div class="trust-copy">
+          <span class="h-eyebrow">Why trust HRSellers</span>
+          <h2 class="display-lg">No hype. Just what works.</h2>
+          <p class="lead">Most seller advice online is written to sell you something. We do it differently: every guide is grounded in real operational experience, every figure is sourced, and every tool recommendation is disclosed.</p>
+          <a href="/editorial-standards/" class="btn btn-ghost" style="margin-top:8px;">Our editorial standards →</a>
+        </div>
+        <div class="trust-feats">
+          <div class="feat-item">
+            <span class="feat-ico" set:html={iconSvg('search')} />
+            <div><h4>Research-backed</h4><p>Every claim is checked against primary sources — marketplace docs, not blog hearsay.</p></div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-ico" set:html={iconSvg('shield')} />
+            <div><h4>Genuinely independent</h4><p>Recommendations are based on merit, never on which program pays the most.</p></div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-ico" set:html={iconSvg('flask')} />
+            <div><h4>Actually tested</h4><p>Tools are evaluated against the real problems sellers face, not feature checklists.</p></div>
+          </div>
+          <div class="feat-item">
+            <span class="feat-ico" set:html={iconSvg('eye')} />
+            <div><h4>Fully transparent</h4><p>Affiliate relationships are disclosed clearly on every page, per FTC rules.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="nl-box">
+        <div class="nl-art" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none"><rect x="18" y="34" width="84" height="58" rx="10" fill="#0E7C66"/><path d="M18 44l42 26 42-26" stroke="#fff" stroke-width="2.4" fill="none" stroke-linejoin="round"/><circle cx="96" cy="34" r="14" fill="#FF6A45" stroke="#fff" stroke-width="3"/><text x="96" y="40" font-family="Bricolage Grotesque" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">1</text></svg>
+        </div>
+        <div class="nl-copy">
+          <h2 class="display-md">Get the free seller toolkit.</h2>
+          <p class="lead">One email, no spam: a curated checklist of the tools and tactics that move the needle — plus new guides as they drop.</p>
+        </div>
+        <form class="nl-form" onsubmit="return false;">
+          <input type="email" placeholder="you@example.com" aria-label="Email address" />
+          <button class="btn btn-accent" type="submit">Send it</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero { position: relative; padding: 76px 0 0; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(54% 50% at 88% 6%, rgba(14,124,102,.10), transparent 70%), radial-gradient(40% 38% at 4% 40%, rgba(255,106,69,.07), transparent 70%); }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    .grad { background: linear-gradient(100deg, var(--brand), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    h1.display-xl { margin: 22px 0 22px; max-width: 14ch; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+    .hero-trust { display: flex; align-items: center; gap: 26px; margin-top: 44px; padding-top: 30px; border-top: 1px solid var(--line); }
+    .ht-item { display: flex; flex-direction: column; gap: 3px; }
+    .ht-num { font-family: var(--display); font-weight: 800; font-size: 1.7rem; color: var(--ink); letter-spacing: -0.02em; }
+    .ht-lbl { font-size: 0.8rem; color: var(--ink-3); line-height: 1.25; }
+    .ht-sep { width: 1px; height: 38px; background: var(--line-2); }
+    .hero-art svg { width: 100%; height: auto; filter: drop-shadow(0 30px 60px rgba(15,27,45,.12)); }
+    .float-badge { animation: bob 4s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    .logo-strip { display: flex; align-items: center; gap: 28px; margin-top: 64px; padding: 26px 0 8px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+    .ls-label { font-size: 0.82rem; font-weight: 600; color: var(--ink-3); letter-spacing: 0.04em; text-transform: uppercase; }
+    .ls-items { display: flex; gap: 26px; flex-wrap: wrap; }
+    .ls-item { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.98rem; color: var(--ink-2); }
+    .ls-ico { width: 22px; height: 22px; border-radius: 6px; color: #fff; font-weight: 800; font-size: 0.78rem; display: grid; place-items: center; font-family: var(--display); }
+
+    .sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 44px; flex-wrap: wrap; }
+    .sec-head h2 { margin-top: 12px; }
+    .sec-head-sub { max-width: 42ch; color: var(--ink-2); font-size: 1.02rem; }
+
+    .mp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .mp-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px; display: flex; flex-direction: column; transition: transform .18s, box-shadow .18s, border-color .18s; position: relative; overflow: hidden; }
+    .mp-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); border-color: transparent; }
+    .mp-feat { grid-column: span 2; background: linear-gradient(135deg, #fff, #FBFCFC); border-color: var(--brand-soft2); }
+    .mp-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .mp-logo { width: 44px; height: 44px; border-radius: 11px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 1.3rem; display: grid; place-items: center; }
+    .mp-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-dark); background: var(--brand-soft); padding: 5px 11px; border-radius: 100px; }
+    .mp-name { font-size: 1.3rem; margin-bottom: 6px; }
+    .mp-blurb { color: var(--ink-3); font-size: 0.92rem; flex-grow: 1; margin-bottom: 16px; }
+    .mp-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.9rem; color: var(--brand); }
+    .mp-link svg { width: 15px; height: 15px; transition: transform .18s; }
+    .mp-card:hover .mp-link svg { transform: translateX(3px); }
+    .mp-all { background: var(--bg-2); border-style: dashed; align-items: center; justify-content: center; text-align: center; }
+    .mp-all-inner { display: flex; flex-direction: column; align-items: center; }
+    .mp-all-plus { font-size: 2rem; color: var(--brand); font-family: var(--display); font-weight: 800; line-height: 1; margin-bottom: 8px; }
+
+    .guide-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .guide-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; display: flex; flex-direction: column; transition: transform .18s, box-shadow .18s; }
+    .guide-card:hover { transform: translateY(-5px); box-shadow: var(--sh-md); }
+    .guide-thumb { height: 130px; display: grid; place-items: center; }
+    .guide-icon { width: 56px; height: 56px; border-radius: 14px; color: #fff; display: grid; place-items: center; box-shadow: var(--sh-sm); }
+    .guide-icon svg { width: 28px; height: 28px; }
+    .guide-body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+    .guide-cat { font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; }
+    .guide-title { font-size: 1.08rem; line-height: 1.25; flex-grow: 1; }
+    .guide-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 0.85rem; }
+    .gm-time { color: var(--ink-3); }
+    .gm-arrow { color: var(--brand); font-weight: 600; }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .tool-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px; display: flex; flex-direction: column; position: relative; transition: transform .18s, box-shadow .18s; }
+    .tool-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); }
+    .tool-feat { border: 2px solid var(--brand); box-shadow: var(--sh-md); }
+    .tool-ribbon { position: absolute; top: -12px; left: 28px; background: var(--brand); color: #fff; font-size: 0.74rem; font-weight: 700; padding: 5px 14px; border-radius: 100px; letter-spacing: 0.03em; }
+    .tool-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .tool-logo { width: 50px; height: 50px; border-radius: 13px; color: #fff; font-family: var(--display); font-weight: 800; font-size: 1.5rem; display: grid; place-items: center; }
+    .tool-name { font-size: 1.25rem; }
+    .tool-best { font-size: 0.82rem; color: var(--ink-3); font-weight: 600; }
+    .tool-rating { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .stars { position: relative; font-size: 1.05rem; letter-spacing: 2px; color: var(--bg-3); }
+    .stars::before { content: '★★★★★'; position: absolute; left: 0; top: 0; width: var(--pct); overflow: hidden; color: var(--gold); white-space: nowrap; }
+    .rating-num { font-weight: 700; color: var(--ink); }
+    .tool-blurb { color: var(--ink-2); font-size: 0.95rem; flex-grow: 1; margin-bottom: 18px; }
+    .tool-stat { display: flex; align-items: center; gap: 9px; font-size: 0.9rem; color: var(--ink-2); background: var(--bg-2); padding: 11px 15px; border-radius: var(--r-sm); margin-bottom: 20px; }
+    .ts-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); flex-shrink: 0; }
+    .tool-stat strong { color: var(--brand-dark); }
+    .tool-btn { width: 100%; }
+    .tool-compare-cta { text-align: center; margin-top: 36px; }
+
+    .trust-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+    .trust-copy h2 { margin: 12px 0 18px; }
+    .trust-feats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    .feat-item { display: flex; gap: 14px; }
+    .feat-ico { width: 44px; height: 44px; border-radius: 12px; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; flex-shrink: 0; }
+    .feat-ico svg { width: 22px; height: 22px; }
+    .feat-item h4 { font-family: var(--sans); font-size: 1.02rem; font-weight: 700; margin-bottom: 4px; }
+    .feat-item p { font-size: 0.9rem; color: var(--ink-3); line-height: 1.5; }
+
+    .nl-box { background: linear-gradient(120deg, #0F1B2D, #143A33); border-radius: var(--r-xl); padding: 48px 56px; display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; position: relative; overflow: hidden; }
+    .nl-box::after { content: ''; position: absolute; right: -60px; top: -60px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(14,124,102,.4), transparent 70%); }
+    .nl-art { position: relative; z-index: 1; }
+    .nl-art svg { width: 96px; height: 96px; }
+    .nl-copy { position: relative; z-index: 1; }
+    .nl-copy h2 { color: #fff; margin-bottom: 8px; }
+    .nl-copy .lead { color: #B6C2CE; max-width: 44ch; }
+    .nl-form { display: flex; gap: 10px; position: relative; z-index: 1; }
+    .nl-form input { padding: 14px 18px; border-radius: var(--r-md); border: 1.5px solid rgba(255,255,255,.15); background: rgba(255,255,255,.08); color: #fff; font-family: var(--sans); font-size: 0.95rem; min-width: 220px; }
+    .nl-form input::placeholder { color: #8B97A4; }
+    .nl-form input:focus { outline: none; border-color: var(--accent); }
+
+    @media (max-width: 980px) {
+      .mp-grid { grid-template-columns: repeat(2, 1fr); }
+      .guide-grid { grid-template-columns: repeat(2, 1fr); }
+      .tool-grid { grid-template-columns: 1fr; }
+      .trust-wrap { grid-template-columns: 1fr; gap: 36px; }
+      .nl-box { grid-template-columns: 1fr; text-align: center; }
+      .nl-art { display: none; }
+      .nl-form { justify-content: center; flex-wrap: wrap; }
+    }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+      .hero-art { max-width: 460px; }
+    }
+    @media (max-width: 620px) {
+      .mp-grid { grid-template-columns: 1fr; }
+      .mp-feat { grid-column: span 1; }
+      .guide-grid { grid-template-columns: 1fr; }
+      .trust-feats { grid-template-columns: 1fr; }
+      .hero-trust { gap: 16px; }
+      .ht-num { font-size: 1.4rem; }
+    }
+  </style>
+</Base>

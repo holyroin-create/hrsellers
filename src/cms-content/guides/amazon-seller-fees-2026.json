@@ -1,0 +1,127 @@
+{
+  "slug": "amazon-seller-fees-2026",
+  "category": "fees-reimbursements",
+  "title": "Understanding Amazon Seller Fees in 2026",
+  "excerpt": "Referral fees, FBA fulfillment, storage, and the extras that quietly erode margin. A clear breakdown of what selling on Amazon actually costs.",
+  "time": "7 min",
+  "updated": "May 2026",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Amazon's fees aren't a single number — they're a stack. Two sellers quoting “15%” can have wildly different real costs once fulfillment, storage, and extras are added. Understanding the full stack is the difference between a product that's profitable on paper and one that actually is."
+    },
+    {
+      "type": "h2",
+      "text": "The core fees"
+    },
+    {
+      "type": "table",
+      "caption": "Amazon US seller fees (headline rates, verified May 2026 — confirm current rates in Seller Central)",
+      "headers": [
+        "Fee",
+        "Typical amount",
+        "Notes"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Subscription",
+            "$39.99/mo",
+            "Professional plan; or $0.99/item on Individual"
+          ]
+        },
+        {
+          "cells": [
+            "Referral fee",
+            "8–15% of sale",
+            "Most categories; up to 17% apparel, 45% device accessories"
+          ]
+        },
+        {
+          "cells": [
+            "FBA fulfillment",
+            "From ~$3.22/unit",
+            "Scales by size and weight"
+          ]
+        },
+        {
+          "cells": [
+            "Monthly storage",
+            "~$0.87/cu ft",
+            "Jan–Sep; higher in Q4 peak"
+          ]
+        },
+        {
+          "cells": [
+            "Long-term storage",
+            "Added fees",
+            "Inventory aged past 181–365 days"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "title": "Referral fee includes payment processing",
+      "text": "Unlike platforms that itemize a separate payment-processing fee, Amazon bundles it into the referral fee. That makes a flat comparison with other marketplaces misleading — always compare the full stack, not the headline rate."
+    },
+    {
+      "type": "h2",
+      "text": "The fees that sneak up on you"
+    },
+    {
+      "type": "checklist",
+      "items": [
+        "Long-term storage fees on inventory that isn’t selling fast enough",
+        "Removal and disposal fees when you clear out aged stock",
+        "Returns processing fees on fulfilled orders",
+        "Advertising (PPC) spend — optional, but often necessary to compete",
+        "Aged-inventory surcharges during Q4 when storage costs spike"
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warning",
+      "title": "Q4 storage is a margin trap",
+      "text": "Storage fees rise sharply in the October–December peak. Overstock going into Q4 “just in case” can quietly turn a profitable SKU into a loss. Forecast tightly."
+    },
+    {
+      "type": "h2",
+      "text": "How to actually price a product"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "Start from the full fee stack",
+          "text": "Add referral + fulfillment + an allocation for storage and returns — not just the referral percentage."
+        },
+        {
+          "title": "Add your landed cost",
+          "text": "Include manufacturing, freight, duties, and inbound shipping to Amazon."
+        },
+        {
+          "title": "Account for advertising",
+          "text": "For competitive categories, budget PPC as a real cost of doing business, not an afterthought."
+        },
+        {
+          "title": "Check the margin that’s left",
+          "text": "If the remaining margin is thin before you’ve spent a dollar on ads, the product may not work on Amazon."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Research tools with built-in profit calculators make this faster — see our reviews to compare them. And don't forget the other side of the ledger: our reimbursement guide covers recovering fees and inventory Amazon owes you back."
+    }
+  ],
+  "related": [
+    "fba-reimbursements-2026"
+  ],
+  "tools": [
+    "Helium 10",
+    "Jungle Scout"
+  ],
+  "order": 7
+}
