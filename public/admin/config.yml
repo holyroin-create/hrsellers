@@ -9,7 +9,7 @@ backend:
   name: github
   repo: holyroin-create/hrsellers      # <-- KENDI DEPONLA DEĞİŞTİR
   branch: main
-  base_url: https://BURAYA-WORKER-ADRESI.workers.dev   # <-- WORKER ADRESINLE DEĞİŞTİR
+  base_url: https://hrsellers-cms-auth.holyroin.workers.dev   # <-- WORKER ADRESINLE DEĞİŞTİR
   auth_endpoint: auth
 
 # Commit mesajları (Türkçe)
