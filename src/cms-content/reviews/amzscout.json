@@ -1,16 +1,4 @@
 {
-  "slug": "amzscout",
-  "name": "AMZScout",
-  "category": "research-tools",
-  "color": "#FF6A45",
-  "url": "https://www.amzscout.net",
-  "status": "full",
-  "featured": false,
-  "editorsChoice": false,
-  "rating": 4.3,
-  "best": "Budget pick",
-  "oneLiner": "A lower-cost entry point for product validation.",
-  "summary": "AMZScout covers the research essentials — product database, sales estimates, and a Chrome extension — at a friendlier price point than the big two, and frequently runs lifetime-deal promotions. It's a sensible starting tool for sellers validating their first products who don't yet need a full suite.",
   "scores": [
     {
       "label": "Features",
@@ -29,6 +17,16 @@
       "value": 4.5
     }
   ],
+  "color": "#FF6A45",
+  "best": "Budget pick",
+  "bestFor": "Budget-conscious beginners validating their first products.",
+  "pros": [
+    "Lower cost than Helium 10 / Jungle Scout",
+    "Frequent lifetime-deal promotions",
+    "Simple, approachable for beginners",
+    "Solid Chrome extension"
+  ],
+  "summary": "AMZScout covers the research essentials — product database, sales estimates, and a Chrome extension — at a friendlier price point than the big two, and frequently runs lifetime-deal promotions. It's a sensible starting tool for sellers validating their first products who don't yet need a full suite.",
   "pricing": [
     {
       "tier": "Subscription",
@@ -43,19 +41,21 @@
       "popular": true
     }
   ],
-  "pros": [
-    "Lower cost than Helium 10 / Jungle Scout",
-    "Frequent lifetime-deal promotions",
-    "Simple, approachable for beginners",
-    "Solid Chrome extension"
-  ],
+  "editorsChoice": false,
+  "name": "AMZScout",
+  "slug": "amzscout",
+  "affiliate": "30% commission via the official affiliate program.",
+  "featured": false,
+  "order": 3,
+  "url": "https://amzscout.idevaffiliate.com/idevaffiliate.php?id=2463",
   "cons": [
     "Less depth and fewer advanced tools",
     "Smaller ecosystem & community",
     "Data less battle-tested than market leaders"
   ],
-  "bestFor": "Budget-conscious beginners validating their first products.",
+  "status": "full",
+  "oneLiner": "A lower-cost entry point for product validation.",
   "verdict": "Not the most powerful, but an honest budget option — especially if you can catch a lifetime deal. Verify current pricing on AMZScout's site, as it changes frequently.",
-  "affiliate": "30% commission via the official affiliate program.",
-  "order": 3
+  "rating": 4.3,
+  "category": "research-tools"
 }
