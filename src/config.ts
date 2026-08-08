@@ -4,7 +4,7 @@ export const SITE = {
   publisher: "HR Express",
   tagline: "Marketplace seller operations, written by someone who ran them.",
   description:
-    "Operational guides and software comparisons for Amazon, Walmart and eBay sellers — written from hands-on marketplace operations experience and checked against primary sources.",
+    "Operational guides for Amazon, Walmart, eBay, TikTok Shop and Etsy sellers. Every fee, threshold and date is cited to its source and carries the day it was checked.",
   adsensePublisherId: "ca-pub-9985150163567506",
   adsenseEnabled: false,
   founded: "2026",
