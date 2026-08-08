@@ -1,0 +1,143 @@
+---
+title: "When pulling stock out of Amazon is cheaper than leaving it there"
+description: "Removal costs about a dollar a unit and feels like admitting defeat. Holding costs a rate per cubic foot every month, on four stacked charges, on a unit that is not selling. Here is the arithmetic that decides it."
+category: "Fees & reimbursements"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 10
+numbered: true
+ledger: "Removal: ~$0.97–$1.78/unit, once"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Removal is a one-off per-unit cost, reported at roughly $0.97 to $1.78. Storage is a recurring per-cubic-foot cost that escalates with age and with weeks of cover.",
+  "The break-even is not a rule of thumb. It is removal cost divided by monthly holding cost, which gives you the number of months of holding that removal buys back.",
+  "Because the aged-inventory trigger is reported to have tightened to 180 days effective 1 July 2026, the decision point moved forward by roughly three months for anyone still working to the old 271-day advice.",
+  "Removal is not the only option, and often not the best one. Liquidation, price promotion, and switching the SKU to merchant-fulfilled each solve a different version of the problem.",
+  "The one date that is not negotiable is 30 September. Every corrective action costs more and moves slower once Q4 peak pricing starts.",
+]} />
+
+Every seller has a shelf of SKUs that seemed reasonable at the time. The instinct is to leave them and hope — a removal order feels like writing off the purchase, while storage feels like a small monthly cost.
+
+That instinct has the arithmetic backwards. Removal is a known, one-off, bounded cost. Holding is an unbounded recurring cost on an escalating schedule, and the escalation is designed to make holding the losing option.
+
+## The two numbers
+
+**Cost to remove.** Reported at roughly $0.97 to $1.78 per unit for standard removals. Charged once, per unit.
+
+**Cost to hold.** Per cubic foot per month, across up to four stacked charges — base rate, Q4 peak multiplier, aged-inventory surcharge, storage utilisation surcharge. Our [storage guide](/guides/fba-storage-four-layers/) takes those apart. Charged every month, and rising.
+
+The comparison is only meaningful once both are on the same basis, which means converting holding cost to a per-unit figure:
+
+```
+holding cost per unit per month
+  = (cubic feet per unit) × (sum of applicable per-cubic-foot rates)
+```
+
+Then:
+
+```
+months of holding that removal buys back
+  = removal cost per unit ÷ holding cost per unit per month
+```
+
+That single ratio is the whole decision. If the answer is smaller than the number of months you realistically need to sell the stock, removal is cheaper.
+
+## Worked comparison
+
+A standard-size unit at 0.556 cubic feet — a 12 × 10 × 8 box — that has been in the network since March, on 30 weeks of cover. Illustrative rates drawn from published 2026 figures; substitute your own.
+
+**Holding it through November:**
+
+| Charge | Rate | Per unit, per month |
+| --- | --- | --- |
+| Base rate at Q4 peak | $2.40 / cu ft | $1.33 |
+| Aged inventory, 180–270 days | $1.50 / cu ft | $0.83 |
+| Utilisation surcharge, 22–28 weeks | $0.44 / cu ft | $0.24 |
+| **Total per unit per month** | | **$2.40** |
+
+**Removing it:** roughly $1.38 per unit, once, taking the midpoint of the reported range.
+
+**The ratio:** $1.38 ÷ $2.40 = **0.58 months.**
+
+Removal buys back less than three weeks of holding. If this unit will not sell inside three weeks, removing it is cheaper — and that is before considering that the aged surcharge climbs toward $6.90 per cubic foot after 365 days, which would take the monthly figure past $4.
+
+Now run the same unit in **May**, off-peak, at 100 days old, on 15 weeks of cover — no peak, no aged surcharge, no utilisation surcharge:
+
+| Charge | Rate | Per unit, per month |
+| --- | --- | --- |
+| Base rate, off-peak | $0.87 / cu ft | $0.48 |
+
+**The ratio:** $1.38 ÷ $0.48 = **2.9 months.**
+
+Same unit, same removal cost, completely different answer. Removal now buys back nearly three months of holding, so unless the SKU is genuinely dead, holding is fine.
+
+<Figure value="0.58 vs 2.9" kind="cost" source="Illustrative calculation using published 2026 rates, August 2026">
+  Months of holding that one removal buys back, for the same unit in November against May. The decision is not a property of the SKU. It is a property of the calendar and the age of the stock.
+</Figure>
+
+**This is why generic advice on this topic is useless.** "Remove slow movers" and "keep 90 days of cover" are both defensible in one season and expensive in the other.
+
+## The four options, and what each one is for
+
+Removal is one of four responses, and they solve different problems.
+
+**Return to you or a third-party warehouse.** Right when the goods have real value and you have somewhere to put them. You pay removal plus onward freight plus outside storage, and you keep the ability to sell them later — through a merchant-fulfilled listing, another channel, or back into FBA at a better moment. Only worth it if the goods will sell somewhere.
+
+**Liquidation.** Right when the goods have modest value and you have nowhere to put them. You recover a fraction of value with no freight and no further handling on your side. The arithmetic to check is recovery net of fees against removal plus freight plus the storage you avoid.
+
+**Disposal.** Right when the goods have no realistic resale route. It costs money and returns nothing, and it is still frequently the correct answer for a SKU that has failed. Paying to end a recurring cost is a normal business decision.
+
+**Price promotion to sell through.** Right when demand exists at a lower price and you have time. This is the only option that recovers revenue rather than reducing loss. It is also the slowest and the least reliable, and it does not stop the clock while it runs — you keep paying storage during the promotion.
+
+## Timing, which is most of the decision
+
+**150 days is the review point.** Reporting indicates the aged-inventory surcharge triggers at 180 days. A removal order takes time to process, so a review at 180 is already late. Reviewing at 150 gives you a month to choose between the four options above.
+
+**Ignore advice built on day 271.** It appears in guidance published in 2026 and it described the previous rule. Reporting indicates the trigger tightened from 271 days to 180 days effective 1 July 2026. Acting on the old number means paying roughly three months of surcharge you did not have to.
+
+**30 September is the hard deadline.** From 1 October the base rate roughly triples on the figures published for 2026. Anything you have not resolved by then gets more expensive to hold and more expensive to fix, in the same month that your operational attention is somewhere else.
+
+**Removal takes time.** Build in the processing window and the transit. A removal ordered on 28 September is not a September decision in accounting terms.
+
+## Two mistakes worth naming
+
+**Treating the purchase price as relevant.** What you paid for the stock is gone either way. The only question is whether the future cost of holding exceeds the future value of selling. Sunk cost is the single most common reason sellers keep paying storage on inventory they know is dead.
+
+**Removing without fixing the cause.** A SKU that reached 180 days did so because of a forecasting or sourcing decision made months earlier. If the same quantity is reordered, the same removal happens next year. The removal report is a list of decisions to review, not just a list of boxes to move.
+
+## What to do about it
+
+**Pull the inventory age report monthly.** It shows days in the network per ASIN and is where the 150-day review starts. Diarise it for the first week of every month.
+
+**Calculate the ratio per SKU, not per catalogue.** Cubic feet vary hugely across a catalogue and the ratio is driven by them. A small light SKU and a bulky one at the same age are not the same decision.
+
+**Do the August pass.** Between now and 30 September is the cheap window to fix a Q4 inventory position. Doing it in November costs three times as much and works half as well.
+
+**Check the removal fee before you commit.** Rates are reported as a range, and they vary by size tier and by the type of removal. The figure that matters is the one on your own removal order confirmation.
+
+**Feed the answer into your reorder quantities.** If a SKU has needed removal once, its reorder quantity is wrong, not its storage plan.
+
+<Faq items={[
+  { q: "How do I know whether to remove or hold?", a: "Divide the removal cost per unit by the holding cost per unit per month. That gives the months of holding removal buys back. If the SKU will not sell within that window, removal is cheaper." },
+  { q: "Isn't removal just admitting I made a mistake?", a: "The mistake was made when the stock was ordered, and it is already sunk. The only live question is whether future holding cost exceeds future sale value. Paying once to end a recurring cost is a normal decision." },
+  { q: "What does removal cost?", a: "Reported at roughly $0.97 to $1.78 per unit for standard removals, varying by size tier and removal type. Confirm on your own removal order rather than from a published range." },
+  { q: "Should I act at 180 days or 271?", a: "180. Reporting indicates the aged-inventory trigger tightened from 271 to 180 days effective 1 July 2026, and guidance still citing 271 was written before that." },
+  { q: "Is liquidation better than removal?", a: "It depends on residual value and whether you have somewhere to put the goods. Compare liquidation recovery net of fees against removal plus freight plus the storage you avoid. Neither is universally better." },
+  { q: "Can I just leave it and pay the storage?", a: "You can, and in an off-peak month on young stock that is often the right call. On aged stock during Q4 the stacked rate can exceed the removal cost within a month, at which point holding is simply the more expensive way to reach the same outcome." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon FBA storage fees 2026: free calculator and hidden fees (removal $0.97–$1.78 per unit; day-271 removal guidance; assessment on the 15th)', publisher: 'SellerView', href: 'https://sellerview.ai/blog/amazon-storage-fees-monthly-vs-long-term', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fee overhaul now live (aged-inventory trigger 271 → 180 days effective 1 July 2026; $1.50/cu ft 180–270 days; $6.90 after 365)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/news/amazon-fba-storage-fee-overhaul-h2-2026', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fees 2026: monthly, aged and Q4 peak rates (four-layer structure; utilisation surcharge bands)', publisher: 'ConversionPerk', href: 'https://www.conversionperk.com/amazon-fba-storage-fees-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fee changes 2026 (clearing units approaching the 181-day band before Q4; using the low-cost window to reposition)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fees breakdown 2026 (eight-to-ten-week peak cover rule; consequences of 90-day September shipments)', publisher: 'Nventory', href: 'https://nventory.io/blog/amazon-fba-fulfillment-fees-breakdown-2026', accessed: '2026-08-08' },
+]} />

@@ -47,8 +47,16 @@ const rules = Array.from({ length: Math.floor(L.h / L.rule) }, (_, i) => (i + 1)
 
 let seg = { a: 0, b: 0, mid: 0 };
 if (c.kind === 'range') {
-  const top = Math.max(c.hi, c.mid) * 1.12;
-  const px = (v: number) => x0 + (v / top) * span;
+  /* Scale to the data, not to zero. A narrow range (0.78 against 0.87) would
+     otherwise collapse into a few pixels and its two end labels would overlap.
+     The marked average is included in the extent so it stays on the axis even
+     when it falls outside the range it is being compared with. */
+  const vmin = Math.min(c.lo, c.mid);
+  const vmax = Math.max(c.hi, c.mid);
+  const pad = (vmax - vmin) * 0.2 || Math.abs(vmax) * 0.15 || 1;
+  const from = vmin - pad;
+  const to = vmax + pad;
+  const px = (v: number) => x0 + ((v - from) / (to - from)) * span;
   seg = { a: px(c.lo), b: px(c.hi), mid: px(c.mid) };
 }
 

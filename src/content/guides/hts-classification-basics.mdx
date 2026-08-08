@@ -1,0 +1,100 @@
+---
+title: "The ten-digit number you are legally responsible for, even when your broker picks it"
+description: "Every product you import needs an HTS code, and it sets your duty rate. Under US law the importer of record carries the duty of reasonable care — and that duty cannot be delegated to the broker who chose the code."
+category: "Getting started"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 8
+numbered: true
+ledger: "Liability sits with the importer, not the broker"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "An HTS code is the ten-digit number that classifies a product for US import. It determines the duty rate and eligibility for preference programmes.",
+  "The importer of record is legally responsible for the classification. Reporting on the statute is explicit that the duty of reasonable care cannot be delegated — if your broker classifies wrongly, you are still liable.",
+  "Penalties for negligent misclassification are described in reporting as reaching the lesser of the merchandise's domestic value or four times the duties owed, with higher exposure for gross negligence and fraud.",
+  "Overpayment is the more common error and it is recoverable, but only through a Post Summary Correction or protest within a limited window after liquidation.",
+  "The rule that catches sellers is that you classify the product as imported, not as the code you would prefer to pay.",
+]} />
+
+Under de minimis, most small sellers never confronted this. Parcels under $800 cleared without a classification decision that anyone had to defend. That protection is gone, and with it the last reason a seller could avoid learning what an HTS code is.
+
+## What the number actually is
+
+An HTS code is ten digits. The first six are the international Harmonized System, shared across most trading nations. The last four are US-specific and are where the duty rate is set.
+
+It is not a label. It is a legal determination about what your product *is*, made under a body of rules, and it is checkable after the fact.
+
+<Figure value="Non-delegable" kind="cost" source="Peacock Tariff Consulting, on the importer's duty of reasonable care under 19 U.S.C. § 1484, accessed 8 August 2026">
+  The status of the importer's duty of reasonable care. Brokers act as your agent; reporting on the statute is clear that hiring one does not transfer the obligation.
+</Figure>
+
+## The liability point, stated plainly
+
+This is the part worth reading twice.
+
+The importer of record is legally responsible for the classification. A customs broker acts as the importer's agent. Reporting on 19 U.S.C. § 1484 describes the importer's duty of reasonable care as non-delegable — meaning that if the broker gets it wrong, the importer is still liable.
+
+For a seller who has never filed an entry, the instinct is that this is the broker's job and the broker's risk. It is the broker's job. It is not the broker's risk.
+
+That is not an argument for classifying it yourself with no help. It is an argument for knowing which code is on your entries, why it was chosen, and whether the reasoning would survive being asked about.
+
+## What it costs to get wrong
+
+Reporting on 19 U.S.C. § 1592 describes three tiers of exposure.
+
+| Finding | Described exposure |
+| --- | --- |
+| Negligence — failure to exercise reasonable care | The lesser of the merchandise's domestic value or four times the duties, taxes and fees lost |
+| Gross negligence — actual knowledge or wanton disregard | The lesser of the domestic value or four times the revenue loss, with more limited mitigation |
+| Fraud — knowing, intentional misclassification | Up to the full domestic value, with possible criminal referral |
+
+Negligence is described as the most common finding, and mitigation under CBP's published guidelines is routine — but a mitigated penalty is still a penalty. One agency analysis attributes a significant share of the penalties CBP assessed in fiscal year 2025 to classification errors.
+
+**The more common outcome is quieter.** You overpay. Overpayment is recoverable, but only through a Post Summary Correction or a protest filed within a limited window after liquidation. Miss the window and the overpayment is simply gone, and you will not have noticed it happening.
+
+## The four mistakes that produce most of it
+
+**Picking the cheaper code.** The rule is that the product is classified in its condition as imported, not by which heading carries the lowest rate. This is the mistake with the worst downside, because it maps directly onto the intent element in the penalty tiers.
+
+**Classifying by what it is made of when the rule turns on what it does — or the reverse.** Published examples include a zinc item declared as stainless steel, and cargo vans entered as passenger vehicles. Material and function are both classification criteria, and which governs depends on the heading.
+
+**Copying a code from an old invoice or a supplier's template.** Your supplier's classification was made for their purpose, possibly for a different market, possibly years ago. It is not evidence of reasonable care.
+
+**Apparel by fibre content.** A garment at 51% cotton and the same garment at 51% polyester fall in different subheadings with different rates. For anyone importing clothing this single rule accounts for a large share of misclassification.
+
+## How to do it defensibly
+
+**Start with CBP's own rulings database.** CROSS at rulings.cbp.gov shows how CBP has classified similar goods before. A prior ruling on a comparable product is the strongest ordinary evidence you can point at.
+
+**Use commercial lookup tools for a first pass only.** They are useful for narrowing, not for deciding. A first-pass tool has not seen your product.
+
+**Write down why.** For each SKU, record the code, the date, and one or two sentences on the reasoning — material, function, and the heading you rejected and why. This file is what reasonable care looks like when someone asks about it two years later. It takes minutes per SKU and it is the single highest-return compliance habit available to a small importer.
+
+**Ask your broker to show their working.** A broker who cannot say why a code was chosen has given you a number, not a classification.
+
+**For a product line you will import for years, consider a binding ruling.** Requesting one from CBP takes time but gives you a determination you can rely on rather than an opinion you are hoping is right.
+
+**Re-check when the product changes.** A change in material, construction or fibre blend can move the code. So can a change in how the item is packaged for retail.
+
+<Faq items={[
+  { q: "My customs broker chooses the codes. Am I still responsible?", a: "Yes. The importer of record is legally responsible. Brokers act as your agent, and reporting on the statute describes the duty of reasonable care as non-delegable." },
+  { q: "What happens if I have been using the wrong code?", a: "If you underpaid, you have exposure under 19 U.S.C. § 1592 and should take advice on a prior disclosure. If you overpaid, recovery runs through a Post Summary Correction or protest within a limited window after liquidation." },
+  { q: "Can I choose the code with the lowest duty rate?", a: "No. The product is classified in its condition as imported. Choosing a heading because it is cheaper is precisely the pattern that moves a finding from negligence toward something worse." },
+  { q: "Where do I look up a code?", a: "CBP's CROSS rulings database shows prior classifications of similar goods. Commercial tools are useful for a first pass. Neither replaces a documented reasoning file, and for a long-term product line a binding ruling is worth the time." },
+  { q: "Does this apply to me if I only ship small parcels?", a: "Yes. With de minimis suspended, low-value commercial shipments require an entry, and an entry requires a classification." },
+]} />
+
+<Sources items={[
+  { title: 'What is an HTS code? The 2026 importer\u2019s guide (importer of record liability; CROSS; Post Summary Correction window)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/what-is-hts-code/', accessed: '2026-08-08' },
+  { title: 'Complete guide to HTS classification 2026 (penalty tiers under 19 U.S.C. § 1592; FY2025 penalty context)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/hts-classification-complete-guide-2026', accessed: '2026-08-08' },
+  { title: 'HTS codes: definition and import guide (common misclassification patterns; apparel fibre content)', publisher: 'Shopify', href: 'https://www.shopify.com/blog/hts-codes', accessed: '2026-08-08' },
+  { title: 'HTS code classification guide 2026 (duty over- and underpayment consequences)', publisher: 'TEU Global', href: 'https://teuinc.com/blog/hts-code-classification-guide-2026', accessed: '2026-08-08' },
+]} />

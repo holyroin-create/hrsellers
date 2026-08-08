@@ -1,0 +1,163 @@
+---
+title: "Amazon storage is four separate charges, and three of them can land on the same box"
+description: "The monthly rate is one layer. Above it sit an aged-inventory surcharge, a utilisation surcharge tied to weeks of cover, and Q4 peak pricing. They do not cancel each other out — and the published rate cards for all four disagree."
+category: "Fees & reimbursements"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 12
+numbered: true
+ledger: "Off-peak standard: $0.78 or $0.87 — sources split by date"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Storage is not one fee. It is a base monthly rate, an aged-inventory surcharge, a storage utilisation surcharge tied to weeks of cover, and Q4 peak pricing. A slow-moving overstocked box can attract three of them simultaneously.",
+  "Published off-peak standard rates split between $0.78 and $0.87 per cubic foot. The split resolves by date: reporting indicates a change effective 1 July 2026, and most rate cards in circulation were written before it.",
+  "The aged-inventory trigger is reported to have tightened from 271 days to 180 days on the same date. Advice telling you to act before day 271 is describing the old rule.",
+  "The utilisation surcharge is charged on weeks of cover, not on age. It has exemptions worth knowing: reportedly no charge below 25 cubic feet of average daily inventory in that size tier, none in your first 365 days on FBA, and none on inventory under 30 days old.",
+  "One vendor's own site gave three different Q4 rates across three pages published in three months. Check Seller Central, not a blog — including this one.",
+]} />
+
+Most sellers hold one number in their head for storage: a rate per cubic foot per month. That number is real, and it is roughly a third of what you actually pay if your inventory is not moving.
+
+This guide takes the four charges apart, then puts them back together, and shows the working on why the published figures disagree.
+
+## The unit everything is measured in
+
+Every storage charge is per **cubic foot per month**, calculated on your daily average inventory volume rather than a snapshot.
+
+Cubic feet come from the packaged unit, not the product:
+
+```
+cubic feet = (length × width × height in inches) ÷ 1,728
+```
+
+A 12 × 10 × 8 inch box is 960 cubic inches, which is 0.556 cubic feet. That number is the multiplier on every charge below, which is why packaging is a storage decision and not just a shipping one. The same product in an 8 × 8 × 6 box is 0.222 cubic feet — 60% less, on every layer, every month.
+
+Reporting also indicates storage is assessed around the 15th of each month for the prior month. If you are timing a removal, the calendar matters.
+
+## Layer 1 — the base monthly rate
+
+This is the number everyone quotes, and it is where the published sources fall apart.
+
+| Source, by publication date | Standard, Jan–Sep | Standard, Oct–Dec | Oversize, Jan–Sep | Oversize, Oct–Dec |
+| --- | --- | --- | --- | --- |
+| FBA Freight, Mar 2026 | $0.78 | $2.40 | $0.56 | $1.40 |
+| EcomCalcTools, Apr 2026 | $0.78 | $2.40 | — | — |
+| Nova Analytics calculator, May 2026 | $0.78 | **$1.02** | $0.60 | **$0.74** |
+| Nova Analytics fee guide, May 2026 | — | **$2.25** | — | $1.30 |
+| SellerView, Jun 2026 | $0.78 | $2.40 | $0.56 | $1.40 |
+| Nova Analytics news, Jul 2026 | **$0.87** | $2.40 | — | — |
+| AMZ Prep, Jul 2026 | $0.78 | $2.40 | $0.56 | $1.40 |
+
+Two things are worth sitting with here.
+
+**The $0.78 / $0.87 split resolves by date.** The July report describes a change effective 1 July 2026, moving standard storage to $0.87 for January to September and $2.40 for October to December. Every source giving $0.78 was published before that date. That is not four sources disagreeing — it is one change and a lot of pages that were never revisited. The same report describes the previous rates as $0.76 and $2.10, which does not match the $0.78 and $2.40 that spring sources were quoting, so the reconstruction is not perfectly clean.
+
+**One publisher contradicts itself three times.** Nova Analytics gives the Q4 standard rate as $1.02 on its calculator page, $2.25 on its fee-changes page, and $2.40 in its July news item — three figures on one site within three months. This is not a criticism of that publisher specifically; it is what happens to any site that publishes rate tables and does not revisit them. It is also exactly why every figure on this site carries the date it was checked.
+
+<Figure value="$1.02 / $2.25 / $2.40" kind="cost" source="Three pages on one vendor's site, May–July 2026, reviewed 8 August 2026">
+  Published Q4 standard-size storage rates from a single publisher across three of its own pages, within three months. Rate tables age; almost nobody revisits them.
+</Figure>
+
+**The working position for this guide:** treat the off-peak standard rate as $0.87 and the Q4 standard rate as $2.40, and verify both in Seller Central before you commit capital to a Q4 plan. Apparel is reported separately at $0.56 off-peak and $2.10 in peak.
+
+## Layer 2 — Q4 peak pricing
+
+October through December, the base rate itself rises. On the figures above, standard goes from $0.87 to $2.40 and oversize from $0.56 to $1.40 — roughly a threefold jump in both cases.
+
+Two consequences that are easy to miss.
+
+**It applies to what is already there.** This is not a charge on units you send in October. It is the rate applied to the daily average volume sitting in the network during those months, including inventory that arrived in June and has not moved.
+
+**It does not change the surcharge tiers above it.** Reporting on the utilisation surcharge is explicit that during the peak period the tiers stay the same and only the base rate underneath changes. So peak pricing multiplies your worst inventory rather than replacing the penalty on it.
+
+The practical planning rule that appears consistently across sources: send what you can sell in eight to ten weeks during peak, not ninety days of cover. Reporting is direct that a September shipment of ninety days' supply means paying peak rates through November and December on the part that does not move.
+
+## Layer 3 — the aged-inventory surcharge
+
+This one is charged on **how long a unit has been there**, and it replaced the older long-term storage fee with a more granular structure.
+
+Reporting indicates the trigger moved from 271 days to 180 days effective 1 July 2026, with a surcharge of $1.50 per cubic foot per month between 180 and 270 days, climbing toward $6.90 per cubic foot after 365 days. Other 2026 sources describe the surcharge as beginning at 181 days from $0.50 per cubic foot and rising to $6.90.
+
+The trigger date is the part that matters operationally. A widely circulated piece of advice is to submit removal orders before inventory reaches 271 days. On the tightened rule, following that advice means you have already paid three months of surcharge before you act.
+
+**Treat 180 days as the deadline and 150 as the decision point**, because a removal order takes time to process and a promotional sell-down takes longer.
+
+## Layer 4 — the storage utilisation surcharge
+
+This is the layer most sellers have never heard of, and it is charged on a completely different basis from the other three: **weeks of cover**, not age and not volume.
+
+Reported structure for standard-size items:
+
+| Weeks of supply | Reported surcharge, per cubic foot per month |
+| --- | --- |
+| 22 to 28 weeks | $0.44 |
+| Rising through the bands | — |
+| Above 52 weeks | $1.88 |
+
+Oversize is reported to run from $0.23 to $1.26 on the same band structure. Dangerous goods follow the same shape at different rates.
+
+**The exemptions are worth knowing**, because they take a large share of small sellers out of this charge entirely. Reporting states it does not apply if your average daily inventory in that size tier is 25 cubic feet or less, if your first FBA shipment was within the past 365 days, or to inventory younger than 30 days.
+
+If you are under 25 cubic feet in a size tier, this layer is not your problem and you can stop thinking about it. If you are above it, note that the measure is **weeks of cover** — so this charge gets worse when sales slow, even if you send in nothing at all.
+
+## How they stack
+
+Take a single box: 0.556 cubic feet, standard size, sitting since March, on 30 weeks of cover, in November. Illustrative rates, using the figures above.
+
+| Layer | Rate | Monthly cost for this box |
+| --- | --- | --- |
+| Base rate, Q4 peak | $2.40 / cu ft | $1.33 |
+| Aged inventory, 180–270 days | $1.50 / cu ft | $0.83 |
+| Utilisation surcharge, 22–28 week band | $0.44 / cu ft | $0.24 |
+| **Total** | | **$2.40 per month** |
+
+Against a base-rate-only estimate of $1.33, the actual figure is 80% higher. A seller modelling storage at the off-peak rate of $0.87 would have budgeted $0.48 — five times under.
+
+That gap is the entire reason this guide exists. It is not that any single rate is shocking. It is that four charges on four different bases produce a number nobody arrives at by holding one figure in their head.
+
+<Figure value="5×" kind="cost" source="Illustrative calculation using published 2026 rates, August 2026">
+  The gap between an off-peak base-rate estimate and the stacked November cost for one aged, overstocked standard-size box. Illustrative figures — substitute your own dimensions and cover.
+</Figure>
+
+## What to do about it
+
+**Pull the storage fee report, not an estimate.** Seller Central publishes monthly storage fee and inventory age reports. They tell you what you were charged, per ASIN, with the volume used. Any estimate you build from a blog table — this one included — is a model of the fee schedule, not a measurement of your bill.
+
+**Audit packaging before you audit anything else.** Cubic feet multiply every layer. Reducing a box from 0.556 to 0.222 cubic feet cuts all four charges by 60% permanently, and it also affects your size tier and therefore your fulfilment fee. It is the only change here that pays back on every future unit.
+
+**Set a 150-day review, not a 271-day one.** Build the review into a monthly routine rather than a project. The inventory age report is where you look.
+
+**Check whether the utilisation surcharge applies to you at all.** If your average daily inventory in a size tier is under 25 cubic feet, or you started FBA within the past year, reporting says it does not. Knowing that saves you from optimising against a charge you do not pay.
+
+**Decide your Q4 position in August, and act by 30 September.** October to December is the wrong time to discover you are overstocked, because every corrective action — removal, liquidation, promotion — costs more and works slower during peak.
+
+**Re-check the rates in October and January.** Reporting points to a change effective 1 July 2026 and a fee cycle that has run in January in recent years. Rate tables you built in the spring will be wrong by the autumn.
+
+<Faq items={[
+  { q: "Is the off-peak standard rate $0.78 or $0.87?", a: "Sources published before July 2026 say $0.78; a July 2026 report describes a change effective 1 July 2026 moving it to $0.87. Verify in Seller Central. This guide uses $0.87 and says so." },
+  { q: "Does the aged-inventory surcharge start at 180 days or 271?", a: "Reporting indicates the trigger tightened from 271 to 180 days effective 1 July 2026. Advice built around day 271 is describing the previous rule, and following it means paying roughly three months of surcharge before acting." },
+  { q: "Can I be charged more than one storage fee on the same unit?", a: "Yes. The four layers are triggered independently — base rate by volume, peak by calendar, aged surcharge by age, utilisation surcharge by weeks of cover. A slow, old, overstocked unit in November attracts three at once." },
+  { q: "Does the utilisation surcharge apply to small sellers?", a: "Reportedly not, if your average daily inventory in that size tier is 25 cubic feet or less, if your first FBA shipment was within the past 365 days, or on inventory under 30 days old." },
+  { q: "How is cubic footage calculated?", a: "Length × width × height of the packaged unit in inches, divided by 1,728. It is measured on what Amazon handles, not on the bare product, which is why packaging changes storage cost permanently." },
+  { q: "When are storage fees charged?", a: "Reporting indicates assessment around the 15th of each month for the previous month, on daily average volume rather than a snapshot." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon FBA storage fees 2026: monthly, aged and Q4 peak rates (four-layer structure; utilisation surcharge bands and exemptions; peak tiers unchanged)', publisher: 'ConversionPerk', href: 'https://www.conversionperk.com/amazon-fba-storage-fees-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fee overhaul now live (effective 1 July 2026: $0.87 Jan–Sep, $2.40 Oct–Dec; aged trigger 271 → 180 days; $1.50/cu ft 180–270 days; $6.90 after 365)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/news/amazon-fba-storage-fee-overhaul-h2-2026', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fees 2026 calculator (gives Q4 standard as $1.02 and oversize as $0.74)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/fba-storage-fees-calculator', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fee changes 2026: every new rate explained (gives Q4 standard as $2.25 and oversize as $1.30)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fees 2026: free calculator and hidden fees (assessment on the 15th; removal $0.97–$1.78; day-271 removal advice)', publisher: 'SellerView', href: 'https://sellerview.ai/blog/amazon-storage-fees-monthly-vs-long-term', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fee calculator 2026 (cubic-foot formula; aged surcharge from $0.50 at 181 days to $6.90)', publisher: 'FBA Freight', href: 'https://freightfba.com/tools/amazon-fba-storage-fee-calculator/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fees 2026: complete guide (apparel rates $0.56 off-peak / $2.10 peak; long-term $6.90 after 365 days)', publisher: 'EcomCalcTools', href: 'https://ecomcalctools.com/blog/amazon-fba-storage-fees-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fees 2026: full breakdown (storage rates alongside the 17 April fuel surcharge)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-fba-fees/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fees breakdown 2026 (eight-to-ten-week peak cover rule; 90-day September shipment example)', publisher: 'Nventory', href: 'https://nventory.io/blog/amazon-fba-fulfillment-fees-breakdown-2026', accessed: '2026-08-08' },
+]} />

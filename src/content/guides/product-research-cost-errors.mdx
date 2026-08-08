@@ -1,0 +1,118 @@
+---
+title: "Six product research mistakes, priced. Not opinions — arithmetic from the current fee schedule."
+description: "Most product research advice is a list of things to avoid with no number attached. Every mistake below has a cost you can calculate from published 2026 rates, and most of them are made before the first purchase order is signed."
+category: "Getting started"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 12
+numbered: true
+ledger: "Every error below has a number attached"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The dominant product research error is not picking a bad product. It is validating demand thoroughly and cost casually — using an estimate for the fee stack and a real number for the revenue.",
+  "Box dimensions decide the size tier, the storage cost and the inbound placement fee. Sellers measure the product; Amazon charges on the packaged unit.",
+  "Since January 2026 your price band is an input to the fulfilment fee, so a product validated at $49 and launched at $52 has different unit economics from the one you modelled.",
+  "Seasonality is the mistake with the worst asymmetry: get it wrong and the stock is sitting through Q4, when the base storage rate roughly triples and the aged-inventory clock is running.",
+  "Landed cost is not the supplier's quote. After the de minimis suspension it includes duty, user fees, a bond, a broker and possibly an exam you did not plan for.",
+]} />
+
+Product research content splits into two piles. One tells you to find products with high demand and low competition, which is true and useless. The other sells a tool.
+
+This guide takes a different approach: six errors, each with the arithmetic attached, drawn from the fee schedules covered elsewhere on this site. Nothing here requires software.
+
+## 1. Validating demand precisely and cost approximately
+
+The pattern is consistent. A seller spends two weeks on search volume, review counts and competitor rank, then models the cost side as "about 15% referral and about $5 fulfilment" and moves on.
+
+The revenue side is a forecast and the cost side is knowable. Doing the hard work on the uncertain half while estimating the certain half is exactly backwards.
+
+**What the cost side actually contains for one FBA unit:** referral fee, fulfilment fee, the fuel and logistics surcharge reported at 3.5% of the fulfilment fee, inbound placement, monthly storage, aged-inventory exposure if it moves slowly, the low-inventory-level fee if it moves fast and you understock, returns processing in high-return categories, and landed cost including duty and user fees.
+
+Nine lines. Most product research spreadsheets have two.
+
+**The fix:** build the fee stack once, as a template, and populate it per candidate before you shortlist. Our [margin calculator](/tools/margin-calculator/) covers the per-unit part. Every candidate gets the same template.
+
+## 2. Measuring the product instead of the box
+
+Amazon charges on the packaged unit it handles, not on the item.
+
+Cubic feet come from the outer dimensions divided by 1,728. A 12 × 10 × 8 inch box is 0.556 cubic feet; the same product in an 8 × 8 × 6 box is 0.222. That difference is roughly 60%, and it applies to every layer of the storage bill every month — see the [storage guide](/guides/fba-storage-four-layers/).
+
+Dimensions also set the size tier, and the size tier sets the fulfilment fee. Reporting on the 2026 changes is direct that a product looking profitable in one size tier can lose margin when the box pushes it into a higher one, and that this bites hardest on low-priced products, bundles, home goods, toys, fragile items and anything with air-filled packaging.
+
+**The fix:** ask the supplier for the packaged carton dimensions and the unit's shipping dimensions before you model anything. If the numbers put you near a tier boundary, redesigning the packaging is cheaper than absorbing the tier for the life of the product.
+
+<Figure value="0.222 vs 0.556" kind="cost" source="Cubic-foot calculation on two package sizes, August 2026">
+  Cubic feet for the same product in an 8 × 8 × 6 box against a 12 × 10 × 8 box. Every storage charge is multiplied by this number, every month, permanently.
+</Figure>
+
+## 3. Modelling at a price you will not sell at
+
+From 15 January 2026 the FBA fulfilment fee is calculated partly from price bands rather than from size and weight alone. Reported bands for US standard-size items are under $10, $10 to $50, and above $50.
+
+So a product validated at $49 and launched at $52 has a different fulfilment fee from the one in your model — and because the 3.5% surcharge is charged on that fee, a third number moved as well. Our [price band guide](/guides/price-tier-repricing-trap/) works through it.
+
+**The fix:** model at your realistic selling price, not your hopeful one, and check where that price sits relative to $10 and $50. If a candidate only works at a price that sits just above a boundary, it is more fragile than it looks.
+
+## 4. Ignoring seasonality, which has the worst asymmetry
+
+A product that sells year-round and one that sells in eight weeks can show identical monthly averages in a research tool.
+
+Get this wrong and the consequences compound in one direction. Unsold seasonal stock sits into Q4, when the base storage rate roughly triples on published 2026 figures. It keeps sitting while the aged-inventory clock runs toward the 180-day trigger. And the corrective actions — removal, liquidation, promotion — all cost more and work slower during peak. Our [removal guide](/guides/removal-vs-hold-decision/) shows the same unit costing 0.58 months of holding to remove in November against 2.9 months in May.
+
+**The fix:** look at twelve months of demand, not ninety days. For anything seasonal, plan the exit before the entry — decide in advance what happens to unsold units and when the decision gets made. September, not December.
+
+## 5. Treating the supplier's quote as the cost of goods
+
+The invoice price is the beginning of landed cost, not the end of it.
+
+Since the de minimis suspension, commercial parcels need a customs entry — Type 11 informal or Type 01 formal — and everything that comes with one: duty at the rate your HTS code carries, the Merchandise Processing Fee, the Harbor Maintenance Fee on ocean freight, a customs bond, a broker fee per entry, an ISF filing on ocean, and the possibility of an examination you pay for. The [landed cost guide](/guides/landed-cost-fee-stack/) builds the stack; the [customs holds guide](/guides/customs-holds-and-exams/) covers the exam risk.
+
+**The fix:** put landed cost per unit into the model, not invoice price. If you have never seen a CBP Form 7501 for one of your own shipments, ask your forwarder for one before you evaluate another product.
+
+## 6. Choosing a product you cannot document
+
+This one is new, and almost no product research content covers it.
+
+Since 31 March 2025, Amazon reimburses inventory lost before a customer orders at documented sourcing cost. A supplier who cannot issue an invoice with the required fields leaves Amazon estimating your cost from comparable products. On a high-margin or unusual product, that estimate will not resemble what you paid.
+
+Which means **the supplier's paperwork capability is a product selection criterion**, not just a sourcing one. See the [supplier verification guide](/guides/supplier-verification/).
+
+**The fix:** ask for a sample invoice during qualification, before the first order.
+
+## The shortlist test
+
+Before a candidate goes on the shortlist, five numbers:
+
+1. **Landed cost per unit** — invoice, freight, duty, user fees, broker, amortised bond
+2. **Fee stack per unit at the realistic selling price** — referral, fulfilment, surcharge, placement, storage
+3. **Cubic feet of the packaged unit** — and where it sits relative to a size tier boundary
+4. **Where the price sits** relative to $10 and $50
+5. **Weeks of demand in the worst month**, not the average month
+
+If you cannot fill all five, you have not finished researching the product. You have finished researching the demand.
+
+<Faq items={[
+  { q: "What is the single most expensive product research mistake?", a: "Modelling the cost side approximately. Demand is a forecast and cost is knowable from published schedules; spending the effort on the uncertain half while estimating the certain half is the wrong way round." },
+  { q: "How much does packaging size really matter?", a: "A 12 × 10 × 8 box is 0.556 cubic feet against 0.222 for an 8 × 8 × 6 — about 60% less. That multiplier applies to every storage layer every month, and dimensions also set the size tier that drives the fulfilment fee." },
+  { q: "Does my selling price change my fees?", a: "Yes. Since 15 January 2026 price bands are an input to the FBA fulfilment fee, and the reported 3.5% fuel and logistics surcharge is charged on that fee." },
+  { q: "How far back should I look at demand?", a: "Twelve months. Ninety days cannot distinguish steady demand from a season, and getting that wrong puts stock into Q4 peak storage with the aged-inventory clock running." },
+  { q: "Is the supplier quote my cost of goods?", a: "No. Landed cost adds freight, duty, the Merchandise Processing Fee, Harbor Maintenance Fee on ocean, bond, broker fee and any examination costs. Since the de minimis suspension none of these are optional on commercial imports." },
+  { q: "Do I need a research tool to do this?", a: "Not for the cost side, which is the half this guide is about. Every figure here comes from published fee schedules and your own supplier quote." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon FBA fees in 2026: what sellers need to check before pricing products (size tier shifts on packaged units; low-priced, bundled, fragile and air-filled packaging cases; 3.5% surcharge on the fulfilment fee)', publisher: 'Demotix', href: 'https://demotix.com/amazon-fba-fees/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fee changes 2026: what changed and how to prepare (fulfilment fees calculated on price brackets; size tier definitions)', publisher: 'Sellerise', href: 'https://sellerise.com/blog/amazon-fba-fee-changes/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fees 2026: monthly, aged and Q4 peak rates (four-layer storage structure; cubic-foot basis)', publisher: 'ConversionPerk', href: 'https://www.conversionperk.com/amazon-fba-storage-fees-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fees breakdown 2026 (peak storage at three times the off-peak rate; eight-to-ten-week peak cover guidance)', publisher: 'Nventory', href: 'https://nventory.io/blog/amazon-fba-fulfillment-fees-breakdown-2026', accessed: '2026-08-08' },
+  { title: 'New Amazon FBA inventory reimbursement policy: managing sourcing cost (documentation required to establish sourcing cost)', publisher: 'Brandwoven', href: 'https://gobrandwoven.com/resources/articles/new-amazon-fba-inventory-reimbursement-policy-managing-sourcing-cost/', accessed: '2026-08-08' },
+]} />
