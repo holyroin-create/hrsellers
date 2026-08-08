@@ -1,0 +1,106 @@
+---
+title: "Your reorder point depends on a threshold the published sources cannot agree on"
+description: "Amazon's low-inventory-level fee charges you per unit sold while a SKU sits below a historical supply threshold. Guides published in 2026 give that threshold as 28 days and as 35 days. The difference moves your reorder trigger by a week."
+category: "Fees & reimbursements"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 8
+numbered: true
+ledger: "Threshold: 28 days or 35 days — sources split"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The low-inventory-level fee is charged per unit sold while a SKU's historical days of supply sits below Amazon's threshold. It is a penalty on selling, not on holding.",
+  "Published 2026 guidance splits between a 28-day threshold and a 35-day threshold. Both appear in sources dated within months of each other.",
+  "The fee is reported to apply at FNSKU level in 2026 rather than at parent-ASIN level, which means one thin variant can generate the fee on sales of the whole listing.",
+  "Reported rates sit in the region of $0.89 to $1.10 per unit. On a $20 item that is a five-point margin cut on every sale until the SKU recovers.",
+  "The operational answer is not 'hold more stock'. It is a reorder trigger that includes supplier production time, transit and Amazon check-in — because the fee is charged during the gap, not after it.",
+]} />
+
+Most FBA fees punish inventory that sits. This one punishes inventory that does not exist. That inversion is what makes it hard to plan around, and it is why the fee catches sellers whose products are doing well.
+
+## What the fee actually does
+
+The low-inventory-level fee applies when a SKU's inventory falls below a threshold measured in days of historical supply. While it is below that line, Amazon charges an additional amount on every unit that sells.
+
+Read that again, because the mechanism matters. You are not charged for being out of stock. You are charged **for selling** while under-stocked. A SKU that sells nothing while thin costs you nothing extra. A SKU that sells briskly while thin costs you on every order — which is to say, the fee lands hardest precisely when demand is strongest and your inventory position is worst.
+
+That is a different planning problem from storage fees, and it cannot be solved with the same instincts.
+
+<Figure value="28 or 35" kind="cost" source="2026 FBA rate breakdowns, reviewed 8 August 2026">
+  Days of historical supply, as the threshold is given by different published 2026 guides. The gap is a week of reorder lead time.
+</Figure>
+
+## The threshold nobody agrees on
+
+Here is the practical problem. To set a reorder trigger you need the threshold. The published sources do not give you one number.
+
+One 2026 cost breakdown states that falling below a 28-day historical sell-through cover on a SKU triggers a per-unit fee on sales until you are back above it. Another 2026 rate breakdown, published within months, states that the low-inventory threshold has shifted to 35 days of supply. A third describes 2026 refinements that tightened the calculation window without naming a figure at all.
+
+These cannot all be current. One of them is stale, or describing a different measure, or wrong.
+
+**The working position:** treat the threshold as at least 35 days for planning purposes, and confirm the current figure in Seller Central before you commit to a reorder policy. Planning to the wider number costs you some working capital. Planning to the narrower one costs you the fee on every sale in the gap. The asymmetry is obvious once you write it down.
+
+This is a good example of why every figure on this site carries a date and a source. A rate card without either is not usable for a decision that turns on a week.
+
+## The variant trap
+
+The reported 2026 change to FNSKU-level application is the part most likely to catch an established seller by surprise.
+
+Under a parent-ASIN measure, a listing with healthy overall stock is safe. Under an FNSKU-level measure, each child variant is assessed on its own. A listing with ten variants, nine of them well stocked and one nearly out, has one variant below the threshold — and the reported behaviour is that sales carry the fee.
+
+The practical consequence: **your slowest variant sets your fee exposure, not your average.** Sellers running wide variant families — apparel with size and colour splits, multipacks, bundles — have far more surfaces on which to trip this than their inventory dashboard suggests at parent level.
+
+Check variant-level days of supply, not listing-level. If your reporting only shows the parent, your reporting is the wrong shape for this fee.
+
+## What the fee costs in practice
+
+Reported rates fall in the region of $0.89 to $1.10 per unit sold. Whether that is material depends entirely on price point.
+
+| Selling price | Fee at $1.00 | Share of price |
+| --- | --- | --- |
+| $12 | $1.00 | 8.3% |
+| $20 | $1.00 | 5.0% |
+| $35 | $1.00 | 2.9% |
+| $60 | $1.00 | 1.7% |
+
+For a low-price seller already working against the fulfilment fee floor, a dollar a unit is not a nuisance charge. It is the difference between a working SKU and a non-working one, applied at the worst possible moment.
+
+## Building a reorder trigger that survives this
+
+The instinct is to hold more inventory. That is expensive, exposes you to storage and aged-inventory charges, and treats a timing problem as a quantity problem.
+
+The better frame is that the fee is charged **during the replenishment gap**. Shorten or cover the gap and the quantity question largely takes care of itself. Four components make up that gap and all four belong in your trigger:
+
+1. **Supplier production time.** Not the quoted lead time — your supplier's actual recent performance, which you have data on.
+2. **Transit time.** Ocean, air or ground, plus the customs step, which since the de minimis suspension is no longer a formality on low-value imports.
+3. **Amazon check-in and receiving.** Inventory in a fulfilment centre yard is not inventory you can sell. Commonly quoted as one to five business days, but it varies by centre and by season.
+4. **Your own reaction time.** The days between the trigger firing and the purchase order actually going out.
+
+Add those, add a buffer for the threshold uncertainty above, and you have a reorder point. It will be larger than the one you are using.
+
+**Two structural options** worth considering if the arithmetic keeps failing. Amazon's own upstream warehousing sits outside the FBA inventory pool and is reported to sidestep the low-inventory measure while allowing automated replenishment into FBA. A third-party warehouse close to a fulfilment centre achieves something similar with more control and more work. Both convert a fee problem into a logistics decision, which is generally the better kind of problem.
+
+<Faq items={[
+  { q: "Am I charged for being out of stock?", a: "No. The fee applies to units that sell while the SKU is below the threshold. Being out of stock costs you the sale, not the fee." },
+  { q: "What is the threshold exactly?", a: "Published 2026 sources give both 28 days and 35 days of historical supply. Confirm the current figure in Seller Central. For planning, use the wider number — the cost of being conservative is working capital, and the cost of being wrong is a fee on every sale." },
+  { q: "Does one low variant affect the whole listing?", a: "Reported 2026 behaviour is that the measure applies at FNSKU level, so variants are assessed individually. Check days of supply per variant, not per parent ASIN." },
+  { q: "Does upstream warehousing avoid it?", a: "Amazon's upstream warehousing is reported to sit outside the FBA inventory measure while auto-replenishing into it. Confirm current programme terms before restructuring around it." },
+  { q: "Is this fee avoidable by switching to merchant fulfilment?", a: "Yes, in the sense that the fee is an FBA charge. Whether that trade is worth making depends on your own fulfilment cost, which is a separate calculation — see the margin calculator." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon FBA fees in 2026: a seller\u2019s complete cost breakdown (28-day cover)', publisher: 'ConnectBooks', href: 'https://www.connectbooks.com/blog-posts/amazon-fba-fees-2026', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fee changes 2026: every new rate explained (35 days of supply; $0.89–$1.10 per unit)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fee changes in 2026: what\u2019s new and how to adapt (tightened calculation window)', publisher: 'Seller Labs', href: 'https://www.sellerlabs.com/knowledge-base/amazon-fba-fee-changes-in-2026-whats-new-how-to-adapt/', accessed: '2026-08-08' },
+  { title: 'Amazon 2026 FBA fees: what sellers need to know (FNSKU-level application)', publisher: 'SellerEngine', href: 'https://sellerengine.com/amazon-2026-fba-fees/', accessed: '2026-08-08' },
+  { title: 'Amazon 2026 FBA fee changes (upstream warehousing and low-inventory fees)', publisher: 'eFulfillment Service', href: 'https://www.efulfillmentservice.com/2026/04/amazon-2026-fba-fee-changes-what-sellers-need-to-know/', accessed: '2026-08-08' },
+  { title: '2026 Amazon FBA fee changes: full rate card for sellers', publisher: 'Goat Consulting', href: 'https://www.goatconsulting.com/amazon-fulfillment/amazon-fba-fee-changes-for-2026', accessed: '2026-08-08' },
+]} />

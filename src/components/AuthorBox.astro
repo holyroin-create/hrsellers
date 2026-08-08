@@ -1,0 +1,20 @@
+---
+import { AUTHOR } from '../config';
+const { compact = false } = Astro.props;
+---
+<aside class="authorbox">
+  <div class="avatar" aria-hidden="true">{AUTHOR.initials}</div>
+  <div>
+    <h3>{AUTHOR.name}</h3>
+    <p class="role">{AUTHOR.role} &middot; {AUTHOR.company}</p>
+    <p>{AUTHOR.bio}</p>
+    {!compact && (
+      <ul>{AUTHOR.credentials.map((c: string) => <li>{c}</li>)}</ul>
+    )}
+    <div class="links">
+      {AUTHOR.social.map((s) => <a href={s.href} rel="me noopener" target="_blank">{s.label}</a>)}
+      <a href="/about/">About</a>
+      <a href="/how-we-test/">How we test</a>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,109 @@
+---
+import PageShell from '../components/PageShell.astro';
+import Sources from '../components/Sources.astro';
+import Faq from '../components/Faq.astro';
+import { MODELS } from '../data/quiz';
+import BarChart from '../components/BarChart.astro';
+---
+<PageShell
+  title="The five Amazon selling models compared, honestly"
+  description="Retail arbitrage, online arbitrage, wholesale, private label and dropshipping — what each requires, what each pays, what each costs you in time, and who each one is actually wrong for."
+  eyebrow="Models"
+  h1="The five models, and who each one is wrong for"
+  lede="Every comparison of these models tells you what each one is good at. The more useful question is which one your situation rules out."
+  crumb={{ label: 'Business models', href: '/business-models/' }}
+  rail={[{href:'/quiz/',label:'15-question fit check'},{href:'/costs/',label:'What it costs to start'},{href:'/reality-check/',label:'What nobody tells you'}]}
+>
+  <div class="prose">
+    <h2>Side by side</h2>
+    <table>
+      <thead><tr><th>Model</th><th>Capital</th><th>Builds an asset?</th></tr></thead>
+      <tbody>
+        <tr><td>Retail arbitrage</td><td>$100 – $2,000</td><td>No</td></tr>
+        <tr><td>Online arbitrage</td><td>$500 – $2,000</td><td>No</td></tr>
+        <tr><td>Dropshipping</td><td>Under $500 – $2,000</td><td>No</td></tr>
+        <tr><td>Wholesale</td><td>$1,000 – $10,000</td><td>Partly — the supplier relationships</td></tr>
+        <tr><td>Private label</td><td>$2,500 – $25,000</td><td>Yes — brand and listing</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <BarChart
+    caption="Capital required, lowest to highest published figure. The models sort almost cleanly on this one axis — which is why it is the first question to answer."
+    source="Compiled from published seller guides, Aug 2026"
+    series={[
+      { label: 'Dropshipping', low: 400, high: 2000 },
+      { label: 'Retail arbitrage', low: 100, high: 2000 },
+      { label: 'Online arbitrage', low: 500, high: 2000 },
+      { label: 'Wholesale', low: 1000, high: 10000 },
+      { label: 'Private label', low: 2500, high: 25000 },
+    ]}
+  />
+
+  <BarChart
+    unit=""
+    caption="Cited net margin bands by model. Since the January 2026 fee change, models below roughly 10% have very little left to absorb an increase."
+    source="Compiled from published seller guides, Aug 2026"
+    series={[
+      { label: 'Dropshipping', low: 5, high: 15 },
+      { label: 'Arbitrage', low: 5, high: 15 },
+      { label: 'Wholesale', low: 8, high: 15 },
+      { label: 'Private label', low: 15, high: 30 },
+    ]}
+  />
+
+  <div class="prose">
+    <p class="note">Ranges are compiled from published seller guides, not audited data. See <a href="/costs/">what it costs to start</a> for why the private label range is so wide.</p>
+
+    {Object.entries(MODELS).map(([k, m]) => (
+      <>
+        <h2>{m.name}</h2>
+        <p>{m.blurb}</p>
+        <table>
+          <tbody>
+            <tr><td>Typical capital</td><td>{m.capital}</td></tr>
+            <tr><td>Margin profile</td><td>{m.margin}</td></tr>
+          </tbody>
+        </table>
+      </>
+    ))}
+
+    <h2>What decides it, in practice</h2>
+    <p>
+      Four constraints do most of the work, and none of them is enthusiasm.
+    </p>
+    <ul>
+      <li><strong>Capital you can lose.</strong> Not capital you have. The models sort almost cleanly on this one axis.</li>
+      <li><strong>Supplier access.</strong> Wholesale is gatekept — a registered business and resale certificate are usually prerequisites for a distributor account. No amount of money substitutes for that paperwork.</li>
+      <li><strong>Payout timing tolerance.</strong> The gap between paying a supplier and being paid by the marketplace decides whether you can reorder your winner.</li>
+      <li><strong>Margin buffer.</strong> The 2026 fee changes hit thin-margin models hardest. Models running at five to ten percent net have almost nothing left to absorb an increase; models above fifteen percent can take it.</li>
+    </ul>
+
+    <h2>The one nobody says out loud</h2>
+    <p>
+      Arbitrage and dropshipping are frequently sold as beginner-friendly. They are cheap, which is not
+      the same thing. They also carry the thinnest margins, the least protection against fee changes,
+      and no asset at the end. They are a good way to learn how Seller Central works with money you can
+      afford to lose. They are a poor destination.
+    </p>
+    <p>
+      Conversely, private label is sold as the sophisticated choice, which encourages undercapitalised
+      people to attempt it. It is the model where being underfunded is most expensive, because the
+      failure mode is a container of unsold branded inventory that nobody else can sell for you.
+    </p>
+  </div>
+
+  <Faq items={[
+    { q: 'Can I run more than one model at once?', a: 'Yes — there is no rule against selling under multiple models from one account, and testing demand cheaply before committing to inventory is a common approach. The constraint is attention, not permission.' },
+    { q: 'Which model is most popular?', a: 'Jungle Scout statistics cited across seller publications indicate a large majority of Amazon sellers use private label and around a quarter use wholesale, with overlap between the two.' },
+    { q: 'Is dropshipping allowed on Amazon?', a: 'Amazon has a specific drop shipping policy with conditions, including requirements about who must be identified as the seller of record on packing slips and invoices. Read the policy in Seller Central before building on this model.' },
+    { q: 'Which model handles the 2026 fee changes best?', a: 'The ones with wider margins. Sellers at fifteen percent net or above can absorb the fulfillment fee increase; those at five to ten percent have very little buffer.' },
+  ]} />
+
+  <Sources slot="sources" items={[
+    { title: '5 types of Amazon sellers: which model makes money?', publisher: 'SellerView', href: 'https://sellerview.ai/blog/5-types-of-amazon-sellers', accessed: '2026-08-07' },
+    { title: 'Retail arbitrage on Amazon: 2026 profit guide', publisher: 'Aura', href: 'https://goaura.com/blog/retail-arbitrage-on-amazon', accessed: '2026-08-07' },
+    { title: 'Wholesale vs private label: a guide for Amazon FBA sellers', publisher: 'SellerMetrics', href: 'https://sellermetrics.app/amazon-wholesale-private-label/', accessed: '2026-08-07' },
+    { title: 'Amazon FBA vs dropshipping: which wins in 2026?', publisher: 'Aura', href: 'https://goaura.com/blog/amazon-fba-vs-dropshipping', accessed: '2026-08-07' },
+  ]} />
+</PageShell>

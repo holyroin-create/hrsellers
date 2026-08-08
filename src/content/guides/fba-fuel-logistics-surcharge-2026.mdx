@@ -1,0 +1,101 @@
+---
+title: "Amazon announced a $0.08 fee increase for 2026. Then it added a percentage on top of every fulfilment fee."
+description: "The January 2026 fulfilment increase was announced with three months' notice and covered widely. A 3.5% fuel and logistics surcharge, reported as starting 17 April 2026, appears in very little of that coverage — and it compounds."
+category: "Fees & reimbursements"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 7
+numbered: true
+ledger: "3.5% on top of every FBA fulfilment fee"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The widely reported 2026 change was an average $0.08 per unit increase in US FBA fulfilment fees, effective 15 January 2026, with no new fee types introduced.",
+  "A separate 3.5% fuel and logistics surcharge is reported as layering on top of every FBA fulfilment fee from 17 April 2026. Several 2026 rate breakdowns published the same quarter do not mention it at all.",
+  "A percentage surcharge behaves differently from a flat increase: it scales with the fee, so it costs heavy and oversize sellers most and low-price sellers least in absolute terms.",
+  "The two changes compound. A SKU carrying a $9 fulfilment fee absorbs the $0.08 increase and then roughly $0.32 of surcharge on the new figure.",
+  "Because the surcharge is a percentage of a fee that is itself now a function of your selling price, one price change can move three numbers at once.",
+]} />
+
+If you priced your 2026 catalogue in January against Amazon's published increase, you priced it against roughly half the change. The increase was real, well signposted and easy to model. What followed it was neither well signposted nor flat.
+
+## What was announced, and what was actually reported
+
+Amazon's 2026 US fee update was announced in October 2025 and took effect on 15 January 2026. The messaging was consistent across the announcement and the coverage: an average increase of $0.08 per unit, no new fee types, and a year of no US referral or FBA increases in 2025 behind it. For a fee cycle, that is unusually restrained, and it was reported as such.
+
+The detail underneath the average is covered in our guide to the [2026 fee changes](/guides/amazon-fba-fee-changes-2026/): third-party readings of the published tables put small standard-size increases anywhere from $0.12 to $0.51 depending on price tier, so the average was already doing more work than a seller could rely on.
+
+The surcharge is a separate matter.
+
+<Figure value="3.5%" kind="cost" source="2026 FBA rate card, Goat Consulting, accessed 8 August 2026">
+  A fuel and logistics-related surcharge reported as layering on top of every FBA fulfilment fee from 17 April 2026 — a percentage, not a per-unit amount.
+</Figure>
+
+## Why a percentage is a different animal
+
+A flat per-unit increase is regressive against price: eight cents matters on a $6 item and disappears on a $60 one. A percentage surcharge on the fulfilment fee is the opposite. It scales with the fee, and the fee scales with size and weight.
+
+Consider three units, using illustrative fulfilment fees to show the shape of the effect rather than to quote a rate card:
+
+| Unit | Fulfilment fee | 3.5% surcharge | Combined with the $0.08 increase |
+| --- | --- | --- | --- |
+| Small standard, light | $3.50 | $0.12 | $0.20 |
+| Standard, 2 lb | $5.60 | $0.20 | $0.28 |
+| Large standard, heavy | $9.00 | $0.32 | $0.40 |
+| Oversize | $18.00 | $0.63 | $0.71 |
+
+The seller who read the announcement and added eight cents to every SKU is under-forecasting by two and a half times on the heavy end of their catalogue and by half on the light end. Nobody is over-forecasting.
+
+## The compounding nobody modelled
+
+Here is the part that outlasts this year's rate.
+
+Since January 2026, selling price is an input to the FBA fulfilment fee through three bands: under $10, $10 to $50, and above $50. The surcharge is a percentage of that fulfilment fee. Put those two facts together and a price change now moves your fulfilment cost twice — once by crossing a band, and again through the percentage applied to the new, higher fee.
+
+Raise a $49 item to $52 to protect margin against the fee increase and you may cross into a higher price band, take a larger fulfilment fee, and take a larger surcharge on that larger fee. It is entirely possible to raise a price and reduce your contribution per unit.
+
+This is not a hypothetical for anyone running automated repricing. A repricer that treats fulfilment cost as a constant is running a model that stopped describing the platform in January.
+
+## The reporting problem
+
+This surcharge is worth a note on sourcing, because it illustrates the general problem with marketplace fee coverage.
+
+During research for this guide, several 2026 FBA rate breakdowns were checked. One gives the surcharge explicitly, with a rate and a start date. Others, published in the same quarter and presenting themselves as complete 2026 rate cards, do not mention it. At least one gives an off-peak storage rate that differs from another by nine cents per cubic foot. Another states a low-inventory threshold of 35 days where others give 28.
+
+None of these are unreasonable publications. They are simply written at different moments, against different sources, and not revisited. The lesson is not that fee content is untrustworthy — it is that a rate without a date and a source is a rumour with a decimal point.
+
+<Figure value="1 of 6" kind="cost" source="Rate breakdowns reviewed for this guide, August 2026">
+  The proportion of published 2026 FBA rate breakdowns reviewed here that mentioned the fuel and logistics surcharge at all.
+</Figure>
+
+## What to do about it
+
+**Recalculate on the fee, not on the announcement.** Pull the actual fulfilment fee for your top SKUs from the Selling Economics and Fee Preview report rather than adding an average to last year's number. The report reflects the rates Amazon is charging you; the announcement reflects a mean across a catalogue that is nothing like yours.
+
+**Split "Amazon fees" into lines in your accounts.** Referral, fulfilment, surcharge, placement, storage and returns move independently and now in different directions. A single combined fee line hides which one broke your margin. If your bookkeeping collapses them, you will find out about a change one quarter late.
+
+**Re-check your repricing floor.** If your minimum price was set against a fixed fulfilment assumption, it is now wrong on any SKU near a price-band boundary. Identify those SKUs first; they are where the compounding bites.
+
+**Model the heavy end of your catalogue separately.** A percentage surcharge concentrates cost in exactly the SKUs that were already marginal. For bulky and heavy items, this is the year to run the merchant-fulfilled comparison properly rather than assuming FBA wins on convenience.
+
+<Faq items={[
+  { q: "Is the surcharge on the whole order or just fulfilment?", a: "It is reported as applying to the FBA fulfilment fee, not to the referral fee or the sale price. Confirm against the current rate card in Seller Central before modelling — this is the point in the fee stack where published sources vary most." },
+  { q: "Does the surcharge replace the January increase?", a: "No. They are separate and they compound. The January change altered the fulfilment fee itself; the surcharge is applied on top of the resulting fee." },
+  { q: "Why does so much 2026 coverage not mention it?", a: "Most 2026 rate content was written in the weeks around the January change and describes that change accurately. The surcharge is reported as a later addition, and rate cards are rarely revisited after publication." },
+  { q: "How do I see what I am actually being charged?", a: "The Selling Economics and Fee Preview report shows fees at the SKU level using current rates. It is the only figure that describes your catalogue rather than an average." },
+]} />
+
+<Sources items={[
+  { title: '2026 Amazon FBA fee changes: full rate card for sellers (fuel and logistics surcharge, 17 April 2026)', publisher: 'Goat Consulting', href: 'https://www.goatconsulting.com/amazon-fulfillment/amazon-fba-fee-changes-for-2026', accessed: '2026-08-08' },
+  { title: 'Update to U.S. referral and Fulfillment by Amazon fees for 2026', publisher: 'Amazon Selling Partners', href: 'https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026', accessed: '2026-08-08' },
+  { title: 'Amazon 2026 fees breakdown: FBA, referral, inbound placement (price band structure)', publisher: 'Brandwoven', href: 'https://gobrandwoven.com/resources/articles/amazon-2026-fees-breakdown-fba-referral-inbound-placement/', accessed: '2026-08-08' },
+  { title: 'Amazon 2026 FBA fees: what sellers need to know (no surcharge mentioned)', publisher: 'SellerEngine', href: 'https://sellerengine.com/amazon-2026-fba-fees/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fees in 2026: a seller\u2019s complete cost breakdown (no surcharge mentioned)', publisher: 'ConnectBooks', href: 'https://www.connectbooks.com/blog-posts/amazon-fba-fees-2026', accessed: '2026-08-08' },
+]} />

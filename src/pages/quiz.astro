@@ -1,0 +1,172 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AdSlot from '../components/AdSlot.astro';
+import Sources from '../components/Sources.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import { QUESTIONS, MODELS, FLAGS } from '../data/quiz';
+---
+<Base title="Which Amazon selling model fits you? A 15-question check"
+      description="Fifteen honest questions about your capital, contacts, time and risk tolerance — then a straight answer on whether retail arbitrage, online arbitrage, wholesale, private label or dropshipping actually fits your situation.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Model fit check', href: '/quiz/' }]} /></div>
+
+<section class="wrap" style="padding:2rem 1.5rem 0">
+  <p class="eyebrow">15 questions &middot; no email required</p>
+  <h1 style="max-width:20ch">Which selling model actually fits you?</h1>
+  <p style="max-width:46ch;font-size:1.15rem;color:var(--ink-soft);margin:1.2rem 0 1.6rem">
+    Most people pick a model because of a video they watched, then discover eight months later that
+    their capital, their contacts or their tolerance for risk never matched it. These fifteen questions
+    are the ones worth answering before you spend anything.
+  </p>
+  <p class="note" style="max-width:46ch">
+    Nothing is stored and nothing is sent anywhere — the scoring runs in your browser. There is no
+    signup and no email step.
+  </p>
+</section>
+
+<div class="wrap"><AdSlot inline={true} label="ad slot — below intro" /></div>
+
+<div class="wrap">
+  <div class="article-grid">
+    <div>
+      <form id="quiz" class="quiz">
+        {QUESTIONS.map((q, i) => (
+          <fieldset class="qblock" data-q={q.id}>
+            <legend><span class="qn">{String(i + 1).padStart(2, '0')}</span>{q.q}</legend>
+            {q.help && <p class="qhelp">{q.help}</p>}
+            <div class="opts">
+              {q.options.map((o, j) => (
+                <label class="opt">
+                  <input type="radio" name={q.id} value={j} />
+                  <span>{o.label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+        <p id="quiz-status" class="note" role="status" aria-live="polite">0 of {QUESTIONS.length} answered.</p>
+        <p><button type="button" id="quiz-go" class="btn" disabled><span>Show my result</span><span class="arw" aria-hidden="true">&rarr;</span></button></p>
+      </form>
+
+      <section id="result" class="result" hidden aria-live="polite">
+        <p class="eyebrow">Your result</p>
+        <h2 id="r-name"></h2>
+        <p id="r-blurb" style="max-width:44ch"></p>
+        <dl class="factbox" id="r-facts" style="margin:1.4rem 0"></dl>
+        <div id="r-second"></div>
+        <div id="r-flags"></div>
+        <p style="margin-top:1.6rem">
+          <a class="btn" href="/business-models/"><span>Compare all five models</span><span class="arw" aria-hidden="true">&rarr;</span></a>
+        </p>
+        <p class="note" style="margin-top:1.4rem">
+          This is a structured way of organising your own answers, not a prediction. It weights the
+          factors that most often decide whether a model works — capital, supplier access, time,
+          payout timing and downside tolerance. It cannot know your market, your product or your
+          discipline.
+        </p>
+      </section>
+
+      <div class="prose" style="margin-top:3rem">
+        <h2>Why these fifteen questions</h2>
+        <p>
+          Almost every question here maps to a way people lose money, not a way they make it.
+          Capital and reserve appear twice because undercapitalisation is one of the most commonly
+          cited reasons sellers fail — and because marketplace payout cycles lock your cash up
+          well past the moment of sale, which catches people who budgeted only for the first order.
+        </p>
+        <p>
+          The supplier and business-entity questions exist because wholesale is gatekept in a way the
+          other models are not. Legitimate distributors generally want a registered business and a
+          resale certificate before opening an account. If you do not have those, wholesale is closed
+          to you regardless of how much capital you hold.
+        </p>
+        <p>
+          The 2026 fee changes make the margin question sharper than it used to be. Models running at
+          thin net margins have almost no buffer to absorb fee increases, while models holding wider
+          margins can take them without going negative. That is why the model you choose matters more
+          now than it did a few years ago.
+        </p>
+      </div>
+
+      <AdSlot label="ad slot — end of page" />
+      <AuthorBox />
+    </div>
+
+    <aside class="rail">
+      <div class="rail-box">
+        <h4>The five models</h4>
+        <ul class="toc">
+          {Object.values(MODELS).map(m => <li><a href="/business-models/">{m.name}</a></li>)}
+        </ul>
+      </div>
+      <div class="rail-box">
+        <h4>Before you decide</h4>
+        <dl class="factbox">
+          <dt>Read next</dt><dd><a href="/reality-check/" style="color:var(--recovered)">What nobody tells you</a></dd>
+          <dt>Costs</dt><dd><a href="/costs/" style="color:var(--recovered)">What it costs to start</a></dd>
+          <dt>Free</dt><dd><a href="/resources/" style="color:var(--recovered)">Spreadsheet templates</a></dd>
+        </dl>
+      </div>
+      <AdSlot label="ad slot — sidebar" />
+    </aside>
+  </div>
+</div>
+
+<div class="wrap" style="max-width:52rem">
+  <Sources items={[
+    { title: '5 types of Amazon sellers: which model makes money?', publisher: 'SellerView', href: 'https://sellerview.ai/blog/5-types-of-amazon-sellers', accessed: '2026-08-07' },
+    { title: 'Retail arbitrage on Amazon: 2026 profit guide', publisher: 'Aura', href: 'https://goaura.com/blog/retail-arbitrage-on-amazon', accessed: '2026-08-07' },
+    { title: 'How much budget to start Amazon (2026 guide)', publisher: 'ScaleA2Z', href: 'https://scalea2z.com/how-much-budget-to-start-amazon/', accessed: '2026-08-07' },
+    { title: 'How much money do you need to start Amazon wholesale', publisher: 'Jakfi', href: 'https://jakfi.eu/blog/how-much-money-to-start-amazon-wholesale', accessed: '2026-08-07' },
+  ]} />
+</div>
+
+<script define:vars={{ QUESTIONS, MODELS, FLAGS }}>
+  const form = document.getElementById('quiz');
+  const go = document.getElementById('quiz-go');
+  const status = document.getElementById('quiz-status');
+  const total = QUESTIONS.length;
+
+  const count = () => new Set([...form.querySelectorAll('input:checked')].map(i => i.name)).size;
+  form.addEventListener('change', () => {
+    const n = count();
+    status.textContent = `${n} of ${total} answered.`;
+    go.disabled = n < total;
+  });
+
+  go.addEventListener('click', () => {
+    const scores = {}; const flags = [];
+    Object.keys(MODELS).forEach(k => scores[k] = 0);
+    QUESTIONS.forEach(q => {
+      const el = form.querySelector(`input[name="${q.id}"]:checked`);
+      if (!el) return;
+      const opt = q.options[Number(el.value)];
+      Object.entries(opt.w || {}).forEach(([k, v]) => scores[k] += v);
+      if (opt.flag) flags.push(opt.flag);
+    });
+    const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const [topKey] = ranked[0];
+    const [secondKey] = ranked[1];
+    const top = MODELS[topKey], second = MODELS[secondKey];
+
+    document.getElementById('r-name').textContent = top.name;
+    document.getElementById('r-blurb').textContent = top.blurb;
+    document.getElementById('r-facts').innerHTML =
+      `<dt>Typical starting capital</dt><dd>${top.capital}</dd>` +
+      `<dt>Margin profile</dt><dd>${top.margin}</dd>` +
+      `<dt>Closest alternative</dt><dd>${second.name}</dd>`;
+    document.getElementById('r-second').innerHTML =
+      `<h3 style="margin-top:1.6rem">If that does not sit right: ${second.name}</h3><p style="max-width:44ch;color:var(--ink-soft)">${second.blurb}</p>`;
+
+    const uniq = [...new Set(flags)];
+    document.getElementById('r-flags').innerHTML = uniq.length
+      ? `<h3 style="margin-top:1.8rem">Things your answers flagged</h3>` +
+        uniq.map(f => `<div class="flagbox"><p>${FLAGS[f]}</p></div>`).join('')
+      : '';
+
+    const r = document.getElementById('result');
+    r.hidden = false;
+    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
+</Base>

@@ -1,0 +1,50 @@
+---
+import Cover from './Cover.astro';
+const { href, slug = '', category, title, summary, minutes, published, modified, ledger, ledgerKind = 'recovered' } = Astro.props;
+
+const BADGE: Record<string, string> = {
+  'Fees & reimbursements': 'fees',
+  'Shipping & logistics': 'ship',
+  'Software': 'soft',
+  'Getting started': 'start',
+  'Scaling': 'scale',
+};
+const SHORT: Record<string, string> = {
+  'Fees & reimbursements': 'Fees',
+  'Shipping & logistics': 'Shipping',
+  'Software': 'Software',
+  'Getting started': 'Getting started',
+  'Scaling': 'Scaling',
+};
+
+/* Relative age, the way a news list reads. Falls back to the date. */
+function ago(iso: string): string {
+  const then = new Date(iso).getTime();
+  if (Number.isNaN(then)) return iso;
+  const days = Math.floor((Date.now() - then) / 86400000);
+  if (days <= 0) return 'Today';
+  if (days === 1) return 'Yesterday';
+  if (days < 7) return `${days} days ago`;
+  if (days < 14) return '1 week ago';
+  if (days < 31) return `${Math.floor(days / 7)} weeks ago`;
+  if (days < 62) return '1 month ago';
+  if (days < 365) return `${Math.floor(days / 30)} months ago`;
+  return `${Math.floor(days / 365)} year${days < 730 ? '' : 's'} ago`;
+}
+const stamp = modified ?? published;
+---
+<a class="pcard" href={href}>
+  <div class="pthumb">
+    <Cover slug={slug} category={category} />
+    {minutes && <span class="dur">{minutes} min</span>}
+  </div>
+  <div>
+    <p class="pmeta">
+      <span class={`badge ${BADGE[category] ?? 'start'}`}>{SHORT[category] ?? category}</span>
+      <span class="ago">{ago(stamp)}</span>
+    </p>
+    <h3>{title}</h3>
+    <p>{summary}</p>
+    {ledger && <span class={ledgerKind === 'cost' ? 'ledger cost' : 'ledger'}><b>{ledger}</b></span>}
+  </div>
+</a>

@@ -1,0 +1,9 @@
+---
+/* Solid, high-visibility action button.
+   variant: 'primary' (green) | 'cta' (orange) | 'dark' | 'quiet'
+   Never place inside or directly beside an <AdSlot />. */
+const { href, variant = 'primary', quiet = false, wide = false, arrow = true } = Astro.props;
+const v = quiet ? 'quiet' : variant;
+const cls = ['btn', v === 'primary' ? '' : v, wide ? 'wide' : ''].filter(Boolean).join(' ');
+---
+<a class={cls} href={href}><span><slot /></span>{arrow && <span class="arw" aria-hidden="true">&rarr;</span>}</a>

@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import Btn from '../components/Btn.astro';
+import Takeaways from '../components/Takeaways.astro';
+import Figure from '../components/Figure.astro';
+import PullQuote from '../components/PullQuote.astro';
+import Faq from '../components/Faq.astro';
+import Sources from '../components/Sources.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<Base title="Component reference" noindex={true} description="Internal reference for the components available to articles. Not indexed.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Component reference', href: '/style-guide/' }]} /></div>
+<section class="wrap" style="padding:2rem 1.5rem 0">
+  <p class="eyebrow">Internal &middot; not indexed</p>
+  <h1 style="max-width:18ch">Component reference</h1>
+  <p style="max-width:44ch;color:var(--ink-soft);margin-top:1.1rem">
+    Everything an article can use. All sample values below are marked as placeholders — no figure on
+    this page is a real measurement.
+  </p>
+
+  <div class="prose" style="max-width:46rem">
+    <h2>Buttons</h2>
+    <p style="display:flex;gap:.6rem;flex-wrap:wrap">
+      <Btn href="/guides/">Primary action</Btn>
+      <Btn quiet={true} href="/how-we-test/">Secondary action</Btn>
+    </p>
+
+    <h2>Key takeaways</h2>
+  </div>
+  <div style="max-width:46rem">
+    <Takeaways items={[
+      'Placeholder takeaway one — replace with a real finding.',
+      'Placeholder takeaway two — one sentence, no hedging.',
+      'Placeholder takeaway three — the number that matters.',
+    ]} />
+  </div>
+
+  <div class="prose" style="max-width:46rem">
+    <h2>Figure callout</h2>
+  </div>
+  <div style="max-width:46rem">
+    <Figure value="[$0.00]" source="[document name, retrieval date]">
+      Placeholder figure. Replace the value and the source before publishing.
+    </Figure>
+    <Figure value="[$0.00]" kind="cost" source="[document name, retrieval date]">
+      Cost variant. Same rule — the source line is required, not optional.
+    </Figure>
+  </div>
+
+  <div class="prose" style="max-width:46rem">
+    <h2>Pull quote</h2>
+    <PullQuote attribution="Placeholder attribution">
+      A pull quote carries one line worth stopping for. Not decoration.
+    </PullQuote>
+
+    <h2>Typography</h2>
+    <p>This is a lead paragraph. The first paragraph in any article renders larger to set the entry point, then the measure settles to 42rem for comfortable reading.</p>
+    <p>Body text runs at 1.09rem on a 1.75 line height. Section headings carry a rule above them; numbered articles add a monospace counter in the margin. <strong>Bold</strong> marks a term the reader should carry forward, <code>code</code> marks a literal value.</p>
+    <h3>Subsection heading</h3>
+    <p>Subsections take a green rule on the left edge rather than a size jump, so the hierarchy reads without shouting.</p>
+    <table>
+      <thead><tr><th>Column</th><th>Detail</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Placeholder row</td><td>Description</td><td>[0.00]</td></tr>
+        <tr><td>Placeholder row</td><td>Description</td><td>[0.00]</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="max-width:46rem">
+    <Faq items={[
+      { q: 'Placeholder question one?', a: 'Placeholder answer. Answers here also emit FAQPage structured data, so they must be accurate.' },
+      { q: 'Placeholder question two?', a: 'Keep answers to two or three sentences and make them answer the question directly.' },
+    ]} />
+    <Sources items={[
+      { title: '[Document title]', publisher: '[Publisher]', href: '', accessed: '[YYYY-MM-DD]' },
+      { title: '[Document title]', publisher: '[Publisher]', href: '', accessed: '[YYYY-MM-DD]' },
+    ]} />
+  </div>
+</section>
+</Base>

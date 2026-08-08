@@ -1,0 +1,15 @@
+---
+const { items = [] } = Astro.props;
+---
+<section class="sources" aria-labelledby="src-h">
+  <h2 id="src-h">Sources</h2>
+  <ol>
+    {items.map((s: any) => (
+      <li>
+        {s.href ? <a href={s.href} rel="nofollow noopener" target="_blank">{s.title}</a> : s.title}
+        {s.publisher && <>, {s.publisher}</>}
+        {s.accessed && <> <span class="acc">accessed {s.accessed}</span></>}
+      </li>
+    ))}
+  </ol>
+</section>

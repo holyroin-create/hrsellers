@@ -2,32 +2,107 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ToolBand from '../components/ToolBand.astro';
+import { SITE, AUTHOR } from '../config';
 
-const { title, description, hideToolband } = Astro.props;
-const siteName = "HRSellers";
-const fullTitle = title ? `${title} — ${siteName}` : `${siteName} — Seller Tools & Guides for Every Marketplace`;
-const desc = description || "Tools, guides, and honest reviews for sellers on Amazon, eBay, Shopify, Etsy, Walmart and more.";
+const {
+  title,
+  description = SITE.description,
+  published,
+  modified,
+  type = 'WebPage',
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE.domain).href;
+const fullTitle = title === SITE.name ? title : `${title} — ${SITE.name}`;
+
+const person = {
+  '@type': 'Person',
+  name: AUTHOR.name,
+  jobTitle: AUTHOR.role,
+  worksFor: { '@type': 'Organization', name: AUTHOR.company },
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'Ostim Technical University' },
+  knowsAbout: [
+    'Amazon FBA', 'Walmart Marketplace', 'eBay selling',
+    'marketplace listing operations', 'third-party fulfillment', 'e-commerce logistics',
+  ],
+  url: `${SITE.domain}/about/`,
+  ...(AUTHOR.social?.length ? { sameAs: AUTHOR.social.map((x: any) => x.href) } : {}),
+};
+
+const schema = type === 'Article'
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      author: person,
+      publisher: { '@type': 'Organization', name: SITE.publisher, url: SITE.domain, email: AUTHOR.email },
+      datePublished: published,
+      dateModified: modified ?? published,
+      mainEntityOfPage: canonical,
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: SITE.name,
+      url: SITE.domain,
+      description,
+      publisher: { '@type': 'Organization', name: SITE.publisher, url: SITE.domain, email: AUTHOR.email, founder: person },
+    };
 ---
 <!doctype html>
 <html lang="en">
-     <head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9985150163567506" crossorigin="anonymous"></script>
-      <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{fullTitle}</title>
-    <meta name="description" content={desc} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    {!hideToolband && <ToolBand />}
-    <Footer />
-  </body>
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Archivo:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex,follow" />}
+<meta name="author" content={AUTHOR.name} />
+{/* Site ownership verification for AdSense. Must stay in place whether or not
+    ads are switched on — removing it can un-verify the site. */}
+<meta name="google-adsense-account" content={SITE.adsensePublisherId} />
+<meta property="og:type" content={type === 'Article' ? 'article' : 'website'} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content={SITE.name} />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+{SITE.adsenseEnabled && (
+  <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`} crossorigin="anonymous"></script>
+)}
+</head>
+<body>
+<Header />
+<main id="main">
+  <slot />
+</main>
+<Footer />
+<script is:inline>
+  (function () {
+    var covers = document.querySelectorAll('.cover');
+    if (!covers.length) return;
+    if (!('IntersectionObserver' in window) ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      covers.forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.25 });
+    covers.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
 </html>

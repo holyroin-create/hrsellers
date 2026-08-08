@@ -1,24 +1,112 @@
 ---
-import Legal from '../layouts/Legal.astro';
-const sections = [
-  { id: 'acceptance', h: 'Acceptance of terms', body: [
-    "By accessing HRSellers, you agree to these Terms of Service. If you do not agree, please do not use the site." ] },
-  { id: 'use', h: 'Use of the site', body: [
-    "HRSellers provides educational content, guides, and product reviews for informational purposes. You may use the site for your personal, non-commercial reference.",
-    "You agree not to misuse the site, including attempting to disrupt it, scrape it at scale, or republish its content without permission." ] },
-  { id: 'no-advice', h: 'No professional advice', body: [
-    "Content on this site is general information, not professional, financial, legal, or tax advice. Marketplace rules, fees, and policies change frequently and vary by region. Always verify current details with the relevant platform and consult a qualified professional before making business decisions.",
-    "Figures, fees, and pricing mentioned are accurate to the best of our knowledge at the time of writing but may change without notice." ] },
-  { id: 'affiliate', h: 'Affiliate relationships', body: [
-    "This site contains affiliate links and earns commissions on qualifying actions, as described in our Affiliate Disclosure. This does not affect the price you pay or our editorial independence." ] },
-  { id: 'third-party', h: 'Third-party links', body: [
-    "We link to third-party websites and tools for your convenience. We are not responsible for the content, products, or practices of those third parties, and a link does not imply endorsement of everything on the linked site." ] },
-  { id: 'liability', h: 'Limitation of liability', body: [
-    "The site is provided \u201cas is\u201d without warranties of any kind. To the fullest extent permitted by law, HRSellers is not liable for any loss or damage arising from your use of, or reliance on, the site or its content." ] },
-  { id: 'changes', h: 'Changes to these terms', body: [
-    "We may update these terms from time to time. Continued use of the site after changes means you accept the revised terms." ] },
-];
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, AUTHOR } from '../config';
+const updated = '8 August 2026';
 ---
-<Legal title="Terms of Service" updated="May 2026"
-  intro="The ground rules for using HRSellers. Please read them before relying on anything here."
-  sections={sections} />
+<Base title="Terms of use" description="Terms governing use of this site, the limits of what is published here, and trademark and liability notices.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Terms of use', href: '/terms/' }]} /></div>
+<section class="wrap" style="padding:1.5rem 1.25rem 0">
+  <p class="eyebrow">Legal</p>
+  <h1 style="max-width:20ch">Terms of use</h1>
+  <p class="note" style="margin:1rem 0 2rem">Last updated {updated}. By using {SITE.domain} you accept these terms.</p>
+
+  <div class="prose">
+    <h2>What this site is</h2>
+    <p>
+      {SITE.name} publishes operational reference material for people selling on online marketplaces:
+      fee structures, policy changes, cost arithmetic and calculators. It is published by {SITE.publisher}
+      and funded by display advertising.
+    </p>
+
+    <h2>Information, not advice</h2>
+    <p>
+      Everything here is general information. Nothing on this site is tax, legal, accounting, financial or
+      investment advice, and no reader relationship creates a professional relationship of any kind. Your
+      circumstances, your jurisdiction and your marketplace account terms are specific to you. Consult a
+      qualified professional before acting on anything that matters.
+    </p>
+
+    <h2>Figures change, and some of them are already wrong</h2>
+    <p>
+      Marketplace fees, tariff rules and platform policies change on the platforms' own timetable, often
+      without notice to sellers. Every rate published here carries the date it was checked and a link to
+      its source for exactly that reason. A dated figure is a record of what was true on that date, not a
+      guarantee of what is true today.
+    </p>
+    <p>
+      Where published sources disagree with each other, we say so rather than picking one silently. Where
+      a figure is illustrative rather than quoted from a rate card, it is labelled illustrative. Verify
+      anything material against the marketplace's own documentation before you price against it, place an
+      order against it, or make an inventory commitment on the strength of it.
+    </p>
+
+    <h2>Calculators</h2>
+    <p>
+      The calculators run in your browser and are provided as-is. They apply the arithmetic described on
+      each page to the numbers you enter. They do not know your category's referral rate, your negotiated
+      freight rate or your account's fee schedule, and they are not a substitute for the fee preview tools
+      inside your own seller account.
+    </p>
+
+    <h2>Downloads</h2>
+    <p>
+      Spreadsheet templates offered here may be downloaded and used, including commercially, in your own
+      operations. You may not redistribute them, resell them, or present them as your own work.
+    </p>
+
+    <h2>Our content</h2>
+    <p>
+      Text, tables, graphics and code on this site are the property of {SITE.publisher} unless otherwise
+      credited. Quoting a short passage with attribution and a link is welcome. Republishing pages in
+      whole or in substantial part, or using them to train or fine-tune a model for redistribution, is
+      not permitted without written permission. Requests: <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.
+    </p>
+
+    <h2>Trademarks and independence</h2>
+    <p>
+      Amazon, Walmart, eBay, Etsy, TikTok, Shopify and all other marks referenced are the property of
+      their respective owners and are used here for identification and commentary only. {SITE.name} is
+      independent and is not affiliated with, endorsed by, sponsored by or otherwise associated with any
+      marketplace or software vendor covered on this site.
+    </p>
+
+    <h2>Advertising and commercial disclosure</h2>
+    <p>
+      This site carries display advertising served by third parties. Advertisers have no visibility into
+      or influence over what is published, and no advertisement constitutes an endorsement. Where a page
+      mentions a product the publisher sells or has a commercial interest in, that interest is disclosed
+      on the page itself.
+    </p>
+
+    <h2>Acceptable use</h2>
+    <p>
+      Do not attempt to interfere with the site's operation, scrape it at a rate that degrades service for
+      others, or use it for anything unlawful.
+    </p>
+
+    <h2>Liability</h2>
+    <p>
+      This site is provided as-is and without warranty of any kind, express or implied, including as to
+      accuracy, completeness or fitness for a particular purpose. To the fullest extent permitted by law,
+      {SITE.publisher} is not liable for any loss — including lost profit, lost inventory value, fees
+      incurred or business interruption — arising from reliance on anything published here. Nothing in
+      these terms limits liability that cannot lawfully be limited.
+    </p>
+
+    <h2>Corrections</h2>
+    <p>
+      If something here is wrong, tell us and send the source. Corrections are made in place with a dated
+      note and logged on the <a href="/corrections/">corrections page</a>. Nothing is edited silently.
+    </p>
+
+    <h2>Changes</h2>
+    <p>Material changes to these terms are dated at the top of this page.</p>
+
+    <p class="note">
+      These terms describe how this site actually operates. They are written to be accurate rather than
+      exhaustive, and they are not legal advice.
+    </p>
+  </div>
+</section>
+</Base>

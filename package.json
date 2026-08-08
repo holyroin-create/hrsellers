@@ -1,13 +1,22 @@
 {
-  "name": "marketplace-site",
+  "name": "fbatactics",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "astro": "astro",
+    "verify": "node tools/verify.mjs",
+    "check": "astro build && node tools/verify.mjs",
+    "local-preview": "astro build && node tools/make-local-preview.mjs"
   },
   "dependencies": {
-    "astro": "^4.16.0"
+    "@astrojs/mdx": "^7.0.5",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.1.6"
   }
 }

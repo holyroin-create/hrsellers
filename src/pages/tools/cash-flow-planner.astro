@@ -1,0 +1,147 @@
+---
+import PageShell from '../../components/PageShell.astro';
+import Faq from '../../components/Faq.astro';
+---
+<PageShell
+  title="Cash flow and reorder planner for marketplace sellers"
+  description="Model the gap between paying a supplier and being paid by the marketplace, and find out whether your budget can actually fund the reorder before the first order pays out."
+  eyebrow="Calculator"
+  h1="Cash flow & reorder planner"
+  lede="Undercapitalisation is usually a timing problem, not a budget problem. This shows you where the gap falls."
+  crumb={{ label: 'Tools', href: '/tools/' }}
+  rail={[{href:'/tools/margin-calculator/',label:'Margin & break-even'},{href:'/costs/',label:'What it costs to start'},{href:'/reality-check/',label:'Reality check'}]}
+>
+  <div class="calc">
+    <div class="calcbox">
+      <h2>Your numbers</h2>
+      <div class="field"><label for="budget">Total capital available</label>
+        <div class="inputwrap"><span>$</span><input id="budget" type="number" step="50" value="5000" /></div></div>
+      <div class="field"><label for="units">Units in first order</label>
+        <div class="inputwrap"><input id="units" type="number" step="10" value="300" /><span class="suf">u</span></div></div>
+      <div class="field"><label for="unitcost">Landed cost per unit<span class="hint">Product plus freight, duty and inbound.</span></label>
+        <div class="inputwrap"><span>$</span><input id="unitcost" type="number" step="0.1" value="8.70" /></div></div>
+      <div class="field"><label for="netunit">Net profit per unit<span class="hint">From the margin calculator.</span></label>
+        <div class="inputwrap"><span>$</span><input id="netunit" type="number" step="0.1" value="4.20" /></div></div>
+      <div class="field"><label for="lead">Production &amp; transit lead time</label>
+        <div class="inputwrap"><input id="lead" type="number" step="1" value="45" /><span class="suf">days</span></div></div>
+      <div class="field"><label for="sellthru">Days to sell the first order</label>
+        <div class="inputwrap"><input id="sellthru" type="number" step="1" value="90" /><span class="suf">days</span></div></div>
+      <div class="field"><label for="payout">Payout lag after sale<span class="hint">Settlement period plus return window before the cash is really yours.</span></label>
+        <div class="inputwrap"><input id="payout" type="number" step="1" value="21" /><span class="suf">days</span></div></div>
+      <div class="field"><label for="fixed">Fixed monthly costs<span class="hint">Selling plan, software, anything recurring.</span></label>
+        <div class="inputwrap"><span>$</span><input id="fixed" type="number" step="5" value="60" /></div></div>
+    </div>
+
+    <div class="calcbox">
+      <h2>Result</h2>
+      <div class="out hero"><span class="k">Cash left after first order</span><span class="v" id="c-left">—</span></div>
+      <div class="out"><span class="k">First order cost</span><span class="v" id="c-order">—</span></div>
+      <div class="out"><span class="k">Cash locked up</span><span class="v" id="c-locked">—</span></div>
+      <div class="out"><span class="k">Money out to money back</span><span class="v" id="c-cycle">—</span></div>
+      <div class="out"><span class="k">Reorder due on day</span><span class="v" id="c-reorder">—</span></div>
+      <div class="out"><span class="k">First payout lands on day</span><span class="v" id="c-payday">—</span></div>
+      <div class="out"><span class="k">Gap to cover</span><span class="v" id="c-gap">—</span></div>
+      <div class="out"><span class="k">Revenue on the full sell-through</span><span class="v" id="c-rev">—</span></div>
+      <div id="c-verdict" class="verdict"></div>
+    </div>
+  </div>
+
+  <figure class="chart">
+    <svg id="c-svg" viewBox="0 0 720 190" role="img" aria-label="Timeline showing when money leaves and returns" preserveAspectRatio="xMidYMid meet">
+      <line x1="40" y1="150" x2="690" y2="150" class="c-grid"></line>
+      <g id="c-tl"></g>
+    </svg>
+    <figcaption>Your cash timeline. The red span is the period when money is out and nothing has come back yet.</figcaption>
+  </figure>
+
+  <div class="prose">
+    <h2>Why the gap exists</h2>
+    <p>
+      Money leaves on the purchase order. It does not start coming back until goods have been produced,
+      shipped, received, listed, sold, cleared the return window and reached a settlement payout. In
+      between, your capital is inventory sitting in a warehouse.
+    </p>
+    <p>
+      The trap is that your <em>best</em> product creates the worst version of this problem. A product that
+      sells quickly needs reordering while the first order's money is still in transit back to you. Sellers
+      routinely go out of stock on their winner, lose rank, and pay in advertising to rebuild what they lost.
+    </p>
+    <h2>Three ways to close the gap</h2>
+    <ul>
+      <li><strong>Order smaller and more often.</strong> Higher per-unit freight, lower risk, faster cycles. Usually the right trade for a first product.</li>
+      <li><strong>Hold a reserve deliberately.</strong> Decide the reorder budget before you place the first order, and treat it as unavailable rather than as a buffer you might dip into.</li>
+      <li><strong>Negotiate terms.</strong> Deposit-and-balance or net terms move the outflow later. Suppliers grant these to buyers with a track record, which is one more reason the second order is easier than the first.</li>
+    </ul>
+    <p class="note">
+      This model assumes even sell-through and a single order cycle. Real demand is lumpy and seasonal.
+      Treat the output as a floor on how much room you need, not a forecast.
+    </p>
+  </div>
+
+  <Faq items={[
+    { q: 'What payout lag should I use?', a: 'Use your own observed figure from settlement reports. It should cover the settlement period plus the return window, because money that may still be refunded is not yet yours to spend.' },
+    { q: 'Why does the tool warn me even when I have money left?', a: 'Because having cash left is not the same as having enough to reorder. The warning triggers when the reorder falls due before the first payout arrives.' },
+    { q: 'Does this account for advertising spend?', a: 'Indirectly, through net profit per unit. Ad spend during launch is front-loaded, so if you are launching a new product, model a lower net profit for the first weeks.' },
+  ]} />
+
+  <script is:inline>
+    (function () {
+      const ids = ['budget','units','unitcost','netunit','lead','sellthru','payout','fixed'];
+      const g = id => parseFloat(document.getElementById(id).value) || 0;
+      const money = v => (v < 0 ? '-$' : '$') + Math.abs(v).toFixed(0);
+      function calc() {
+        const budget=g('budget'), units=g('units'), uc=g('unitcost'), np=g('netunit');
+        const lead=g('lead'), sell=g('sellthru'), pay=g('payout'), fixed=g('fixed');
+        const orderCost = units * uc;
+        const cycle = lead + sell + pay;
+        const monthsHeld = cycle / 30;
+        const left = budget - orderCost - fixed * monthsHeld;
+        const reorderDay = Math.round(sell * 0.6) + lead;
+        const firstPayday = lead + Math.round(sell * 0.25) + pay;
+        const gap = reorderDay - firstPayday;
+        const revenue = units * np;
+
+        document.getElementById('c-order').textContent = money(orderCost);
+        document.getElementById('c-left').textContent = money(left);
+        document.getElementById('c-left').className = 'v ' + (left >= 0 ? 'pos' : 'neg');
+        document.getElementById('c-locked').textContent = money(orderCost);
+        document.getElementById('c-cycle').textContent = Math.round(cycle) + ' days';
+        document.getElementById('c-reorder').textContent = 'day ' + reorderDay;
+        document.getElementById('c-payday').textContent = 'day ' + firstPayday;
+        document.getElementById('c-gap').textContent = gap > 0 ? gap + ' days short' : Math.abs(gap) + ' days clear';
+        document.getElementById('c-gap').className = 'v ' + (gap > 0 ? 'neg' : 'pos');
+        document.getElementById('c-rev').textContent = money(revenue);
+
+        const v = document.getElementById('c-verdict');
+        let msg, warn = false;
+        if (left < 0) { warn = true; msg = 'This order is larger than your capital once fixed costs over the ' + Math.round(cycle) + '-day cycle are counted. Reduce the order size rather than assuming sales will arrive in time.'; }
+        else if (left < orderCost * 0.5) { warn = true; msg = 'You could not fund a second order of the same size, and the reorder falls due around day ' + reorderDay + '. If this product sells, you will go out of stock at the worst moment. Order smaller.'; }
+        else if (gap > 0) { warn = true; msg = 'Your reorder is due about ' + gap + ' days before the first payout lands. You have reserve to cover it, but that reserve is now committed — do not count it as spare.'; }
+        else { msg = 'The first payout arrives before the reorder falls due, and you hold enough reserve to place it. This is the position you want before scaling the order size.'; }
+        v.textContent = msg;
+        v.className = 'verdict' + (warn ? ' warn' : '');
+
+        const total = Math.max(cycle, reorderDay, firstPayday) * 1.05;
+        const x = d => 40 + (d / total) * 650;
+        const rows = [
+          { y: 40, label: 'Capital out', a: 0, b: lead, cls: 'neg' },
+          { y: 72, label: 'Stock selling', a: lead, b: lead + sell, cls: 'mid' },
+          { y: 104, label: 'Cash returning', a: firstPayday, b: cycle, cls: 'pos' },
+        ];
+        let html = '';
+        rows.forEach(r => {
+          html += '<text x="40" y="' + (r.y - 8) + '" class="c-tick">' + r.label + '</text>';
+          html += '<line x1="' + x(r.a) + '" y1="' + r.y + '" x2="' + x(r.b) + '" y2="' + r.y + '" stroke="' +
+            (r.cls === 'neg' ? '#8A3324' : r.cls === 'pos' ? '#1F5F4E' : '#CFCCC4') + '" stroke-width="10" stroke-linecap="round" opacity="0.9"></line>';
+        });
+        [[0,'order placed'],[lead,'stock live'],[reorderDay,'reorder due'],[firstPayday,'first payout']].forEach(([d,l]) => {
+          html += '<line x1="' + x(d) + '" y1="26" x2="' + x(d) + '" y2="150" stroke="#E4E2DB" stroke-width="1"></line>';
+          html += '<text x="' + x(d) + '" y="168" class="c-tick" text-anchor="middle">' + l + '</text>';
+        });
+        document.getElementById('c-tl').innerHTML = html;
+      }
+      ids.forEach(id => document.getElementById(id).addEventListener('input', calc));
+      calc();
+    })();
+  </script>
+</PageShell>

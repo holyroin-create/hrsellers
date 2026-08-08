@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Cover from '../../components/Cover.astro';
+import { AUTHOR } from '../../config';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  return guides.map(entry => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const d = entry.data;
+const toc = headings.filter(h => h.depth === 2).map(h => {
+  const m = h.text.match(/^(\d{2})\s*(.*)$/);
+  return { slug: h.slug, num: m ? m[1] : null, text: m ? m[2] : h.text };
+});
+const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base title={d.title} description={d.description} type="Article" published={d.published} modified={d.modified}>
+<div class="wrap">
+  <Breadcrumbs trail={[{ label: 'Guides', href: '/guides/' }, { label: d.category, href: '/guides/' }]} />
+
+  <div class="article-grid">
+    <article>
+      <p class="eyebrow" style="margin-bottom:.7rem">{d.category}</p>
+      <h1 style="max-width:22ch">{d.title}</h1>
+      <p style="max-width:44ch;font-size:1.12rem;color:var(--ink-soft);margin:1.1rem 0 1.5rem">{d.description}</p>
+
+      <div class="byline">
+        <span class="av" aria-hidden="true">{AUTHOR.initials}</span>
+        <span>By <a href="/about/">{AUTHOR.name}</a> &middot; {d.minutes} min read</span>
+        <span class="reviewed">Reviewed {fmt(d.modified ?? d.published)}</span>
+      </div>
+
+      <figure class="figpanel" style="margin:0 0 2.2rem">
+        <Cover slug={entry.id} category={d.category} wide={true} />
+        <figcaption class="cap">The figure this guide is about, drawn from the sources listed at the foot of the page.</figcaption>
+      </figure>
+
+      {d.ledger && <p style="margin:0 0 1.6rem"><span class={d.ledgerKind === 'cost' ? 'ledger cost' : 'ledger'}><b>{d.ledger}</b></span></p>}
+
+      <AdSlot inline={true} label="ad slot — below intro" />
+
+      <div class="prose"><Content /></div>
+
+      <p class="disclosure">
+        Published {fmt(d.published)}{d.modified && <> &middot; last reviewed {fmt(d.modified)}</>}.
+        Marketplace fees and software pricing change often — verify anything material against the
+        marketplace's own documentation before acting on it. Corrections: <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.
+      </p>
+
+      <AdSlot label="ad slot — end of article" />
+      <AuthorBox />
+    </article>
+
+    <aside class="rail">
+      {toc.length > 0 && (
+        <div class="rail-box">
+          <h4>In this guide</h4>
+          <ul class="toc">
+            {toc.map(h => <li><a href={`#${h.slug}`}>{h.num && <i>{h.num}</i>}{h.text}</a></li>)}
+          </ul>
+        </div>
+      )}
+      <div class="rail-box">
+        <h4>Article facts</h4>
+        <dl class="factbox">
+          <dt>Author</dt><dd>{AUTHOR.name}</dd>
+          <dt>Category</dt><dd>{d.category}</dd>
+          <dt>Last reviewed</dt><dd>{fmt(d.modified ?? d.published)}</dd>
+          <dt>Method</dt><dd><a href="/how-we-test/" style="color:var(--recovered)">How we test</a></dd>
+        </dl>
+      </div>
+      <AdSlot label="ad slot — sidebar" />
+    </aside>
+  </div>
+</div>
+</Base>

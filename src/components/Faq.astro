@@ -1,0 +1,22 @@
+---
+const { items = [] } = Astro.props;
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((i: any) => ({
+    '@type': 'Question',
+    name: i.q,
+    acceptedAnswer: { '@type': 'Answer', text: i.a },
+  })),
+};
+---
+<section class="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">Frequently asked</h2>
+  {items.map((i: any) => (
+    <details>
+      <summary>{i.q}</summary>
+      <p>{i.a}</p>
+    </details>
+  ))}
+</section>
+{items.length > 0 && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}

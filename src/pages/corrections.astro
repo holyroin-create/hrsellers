@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Btn from '../components/Btn.astro';
+import { AUTHOR } from '../config';
+
+/* One entry per correction. Newest first. Never delete an entry: the point of
+   a correction log is that the record of the error outlives the error. */
+const CORRECTIONS: { date: string; page: string; href: string; was: string; now: string; why: string }[] = [];
+---
+<Base title="Corrections" description="The correction policy for this site and a dated log of every change made to a published figure or claim.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Corrections', href: '/corrections/' }]} /></div>
+<section class="wrap" style="padding:1.5rem 1.25rem 0">
+  <p class="eyebrow">Log</p>
+  <h1 style="max-width:20ch">Corrections</h1>
+  <p style="max-width:46ch;font-size:1.12rem;color:var(--ink-soft);margin:1.2rem 0 1.8rem">
+    A site that publishes dated figures will get some of them wrong. What separates a reference from a
+    blog is what happens next, and whether you can see it happen.
+  </p>
+
+  <div class="prose">
+    <h2>The log</h2>
+    {CORRECTIONS.length === 0 ? (
+      <p class="note">
+        No corrections have been issued yet. This site began publishing dated figures in August 2026;
+        the log is empty because it is new, not because nothing will ever appear here. If you find an
+        error before we do, the first entry will be yours.
+      </p>
+    ) : (
+      <table>
+        <thead><tr><th>Date</th><th>Page</th><th>What changed</th></tr></thead>
+        <tbody>
+          {CORRECTIONS.map(c => (
+            <tr>
+              <td>{c.date}</td>
+              <td><a href={c.href}>{c.page}</a></td>
+              <td><strong>Was:</strong> {c.was}<br /><strong>Now:</strong> {c.now}<br /><span class="note">{c.why}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+
+    <h2>What counts as a correction</h2>
+    <p>
+      Anything that would change a reader's decision. A wrong fee rate, a wrong effective date, a
+      misattributed source, an arithmetic error in a worked example, a claim that turns out not to be
+      supported by the source cited for it. All of these get a dated note on the article and an entry here.
+    </p>
+    <p>
+      Fixing a typo, a broken link or a clumsy sentence is not a correction and does not get logged.
+      Nothing about the substance changed, and a log that fills up with punctuation edits stops being
+      useful for the thing it exists to record.
+    </p>
+
+    <h2>Updates are not corrections either</h2>
+    <p>
+      When a marketplace changes a fee, the figure that was published was not wrong — it was true on the
+      date it carried. Those pages get a revised modified date and, where the change is material, a note
+      explaining what moved and when. That is a normal part of maintaining a dated reference, and it is
+      recorded differently from an error on our part. Platform-side changes are tracked on the{' '}
+      <a href="/policy-log/">fee and policy log</a>.
+    </p>
+
+    <h2>What a correction looks like on the page</h2>
+    <p>
+      The wrong figure is replaced in the body text, so nobody reads the error by accident. A dated note
+      is added at the foot of the article stating what the figure previously said, what it says now, and
+      why it changed. The article's modified date is updated. Then it is logged here.
+    </p>
+    <p>
+      What does not happen: quietly editing the number and leaving the page looking as though it always
+      said that. If a figure here moves, you should be able to find out that it moved.
+    </p>
+
+    <h2>How to report one</h2>
+    <p>
+      Email <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>. The report is far more useful with three
+      things in it:
+    </p>
+    <ol>
+      <li>The page, and ideally the section or the sentence.</li>
+      <li>What you believe the correct figure or claim is.</li>
+      <li>Where it comes from — a link to the marketplace's own documentation is ideal.</li>
+    </ol>
+    <p>
+      Reports are read by <a href="/about/">the author</a>. Where a correction is warranted, the aim is to
+      publish it within 48 hours. Where it is not, you will get a reply explaining why, with the source the
+      original figure rests on. Disagreement about which of several published figures is current is common
+      in this subject and is usually worth the exchange — several pages on this site now carry a table of
+      contested figures because two sources could not be reconciled.
+    </p>
+
+    <div class="btn-row" style="margin-top:2rem">
+      <Btn href="/editorial-standards/">Editorial standards</Btn>
+      <Btn href="/policy-log/" quiet={true}>Platform change log</Btn>
+    </div>
+  </div>
+</section>
+</Base>

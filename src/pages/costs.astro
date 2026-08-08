@@ -1,0 +1,111 @@
+---
+import PageShell from '../components/PageShell.astro';
+import Sources from '../components/Sources.astro';
+import Faq from '../components/Faq.astro';
+import Figure from '../components/Figure.astro';
+import BarChart from '../components/BarChart.astro';
+---
+<PageShell
+  title="What it actually costs to start selling on Amazon in 2026"
+  description="Published startup-capital figures by business model, why sources disagree by a factor of ten on private label, and the cost line almost everyone leaves out."
+  eyebrow="Costs"
+  h1="What it actually costs to start"
+  lede="Published figures for each model, side by side, with the disagreements left visible rather than averaged away."
+  crumb={{ label: 'Costs', href: '/costs/' }}
+  rail={[{href:'/quiz/',label:'Which model fits you'},{href:'/business-models/',label:'The five models compared'},{href:'/reality-check/',label:'What nobody tells you'}]}
+>
+  <div class="prose">
+    <h2>The published ranges</h2>
+    <p>
+      These are figures cited by sellers, tool vendors and coaches — not audited data. They are useful
+      for orientation and useless for planning. Read the spread, not the midpoint.
+    </p>
+    <table>
+      <thead><tr><th>Model</th><th>Cited range</th><th>Time to first sale</th></tr></thead>
+      <tbody>
+        <tr><td>Retail arbitrage</td><td>$100 – $2,000</td><td>Days</td></tr>
+        <tr><td>Online arbitrage</td><td>$500 – $2,000</td><td>Days to weeks</td></tr>
+        <tr><td>Dropshipping</td><td>Under $500 – $2,000</td><td>Days</td></tr>
+        <tr><td>Wholesale</td><td>$1,000 – $10,000</td><td>Weeks to months</td></tr>
+        <tr><td>Private label</td><td>$2,500 – $25,000</td><td>Months</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <BarChart
+    caption="Cited startup capital by model. Green marks the lowest published figure, red the highest — the length of each bar is the disagreement, not a confidence interval."
+    source="Compiled from published seller guides, Aug 2026"
+    series={[
+      { label: 'Dropshipping', low: 400, high: 2000 },
+      { label: 'Retail arbitrage', low: 100, high: 2000 },
+      { label: 'Online arbitrage', low: 500, high: 2000 },
+      { label: 'Wholesale', low: 1000, high: 10000 },
+      { label: 'Private label', low: 2500, high: 25000 },
+    ]}
+  />
+
+  <div class="prose">
+    <h2>Why private label has a ten-fold spread</h2>
+    <p>
+      This is the most useful thing on the page. Sources do not disagree slightly about private label
+      startup cost — they disagree by an order of magnitude, and the reason is that they are counting
+      different things.
+    </p>
+    <ul>
+      <li>One 2026 guide puts a realistic private label start at $2,500–$5,000, and cites Jungle Scout seller research indicating new sellers spend around $3,800 on average to get a first product live.</li>
+      <li>Another puts a beginner budget at $5,000–$15,000 depending on product complexity.</li>
+      <li>A third puts it at $5,000–$20,000 or more once inventory, freight, photography and listing setup are included.</li>
+      <li>A fourth describes $15,000–$25,000 per product as realistic for a proper launch including PPC.</li>
+    </ul>
+    <p>
+      The low figures are counting the first inventory order. The high figures are counting the first
+      inventory order <em>plus</em> the reorder, the advertising budget to get the listing moving, and a
+      reserve for the mistakes. Both are honest. Only one of them describes what actually happens.
+    </p>
+
+    <Figure value="~$3,800" source="Jungle Scout seller research, as cited by ScaleA2Z, 2026">
+      A commonly cited average spend to get a first private label product live. Treat it as the cost of
+      arriving at the starting line, not the cost of the race.
+    </Figure>
+
+    <h2>The line almost everyone leaves out</h2>
+    <p>
+      Working capital for the second order. Your first order sells, but the money is locked in the
+      payout cycle. If your winner needs restocking and you have nothing left, you go out of stock,
+      lose rank, and pay to rebuild it. Budget the reorder as a separate line from day one, not as
+      something the first order will fund.
+    </p>
+
+    <h2>What the fixed costs actually are</h2>
+    <ul>
+      <li><strong>Professional selling plan</strong> — a monthly subscription; the individual plan charges per item instead, which is cheaper only at very low volume.</li>
+      <li><strong>Business entity and resale certificate</strong> — usually required before a distributor will open a wholesale account.</li>
+      <li><strong>Software</strong> — treat as optional in month one. Most tools solve a problem you do not have yet.</li>
+      <li><strong>Customs and freight</strong> — no longer avoidable for imports since the de minimis suspension. Budget a broker.</li>
+      <li><strong>Reserve</strong> — the line that separates a business from a gamble.</li>
+    </ul>
+
+    <h2>How to use these numbers</h2>
+    <p>
+      Take the highest cited figure for your model, not the average, and ask whether you could lose it
+      without it changing your life. If the answer is no, either pick a cheaper model or wait. Every
+      figure on this page came from someone with an interest in you starting.
+    </p>
+  </div>
+
+  <Faq items={[
+    { q: 'What is the cheapest way to start?', a: 'Retail arbitrage and dropshipping have the lowest cited entry costs, in the low hundreds. Both also carry the thinnest margins, which since the 2026 fee changes leaves almost no buffer for cost increases.' },
+    { q: 'Why do private label cost estimates vary so much?', a: 'Because low estimates count only the first inventory order, while high estimates include the reorder, the launch advertising budget and a reserve. The high figures describe what usually happens.' },
+    { q: 'Do I need software to start?', a: 'Not in the first month. Most seller software solves a problem that appears at volume. Buying it early is a common way to spend inventory money on a dashboard.' },
+    { q: 'Should I borrow money to start?', a: 'Nothing on this page supports doing that. None of these models has a success rate that would justify borrowing against, and the models with the lowest entry cost also have the thinnest margins.' },
+  ]} />
+
+  <Sources slot="sources" items={[
+    { title: 'How much budget to start Amazon (2026 guide)', publisher: 'ScaleA2Z', href: 'https://scalea2z.com/how-much-budget-to-start-amazon/', accessed: '2026-08-07' },
+    { title: 'How to start an Amazon business in 2026', publisher: 'Seller Sprite', href: 'https://www.sellersprite.com/en/blog/how-to-start-an-amazon-business-2026', accessed: '2026-08-07' },
+    { title: '5 types of Amazon sellers: which model makes money?', publisher: 'SellerView', href: 'https://sellerview.ai/blog/5-types-of-amazon-sellers', accessed: '2026-08-07' },
+    { title: 'How much money do you really need to start selling on Amazon FBA', publisher: 'Nformed', href: 'https://www.nformed.com/blog/how-much-money-do-you-really-need-to-start-selling-on-amazon-fba-in-2025', accessed: '2026-08-07' },
+    { title: 'How to build a private label brand on Amazon in 2026', publisher: 'Seller Sprite', href: 'https://www.sellersprite.com/en/blog/private-label-amazon-2026', accessed: '2026-08-07' },
+  ]} />
+</PageShell>

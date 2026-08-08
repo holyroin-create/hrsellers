@@ -1,0 +1,72 @@
+---
+import PageShell from '../components/PageShell.astro';
+import Faq from '../components/Faq.astro';
+---
+<PageShell
+  title="Start here: how to read this site"
+  description="A short orientation for anyone new to marketplace selling — the order to read things in, and the four decisions that come before spending money."
+  eyebrow="Orientation"
+  h1="Start here"
+  lede="If you are new to this, the order matters. These four decisions come before you spend anything, and most people make them in the wrong sequence."
+  crumb={{ label: 'Start here', href: '/start-here/' }}
+  rail={[{href:'/quiz/',label:'15-question fit check'},{href:'/costs/',label:'What it costs to start'},{href:'/reality-check/',label:'What nobody tells you'}]}
+>
+  <div class="prose">
+    <h2>Decide what you can lose, before what you want to sell</h2>
+    <p>
+      Almost everyone starts with product research. That is the fourth decision, not the first. The
+      amount you can put in and not need back for three months rules out most of the models before
+      product selection becomes relevant. Do that arithmetic first and the field narrows on its own.
+    </p>
+    <p><a href="/costs/">What it actually costs to start</a> sets out the published ranges by model.</p>
+
+    <h2>Pick the model your situation allows, not the one that appeals</h2>
+    <p>
+      Capital, supplier access, time, and payout-timing tolerance decide this. Enthusiasm does not.
+      Our <a href="/quiz/">fifteen-question check</a> weights the factors that usually decide it, and
+      <a href="/business-models/">the five models compared</a> covers what each one requires and who it
+      is wrong for.
+    </p>
+
+    <h2>Understand what has changed since the advice you are reading</h2>
+    <p>
+      Two things moved in the last eighteen months that make a lot of existing material wrong. US FBA
+      fulfillment fees rose on 15 January 2026, and selling price became an input to the fee for the
+      first time. And the $800 de minimis exemption was suspended, first for China and Hong Kong in
+      May 2025 and then for all countries that August, before being written into regulation in June 2026.
+    </p>
+    <p>
+      Any guide that assumes duty-free parcels under $800, or a fulfillment fee that does not depend on
+      price, was written for conditions that no longer exist. Check the date on everything.
+    </p>
+
+    <h2>Set up the boring infrastructure before the exciting part</h2>
+    <p>
+      A registered business and resale certificate open wholesale accounts. A reserve fund keeps you
+      trading when the first order sells. A reconciliation habit catches the money that quietly goes
+      missing. None of this is interesting and all of it decides the outcome.
+    </p>
+    <p>Our <a href="/resources/">free reimbursement tracker</a> is where the reconciliation habit usually starts.</p>
+
+    <h2>Then, and only then, choose a product</h2>
+    <p>
+      By this point the decision is much narrower, which is the entire benefit of taking the steps in
+      this order.
+    </p>
+
+    <h2>Where to go next</h2>
+    <ul>
+      <li><a href="/quiz/">Which model fits you</a> — fifteen questions, no email</li>
+      <li><a href="/reality-check/">What nobody sells you</a> — the hard parts and the course trap</li>
+      <li><a href="/costs/">What it costs to start</a> — published ranges by model</li>
+      <li><a href="/glossary/">Glossary</a> — the acronyms, in one page</li>
+      <li><a href="/guides/">Guides</a> — the operational detail</li>
+    </ul>
+  </div>
+
+  <Faq items={[
+    { q: 'I have no capital at all. Should I start anyway?', a: 'Learn the mechanics first — Seller Central documentation and a demo account cost nothing. Every model on this site requires money you can afford to lose, and borrowing to start is not supported by anything on this page.' },
+    { q: 'How long before this replaces an income?', a: 'Nobody can answer that honestly for your situation, and anyone who offers a timeline without seeing your numbers is selling something. What is knowable is that arbitrage produces a first sale in days and private label in months.' },
+    { q: 'Do I need a company before I start?', a: 'Not to sell as an individual, but a registered business and resale certificate are usually prerequisites for wholesale distributor accounts. If wholesale interests you, sort this out early.' },
+  ]} />
+</PageShell>

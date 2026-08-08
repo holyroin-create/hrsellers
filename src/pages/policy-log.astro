@@ -1,0 +1,45 @@
+---
+import PageShell from '../components/PageShell.astro';
+import Sources from '../components/Sources.astro';
+import { POLICY as ENTRIES } from '../data/policy';
+---
+<PageShell
+  title="Fee and policy change log for marketplace sellers"
+  description="A dated record of the fee, tariff and policy changes that affect Amazon and cross-border sellers — what changed, when, who it hits, and where it came from."
+  eyebrow="Change log"
+  h1="Fee and policy change log"
+  lede="Most seller advice online is undated, which is how people act on rules that stopped applying eighteen months ago. This is the timeline, newest first."
+  crumb={{ label: 'Policy log', href: '/policy-log/' }}
+  rail={[{href:'/guides/',label:'All guides'},{href:'/glossary/',label:'Glossary'},{href:'/start-here/',label:'Start here'}]}
+>
+  <div class="prose">
+    {ENTRIES.map(e => (
+      <div class="logentry">
+        <p class="logdate">{e.date} <span class={e.status === 'Upcoming' ? 'logstat up' : 'logstat'}>{e.status}</span></p>
+        <h2 style="border-top:0;padding-top:0;margin:.35rem 0 .5rem;font-size:1.15rem">{e.title}</h2>
+        <p style="margin:0 0 .5rem">{e.what}</p>
+        <p class="note" style="margin:0">Affects: {e.who}</p>
+      </div>
+    ))}
+
+    <h2>How to use this</h2>
+    <p>
+      Two rules. First, check the date on any seller advice you read against this log — if it predates a
+      change listed here, it may be describing conditions that no longer exist. Second, verify anything
+      you are about to act on against the primary source. This log points at what changed; it is not a
+      substitute for the marketplace or agency documentation.
+    </p>
+    <p>
+      Trade policy in particular has moved several times in eighteen months. Entries marked upcoming are
+      based on announcements and may shift.
+    </p>
+  </div>
+
+  <Sources slot="sources" items={[
+    { title: 'Update to U.S. Referral and Fulfillment by Amazon fees for 2026', publisher: 'Amazon Selling Partners', href: 'https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026', accessed: '2026-08-07' },
+    { title: 'Update to European Referral and Fulfilment by Amazon fees for 2026', publisher: 'About Amazon EU', href: 'https://www.aboutamazon.eu/news/empowering-small-business/update-to-european-referral-and-fulfilment-by-amazon-fees-for-2026', accessed: '2026-08-07' },
+    { title: 'US de minimis exemption suspended 2026', publisher: 'Carra Globe', href: 'https://carraglobe.com/us-de-minimis-exemption-suspended-2026/', accessed: '2026-08-07' },
+    { title: 'De minimis exemption suspended: what every US importer needs to know', publisher: 'FreightFigures', href: 'https://www.freightfigures.com/articles/de-minimis-exemption-suspended-2026', accessed: '2026-08-07' },
+    { title: 'Section 321 in 2026: the de minimis rules that changed everything', publisher: 'Dutiable', href: 'https://dutiable.io/blog/de-minimis-section-321-changes-2026', accessed: '2026-08-07' },
+  ]} />
+</PageShell>

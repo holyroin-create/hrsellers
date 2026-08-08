@@ -1,29 +1,143 @@
 ---
-import Legal from '../layouts/Legal.astro';
-const sections = [
-  { id: 'intro', h: 'Introduction', body: [
-    "This Privacy Policy explains how HRSellers (\u201cwe\u201d, \u201cus\u201d) collects, uses, and protects information when you visit our website. By using the site, you agree to the practices described here." ] },
-  { id: 'data-we-collect', h: 'Information we collect', body: [
-    "We aim to collect as little personal data as possible. Depending on how you use the site, this may include:" ],
-    list: [
-      "Information you provide voluntarily, such as your email address when you subscribe to our newsletter or your message when you contact us.",
-      "Basic, privacy-respecting analytics about how the site is used (such as page views and general region), collected in aggregate.",
-      "Technical data such as browser type, sent automatically by your device when you load any website." ] },
-  { id: 'how-we-use', h: 'How we use information', body: [
-    "We use the limited information we collect to operate and improve the site, respond to your messages, send the newsletter you requested, and understand which content is useful.",
-    "We do not sell your personal information." ] },
-  { id: 'cookies', h: 'Cookies', body: [
-    "We use a minimal set of cookies and similar technologies. For details, see our Cookie Policy. Affiliate partners may set their own cookies when you click an affiliate link; those are governed by the partner's privacy policy." ] },
-  { id: 'third-parties', h: 'Third parties', body: [
-    "When you click an affiliate link or visit a linked site, that third party collects and processes data under its own privacy policy. We encourage you to review the policies of any site you visit.",
-    "We may use reputable service providers for analytics and email delivery; these providers process data on our behalf under their own terms." ] },
-  { id: 'your-rights', h: 'Your rights', body: [
-    "Depending on your location, you may have rights to access, correct, or delete your personal data, or to unsubscribe from communications at any time. To exercise any of these, contact us through the contact page.",
-    "You can unsubscribe from the newsletter using the link in any email we send." ] },
-  { id: 'contact', h: 'Contact', body: [
-    "For any privacy questions, reach us via the contact page or at the email address listed there." ] },
-];
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE, AUTHOR } from '../config';
+const updated = '8 August 2026';
 ---
-<Legal title="Privacy Policy" updated="May 2026"
-  intro="We respect your privacy and collect as little data as we can. This policy explains what we collect and why."
-  sections={sections} />
+<Base title="Privacy policy" description="What data this site collects, how advertising cookies are used, and how to exercise your rights.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Privacy policy', href: '/privacy/' }]} /></div>
+<section class="wrap" style="padding:1.5rem 1.25rem 0">
+  <p class="eyebrow">Legal</p>
+  <h1 style="max-width:20ch">Privacy policy</h1>
+  <p class="note" style="margin:1rem 0 2rem">Last updated {updated}. Applies to {SITE.domain} and all pages on it.</p>
+
+  <div class="prose">
+    <h2>Who is responsible for your data</h2>
+    <p>
+      {SITE.name} is published by {SITE.publisher}. The publisher is the data controller for the
+      processing described on this page. Questions, access requests and deletion requests go to{' '}
+      <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a> and are answered within thirty days.
+    </p>
+
+    <h2>What we collect directly</h2>
+    <p>
+      Reading this site requires no account and no personal information. There is no newsletter signup,
+      no registration wall and no download form — the spreadsheet on the resources page is a direct file
+      link with no email step.
+    </p>
+    <table>
+      <thead><tr><th>Data</th><th>Why</th><th>Kept for</th></tr></thead>
+      <tbody>
+        <tr><td>Server log entries: IP address, user agent, requested URL, timestamp, referrer</td><td>Security, abuse prevention, aggregate traffic measurement</td><td>Short retention set by the hosting provider</td></tr>
+        <tr><td>Email address and message content, if you write to us</td><td>To answer you, and to log a correction if you report one</td><td>As long as needed to resolve the exchange</td></tr>
+      </tbody>
+    </table>
+    <p>
+      We do not sell personal data, and we do not share it with third parties except as described below
+      for advertising, or where required by law.
+    </p>
+
+    <h2>Advertising</h2>
+    <p>
+      This site is funded by display advertising. Advertising is served by third parties, and those third
+      parties process data independently of us.
+    </p>
+    <ul>
+      <li>
+        Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to
+        this website and to other websites.
+      </li>
+      <li>
+        Google's use of advertising cookies enables it and its partners to serve ads to users based on
+        their visit to this site and other sites on the internet.
+      </li>
+      <li>
+        You can opt out of personalised advertising by visiting{' '}
+        <a href="https://www.google.com/settings/ads" rel="nofollow noopener" target="_blank">Google Ads Settings</a>.
+      </li>
+      <li>
+        You can opt out of a wider set of third-party vendors at{' '}
+        <a href="https://www.aboutads.info/choices/" rel="nofollow noopener" target="_blank">aboutads.info</a>{' '}
+        and{' '}
+        <a href="https://optout.networkadvertising.org/" rel="nofollow noopener" target="_blank">the Network Advertising Initiative</a>.
+      </li>
+      <li>
+        Google's own description of how it uses data from sites that use its services is published at{' '}
+        <a href="https://policies.google.com/technologies/partner-sites" rel="nofollow noopener" target="_blank">policies.google.com</a>.
+      </li>
+    </ul>
+
+    <h2>Consent in the EEA, the UK and Switzerland</h2>
+    <p>
+      Visitors from the European Economic Area, the United Kingdom and Switzerland are shown a consent
+      management platform before any non-essential cookie is set. You can accept or refuse personalised
+      advertising, and you can change that choice at any time through the same interface. Refusing does
+      not restrict access to any part of this site.
+    </p>
+    <p>
+      Where consent is the legal basis, it is your consent that permits the processing. Where it is not —
+      server logs kept for security, for example — the legal basis is our legitimate interest in operating
+      a functioning website.
+    </p>
+
+    <h2>Cookies used on this site</h2>
+    <table>
+      <thead><tr><th>Type</th><th>Set by</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Consent state</td><td>The consent platform</td><td>Remembers your advertising choice so you are not asked on every page</td></tr>
+        <tr><td>Advertising</td><td>Google and its advertising partners</td><td>Ad selection, frequency capping, measurement. Set only after consent where consent is required</td></tr>
+        <tr><td>Measurement</td><td>Aggregate analytics</td><td>Which pages are read, in aggregate. No attempt is made to identify individual readers</td></tr>
+      </tbody>
+    </table>
+    <p>
+      This site sets no cookies of its own for tracking. The interactive calculators run entirely in your
+      browser: the numbers you type are never transmitted to us, never stored, and disappear when you
+      close the tab.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      This site publishes business and operational information for people running commercial selling
+      accounts. It is not directed at children, and we do not knowingly collect information from anyone
+      under 16. If you believe a child has sent us personal information, write to the address above and it
+      will be deleted.
+    </p>
+
+    <h2>Your rights</h2>
+    <p>
+      Depending on where you live, you may have the right to access the personal data we hold about you,
+      to have it corrected or deleted, to object to or restrict processing, to withdraw consent, and to
+      receive a copy in a portable form. To exercise any of these, email{' '}
+      <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.
+    </p>
+    <p>
+      Because we do not operate accounts, the data we hold about an individual reader is normally limited
+      to server log entries and any correspondence you have sent us. Requests relating to data held by
+      advertising vendors should be directed to those vendors, whose policies are linked above.
+    </p>
+    <p>
+      Residents of the European Economic Area and the United Kingdom have the right to complain to their
+      national data protection authority.
+    </p>
+
+    <h2>External links</h2>
+    <p>
+      Guides on this site link to marketplace documentation, government sources and third-party analyses
+      so you can check figures yourself. Those sites have their own privacy policies and we have no
+      control over them.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      Material changes are dated at the top of this page. Continued use of the site after a change means
+      the revised policy applies to you.
+    </p>
+
+    <p class="note">
+      This policy describes actual practice on this site. It is written to be accurate rather than to be
+      exhaustive legal drafting, and it is not legal advice. If you operate in a jurisdiction with
+      specific requirements, have it reviewed.
+    </p>
+  </div>
+</section>
+</Base>

@@ -1,0 +1,4 @@
+---
+const { attribution } = Astro.props;
+---
+<blockquote class="pullquote"><slot />{attribution && <cite>{attribution}</cite>}</blockquote>

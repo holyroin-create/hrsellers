@@ -1,0 +1,16 @@
+---
+import Art from './Art.astro';
+const { entry } = Astro.props;
+const d = entry.data;
+const artFor = { 'Fees & reimbursements':'ledger','Shipping & logistics':'freight','Software':'grid','Getting started':'grid','Scaling':'scale' };
+---
+<a class="lead" href={`/guides/${entry.id}/`}>
+  <div class="lead-body">
+    <span class="meta" style="font-family:var(--mono);font-size:.7rem;color:var(--ink-faint);letter-spacing:.04em">Featured &middot; {d.category}</span>
+    <h3>{d.title}</h3>
+    <p>{d.description}</p>
+    {d.ledger && <span class={d.ledgerKind === 'cost' ? 'ledger cost' : 'ledger'}><b>{d.ledger}</b></span>}
+    <p class="meta" style="font-family:var(--mono);font-size:.7rem;color:var(--ink-faint);margin:1rem 0 0">{d.minutes} min read</p>
+  </div>
+  <div class="lead-art"><Art kind={artFor[d.category] ?? 'ledger'} h={190} /></div>
+</a>

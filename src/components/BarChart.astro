@@ -1,0 +1,35 @@
+---
+// Server-rendered SVG range chart. `series` items: { label, low, high, note? }
+const { series = [], unit = '$', max: maxProp, caption, source } = Astro.props;
+const max = maxProp ?? Math.max(...series.map((s: any) => s.high));
+const rowH = 46, padL = 168, padR = 76, padT = 26, padB = 34, w = 720;
+const h = padT + series.length * rowH + padB;
+const barW = w - padL - padR;
+const x = (v: number) => padL + (v / max) * barW;
+const ticks = [0, 0.25, 0.5, 0.75, 1].map(f => Math.round(max * f));
+const fmt = (v: number) => unit === '' ? `${v}%` : (v >= 1000 ? `${unit}${(v / 1000).toFixed(v % 1000 === 0 ? 0 : 1)}k` : `${unit}${v}`);
+---
+<figure class="chart">
+  <svg viewBox={`0 0 ${w} ${h}`} role="img" aria-label={caption} preserveAspectRatio="xMidYMid meet">
+    {ticks.map(t => (
+      <g>
+        <line x1={x(t)} y1={padT - 8} x2={x(t)} y2={h - padB + 4} class="c-grid" />
+        <text x={x(t)} y={h - padB + 20} class="c-tick" text-anchor="middle">{fmt(t)}</text>
+      </g>
+    ))}
+    {series.map((s: any, i: number) => {
+      const y = padT + i * rowH + rowH / 2;
+      return (
+        <g>
+          <text x={padL - 14} y={y + 4} class="c-label" text-anchor="end">{s.label}</text>
+          <line x1={x(0)} y1={y} x2={x(max)} y2={y} class="c-track" />
+          <line x1={x(s.low)} y1={y} x2={x(s.high)} y2={y} class="c-range" />
+          <circle cx={x(s.low)} cy={y} r="5" class="c-lo" />
+          <circle cx={x(s.high)} cy={y} r="5" class="c-hi" />
+          <text x={x(s.high) + 12} y={y + 4} class="c-val">{fmt(s.low)}&ndash;{fmt(s.high)}</text>
+        </g>
+      );
+    })}
+  </svg>
+  {caption && <figcaption>{caption}{source && <span class="c-src"> · {source}</span>}</figcaption>}
+</figure>

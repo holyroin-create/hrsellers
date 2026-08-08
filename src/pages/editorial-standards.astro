@@ -1,90 +1,111 @@
 ---
 import Base from '../layouts/Base.astro';
-const principles = [
-  { t: 'Primary sources over hearsay', d: 'Fees, policies, and figures are verified against official marketplace documentation, not other blogs. When we cite a number, it comes from the source.' },
-  { t: 'Recency matters', d: 'Marketplace rules change constantly. We date our guides, note when policies shifted, and revisit content to keep it current.' },
-  { t: 'Merit-based recommendations', d: 'A tool is recommended because it solves a real problem well — never because it pays the most commission.' },
-  { t: 'Clear disclosure', d: 'Affiliate relationships are disclosed on every relevant page, in line with FTC guidance.' },
-  { t: 'Honest trade-offs', d: 'Every tool and platform has downsides. We name them. A review without cons isn\u2019t a review.' },
-  { t: 'Corrections welcome', d: 'If we get something wrong, tell us and we\u2019ll fix it. Accuracy beats ego.' },
-];
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { AUTHOR } from '../config';
+const updated = '8 August 2026';
 ---
-<Base title="Editorial Standards" description="How HRSellers researches, writes, and reviews — and how we keep recommendations honest.">
-  <section class="page-hero">
-    <div class="container">
-      <span class="pill"><span class="dot"></span> How we work</span>
-      <h1 class="display-xl">Editorial standards.</h1>
-      <p class="lead">Trust is earned through process. Here's exactly how content gets researched, written, reviewed, and kept current at HRSellers.</p>
-    </div>
-  </section>
+<Base title="Editorial standards" description="How figures get onto this site, what is labelled how, where the disagreements are recorded, and what we do not do.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Editorial standards', href: '/editorial-standards/' }]} /></div>
+<section class="wrap" style="padding:1.5rem 1.25rem 0">
+  <p class="eyebrow">Policy</p>
+  <h1 style="max-width:20ch">Editorial standards</h1>
+  <p style="max-width:46ch;font-size:1.12rem;color:var(--ink-soft);margin:1.2rem 0 1.4rem">
+    Marketplace fee content has a specific failure mode: an undated number, copied from another undated
+    number, published by someone selling the solution. Everything below exists to keep this site out of
+    that loop.
+  </p>
+  <p class="note" style="margin:0 0 2rem">Last updated {updated}.</p>
 
-  <section class="section-sm">
-    <div class="container">
-      <span class="h-eyebrow">Our process</span>
-      <h2 class="display-md" style="margin:10px 0 32px;">From question to published guide</h2>
-      <div class="es-flow">
-        {[
-          { n: 1, t: 'Research', d: 'Gather facts from primary sources' },
-          { n: 2, t: 'Verify', d: 'Cross-check figures & policies' },
-          { n: 3, t: 'Write', d: 'Explain in plain, useful language' },
-          { n: 4, t: 'Review', d: 'Check for accuracy & balance' },
-          { n: 5, t: 'Update', d: 'Revisit as rules change' },
-        ].map((s, i, arr) => (
-          <>
-            <div class="es-node">
-              <span class="es-num">{s.n}</span>
-              <span class="es-t">{s.t}</span>
-              <span class="es-d">{s.d}</span>
-            </div>
-            {i < arr.length - 1 && <svg class="es-arr" viewBox="0 0 28 14" fill="none"><path d="M2 7h22M19 3l5 4-5 4" stroke="#C2CBD4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>}
-          </>
-        ))}
-      </div>
-    </div>
-  </section>
+  <div class="prose">
+    <h2>The two routes a figure can take onto this site</h2>
+    <p>There are two, and no third.</p>
+    <h3>1. A primary source, cited with its retrieval date</h3>
+    <p>
+      Marketplace documentation, the platform's own announcements, government and customs publications.
+      These are linked in the sources block at the foot of the article, each with the date it was
+      retrieved. If a claim is not supportable from a source we can link to, it does not appear.
+    </p>
+    <h3>2. First-party operational data, with the period stated</h3>
+    <p>
+      Figures drawn from operations the author worked on directly. Where such a figure appears, it is
+      labelled as first-party and the period it covers is stated on the page. Client, employer and partner
+      data is never published, in any form, aggregated or otherwise.
+    </p>
+    <p>
+      <strong>As of {updated}, the published guides are sourced under the first route.</strong> They are
+      compiled and verified against primary and secondary sources, with every citation dated. Where
+      first-party operational figures are added, they will carry the label and the period. We would rather
+      say this plainly than let a byline imply something the article does not contain.
+    </p>
 
-  <section class="section-sm bg-2">
-    <div class="container">
-      <div class="sec-head"><div><span class="h-eyebrow">The rules we follow</span><h2 class="display-lg">Six commitments</h2></div></div>
-      <div class="es-grid">
-        {principles.map((p, i) => (
-          <div class="es-card">
-            <span class="es-idx">{String(i + 1).padStart(2, '0')}</span>
-            <div><h3>{p.t}</h3><p>{p.d}</p></div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+    <h2>Secondary sources, and how they are labelled</h2>
+    <p>
+      Vendor blogs, agency analyses and rate cards are used, because they frequently surface details the
+      platform documentation buries. They are used with two rules attached.
+    </p>
+    <ul>
+      <li>
+        <strong>The publisher is named in the source list.</strong> If a figure comes from a company that
+        sells reimbursement recovery, repricing or fee software, that is stated. A commercial interest in
+        a number being large does not make it wrong, but the reader is entitled to know it exists.
+      </li>
+      <li>
+        <strong>Disagreements are recorded, not resolved.</strong> When two sources give different values
+        for the same fee — and in this subject they routinely do — both figures and both publishers are
+        shown, and the reader is sent to the primary source. Quietly picking one and presenting it as
+        settled is the practice that produced the problem in the first place.
+      </li>
+    </ul>
 
-  <section class="section-sm">
-    <div class="container-narrow">
-      <div class="es-cta">
-        <h2>Spot something wrong?</h2>
-        <p>We'd rather know. If a figure is out of date or a claim looks off, tell us and we'll verify and correct it.</p>
-        <a href="/contact/" class="btn btn-primary">Contact us →</a>
-      </div>
-    </div>
-  </section>
+    <h2>Dates</h2>
+    <p>
+      Every rate, threshold and percentage on this site carries the date it was checked. Every article
+      carries a published date and, where it has been revised, a modified date. A fee figure without a
+      date is not a fact, it is a rumour with a decimal point, and it does not get published here.
+    </p>
 
-  <style>
-    .page-hero { padding: 72px 0 40px; background: radial-gradient(60% 60% at 80% 0%, rgba(14,124,102,.08), transparent 70%); }
-    .page-hero h1 { margin: 20px 0 18px; }
-    .page-hero .lead { max-width: 56ch; }
-    .es-flow { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; }
-    .es-node { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 22px 18px; flex: 1; min-width: 130px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
-    .es-num { width: 38px; height: 38px; border-radius: 50%; background: var(--brand); color: #fff; font-family: var(--display); font-weight: 800; display: grid; place-items: center; }
-    .es-t { font-weight: 700; font-size: 1.02rem; }
-    .es-d { font-size: 0.85rem; color: var(--ink-3); line-height: 1.4; }
-    .es-arr { width: 28px; align-self: center; flex-shrink: 0; }
-    .es-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .es-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 26px; display: flex; gap: 18px; }
-    .es-idx { font-family: var(--display); font-weight: 800; font-size: 1.4rem; color: var(--brand-soft2); flex-shrink: 0; }
-    .es-card h3 { font-size: 1.15rem; margin-bottom: 6px; }
-    .es-card p { color: var(--ink-3); font-size: 0.94rem; line-height: 1.55; }
-    .es-cta { text-align: center; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 36px; }
-    .es-cta h2 { font-family: var(--display); font-size: 1.6rem; margin-bottom: 10px; }
-    .es-cta p { color: var(--ink-2); margin-bottom: 22px; max-width: 46ch; margin-inline: auto; }
-    @media (max-width: 760px) { .es-flow { flex-direction: column; } .es-arr { transform: rotate(90deg); } .es-grid { grid-template-columns: 1fr; } }
-  </style>
+    <h2>Illustrative figures</h2>
+    <p>
+      Some worked examples use illustrative fulfilment, freight or storage figures to demonstrate the shape
+      of a calculation rather than to quote a rate card. Those are labelled illustrative in the sentence
+      that introduces them, and the reader is told to substitute their own. They are never presented as
+      quoted rates.
+    </p>
+
+    <h2>Independence</h2>
+    <ul>
+      <li>No sponsored posts, no paid placement, no pre-publication review by any vendor or marketplace.</li>
+      <li>Advertising is served programmatically. Advertisers have no visibility into or influence over what is written.</li>
+      <li>Where the publisher sells a product related to a page's subject, that interest is disclosed on the page.</li>
+      <li>No commercial relationship is a scoring or ranking input.</li>
+    </ul>
+
+    <h2>Use of AI tools</h2>
+    <p>
+      Drafting and editing tools are used in producing this site, as they are at most publications now.
+      They are not a source. No figure, date or claim reaches publication because a model produced it:
+      every one is checked against the linked source by <a href="/about/">the author</a> before the page
+      goes live, and the source link is published so you can check it too.
+    </p>
+    <p>
+      We state this because the alternative — saying nothing and hoping — is the position taken by a large
+      share of this subject's content, and it is not a position we want to share.
+    </p>
+
+    <h2>Corrections</h2>
+    <p>
+      Errors are corrected in place with a dated note on the article and logged on the{' '}
+      <a href="/corrections/">corrections page</a>. Nothing is edited silently. If you find a wrong figure,
+      send it and its source to <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.
+    </p>
+
+    <h2>What is not here</h2>
+    <ul>
+      <li>No income claims, no earnings screenshots, no "how I made $X" framing.</li>
+      <li>No course, coaching or mentorship sales.</li>
+      <li>No guarantees about outcomes on any marketplace.</li>
+      <li>No republished content. Every page here was written for this site.</li>
+    </ul>
+  </div>
+</section>
 </Base>

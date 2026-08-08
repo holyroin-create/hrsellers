@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Btn from '../components/Btn.astro';
+const updated = '8 August 2026';
+---
+<Base title="How we test" description="The method behind the fee figures published here, and the rubric software reviews will be scored against when they begin.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'How we test', href: '/how-we-test/' }]} /></div>
+<section class="wrap" style="padding:1.5rem 1.25rem 0">
+  <p class="eyebrow">Method</p>
+  <h1 style="max-width:20ch">How we check a figure</h1>
+  <p style="max-width:46ch;font-size:1.12rem;color:var(--ink-soft);margin:1.2rem 0 1.4rem">
+    Most of the work behind a page on this site is not writing. It is establishing which of four
+    published values for the same fee is the current one, and who has an interest in the answer.
+  </p>
+  <p class="note" style="margin:0 0 2rem">Last updated {updated}.</p>
+
+  <div class="prose">
+    <h2>The four checks every figure goes through</h2>
+
+    <h3>1. Where did the number originate</h3>
+    <p>
+      Trace it back until you reach a platform announcement, a help page, a regulation or a government
+      publication. A figure in an article that cites another article is not sourced, it is repeated. Most
+      marketplace fee content is at least two hops from a primary source and never says so.
+    </p>
+
+    <h3>2. What date does it belong to</h3>
+    <p>
+      Fee content ages badly and is rarely revisited. During research for the reimbursement guide on this
+      site, three different effective dates for the same policy change were found in circulation, one of
+      which corresponds to nothing the platform published. A rate is a statement about a moment; the
+      moment gets recorded alongside it.
+    </p>
+
+    <h3>3. Who benefits from the number being what it is</h3>
+    <p>
+      This is the check that changes conclusions most often. If every published estimate of a loss comes
+      from companies that sell recovery software, that is not a consensus, it is a marketing category. The
+      publisher of each secondary source is named in our source lists so the reader can apply the same
+      discount we did.
+    </p>
+
+    <h3>4. Do the sources agree</h3>
+    <p>
+      When they do not — and on this subject they frequently do not — the disagreement is published rather
+      than resolved. Several pages here carry a table of contested figures for exactly this reason.
+      Presenting one value as settled when four are in circulation is how the problem propagates.
+    </p>
+
+    <h2>What that produces on a page</h2>
+    <table>
+      <thead><tr><th>Element</th><th>What it guarantees</th></tr></thead>
+      <tbody>
+        <tr><td>Sources block with retrieval dates</td><td>Every claim can be checked at its origin, and you can see how old the check is</td></tr>
+        <tr><td>Publisher named for secondary sources</td><td>You can see who had a commercial interest in the figure</td></tr>
+        <tr><td>Contested-figures table</td><td>Where sources conflict, you get both values instead of one confident guess</td></tr>
+        <tr><td>Illustrative figures labelled</td><td>You can tell a demonstration of arithmetic from a quoted rate</td></tr>
+        <tr><td>Published and modified dates</td><td>You can judge whether a page has been revisited since the last fee change</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Software reviews</h2>
+    <p>
+      <strong>No software reviews are published on this site yet.</strong> The rubric below is published in
+      advance so that the standard exists before the first review does, rather than being written to fit a
+      conclusion afterwards.
+    </p>
+    <table>
+      <thead><tr><th>Criterion</th><th>Weight</th><th>What earns a high score</th></tr></thead>
+      <tbody>
+        <tr><td>Data accuracy</td><td>30%</td><td>Figures reconcile against the platform's own reports on a sampled basis, with the sample stated</td></tr>
+        <tr><td>Operational fit</td><td>25%</td><td>Solves a problem a working seller actually has, without a workaround</td></tr>
+        <tr><td>Cost at real volume</td><td>20%</td><td>Total cost stays predictable as order volume grows</td></tr>
+        <tr><td>Setup and support</td><td>15%</td><td>Time to first useful output; support answers operational questions</td></tr>
+        <tr><td>Data portability</td><td>10%</td><td>Exports are complete and usable outside the tool</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Conditions that will apply</h3>
+    <ul>
+      <li>Tools are tested on paid plans bought at list price. Vendor-supplied review accounts are declined.</li>
+      <li>Every review states the plan tier tested and the month of testing.</li>
+      <li>No score is assigned to a tool that has not been run on real data.</li>
+      <li>Scores are revisited when a vendor changes pricing or ships a material change.</li>
+      <li>No sponsored reviews, no paid placement, no vendor sight of a review before publication.</li>
+      <li>If an affiliate relationship exists with a reviewed tool, it is disclosed on the review and is never a scoring input.</li>
+    </ul>
+
+    <h2>Corrections</h2>
+    <p>
+      Errors are corrected in place with a dated note and logged on the{' '}
+      <a href="/corrections/">corrections page</a>. Nothing is edited silently.
+    </p>
+
+    <div class="btn-row" style="margin-top:2rem">
+      <Btn href="/editorial-standards/">Editorial standards</Btn>
+      <Btn href="/policy-log/" quiet={true}>See the dated change log</Btn>
+    </div>
+  </div>
+</section>
+</Base>

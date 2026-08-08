@@ -1,0 +1,46 @@
+---
+import PageShell from '../../components/PageShell.astro';
+const TOOLS = [
+  { href: '/tools/margin-calculator/', name: 'Margin & break-even calculator', what: 'Enter your own price, cost, fees and ad spend. Returns net profit per unit, net margin, break-even price and the ACOS ceiling you can afford.', why: 'The single number that decides whether a product is worth sourcing.' },
+  { href: '/tools/cash-flow-planner/', name: 'Cash flow & reorder planner', what: 'Models the gap between paying a supplier and being paid by the marketplace, and tells you whether you can fund the reorder.', why: 'Undercapitalisation is usually a timing problem, not a budget problem.' },
+  { href: '/tools/dimensional-weight/', name: 'Dimensional weight checker', what: 'Compares actual weight against volumetric weight using the standard divisor, and shows how close you are to the next round-up.', why: 'Billable weight is what you pay for, and it is often not the weight on the scale.' },
+  { href: '/quiz/', name: 'Model fit check', what: 'Fifteen questions on capital, contacts, time and downside tolerance. Scores five selling models against your actual situation.', why: 'Most people pick a model before checking whether it fits them.' },
+  { href: '/resources/', name: 'Free spreadsheet templates', what: 'A working FBA reimbursement and claim tracker in Excel. Direct download.', why: 'Claims that nobody chases are the most common quiet loss.' },
+];
+---
+<PageShell
+  title="Free calculators and tools for marketplace sellers"
+  description="Margin and break-even calculator, cash flow planner, dimensional weight checker, model fit quiz and free spreadsheet templates. No signup on any of them."
+  eyebrow="Tools"
+  h1="Calculators, not another article"
+  lede="Everything here runs in your browser on numbers you supply. Nothing is stored, nothing is sent anywhere, and none of it asks for an email."
+  crumb={{ label: 'Tools', href: '/tools/' }}
+  rail={[{href:'/start-here/',label:'Start here'},{href:'/costs/',label:'What it costs'},{href:'/glossary/',label:'Glossary'}]}
+>
+  <div class="toolgrid">
+    {TOOLS.map(t => (
+      <a class="toolcard" href={t.href}>
+        <h2>{t.name}</h2>
+        <p>{t.what}</p>
+        <p class="why">{t.why}</p>
+        <span class="tlink">Open <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    ))}
+  </div>
+  <div class="prose" style="margin-top:2.5rem">
+    <h2>Why these and not a fee calculator</h2>
+    <p>
+      There are already a dozen Amazon fee calculators, several run by companies with live API access to
+      the fee tables. We are not going to build a worse one and hardcode numbers that go stale.
+    </p>
+    <p>
+      What is missing is tooling for the decisions around the fee: whether the margin survives it, whether
+      your cash comes back in time to reorder, and whether your packaging is quietly pushing you into a
+      higher billable weight. Those depend on your numbers, not on a table we would have to maintain.
+    </p>
+    <p>
+      For exact per-ASIN fees, use Amazon's own Revenue Calculator and the Fee and Economics Preview
+      report. Those are authoritative. Nothing on this site is.
+    </p>
+  </div>
+</PageShell>

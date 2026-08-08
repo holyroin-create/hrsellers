@@ -1,0 +1,141 @@
+---
+import PageShell from '../../components/PageShell.astro';
+import Faq from '../../components/Faq.astro';
+---
+<PageShell
+  title="Margin and break-even calculator for marketplace sellers"
+  description="Enter your own price, cost of goods, inbound, referral rate, fulfillment fee, returns and ad spend. Returns net profit per unit, net margin, break-even price and the maximum ACOS you can afford."
+  eyebrow="Calculator"
+  h1="Margin & break-even calculator"
+  lede="Your numbers, not ours. Nothing is stored and nothing leaves your browser — this page has no server side at all."
+  crumb={{ label: 'Tools', href: '/tools/' }}
+  rail={[{href:'/tools/cash-flow-planner/',label:'Cash flow planner'},{href:'/tools/dimensional-weight/',label:'Dimensional weight'},{href:'/costs/',label:'What it costs to start'}]}
+>
+  <div class="calc">
+    <div class="calcbox">
+      <h2>Your numbers</h2>
+      <div class="field"><label for="price">Selling price</label>
+        <div class="inputwrap"><span>$</span><input id="price" type="number" inputmode="decimal" step="0.01" value="29.99" /></div></div>
+      <div class="field"><label for="cogs">Cost of goods per unit</label>
+        <div class="inputwrap"><span>$</span><input id="cogs" type="number" inputmode="decimal" step="0.01" value="7.50" /></div></div>
+      <div class="field"><label for="inbound">Inbound freight &amp; duty per unit<span class="hint">Since the de minimis suspension this is rarely zero for imports.</span></label>
+        <div class="inputwrap"><span>$</span><input id="inbound" type="number" inputmode="decimal" step="0.01" value="1.20" /></div></div>
+      <div class="field"><label for="referral">Referral fee rate<span class="hint">Category dependent. Check your category in Seller Central.</span></label>
+        <div class="inputwrap"><input id="referral" type="number" inputmode="decimal" step="0.1" value="15" /><span class="suf">%</span></div></div>
+      <div class="field"><label for="fulfil">Fulfillment fee per unit<span class="hint">From your Fee &amp; Economics Preview report, not an estimate.</span></label>
+        <div class="inputwrap"><span>$</span><input id="fulfil" type="number" inputmode="decimal" step="0.01" value="4.75" /></div></div>
+      <div class="field"><label for="storage">Storage &amp; other fees per unit</label>
+        <div class="inputwrap"><span>$</span><input id="storage" type="number" inputmode="decimal" step="0.01" value="0.35" /></div></div>
+      <div class="field"><label for="returns">Return rate</label>
+        <div class="inputwrap"><input id="returns" type="number" inputmode="decimal" step="0.1" value="5" /><span class="suf">%</span></div></div>
+      <div class="field"><label for="acos">Current ad spend as % of sales (TACOS)</label>
+        <div class="inputwrap"><input id="acos" type="number" inputmode="decimal" step="0.1" value="10" /><span class="suf">%</span></div></div>
+    </div>
+
+    <div class="calcbox">
+      <h2>Result</h2>
+      <div class="out hero"><span class="k">Net profit per unit</span><span class="v" id="o-profit">—</span></div>
+      <div class="bar"><i id="o-bar" style="width:0%"></i></div>
+      <div class="out"><span class="k">Net margin</span><span class="v" id="o-margin">—</span></div>
+      <div class="out"><span class="k">Return on cost (ROI)</span><span class="v" id="o-roi">—</span></div>
+      <div class="out"><span class="k">Total cost per unit</span><span class="v" id="o-cost">—</span></div>
+      <div class="out"><span class="k">Break-even price</span><span class="v" id="o-be">—</span></div>
+      <div class="out"><span class="k">Max ACOS before zero profit</span><span class="v" id="o-maxacos">—</span></div>
+      <div class="out"><span class="k">Fee load (fees ÷ price)</span><span class="v" id="o-feeload">—</span></div>
+      <div id="o-verdict" class="verdict"></div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h2>How each line is calculated</h2>
+    <table>
+      <thead><tr><th>Output</th><th>Formula</th></tr></thead>
+      <tbody>
+        <tr><td>Referral fee</td><td>price × referral rate</td></tr>
+        <tr><td>Return cost</td><td>(fulfillment + COGS + inbound) × return rate — a returned unit costs you the fulfillment and often the unit</td></tr>
+        <tr><td>Ad cost</td><td>price × TACOS</td></tr>
+        <tr><td>Total cost</td><td>COGS + inbound + referral + fulfillment + storage + returns + ads</td></tr>
+        <tr><td>Net profit</td><td>price − total cost</td></tr>
+        <tr><td>Net margin</td><td>net profit ÷ price</td></tr>
+        <tr><td>ROI</td><td>net profit ÷ (COGS + inbound)</td></tr>
+        <tr><td>Break-even price</td><td>fixed costs ÷ (1 − referral rate − TACOS)</td></tr>
+        <tr><td>Max ACOS</td><td>profit before ads ÷ price</td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      The return-cost line is the one most calculators leave out. A returned unit is not simply a
+      reversed sale: you generally lose the outbound fulfillment, and depending on condition you may
+      lose the unit. Treating returns as free is how a 20% margin turns out to be 12%.
+    </p>
+
+    <h2>Reading the result honestly</h2>
+    <ul>
+      <li><strong>Below 10% net</strong> — one fee change or one bad month of advertising erases it. Since selling price became an input to the US fulfillment fee in January 2026, even a repricing decision can move your costs.</li>
+      <li><strong>10–20% net</strong> — workable, but there is no room for error in sourcing or ad efficiency.</li>
+      <li><strong>Above 20% net</strong> — enough buffer to absorb a fee increase, a return spike, or a competitor undercutting you for a quarter.</li>
+    </ul>
+    <p>
+      The max ACOS number is the more useful one for most people. It tells you the point at which
+      advertising stops being growth and starts being a subsidy. If your current TACOS is close to it,
+      you are running a business that exists to feed the ad platform.
+    </p>
+  </div>
+
+  <Faq items={[
+    { q: 'Where do I get the fulfillment fee number?', a: 'Your Fee and Economics Preview report in Seller Central, or the Revenue Calculator for a specific ASIN. Do not estimate it — since January 2026 the US fulfillment fee depends on selling price as well as size and weight.' },
+    { q: 'Is my data sent anywhere?', a: 'No. This page is a static file with no server side. The calculation runs in your browser and nothing is stored or transmitted.' },
+    { q: 'Why is my margin lower here than in other calculators?', a: 'Most likely the return cost and ad spend lines. Many calculators omit both, which produces a flattering number that does not match your settlement report.' },
+    { q: 'What return rate should I use?', a: 'Your own, from your returns report. Category averages vary enormously — apparel behaves nothing like consumables — so a generic figure will mislead you.' },
+  ]} />
+
+  <script is:inline>
+    (function () {
+      const ids = ['price','cogs','inbound','referral','fulfil','storage','returns','acos'];
+      const get = id => parseFloat(document.getElementById(id).value) || 0;
+      const money = v => (v < 0 ? '-$' : '$') + Math.abs(v).toFixed(2);
+      const pct = v => v.toFixed(1) + '%';
+      function calc() {
+        const price = get('price'), cogs = get('cogs'), inbound = get('inbound');
+        const refRate = get('referral') / 100, fulfil = get('fulfil'), storage = get('storage');
+        const retRate = get('returns') / 100, adRate = get('acos') / 100;
+        const referral = price * refRate;
+        const returnCost = (fulfil + cogs + inbound) * retRate;
+        const adCost = price * adRate;
+        const totalCost = cogs + inbound + referral + fulfil + storage + returnCost + adCost;
+        const profit = price - totalCost;
+        const margin = price > 0 ? (profit / price) * 100 : 0;
+        const roi = (cogs + inbound) > 0 ? (profit / (cogs + inbound)) * 100 : 0;
+        const fixed = cogs + inbound + fulfil + storage + (fulfil + cogs + inbound) * retRate;
+        const denom = 1 - refRate - adRate;
+        const be = denom > 0 ? fixed / denom : NaN;
+        const profitBeforeAds = profit + adCost;
+        const maxAcos = price > 0 ? (profitBeforeAds / price) * 100 : 0;
+        const feeLoad = price > 0 ? ((referral + fulfil + storage) / price) * 100 : 0;
+
+        document.getElementById('o-profit').textContent = money(profit);
+        document.getElementById('o-profit').className = 'v ' + (profit >= 0 ? 'pos' : 'neg');
+        document.getElementById('o-margin').textContent = pct(margin);
+        document.getElementById('o-roi').textContent = pct(roi);
+        document.getElementById('o-cost').textContent = money(totalCost);
+        document.getElementById('o-be').textContent = isFinite(be) ? money(be) : 'n/a';
+        document.getElementById('o-maxacos').textContent = pct(Math.max(maxAcos, 0));
+        document.getElementById('o-feeload').textContent = pct(feeLoad);
+
+        const bar = document.getElementById('o-bar');
+        bar.style.width = Math.min(Math.max(margin, 0), 40) / 40 * 100 + '%';
+        bar.className = profit >= 0 ? '' : 'neg';
+
+        const v = document.getElementById('o-verdict');
+        let msg, warn = false;
+        if (profit <= 0) { warn = true; msg = 'This unit loses money at these inputs. Before adjusting the price, check whether raising it pushes you into a higher fulfillment fee tier — since January 2026 selling price is an input to the US fee.'; }
+        else if (margin < 10) { warn = true; msg = 'Under 10% net leaves almost no buffer. A single fee change, a return spike, or two weeks of inefficient advertising takes this to zero.'; }
+        else if (margin < 20) { msg = 'Workable, but tight. Your maximum ACOS is ' + pct(Math.max(maxAcos, 0)) + ' — treat that as a hard ceiling rather than a target.'; }
+        else { msg = 'Enough margin to absorb a fee increase or a bad quarter. Verify the fulfillment figure against your Fee and Economics Preview report before committing to inventory.'; }
+        v.textContent = msg;
+        v.className = 'verdict' + (warn ? ' warn' : '');
+      }
+      ids.forEach(id => document.getElementById(id).addEventListener('input', calc));
+      calc();
+    })();
+  </script>
+</PageShell>

@@ -1,0 +1,21 @@
+---
+import Art from './Art.astro';
+const { href, category, title, summary, minutes, updated, ledger, ledgerKind = 'recovered' } = Astro.props;
+const artFor: Record<string, string> = {
+  'Fees & reimbursements': 'ledger',
+  'Shipping & logistics': 'freight',
+  'Software': 'grid',
+  'Getting started': 'grid',
+  'Scaling': 'scale',
+};
+---
+<a class="card" href={href}>
+  <div class="art-wrap"><Art kind={artFor[category] ?? 'ledger'} /></div>
+  <div class="body">
+    <span class="meta">{category}</span>
+    <h3>{title}</h3>
+    <p>{summary}</p>
+    {ledger && <span class={ledgerKind === 'cost' ? 'ledger cost' : 'ledger'}><b>{ledger}</b></span>}
+    <p class="meta" style="margin:.9rem 0 0">{minutes} min &middot; updated {updated}</p>
+  </div>
+</a>

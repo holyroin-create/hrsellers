@@ -1,0 +1,129 @@
+---
+import PageShell from '../../components/PageShell.astro';
+import Faq from '../../components/Faq.astro';
+---
+<PageShell
+  title="Dimensional weight calculator and billable weight checker"
+  description="Compare actual weight against volumetric weight using the standard divisor, see which one you are billed on, and find out how much you would need to shave to drop a weight band."
+  eyebrow="Calculator"
+  h1="Dimensional weight checker"
+  lede="Carriers bill on whichever is greater: what the package weighs, or what its volume implies. Most sellers only ever check the first one."
+  crumb={{ label: 'Tools', href: '/tools/' }}
+  rail={[{href:'/tools/margin-calculator/',label:'Margin & break-even'},{href:'/tools/cash-flow-planner/',label:'Cash flow planner'},{href:'/glossary/',label:'Glossary'}]}
+>
+  <div class="calc">
+    <div class="calcbox">
+      <h2>Package</h2>
+      <div class="field"><label for="unit">Units</label>
+        <div class="inputwrap"><select id="unit" style="flex:1;border:0;background:transparent;font-family:var(--mono);font-size:.95rem;padding:.5rem;color:var(--ink)">
+          <option value="in">Inches &amp; pounds</option>
+          <option value="cm">Centimetres &amp; kilograms</option>
+        </select></div></div>
+      <div class="field"><label for="l">Length</label><div class="inputwrap"><input id="l" type="number" step="0.1" value="12" /><span class="suf" id="u1">in</span></div></div>
+      <div class="field"><label for="w" >Width</label><div class="inputwrap"><input id="w" type="number" step="0.1" value="9" /><span class="suf" id="u2">in</span></div></div>
+      <div class="field"><label for="h">Height</label><div class="inputwrap"><input id="h" type="number" step="0.1" value="4" /><span class="suf" id="u3">in</span></div></div>
+      <div class="field"><label for="wt">Actual weight</label><div class="inputwrap"><input id="wt" type="number" step="0.01" value="1.4" /><span class="suf" id="u4">lb</span></div></div>
+      <div class="field"><label for="div">Divisor<span class="hint">139 is the common US domestic figure. Carriers and contracts vary — confirm yours.</span></label>
+        <div class="inputwrap"><input id="div" type="number" step="1" value="139" /></div></div>
+    </div>
+    <div class="calcbox">
+      <h2>Result</h2>
+      <div class="out hero"><span class="k">Billable weight</span><span class="v" id="d-bill">—</span></div>
+      <div class="out"><span class="k">Actual weight</span><span class="v" id="d-act">—</span></div>
+      <div class="out"><span class="k">Dimensional weight</span><span class="v" id="d-dim">—</span></div>
+      <div class="out"><span class="k">Billed on</span><span class="v" id="d-on">—</span></div>
+      <div class="out"><span class="k">Cubic volume</span><span class="v" id="d-vol">—</span></div>
+      <div class="out"><span class="k">Density</span><span class="v" id="d-dens">—</span></div>
+      <div class="out"><span class="k">Rounds up to</span><span class="v" id="d-round">—</span></div>
+      <div class="out"><span class="k">Headroom to next band</span><span class="v" id="d-head">—</span></div>
+      <div id="d-verdict" class="verdict"></div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h2>The arithmetic</h2>
+    <p>
+      Dimensional weight is length × width × height, divided by a divisor set by the carrier. Whichever is
+      greater — actual or dimensional — is what you are billed on. That is the whole formula, and it is why
+      a box of pillows can cost more to ship than a box of bolts.
+    </p>
+    <table>
+      <thead><tr><th>Step</th><th>Calculation</th></tr></thead>
+      <tbody>
+        <tr><td>Volume</td><td>length × width × height</td></tr>
+        <tr><td>Dimensional weight</td><td>volume ÷ divisor</td></tr>
+        <tr><td>Billable weight</td><td>the greater of actual and dimensional</td></tr>
+        <tr><td>Density</td><td>actual weight ÷ volume — below the divisor threshold, volume wins</td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      Divisors are set by carrier and contract and change over time. 139 is the figure most commonly cited
+      for US domestic parcels, but confirm the divisor in your own rate agreement rather than assuming it.
+    </p>
+
+    <h2>Why this matters more than it looks</h2>
+    <ul>
+      <li><strong>Packaging is a margin decision.</strong> An inch of unnecessary void space on each dimension can move you a whole band. That cost recurs on every unit, forever.</li>
+      <li><strong>Rounding is brutal at the boundary.</strong> Billable weight rounds up. Being 0.05 over a boundary costs the same as being 0.9 over.</li>
+      <li><strong>Marketplace size tiers work on the same principle.</strong> Amazon assigns a size tier from packaged dimensions and weight, and the tier is the biggest single driver of fulfillment cost. Crossing a boundary by a fraction is expensive in exactly the same way.</li>
+      <li><strong>Check before you order packaging, not after.</strong> Once 5,000 boxes are printed, this becomes a cost you live with.</li>
+    </ul>
+  </div>
+
+  <Faq items={[
+    { q: 'Which divisor should I use?', a: 'The one in your carrier agreement. 139 is commonly cited for US domestic parcels, but divisors differ by carrier, service level and contract, and they change. Confirm yours rather than trusting a default.' },
+    { q: 'Does Amazon use dimensional weight for FBA?', a: 'Amazon assigns a size tier from packaged dimensions and unit weight, and that tier drives the fulfillment fee. The principle is the same — volume can cost you more than mass — but the specific tables are Amazon\'s. Check your ASINs in the Fee and Economics Preview report.' },
+    { q: 'How much can I realistically save by shrinking a box?', a: 'It depends entirely on whether the change crosses a boundary. Shaving half an inch may save nothing, or it may drop a whole band. That is why checking before ordering packaging matters more than shaving in general.' },
+  ]} />
+
+  <script is:inline>
+    (function () {
+      const ids = ['l','w','h','wt','div'];
+      const g = id => parseFloat(document.getElementById(id).value) || 0;
+      const sel = document.getElementById('unit');
+      function calc() {
+        const metric = sel.value === 'cm';
+        const wu = metric ? 'kg' : 'lb', du = metric ? 'cm' : 'in';
+        ['u1','u2','u3'].forEach(i => document.getElementById(i).textContent = du);
+        document.getElementById('u4').textContent = wu;
+        const L = g('l'), W = g('w'), H = g('h'), act = g('wt'), div = g('div') || 1;
+        const vol = L * W * H;
+        const dim = vol / div;
+        const bill = Math.max(act, dim);
+        const rounded = Math.ceil(bill);
+        const dens = vol > 0 ? act / vol : 0;
+        const head = rounded - bill;
+
+        const f = (v, u) => v.toFixed(2) + ' ' + u;
+        document.getElementById('d-act').textContent = f(act, wu);
+        document.getElementById('d-dim').textContent = f(dim, wu);
+        document.getElementById('d-bill').textContent = f(bill, wu);
+        document.getElementById('d-bill').className = 'v ' + (dim > act ? 'neg' : 'pos');
+        document.getElementById('d-on').textContent = dim > act ? 'dimensional' : 'actual';
+        document.getElementById('d-vol').textContent = vol.toFixed(0) + ' ' + du + '³';
+        document.getElementById('d-dens').textContent = dens.toFixed(4) + ' ' + wu + '/' + du + '³';
+        document.getElementById('d-round').textContent = rounded + ' ' + wu;
+        document.getElementById('d-head').textContent = head.toFixed(2) + ' ' + wu;
+
+        const v = document.getElementById('d-verdict');
+        let msg, warn = false;
+        if (dim > act) {
+          const target = act * div;
+          const shrink = vol > 0 ? (1 - target / vol) * 100 : 0;
+          warn = true;
+          msg = 'You are billed on volume, not mass — this package is paying for air. Reducing total volume by about ' + Math.max(shrink, 0).toFixed(0) + '% would bring dimensional weight down to the actual weight. Check whether that is achievable before you order packaging.';
+        } else if (head < 0.15) {
+          warn = true;
+          msg = 'You are ' + head.toFixed(2) + ' ' + wu + ' below the next whole unit, which rounds up. A small increase in packaging or product weight pushes you into the next band at full cost.';
+        } else {
+          msg = 'Billed on actual weight with ' + head.toFixed(2) + ' ' + wu + ' of headroom before rounding up. Re-check this if you change packaging or add an insert.';
+        }
+        v.textContent = msg;
+        v.className = 'verdict' + (warn ? ' warn' : '');
+      }
+      ids.forEach(id => document.getElementById(id).addEventListener('input', calc));
+      sel.addEventListener('change', calc);
+      calc();
+    })();
+  </script>
+</PageShell>

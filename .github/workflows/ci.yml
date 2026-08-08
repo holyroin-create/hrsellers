@@ -1,0 +1,29 @@
+name: build and audit
+
+# Cloudflare Pages does the deploying. This exists so a change that would fail
+# an AdSense review fails here first, on the pull request, instead of silently
+# reaching production.
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Pre-deploy audit
+        run: npm run verify

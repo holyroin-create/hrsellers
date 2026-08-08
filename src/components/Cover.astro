@@ -1,0 +1,154 @@
+---
+/**
+ * Cover art built from the article's own numbers.
+ *
+ * Deliberately not illustration. A stock-illustration cover says nothing
+ * about the piece and looks like every other site's cover; a cover that
+ * plots the article's headline figure can only belong to this article.
+ *
+ * The range segment / cliff path draws itself in when the cover scrolls
+ * into view. Motion is one gesture per cover, and is skipped entirely
+ * under prefers-reduced-motion (see global.css).
+ */
+import { coverFor, type Cover } from '../data/covers';
+
+const { slug = '', category = 'Getting started', wide = false } = Astro.props;
+const c: Cover = coverFor(slug, category);
+
+/* Two layouts: 16:10 for list rows, 21:9 for the lead slot. */
+const L = wide
+  ? { w: 420, h: 180, pad: 26, figY: 74, figSize: 46, labelY: 34, trackY: 116, tagY: 136, stampY: 164, label: 11, tag: 11, stamp: 10, rule: 18 }
+  : { w: 200, h: 125, pad: 14, figY: 54, figSize: 30, labelY: 24, trackY: 84, tagY: 99, stampY: 116, label: 8, tag: 8, stamp: 7, rule: 12 };
+
+const x0 = L.pad;
+const x1 = L.w - L.pad;
+const span = x1 - x0;
+const tone = c.tone;
+
+/* At list-row size the full label and source stamp overrun the frame,
+   so each cover carries a compact form for the small layout. */
+const labelText = (wide ? c.label : (c.labelShort ?? c.label)).toUpperCase();
+const stampText = wide ? c.stamp : (c.stampShort ?? c.stamp);
+
+/* The headline figure is set in a monospace face, so its width is a
+   direct function of character count. Shrink long ones rather than
+   letting them run past the frame. */
+const FIT = 9;
+const figSize = c.figure.length > FIT
+  ? Math.max(L.figSize * 0.42, (L.figSize * FIT) / c.figure.length)
+  : L.figSize;
+
+/* The dated markers need room. Below the wide layout, only the marker
+   at the drop survives — the rest are in the article. */
+const marks = c.kind === 'cliff' ? (wide ? c.marks : c.marks.slice(0, 1)) : [];
+
+/* Ruled paper: the site's premise is reading from the invoice up. */
+const rules = Array.from({ length: Math.floor(L.h / L.rule) }, (_, i) => (i + 1) * L.rule);
+
+let seg = { a: 0, b: 0, mid: 0 };
+if (c.kind === 'range') {
+  const top = Math.max(c.hi, c.mid) * 1.12;
+  const px = (v: number) => x0 + (v / top) * span;
+  seg = { a: px(c.lo), b: px(c.hi), mid: px(c.mid) };
+}
+
+/* The marked average can fall outside the range it is being compared with
+   — that is often the point — so keep its label inside the frame. */
+const midNearLeft = seg.mid < x0 + span * 0.18;
+const midNearRight = seg.mid > x1 - span * 0.18;
+const midAnchor = midNearLeft ? 'start' : midNearRight ? 'end' : 'middle';
+const midX = midNearLeft ? x0 : midNearRight ? x1 : seg.mid;
+
+let cliff = '';
+if (c.kind === 'cliff') {
+  const dx = x0 + c.dropAt * span;
+  const hiY = L.trackY - (wide ? 30 : 20);
+  cliff = `M ${x0} ${hiY} L ${dx} ${hiY} L ${dx} ${L.trackY} L ${x1} ${L.trackY}`;
+}
+
+let tl = '';
+if (c.kind === 'timeline') tl = `M ${x0} ${L.trackY} L ${x1} ${L.trackY}`;
+
+const aria =
+  c.kind === 'range'
+    ? `${c.label}: stated ${c.midTag} against an observed range of ${c.loTag} to ${c.hiTag}`
+    : c.kind === 'cliff'
+      ? `${c.label}: ${c.before} falling to ${c.after}`
+      : `${c.label}`;
+---
+<svg
+  class={`cover cover--${tone}`}
+  viewBox={`0 0 ${L.w} ${L.h}`}
+  preserveAspectRatio="xMidYMid slice"
+  role="img"
+  aria-label={aria}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect width="100%" height="100%" class="cv-paper" />
+  {rules.map(y => <line x1="0" y1={y} x2={L.w} y2={y} class="cv-rule" />)}
+
+  <text x={x0} y={L.labelY} class="cv-label" style={`font-size:${L.label}px`}>{labelText}</text>
+  <text x={x0} y={L.figY} class="cv-fig" style={`font-size:${figSize}px`}>{c.figure}</text>
+
+  {c.kind === 'range' && (
+    <g>
+      <line x1={x0} y1={L.trackY} x2={x1} y2={L.trackY} class="cv-track" />
+      <line x1={seg.a} y1={L.trackY} x2={seg.b} y2={L.trackY} class="cv-seg cv-draw" />
+      <circle cx={seg.a} cy={L.trackY} r={wide ? 5 : 3.4} class="cv-dot" />
+      <circle cx={seg.b} cy={L.trackY} r={wide ? 5 : 3.4} class="cv-dot" />
+      <line x1={seg.mid} y1={L.trackY - (wide ? 13 : 9)} x2={seg.mid} y2={L.trackY + (wide ? 13 : 9)} class="cv-mid" />
+      <text x={midX} y={L.trackY - (wide ? 19 : 13)} class="cv-tag cv-tag--mid" style={`font-size:${L.tag}px`} text-anchor={midAnchor}>{c.midTag}</text>
+      <text x={seg.a} y={L.tagY} class="cv-tag" style={`font-size:${L.tag}px`}>{c.loTag}</text>
+      <text x={seg.b} y={L.tagY} class="cv-tag" style={`font-size:${L.tag}px`} text-anchor="end">{c.hiTag}</text>
+    </g>
+  )}
+
+  {c.kind === 'cliff' && (
+    <g>
+      <line x1={x0} y1={L.trackY} x2={x1} y2={L.trackY} class="cv-track" />
+      <path d={cliff} class="cv-seg cv-draw" fill="none" />
+      <text x={x0} y={L.trackY - (wide ? 38 : 26)} class="cv-tag" style={`font-size:${L.tag}px`}>{c.before}</text>
+      <text x={x1} y={L.trackY - (wide ? 8 : 6)} class="cv-tag" style={`font-size:${L.tag}px`} text-anchor="end">{c.after}</text>
+      {marks.map(m => (
+        <g>
+          <line x1={x0 + m.x * span} y1={L.trackY + (wide ? 6 : 4)} x2={x0 + m.x * span} y2={L.trackY + (wide ? 14 : 9)} class="cv-mid" />
+          <text x={x0 + m.x * span} y={L.tagY + (wide ? 6 : 4)} class="cv-tag" style={`font-size:${L.tag}px`} text-anchor="middle">{m.date}</text>
+        </g>
+      ))}
+    </g>
+  )}
+
+  {c.kind === 'timeline' && (
+    <g>
+      <path d={tl} class="cv-seg cv-draw" fill="none" />
+      {c.points.map((pt, i) => {
+        const px = x0 + pt.x * span;
+        const above = i % 2 === 0;
+        return (
+          <g>
+            <circle cx={px} cy={L.trackY} r={wide ? 4.5 : 3} class="cv-dot" />
+            <line x1={px} y1={L.trackY} x2={px} y2={L.trackY + (above ? -(wide ? 12 : 8) : (wide ? 12 : 8))} class="cv-mid" />
+            <text x={px} y={L.trackY + (above ? -(wide ? 17 : 12) : (wide ? 24 : 17))} class="cv-tag" style={`font-size:${L.tag}px`} text-anchor="middle">{pt.date}</text>
+          </g>
+        );
+      })}
+    </g>
+  )}
+
+  {c.kind === 'ledger' && (
+    <g>
+      {c.rows.map((r, i) => {
+        const y = L.trackY - (wide ? 26 : 18) + i * (wide ? 22 : 15);
+        return (
+          <g>
+            <text x={x0} y={y} class="cv-tag" style={`font-size:${L.tag}px`}>{r.k}</text>
+            <line x1={x0 + (wide ? 96 : 46)} y1={y - 3} x2={x1 - (wide ? 34 : 16)} y2={y - 3} class="cv-leader" />
+            <text x={x1} y={y} class={`cv-tag cv-tag--${r.tone}`} style={`font-size:${L.tag}px`} text-anchor="end">{r.v}</text>
+          </g>
+        );
+      })}
+    </g>
+  )}
+
+  <text x={x0} y={L.stampY} class="cv-stamp" style={`font-size:${L.stamp}px`}>{stampText}</text>
+</svg>

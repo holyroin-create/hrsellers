@@ -1,0 +1,7 @@
+---
+const { value, kind = 'recovered', source } = Astro.props;
+---
+<aside class={kind === 'cost' ? 'figure-callout cost' : 'figure-callout'}>
+  <span class="fig">{value}</span>
+  <span class="txt"><slot />{source && <em>Source: {source}</em>}</span>
+</aside>

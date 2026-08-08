@@ -1,0 +1,55 @@
+---
+import PageShell from '../components/PageShell.astro';
+const TERMS: { t: string; d: string }[] = [
+  { t: 'ASIN', d: 'Amazon Standard Identification Number — the ten-character identifier for a product listing on Amazon. One ASIN can have many sellers.' },
+  { t: 'FNSKU', d: 'Fulfillment Network SKU — the barcode that ties a physical unit in an Amazon warehouse to your specific seller account. Without it, your stock can be commingled with other sellers\' units.' },
+  { t: 'FBA', d: 'Fulfillment by Amazon — you ship inventory to Amazon, and Amazon stores, picks, packs, ships and handles returns in exchange for fulfillment and storage fees.' },
+  { t: 'FBM', d: 'Fulfilled by Merchant — you hold the stock and ship the orders yourself. No FBA fees, but no Prime badge by default and full responsibility for delivery performance.' },
+  { t: 'MCF', d: 'Multi-Channel Fulfillment — using Amazon\'s warehouses to fulfil orders that came from somewhere else, such as your own store.' },
+  { t: 'WFS', d: 'Walmart Fulfillment Services — Walmart\'s equivalent of FBA for its marketplace.' },
+  { t: 'Referral fee', d: 'The marketplace\'s commission on each sale, taken as a percentage of the sale price and varying by category. Distinct from fulfillment fees, and it did not change in Amazon\'s 2026 US update.' },
+  { t: 'Fulfillment fee', d: 'The per-unit charge for picking, packing and shipping an FBA order. From 15 January 2026 in the US, selling price became one of the inputs alongside size tier and weight.' },
+  { t: 'Inbound placement fee', d: 'A charge introduced in 2024 relating to how your inbound shipment is distributed across Amazon\'s network. Splitting a shipment across more destinations generally lowers it.' },
+  { t: 'Size tier', d: 'The bucket Amazon assigns a product based on its packaged dimensions and weight. It is the single biggest driver of fulfillment cost, and crossing a boundary by a fraction of an inch is expensive.' },
+  { t: 'Dimensional weight', d: 'A billable weight derived from a package\'s volume rather than its mass. Carriers and marketplaces charge on whichever of actual and dimensional weight is greater.' },
+  { t: 'Reimbursement', d: 'Money a marketplace owes you for inventory it lost, damaged, or mishandled, or for fees it charged in error. Not all of it is credited automatically.' },
+  { t: 'Shipment discrepancy', d: 'A mismatch between what you say you sent to a fulfillment centre and what it says it received. Resolving one requires proof of what shipped.' },
+  { t: 'Settlement', d: 'The periodic statement reconciling your sales, fees, refunds and adjustments into a single payout. Reconciling settlements is how you find money that has quietly gone missing.' },
+  { t: 'Buy Box', d: 'The purchase panel on a product page. Where several sellers offer the same ASIN, only one holds it at a time, and holding it is what most sales depend on.' },
+  { t: 'COGS', d: 'Cost of goods sold — what a unit cost you before any marketplace fee, freight or advertising. The starting point of every margin calculation.' },
+  { t: 'Landed cost', d: 'What a unit actually costs you once product cost, freight, duty, customs fees and inbound shipping are included. Since the de minimis suspension this number has changed for most importers.' },
+  { t: 'De minimis / Section 321', d: 'The US provision that allowed shipments valued at $800 or less to enter duty-free without formal entry. Suspended for China and Hong Kong in May 2025, extended to all countries that August, and codified by regulation in June 2026.' },
+  { t: 'HTS code', d: 'The Harmonized Tariff Schedule classification, ten digits for US imports, that determines the duty rate on a product. Required on every commercial import since the de minimis suspension.' },
+  { t: 'DDP / DAP', d: 'Delivered Duty Paid means the seller covers duty and the buyer pays nothing on arrival. Delivered At Place means the buyer is billed on the doorstep — which since the de minimis change has driven up parcel refusals.' },
+  { t: 'LTL', d: 'Less than truckload — freight shipping for pallets that do not fill a trailer. Usually how inventory moves from a warehouse to a fulfillment centre.' },
+  { t: '3PL', d: 'Third-party logistics provider — a company that stores and ships your inventory for you, outside the marketplace\'s own network.' },
+  { t: 'ACOS / TACOS', d: 'Advertising cost of sale measures ad spend against sales attributed to the ads. Total ACOS measures the same spend against total sales, which is the number that tells you whether advertising is actually working.' },
+  { t: 'Private label', d: 'Sourcing a generic product and selling it under your own brand. The only common model that builds a business you could sell.' },
+  { t: 'Arbitrage', d: 'Buying discounted stock and reselling it at market price. Retail arbitrage sources from physical stores, online arbitrage from online retailers.' },
+  { t: 'Resale certificate', d: 'Documentation allowing a business to buy goods for resale without paying sales tax at purchase. Usually required before a distributor will open a wholesale account.' },
+];
+---
+<PageShell
+  title="Marketplace seller glossary"
+  description="Plain definitions for the acronyms and terms that appear across Amazon, Walmart and cross-border selling — on one page, not spread across twenty."
+  eyebrow="Reference"
+  h1="Glossary"
+  lede="One page, not one page per word. Everything a seller runs into in their first year, defined without jargon."
+  crumb={{ label: 'Glossary', href: '/glossary/' }}
+  rail={[{href:'/start-here/',label:'Start here'},{href:'/guides/',label:'All guides'},{href:'/business-models/',label:'The five models'}]}
+>
+  <div class="prose">
+    <dl class="gloss">
+      {TERMS.sort((a, b) => a.t.localeCompare(b.t)).map(x => (
+        <>
+          <dt id={x.t.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{x.t}</dt>
+          <dd>{x.d}</dd>
+        </>
+      ))}
+    </dl>
+    <p class="note">
+      Fee names and rules change. Where a definition references a specific date or rule, verify it
+      against the marketplace documentation before acting on it.
+    </p>
+  </div>
+</PageShell>

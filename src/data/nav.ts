@@ -1,0 +1,36 @@
+export const NAV = [
+  { label: 'Start', href: '/start-here/', children: [
+    { href: '/start-here/', label: 'Start here', note: 'The four decisions, in order' },
+    { href: '/quiz/', label: 'Model fit check', note: '15 questions, scored instantly' },
+    { href: '/business-models/', label: 'The five models', note: 'What each one rules out' },
+    { href: '/costs/', label: 'What it costs', note: 'Published ranges, compared' },
+    { href: '/reality-check/', label: 'Reality check', note: 'The parts nobody sells you' },
+  ]},
+  { label: 'Tools', href: '/tools/', children: [
+    { href: '/tools/margin-calculator/', label: 'Margin & break-even', note: 'Net margin and break-even ACOS' },
+    { href: '/tools/cash-flow-planner/', label: 'Cash flow planner', note: 'When your money actually returns' },
+    { href: '/tools/dimensional-weight/', label: 'Dimensional weight', note: 'Billable weight and size check' },
+    { href: '/resources/', label: 'Free spreadsheets', note: 'Reimbursement tracker, no signup' },
+  ]},
+  { label: 'Guides', href: '/guides/', children: [
+    { href: '/guides/', label: 'All guides', note: 'Fees, shipping, software' },
+    { href: '/marketplaces/', label: 'All marketplaces', note: 'Five fee structures, side by side' },
+    { href: '/marketplaces/amazon/', label: 'Amazon', note: 'The 2026 fee stack, line by line' },
+    { href: '/marketplaces/walmart/', label: 'Walmart', note: 'WFS economics and the under-$10 surcharge' },
+    { href: '/marketplaces/ebay/', label: 'eBay', note: 'What the 13.6% is actually charged on' },
+    { href: '/marketplaces/tiktok-shop/', label: 'TikTok Shop', note: 'Why a 6% fee costs about 30%' },
+    { href: '/marketplaces/etsy/', label: 'Etsy', note: 'Three fees, and the one you cannot refuse' },
+    { href: '/reviews/', label: 'Tool reviews', note: 'Scored against a published rubric' },
+  ]},
+  { label: 'Reference', href: '/glossary/', children: [
+    { href: '/glossary/', label: 'Glossary', note: '26 terms, one page' },
+    { href: '/policy-log/', label: 'Fee & policy log', note: 'Dated record of what changed' },
+    { href: '/how-we-test/', label: 'How we test', note: 'The scoring rubric' },
+  ]},
+  { label: 'About', href: '/about/', children: [
+    { href: '/about/', label: 'About', note: 'Who writes this' },
+    { href: '/editorial-standards/', label: 'Editorial standards', note: 'Sourcing and independence' },
+    { href: '/corrections/', label: 'Corrections', note: 'Dated log' },
+    { href: '/contact/', label: 'Contact', note: 'Corrections and questions' },
+  ]},
+];

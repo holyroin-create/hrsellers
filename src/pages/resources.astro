@@ -1,0 +1,66 @@
+---
+import PageShell from '../components/PageShell.astro';
+import Faq from '../components/Faq.astro';
+---
+<PageShell
+  title="Free spreadsheet templates for marketplace sellers"
+  description="Working Excel templates for reimbursement claims, settlement reconciliation and SKU-level profit tracking. No email required."
+  eyebrow="Free templates"
+  h1="Spreadsheets that do the boring part"
+  lede="No signup, no email step, no download gate — the file is a direct link. Type in the blue cells and the rest calculates."
+  crumb={{ label: 'Resources', href: '/resources/' }}
+  rail={[{href:'/quiz/',label:'Which model fits you'},{href:'/costs/',label:'What it costs to start'},{href:'/guides/',label:'All guides'}]}
+>
+  <div class="prose">
+    <h2>FBA Reimbursement &amp; Claim Tracker</h2>
+    <p>
+      Amazon does not auto-credit everything it owes you. This tracks what you have found, what you have
+      filed, what came back and what is still open, so claims stop falling through the follow-up window.
+    </p>
+    <table>
+      <thead><tr><th>Sheet</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>Dashboard</td><td>Total owed, total recovered, recovery rate, claims to follow up</td></tr>
+        <tr><td>Claim Tracker</td><td>One row per claim — date found, case ID, type, ASIN, units, value, status</td></tr>
+        <tr><td>Claim Types Guide</td><td>Common claim categories and where to check for each</td></tr>
+        <tr><td>Settings</td><td>Follow-up window and status rules</td></tr>
+      </tbody>
+    </table>
+    <p>
+      <a class="btn" href="/downloads/fba-reimbursement-claim-tracker.xlsx" download><span>Download the .xlsx</span><span class="arw" aria-hidden="true">&darr;</span></a>
+    </p>
+    <p class="note">
+      Excel or Google Sheets. Type in the blue cells; the rest calculates. Nothing is tracked and no
+      email is collected — the link above is the file.
+    </p>
+
+    <h2>How to use it without wasting a week</h2>
+    <ol>
+      <li>Start with one claim category rather than auditing everything at once.</li>
+      <li>Log the claim the day you find it, not the day you file it — the date-found column is what makes the follow-up window work.</li>
+      <li>Record estimated value even when you are unsure. An approximate figure you can correct beats an empty cell.</li>
+      <li>Review open claims weekly. Most of the money lost in reimbursements is lost to claims nobody chased.</li>
+    </ol>
+    <p>
+      The reimbursement rules, eligibility and claim windows are set by Amazon and change. Check the
+      current requirements in Seller Central before filing — this template organises your work, it does
+      not tell you what qualifies.
+    </p>
+
+    <h2>Other trackers</h2>
+    <p>
+      <strong>Disclosure:</strong> extended editions of this tracker, a payout and settlement
+      reconciliation workbook, and a SKU-level profit tracker are sold by this site's publisher through a
+      separate Etsy shop. We have a direct commercial interest in those products. The version above is
+      complete and free, and nothing on this site is scored, ranked or recommended on the basis of that
+      interest. We mention it once here rather than putting a buy button on every page.
+    </p>
+  </div>
+
+  <Faq items={[
+    { q: 'Do I need to give an email address?', a: 'No. The download is a direct link to the file. There is no form, no list and no follow-up sequence.' },
+    { q: 'Will it work in Google Sheets?', a: 'Yes. Upload the .xlsx to Drive and open it with Sheets. Some conditional formatting may render slightly differently, but the calculations carry over.' },
+    { q: 'Does the template tell me what Amazon owes me?', a: 'No. It organises and tracks claims you identify. Eligibility rules and claim windows are set by Amazon and change — check current requirements in Seller Central.' },
+    { q: 'Can I use it for a client or my own business?', a: 'Yes, for your own or your clients\' operations. Redistributing or reselling the file is not permitted.' },
+  ]} />
+</PageShell>

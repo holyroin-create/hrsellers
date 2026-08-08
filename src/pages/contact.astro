@@ -1,102 +1,92 @@
 ---
 import Base from '../layouts/Base.astro';
-const faqs = [
-  { q: 'Do you offer one-on-one consulting?', a: 'Right now we focus on free written guides and reviews rather than paid consulting. The fastest help is in our guides and marketplace pages.' },
-  { q: 'Can you review my product or tool?', a: 'We choose what to cover based on what\u2019s useful to sellers and evaluate independently. You\u2019re welcome to suggest a tool, but coverage and ratings are never for sale.' },
-  { q: 'I found an error — what do I do?', a: 'Please tell us. Note the page and what looks off; we\u2019ll verify against the source and correct it. Accuracy is the point.' },
-  { q: 'How do you make money?', a: 'Through affiliate commissions, disclosed on every relevant page. It never changes our recommendations. See our affiliate disclosure.' },
-];
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Btn from '../components/Btn.astro';
+import { AUTHOR, SITE } from '../config';
 ---
-<Base title="Contact" description="Get in touch with HRSellers — questions, corrections, and suggestions welcome.">
-  <section class="page-hero">
-    <div class="container">
-      <span class="pill"><span class="dot"></span> Get in touch</span>
-      <h1 class="display-xl">We'd love to hear from you.</h1>
-      <p class="lead">Questions, corrections, suggestions, or partnership enquiries — send them over. We read everything.</p>
+<Base title="Contact" description="How to reach the publisher of this site for corrections, questions, permissions and press, and what to expect back.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Contact', href: '/contact/' }]} /></div>
+<section class="wrap" style="padding:1.5rem 1.25rem 0">
+  <p class="eyebrow">Contact</p>
+  <h1 style="max-width:20ch">Contact</h1>
+  <p style="max-width:46ch;font-size:1.12rem;color:var(--ink-soft);margin:1.2rem 0 1.8rem">
+    One address, read by a person. There is no ticket system, no contact form that goes nowhere, and no
+    autoresponder.
+  </p>
+
+  <div class="prose">
+    <h2>Email</h2>
+    <p style="font-size:1.15rem">
+      <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>
+    </p>
+    <p>
+      Every message is read by {AUTHOR.name}, who writes and edits this site. Replies normally go out
+      within two working days.
+    </p>
+
+    <h2>What to send, and what happens to it</h2>
+    <table>
+      <thead><tr><th>If you are writing about</th><th>Include</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>A wrong figure</td>
+          <td>The page, the figure, what you believe is correct, and the source</td>
+          <td>Corrected in place with a dated note and logged publicly on the <a href="/corrections/">corrections page</a>, normally within 48 hours</td>
+        </tr>
+        <tr>
+          <td>A fee or policy change we have missed</td>
+          <td>The platform announcement or regulation, with a link</td>
+          <td>Added to the <a href="/policy-log/">fee and policy log</a> with its date, and any affected guide is revisited</td>
+        </tr>
+        <tr>
+          <td>An operational question</td>
+          <td>Enough context to answer usefully</td>
+          <td>Answered where we can. Where the answer is genuinely useful to other sellers, it may become a guide — you will be asked first</td>
+        </tr>
+        <tr>
+          <td>Permission to republish</td>
+          <td>What you want to use and where</td>
+          <td>Short quotes with attribution and a link need no permission. Anything more, ask</td>
+        </tr>
+        <tr>
+          <td>Press or a speaking request</td>
+          <td>Outlet, topic, deadline</td>
+          <td>Answered directly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Vendors and agencies</h2>
+    <p>
+      We do not accept sponsored posts, paid placement, link insertions, guest posts, or pre-publication
+      review of anything. Offers of free product access are declined; when software reviews begin, tools
+      will be bought at list price on the plan being reviewed. These are not negotiating positions and a
+      follow-up email will not change them.
+    </p>
+    <p>
+      What is welcome: a correction to something we have published about your product, with the
+      documentation behind it. That gets the same treatment as any other correction.
+    </p>
+
+    <h2>What we cannot help with</h2>
+    <ul>
+      <li>Account suspensions, appeals and plan-of-action letters. That needs someone with sight of your account.</li>
+      <li>Tax, legal, customs classification and accounting questions. Nothing here is professional advice, and a 10-digit tariff code is not something to take from a website.</li>
+      <li>Anything requiring access to your seller account or your data. We will not ask for credentials and you should not send them.</li>
+    </ul>
+
+    <h2>Publisher</h2>
+    <p>
+      {SITE.name} is published by <strong>{SITE.publisher}</strong>, an independent business with no
+      ownership relationship to any marketplace or software vendor covered here. Editorial responsibility
+      sits with <a href="/about/">{AUTHOR.name}</a>. Funding, independence and disclosure rules are set out
+      on the <a href="/editorial-standards/">editorial standards page</a>.
+    </p>
+
+    <div class="btn-row" style="margin-top:2rem">
+      <Btn href="/corrections/">Report a correction</Btn>
+      <Btn href="/about/" quiet={true}>Who writes this</Btn>
     </div>
-  </section>
-
-  <section class="section-sm">
-    <div class="container ct-wrap">
-      <!-- form -->
-      <div class="ct-form-card">
-        <h2>Send a message</h2>
-        <form class="ct-form" onsubmit="return false;">
-          <div class="ct-row">
-            <label>Name <input type="text" placeholder="Your name" /></label>
-            <label>Email <input type="email" placeholder="you@example.com" /></label>
-          </div>
-          <label>Subject
-            <select>
-              <option>General question</option>
-              <option>Correction / error report</option>
-              <option>Tool suggestion</option>
-              <option>Partnership</option>
-            </select>
-          </label>
-          <label>Message <textarea rows="5" placeholder="How can we help?"></textarea></label>
-          <button type="submit" class="btn btn-accent btn-lg">Send message</button>
-          <p class="ct-note">This form is a demo placeholder. Connect it to your email or a form service before going live.</p>
-        </form>
-      </div>
-
-      <!-- side -->
-      <aside class="ct-side">
-        <div class="ct-method">
-          <span class="ct-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
-          <div><span class="ct-m-label">Email</span><a href="#" class="ct-m-val">hello@fbatactics.com</a></div>
-        </div>
-        <div class="ct-method">
-          <span class="ct-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <div><span class="ct-m-label">Response time</span><span class="ct-m-val">Usually within a few business days</span></div>
-        </div>
-        <div class="ct-method">
-          <span class="ct-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H7l-3 3V4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
-          <div><span class="ct-m-label">Corrections</span><span class="ct-m-val">Always welcome — help us stay accurate</span></div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section-sm bg-2">
-    <div class="container-narrow">
-      <h2 class="display-md" style="margin-bottom:24px;">Common questions</h2>
-      <div class="faq">
-        {faqs.map(f => (
-          <div class="faq-item">
-            <h3>{f.q}</h3>
-            <p>{f.a}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .page-hero { padding: 72px 0 40px; background: radial-gradient(60% 60% at 80% 0%, rgba(14,124,102,.08), transparent 70%); }
-    .page-hero h1 { margin: 20px 0 18px; }
-    .page-hero .lead { max-width: 54ch; }
-    .ct-wrap { display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px; align-items: start; }
-    .ct-form-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--sh-sm); }
-    .ct-form-card h2 { font-family: var(--display); font-size: 1.5rem; margin-bottom: 20px; }
-    .ct-form { display: flex; flex-direction: column; gap: 16px; }
-    .ct-form label { font-size: 0.88rem; font-weight: 600; color: var(--ink-2); display: flex; flex-direction: column; gap: 7px; }
-    .ct-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .ct-form input, .ct-form select, .ct-form textarea { font-family: var(--sans); font-size: 0.95rem; font-weight: 400; padding: 12px 14px; border: 1.5px solid var(--line-2); border-radius: var(--r-sm); color: var(--ink); background: #fff; }
-    .ct-form input:focus, .ct-form select:focus, .ct-form textarea:focus { outline: none; border-color: var(--brand); }
-    .ct-form textarea { resize: vertical; }
-    .ct-form button { align-self: flex-start; margin-top: 4px; }
-    .ct-note { font-size: 0.8rem; color: var(--ink-3); font-weight: 400; }
-    .ct-side { display: flex; flex-direction: column; gap: 14px; }
-    .ct-method { display: flex; gap: 14px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 18px; }
-    .ct-ico { width: 44px; height: 44px; border-radius: 11px; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; flex-shrink: 0; }
-    .ct-ico svg { width: 22px; height: 22px; }
-    .ct-m-label { display: block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-3); margin-bottom: 3px; }
-    .ct-m-val { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
-    .faq { display: flex; flex-direction: column; gap: 12px; }
-    .faq-item { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 22px 24px; }
-    .faq-item h3 { font-size: 1.08rem; margin-bottom: 8px; }
-    .faq-item p { color: var(--ink-2); line-height: 1.6; font-size: 0.96rem; }
-    @media (max-width: 820px) { .ct-wrap { grid-template-columns: 1fr; } .ct-row { grid-template-columns: 1fr; } }
-  </style>
+  </div>
+</section>
 </Base>

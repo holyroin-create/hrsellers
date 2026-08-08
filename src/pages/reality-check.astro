@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AdSlot from '../components/AdSlot.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import Sources from '../components/Sources.astro';
+import Takeaways from '../components/Takeaways.astro';
+import Faq from '../components/Faq.astro';
+---
+<Base title="What nobody sells you: the hard parts of e-commerce, and the course trap"
+      description="The difficulties that never appear in the sales video, why most paid e-commerce courses transfer money rather than skill, and how to tell a real teacher from a funnel.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Reality check', href: '/reality-check/' }]} /></div>
+<div class="wrap">
+  <div class="article-grid">
+    <div>
+      <p class="eyebrow">Reality check</p>
+      <h1 style="max-width:22ch">The parts nobody puts in the sales video</h1>
+      <p style="max-width:44ch;font-size:1.15rem;color:var(--ink-soft);margin:1.2rem 0 1.6rem">
+        Not a discouragement page. A list of the things that actually decide whether this works,
+        almost none of which appear in the material that is trying to sell you something.
+      </p>
+
+      <Takeaways items={[
+        'New US seller registrations in 2025 were the lowest in a decade — the crowding problem is real enough that fewer people are entering.',
+        'The money is not the hard part. Cash flow timing is: your capital is locked up well past the sale, and the second order comes due before the first pays out.',
+        'The 2026 fee changes hit thin-margin models hardest. Models running at 5–10% net have almost no buffer left.',
+        'A course that will not show you the failure rate of its students is selling you the dream, not the skill.',
+        'Almost everything sold as a $2,000 course exists free, in more detail, in marketplace documentation.',
+      ]} />
+
+      <AdSlot inline={true} label="ad slot — below intro" />
+
+      <div class="prose">
+        <h2>The difficulties that get skipped</h2>
+
+        <h3>Cash flow, not capital</h3>
+        <p>
+          People budget for inventory. Almost nobody budgets for the gap between paying a supplier and
+          being paid by the marketplace. Your money goes out at the purchase order, comes back after
+          the goods land, sell, clear the return window and reach a settlement period. If you spent
+          everything on the first order, you cannot reorder your winner — which is the exact moment
+          the business either compounds or stalls. Undercapitalisation is repeatedly cited as one of
+          the most common reasons sellers fail, and it usually means this, not the initial budget.
+        </p>
+
+        <h3>The fee floor keeps rising and your price does not</h3>
+        <p>
+          US FBA fulfillment fees rose on 15 January 2026, and from that date selling price became an
+          input to the fulfillment fee for the first time. That means a repricing decision can now move
+          your fulfillment cost. If you are operating on a five to ten percent net margin, a fee change
+          you did not model is the difference between a business and a hobby that costs money.
+        </p>
+
+        <h3>Cross-border stopped being cheap</h3>
+        <p>
+          The $800 de minimis exemption that made direct-from-overseas parcel shipping viable was
+          suspended for China and Hong Kong in May 2025, extended to every country of origin that
+          August, and written into regulation in June 2026. Every commercial import now needs a customs
+          entry, a 10-digit tariff classification and duty payment, at one dollar of value as much as at
+          $799. Any course teaching the old parcel model is teaching something that no longer exists.
+        </p>
+
+        <h3>Account suspension is a business risk, not an edge case</h3>
+        <p>
+          A single policy issue can freeze your inventory and your payouts simultaneously. You are
+          building on land you do not own. This is survivable, but it should be in your risk model
+          from the first week rather than discovered in the fourth month.
+        </p>
+
+        <h3>The work is boring</h3>
+        <p>
+          The actual job is reconciliation, listing hygiene, inbound planning, chasing discrepancies,
+          and staring at spreadsheets. If the appeal for you is the lifestyle imagery rather than the
+          operational work, that mismatch will surface — usually around the point where the first
+          shipment goes missing and someone has to file the claim.
+        </p>
+
+        <h2>Why so many paid courses are a transfer, not a teaching</h2>
+        <p>
+          Not all of them. But the structural problem is worth naming plainly: the course business has
+          better and more reliable margins than the selling business it teaches. Someone who can fill a
+          webinar earns more, more predictably, than someone shipping units. That is not an accusation
+          against any particular person — it is an incentive, and incentives shape what gets sold.
+        </p>
+
+        <h3>Five signals worth taking seriously</h3>
+        <ul>
+          <li><strong>No failure rate disclosed.</strong> If a programme has taught thousands of people, it knows how many stopped selling within a year. Refusing to publish that number is a decision, not an oversight.</li>
+          <li><strong>Income screenshots as evidence.</strong> Revenue is not profit. A screenshot of gross sales tells you nothing about what was left after cost of goods, fees, advertising, returns and freight.</li>
+          <li><strong>Artificial scarcity.</strong> Countdown timers and closing-doors language on a digital product with zero marginal cost exist for one reason.</li>
+          <li><strong>The upsell ladder.</strong> If the course leads to a mastermind, which leads to coaching, which leads to a done-for-you service, the product is the ladder.</li>
+          <li><strong>The teacher's current business is teaching.</strong> Ask when they last ran the operation they are describing. It is a fair question, and the answer is informative either way.</li>
+        </ul>
+
+        <h3>What is genuinely worth paying for</h3>
+        <p>
+          Software you would use anyway. A customs broker. An accountant who understands marketplace
+          settlements. A specific consultation with someone who will look at your numbers rather than
+          sell you a framework. Access to a real supplier network. These have a defined deliverable,
+          which is exactly what generic courses lack.
+        </p>
+
+        <h3>What is free and better</h3>
+        <p>
+          Seller Central's own documentation covers fee schedules, policy requirements, reimbursement
+          eligibility and shipment procedures in more detail than any course, and it is authoritative
+          in a way no course can be. It is dull and badly organised, and that is the entire reason a
+          market exists for someone to read it to you at a markup.
+        </p>
+
+        <h2>The honest version of the opportunity</h2>
+        <p>
+          This is not a case for giving up. Marketplace selling is a real business with real margins for
+          people who treat it as operations rather than as a shortcut. The conditions in 2026 are
+          arguably better than the noise suggests: reporting on Marketplace Pulse data indicates traffic
+          per seller has risen since 2021 while new US seller registrations in 2025 were the lowest in a
+          decade, and third-party sellers account for the majority of units sold.
+        </p>
+        <p>
+          What has gone is the version where thin margins, no reserve and no operational discipline still
+          worked because fees were low and cross-border parcels were duty-free. That version is not
+          coming back, and anyone still selling it should be treated accordingly.
+        </p>
+      </div>
+
+      <Faq items={[
+        { q: 'Are all paid e-commerce courses scams?', a: 'No. Some are taught by people actively running the business, with a defined syllabus and a specific deliverable. The signals to check are whether they disclose student outcomes, whether they show profit rather than revenue, and whether the teacher still operates what they teach.' },
+        { q: 'How much should I expect to spend before making anything back?', a: 'It depends entirely on model. Arbitrage can start in the hundreds; private label figures cited across sources range from $2,500 to $25,000, which is a spread wide enough that you should distrust any single number, including any on this site.' },
+        { q: 'Is it too late to start selling on Amazon in 2026?', a: 'Reporting on Marketplace Pulse data suggests new US seller registrations in 2025 were the lowest in a decade while buyer traffic per seller rose. Competition has thinned rather than intensified. What has changed is that thin-margin models have far less room to absorb fee increases.' },
+        { q: 'What is the single most common way new sellers lose money?', a: 'Putting the entire budget into a first order with no reserve, then being unable to reorder when something sells, because marketplace payout timing locks the cash up longer than expected.' },
+      ]} />
+
+      <AdSlot label="ad slot — end of page" />
+      <AuthorBox />
+      <Sources items={[
+        { title: 'Retail arbitrage on Amazon: 2026 profit guide', publisher: 'Aura', href: 'https://goaura.com/blog/retail-arbitrage-on-amazon', accessed: '2026-08-07' },
+        { title: '5 types of Amazon sellers: which model makes money?', publisher: 'SellerView', href: 'https://sellerview.ai/blog/5-types-of-amazon-sellers', accessed: '2026-08-07' },
+        { title: 'US de minimis exemption suspended 2026', publisher: 'Carra Globe', href: 'https://carraglobe.com/us-de-minimis-exemption-suspended-2026/', accessed: '2026-08-07' },
+        { title: 'Update to U.S. Referral and Fulfillment by Amazon fees for 2026', publisher: 'Amazon Selling Partners', href: 'https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026', accessed: '2026-08-07' },
+      ]} />
+    </div>
+    <aside class="rail">
+      <div class="rail-box">
+        <h4>Read next</h4>
+        <ul class="toc">
+          <li><a href="/quiz/">Which model fits you</a></li>
+          <li><a href="/costs/">What it costs to start</a></li>
+          <li><a href="/business-models/">The five models compared</a></li>
+        </ul>
+      </div>
+      <AdSlot label="ad slot — sidebar" />
+    </aside>
+  </div>
+</div>
+</Base>

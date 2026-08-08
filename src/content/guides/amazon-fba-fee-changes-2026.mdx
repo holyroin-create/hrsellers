@@ -1,0 +1,100 @@
+---
+title: "Amazon's 2026 US fee changes, and why the headline number is misleading"
+description: "Amazon put the 2026 FBA increase at $0.08 per unit. That average hides a spread from $0.12 to $0.51 depending on size and price tier — and a new pricing variable that did not exist before."
+category: "Fees & reimbursements"
+published: "2026-08-07"
+modified: "2026-08-07"
+minutes: 8
+numbered: true
+ledger: "+$0.08/unit average — Amazon, Oct 2025"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "US FBA fulfillment fees rose on 15 January 2026 by an average Amazon states as $0.08 per unit — its first increase since 2024, after holding fees flat through 2025.",
+  "The average is doing heavy lifting: third-party breakdowns put small standard-size increases between $0.12 and $0.51 per unit depending on the item's price tier.",
+  "Selling price is now an input to the fulfillment fee. It was not before. That is the structural change, not the eight cents.",
+  "Referral fee percentages did not change. Neither did storage rates. The increase is confined to fulfillment.",
+  "Europe moved the opposite way: Amazon cut European fees by an average of £0.15 / €0.17 per unit for 2026.",
+]} />
+
+Amazon announced its 2026 US fee update in October 2025 and the changes took effect on 15 January 2026. The number in the announcement is small enough to ignore, which is roughly the point of publishing an average. Underneath it sits a restructure that changes how you should think about pricing a product before you source it.
+
+<Figure value="+$0.08" kind="cost" source="Amazon Selling Partners, 2026 US referral and FBA fee update, published Oct 2025">
+  The average per-unit FBA fee increase for 2026, which Amazon frames as under 0.5% of a typical item's selling price.
+</Figure>
+
+## What actually changed on 15 January
+
+Three things moved, and one thing conspicuously did not.
+
+**Fulfillment fees went up.** Amazon told sellers the 2026 increase averages $0.08 per unit sold, or less than 0.5% of an average item's selling price, and noted this followed a year with no increase to US referral or FBA fees in 2025. Independent analysis frames it as the first FBA fulfillment increase since 2024.
+
+**Referral fees did not.** The January 2026 increase applies to FBA fulfillment fees only; referral percentages and storage fees were left alone. If your margin model treats "Amazon fees" as one line item, this is the year to split it.
+
+**Removal, disposal and liquidation fees were restructured**, with most changes landing on the same 15 January date. One timing detail matters operationally: removal and disposal fees are priced at the moment the order is placed, not when the shipment leaves the fulfillment center — so orders placed before 15 January kept the old rates even if they shipped after.
+
+**No new fee types were introduced.** Amazon said explicitly there would be none for 2026. After 2024 — which brought inbound placement, low-inventory-level and aged-inventory surcharges in quick succession — that is the more meaningful commitment in the announcement.
+
+## The average hides the spread
+
+An $0.08 average across a catalogue as wide as Amazon's tells you almost nothing about your own SKU. Third-party breakdowns of the published tables put the range considerably wider.
+
+One logistics provider's reading of the tables puts small standard-size items priced $10–$50 at roughly +$0.25 per unit, small standard items above $50 at around +$0.51, and items under $10 at about +$0.12. A separate agency breakdown groups it differently again: around +$0.12 for small standard-size, +$0.08 for standard-size, and roughly +$0.31 for larger items.
+
+The two readings disagree on how to slice it, which is itself worth knowing. Neither is a substitute for pulling your own numbers.
+
+**What to do instead of trusting any of these figures, including ours:** run your actual ASINs through Amazon's Revenue Calculator and the Fee and Economics Preview report. Amazon updated both with 2026 rates ahead of the change. The per-SKU answer is the only one that affects your P&L.
+
+## The structural change nobody led with
+
+Here is the part that outlasts this year's increase.
+
+Product price is now a factor in determining the FBA fulfillment fee. Previously the fee was a function of size tier and weight. Now the selling price tier enters the calculation as well.
+
+That has a consequence most fee coverage skipped: **a price change can now move your fulfillment cost.** If you raise a $49 item to $52 to protect margin against the fee increase, you may cross into a higher price tier and take a second fee increase for your trouble. If you discount a $52 item into promotional territory, the fulfillment fee may fall.
+
+Repricing and fulfillment cost are now coupled. Anyone running automated repricing against a fixed cost assumption is running a model that no longer describes reality.
+
+## Europe went the other way
+
+Worth knowing if you sell across both, and almost nobody covers the two together.
+
+For 2026 Amazon lowered European fees by an average of £0.15 / €0.17 per unit sold, through FBA parcel fulfilment reductions, wider Low-Price FBA eligibility, and referral fee cuts in high-volume categories including clothing and accessories, home products, grocery, vitamins, and pet products. Amazon described it as one of its largest fee reductions to date.
+
+The direction of travel differs by region because the underlying cost bases differ. If you have been treating US and EU unit economics as one spreadsheet with a currency conversion, 2026 is the year that stops working.
+
+## What this is worth doing about
+
+Ranked by how much of your time it deserves.
+
+**Repull your fee data, do not estimate it.** The Fee and Economics Preview report gives per-ASIN figures. Estimates from articles — including this one — are for orientation, not for pricing.
+
+**Check your SKUs sitting near a price tier boundary.** These are where the new price-tier logic bites hardest and where a small repricing decision now has a second-order cost.
+
+**Split fulfillment from referral in your margin model.** They now move independently and on different schedules.
+
+**Do not restructure your catalogue over eight cents.** For most sellers the correct response to this specific increase is a spreadsheet update, not an operational change. The increase is smaller than the swing you would get from one week of bad PPC. Treat the price-tier coupling as the thing worth engineering around, and the eight cents as the thing worth knowing.
+
+<Faq items={[
+  { q: "Did Amazon raise referral fees in 2026?", a: "No. The January 2026 change applied to FBA fulfillment fees. Referral fee percentages were unchanged, as were storage rates." },
+  { q: "When exactly did the 2026 fees take effect?", a: "15 January 2026 for the US marketplace. Amazon announced the changes in October 2025, giving roughly three months of notice." },
+  { q: "Does the increase apply to Multi-Channel Fulfillment?", a: "MCF and Buy with Prime fees were also updated, and reporting indicates larger per-unit increases there than on standard FBA. Check the specific tables for your item sizes rather than assuming the FBA figure carries over." },
+  { q: "Were any new fee types added for 2026?", a: "No. Amazon stated there would be no new FBA fee types in 2026, in contrast to 2024, which introduced inbound placement, low-inventory-level and aged-inventory fees." },
+  { q: "Why do published estimates of the increase differ so much?", a: "Because they slice the fee tables differently — by size tier, by price tier, or by a blend. The only figure that describes your catalogue is the one from your own Fee and Economics Preview report." },
+]} />
+
+<Sources items={[
+  { title: "Update to U.S. Referral and Fulfillment by Amazon fees for 2026", publisher: "Amazon Selling Partners", href: "https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026", accessed: "2026-08-07" },
+  { title: "2026 US Referral and FBA fee changes summary", publisher: "Amazon Seller Central Help", href: "https://sellercentral.amazon.com/help/hub/reference/external/G201411300", accessed: "2026-08-07" },
+  { title: "2026 US FBA fulfillment fee changes", publisher: "Amazon Seller Central Help", href: "https://sellercentral.amazon.com/help/hub/reference/external/GABBX6GZPA8MSZGW", accessed: "2026-08-07" },
+  { title: "Update to European Referral and Fulfilment by Amazon fees for 2026", publisher: "About Amazon EU", href: "https://www.aboutamazon.eu/news/empowering-small-business/update-to-european-referral-and-fulfilment-by-amazon-fees-for-2026", accessed: "2026-08-07" },
+  { title: "Amazon fulfillment fees updates 2026", publisher: "Jay Group", href: "https://www.jaygroup.com/blog/amazon-fulfillment-fees-updates/", accessed: "2026-08-07" },
+  { title: "Amazon 2026 fees breakdown: FBA, referral, inbound placement", publisher: "Brandwoven", href: "https://gobrandwoven.com/resources/articles/amazon-2026-fees-breakdown-fba-referral-inbound-placement/", accessed: "2026-08-07" },
+]} />
