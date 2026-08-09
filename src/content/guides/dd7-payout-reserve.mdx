@@ -1,0 +1,125 @@
+---
+title: "Amazon changed when you get paid, and did not send an announcement. Most sellers found out from their bank balance."
+description: "From 12 March 2026 the Delivery Date Based Reserve holds your money for seven days after the customer receives the order — not after you ship. Combined with the disbursement cycle, reporting puts FBA sellers at 14 to 27 days from sale to deposit."
+category: "Scaling"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 11
+numbered: true
+ledger: "Sale to bank: 14–27 days FBA, 20–35 FBM"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "DD+7 is officially the Delivery Date Based Reserve. Funds move from deferred transactions to your available balance seven calendar days after confirmed delivery — not after shipment, and not after the order.",
+  "It applied to North American accounts from 12 March 2026. European accounts migrated in September 2025. Reporting describes no opt-out.",
+  "Combined with the standard disbursement cycle, reported end-to-end timing is 14 to 27 days from order to bank deposit for FBA, and 20 to 35 days for FBM on standard shipping.",
+  "The most common misreading is in the name: DD is Delivery Date, not Disbursement Date.",
+  "This mainly hit long-tenured North American sellers who were on legacy shipment-date reserve or zero-reserve arrangements. If your payouts felt normal for years and then slowed, this is why.",
+]} />
+
+There was no email that most sellers remember receiving. Reporting is fairly direct that Amazon did not issue a dedicated announcement, and that most sellers discovered the change by noticing their payouts had slowed.
+
+The mechanism is simple and the consequences are not.
+
+## What actually changed
+
+Under the previous arrangement, many sellers were on a rolling disbursement cycle tied to when the order was placed. Under the Delivery Date Based Reserve, the clock does not start until the buyer's package arrives.
+
+```
+Day 0    Customer places order
+Day 1–3  Order ships
+Day 3–7  Package delivered            ← the clock starts HERE
+Day 10–14 Funds become eligible under DD+7
+         Then: the next scheduled disbursement
+         Then: ACH transfer, 3–5 business days
+```
+
+Amazon's stated reasoning is risk mitigation: buyers get time to report problems, request refunds or file A-to-Z claims before the seller is paid. That is a coherent rationale. It is also a week of your working capital.
+
+<Figure value="12 Mar 2026" kind="cost" source="Multiple 2026 reports on the DD+7 migration, reviewed 8 August 2026">
+  The date the Delivery Date Based Reserve was applied to remaining North American accounts. European accounts had migrated in September 2025.
+</Figure>
+
+## The timings, from four sources
+
+| Measure | Reported |
+| --- | --- |
+| FBA, order to available balance | roughly 14 to 21 days |
+| FBA, order to bank deposit | 14 to 27 days |
+| FBM, standard shipping, order to deposit | 20 to 35 days |
+| Delivery to deposit | commonly around 10 to 12 days |
+| ACH visible in your bank | 3 to 5 business days after release |
+
+The spread across those figures is not sloppiness. It reflects that DD+7 is **one layer of a stack**, and the others vary by account. Reporting describes several accounts waiting considerably longer than the headline seven days because an account-level reserve sits underneath.
+
+**For a new seller the stacking is severe.** One account describes a new seller carrying a 14-day base reserve plus DD+7 waiting 21 to 28 days for revenue from their first sales. That is close to a month of funded operations before a single dollar returns.
+
+## Who it actually hit
+
+This is the part worth being precise about, because a lot of the commentary treats it as universal.
+
+Reporting indicates most global sellers were already operating on DD+7-style terms before this. The March 2026 date specifically affected **long-tenured North American sellers on legacy shipment-date reserve or zero-reserve arrangements** — the accounts that had been on the old, faster terms for years.
+
+If you have been selling since before 2020 and your payouts felt reliable and then suddenly did not, you are in that group. If you started in 2024, this probably changed less for you than the coverage suggests.
+
+## What it does to a business that was working
+
+The damage is not the seven days. It is what the seven days does to a reinvestment loop.
+
+Most marketplace sellers run a cycle: sell inventory, get paid, buy more inventory. When the payout period lengthens, the loop slows, and the effect compounds because the money that would have bought the next order is still with Amazon while the current order is selling out.
+
+Three places it lands first:
+
+**Restocking.** A purchase order you would have placed on the 14th now waits until the 21st, which pushes the whole lead time — production, freight, customs, receiving — back by a week. On a fast-moving SKU that is enough to trigger the [low-inventory-level fee](/guides/low-inventory-level-fee/), which is a penalty for selling while understocked. **The payout change can cause a fee.**
+
+**Advertising.** Ad spend is charged continuously; revenue arrives in batches. Lengthening the gap between them widens the hole that has to be funded.
+
+**Q4.** Peak is when inventory commitment is largest and the gap between spend and receipt is widest. The [storage guide](/guides/fba-storage-four-layers/) covers what else happens to your money in those months.
+
+## What to actually do
+
+**Measure your own number before reading anyone's average.** Open Payments in Seller Central, take twenty recent orders, and record order date, delivery date and the disbursement they landed in. That gives you your real order-to-cash figure. Every number in this guide is somebody else's account.
+
+**Rebuild the cash model on delivery date, not order date.** If your reorder trigger, your ad budget or your supplier payments were planned against a 14-day cycle, they are planned against a cycle that no longer exists. The [cash flow planner](/tools/cash-flow-planner/) works on your own figures.
+
+**Shorten delivery time where you control it.** DD+7 starts at delivery, so faster delivery means an earlier payout. For FBM sellers reporting suggests moving from economy to standard shipping, or using a 3PL closer to customer clusters, can recover three to five days. For FBA sellers, delivery is already fast and this lever barely exists.
+
+**Talk to your supplier about terms.** A week of extra float on your outbound side is worth asking for on the inbound side. Suppliers who have worked with you for years are frequently more flexible than sellers assume, and the conversation costs nothing.
+
+**Watch account health, because reserves stack.** Refund issues, disputes and poor account health are all reported as triggers for additional holds. DD+7 is the floor, not the ceiling.
+
+**Be careful with financing.** Express Payout and third-party working capital both exist and both cost money. They solve a timing problem, not a margin problem. If the underlying business only works when the cash comes back in 14 days, borrowing to close a seven-day gap postpones the question rather than answering it.
+
+## What not to do
+
+**Do not treat this as temporary.** It is a policy change with no opt-out, not a processing backlog.
+
+**Do not fund the gap with inventory cuts you will regret.** Cutting a reorder to preserve cash on a SKU that is selling well runs you into the low-inventory fee and lost sales, which makes the cash position worse the following month.
+
+**Do not assume the seven days is the whole delay.** Account-level reserves sit underneath it, and the ACH transfer sits on top.
+
+<Faq items={[
+  { q: "What does DD+7 stand for?", a: "Delivery Date plus seven days. The official name is the Delivery Date Based Reserve. The most common misreading is treating DD as disbursement date — it is the delivery date." },
+  { q: "When did it start?", a: "12 March 2026 for North American accounts. European accounts migrated in September 2025, and Amazon had been rolling it out to selected accounts from late 2025." },
+  { q: "How long until I actually get paid now?", a: "Reported end-to-end figures are 14 to 27 days from order to bank deposit for FBA and 20 to 35 days for FBM on standard shipping, with roughly 10 to 12 days commonly reported from delivery to deposit. Your own figure depends on your reserve settings." },
+  { q: "Can I opt out?", a: "Reporting describes the policy as applying to every seller, FBA and FBM, with no opt-out." },
+  { q: "Does faster shipping get me paid sooner?", a: "Yes, because the clock starts at delivery. For FBM sellers, reporting suggests upgrading shipping or using a 3PL closer to customers can recover three to five days. For FBA the delivery leg is already short." },
+  { q: "Why is my wait longer than seven days?", a: "DD+7 is one layer. An account-level reserve can sit underneath it, the disbursement cycle sits after it, and the ACH transfer adds three to five business days on top." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon\u2019s new DD+7 payout policy (official name Delivery Date Based Reserve; 14–27 days FBA and 20–35 days FBM; which accounts were affected; DD is delivery date)', publisher: 'SlopePay', href: 'https://slopepay.com/blog/amazon-dd7-payout-policy', accessed: '2026-08-08' },
+  { title: 'When does Amazon pay sellers? DD+7 timeline (no dedicated announcement; 14–21 days FBA and 17–28 days FBM; new-seller reserve stacking; faster delivery as a lever)', publisher: 'Nventory', href: 'https://nventory.io/blog/amazon-changed-when-you-get-paid', accessed: '2026-08-08' },
+  { title: 'Amazon DD+7 payout delay (migration of remaining accounts on 12 March 2026; previous rolling 14-day cycle tied to order placement)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/news/amazon-dd7-disbursement-reserve-march-2026', accessed: '2026-08-08' },
+  { title: 'DD+7 Amazon payout policy explained (European rollout September 2025, US March 2026; rolling delays stacking across orders)', publisher: 'Riverbend Consulting', href: 'https://riverbendconsulting.com/blog/dd7-amazon-payout-policy/', accessed: '2026-08-08' },
+  { title: 'When Amazon holds the money (day-by-day timeline; DD+7 as one layer of a larger reserve system)', publisher: 'Onest Network', href: 'https://www.onestnetwork.com/when-amazon-holds-the-money/', accessed: '2026-08-08' },
+  { title: 'Amazon seller payment schedule 2026 (ACH transfers taking 3–5 business days; account level reserve; orders delivered close to the payout date carrying over)', publisher: 'SellerApp', href: 'https://www.sellerapp.com/blog/amazon-seller-payment-schedule/', accessed: '2026-08-08' },
+  { title: 'Delivery-date-based reserve DD+7 payout policy explained (roughly 10–12 days from delivery to deposit; Q4 and launch liquidity)', publisher: 'Big Internet Seller Services', href: 'https://biginternetcommerce.com/delivery-date-based-reserve-dd7-amazon-payout-policy-explained-2025%E2%86%922026-cash-flow-risks-timelines-and-a-seller-playbook/', accessed: '2026-08-08' },
+]} />

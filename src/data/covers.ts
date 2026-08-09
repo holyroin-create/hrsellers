@@ -362,6 +362,164 @@ export const COVERS: Record<string, Cover> = {
     tone: 'neutral',
   },
 
+  'dd7-payout-reserve': {
+    kind: 'range',
+    label: 'Order to bank deposit, reported',
+    labelShort: 'Order to cash',
+    figure: '14–27 days',
+    caption: 'FBA. FBM on standard shipping runs 20 to 35.',
+    unit: '',
+    lo: 14,
+    hi: 27,
+    mid: 14,
+    loTag: 'fastest',
+    hiTag: 'slowest',
+    midTag: 'best case',
+    stamp: 'DD+7 applied to NA accounts 12 Mar 2026',
+    stampShort: '12 Mar 2026',
+    tone: 'cost',
+  },
+
+  'returns-cost-and-badge': {
+    kind: 'range',
+    label: 'Frequently Returned Item badge impact',
+    labelShort: 'Badge impact',
+    figure: '−20 to −50%',
+    caption: 'Reported conversion drop on affected ASINs.',
+    unit: '%',
+    lo: 20,
+    hi: 50,
+    mid: 20,
+    loTag: '−20%',
+    hiTag: '−50%',
+    midTag: 'lower bound',
+    stamp: 'One agency, own accounts · magnitude not measurement',
+    stampShort: 'Agency estimate',
+    tone: 'cost',
+  },
+
+  'account-suspension-appeal': {
+    kind: 'timeline',
+    label: 'What to do, in order',
+    labelShort: 'Appeal sequence',
+    figure: 'Wait first',
+    caption: 'Rapid appeals are reported as flagged low quality.',
+    points: [
+      { x: 0.04, date: 'Wait 24h', note: 'do not reply' },
+      { x: 0.3, date: 'Diagnose', note: 'which type' },
+      { x: 0.56, date: 'Documents', note: 'before writing' },
+      { x: 0.8, date: 'POA', note: 'three parts' },
+      { x: 0.97, date: 'Submit', note: 'correct channel' },
+    ],
+    stamp: 'Funds held 90 days · appeal window 90 days',
+    stampShort: '90 days',
+    tone: 'cost',
+  },
+
+  'ip-complaints-retractions': {
+    kind: 'ledger',
+    label: 'Who can end an IP complaint',
+    labelShort: 'Who ends it',
+    figure: 'The complainant',
+    caption: 'A retraction removes the basis. An appeal argues about it.',
+    rows: [
+      { k: 'Rights owner retraction', v: 'ends it', tone: 'gain' },
+      { k: 'Listing fix (TM / copyright)', v: 'often ends it', tone: 'gain' },
+      { k: 'Appeal to Amazon alone', v: 'slower', tone: 'cost' },
+    ],
+    stamp: 'One firm reports 240+ retractions obtained',
+    stampShort: 'Reported 240+',
+    tone: 'cost',
+  },
+
+  'sipp-packaging-program': {
+    kind: 'range',
+    label: 'Reported SIPP saving by volume',
+    labelShort: 'SIPP saving',
+    figure: '$9k–180k',
+    caption: 'At roughly $1.50 per unit. Scale to your own volume.',
+    unit: '$',
+    lo: 9000,
+    hi: 180000,
+    mid: 9000,
+    loTag: '500/mo',
+    hiTag: '10,000/mo',
+    midTag: 'small seller',
+    stamp: 'Illustrative from one published estimate',
+    stampShort: 'Illustrative',
+    tone: 'gain',
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* Site-level covers. These belong to the publication rather than to one
      guide, so they can sit on the home page without repeating a story. */
   'policy-timeline': {
