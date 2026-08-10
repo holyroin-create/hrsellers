@@ -480,9 +480,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 
 /* ---- 13. responsive ---- */
 @media (max-width:1080px){
-  .portal{grid-template-columns:1fr;gap:2rem}
-  .article-grid{grid-template-columns:1fr;gap:2.2rem}
-  .lead{grid-template-columns:1fr}
+  .portal{grid-template-columns:minmax(0,1fr);gap:2rem}
+  .article-grid{grid-template-columns:minmax(0,1fr);gap:2.2rem}
+  .lead{grid-template-columns:minmax(0,1fr)}
   .lead .lead-body{padding:1.5rem 1.3rem}
   .lead .lead-art{border-left:0;border-top:1px solid var(--rule);order:-1}
 }
@@ -537,3 +537,70 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
   .cover .cv-dot,.cover .cv-mid,.cover .cv-tag{opacity:1}
   .tk-track{overflow-x:auto;width:auto;padding-right:1.1rem}
 }
+
+/* ---------------------------------------------------------------------------
+   Read next — three related guides at the foot of every article.
+   The single cheapest way to lift pages per session: a reader who finishes an
+   article and finds nothing after it leaves the site.
+--------------------------------------------------------------------------- */
+.nextread { margin: 3rem 0 0; padding-top: 2rem; border-top: 3px solid var(--ink); }
+.nextread h2 {
+  font-family: var(--display); font-weight: 700; text-transform: uppercase;
+  font-size: 1.6rem; letter-spacing: -.01em; margin: 0 0 1.4rem; color: var(--ink);
+}
+.nextread-grid { display: grid; gap: .9rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .nextread-grid { grid-template-columns: repeat(3, 1fr); } }
+.nextread-card {
+  display: flex; flex-direction: column; gap: .45rem;
+  padding: 1.05rem 1.1rem 1.15rem; background: var(--panel, #fff);
+  border: 1px solid var(--rule); border-left: 4px solid var(--green);
+  text-decoration: none; transition: border-color .12s ease, transform .12s ease;
+}
+.nextread-card:hover { border-left-color: var(--ink); transform: translateY(-2px); }
+.nr-cat {
+  font-family: var(--ui); font-size: .7rem; font-weight: 700; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--green-d, #4E9022);
+}
+.nr-title {
+  font-family: var(--body); font-size: 1.02rem; line-height: 1.34; color: var(--ink);
+  font-weight: 600;
+}
+.nr-ledger {
+  font-family: var(--mono); font-size: .74rem; color: var(--ink-soft);
+  padding-top: .15rem;
+}
+.nr-min {
+  font-family: var(--ui); font-size: .72rem; color: var(--faint, #878C96);
+  margin-top: auto; padding-top: .35rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Fee watch signup. Hidden until a form endpoint is configured.
+--------------------------------------------------------------------------- */
+.nl { margin: 3rem 0 0; background: var(--ink); color: #fff; border-left: 6px solid var(--green); }
+.nl-body { padding: 2.1rem 1.9rem 1.9rem; }
+.nl--compact .nl-body { padding: 1.6rem 1.4rem 1.4rem; }
+.nl-k {
+  font-family: var(--ui); font-size: .72rem; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--green); margin: 0 0 .7rem;
+}
+.nl-h {
+  font-family: var(--display); font-weight: 700; text-transform: uppercase;
+  font-size: 1.9rem; line-height: 1.04; letter-spacing: -.01em; margin: 0 0 .9rem; color: #fff;
+}
+.nl--compact .nl-h { font-size: 1.45rem; }
+.nl-p { font-family: var(--body); font-size: .98rem; line-height: 1.55; color: #A9B0BB; margin: 0 0 1.3rem; max-width: 54ch; }
+.nl-form { display: flex; gap: .6rem; flex-wrap: wrap; }
+.nl-form input {
+  flex: 1 1 16rem; min-width: 0; padding: .8rem .9rem; border: 1px solid #3A4048;
+  background: #1B1F25; color: #fff; font-family: var(--ui); font-size: .95rem; border-radius: 3px;
+}
+.nl-form input:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+.nl-form button {
+  padding: .8rem 1.4rem; border: 0; background: var(--green); color: #0F1216; cursor: pointer;
+  font-family: var(--ui); font-size: .82rem; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; border-radius: 3px;
+}
+.nl-form button:hover { background: #74c93a; }
+.nl-note { font-family: var(--ui); font-size: .76rem; color: #6E7581; margin: .9rem 0 0; }
+.nl-note a { color: #9BD46C; }

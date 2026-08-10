@@ -3,61 +3,75 @@ import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE } from '../config';
 ---
-<Base title="Affiliate disclosure" description="How this site makes money, which links are commissioned, and what that does and does not change about what gets published.">
-<div class="wrap"><Breadcrumbs trail={[{ label: 'Affiliate disclosure', href: '/affiliate-disclosure/' }]} /></div>
+<Base title="How this site is funded" description="Where the money comes from, what it does not buy, and why that matters on a site that publishes cost figures.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'How this site is funded', href: '/affiliate-disclosure/' }]} /></div>
 <section class="wrap" style="padding:1.5rem 1.25rem 0">
   <p class="eyebrow">Disclosure</p>
-  <h1 style="max-width:22ch">How this site makes money</h1>
+  <h1 style="max-width:22ch">How this site is funded</h1>
   <p style="max-width:46ch;font-size:1.12rem;color:var(--ink-soft);margin:1.2rem 0 1.8rem">
-    Some links here earn a commission. That is worth stating plainly rather than burying, because a
-    site that publishes cost figures and also earns from software vendors has an obvious conflict to
-    manage — and you are entitled to know how it is managed.
+    A site that publishes cost figures and software prices has an obvious conflict to manage. The
+    honest thing is to state where the money comes from, plainly, rather than bury it in a footer.
   </p>
 
   <div class="prose">
     <h2>The short version</h2>
     <p>
-      Some outbound links to software and services are affiliate links. If you follow one and
-      subscribe, this site may receive a commission from that company. It costs you nothing and it
-      does not change the price you pay.
-    </p>
-
-    <h2>What a commission does not buy</h2>
-    <p>
-      No company can pay for a recommendation, a rating, a placement, or the removal of a criticism.
-      Where a product has a weakness that matters, it is stated whether or not there is a commercial
-      relationship with that company. Where published figures about a product disagree across
-      sources, the disagreement is shown rather than resolved in the vendor's favour.
-    </p>
-    <p>
-      Pricing quoted on this site is what was published on the vendor's own materials on the date
-      shown. It is not negotiated, discounted or supplied by the vendor for publication.
+      This site is funded by advertising. It carries no affiliate links and earns no commission from
+      any company mentioned on it. No vendor pays for coverage, placement, a rating, or the removal
+      of a criticism, because there is no commercial arrangement with any of them to pay through.
     </p>
 
     <h2>Advertising</h2>
     <p>
-      This site may also display advertising served by third-party networks. Those advertisements are
-      selected by the network rather than by us, and their presence is not an endorsement. Advertisers
-      have no input into editorial content.
+      Advertisements are served by third-party networks. Those networks select which advertisements
+      appear; we do not, and their presence is not an endorsement. Advertisers have no visibility of
+      editorial plans and no input into what is published or how a figure is reported.
+    </p>
+    <p>
+      This creates one incentive worth naming: advertising pays by pageview, so there is a pull toward
+      writing more pages rather than better ones. The defence against that is the same as everything
+      else here — a page that does not carry a figure worth checking does not get published, and the
+      <a href="/corrections/">corrections log</a> records it publicly when one turns out to be wrong.
+    </p>
+
+    <h2>Software pricing pages</h2>
+    <p>
+      The <a href="/reviews/">software pricing section</a> records what vendors and named sources
+      publish, with the date each figure was checked. Those pages are references rather than tested
+      reviews, and they say so at the top. No tool listed there has paid for inclusion, and none has
+      been given an opportunity to review a page before it went live.
+    </p>
+    <p>
+      If a scored review is ever published, the tool will have been bought at list price under the
+      <a href="/how-we-test/">published rubric</a>, and the plan tier and month tested will be stated
+      on the page.
     </p>
 
     <h2>Why this matters more here than on most sites</h2>
     <p>
-      A recurring theme across these guides is that a published figure is only as good as the party
-      publishing it — and that most cost estimates in this industry come from firms selling the
-      remedy. That criticism applies to this site too. The defence is not that we are unusually
-      virtuous; it is that every figure carries a source and a retrieval date, so you can check it
-      against the primary source yourself.
+      A recurring finding across these guides is that most cost estimates in this industry are
+      published by firms selling the remedy — reimbursement recovery services quoting how much you are
+      losing, freight forwarders quoting freight rates, capital providers quoting the cost of not
+      having capital.
     </p>
     <p>
-      Where a figure here is wrong, it goes in the <a href="/corrections/">corrections log</a> with
-      the date. The <a href="/editorial-standards/">editorial standards</a> page sets out how sources
-      are selected and how disputes between them are handled.
+      That criticism applies to this site too, and the defence is not that we are unusually virtuous.
+      It is that every figure carries a named source and a retrieval date, so you can check it against
+      the primary source yourself. Where published sources disagree, the disagreement is shown rather
+      than resolved silently in anyone's favour.
     </p>
+
+    <h2>What we do not do</h2>
+    <ul>
+      <li>No paid placements, sponsored posts, or paid-for coverage.</li>
+      <li>No affiliate or referral commissions from any company mentioned.</li>
+      <li>No vendor-supplied review accounts, and no pre-publication review by anyone covered.</li>
+      <li>No selling of reader data. See the <a href="/privacy/">privacy policy</a>.</li>
+    </ul>
 
     <h2>Questions</h2>
     <p>
-      If you want to know whether a specific link is commissioned, ask. The
+      If you want to know whether anything on this site was paid for, ask. The
       <a href="/contact/">contact page</a> is the route, and the answer will be a straight yes or no.
     </p>
 

@@ -1,0 +1,42 @@
+---
+import { SITE } from '../config';
+
+/**
+ * Fee Watch email capture.
+ *
+ * Renders NOTHING until SITE.newsletterAction is set to a real form endpoint.
+ * A signup box that silently swallows addresses is worse than no box: the
+ * reader thinks they subscribed, and they did not. One config line switches it
+ * on across every placement at once.
+ *
+ * The promise is deliberately narrow. "Subscribe to our newsletter" asks a
+ * reader to accept unknown future email. "We email you when a fee changes and
+ * nothing else" is a specific undertaking they can hold us to.
+ */
+const { compact = false } = Astro.props;
+const live = Boolean(SITE.newsletterAction);
+---
+{live && (
+  <section class={compact ? 'nl nl--compact' : 'nl'}>
+    <div class="nl-body">
+      <p class="nl-k">Fee watch</p>
+      <h2 class="nl-h">We email you when a fee changes.<br />Nothing else.</h2>
+      <p class="nl-p">
+        Amazon, Walmart, eBay, Etsy, TikTok Shop and AliExpress revise their fee
+        schedules on their own timetable, and the announcement rarely reaches the
+        people paying them. One short email per change, with the date it takes
+        effect and what it costs. No weekly digest, no offers.
+      </p>
+      <form class="nl-form" action={SITE.newsletterAction} method="post" target="_blank">
+        <label class="skip" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" name="email" required
+          placeholder="you@company.com" autocomplete="email" />
+        <button type="submit">Get fee alerts</button>
+      </form>
+      <p class="nl-note">
+        Unsubscribe in one click. We do not sell or share addresses — see the
+        <a href="/privacy/">privacy policy</a>.
+      </p>
+    </div>
+  </section>
+)}

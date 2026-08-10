@@ -1,0 +1,136 @@
+---
+title: "Amazon never confirmed an algorithm called A10. A great deal of listing advice is built on it anyway."
+description: "The seller community named the evolved search system A10. Amazon calls its search algorithm A9. Underneath the naming argument the observable shift is real — and it moved weight from keywords toward whether shoppers actually buy."
+category: "Getting started"
+published: "2026-08-11"
+modified: "2026-08-11"
+minutes: 12
+numbered: true
+ledger: "Backend search terms: 249 bytes, not characters"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "A9 is Amazon's official name for its search algorithm. A10 is community terminology for the evolved version, and one source states plainly that Amazon has never confirmed the name.",
+  "The observable shift is real regardless of naming: weight moved from keyword matching and raw sales volume toward conversion — whether shoppers who land on the listing actually buy.",
+  "Backend search terms are limited to 249 bytes, not characters. Special and accented characters are reported to count as two bytes, and exceeding the limit is reported to make Amazon ignore the entire field.",
+  "Published title limits conflict: one source gives 200 bytes and another describes a 75-character deadline. Confirm the current limit for your category in Seller Central before rewriting titles.",
+  "External traffic is reported as a ranking signal, with one estimate putting the contribution at 15% to 20%. Treat estimates of unpublished weightings as estimates.",
+]} />
+
+There is a genre of listing advice that opens by telling you A9 is dead and A10 has replaced it. It is worth knowing what that claim rests on before acting on the rest of the article.
+
+## The naming problem, and why it matters
+
+**A9 is the official name of Amazon's search algorithm.** One source states directly that A10 is community terminology for the evolved version and that Amazon has never confirmed the name.
+
+Another goes further and is worth quoting in substance: industry discussion of "A10" often uses the term "seller authority" to describe the combined effect of account health, fulfilment reliability, customer service, return patterns and sales history — and that source advises treating these as supporting trust and conversion outcomes **rather than as a separately confirmed ranking factor.**
+
+That is a careful distinction and most content on this subject does not make it. When an article tells you a specific unnamed factor carries a specific weight in an algorithm whose name the vendor invented, it is describing an inference, not a specification.
+
+**Why this matters practically:** it changes what you do when advice conflicts. If two sources disagree about a confirmed mechanic — the byte limit on backend terms — one of them is wrong and you can check. If they disagree about the weight of "seller authority", neither is wrong because neither is measuring anything Amazon published.
+
+<Figure value="Never confirmed" kind="cost" source="Feedvisor and SalesDuo, 2026 analyses of Amazon search ranking, accessed 8 August 2026">
+  The status of the name "A10" according to two 2026 analyses. The underlying shift they describe is consistent; the label is the seller community's.
+</Figure>
+
+## What the shift actually is
+
+Strip the naming and the sources agree on the direction, which is what matters.
+
+**Away from:** keyword density, title stuffing, raw sales volume as the dominant signal.
+
+**Toward:** whether the listing satisfies the shopper. Conversion rate is described repeatedly as the primary signal — one source frames the question as "when shoppers land on your listing, do they buy?"
+
+Consistently named factors:
+
+| Factor | Notes |
+| --- | --- |
+| **Relevance** | Exact-match keywords in title and bullets still drive indexing. Without relevance nothing else applies |
+| **Conversion rate** | Described as the dominant signal in the evolved system |
+| **Click-through rate** | Main image and title drive it; low CTR is described as signalling poor relevance |
+| **Reviews** | Both a conversion factor and a ranking signal; quality, sentiment and velocity |
+| **Price** | Affects conversion directly, therefore ranking directly |
+| **Inventory availability** | Out of stock means no Buy Box, no conversion, and ranking erosion described as taking weeks to rebuild |
+| **Return rate** | Named as a ranking input — which links directly to the [returns guide](/guides/returns-cost-and-badge/) |
+| **External traffic** | Reported as a signal, with one estimate of 15–20% contribution |
+
+Two of those are worth pausing on because they connect to costs covered elsewhere on this site.
+
+**Low stock hurts before you stock out.** One analysis makes a specific point: raising prices to conserve remaining inventory drops conversion, and rankings decay before the stockout actually happens. That compounds with the [low-inventory-level fee](/guides/low-inventory-level-fee/), which charges you per unit sold while thin. You pay a fee and lose rank simultaneously.
+
+**Return rate is a ranking input.** Which means the [Frequently Returned Item badge](/guides/returns-cost-and-badge/) is not the only way returns cost you traffic.
+
+## The mechanics you can actually verify
+
+These are specifications rather than inferences, and they are where most listings lose free ground.
+
+**Backend search terms: 249 bytes.** Not characters. Reporting states most alphanumeric characters are one byte while special and accented characters count as two, and — the part that matters — **exceeding the limit is reported to make Amazon ignore the entire field**, not just the overflow. A field that is silently not indexed is worse than an empty one, because you think it is working.
+
+Reported rules for that field:
+- No repetition of words already in your title — indexing does not double
+- Synonyms and alternative names shoppers actually use
+- Common misspellings
+- Relevant abbreviations
+- No competitor brand names
+- No punctuation needed; separate with spaces
+
+**Titles: the sources conflict.** One gives 200 bytes and warns against confusing bytes with characters. Another describes a 75-character deadline and warns that ignoring it lets Amazon's systems rewrite the field. These cannot both describe the same rule, and title limits also vary by category.
+
+**The working position:** check the current limit for your specific category in Seller Central before a title rewrite. This is exactly the kind of figure that changes and is not revisited in published guides.
+
+**Item Highlights, attribute fields and A+ Content** are described as free indexing and free context left on the table when empty. Filling them costs an afternoon.
+
+## What is now actively harmful
+
+Reporting is consistent that several tactics that once worked now carry a penalty or waste space:
+
+- **Keyword stuffing.** Described as reading as noise to shoppers and backfiring with an intent-based engine
+- **Sorting keywords by volume rather than conversion.** Chasing impressions that never buy
+- **Repeating title words in the backend field.** No additional indexing, and it consumes bytes
+- **Treating price and inventory as somebody else's problem.** Both are described as direct ranking inputs
+- **Publishing generated copy without review.** One source is blunt: generic content that violates a policy is still your responsibility to fix
+- **Designing for desktop** when most shoppers are on a phone
+
+## PPC and organic rank
+
+One claim deserves correcting because it circulates widely.
+
+Reporting states that **PPC does not guarantee an increase in organic rankings.** It can improve visibility and generate sales and search-term data; organic position still depends on relevance, conversion, availability, price and customer experience.
+
+The genuinely useful relationship is the reverse of how it is usually described: **use PPC search-term reports to find which keywords actually convert, then build those into the title and backend terms.** Paid discovers, organic keeps. Our [PPC guide](/guides/amazon-ppc-benchmarks/) covers the cost side of that discovery.
+
+## The order to work in
+
+1. **Fix relevance first.** Without indexing on the right terms nothing else matters.
+2. **Fix the main image and title.** They determine click-through, which is the first behaviour measured.
+3. **Fix conversion.** Images, bullets that answer questions rather than list features, sizing and dimension detail, A+ Content. This is the highest-weighted signal and it is entirely under your control.
+4. **Fill every field.** Backend terms within 249 bytes, Item Highlights, attributes.
+5. **Then advertise.** One source's position is that for most independent sellers the highest-leverage change remains fixing listing quality first and considering advertising once the listing converts organically. That ordering is also cheaper.
+6. **Test changes rather than assuming.** Amazon offers A/B testing for eligible listings. A conversion lift that does not move contribution profit is not a win — check it against the [fee stack](/guides/landed-cost-fee-stack/).
+
+<Faq items={[
+  { q: "Is A9 or A10 the real algorithm?", a: "A9 is Amazon's official name. A10 is community terminology for the evolved version and one source states Amazon has never confirmed it. The underlying shift the term describes is real; the label is not Amazon's." },
+  { q: "How many characters do I get in backend search terms?", a: "249 bytes, not characters. Special and accented characters are reported to count as two bytes, and exceeding the limit is reported to make Amazon ignore the entire field rather than just the overflow." },
+  { q: "How long can my title be?", a: "Published sources conflict — one gives 200 bytes, another describes a 75-character deadline — and limits vary by category. Check the current limit for your category in Seller Central before rewriting." },
+  { q: "Does PPC improve organic ranking?", a: "Reporting states it does not guarantee it. PPC improves visibility and generates search-term data; organic position still depends on relevance, conversion, availability, price and customer experience. The useful move is mining PPC search-term reports for converting keywords and building those into the listing." },
+  { q: "Does external traffic help?", a: "It is reported as a ranking signal, with one estimate putting the contribution at 15% to 20%. Treat estimates of unpublished weightings accordingly." },
+  { q: "What is the single highest-leverage change?", a: "Conversion. It is described as the dominant signal, it is entirely under your control, and it improves the economics of every advertising decision that follows." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon A9 algorithm: how search ranking actually works in 2026 (A10 as community terminology never confirmed by Amazon; external traffic estimated at 15–20%; COSMO and Rufus; low stock eroding rank before stockout; PPC search-term reports feeding organic terms)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/a9-search-engine/', accessed: '2026-08-08' },
+  { title: 'Amazon A9 algorithm: how Amazon\u2019s search engine works (2026) (treating "seller authority" as supporting trust and conversion rather than a separately confirmed ranking factor; PPC not guaranteeing organic ranking)', publisher: 'SalesDuo', href: 'https://salesduo.com/blog/amazon-a9-search-engine-guide/', accessed: '2026-08-08' },
+  { title: 'How to optimize your Amazon listing for page 1 rankings in 2026 (249 bytes for backend search terms; two-byte special characters; entire field ignored if the limit is exceeded; conversion as the primary signal)', publisher: 'SellerSprite', href: 'https://e.sellersprite.com/en/blog/amazon-listing-optimization-2026', accessed: '2026-08-08' },
+  { title: 'Amazon listing optimization 2026: A10 algorithm playbook (backend field rules: no repetition, synonyms, misspellings, abbreviations, no competitor brands, no punctuation; A/B testing changes)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/listing-optimization', accessed: '2026-08-08' },
+  { title: 'The complete Amazon listing optimization guide (2026) (75-character title deadline; keyword stuffing backfiring; sorting keywords by volume rather than conversion; empty fields as lost indexing; responsibility for generated copy)', publisher: 'Foxtale Agency', href: 'https://foxtaleagency.com/blog/amazon-listing-optimization-guide-2026', accessed: '2026-08-08' },
+  { title: 'Amazon listing optimization: the ultimate 2026 guide (titles measured in bytes rather than characters; weighting order of title, bullets, backend, description)', publisher: 'Keywords.am', href: 'https://keywords.am/tips/amazon-listing-optimization-ultimate-guide/', accessed: '2026-08-08' },
+  { title: 'Amazon listing optimization: the complete 2026 guide (fixing listing quality before advertising as the highest-leverage change for independent sellers; compounding effect of conversion on ranking)', publisher: 'Shotova', href: 'https://shotova.com/blog/amazon-listing-optimization', accessed: '2026-08-08' },
+  { title: 'How to optimise your Amazon listing: complete 2026 guide (backend terms for synonyms and spelling variants; never repeating title words; keyword density as an A9-era tactic now penalised)', publisher: 'Gracia Marcom', href: 'https://graciamarcom.com/blog/how-to-optimise-your-amazon-listing-complete-2026-guide/', accessed: '2026-08-08' },
+]} />

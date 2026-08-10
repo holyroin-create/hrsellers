@@ -66,6 +66,39 @@ import Faq from '../../components/Faq.astro';
       sells quickly needs reordering while the first order's money is still in transit back to you. Sellers
       routinely go out of stock on their winner, lose rank, and pay in advertising to rebuild what they lost.
     </p>
+    <h2>A worked example</h2>
+    <p>
+      A first order of 500 units at $6.20 landed, on 30% deposit and 70% balance, with production and
+      freight taking roughly nine weeks door to fulfilment centre. Selling 12 units a day at $29.99.
+    </p>
+    <table>
+      <thead><tr><th>Day</th><th>Event</th><th>Cash effect</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>Deposit, 30% of $3,100</td><td>−$930</td></tr>
+        <tr><td>~35</td><td>Balance on passing inspection</td><td>−$2,170</td></tr>
+        <tr><td>~40</td><td>Freight, duty and customs</td><td>−$900 (illustrative)</td></tr>
+        <tr><td>~63</td><td>Received and sellable</td><td>—</td></tr>
+        <tr><td>~65</td><td>First sales begin</td><td>—</td></tr>
+        <tr><td>~72</td><td>First payout lands, after DD+7</td><td>first cash back</td></tr>
+        <tr><td>~105</td><td>Stock at 45 days of cover — reorder point</td><td>next deposit due</td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      The number that matters is the gap between day 0 and day 72: roughly <strong>ten weeks with
+      money out and nothing coming back</strong>. And the reorder falls due around day 105, while
+      only part of the first order's revenue has returned. That overlap is why the second order is
+      usually funded from savings rather than from sales.
+    </p>
+
+    <h2>What this planner assumes</h2>
+    <ul>
+      <li><strong>Even sell-through.</strong> Real demand is lumpy and seasonal; the output is a floor on the room you need, not a forecast.</li>
+      <li><strong>A single order cycle.</strong> Overlapping orders — which the fee structure effectively requires — tie up more capital than this shows.</li>
+      <li><strong>Payouts arrive on the delivery-date schedule.</strong> Account holds, reserves and disputes all push it later, never earlier.</li>
+      <li><strong>No peak-season distortion.</strong> Q4 raises storage, fulfilment and advertising costs at the same time as it raises revenue.</li>
+      <li><strong>Freight and duty are entered as landed figures.</strong> An examination hold or a duty rate change lands outside this model.</li>
+    </ul>
+
     <h2>Three ways to close the gap</h2>
     <ul>
       <li><strong>Order smaller and more often.</strong> Higher per-unit freight, lower risk, faster cycles. Usually the right trade for a first product.</li>
@@ -76,6 +109,16 @@ import Faq from '../../components/Faq.astro';
       This model assumes even sell-through and a single order cycle. Real demand is lumpy and seasonal.
       Treat the output as a floor on how much room you need, not a forecast.
     </p>
+  </div>
+
+  <div class="prose">
+    <h2>The decisions this planner sits inside</h2>
+    <ul>
+      <li><a href="/guides/dd7-payout-reserve/">When you actually get paid</a> — funds release seven days after delivery, not after you ship, which is where the last leg of the gap comes from.</li>
+      <li><a href="/guides/landed-cost-fee-stack/">Landed cost</a> — the outflow side of this model, per unit.</li>
+      <li><a href="/guides/low-inventory-level-fee/">The low-inventory-level fee</a> — the cost of getting the reorder timing wrong in the other direction.</li>
+      <li><a href="/guides/peak-season-cost-stack/">Peak season</a> — why Q4 is the quarter this gap is most likely to catch you.</li>
+    </ul>
   </div>
 
   <Faq items={[

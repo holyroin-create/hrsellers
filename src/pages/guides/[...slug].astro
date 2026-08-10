@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
+import Newsletter from '../../components/Newsletter.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Cover from '../../components/Cover.astro';
 import { AUTHOR } from '../../config';
@@ -15,6 +16,16 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 const d = entry.data;
+
+/* Related guides: same category first, then the rest of the catalogue by
+   recency. Three cards, never the current page. A reader who reaches the foot
+   of an article and finds nothing there leaves the site — this is the cheapest
+   place to keep them reading. */
+const all = (await getCollection('guides', ({ data }) => !data.draft)).filter(g => g.id !== entry.id);
+const sameCat = all.filter(g => g.data.category === d.category);
+const rest = all.filter(g => g.data.category !== d.category)
+  .sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime());
+const related = [...sameCat, ...rest].slice(0, 3);
 const toc = headings.filter(h => h.depth === 2).map(h => {
   const m = h.text.match(/^(\d{2})\s*(.*)$/);
   return { slug: h.slug, num: m ? m[1] : null, text: m ? m[2] : h.text };
@@ -53,6 +64,24 @@ const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', mon
         Marketplace fees and software pricing change often — verify anything material against the
         marketplace's own documentation before acting on it. Corrections: <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.
       </p>
+
+      {related.length > 0 && (
+        <section class="nextread">
+          <h2>Read next</h2>
+          <div class="nextread-grid">
+            {related.map(g => (
+              <a class="nextread-card" href={`/guides/${g.id}/`}>
+                <span class="nr-cat">{g.data.category}</span>
+                <span class="nr-title">{g.data.title}</span>
+                {g.data.ledger && <span class="nr-ledger">{g.data.ledger}</span>}
+                <span class="nr-min">{g.data.minutes} min read</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <Newsletter compact={true} />
 
       <AdSlot label="ad slot — end of article" />
       <AuthorBox />

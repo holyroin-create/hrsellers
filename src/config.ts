@@ -7,6 +7,9 @@ export const SITE = {
     "Operational guides for Amazon, Walmart, eBay, TikTok Shop and Etsy sellers. Every fee, threshold and date is cited to its source and carries the day it was checked.",
   adsensePublisherId: "ca-pub-9985150163567506",
   adsenseEnabled: false,
+  /* Set to your provider's form endpoint (Buttondown, MailerLite, Kit...)
+     to switch the Fee Watch signup on across the site. Empty = hidden. */
+  newsletterAction: "",
   founded: "2026",
 };
 

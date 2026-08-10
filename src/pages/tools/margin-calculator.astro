@@ -68,6 +68,48 @@ import Faq from '../../components/Faq.astro';
       lose the unit. Treating returns as free is how a 20% margin turns out to be 12%.
     </p>
 
+    <h2>A worked example</h2>
+    <p>
+      A standard-size product selling at $29.99, sourced at $6.20 a unit landed, with a 15% referral
+      rate. Substitute your own figures — the point is the shape of the result, not these numbers.
+    </p>
+    <table>
+      <thead><tr><th>Line</th><th>Amount</th><th>Where the figure comes from</th></tr></thead>
+      <tbody>
+        <tr><td>Selling price</td><td>$29.99</td><td>Your listing</td></tr>
+        <tr><td>Cost of goods, landed</td><td>−$6.20</td><td>Supplier invoice plus freight, duty and prep per unit</td></tr>
+        <tr><td>Inbound to the fulfilment centre</td><td>−$0.55</td><td>Your carrier invoice divided by units in the shipment</td></tr>
+        <tr><td>Referral fee at 15%</td><td>−$4.50</td><td>Category referral rate</td></tr>
+        <tr><td>Fulfilment fee</td><td>−$5.60</td><td>Fee Preview report, at your size tier and price band</td></tr>
+        <tr><td>Storage, allocated per unit</td><td>−$0.18</td><td>Monthly storage bill divided by units sold that month</td></tr>
+        <tr><td>Returns at a 6% rate</td><td>−$0.74</td><td>Return rate from your own returns report</td></tr>
+        <tr><td>Advertising at 9% TACOS</td><td>−$2.70</td><td>Ad spend divided by total sales, not ad-attributed sales</td></tr>
+        <tr><td><strong>Net profit per unit</strong></td><td><strong>$9.52</strong></td><td></td></tr>
+        <tr><td><strong>Net margin</strong></td><td><strong>31.7%</strong></td><td></td></tr>
+        <tr><td><strong>Maximum ACOS before this stops paying</strong></td><td><strong>~40.7%</strong></td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      Two lines in that table are the ones sellers most often get wrong. <strong>Storage</strong> is
+      allocated per unit sold rather than per unit held, which understates it badly on slow movers.
+      And <strong>TACOS rather than ACOS</strong> is the correct input, because advertising is paid
+      out of total revenue and not only out of the sales it is credited with.
+    </p>
+
+    <h2>What this calculator assumes</h2>
+    <p>
+      Every calculator carries assumptions. Stating them is the difference between a tool and a
+      guess with a rounded corner.
+    </p>
+    <ul>
+      <li><strong>One unit, one sale.</strong> Multipacks and bundles change the fulfilment fee and the size tier — enter the packed configuration you actually ship.</li>
+      <li><strong>A returned unit costs you the outbound fulfilment and, depending on condition, the unit itself.</strong> That is the default here. Where returns are resold as new, your real return cost is lower.</li>
+      <li><strong>Storage is a per-unit allocation.</strong> It is not a per-unit charge in reality; it is a monthly bill on volume held. Allocating it per unit sold is the practical approximation.</li>
+      <li><strong>No peak-season adjustment.</strong> Q4 storage and holiday fulfilment surcharges are not modelled — run peak separately with the higher figures.</li>
+      <li><strong>Referral fee is applied to the selling price alone.</strong> Some marketplaces charge on price plus shipping; on those, enter an effective rate rather than the headline one.</li>
+      <li><strong>No currency conversion.</strong> If you bank in a different currency from the marketplace, your real proceeds are lower by the conversion cost.</li>
+    </ul>
+
     <h2>Reading the result honestly</h2>
     <ul>
       <li><strong>Below 10% net</strong> — one fee change or one bad month of advertising erases it. Since selling price became an input to the US fulfillment fee in January 2026, even a repricing decision can move your costs.</li>
@@ -79,6 +121,21 @@ import Faq from '../../components/Faq.astro';
       advertising stops being growth and starts being a subsidy. If your current TACOS is close to it,
       you are running a business that exists to feed the ad platform.
     </p>
+  </div>
+
+  <div class="prose">
+    <h2>The figures this calculator needs, explained</h2>
+    <p>
+      Three of the inputs above are the ones people estimate rather than measure, and each has a
+      guide behind it.
+    </p>
+    <ul>
+      <li><a href="/guides/landed-cost-fee-stack/">Landed cost</a> — what a unit really costs by the time it is sellable, which is the figure the cost-of-goods box wants.</li>
+      <li><a href="/guides/amazon-fba-fee-changes-2026/">The 2026 fee changes</a> — why the fulfilment fee has to come from your own Fee Preview report rather than a published average.</li>
+      <li><a href="/guides/price-tier-repricing-trap/">Price bands</a> — since January 2026 the selling price is an input to the fulfilment fee, so changing the price in this calculator changes a cost too.</li>
+      <li><a href="/guides/returns-cost-and-badge/">Returns</a> — where the return rate comes from and what a return actually costs beyond the lost sale.</li>
+      <li><a href="/guides/fba-storage-four-layers/">Storage</a> — the four separate charges the storage box is standing in for.</li>
+    </ul>
   </div>
 
   <Faq items={[

@@ -61,12 +61,53 @@ import Faq from '../../components/Faq.astro';
       for US domestic parcels, but confirm the divisor in your own rate agreement rather than assuming it.
     </p>
 
+    <h2>A worked example</h2>
+    <p>
+      The same product in two boxes, at a divisor of 139. Actual weight 2.4 lb in both cases —
+      only the packaging changed.
+    </p>
+    <table>
+      <thead><tr><th></th><th>Box A: 12 × 10 × 8 in</th><th>Box B: 9 × 7 × 5 in</th></tr></thead>
+      <tbody>
+        <tr><td>Volume</td><td>960 in³</td><td>315 in³</td></tr>
+        <tr><td>Dimensional weight</td><td>960 ÷ 139 = 6.91 lb</td><td>315 ÷ 139 = 2.27 lb</td></tr>
+        <tr><td>Actual weight</td><td>2.4 lb</td><td>2.4 lb</td></tr>
+        <tr><td><strong>Billable weight</strong></td><td><strong>6.91 lb</strong> (dimensional wins)</td><td><strong>2.4 lb</strong> (actual wins)</td></tr>
+        <tr><td>Cubic feet, for storage</td><td>0.556 ft³</td><td>0.182 ft³</td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      Box A is billed at nearly <strong>three times</strong> the weight of Box B for the identical
+      product, and occupies roughly <strong>three times</strong> the storage volume every month it
+      sits in a warehouse. Neither cost appears on the supplier's invoice, and both are decided
+      before the first unit is made.
+    </p>
+
+    <h2>What this calculator assumes</h2>
+    <ul>
+      <li><strong>The divisor is yours to confirm.</strong> 139 is the most commonly cited US domestic figure, but it is set by carrier and contract and it changes.</li>
+      <li><strong>Dimensions are of the packed unit as shipped</strong> — measured on a real sample, not taken from a drawing. Suppliers quote design dimensions; carriers measure what arrives.</li>
+      <li><strong>Billable weight rounds up.</strong> The calculator shows the raw figure; your invoice will round.</li>
+      <li><strong>Marketplace size tiers are a separate calculation</strong> using the same principle. This tool gives you the freight side; the fulfilment size tier comes from the marketplace's own table.</li>
+      <li><strong>No packaging weight is added.</strong> Enter the weight of the packed unit, including the box and any dunnage.</li>
+    </ul>
+
     <h2>Why this matters more than it looks</h2>
     <ul>
       <li><strong>Packaging is a margin decision.</strong> An inch of unnecessary void space on each dimension can move you a whole band. That cost recurs on every unit, forever.</li>
       <li><strong>Rounding is brutal at the boundary.</strong> Billable weight rounds up. Being 0.05 over a boundary costs the same as being 0.9 over.</li>
       <li><strong>Marketplace size tiers work on the same principle.</strong> Amazon assigns a size tier from packaged dimensions and weight, and the tier is the biggest single driver of fulfillment cost. Crossing a boundary by a fraction is expensive in exactly the same way.</li>
       <li><strong>Check before you order packaging, not after.</strong> Once 5,000 boxes are printed, this becomes a cost you live with.</li>
+    </ul>
+  </div>
+
+  <div class="prose">
+    <h2>Where this number goes next</h2>
+    <ul>
+      <li><a href="/guides/fba-storage-four-layers/">Storage</a> — cubic feet from the same box dimensions drive four separate charges, every month.</li>
+      <li><a href="/guides/amazon-fba-fee-changes-2026/">The 2026 fee changes</a> — size tier and weight together set the fulfilment fee.</li>
+      <li><a href="/guides/landed-cost-fee-stack/">Landed cost</a> — where freight on billable weight becomes a per-unit figure.</li>
+      <li><a href="/guides/sipp-packaging-program/">Packaging and SIPP</a> — where packaging design stops being a freight question and becomes a fee question.</li>
     </ul>
   </div>
 
