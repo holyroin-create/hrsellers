@@ -1,0 +1,120 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import Sources from '../../components/Sources.astro';
+import Btn from '../../components/Btn.astro';
+import { TOOLS } from '../../data/tools';
+
+export async function getStaticPaths() {
+  return TOOLS.map(t => ({ params: { slug: t.slug }, props: { t } }));
+}
+const { t } = Astro.props;
+const others = TOOLS.filter(x => x.slug !== t.slug);
+---
+<Base title={`${t.name} pricing (2026)`} description={t.lede.slice(0, 180)}>
+<div class="wrap">
+  <Breadcrumbs trail={[{ label: 'Tools', href: '/reviews/' }, { label: t.name, href: `/reviews/${t.slug}/` }]} />
+
+  <div class="article-grid">
+    <div>
+      <p class="eyebrow">{t.category}</p>
+      <h1 style="max-width:22ch">{t.name}: what it costs in 2026</h1>
+      <p style="max-width:46ch;font-size:1.15rem;color:var(--ink-soft);margin:1.2rem 0 1.4rem">{t.lede}</p>
+
+      <p class="note" style="margin:0 0 2rem">
+        <strong>This is a pricing reference, not a tested review.</strong> This site has not purchased
+        or used {t.name}. Every figure below is what a named source published, checked {t.checked}.
+        Vendor pricing changes without notice — confirm on {t.vendor}'s own page before you buy.
+        Scored reviews, when they exist, are bought at list price and follow the
+        <a href="/how-we-test/">published rubric</a>.
+      </p>
+
+      <div class="prose">
+        <h2>What it does</h2>
+        <p>{t.job}</p>
+
+        <h2>What it costs</h2>
+        <table>
+          <thead><tr><th>Plan or charge</th><th>Reported price</th></tr></thead>
+          <tbody>
+            {t.pricing.map(r => (
+              <tr>
+                <td><strong>{r.k}</strong>{r.note && <><br /><span class="note">{r.note}</span></>}</td>
+                <td>{r.v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <AdSlot inline={true} label={`${t.name} — mid page`} />
+
+      <div class="prose">
+        {t.contested && t.contested.length > 0 && (
+          <>
+            <h2>Figures the sources disagree on</h2>
+            <p>Recorded rather than resolved. Software pricing is quoted monthly and annually, before and after promotions, and by directories that have not rechecked in years. Where published figures conflict, the honest position is to name the conflict and send you to the vendor.</p>
+            <table>
+              <thead><tr><th>Figure</th><th>The disagreement</th></tr></thead>
+              <tbody>
+                {t.contested.map(c => (
+                  <tr><td><strong>{c.claim}</strong></td><td>{c.detail}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </>
+        )}
+
+        <h2>Where it fits, and where it does not</h2>
+        <h3>Worth considering for</h3>
+        <ul>{t.fits.map(f => <li>{f}</li>)}</ul>
+        <h3>Works against you if</h3>
+        <ul>{t.againstIt.map(f => <li>{f}</li>)}</ul>
+
+        <h2>The decision this tool sits inside</h2>
+        <p>
+          Software is the smallest line in most seller cost structures and the one that gets the most
+          attention. Before subscribing to anything in this category, the arithmetic that matters is
+          in the guides below — a tool that reports a number accurately does not change the number.
+        </p>
+        <ul>{t.relatedGuides.map(g => <li><a href={g.href}>{g.label}</a></li>)}</ul>
+      </div>
+
+      <div class="btn-row" style="margin:2rem 0 0">
+        <Btn href="/tools/margin-calculator/">Run your own numbers</Btn>
+        <Btn href="/reviews/" quiet={true}>All tool pricing</Btn>
+      </div>
+
+      <AdSlot label={`${t.name} — end of page`} />
+      <AuthorBox />
+
+      <Sources items={t.sources} />
+    </div>
+
+    <aside class="rail">
+      <div class="rail-box">
+        <h4>Other tools</h4>
+        <div class="rail-links">
+          {others.map(o => <a href={`/reviews/${o.slug}/`}>{o.name}</a>)}
+        </div>
+      </div>
+      <div class="rail-box orange">
+        <h4>Check it yourself</h4>
+        <p>Published software prices go stale faster than fee schedules. The vendor's own page is the only current source.</p>
+        <Btn href={t.url} variant="cta" wide={true} arrow={false}>{t.vendor} pricing page</Btn>
+      </div>
+      <div class="rail-box">
+        <h4>Reference</h4>
+        <div class="rail-links">
+          <a href="/how-we-test/">Scoring rubric</a>
+          <a href="/affiliate-disclosure/">Affiliate disclosure</a>
+          <a href="/corrections/">Corrections log</a>
+        </div>
+      </div>
+      <AdSlot label={`${t.name} — sidebar`} />
+    </aside>
+  </div>
+</div>
+</Base>

@@ -1,0 +1,141 @@
+---
+title: "Roughly one in five FBA shipments arrives short. Amazon will not tell you which one."
+description: "Inbound discrepancies are not automatically investigated or automatically reimbursed. You find them, you file them, and you do it inside a claim window that published sources put at anywhere from 60 days to nine months."
+category: "Fees & reimbursements"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 10
+numbered: true
+ledger: "~20% of shipments · you find them, not Amazon"
+ledgerKind: "recovered"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "One source puts the share of FBA shipments arriving with some discrepancy at roughly 20%. Amazon does not proactively flag them — identifying them is the seller's job.",
+  "Claims can only be filed once a shipment reaches Closed status, and there is a waiting period before that. Filing early gets the case declined rather than queued.",
+  "The claim window is the single most contested figure here: one 2026 source puts it at 60 days from the event date, another at nine months. Confirm in Seller Central before assuming you have time.",
+  "Documentation must be in non-editable formats — PDF, JPG, JPEG, PNG or TIFF. Reporting states Excel and Word files are not accepted.",
+  "Since 31 March 2025 reimbursement is at documented sourcing cost rather than sale price, so what you recover depends on records you entered before the loss happened.",
+]} />
+
+The [reimbursement guide](/guides/fba-reimbursement-sourcing-cost/) covers what a lost unit is worth. This covers the losses that happen before the unit ever reaches your sellable inventory — and they are the ones nobody counts.
+
+## The three situations
+
+Reporting groups inbound discrepancies into three shapes that follow the same rules:
+
+**Short receiving.** You shipped a quantity, Amazon received fewer, and the shipment closes with a gap.
+
+**Delivered but not fully received.** The carrier shows delivery; Amazon never checks in all the units tied to that shipment.
+
+**Investigation completed, units still missing.** Amazon finishes its internal count and closes the shipment, and the received quantity still does not match.
+
+**All three are your problem to notice.** One source is direct: Amazon does not proactively flag discrepancies for you.
+
+<Figure value="~20%" kind="recovered" source="Reported share of FBA shipments arriving with a discrepancy, accessed 8 August 2026">
+  One published estimate of how often an inbound shipment arrives with some difference between what was declared and what was checked in. Not all of them are recoverable — but none of them are recovered without being found first.
+</Figure>
+
+## Where to look
+
+**Manage FBA Shipments**, under Inventory. The **Discrepancy** column in the shipping queue is the whole check: a `0` means everything was received as expected; any other number, positive or negative, is a mismatch.
+
+**Only Closed shipments count.** Reporting is consistent that Amazon will not investigate shipments still marked Receiving or Delivered, because the counts are not final. The reconciliation tab shows an estimated eligibility date — **do not open a case before it.**
+
+**Then go to SKU level.** The contents view breaks expected against received per SKU rather than per shipment, which tells you which product is short and by how many. Selecting the located-units figure shows whether Amazon has already reconciled or reimbursed part of it.
+
+**And check the reports**, per one source's list:
+
+| Report | What it shows |
+| --- | --- |
+| Inventory Reconciliation | What Amazon received against what is in current inventory |
+| Reimbursements | What has already been credited automatically |
+| Returns | Customer returns and their disposition status |
+
+Cross-referencing those three finds units that were received or sold but are missing without a corresponding credit.
+
+## The claim window, which nobody agrees on
+
+This is the figure to verify rather than trust.
+
+| Source | Reported window |
+| --- | --- |
+| Nova Analytics (2026) | **60 days** from the event date, "most categories tighter than that" |
+| Refunzo (2026) | **9 months** for filing claims |
+
+**Those are not close.** A seller working to the nine-month figure who is actually subject to sixty days will discover it on a claim that gets declined for lateness.
+
+**The safe operating position** is the one both sources arrive at independently: a **monthly** review of closed shipments, weekly for high-volume sellers. At that cadence the disagreement stops mattering, because nothing ages past either window.
+
+Reporting on resolution time puts it at **2 to 30 days**, with complicated cases up to 60.
+
+## What a claim needs
+
+Reported requirements, and the second one catches people:
+
+**Proof of what you sent.** For larger shipments, documentation showing the number of boxes and total weight at carrier pickup. Signed packing slips are named for manufacturers, with date, shipment ID, product names, quantities and your signature or stamp.
+
+**Non-editable formats only.** PDF, JPG, JPEG, PNG or TIFF. Reporting states **Excel and Word files are not accepted** — which is how a well-evidenced claim gets rejected on a technicality. You may redact pricing on invoices.
+
+**Specifics that help the investigation**, per one source: any discrepancies you already know about, a description of your shipping boxes (colour, size, distinguishing marks), product codes verified against Seller Central, and any missed prep activities.
+
+**The route:** Seller Central → Help → Contact Us → Selling on Amazon → FBA Issue → FBA inventory reimbursement, with the ASIN, FNSKU, shipment ID and the specific discrepancy.
+
+## What you actually get back
+
+Since 31 March 2025, reimbursement is at **documented sourcing cost** rather than sale price — see the [reimbursement guide](/guides/fba-reimbursement-sourcing-cost/).
+
+**Which makes this a records problem before it is a claims problem.** If you have not entered sourcing costs per SKU, Amazon estimates them from comparable products, and that estimate becomes the basis for whatever you recover.
+
+One source's caution is worth keeping: automated credits appear in the Reimbursements report but **rarely match the unit value**. Comparing each line against your own [landed cost](/guides/landed-cost-fee-stack/) is how underpayments surface — and an automatic credit at the wrong number looks like a resolved case until you check it.
+
+## Preventing them
+
+Most of this belongs to work covered elsewhere on this site:
+
+**Photograph the packed boxes and contents** before they ship. Reporting names this as critical, and it costs nothing.
+
+**Verify labels and barcodes before shipping.** A scanning failure at receiving becomes a discrepancy, and a pre-shipment check catches it while the goods are still with the supplier.
+
+**Keep carrier pickup documentation** showing box count and weight. It is the evidence a larger claim rests on.
+
+**Reconcile against your own records** rather than against Amazon's version of them.
+
+## What to do
+
+**Set a monthly calendar entry** to review closed shipments. Weekly if your volume justifies it. This single habit is what makes the window disagreement irrelevant.
+
+**Filter to Closed and read the Discrepancy column.** Anything other than zero is a case.
+
+**Wait for the eligibility date** shown in the reconciliation tool. Filing early wastes the attempt.
+
+**Prepare documents as PDF or image files**, never spreadsheets.
+
+**Enter sourcing costs per SKU** before you need them — it decides what every claim pays.
+
+**Check automatic credits against your own landed cost.** A credit is not proof of a correct credit.
+
+<Faq items={[
+  { q: "How common are inbound shipment discrepancies?", a: "One source puts the share of FBA shipments with some discrepancy at roughly 20%. Amazon does not proactively flag them, so identifying them is the seller's responsibility." },
+  { q: "When can I file a claim?", a: "Only once the shipment shows Closed status, and after the eligibility date shown in the reconciliation tool. Amazon will not investigate shipments still marked Receiving or Delivered because the counts are not final." },
+  { q: "How long do I have?", a: "Published sources disagree sharply — one 2026 source says 60 days from the event date with most categories tighter, another says nine months. Verify in Seller Central, and review closed shipments monthly so the disagreement never matters." },
+  { q: "What documents does Amazon accept?", a: "Non-editable formats only: PDF, JPG, JPEG, PNG or TIFF. Reporting states Excel and Word files are not accepted. Pricing may be redacted on invoices." },
+  { q: "How much do I get back?", a: "Since 31 March 2025, documented sourcing cost rather than sale price. If you have not entered sourcing costs per SKU, Amazon estimates them from comparable products and that estimate sets your payout." },
+  { q: "How long does resolution take?", a: "Reported at 2 to 30 days, with more complicated cases up to 60." },
+]} />
+
+<Sources items={[
+  { title: 'How to file inbound shipment claims on Amazon FBA (the Discrepancy column in Manage FBA Shipments; only Closed shipments investigated; SKU-level expected against received; 9-month filing deadline; resolution in 2 to 30 days and up to 60 for complex cases; monthly audit schedule)', publisher: 'Refunzo', href: 'https://www.refunzo.com/insights/file-inbound-shipment-claims-amazon-fba', accessed: '2026-08-08' },
+  { title: 'How to reconcile Amazon inbound shipment claims (signed packing slips for manufacturers; box count and total weight documentation at carrier pickup; non-editable formats only with Excel and Word not accepted; details that help the investigation)', publisher: 'Threecolts', href: 'https://www.threecolts.com/blog/reconcile-amazon-inbound-shipment-claims/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA reimbursement guide 2026 (60-day eligibility window for manual claims with most categories tighter; 30-day discrepancy sweeps; automated credits rarely matching unit value; reimbursement at manufacturing cost)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/amazon-reimbursement-guide', accessed: '2026-08-08' },
+  { title: 'How to submit lost inbound discrepancies for Amazon FBA (the three shapes of inbound discrepancy; waiting period before claims are accepted followed by a hard cutoff; reviewing closed shipments monthly at minimum)', publisher: 'Sellify', href: 'https://www.sellify.app/documentation/how-to-submit-lost-inbound-discrepancies-for-amazon-fba-without-wasting-weeks', accessed: '2026-08-08' },
+  { title: 'Amazon FBA inventory discrepancy: how to find and fix it (Inventory Reconciliation, Reimbursements and Returns reports; the Seller Central case route with ASIN, FNSKU and shipment ID)', publisher: 'Revnoxa', href: 'https://revnoxa.com/blog/amazon-fba-inventory-discrepancy-fix', accessed: '2026-08-08' },
+  { title: 'Amazon FBA shipment reconciling (roughly 20% of shipments arriving with a discrepancy; the Research missing units status; filtering the queue to closed shipments)', publisher: 'Ridgeline Insights', href: 'https://www.ridgelineinsights.com/post/amazon-fba-shipment-reconciliation', accessed: '2026-08-08' },
+  { title: 'What to do when Amazon misplaces your FBA inventory (the Reconcile tab and its eligibility date; inbound against warehouse discrepancies; the process rarely being automatic)', publisher: 'Sitruna', href: 'https://www.sitruna.com/post/what-to-do-when-amazon-misplaces-your-fba-inventory', accessed: '2026-08-08' },
+]} />

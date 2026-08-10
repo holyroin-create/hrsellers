@@ -1,19 +1,80 @@
 ---
-import Btn from '../../components/Btn.astro';
 import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Btn from '../../components/Btn.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import { TOOLS } from '../../data/tools';
+
+const groups = [...new Set(TOOLS.map(t => t.category))];
 ---
-<Base title="Tool reviews" noindex={true} description="Software reviews for marketplace sellers, scored against a published rubric on paid plans. None published yet.">
-<section class="wrap" style="padding:4rem 1.5rem 0">
-  <p class="eyebrow">Reviews</p>
-  <h1 style="max-width:18ch">Tool reviews</h1>
-  <p style="max-width:44ch;color:var(--ink-soft);margin-top:1.2rem">
-    <strong>No reviews are published yet.</strong> The scoring rubric is published in advance so the
-    standard exists before the first review does. When reviews begin, each will state the plan tier
-    tested, the month of testing, and any affiliate relationship with the vendor. Tools are bought at
-    list price; vendor-supplied review accounts are declined.
+<Base title="Seller software pricing" description="What the main Amazon seller tools actually cost in 2026, with every figure sourced and dated — and the disagreements between published sources recorded rather than resolved.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Tools', href: '/reviews/' }]} /></div>
+
+<section class="wrap" style="padding:1.5rem 1.25rem 0">
+  <p class="eyebrow">Software</p>
+  <h1 style="max-width:20ch">What seller software actually costs</h1>
+  <p style="max-width:46ch;font-size:1.15rem;color:var(--ink-soft);margin:1.2rem 0 1.4rem">
+    Nine tools, priced from published sources with the date each figure was checked. Half of them
+    carry a contested block, because sources dated within months of each other give different
+    numbers for the same plan — usually monthly against annual, sometimes a retired plan that
+    directories never removed.
   </p>
-  <p style="font-family:var(--display);font-size:.9rem">
-    <Btn href="/how-we-test/">Read the rubric</Btn>
+
+  <p class="note" style="margin:0 0 2rem">
+    <strong>These are pricing references, not tested reviews.</strong> No tool here has been
+    purchased or used by this site. Scored reviews follow the <a href="/how-we-test/">published
+    rubric</a>, are bought at list price, and state the plan tier and month tested. Some outbound
+    links are commissioned — see the <a href="/affiliate-disclosure/">affiliate disclosure</a>.
   </p>
+
+  <div class="prose">
+    <table>
+      <thead><tr><th>Tool</th><th>Category</th><th>Reported entry price</th></tr></thead>
+      <tbody>
+        {TOOLS.map(t => (
+          <tr>
+            <td><strong><a href={`/reviews/${t.slug}/`}>{t.name}</a></strong><br /><span class="note">{t.oneLiner}</span></td>
+            <td>{t.category}</td>
+            <td>{t.pricing[0].v}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <AdSlot inline={true} label="Software index — mid page" />
+
+  <div class="prose">
+    <h2>Why the prices disagree</h2>
+    <p>
+      Three causes account for nearly all of it. Vendors quote monthly and annual rates from the same
+      headline, and a source that does not state the billing term is unusable. Promotions run and
+      lapse without the published figure being revisited. And software directories carry prices they
+      have not rechecked in years — one listing in this set gives a figure whose own disclaimer dates
+      it to 2019.
+    </p>
+    <p>
+      The practical rule is the same one that applies to fee schedules elsewhere on this site: a price
+      without a date is a rumour with a decimal point. Every figure here carries the date it was
+      checked, and the vendor's own page is the only current source.
+    </p>
+
+    <h2>Before you subscribe to anything</h2>
+    <p>
+      Software is a small line in most seller cost structures and it attracts disproportionate
+      attention. The costs that actually decide whether a product works are elsewhere, and no
+      subscription changes them.
+    </p>
+    <ul>
+      <li><a href="/guides/landed-cost-fee-stack/">What a unit actually costs to land</a></li>
+      <li><a href="/guides/amazon-fba-fee-changes-2026/">The 2026 fee changes</a></li>
+      <li><a href="/guides/fba-reimbursement-sourcing-cost/">What a lost unit is actually worth</a></li>
+    </ul>
+  </div>
+
+  <div class="btn-row" style="margin:2rem 0 3rem">
+    <Btn href="/tools/margin-calculator/">Run your own numbers</Btn>
+    <Btn href="/how-we-test/" quiet={true}>Read the rubric</Btn>
+  </div>
 </section>
 </Base>

@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../config';
+---
+<Base title="Cookie policy" description="What cookies and similar technologies this site uses, why, and how to control them.">
+<div class="wrap"><Breadcrumbs trail={[{ label: 'Cookie policy', href: '/cookie-policy/' }]} /></div>
+<section class="wrap" style="padding:1.5rem 1.25rem 0">
+  <p class="eyebrow">Legal</p>
+  <h1 style="max-width:22ch">Cookie policy</h1>
+  <p style="max-width:46ch;font-size:1.12rem;color:var(--ink-soft);margin:1.2rem 0 1.8rem">
+    What is stored on your device when you read this site, what it is used for, and how to turn it
+    off.
+  </p>
+
+  <div class="prose">
+    <h2>What a cookie is</h2>
+    <p>
+      A small text file placed on your device by a website. Similar technologies — local storage,
+      pixels, tags — do comparable things and are covered by this policy wherever they are used.
+    </p>
+
+    <h2>What this site uses</h2>
+    <table>
+      <thead><tr><th>Category</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Strictly necessary</strong></td>
+          <td>Security, load balancing and delivering pages. These cannot be switched off without breaking the site.</td>
+        </tr>
+        <tr>
+          <td><strong>Consent record</strong></td>
+          <td>Where a consent banner is shown, a record of your choice is stored so you are not asked on every page.</td>
+        </tr>
+        <tr>
+          <td><strong>Analytics</strong></td>
+          <td>Aggregate measurement of which pages are read. Used to decide what to write next, not to identify individuals.</td>
+        </tr>
+        <tr>
+          <td><strong>Advertising</strong></td>
+          <td>Where advertising is served by a third-party network, that network may set its own cookies. Those are governed by the network's policy, not this one.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Third parties</h2>
+    <p>
+      Some cookies are set by companies other than us — an advertising network, an analytics provider,
+      or an embedded service. We do not control what those companies do with the data they collect,
+      and their own policies govern it. Where a link on this site is an affiliate link, following it
+      may cause the destination site to set a cookie recording the referral; see the
+      <a href="/affiliate-disclosure/">affiliate disclosure</a>.
+    </p>
+
+    <h2>Your choices</h2>
+    <p>
+      Where a consent mechanism is presented — for readers in regions whose law requires one — your
+      choice is recorded and can be changed at any time through that mechanism.
+    </p>
+    <p>
+      Independently of anything this site does, your browser can block or delete cookies. Every major
+      browser has this in its settings, usually under privacy. Blocking strictly necessary cookies may
+      stop parts of the site working.
+    </p>
+
+    <h2>How long cookies last</h2>
+    <p>
+      Some cookies are deleted the moment you close your browser; these are session cookies, and they
+      generally exist to keep a page working while you are on it. Others persist for a set period so
+      that a preference — a consent choice, for instance — does not have to be collected again on
+      every visit. The retention period is set by whoever placed the cookie, which for third-party
+      cookies means the third party rather than us.
+    </p>
+
+    <h2>What we do not do</h2>
+    <p>
+      This site does not sell personal data, and it does not use cookies to build a profile of you for
+      resale. Where advertising is served, the network's own targeting practices apply and are
+      described in that network's policy — but the arrangement is that they serve advertising, not
+      that we hand over a reader database.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      This policy changes when what the site uses changes. The <a href="/privacy/">privacy policy</a>
+      covers personal data more broadly, and the <a href="/terms/">terms</a> cover use of the site.
+    </p>
+
+    <p class="note">
+      {SITE.name} is an independent publication. If anything here is unclear, the
+      <a href="/contact/">contact page</a> is the route to a straight answer.
+    </p>
+  </div>
+</section>
+</Base>

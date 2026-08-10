@@ -1,0 +1,24 @@
+# Legacy URLs from the pre-2026 site structure.
+# Old guides lived at /guides/<category>/<slug>/; the current structure is
+# /guides/<slug>/. Old category index pages no longer exist. Each line maps a
+# retired URL to its closest current equivalent with a permanent redirect.
+
+# --- retired guides -------------------------------------------------------
+/guides/account-management/account-suspension-recovery/   /guides/account-suspension-appeal/       301
+/guides/account-management/amazon-account-health/         /guides/account-suspension-appeal/       301
+/guides/fees-reimbursements/amazon-seller-fees-2026/      /guides/amazon-fba-fee-changes-2026/     301
+/guides/fees-reimbursements/fba-reimbursements-2026/      /guides/fba-reimbursement-sourcing-cost/ 301
+/guides/getting-started/choosing-first-marketplace/       /marketplaces/                           301
+/guides/getting-started/validate-product-before-buying/   /guides/product-research-cost-errors/    301
+/guides/scaling/second-sales-channel/                     /marketplaces/                           301
+/guides/shipping-logistics/shipment-discrepancy-claims/   /guides/fba-reimbursement-sourcing-cost/ 301
+
+# --- retired category index pages ----------------------------------------
+/guides/account-management/    /guides/   301
+/guides/fees-reimbursements/   /guides/   301
+/guides/getting-started/       /guides/   301
+/guides/scaling/               /guides/   301
+/guides/shipping-logistics/    /guides/   301
+
+# --- catch-all for any other retired two-level guide URL -----------------
+/guides/*/*   /guides/   301

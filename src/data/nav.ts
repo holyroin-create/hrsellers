@@ -22,7 +22,7 @@ export const NAV = [
     { href: '/marketplaces/etsy/', label: 'Etsy', note: 'Three fees, and the one you cannot refuse' },
     { href: '/marketplaces/aliexpress/', label: 'AliExpress', note: 'Lowest headline fee, and an unsettled one' },
     { href: '/marketplaces/shopify/', label: 'Shopify', note: 'No referral fee, and no traffic either' },
-    { href: '/reviews/', label: 'Tool reviews', note: 'Scored against a published rubric' },
+    { href: '/reviews/', label: 'Software pricing', note: 'Nine tools, sourced and dated' },
   ]},
   { label: 'Reference', href: '/glossary/', children: [
     { href: '/glossary/', label: 'Glossary', note: '26 terms, one page' },

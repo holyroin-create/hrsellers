@@ -602,6 +602,24 @@ export const COVERS: Record<string, Cover> = {
 
 
 
+  'shipment-discrepancy-claims': {
+    kind: 'range',
+    label: 'Published claim window',
+    labelShort: 'Claim window',
+    figure: '60 days – 9 months',
+    caption: 'Two 2026 sources. Not close. Review monthly and it stops mattering.',
+    unit: '',
+    lo: 60,
+    hi: 270,
+    mid: 60,
+    loTag: 'tightest',
+    hiTag: 'loosest',
+    midTag: 'tightest',
+    stamp: 'Roughly 20% of shipments arrive with a discrepancy',
+    stampShort: '~1 in 5',
+    tone: 'cost',
+  },
+
   /* Site-level covers. These belong to the publication rather than to one
      guide, so they can sit on the home page without repeating a story. */
   'policy-timeline': {
