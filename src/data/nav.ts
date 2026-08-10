@@ -14,12 +14,14 @@ export const NAV = [
   ]},
   { label: 'Guides', href: '/guides/', children: [
     { href: '/guides/', label: 'All guides', note: 'Fees, shipping, software' },
-    { href: '/marketplaces/', label: 'All marketplaces', note: 'Five fee structures, side by side' },
+    { href: '/marketplaces/', label: 'All marketplaces', note: 'Seven fee structures, side by side' },
     { href: '/marketplaces/amazon/', label: 'Amazon', note: 'The 2026 fee stack, line by line' },
     { href: '/marketplaces/walmart/', label: 'Walmart', note: 'WFS economics and the under-$10 surcharge' },
     { href: '/marketplaces/ebay/', label: 'eBay', note: 'What the 13.6% is actually charged on' },
     { href: '/marketplaces/tiktok-shop/', label: 'TikTok Shop', note: 'Why a 6% fee costs about 30%' },
     { href: '/marketplaces/etsy/', label: 'Etsy', note: 'Three fees, and the one you cannot refuse' },
+    { href: '/marketplaces/aliexpress/', label: 'AliExpress', note: 'Lowest headline fee, and an unsettled one' },
+    { href: '/marketplaces/shopify/', label: 'Shopify', note: 'No referral fee, and no traffic either' },
     { href: '/reviews/', label: 'Tool reviews', note: 'Scored against a published rubric' },
   ]},
   { label: 'Reference', href: '/glossary/', children: [

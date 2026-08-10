@@ -444,6 +444,174 @@ export const MARKETPLACES: Marketplace[] = [
       { title: 'Etsy fees 2026: every seller cost explained', publisher: 'FeeCalculator', href: 'https://feecalculator.pro/etsy-fees-2026/', accessed: ACCESSED },
     ],
   },
+
+  /* ------------------------------------------------------------------ */
+  {
+    slug: 'aliexpress',
+    name: 'AliExpress',
+    short: 'Among the lowest headline fees anywhere. Sources cannot agree whether the rate follows the category or the order value.',
+    eyebrow: 'Marketplace',
+    h1: 'Selling on AliExpress: the 2026 fee structure, and the disagreement inside it',
+    lede: 'No subscription and no listing fee, with a commission most sources put between 5% and 8%. That much is consistent. What is not consistent is what determines the rate — half the published guidance says product category, and one 2026 account says order value, with a 12% band above $200. Those describe different businesses, and the difference decides whether mid-ticket products work here at all.',
+    checked: ACCESSED,
+    headline: [
+      { k: 'Account', v: 'No monthly subscription', note: 'Reported as commission-only for international sellers; no per-listing fee' },
+      { k: 'Commission', v: '5%–8% of sale price', note: 'Most sources; reported as varying by product category' },
+      { k: 'Commission — alternative account', v: '5% under $30 · 8% $30–$200 · 12% above $200', note: 'One 2026 source describes tiers by order value instead of category — see contested below' },
+      { k: 'Payment processing', v: 'roughly 1%–3.4%', note: 'Sources give 1%–3% and 2.4%–3.4%; varies by payment method and buyer location' },
+      { k: 'Combined cost', v: 'roughly 7%–11.4% of sale price', note: 'Commission plus processing, per two 2026 calculators' },
+      { k: 'Items under $2.99', v: 'No commission reported', note: 'Described as a deliberate move to keep the low-price catalogue flowing' },
+      { k: 'Settlement', v: 'Reported 15-day hold', note: 'One source puts sale-to-bank at 20–30 days including withdrawal' },
+      { k: 'Annual platform fee', v: 'Reported for some seller types', note: 'Described as category-dependent, with reductions or partial refunds at sales thresholds' },
+    ],
+    fulfilment: {
+      title: 'Choice, and what it changed',
+      intro: 'AliExpress Choice is reported to have become the default managed shipping and fulfilment layer in 2026. That moves delivery promises out of your control and into the platform\u2019s — which is an advantage when it works and an exposure when it does not.',
+      rows: [
+        { k: 'AliExpress Choice', v: 'Managed shipping and fulfilment', note: 'Reported as the default layer in 2026 rather than an option' },
+        { k: 'Growth Grants', v: 'Up to 100% of logistics fees for 90 days', note: 'Reported thresholds: 97% on-time dispatch, $22 average order value, return rate no higher than 4.1%' },
+        { k: 'Delivery promise', v: 'Set by the path each product uses', note: 'Reporting warns that a mismatch between promise and real lead time is the fastest route to refunds' },
+      ],
+    },
+    gotchas: [
+      {
+        title: 'The de minimis change lands here too',
+        body: 'Reporting names the end of duty-free treatment for China-direct parcels into the US as one of the three changes that matter most on this platform in 2026. If your model depended on low-value parcels entering the US without duty, that model no longer describes the arrangement — the same change covered in our de minimis guide.',
+      },
+      {
+        title: 'The commission structure is genuinely unsettled',
+        body: 'Category-based 5%\u20138% and value-based 5/8/12% are not two readings of one rule. If the tiered account is correct, a $250 order carries 12% rather than the 5%\u20138% you modelled — and mid-ticket resale, the $30 to $200 band, carries a fee layer that reporting says did not meaningfully exist before. Verify in Seller Center before pricing.',
+      },
+      {
+        title: 'Cash is slow',
+        body: 'A reported 15-day settlement hold, with one source putting total sale-to-bank at 20 to 30 days once withdrawal timelines are counted. Against the same problem on Amazon under DD+7, this is not unusual — but it is a working capital requirement, not a detail.',
+      },
+      {
+        title: 'The new-seller waiver is real and temporary',
+        body: 'One 2026 account describes no commission during the first six months or the first hundred sales for new sellers. A launch that looks profitable on waived fees is not a test of whether the product works at the standing rate.',
+      },
+    ],
+    example: {
+      label: 'A $40 home and garden item, sold with commission at 6% and processing at 3%',
+      rows: [
+        { k: 'Sale price', v: '$40.00' },
+        { k: 'Commission at 6% (illustrative, category-based)', v: '\u2212$2.40', tone: 'cost' },
+        { k: 'Payment processing at 3%', v: '\u2212$1.20', tone: 'cost' },
+      ],
+      net: '$36.40',
+      rate: '9.0% of the sale price, before shipping, returns and cost of goods',
+    },
+    contested: [
+      { claim: 'What determines the commission rate', detail: 'Most published guidance says product category, at 5%\u20138%. One 2026 source describes tiers by order value \u2014 roughly 5% under $30, 8% from $30 to $200, and 12% above $200. These are not compatible, and the difference is largest exactly where mid-ticket sellers operate.' },
+      { claim: 'Payment processing rate', detail: 'Given as 1%\u20133% by one source and 2.4%\u20133.4% by another, both published in 2026. Combined cost estimates land between 6% and 11.4% as a result.' },
+      { claim: 'Store or platform fee', detail: 'One source describes a $1,500 fixed store fee, others describe no subscription at all and only an annual technical service fee for some categories. Regional and seller-type differences are the likely explanation \u2014 confirm for your own registration route.' },
+    ],
+    fits: [
+      'Niche or hard-to-find products sourced cheaply, where a low fee base matters more than platform demand',
+      'Sellers in markets where domestic e-commerce infrastructure is limited and global reach is the point',
+      'Electronics and tools, where the reported commission sits at the low end of the range',
+    ],
+    againstIt: [
+      'Premium and branded goods \u2014 reporting describes the marketplace as skewing toward value pricing',
+      'Anyone who needs fast cash flow, given the reported settlement hold',
+      'Mid-ticket products, if the value-tiered commission account is the correct one',
+    ],
+    sources: [
+      { title: 'AliExpress seller fees 2026 \u2014 complete fee breakdown for every category', publisher: 'ProfitCalcu', href: 'https://profitcalcu.com/blog/aliexpress-seller-fees-2026/', accessed: ACCESSED },
+      { title: 'AliExpress fee calculator 2026 (commission 5%\u20138% plus processing 2.4%\u20133.4%; combined 7.9%\u201311.4%)', publisher: 'ProfitCalcu', href: 'https://profitcalcu.com/aliexpress/', accessed: ACCESSED },
+      { title: 'AliExpress changes 2026: new fees, US duties and Choice rules', publisher: 'ShopAppy', href: 'https://shopappy.com/ecommerce/aliexpress/aliexpress-changes-2026', accessed: ACCESSED },
+      { title: 'How AliExpress seller fees work \u2014 complete guide 2026', publisher: 'World of Calculator', href: 'https://worldofcalculator.com/how-aliexpress-seller-fees-work/', accessed: ACCESSED },
+      { title: 'How to sell on AliExpress: fees and step-by-step guide', publisher: 'CedCommerce', href: 'https://cedcommerce.com/blog/how-to-open-aliexpress-seller-account-to-sell-on-aliexpress/', accessed: ACCESSED },
+      { title: 'How to sell on AliExpress from the United States in 2026', publisher: 'AliHelper', href: 'https://alihelper.net/blog/en/how-to-sell-on-aliexpress-from-united-states/', accessed: ACCESSED },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
+    slug: 'shopify',
+    name: 'Shopify',
+    short: 'Not a marketplace. No referral fee and no demand — you pay a subscription and buy every visitor yourself.',
+    eyebrow: 'Platform',
+    h1: 'Selling on Shopify: what it costs, and what it does not give you',
+    lede: 'Every other page in this section describes a fee taken out of a sale somebody else sent you. Shopify inverts that: there is no referral fee, and there is no traffic. The plan price is the number people compare and the smallest line on the bill \u2014 card processing dominates at any real volume, and the published plan prices themselves disagree because half the sources quote annual billing without saying so.',
+    checked: ACCESSED,
+    headline: [
+      { k: 'Starter', v: '$5 / month', note: 'Checkout link only \u2014 not a full storefront' },
+      { k: 'Basic', v: '$39 / month monthly, ~$29 annual', note: 'Sources also give $27; annual billing explains most of the spread' },
+      { k: 'Grow', v: '$105 / month monthly, ~$79 annual', note: 'Renamed from "Shopify" in 2026; one source gives $72' },
+      { k: 'Advanced', v: '$399 / month monthly, ~$299 annual', note: 'Reported as topping out around $1M a year in sales' },
+      { k: 'Plus', v: 'From $2,300 / month', note: 'Contract-based; reported on a 3-year term billed yearly' },
+      { k: 'Card processing (Basic)', v: '2.9% + 30\u00a2 online', note: '2.6% + 10\u00a2 in person, via Shopify Payments' },
+      { k: 'Card processing (Grow)', v: '2.7% + 30\u00a2 online', note: '2.5% + 10\u00a2 in person' },
+      { k: 'Card processing (Advanced)', v: '2.5% + 30\u00a2 online', note: 'One source gives 2.4% + 10\u00a2 in person' },
+      { k: 'Third-party gateway surcharge', v: '2% Basic \u00b7 1% Grow \u00b7 0.6% Advanced', note: 'On top of whatever your gateway charges. Zero if you use Shopify Payments' },
+    ],
+    fulfilment: {
+      title: 'There is no fulfilment fee, and that is the point',
+      intro: 'Shopify does not hold your inventory or ship your orders. Fulfilment is whatever you arrange \u2014 your own warehouse, a 3PL, or Amazon Multi-Channel Fulfillment routing your FBA stock to Shopify orders. The cost sits outside the platform entirely.',
+      rows: [
+        { k: 'Fulfilment fee', v: 'None charged by the platform', note: 'You pay a 3PL, or you pack it yourself' },
+        { k: 'Routing FBA stock here', v: 'Possible through MCF', note: 'One inventory pool; note the peak surcharge runs 15 October to 14 January on MCF too' },
+        { k: 'Apps', v: 'Reported $350\u2013$1,400 / month for mid-market brands', note: 'The line most first-time modellers omit entirely' },
+      ],
+    },
+    gotchas: [
+      {
+        title: 'The third-party gateway surcharge is the expensive mistake',
+        body: 'Sell $20,000 a month through PayPal on Basic and you pay PayPal\u2019s rate plus Shopify\u2019s 2% penalty \u2014 roughly $400 a month for not using Shopify Payments. Reporting\u2019s own verdict on whether that is worth it: almost never.',
+      },
+      {
+        title: 'The plan fee is not the cost',
+        body: 'At $30,000 a month in revenue on Basic, one worked example puts the bill at $39 in subscription and roughly $900 in card processing. The plan is 4% of the total. Comparing platforms on subscription price compares the wrong number.',
+      },
+      {
+        title: 'Traffic is the whole problem',
+        body: 'A marketplace fee buys you demand. Shopify does not. Reporting across the diversification literature is consistent that marketplace rank does not transfer \u2014 a brand with strong Amazon placement and no independent audience does not automatically sell on its own site.',
+      },
+      {
+        title: 'You become the sales tax collector',
+        body: 'Marketplace facilitator laws put sales tax collection on Amazon, Walmart and eBay. On your own store, that obligation is yours in every state where you have nexus \u2014 including states where FBA inventory created it.',
+      },
+      {
+        title: 'Basic includes no staff accounts',
+        body: 'Reported as unchanged since 2024: the store owner is the only login on Basic. Staff need Grow, or a collaborator invitation through a free Partner account.',
+      },
+    ],
+    example: {
+      label: 'A $100 order on the Basic plan through Shopify Payments, with the subscription allocated over 300 orders',
+      rows: [
+        { k: 'Sale price', v: '$100.00' },
+        { k: 'Card processing at 2.9% + 30\u00a2', v: '\u2212$3.20', tone: 'cost' },
+        { k: 'Plan fee, allocated over 300 orders', v: '\u2212$0.13', tone: 'cost' },
+        { k: 'Apps, allocated (illustrative, lean stack)', v: '\u2212$0.30', tone: 'cost' },
+      ],
+      net: '$96.37',
+      rate: '3.6% of the sale price \u2014 before the cost of acquiring the customer, which is the real number here',
+    },
+    contested: [
+      { claim: 'Plan prices', detail: 'Basic is given as $39, $29 and $27; Grow as $105, $79 and $72; Advanced as $399 and $299. Monthly against annual billing explains most of it, but several sources do not say which they are quoting \u2014 check the billing term before comparing.' },
+      { claim: 'The Agentic plan', detail: 'One 2026 source lists a new Agentic plan at $0 per month among six tiers. Others describe five plans and do not mention it. Treat it as unconfirmed until you see it on Shopify\u2019s own pricing page.' },
+      { claim: 'App spend', detail: 'One source puts a mid-market app stack at $350\u2013$1,400 a month; another describes beginner stores staying under $50 a month all-in. Both are plausible for different businesses, which is why an average is useless here.' },
+    ],
+    fits: [
+      'Brands with an existing audience \u2014 email list, social following, or repeat customers who already know the name',
+      'Sellers wanting the customer relationship and the data that marketplaces do not hand over',
+      'Anyone whose margin is being consumed by referral fees on a product that does not need marketplace discovery',
+    ],
+    againstIt: [
+      'Sellers expecting marketplace demand to follow them \u2014 reporting is consistent that it does not',
+      'Anyone treating it as a volume replacement rather than a margin and data play',
+      'Businesses without the capacity to take on sales tax collection in every nexus state',
+    ],
+    sources: [
+      { title: 'Shopify pricing (2026): plans, fees and real cost breakdown', publisher: 'Commerce-UI', href: 'https://commerce-ui.com/insights/shopify-pricing', accessed: ACCESSED },
+      { title: 'Shopify pricing plans 2026: complete cost breakdown', publisher: 'Craftshift', href: 'https://craftshift.com/shopify-pricing-plans-2026-complete-breakdown/', accessed: ACCESSED },
+      { title: 'Shopify pricing (2026): plans, fees and real costs', publisher: 'Shero Commerce', href: 'https://sherocommerce.com/blogs/insights/shopify-pricing', accessed: ACCESSED },
+      { title: 'Shopify pricing: plans and fees explained (2026 updated)', publisher: 'Skailama', href: 'https://www.skailama.com/blog/shopify-pricing-plan', accessed: ACCESSED },
+      { title: 'Shopify pricing 2026: every plan, fee and hidden cost explained', publisher: 'Startup Launch Page', href: 'https://www.startuplaunchpage.com/blog/shopify-pricing-2026', accessed: ACCESSED },
+      { title: 'Shopify pricing 2026: which plan to choose?', publisher: 'Ecomm.design', href: 'https://ecomm.design/shopify-pricing-guide/', accessed: ACCESSED },
+    ],
+  },
 ];
 
 export const bySlug = (slug: string) => MARKETPLACES.find((m) => m.slug === slug);
