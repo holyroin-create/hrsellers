@@ -1,0 +1,134 @@
+---
+title: "The cheapest offer usually loses the Buy Box. Here is what actually decides it."
+description: "Amazon compares landed price, not sticker price, and reporting puts the tolerance at roughly 5% of the lowest qualified offer. Fulfilment speed and seller health now carry comparable weight — which is why an FBA offer can price above an FBM one and still win."
+category: "Scaling"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 11
+numbered: true
+ledger: "Tolerance: ~5% of the lowest landed price"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Amazon compares landed price — item plus shipping — not the listed figure. A $19.99 item with $3.99 shipping loses to a $22.99 Prime offer with free delivery.",
+  "Reporting puts the pricing tolerance at roughly 5% of the lowest qualified landed price. Outside it you are eligible but not rotating.",
+  "It is a rotation, not a winner-take-all auction. Multiple eligible sellers share the box across the day, weighted by how good their offer is. Reporting describes rotation on busy listings happening within minutes.",
+  "Reporting states an October 2025 change made 0-day handling the fulfilment speed baseline. An FBM offer with two-day handling is described as losing rotation share to FBA and Seller-Fulfilled Prime automatically.",
+  "Amazon also compares your price against other retailers. Reporting describes the Fair Pricing Policy suppressing the box entirely when the lowest offer on the listing sits high against external benchmarks.",
+]} />
+
+Reporting puts Buy Box share of Amazon purchases at roughly 80% or more, and higher on mobile where the alternative-offer links are barely visible. For anyone sharing a listing, it is the single largest lever on revenue.
+
+It is also the subject where seller folklore is furthest from how the mechanism is described.
+
+## It is a rotation, not a prize
+
+The most useful correction first. This is not an auction with a permanent winner.
+
+Multiple eligible sellers share the Featured Offer across a period, and the share is weighted by the quality of the offer. One description puts it as a weighted lottery where better sellers hold more tickets. Another gives a worked illustration: a seller with strong metrics, good stock and recent sales volume might hold the box for around 75% of a 24-hour period.
+
+Reporting describes rotation on busy listings occurring **within minutes**, sometimes faster, with the ranking recalculated constantly.
+
+That has a practical consequence. **Your objective is share, not a binary win.** The metric is Featured Offer percentage, reported in Seller Central under Business Reports.
+
+| Seller type | Reported healthy share |
+| --- | --- |
+| Private label, limited competition | 90–95%+ · below that suggests a listing problem |
+| Wholesale on competitive ASINs | 60–80% · above 70% with healthy margin is strong |
+| Online arbitrage, unauthorised reseller categories | 20–50% · workable with volume |
+
+Those are reported ranges from one source and worth treating as orientation rather than targets. The useful part is the structure: what counts as healthy depends entirely on how contested the listing is.
+
+## Landed price, and the 5% tolerance
+
+This is where most sellers lose the box without understanding why.
+
+**Amazon compares landed price — item price plus shipping — not the number on the listing.** The published example is consistent across sources: a $19.99 item with $3.99 shipping, landing at $23.98, loses to a $22.99 Prime offer with free delivery.
+
+Reporting puts the tolerance at approximately **5% of the lowest qualified landed price**. Inside it you rotate; outside it you are eligible but not featured.
+
+One worked example describes three sellers where the one with the lowest item price has the highest landed price and loses, and a second seller sits 5.2% above the winner — right at the edge — where dropping $0.50 brings them into rotation and not dropping it leaves them invisible.
+
+<Figure value="~5%" kind="cost" source="Feedvisor and other 2026 Buy Box analyses, accessed 8 August 2026">
+  The reported tolerance band around the lowest qualified landed price. Inside it you rotate; outside it you are eligible and invisible.
+</Figure>
+
+**The 2026 fee changes tightened this.** One analysis notes that with the January increase adding roughly $0.25 per unit for small standard items in the $10–$50 band, a seller who absorbs the fee by raising price can cross the 5% boundary. See the [price band guide](/guides/price-tier-repricing-trap/) for why that price move also changes your fulfilment fee.
+
+## Why an FBA offer can charge more
+
+Reporting is consistent that fulfilment method carries substantial weight, and that FBA and Seller-Fulfilled Prime are structurally favoured because they guarantee fast Prime-eligible delivery.
+
+One source puts the practical effect at **FBA sellers often pricing 10% to 15% above FBM sellers on the same item and still winning.**
+
+Reporting also describes an **October 2025 change making 0-day handling the fulfilment speed baseline** for FBM sellers using Seller-Fulfilled Prime or premium shipping. An FBM offer with a two-day handling time is described as losing to every FBA and SFP offer automatically.
+
+If you are FBM on a contested listing and cannot ship same day, the fulfilment method is the lever, not the price.
+
+## The factors, in the order they matter
+
+Amazon does not publish the formula. One description of the mechanism has it operating in three steps: verify eligibility, apply category-specific weights to performance metrics, then rank qualified sellers — with the weights shifting by product, so shipping speed matters more for a birthday card than for kitchenware.
+
+Consistently named factors:
+
+1. **Landed price** — item plus shipping, within roughly 5% of the lowest qualified offer
+2. **Fulfilment method** — FBA and SFP favoured; 0-day handling as the FBM baseline
+3. **Delivery speed** — faster estimated delivery wins, all else equal
+4. **Order Defect Rate** — target under 1%
+5. **In-stock consistency** — running out forfeits the box entirely
+6. **Late shipment, cancellation and valid tracking rates**
+7. **Customer service history** — feedback score and responsiveness
+8. **Competitive external price** — checked against other retailers
+
+That last one surprises people. Reporting describes Amazon comparing the same product's price on other retail sites, and the Fair Pricing Policy suppressing the box where the Amazon price sits significantly above those benchmarks.
+
+**When there is no Buy Box at all**, this is usually why: the page loses its Add to Cart button and buyers must click through to all buying options. Reporting describes it as generally meaning the lowest landed price on the listing is high compared with what Amazon sees elsewhere. Lower the price and the box returns.
+
+## Diagnosing a low share
+
+Work in this order. Reporting is consistent that no amount of repricing outruns a metrics problem.
+
+**1. Audit account health for a week.** Open Seller Central and record ODR, late shipment rate and cancellation rate daily. Anything drifting toward a threshold is the first fix.
+
+**2. Check eligibility per ASIN.** Inventory, then Manage All Inventory, shows Featured Offer eligibility status per ASIN. Reporting describes a new FBA seller with good early metrics seeing eligibility in 30 to 60 days, and an FBM seller with early late shipments waiting closer to 120.
+
+**3. Compare landed prices, not item prices.** Including your competitors' shipping.
+
+**4. Check Prime eligibility on your core SKUs.** A top-selling unit sitting in FBM with a long handling time is described as an obvious lever.
+
+**5. Check stock.** Running out forfeits the box, and the [low-inventory-level fee](/guides/low-inventory-level-fee/) is charged on the sales you do make while thin.
+
+**6. Then consider repricing.** Reporting notes manual repricing rarely keeps pace with a rotation that recalculates within minutes — which is a fair observation, though note that most sources making it sell repricing software.
+
+## Two things that are not true
+
+**"Just undercut the lowest price."** One analysis reports testing this extensively across products, price points and categories and finding it does not work. Price is one weighted input among several, and beating it while carrying weak metrics does not produce the box.
+
+**"Amazon always wins its own listings."** Reporting states Amazon does not automatically win, and third-party sellers who stay competitive on landed price with strong metrics and fast shipping do win against it.
+
+<Faq items={[
+  { q: "What is the difference between the Buy Box and the Featured Offer?", a: "Nothing. Amazon renamed the Buy Box to Featured Offer in 2023. Seller Central says Featured Offer; most sellers still say Buy Box." },
+  { q: "Do I need the lowest price to win?", a: "No, and the cheapest offer frequently loses. Amazon compares landed price — item plus shipping — and weighs fulfilment speed and seller health alongside it. An FBA offer is reported as often winning at 10% to 15% above an FBM offer." },
+  { q: "How close does my price need to be?", a: "Reporting puts the tolerance at roughly 5% of the lowest qualified landed price. Outside it you remain eligible but do not rotate into the box." },
+  { q: "Why does the listing have no Buy Box at all?", a: "Reporting describes this as usually meaning the lowest landed price on the listing is high compared with prices Amazon sees at other retailers, with the Fair Pricing Policy suppressing the box. Lowering the price generally restores it." },
+  { q: "How long until a new seller becomes eligible?", a: "Reporting describes 30 to 60 days for a new FBA seller with good early metrics, and closer to 120 days for an FBM seller with late shipments in the first month." },
+  { q: "Where do I see my share?", a: "Seller Central, under Business Reports, as Featured Offer percentage. Share is the metric, not a binary win." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon Buy Box: what actually wins the Featured Offer in 2026 (three-step algorithm with category-specific weights; roughly 5% landed-price tolerance; worked three-seller example; testing that undercutting alone does not work; January 2026 fee increases tightening the maths)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/amazon-buy-box/', accessed: '2026-08-08' },
+  { title: 'How to win the Amazon Buy Box in 2026 (share targets by seller type; twelve factors; landed price and external price benchmarks; eligibility timelines of 30–60 and ~120 days)', publisher: 'Repricer', href: 'https://www.repricer.com/blog/amazon-buy-box-guide-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon Featured Offer explained: a seller\u2019s Buy Box guide (rotation within minutes; missing Buy Box and external price comparison; diagnostic order starting with account health)', publisher: 'Repricer', href: 'https://www.repricer.com/blog/amazon-featured-offer-sellers-guide/', accessed: '2026-08-08' },
+  { title: 'Amazon Buy Box 2026: how to win the Featured Offer (roughly 80%+ of purchases through the Buy Box; ranking factors including ODR under 1%; rotation favouring stronger offers)', publisher: 'SPACEGOATS', href: 'https://spacegoats.io/space-wiki/explaining-buybox/', accessed: '2026-08-08' },
+  { title: 'Amazon Buy Box guide 2026 (FBA pricing 10–15% above FBM and still winning; October 2025 0-day handling baseline for SFP and premium shipping; ~5% tolerance)', publisher: 'High Dreams', href: 'https://highdreamsllc.com/2026/07/21/amazon-buy-box-guide/', accessed: '2026-08-08' },
+  { title: 'What is the Amazon Buy Box? The complete 2026 guide (Featured Offer % in Business Reports; share targets; Amazon not automatically winning its own listings; eligibility check per ASIN)', publisher: 'Ainfluencer', href: 'https://ainfluencer.com/what-is-the-amazon-buy-box/', accessed: '2026-08-08' },
+  { title: 'What is the Buy Box on Amazon? (rotation as a weighted system rather than a permanent win)', publisher: 'Repricer', href: 'https://www.repricer.com/blog/what-is-amazon-buy-box/', accessed: '2026-08-08' },
+  { title: 'How to win the Amazon Buy Box: ultimate guide (worked example of a strong seller holding roughly 75% of a 24-hour period)', publisher: 'The Selling Guys', href: 'https://www.thesellingguys.com/how-to-win-the-amazon-buy-box-ultimate-guide/', accessed: '2026-08-08' },
+]} />

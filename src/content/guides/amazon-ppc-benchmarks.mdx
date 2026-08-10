@@ -1,0 +1,151 @@
+---
+title: "Published Amazon ad benchmarks disagree by 8 points on ACOS. Here is how to read them anyway."
+description: "One managed portfolio reports a 38% median ACOS. Another puts healthy at 30–32%. Both are true, because they measure different things. The number that actually decides whether you can afford to advertise is your own margin."
+category: "Scaling"
+published: "2026-08-08"
+modified: "2026-08-08"
+minutes: 12
+numbered: true
+ledger: "Median ACOS 38% per account, 30% spend-weighted"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "One agency's H1 2026 dataset of 38 US accounts reports a median ACOS of 38% per account but 30% when weighted by spend — larger budgets are managed harder toward efficiency, and averages hide that.",
+  "Reported 2026 CPCs cluster around $1.00 to $1.25, described as up 8% to 12% year on year from roughly $0.97 in 2024. Category spread runs from about $0.30 to over $4.00.",
+  "Your target ACOS is not a benchmark, it is a function of your margin. At a 40% margin, a 25% ACOS leaves 15 points; a 45% ACOS loses money on every ad-attributed sale.",
+  "The same dataset reports ads driving a median 41% of total sales across managed accounts, with the middle half between 36% and 54%. Turning ads off is not a cost saving when organic rank depends on the traffic they sustain.",
+  "The cheaper click is frequently the more expensive sale. Cost per acquisition, not cost per click, is the number that decides whether a campaign works.",
+]} />
+
+Advertising is the largest controllable cost most sellers have, and the published guidance on it is a mess of averages taken from incompatible populations.
+
+This guide is about reading those numbers properly, then replacing them with your own.
+
+## The benchmarks, and why they conflict
+
+| Metric | Reported values, 2026 |
+| --- | --- |
+| CPC, blended | $1.07 median (one managed portfolio) · $1.18–$1.22 (two sources) · $0.98 spend-weighted |
+| CPC, category range | $0.30 to over $4.00 · $0.75–$3.50+ · $0.70–$1.50+ |
+| ACOS | 38% median per account · 30% spend-weighted · 30–32% "healthy" · 30.2% all-category average |
+| TACOS | 15% median · 10–15% range · middle half 10–21% |
+| CTR | 0.59% median · 0.4–0.6% · ~0.35% |
+| Conversion rate | 8.3% median · 8–15% · 10–12% |
+
+**These are not contradictions. They are different measurements.**
+
+The 38% and the 30% come from the same dataset: 38 US accounts under one agency's management, January to June 2026. The 38% is the median account; the 30% is the same portfolio weighted by spend. The gap is eight points and the explanation is that larger budgets get managed harder. Both figures are correct and they answer different questions.
+
+The rest of the spread comes from population differences. An agency publishing benchmarks is measuring accounts that hired an agency. A tool vendor is measuring accounts that bought a tool. Neither is measuring you.
+
+<Figure value="38% vs 30%" kind="cost" source="SellerPlex, H1 2026 benchmarks across 38 managed US accounts, accessed 8 August 2026">
+  Median account ACOS against the same portfolio weighted by spend. One dataset, two figures, eight points apart — a demonstration of why a single benchmark number is not usable on its own.
+</Figure>
+
+**One thing to credit:** that dataset publishes its method — 38 accounts, US marketplace, sustained spend across the period, computed per account then summarised as medians so no single account dominates. That is more disclosure than almost anything else in this subject, and it is the reason its figures are quoted here rather than the rounder numbers from sources that disclose nothing.
+
+## The number that actually governs you
+
+Benchmarks tell you what other people spend. Your margin tells you what you can afford.
+
+```
+Break-even ACOS = your margin as a percentage of the sale price
+```
+
+At a 40% margin, a 40% ACOS is break-even on ad-attributed sales. A 25% ACOS leaves 15 points of profit. A 45% ACOS loses money on every one.
+
+Which means **a 32% ACOS is excellent at a 50% margin and ruinous at a 25% margin.** Any article telling you 30% is healthy without asking your margin is telling you nothing.
+
+Note where the margin comes from. It is after everything in the [fee stack](/guides/landed-cost-fee-stack/) — landed cost, referral, fulfilment, the surcharge, storage, returns. Sellers routinely calculate break-even ACOS against gross margin and wonder why a "profitable" ACOS produces no profit. Run it through the [margin calculator](/tools/margin-calculator/) first.
+
+## Why the cheap click is often the expensive sale
+
+One published comparison makes the point cleanly:
+
+| | Campaign A | Campaign B |
+| --- | --- | --- |
+| CPC | $2.50 | $0.80 |
+| Conversion rate | 15% | 3% |
+| Clicks per sale | 6.7 | 33.3 |
+| **Cost per acquisition** | **$16.67** | **$26.67** |
+
+The campaign with the cheaper clicks costs 60% more per sale.
+
+This is the most common error in bid management: optimising toward the metric that is easy to see. CPC is on every dashboard; cost per acquisition takes two more numbers. Bids get cut, the cheap irrelevant keywords survive, the expensive converting ones die, and CPC falls while profit falls faster.
+
+## ACOS against TACOS, and which one to manage by
+
+**ACOS** = ad spend ÷ ad-attributed revenue. Campaign-level efficiency.
+
+**TACOS** = ad spend ÷ total revenue including organic. Account-level health.
+
+The relationship between them is diagnostic:
+
+| Pattern | What it means |
+| --- | --- |
+| ACOS rising, TACOS stable | Ads are building organic rank. The paid share is growing but total efficiency holds |
+| ACOS stable, TACOS rising | You are paying for sales you would have had anyway |
+| Both falling | Working |
+| Both rising | Structural problem — usually keywords, not bids |
+
+One source puts it directly: if your ACOS keeps climbing month over month despite bid adjustments, the keywords are the problem rather than the bids. Cutting bids on a badly targeted campaign makes it slower, not better.
+
+## The number nobody publishes
+
+From the same managed dataset: **ads drove a median 41% of total sales**, with the middle half of accounts between 36% and 54%.
+
+That reframes the whole question. If nearly half your revenue is ad-attributed, and organic rank is partly sustained by the traffic paid search delivers, then "we will turn ads off to save money" is not a cost reduction. It is a revenue decision with a delayed and asymmetric downside — the spend stops immediately and the rank decays over weeks.
+
+Amazon is described in that analysis as a paid-first channel for most managed accounts. Whether that describes your account is testable: look at what share of your sales carry ad attribution.
+
+## The costs that are not the ad spend
+
+Three additions that turn a budget into a real number.
+
+**Management.** Reported at $1,000 to $5,000 a month for retainers, or 10% to 20% of spend for percentage models. One source puts the combined effect at a **1.3× to 1.5× multiplier** on raw ad spend once management and creative are included.
+
+**Seasonal spikes.** CPCs are reported to rise 60% to 80% during Prime Day and Q4, reaching $1.35 to $1.45. A fixed annual budget divided by twelve will overspend in the cheap months and run out in the expensive ones.
+
+**The auction mechanism.** Your bid is not what you pay. Amazon's auction is described as second-price and as rewarding listing relevance, meaning a well-optimised listing can outrank and underpay a higher bid. **Listing quality is a bid-efficiency lever**, and it is cheaper than raising bids.
+
+## What to do
+
+**Calculate your break-even ACOS per SKU, after all fees.** Not per catalogue. This is the only number in this guide that is yours.
+
+**Set target ACOS below break-even by your required margin.** Then treat any benchmark you read as context, not as a target.
+
+**Measure cost per acquisition, not CPC.** Two extra columns in the spreadsheet, and it inverts several decisions.
+
+**Manage the account on TACOS, the campaigns on ACOS.** They answer different questions and using one for both is why sellers optimise campaigns while the account gets worse.
+
+**Check your ad-attributed share of sales.** If it is near 41%, understand that ads are load-bearing before you touch the budget.
+
+**Budget 1.3× to 1.5× your raw spend** if you use an agency or tools, and plan a higher allocation for Prime Day and Q4.
+
+**Fix the listing before raising the bid.** Relevance is an input to what you pay.
+
+<Faq items={[
+  { q: "What is a good ACOS in 2026?", a: "There is no universal answer. Published figures range from a 38% median account to a 30% spend-weighted portfolio to a 30.2% all-category average. What matters is your break-even ACOS, which equals your margin after all fees." },
+  { q: "What is the average Amazon CPC in 2026?", a: "Reported blended figures cluster around $1.00 to $1.25, described as up 8% to 12% year on year from roughly $0.97 in 2024. Category ranges run from about $0.30 to over $4.00." },
+  { q: "Why do published benchmarks disagree so much?", a: "Different populations and different weightings. One dataset alone produces 38% as a median account and 30% weighted by spend. Agency figures measure accounts that hired an agency; tool figures measure accounts that bought a tool." },
+  { q: "Should I manage to ACOS or TACOS?", a: "Campaigns on ACOS, the account on TACOS. Rising ACOS with stable TACOS suggests ads are building organic rank; stable ACOS with rising TACOS suggests you are paying for sales you would have had anyway." },
+  { q: "Can I just turn ads off?", a: "One managed dataset reports ads driving a median 41% of total sales, with organic rank partly sustained by that traffic. The spend stops immediately; the rank decays over weeks. Test your own ad-attributed share before deciding." },
+  { q: "Is a lower CPC always better?", a: "No. A $2.50 click converting at 15% costs $16.67 per sale; a $0.80 click converting at 3% costs $26.67. Cost per acquisition decides it, not cost per click." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon PPC benchmarks 2026 (38 managed US accounts, Jan–Jun 2026; median ACOS 38%, spend-weighted 30%; TACOS median 15%; CPC $1.07 median, $0.98 weighted; ads driving a median 41% of total sales; stated methodology)', publisher: 'SellerPlex', href: 'https://sellerplex.com/amazon-ppc-benchmarks-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon advertising cost 2026: PPC, DSP and SB pricing (cost-per-acquisition comparison at differing conversion rates; target ACOS relative to margin)', publisher: 'Darkroom', href: 'https://www.darkroomagency.com/observatory/amazon-advertising-cost-ppc-dsp-2026', accessed: '2026-08-08' },
+  { title: 'Amazon ads CPC and conversion rate benchmarks 2026 (healthy at roughly 30–32% ACOS, $1.18–$1.22 CPC, 0.4–0.6% CTR, 10–12% CVR, TACOS 10–15%)', publisher: 'Sequence Commerce', href: 'https://sequencecommerce.com/amazon-advertising-benchmarks/', accessed: '2026-08-08' },
+  { title: 'Amazon advertising cost: ACOS and fees (CPC $1.18–$1.22 up from $0.97 in 2024; management retainers $1,000–$5,000/month or 10–20% of spend; 1.3×–1.5× true budget multiplier; format-level CPC ranges)', publisher: 'Build Grow Scale', href: 'https://buildgrowscale.com/amazon-advertising-cost-acos-fees-explained', accessed: '2026-08-08' },
+  { title: 'Amazon ads cost 2026 (second-price auction rewarding listing relevance; CPCs spiking 60–80% during Prime Day and Q4 to $1.35–$1.45)', publisher: 'Xneeti', href: 'https://xneeti.com/blog/how-much-do-amazon-ads-cost-average-cpc-budgets', accessed: '2026-08-08' },
+  { title: 'Amazon ads benchmarks by category and ad type (CPC $0.75–$3.50+; ACOS 20–40%; CTR 0.3–0.6%; CVR 8–15%)', publisher: 'Trellis', href: 'https://gotrellis.com/resources/blog/amazon-advertising-benchmarks', accessed: '2026-08-08' },
+  { title: 'Cost of Amazon advertising in 2026 (CPCs $0.30 to over $4.00 by category; keywords rather than bids as the cause of persistently rising ACOS; DSP minimums)', publisher: 'Bridgeway Digital', href: 'https://bridgewaydigital.com/blog/cost-of-amazon-advertising-in-2026-cpc-roi-and-amazon-ads-pricing-guide', accessed: '2026-08-08' },
+]} />
