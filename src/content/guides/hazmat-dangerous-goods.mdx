@@ -1,0 +1,149 @@
+---
+title: "Anything with a lithium battery is a dangerous good. That includes most of what you sell."
+description: "The hazmat net catches far more than chemicals: anything containing a lithium cell, pressurised, flammable, chemically reactive or strongly magnetic can enter review. While it is in the queue you cannot send inventory, and stock already at a centre can be held."
+category: "Shipping & logistics"
+published: "2026-08-12"
+modified: "2026-08-12"
+minutes: 11
+numbered: true
+ledger: "Review: 2–5 business days, inbound blocked"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The category is wider than sellers assume. Reporting describes anything containing a lithium cell, pressurised, flammable, chemically reactive or strongly magnetic as capable of entering a dangerous goods review.",
+  "While an ASIN is in review you cannot send new inventory of it to FBA, and stock already at a fulfilment centre may be placed on hold.",
+  "Reported review times are 2 to 5 business days with complete documentation, and 3 to 5 in another account. Incomplete or badly formatted safety data sheets are named as the leading cause of rejection.",
+  "Exemption sheets are only accepted for two categories: battery and battery-powered products, and products confirmed to contain no harmful chemicals. Submitting one outside those is reported to be rejected automatically.",
+  "Reporting states that from 30 April 2026 all FBA-eligible dangerous goods can ship through Amazon's Partnered Carrier programme, removing the need to arrange separate hazmat carriers.",
+]} />
+
+Most sellers first meet this subject when a listing they thought was ordinary gets flagged. Headphones. A cordless tool. A toy with a light in it. The classification is not about how dangerous the product feels; it is about what is inside it and how it behaves in a warehouse or an aircraft hold.
+
+## What actually triggers it
+
+Reporting describes the net as much wider than most sellers assume: **anything containing a lithium-ion or lithium-metal cell, anything pressurised, anything flammable, anything chemically reactive, and anything strongly magnetic** — even when the product itself feels mundane.
+
+Named examples across sources:
+
+| Group | Examples |
+| --- | --- |
+| Lithium battery products | Laptops, cameras, phones, tablets, chargers, power banks, cordless tools, smart-home devices, e-readers, drones, smartwatches, battery-powered toys |
+| Magnetised materials | Speakers, headphones, light meters, some children's toys |
+| Non-harmful chemicals | Glue and adhesives, spray deodorants, hairspray, hair dye, pest control products |
+| Aerosols and pressurised | Sprays of most kinds |
+| Reactive or flammable | Cleaning chemicals, perfumes, hand sanitiser |
+
+**Lithium batteries are described as the largest single group**, and the reason catches people: anything containing a lithium cell falls into Class 9 dangerous goods, and that captures most modern consumer electronics — including products where the battery is integrated and non-removable.
+
+<Figure value="Class 9" kind="cost" source="Reported UN hazard classification of lithium batteries, 2026, accessed 8 August 2026">
+  The hazard class that captures most consumer electronics. Amazon classifies dangerous goods into nine UN classes; reporting names lithium batteries as the group affecting the most FBA sellers.
+</Figure>
+
+## What a review costs you
+
+This is the part that makes it urgent rather than administrative.
+
+Once an ASIN enters the review queue:
+
+- **You cannot send new inventory** of that product to FBA
+- **Stock already at a fulfilment centre may be placed on hold**
+- Reported review times: **2 to 5 business days** with complete documentation in one account, **3 to 5** in another
+- Incomplete safety data sheets, lithium battery verification problems or high queue volumes are described as extending it significantly
+
+Think about that against a fast-moving SKU. A week of blocked inbound plus held stock is a stockout, which means lost rank — see the [listing guide](/guides/listing-optimisation-a10/) on how ranking decays before the stockout even happens — plus the [low-inventory-level fee](/guides/low-inventory-level-fee/) on whatever does sell.
+
+**The review is not the cost. The block is.**
+
+## The three outcomes
+
+Reporting describes three possible results:
+
+**Not a dangerous good.** Cleared for standard FBA, no special handling. Described as where most flagged products end up once an exemption sheet or SDS confirms there is no real hazard.
+
+**Restricted dangerous.** It is hazmat, and Amazon will accept it through FBA provided you are enrolled in the FBA Dangerous Goods programme and the product meets storage and shipping requirements.
+
+**Not accepted.** Some classes are sellable through FBA only in limited quantities, and some not at all.
+
+## The two documents
+
+**Safety Data Sheet (SDS).** A 16-section document prepared by the manufacturer describing chemical properties, hazards and handling requirements. Reported requirements: GHS-compliant, dated within five years, in the language of the target marketplace.
+
+**Exemption sheet.** A simpler declaration, and the rule about it is strict. Reporting states it is accepted for **only two categories**:
+
+1. **Battery and battery-powered products**
+2. **Products confirmed to contain no harmful chemicals**
+
+Submitting an exemption sheet for anything outside those two is reported to be rejected. That is a wasted cycle of several business days on a blocked ASIN.
+
+**Why documents get rejected.** Reporting is specific that many delays occur not because a document is missing but because it **does not match Amazon's formatting or hazard disclosure standards.** The frustration sellers describe is rejected documentation rather than absent documentation.
+
+## The lithium battery specifics
+
+Reported requirements for battery products, and the level of detail matters:
+
+- **Watt-hours (Wh)** are required for all lithium battery products. The calculation is `Wh = Voltage (V) × Capacity (Ah)`
+- **Lithium content disclosure**
+- **Alignment with UN 38.3 transport testing** — the test summary is commonly requested
+- **Battery weight** — the total weight of all batteries included, not the weight of the device. Reporting notes the current exemption sheet may not include a weight field, but the data remains useful documentation
+- **Integrated, non-removable batteries must still be correctly declared**
+
+Reporting describes battery products frequently entering review because the battery information was incomplete at listing creation — which is an avoidable cause.
+
+## The April 2026 change
+
+Reporting states that **from 30 April 2026, all FBA-eligible dangerous goods qualify for Amazon's Partnered Carrier programme**, removing the need to arrange separate hazmat carriers.
+
+That is a meaningful operational simplification for anyone who has been booking specialist carriers. It also interacts with the [inbound placement arithmetic](/guides/inbound-placement-split-arithmetic/), since partnered carrier changes both your freight rate and your placement treatment.
+
+## Importing dangerous goods
+
+Documentation applies at two levels — Amazon's internal requirements, and international transport and customs regulations. Reported requirements for the second:
+
+- GHS-compliant SDS
+- UN-certified packaging certification
+- IMO or IATA dangerous goods declarations, with air declarations completed by a certified person
+- Labels showing hazard class, UN number and packing group
+- An accurate commercial invoice with correct HTS codes — see the [classification guide](/guides/hts-classification-basics/)
+- Quantity limits under IATA rules for air freight
+
+## What to do
+
+**Check classification before sourcing.** Seller Central shows ASIN classifications, and the Manage Dangerous Goods Classification dashboard is where documents are uploaded and templates downloaded.
+
+**Build SDS requirements into supplier negotiations.** Reporting recommends this specifically for private label: costing documentation in from the start is more efficient than scrambling after a flag. A supplier who cannot produce a GHS-compliant SDS is a supplier who will eventually block your ASIN.
+
+**Get battery specifications at listing creation.** Watt-hours, voltage, capacity, lithium content, UN 38.3 summary. Reporting names incomplete battery information at listing creation as a common cause of review.
+
+**Use the right document.** Exemption sheet only for the two permitted categories. Anything else needs an SDS.
+
+**Complete it fully and check the formatting.** Rejections are described as more often about format and hazard disclosure than about absence.
+
+**Remember it is marketplace-specific.** Dangerous goods approval in one marketplace does not carry to others.
+
+**Keep classification stable.** Temporary clearance followed by re-flagging weeks later is described as what happens when the underlying classification signal was never addressed.
+
+<Faq items={[
+  { q: "What makes a product hazmat on Amazon?", a: "Reporting describes anything containing a lithium cell, pressurised, flammable, chemically reactive or strongly magnetic as capable of entering review — which is far wider than chemicals and captures most consumer electronics." },
+  { q: "Can I keep selling while under review?", a: "You cannot send new inventory of that ASIN to FBA, and stock already at a fulfilment centre may be placed on hold. Reported review times are 2 to 5 business days with complete documentation." },
+  { q: "When can I use an exemption sheet instead of an SDS?", a: "Reporting states only two categories: battery and battery-powered products, and products confirmed to contain no harmful chemicals. Submitting one outside those is rejected." },
+  { q: "Why was my SDS rejected?", a: "Reporting is specific that many rejections are about formatting and hazard disclosure standards rather than the document being missing. A GHS-compliant SDS dated within five years, in the marketplace language, is the standard described." },
+  { q: "What battery information does Amazon need?", a: "Watt-hours (voltage multiplied by capacity in amp-hours), lithium content, alignment with UN 38.3 transport testing, and correct declaration even for integrated non-removable batteries." },
+  { q: "Do I still need a separate hazmat carrier?", a: "Reporting states that from 30 April 2026 all FBA-eligible dangerous goods qualify for Amazon's Partnered Carrier programme, removing the need to arrange separate hazmat carriers." },
+]} />
+
+<Sources items={[
+  { title: 'Selling hazmat on Amazon FBA: 2026 dangerous goods guide (breadth of the hazmat net; three review outcomes; lithium batteries as the largest group; building SDS costs into supplier negotiations)', publisher: 'Seller Essentials', href: 'https://selleressentials.com/amazon-fba-hazmat-guide/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA hazmat and dangerous goods: Partnered Carrier now available (all FBA-eligible dangerous goods qualifying from 30 April 2026; SDS as a 16-section document; watt-hour calculation; battery weight guidance)', publisher: 'Seller Essentials', href: 'https://selleressentials.com/amazon-hazmat-review/', accessed: '2026-08-08' },
+  { title: 'Amazon dangerous goods classification for FBA sellers (inbound blocked and inventory held during review; documents requested; approvals being marketplace-specific)', publisher: 'AMZ Dudes', href: 'https://amzdudes.com/amazon-dangerous-goods-classification-a-complete-guide-for-fba-sellers/', accessed: '2026-08-08' },
+  { title: 'Amazon dangerous goods review explained (2 to 5 business day reviews with complete documentation; rejections driven by formatting and hazard disclosure rather than absence; lithium battery enforcement; re-flagging after temporary clearance)', publisher: 'Seller Candy', href: 'https://sellercandy.com/amazon-dangerous-goods-hazmat-review-process', accessed: '2026-08-08' },
+  { title: 'Amazon FBA dangerous goods: complete hazmat guide 2026 (nine UN hazard classes; 3–5 business day reviews; incomplete SDS as the leading cause of rejection; GHS compliance and five-year dating; UN-certified packaging, IMO/IATA declarations and labelling; IATA air quantity limits)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-dangerous-goods/', accessed: '2026-08-08' },
+  { title: 'Hazmat clearance on Amazon (exemption sheets accepted for only two categories and rejected otherwise; Manage Dangerous Goods Classification dashboard and templates; consequences of incomplete or conflicting information)', publisher: 'My Amazon Guy', href: 'https://myamazonguy.com/hazmat-clearance-amazon/', accessed: '2026-08-08' },
+  { title: 'The ultimate Amazon hazmat policy guide for sellers (product groups triggering classification; four business day document review; identifying hazmat via ASIN classifications and the SDS)', publisher: 'SellerApp', href: 'https://www.sellerapp.com/blog/amazon-hazmat-policy/', accessed: '2026-08-08' },
+]} />
