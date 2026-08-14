@@ -1,0 +1,125 @@
+---
+title: "A Prime Day deal costs $100 before a single unit sells, then 1.5% of everything that does"
+description: "Deal participation stopped being a margin-neutral traffic tool. Best Deals, Lightning Deals and Prime Exclusive Discounts carry an upfront fee plus a variable percentage — and a 60-day lowest-price rule that constrains what you can even offer."
+category: "Scaling"
+published: "2026-08-14"
+modified: "2026-08-14"
+minutes: 10
+numbered: true
+ledger: "$100 upfront + 1.5% of promotional sales, capped $5,000"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Best Deals, Lightning Deals and Prime Exclusive Price Discounts are reported at $100 upfront per promotion plus a variable fee of 1.5% of promotional sales, capped at $5,000.",
+  "Coupons are reported separately at $5 upfront plus 2.5% of sales on redeemed coupons — a higher variable rate than the deal formats.",
+  "The 60-day rule constrains the offer itself: the deal price must be equal to or lower than your lowest price in the previous 60 days, including previous deals, coupons and discounts.",
+  "Early submission saves $50 on the upfront fee. Reported deadlines for the 2026 holiday block are 5 August for Prime Big Deal Days and 5 September for Black Friday Week and Cyber Monday.",
+  "The holiday fees are reported as carrying over from Prime Day unchanged, with no new eligibility requirements — so the marginal cost of participating is the same as in June.",
+]} />
+
+Deal participation used to be roughly margin-neutral: you gave up price and got traffic. Reporting on the current structure describes it as **an explicit profit and loss commitment**, and that is the right way to think about it.
+
+## What it costs
+
+| Promotion | Reported fee |
+| --- | --- |
+| Best Deal | $100 upfront + 1.5% of promotional sales, capped at $5,000 |
+| Lightning Deal | Same |
+| Prime Exclusive Price Discount | Same |
+| Coupon | $5 upfront + 2.5% of sales on redeemed coupons |
+| Early submission discount | $50 off the upfront fee, on the fixed portion only |
+
+**Note the coupon rate.** At 2.5% of redeemed sales it carries a **higher variable rate than a Lightning Deal**, against a trivial upfront fee. That inverts the usual assumption that coupons are the cheap option — they are cheap to start and more expensive per dollar of sales.
+
+Coupon fees are also reported as separate from your coupon budget, which funds the customer discount itself. The fee is the platform's charge; the discount is your money.
+
+<Figure value="1.5% vs 2.5%" kind="cost" source="Reported 2026 deal and coupon variable fee rates, accessed 8 August 2026">
+  Variable fee on a Lightning Deal against a coupon. The format with the small upfront fee carries the larger percentage — which reverses the usual instinct about which is cheaper.
+</Figure>
+
+**Historical note worth flagging.** Earlier published structures described daily fees for non-peak deals, flat fees of $500 to $1,000 for Prime-Exclusive formats, and lower fixed fees of $150 and $300. Those describe a prior arrangement. Anything you read on this subject needs its date checked before it is used.
+
+## The 60-day rule
+
+The constraint that catches people is not the fee. It is eligibility.
+
+Reported requirement: **the deal price must be equal to or lower than the lowest price you sold at in the previous 60 days** — including previous deals, coupons and price discounts.
+
+The consequence is a planning one. Run a coupon in April, and your June deal price has to beat it. Discount to clear stock in September, and your Black Friday price is anchored to that. **Your own promotional history becomes the ceiling on your next promotion.**
+
+This is a good reason to stop running small tactical discounts on SKUs you intend to put into a tentpole event. The cheap coupon in the quiet month costs you discount room in the expensive one.
+
+## The arithmetic
+
+A Lightning Deal on a $100 product. Illustrative — substitute your own.
+
+| Line | Amount |
+| --- | --- |
+| Normal price | $100.00 |
+| Deal price at 20% off | $80.00 |
+| Referral fee at 15% of $80 | −$12.00 |
+| Fulfilment fee, illustrative | −$5.60 |
+| 3.5% fuel and logistics surcharge | −$0.20 |
+| Deal variable fee, 1.5% of $80 | −$1.20 |
+| Cost of goods, illustrative | −$30.00 |
+| **Contribution per unit** | **$31.00** |
+| Upfront deal fee | −$100 (or −$50 early) |
+
+At $31 contribution, the upfront fee is recovered on the fourth unit. That part is easy.
+
+**The part that is not easy** is the $20 of price you gave up. On 500 units that is $10,000 of revenue foregone against $175 of deal fees. The fees are the small number; the discount is the decision.
+
+Which is why reporting frames it correctly: with landed costs higher and less predictable after eighteen months of tariff changes, the discount room available on any deal has compressed. A promotion that worked at 30% off in 2024 may only work at a far shallower discount now, and **per-unit margin discipline rather than headline discount depth is what decides whether a deal is profitable.**
+
+## The dates
+
+Reported for the 2026 cycle:
+
+| Event | Early-bird deadline for the $50 discount |
+| --- | --- |
+| Prime Big Deal Days | 5 August 2026 |
+| Black Friday Week and Cyber Monday | 5 September 2026 |
+
+Reporting notes the early-bird cutoffs arrive **weeks before the submission windows themselves close**, which front-loads the decision. A seller weighing which SKUs to place into the October event has a narrower runway than the November block allows.
+
+Prime Day 2026 ran in June, with submissions open from 24 March to 26 May and the early deadline on 30 April — useful as a template for how the calendar behaves.
+
+## What to do
+
+**Model the deal at SKU level before submitting, not after.** Reporting is direct that these costs need building into per-unit economics and into algorithmic pricing floors rather than being discovered in post-event reconciliation. Our [margin calculator](/tools/margin-calculator/) takes the deal price as the input.
+
+**Protect your 60-day price history** on SKUs you intend to put into an event. Small tactical discounts in the preceding two months reduce what you can offer in the one that matters.
+
+**Submit before the early deadline** if you are going to participate. $50 per deal is free money, and reporting confirms the discount applies to the fixed portion rather than the percentage.
+
+**Check eligibility before planning.** Seller forum comments describe sellers finding their eligible ASINs limited to products they would never discount, while products that performed in previous events were not eligible. Whether that is common is not established, but eligibility is worth confirming before building a plan around a specific SKU.
+
+**Remember the variable fee is on promotional sales**, so a deal that works is more expensive than one that does not. The $5,000 cap matters only above roughly $333,000 of promotional sales.
+
+**Count the inventory cost.** A deal that sells through stock you cannot replace in time creates a stockout in the highest-demand weeks — see the [peak season guide](/guides/peak-season-cost-stack/).
+
+<Faq items={[
+  { q: "How much does a Lightning Deal cost?", a: "Reported at $100 upfront per promotion plus a variable fee of 1.5% of promotional sales, capped at $5,000. Submitting before the early deadline reduces the upfront fee to $50." },
+  { q: "Are coupons cheaper than deals?", a: "Cheaper to start and more expensive per dollar of sales. Coupons are reported at $5 upfront plus 2.5% of redeemed sales — a higher variable rate than the 1.5% on deal formats." },
+  { q: "What is the 60-day rule?", a: "The deal price must be equal to or lower than your lowest price in the previous 60 days, including previous deals, coupons and discounts. Your own promotional history caps what you can offer next." },
+  { q: "When are the 2026 holiday deadlines?", a: "Reported early-bird deadlines for the $50 upfront discount are 5 August 2026 for Prime Big Deal Days and 5 September 2026 for Black Friday Week and Cyber Monday." },
+  { q: "Did holiday deal fees change from Prime Day?", a: "Reporting states they carry over unchanged, with no new eligibility requirements — so the marginal cost of participating in the holiday season matches Prime Day." },
+  { q: "Is the fee or the discount the bigger cost?", a: "The discount, by a wide margin. On 500 units of a $100 product at 20% off, the foregone revenue is $10,000 against roughly $175 in deal fees." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon freezes 2026 holiday seller fees (deal fees carrying over: $100 upfront plus 1.5% of promotional sales capped at $5,000; early-bird deadlines of 5 August and 5 September 2026; cutoffs arriving weeks before submission windows close)', publisher: 'PPC Land', href: 'https://ppc.land/amazon-freezes-2026-holiday-seller-fees-cuts-inbound-windows-shorter/', accessed: '2026-08-08' },
+  { title: 'Prime Day 2026 preparation guide for advanced sellers (coupon fees at $5 upfront plus 2.5% of redeemed sales; deal participation as an explicit P&L commitment; compressed discount room from higher landed costs)', publisher: 'Seller Snap', href: 'https://sellersnap.io/the-ultimate-amazon-prime-day-2026-preparation-guide-for-advanced-sellers/', accessed: '2026-08-08' },
+  { title: 'Prime Day 2026: new deal fees, rules and deadlines (submission window 24 March to 26 May; $50 off for deals submitted before 30 April; the 60-day lowest-price rule including previous deals, coupons and discounts)', publisher: 'eStore Factory', href: 'https://www.estorefactory.com/amazon-update/prime-day-2026-deals-fees-rules-deadlines/', accessed: '2026-08-08' },
+  { title: 'Prime Day 2026 deals: fees, deadlines and submission tips (upfront fee, early discount and the $5,000 variable cap; inventory deadlines)', publisher: 'BellaVix', href: 'https://www.bellavix.com/prime-day-2026-deals-important-fees-deadlines-and-submission-tips/', accessed: '2026-08-08' },
+  { title: 'Amazon keeps 2026 holiday fees flat (no new eligibility requirements; fees unchanged from Prime Day)', publisher: 'Sourcing Journal', href: 'https://wwd.com/sourcing-journal/industry-news/amazon-keeps-holiday-fees-flat-sellers-must-move-faster-1239075738/', accessed: '2026-08-08' },
+  { title: 'Prime Day prep: understanding promotion fees (earlier fee structure with daily rates and flat Prime-Exclusive fees; coupon fees separate from coupon budget)', publisher: 'Amazon Seller Central forums', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/05d936ee-b79d-451d-b03c-827df41df300', accessed: '2026-08-08' },
+  { title: 'It\u2019s official, Prime Day 2026 is in June (submission calendar; inventory deadlines; seller comments on eligible ASIN limitations)', publisher: 'Amazon Seller Central forums', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/59a5cd20-deae-4bb9-9282-e5ec24c3871f', accessed: '2026-08-08' },
+]} />

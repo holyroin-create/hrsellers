@@ -1,0 +1,101 @@
+---
+title: "There is a second peak fee, and it is not storage. Fulfilment costs more from 15 October too."
+description: "Q4 storage tripling is well covered. The peak fulfilment fee — reported at an average $0.32 per unit from 15 October 2026 to 14 January 2027, with the 3.5% surcharge applied on top — appears in almost none of the storage-focused coverage."
+category: "Fees & reimbursements"
+published: "2026-08-14"
+modified: "2026-08-14"
+minutes: 9
+numbered: true
+ledger: "Peak fulfilment: +$0.32/unit, 15 Oct – 14 Jan"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Reporting states holiday peak fulfilment fees apply from 15 October 2026 to 14 January 2027, at an average increase of $0.32 per unit over non-peak rates.",
+  "The 3.5% fuel and logistics surcharge is reported as applying on top of that, so the peak fee and the surcharge compound.",
+  "It covers more than FBA: reporting names Fulfillment by Amazon, Remote Fulfillment with FBA, Multi-Channel Fulfillment and Buy with Prime.",
+  "The window runs two weeks past New Year. Inventory still moving in the first fortnight of January is fulfilled at peak rates.",
+  "This is a separate charge from Q4 storage. The storage rate roughly triples across October to December; this is a per-unit fulfilment increase on a longer window.",
+]} />
+
+The Q4 storage spike gets covered every year. This one does not, and it is charged on every unit you actually sell rather than on the ones that sit — which for a seller having a good peak is the larger number.
+
+## What it is
+
+Reporting states holiday peak fulfilment fees apply again **from 15 October 2026 through 14 January 2027**, matching the same window as the previous year, at a **per-unit increase over non-peak rates averaging $0.32.**
+
+Reporting also states the **3.5% fuel and logistics surcharge is added on top** — see the [surcharge guide](/guides/fba-fuel-logistics-surcharge-2026/) for why a percentage on a fee behaves differently from a flat increase.
+
+**It is not FBA-only.** Reporting names four programmes: Fulfillment by Amazon, Remote Fulfillment with FBA, Multi-Channel Fulfillment and Buy with Prime. A seller using MCF to fulfil Shopify orders pays it there too.
+
+<Figure value="15 Oct – 14 Jan" kind="cost" source="Reported 2026 holiday peak fulfilment fee window, accessed 8 August 2026">
+  The peak fulfilment window. It opens two weeks before the storage rate rises and closes two weeks after the calendar year does.
+</Figure>
+
+## Why the dates matter more than the amount
+
+Thirty-two cents is not dramatic. The window is.
+
+**It opens 15 October**, two weeks before most sellers think of peak as beginning, and before the Prime Big Deal Days and Black Friday blocks.
+
+**It closes 14 January**, two weeks into the following year. Everything you sell in the first fortnight of January — including returns exchanges and the post-Christmas clearance most sellers run to shift peak overstock — is fulfilled at peak rates.
+
+That second point interacts badly with the [removal decision](/guides/removal-vs-hold-decision/). A seller who plans to clear unsold peak inventory through January promotions is discounting **and** paying peak fulfilment on every unit that moves.
+
+## The full peak cost picture
+
+Put alongside what this site covers elsewhere, four charges rise across the same period and none of them replaces another:
+
+| Charge | Window | Reported effect |
+| --- | --- | --- |
+| Peak fulfilment fee | 15 Oct – 14 Jan | +$0.32 per unit average |
+| Fuel and logistics surcharge | Year-round | 3.5% of the fulfilment fee, applied on top |
+| Peak storage | Oct – Dec | Roughly three times the off-peak rate |
+| Advertising | Prime Day and Q4 | CPCs reported up 60–80% |
+
+Plus deal and coupon fees where you participate — see the [deals guide](/guides/deal-and-coupon-fees/) — and the cash timing covered in the [peak season guide](/guides/peak-season-cost-stack/).
+
+**A seller modelling Q4 on storage alone is modelling one of four.**
+
+## The inbound deadlines
+
+Reporting on the 2026 holiday guidance notes Amazon **cut inbound windows shorter**, which compounds the planning problem: less time to get inventory in, against a fulfilment fee that starts earlier than expected.
+
+For the June Prime Day cycle the published pattern was a deadline of 27 May 2026 for AWD shipments and for FBA shipments with minimal splits — roughly a month before the event. Treat that as the shape rather than the specific date, and confirm current deadlines in Seller Central.
+
+The practical consequence is that the [inbound placement decision](/guides/inbound-placement-split-arithmetic/) has a deadline attached in Q4. Minimal splits are quoted with a specific cut-off, and missing it forces you into whichever option remains available rather than the one your arithmetic chose.
+
+## What to do
+
+**Add $0.32 plus the surcharge to your Q4 unit economics.** Not to your storage model — to your contribution margin per unit sold. It is a different line.
+
+**Check whether it applies to your MCF volume.** If you fulfil Shopify or other channels through Amazon, this is a cost on that channel too, and it is easy to miss because it does not appear in Amazon marketplace reporting.
+
+**Reconsider January clearance.** Discounting into peak fulfilment rates until 14 January is expensive. Either clear before Christmas or wait until the window closes — the two weeks in between are the worst of both.
+
+**Diarise 15 October, not 1 November.** Anything you want fulfilled at standard rates ships before the fifteenth.
+
+**Confirm the inbound deadlines early.** Reporting describes them tightening, and the placement option you want may have an earlier cut-off than the general deadline.
+
+<Faq items={[
+  { q: "When does the peak fulfilment fee apply?", a: "Reported as 15 October 2026 through 14 January 2027, at an average increase of $0.32 per unit over non-peak rates." },
+  { q: "Is this the same as the Q4 storage increase?", a: "No. Storage roughly triples across October to December and is charged on inventory held. This is a per-unit fulfilment fee charged on units sold, over a longer window." },
+  { q: "Does the fuel surcharge still apply?", a: "Yes. Reporting states the 3.5% fuel and logistics surcharge is added on top of the peak fulfilment rates." },
+  { q: "Does it affect Multi-Channel Fulfillment?", a: "Yes. Reporting names Fulfillment by Amazon, Remote Fulfillment with FBA, Multi-Channel Fulfillment and Buy with Prime. Orders you fulfil for other channels through Amazon carry it too." },
+  { q: "Why does the window run into January?", a: "It is reported as ending 14 January, matching the previous year. The practical effect is that post-Christmas clearance sold in the first fortnight of January is fulfilled at peak rates." },
+  { q: "What should I do about January clearance?", a: "Either clear before Christmas or wait until after 14 January. Discounting into peak fulfilment rates combines a lower price with a higher cost on the same unit." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon freezes 2026 holiday seller fees, cuts inbound windows shorter (peak fulfilment 15 October 2026 to 14 January 2027; average $0.32 per unit over non-peak; covering FBA, Remote Fulfillment with FBA, Multi-Channel Fulfillment and Buy with Prime; deal fees unchanged)', publisher: 'PPC Land', href: 'https://ppc.land/amazon-freezes-2026-holiday-seller-fees-cuts-inbound-windows-shorter/', accessed: '2026-08-08' },
+  { title: 'Amazon keeps 2026 holiday fees flat, but sellers must move faster (holiday peak fulfilment window and $0.32 average increase, with a 3.5% fuel and logistics surcharge added on top)', publisher: 'Sourcing Journal', href: 'https://wwd.com/sourcing-journal/industry-news/amazon-keeps-holiday-fees-flat-sellers-must-move-faster-1239075738/', accessed: '2026-08-08' },
+  { title: 'Prime Day 2026 deals: fees, deadlines and submission tips (27 May 2026 deadline for AWD shipments and FBA shipments with minimal splits)', publisher: 'BellaVix', href: 'https://www.bellavix.com/prime-day-2026-deals-important-fees-deadlines-and-submission-tips/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fees 2026: full breakdown (3.5% fuel and logistics surcharge applied to the fulfilment fee from 17 April 2026)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-fba-fees/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fee overhaul now live (Q4 standard storage at $2.40 per cubic foot against $0.87 off-peak)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/news/amazon-fba-storage-fee-overhaul-h2-2026', accessed: '2026-08-08' },
+]} />

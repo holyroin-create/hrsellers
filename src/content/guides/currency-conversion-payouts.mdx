@@ -1,0 +1,126 @@
+---
+title: "Amazon says its currency conversion costs 0.75% to 2%. Everyone selling an alternative says 3% to 4%."
+description: "This is the clearest example on this site of a figure where the primary source and the secondary sources disagree — and where every secondary source has something to sell. Here is how to measure your own rate instead."
+category: "Scaling"
+published: "2026-08-14"
+modified: "2026-08-14"
+minutes: 10
+numbered: true
+ledger: "ACCS: 0.75–2.0% stated · 3–4% claimed"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Amazon's own page describes volume-based pricing for its currency converter, with a flat 2.0% for sellers receiving Japanese yen and a worked example showing 1.0% at $1.1 million in annual net proceeds.",
+  "Third-party sources give 1.5%, 1.5–2.5%, 2.5–4%, 3–4% and 3.75%. Every one of them sells or promotes a competing foreign exchange service.",
+  "Linking global accounts is described by Amazon as aggregating volume for pricing purposes — its own example shows a seller saving $5,500 by doing so.",
+  "The conversion rate is applied on the day the transfer to your bank is initiated, so disbursement timing determines the rate you get.",
+  "You do not need to accept any published figure. Three months of settlement reports against historical mid-market rates gives you your own effective rate in about twenty minutes.",
+]} />
+
+If you sell in a currency you do not bank in, this is a cost you pay on every disbursement and probably have never measured. It is also the cleanest illustration on this site of why source attribution matters.
+
+## The numbers, and who is publishing them
+
+| Source | Reported ACCS cost | What they sell |
+| --- | --- | --- |
+| **Amazon** (own programme page) | Volume-based; 2.0% flat for JPY; worked example at 1.0% | The service |
+| Exclusiva | 0.75% to 2.0% by volume and payout currency | — |
+| Link My Books | 1.5% | Integration with Payoneer |
+| Clickstera | 1.5% to 2.5% | Wise and Payoneer alternatives |
+| Titan Network | 2.5% to 4% above mid-market | FX alternatives |
+| Seller forum comment | 3% to 4%, plus ~2% bank margin | — |
+| World First (presentation) | "Typically 3.75%" | A competing FX service |
+
+**The pattern is not subtle.** The primary source and one independent analysis give 0.75% to 2.0%. Every figure above 2.5% comes from a party selling the alternative.
+
+That does not make the higher figures wrong. Amazon's stated percentage may not capture the full spread, and one source makes a specific and plausible technical criticism: the cost is described as sitting **in the spread rather than in a stated fee**, buried in settlement calculations and difficult to isolate. That is a real mechanism.
+
+But a range of 0.75% to 3.75% across sources is not a measurement problem you can resolve by reading more articles. **You resolve it by measuring your own.**
+
+<Figure value="0.75% vs 3.75%" kind="cost" source="Amazon's programme page against published third-party claims, reviewed 8 August 2026">
+  The low end from the primary source against the high end from a competing FX provider's material. Every figure above 2.5% found in this research was published by a party selling an alternative.
+</Figure>
+
+## How to measure your own, in twenty minutes
+
+This is the only number that matters, and the method is published consistently across sources:
+
+1. **Download three months of settlement reports** showing foreign-currency sales
+2. **Compare gross foreign revenue with net settlements in your home currency**, excluding Amazon selling fees
+3. **Divide net home currency by gross foreign currency** — that is your effective rate
+4. **Compare against historical mid-market rates** on your settlement dates, from a source such as XE or OANDA
+
+One source's benchmark: **if you are consistently trailing mid-market by more than 2%, you are paying too much.**
+
+That threshold is reasonable and it is also the point at which a third-party service becomes worth the setup effort.
+
+## What Amazon's own page actually says
+
+Worth reading directly, because it is the primary source and it contains two things the secondary coverage mostly omits.
+
+**Volume-based pricing.** Amazon's worked example describes a Germany-based seller earning $500,000 on Amazon.com, $300,000 on Amazon.co.uk and $300,000 on Amazon.co.jp. Unlinked, each account is priced on its own volume. **Linked, the total of $1,100,000 is priced together at 1.0%, saving a stated $5,500.**
+
+If you sell across multiple marketplaces and have not linked your global accounts, that is a free reduction available today.
+
+**Rate timing.** The rate applied is the one used by Amazon's third-party provider **on the day the transfer to your bank is initiated** — and for failed disbursements, the day it is re-initiated.
+
+That gives you a small amount of control. Manually initiating a disbursement means choosing the day. Whether timing conversions is worth the attention depends on your volume and your tolerance for watching exchange rates, and for most sellers the honest answer is that it is not — but it is worth knowing the mechanism exists.
+
+## The alternative, and what it actually involves
+
+The recommended structure across sources is the same: **receive in local currency, convert yourself.**
+
+That means opening a receiving account in the marketplace currency through a multi-currency provider, giving Amazon those details instead of your home bank, and converting on your own timing through that provider.
+
+Reported third-party costs cluster **under 0.5%** in some accounts and at **1% to 2%** in others, with one seller-forum comment naming several providers as charging broadly similar rates. As with the ACCS figures, the lowest numbers come from the providers themselves.
+
+**Two secondary benefits that are more concrete than the FX saving:**
+
+**Paying ad spend in local currency.** If you advertise on a foreign marketplace and pay with a home-currency card, your bank converts and charges for it. A local-currency account pays the bill directly. For anyone running meaningful ad spend on a foreign marketplace, this can be worth more than the disbursement saving.
+
+**Holding rather than converting.** If you have costs in that currency — suppliers, VAT payments, agency fees — holding the balance avoids converting twice.
+
+## Two things not to confuse this with
+
+**The buyer-facing currency converter** is a shopper convenience with its own rate. Reporting notes the displayed price is often higher than the buyer's own card would charge, which is a conversion consideration for the customer rather than a cost to you.
+
+**Refunds convert too.** Reporting notes refunds processed at different rates from the original sale can produce unexpected losses. On a volatile pair with a long return window, that is a real if small effect.
+
+## What to do
+
+**Measure your own effective rate.** Twenty minutes with three months of settlement reports. Everything else in this guide is a claim; that is a measurement.
+
+**Link your global accounts** if you sell across marketplaces. Amazon's own example puts the saving at $5,500 on $1.1 million.
+
+**Set the 2% benchmark.** Trailing mid-market by more than that is the trigger to look at alternatives.
+
+**Open a local-currency receiving account** if your foreign volume is meaningful — and use it for ad spend regardless of what you decide about disbursements.
+
+**Do not act on a published percentage**, including the ones in this guide. The range across sources is a factor of five and the parties quoting the high end all sell the remedy.
+
+**This is not financial advice.** Currency exposure, hedging and cross-border payment structuring depend on your volumes and jurisdiction, and a conversation with an accountant familiar with cross-border ecommerce will be worth more than any article.
+
+<Faq items={[
+  { q: "How much does Amazon's currency converter cost?", a: "Amazon's own page describes volume-based pricing, with a flat 2.0% for sellers receiving Japanese yen and a worked example at 1.0% for $1.1 million in annual net proceeds. Third-party sources claim 1.5% to 3.75%, and each of those sells an alternative." },
+  { q: "How do I find out what I am actually paying?", a: "Download three months of settlement reports with foreign-currency sales, divide net home-currency settlements by gross foreign revenue excluding selling fees, and compare to historical mid-market rates on those dates. Trailing mid-market by more than 2% is the commonly cited threshold for switching." },
+  { q: "Should I use Wise or Payoneer instead?", a: "Possibly, and the case is stronger the larger your foreign volume. Measure your own effective rate first — the published comparisons come from the providers themselves on both sides." },
+  { q: "What is the benefit of linking global accounts?", a: "Amazon describes it as aggregating volume for pricing purposes. Its own worked example shows a seller moving to 1.0% and saving $5,500 on $1.1 million in net proceeds." },
+  { q: "When is the exchange rate set?", a: "Amazon states it uses the rate applied by its third-party provider on the day the transfer to your bank is initiated, and for failed disbursements the day it is re-initiated." },
+  { q: "Does this affect my advertising costs?", a: "Yes, if you advertise on a foreign marketplace and pay with a home-currency card — your bank converts and charges for it. A local-currency account lets you pay the bill directly, which for meaningful ad spend can exceed the disbursement saving." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon Currency Converter for Sellers (volume-based pricing; 2.0% flat for JPY; worked example of linked accounts at $1.1m priced at 1.0% saving $5,500; rate applied on the day the transfer is initiated)', publisher: 'Amazon', href: 'https://sell.amazon.com/programs/amazon-currency-converter', accessed: '2026-08-08' },
+  { title: 'Amazon payment systems: currency conversion tips (conversion fees of 0.75% to 2.0% depending on annual sales volume and payout currency; 19 marketplaces into 20+ currencies; 1–5 business day transfers; refunds at different rates producing losses)', publisher: 'Exclusiva', href: 'https://exclusivainc.com/amazon-payment-systems-currency-conversion-tips/', accessed: '2026-08-08' },
+  { title: 'Amazon Currency Converter rates 2026 guide (cost described as sitting in the spread, typically 2.5% to 4% above mid-market; the three-month settlement report method; the 2% benchmark against mid-market)', publisher: 'Titan Network', href: 'https://titannetwork.com/amazon-currency-converter-rates-guide/', accessed: '2026-08-08' },
+  { title: 'How to exchange currency on Amazon without losing margin in 2026 (1.5% to 2.5% claimed for ACCS against under 0.5% for third parties; paying foreign ad spend in local currency; the buyer-facing converter)', publisher: 'Clickstera', href: 'https://clickstera.com/blog/how-to-exchange-currency-on-amazon', accessed: '2026-08-08' },
+  { title: 'How Amazon Currency Converter works and ways to save (1.5% claimed for ACCS; Payoneer alternative and holding balances in multiple currencies)', publisher: 'Link My Books', href: 'https://linkmybooks.com/blog/amazon-currency-converter', accessed: '2026-08-08' },
+  { title: 'Amazon Currency Converter for Sellers fee breakdown (seller comments describing roughly 3–4% plus bank margin; several third-party providers at broadly similar 1–2% rates)', publisher: 'Amazon Seller Central forums', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/4fe046b8bf82b6633ffce3c3aac5fb93', accessed: '2026-08-08' },
+]} />
