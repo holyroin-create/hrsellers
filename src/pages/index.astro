@@ -13,7 +13,11 @@ import { getCollection } from 'astro:content';
 const guides = (await getCollection('guides', ({ data }) => !data.draft))
   .sort((a, b) => +new Date(b.data.published) - +new Date(a.data.published));
 const lead = guides[0];
-const rest = guides.slice(1);
+/* Homepage shows the latest 10 (1 lead + 9 cards). The full archive lives at
+   /guides/ — rendering all 50+ cards here buried the policy log and every
+   section below the fold. */
+const rest = guides.slice(1, 10);
+const total = guides.length;
 
 const covers = ['Amazon FBA', 'Walmart WFS', 'eBay', 'TikTok Shop', 'Etsy', 'Third-party fulfillment'];
 
@@ -90,6 +94,10 @@ const mostRead = [
           ))}
         </div>
       )}
+
+      <div style="display:flex;justify-content:center;margin:1.4rem 0 .4rem">
+        <Btn href="/guides/" variant="dark">Browse all {total} guides</Btn>
+      </div>
 
       <AdSlot label="homepage — below the latest list" />
 
