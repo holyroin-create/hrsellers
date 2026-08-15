@@ -84,6 +84,14 @@ const schema = type === 'Article'
 <meta name="twitter:image" content={ogImageAbs} />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+{/* Google Analytics 4 — measurement ID for fbatactics.com */}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RJ7LGSCFE"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RJ7LGSCFE');
+</script>
 {SITE.adsenseEnabled && (
   <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`} crossorigin="anonymous"></script>
 )}
