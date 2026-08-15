@@ -1,0 +1,175 @@
+---
+import PageShell from '../../components/PageShell.astro';
+import Faq from '../../components/Faq.astro';
+---
+<PageShell
+  title="Amazon PPC launch budget calculator"
+  description="Enter your margin, target ACOS, conversion rate and average CPC. Returns your break-even ACOS, a daily budget that survives the learning phase, cost per order, and how many weeks of ad spend your cash actually funds."
+  eyebrow="Calculator"
+  h1="PPC launch budget calculator"
+  lede="Your numbers, not ours. Nothing is stored and nothing leaves your browser — this page has no server side at all."
+  crumb={{ label: 'Tools', href: '/tools/' }}
+  rail={[{href:'/tools/margin-calculator/',label:'Margin & break-even'},{href:'/tools/cash-flow-planner/',label:'Cash flow planner'},{href:'/guides/amazon-ppc-benchmarks/',label:'Reading ACOS benchmarks'}]}
+>
+  <div class="calc">
+    <div class="calcbox">
+      <h2>Your numbers</h2>
+      <div class="field"><label for="price">Selling price</label>
+        <div class="inputwrap"><span>$</span><input id="price" type="number" inputmode="decimal" step="0.01" value="29.99" /></div></div>
+      <div class="field"><label for="margin">Profit margin before ads<span class="hint">Net margin with ad spend set to zero. The margin calculator's "max ACOS" line is this number.</span></label>
+        <div class="inputwrap"><input id="margin" type="number" inputmode="decimal" step="0.1" value="32" /><span class="suf">%</span></div></div>
+      <div class="field"><label for="cpc">Average cost per click<span class="hint">From the suggested-bid range on your main keywords, not a category average.</span></label>
+        <div class="inputwrap"><span>$</span><input id="cpc" type="number" inputmode="decimal" step="0.01" value="1.35" /></div></div>
+      <div class="field"><label for="cvr">Conversion rate<span class="hint">Unit session percentage from Business Reports. Use 8–10% if the listing is new and you have no data.</span></label>
+        <div class="inputwrap"><input id="cvr" type="number" inputmode="decimal" step="0.1" value="10" /><span class="suf">%</span></div></div>
+      <div class="field"><label for="orders">Target ad orders per day<span class="hint">During launch this is a velocity decision, not a profit one. 3–5 is a common starting range.</span></label>
+        <div class="inputwrap"><input id="orders" type="number" inputmode="decimal" step="1" value="3" /></div></div>
+      <div class="field"><label for="cash">Cash set aside for advertising</label>
+        <div class="inputwrap"><span>$</span><input id="cash" type="number" inputmode="decimal" step="1" value="1500" /></div></div>
+    </div>
+
+    <div class="calcbox">
+      <h2>Result</h2>
+      <div class="out hero"><span class="k">Daily budget for the target</span><span class="v" id="o-daily">—</span></div>
+      <div class="out"><span class="k">Break-even ACOS</span><span class="v" id="o-beacos">—</span></div>
+      <div class="out"><span class="k">Cost per ad order (CPA)</span><span class="v" id="o-cpa">—</span></div>
+      <div class="out"><span class="k">Launch ACOS at these inputs</span><span class="v" id="o-acos">—</span></div>
+      <div class="out"><span class="k">Profit or loss per ad order</span><span class="v" id="o-unit">—</span></div>
+      <div class="out"><span class="k">Clicks needed per order</span><span class="v" id="o-clicks">—</span></div>
+      <div class="out"><span class="k">Weeks your cash funds</span><span class="v" id="o-weeks">—</span></div>
+      <div id="o-verdict" class="verdict"></div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h2>How each line is calculated</h2>
+    <table>
+      <thead><tr><th>Output</th><th>Formula</th></tr></thead>
+      <tbody>
+        <tr><td>Break-even ACOS</td><td>profit margin before ads — spend past this and each ad order loses money</td></tr>
+        <tr><td>Clicks per order</td><td>1 ÷ conversion rate</td></tr>
+        <tr><td>Cost per ad order</td><td>CPC × clicks per order</td></tr>
+        <tr><td>Launch ACOS</td><td>cost per order ÷ selling price</td></tr>
+        <tr><td>Daily budget</td><td>cost per order × target orders per day</td></tr>
+        <tr><td>Profit per ad order</td><td>(price × margin) − cost per order</td></tr>
+        <tr><td>Runway in weeks</td><td>cash ÷ (daily budget × 7)</td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      The break-even line is the one this whole page exists for. Published ACOS benchmarks
+      disagree with each other by eight points, and none of them knows your margin. Whether 35%
+      ACOS is healthy or ruinous is decided entirely by the margin box above — our
+      <a href="/guides/amazon-ppc-benchmarks/">benchmarks guide</a> walks through why the published
+      figures conflict and what each one actually measures.
+    </p>
+
+    <h2>A worked example</h2>
+    <p>
+      A product at $29.99 with a 32% pre-ad margin, clicks at $1.35, converting at 10%.
+      Substitute your own figures — the point is the shape of the result, not these numbers.
+    </p>
+    <table>
+      <thead><tr><th>Line</th><th>Amount</th><th>Where the figure comes from</th></tr></thead>
+      <tbody>
+        <tr><td>Break-even ACOS</td><td>32%</td><td>The max-ACOS output of the <a href="/tools/margin-calculator/">margin calculator</a></td></tr>
+        <tr><td>Clicks per order at 10% CVR</td><td>10</td><td>Unit session percentage, Business Reports</td></tr>
+        <tr><td>Cost per ad order</td><td>$13.50</td><td>10 clicks × $1.35</td></tr>
+        <tr><td>Launch ACOS</td><td>45.0%</td><td>$13.50 ÷ $29.99</td></tr>
+        <tr><td>Profit per ad order</td><td>−$3.90</td><td>($29.99 × 32%) − $13.50</td></tr>
+        <tr><td>Daily budget for 3 orders</td><td>$40.50</td><td>3 × $13.50</td></tr>
+        <tr><td><strong>Weekly ad spend</strong></td><td><strong>$283.50</strong></td><td></td></tr>
+        <tr><td><strong>Runway on $1,500</strong></td><td><strong>~5.3 weeks</strong></td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      Notice the example <strong>loses $3.90 per ad order</strong>, and that is normal at launch.
+      Launch advertising buys sales velocity and review count, not profit. The question this
+      calculator answers is not "is this profitable" — it usually is not yet — but
+      <strong>"how much does the loss cost per week, and how many weeks can I fund it".</strong>
+      A launch plan without those two numbers is not a plan.
+    </p>
+
+    <h2>What this calculator assumes</h2>
+    <ul>
+      <li><strong>Every ad order needs the full click count.</strong> In practice some orders arrive organically or through cheaper placements, so the real blended cost is often somewhat lower. Planning on the pessimistic figure is deliberate.</li>
+      <li><strong>CPC is your real average, not the suggested bid.</strong> Suggested bids are an auction forecast, not an invoice. After a week of data, replace it with actual spend ÷ actual clicks from the campaign report.</li>
+      <li><strong>Conversion rate is per click, from Business Reports.</strong> A new listing with no reviews converts below its eventual rate — if you enter your category's mature average, everything downstream is flattered.</li>
+      <li><strong>No halo effect.</strong> Ad-driven sales lift organic rank, which produces sales this page does not count. That upside is real but unbudgetable, so it is left out of the arithmetic on purpose.</li>
+      <li><strong>Budget is spend, not commitment.</strong> Amazon can overdeliver a daily budget slightly and average it over the month.</li>
+    </ul>
+
+    <h2>Reading the result honestly</h2>
+    <ul>
+      <li><strong>Launch ACOS under your break-even</strong> — advertising is profitable from day one. Rare at launch; when it happens, the constraint is usually impression volume, not budget.</li>
+      <li><strong>Launch ACOS above break-even, runway over 8 weeks</strong> — a normal launch. The loss per order is the price of velocity; the runway says you can pay it long enough for reviews and rank to move the conversion rate.</li>
+      <li><strong>Runway under 6 weeks</strong> — the campaign will likely be cut off before it matures. Either lower the daily order target, raise cash, or accept a slower organic-first launch. Underfunding the learning phase and then abandoning it costs the spend and buys nothing.</li>
+    </ul>
+    <p>
+      The conversion rate is the lever people forget they have. At $1.35 clicks, moving from 8% to
+      12% conversion cuts the cost per order from $16.88 to $11.25 — a bigger effect than any bid
+      optimisation. Before adding budget, our <a href="/guides/listing-optimisation-a10/">listing
+      optimisation guide</a> is where that lever lives.
+    </p>
+  </div>
+
+  <div class="prose">
+    <h2>The figures this calculator needs, explained</h2>
+    <ul>
+      <li><a href="/tools/margin-calculator/">Margin &amp; break-even calculator</a> — produces the "profit margin before ads" input. Run it first; this page is its sequel.</li>
+      <li><a href="/guides/ppc-campaign-structure-launch/">Campaign structure at launch</a> — the four-campaign setup and weekly harvest loop this budget gets spent through.</li>
+      <li><a href="/guides/amazon-ppc-benchmarks/">ACOS benchmarks</a> — why published averages disagree by eight points, and what each one measures.</li>
+      <li><a href="/guides/landed-cost-fee-stack/">Landed cost</a> — the margin input is only as honest as the cost stack underneath it.</li>
+      <li><a href="/tools/cash-flow-planner/">Cash flow planner</a> — ad spend is charged long before the marketplace pays you; the runway line here belongs inside that timing model.</li>
+    </ul>
+  </div>
+
+  <Faq items={[
+    { q: 'What daily budget should a new campaign start with?', a: 'Work backwards from orders, not forwards from a round number. Cost per order is CPC divided by conversion rate; multiply by the daily orders you want. A $10/day budget on $1.35 clicks at 10% conversion funds well under one order a day, which is too little data to optimise on.' },
+    { q: 'Is a high ACOS at launch a problem?', a: 'Not by itself. Launch ACOS above break-even is the norm, because a new listing converts below its mature rate and has no organic rank to supplement ads. The problem is a high ACOS with no runway plan — losing money per order is a strategy only if you can fund it until conversion improves.' },
+    { q: 'Where does the break-even ACOS number come from?', a: 'It equals your profit margin before ad spend. If a unit carries 32% margin with zero advertising, then spending 32% of its price on ads consumes exactly that margin. Our margin calculator computes it from your full fee stack.' },
+    { q: 'Is my data sent anywhere?', a: 'No. This page is a static file with no server side. The calculation runs in your browser and nothing is stored or transmitted.' },
+  ]} />
+
+  <script is:inline>
+    (function () {
+      const ids = ['price','margin','cpc','cvr','orders','cash'];
+      const get = id => parseFloat(document.getElementById(id).value) || 0;
+      const money = v => (v < 0 ? '-$' : '$') + Math.abs(v).toFixed(2);
+      const pct = v => v.toFixed(1) + '%';
+      function calc() {
+        const price = get('price'), margin = get('margin') / 100, cpc = get('cpc');
+        const cvr = get('cvr') / 100, orders = get('orders'), cash = get('cash');
+        const clicks = cvr > 0 ? 1 / cvr : NaN;
+        const cpa = isFinite(clicks) ? cpc * clicks : NaN;
+        const acos = price > 0 && isFinite(cpa) ? (cpa / price) * 100 : NaN;
+        const daily = isFinite(cpa) ? cpa * orders : NaN;
+        const unit = isFinite(cpa) ? price * margin - cpa : NaN;
+        const weeks = isFinite(daily) && daily > 0 ? cash / (daily * 7) : NaN;
+        const beacos = margin * 100;
+
+        const set = (id, txt) => { document.getElementById(id).textContent = txt; };
+        set('o-daily', isFinite(daily) ? money(daily) + ' / day' : 'n/a');
+        set('o-beacos', pct(beacos));
+        set('o-cpa', isFinite(cpa) ? money(cpa) : 'n/a');
+        set('o-acos', isFinite(acos) ? pct(acos) : 'n/a');
+        const u = document.getElementById('o-unit');
+        u.textContent = isFinite(unit) ? money(unit) : 'n/a';
+        u.className = 'v ' + (unit >= 0 ? 'pos' : 'neg');
+        set('o-clicks', isFinite(clicks) ? clicks.toFixed(1) : 'n/a');
+        set('o-weeks', isFinite(weeks) ? weeks.toFixed(1) : 'n/a');
+
+        const v = document.getElementById('o-verdict');
+        let msg, warn = false;
+        if (!isFinite(cpa)) { warn = true; msg = 'Enter a conversion rate above zero.'; }
+        else if (acos <= beacos) { msg = 'Advertising is profitable at these inputs — each ad order earns ' + money(unit) + '. The usual constraint at this point is impressions, not budget.'; }
+        else if (!isFinite(weeks) || weeks >= 8) { msg = 'A normal launch shape: each ad order costs ' + money(Math.abs(unit)) + ' as the price of velocity, and your cash funds ' + (isFinite(weeks) ? weeks.toFixed(1) : '—') + ' weeks — enough for reviews and rank to move the conversion rate before the money runs out.'; }
+        else if (weeks >= 6) { warn = true; msg = 'Tight. ' + weeks.toFixed(1) + ' weeks of runway funds the learning phase with little margin for a slow start. Consider a lower daily order target for the first two weeks.'; }
+        else { warn = true; msg = 'At ' + weeks.toFixed(1) + ' weeks of runway, this campaign will likely be cut off before it matures. Lower the order target, add cash, or plan an organic-first launch — an abandoned learning phase costs the spend and buys nothing.'; }
+        v.textContent = msg;
+        v.className = 'verdict' + (warn ? ' warn' : '');
+      }
+      ids.forEach(id => document.getElementById(id).addEventListener('input', calc));
+      calc();
+    })();
+  </script>
+</PageShell>

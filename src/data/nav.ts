@@ -8,6 +8,7 @@ export const NAV = [
   ]},
   { label: 'Tools', href: '/tools/', children: [
     { href: '/tools/margin-calculator/', label: 'Margin & break-even', note: 'Net margin and break-even ACOS' },
+    { href: '/tools/ppc-budget-calculator/', label: 'PPC launch budget', note: 'Break-even ACOS and runway' },
     { href: '/tools/cash-flow-planner/', label: 'Cash flow planner', note: 'When your money actually returns' },
     { href: '/tools/dimensional-weight/', label: 'Dimensional weight', note: 'Billable weight and size check' },
     { href: '/resources/', label: 'Free spreadsheets', note: 'Reimbursement tracker, no signup' },

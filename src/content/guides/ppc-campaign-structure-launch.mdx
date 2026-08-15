@@ -1,0 +1,113 @@
+---
+title: "One campaign with every keyword in it is how launches die. The four-campaign minimum, explained."
+description: "The reported consensus across 2026 PPC guidance is blunt: auto, broad, phrase and exact each get their own campaign, converting search terms flow one way through them, and negative keywords are the plumbing that stops the campaigns bidding against each other. Skipping the plumbing means paying more for the same click."
+category: "Scaling"
+published: "2026-08-16"
+modified: "2026-08-16"
+minutes: 12
+numbered: true
+ledger: "Search-term pruning reported to cut wasted spend 15–25%"
+ledgerKind: "recovered"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The reported consensus structure is four campaign types with separated roles: auto for discovery, broad for controlled research, exact for proven performance, and product targeting for competitor placements — never mixed in one campaign.",
+  "The harvest loop is the engine: converting search terms are promoted from discovery campaigns into exact match, and the same terms are added as negatives in the source campaign so the two do not bid against each other in the same auction.",
+  "One reported launch playbook: auto plus broad at $20–$40 a day each, untouched for seven full days, then a first harvest in days 8–14 — terms with a conversion go to phrase, terms with zero clicks after $3 of spend go to the negative list.",
+  "Amazon offers negative exact and negative phrase only. There is no negative broad match type — a detail that shapes how negative lists have to be built.",
+  "Consistent search-term pruning is reported to cut wasted spend by 15–25%. Against a launch budget, that is the difference of weeks of runway.",
+]} />
+
+The most common structural mistake reported in PPC guidance is also the most tempting one: putting every keyword, in every match type, into a single campaign. Reporting describes the consequence directly — it destroys visibility into what is performing and makes spend impossible to control. The fix is not clever. It is separation.
+
+This guide covers structure and the search-term workflow. What ACOS you can afford is a different question, answered by your margin — our [PPC budget calculator](/tools/ppc-budget-calculator/) computes that ceiling, and the [benchmarks guide](/guides/amazon-ppc-benchmarks/) explains why published ACOS averages disagree with each other.
+
+## The four campaigns and what each one is for
+
+The structure reported consistently across 2026 guidance:
+
+| Campaign | Role | Reported handling |
+| --- | --- | --- |
+| Auto | Discovery — Amazon's algorithm matches queries you would not think of | Capped budget, harvested weekly |
+| Manual broad (and phrase) | Controlled research on your seed terms | Reported as safe "only with strict negative lists, low budgets and bid caps" |
+| Manual exact | Performance — proven terms only | Clear ACOS thresholds, enough budget to not lose profitable impressions |
+| Product targeting | Competitor and category placements | Category targeting only where the category is highly relevant |
+
+Two separations get repeated on top of this: **branded and non-branded terms in separate campaigns** (branded clicks are reported to carry lower CPCs and inflate blended numbers if mixed in), and where practical **one ASIN per campaign**, with a naming convention like `Launch_SKU123_SponsoredProd_Exact` so performance can be isolated per product and per match type.
+
+Separating match types into their own campaigns is described in the reporting as non-negotiable — not for tidiness, but because each match type needs its own bids and its own budget, and a mixed campaign lets the loose match types quietly consume the budget meant for the proven ones.
+
+## The harvest loop
+
+The structure only pays off through the workflow that runs on top of it. The reported loop:
+
+1. Discovery campaigns (auto, broad, phrase) accumulate search terms.
+2. Weekly, the search term report is reviewed. One reported promotion threshold: **five or more clicks and at least one conversion.**
+3. Converting terms are added to the exact match campaign at a competitive bid.
+4. **The same terms are added as negatives in the campaign they came from.**
+5. Terms with spend and no conversions are added as negatives everywhere.
+
+Step 4 is the one people skip, and reporting is explicit about the cost: without the negative-keyword bridge, the discovery campaign and the exact campaign **bid on the same search term in the same auction, and you pay more for the same click.** Your own campaigns become your competition.
+
+<Figure value="15–25%" kind="recovered" source="Be Bold Digital, 2026 Amazon PPC strategy reporting, accessed 16 August 2026">
+  Reported reduction in wasted ad spend from consistent search-term pruning and negative keyword management. On a launch budget, this is measured in weeks of runway.
+</Figure>
+
+## Negative keywords: the two types and the missing third
+
+Amazon offers two negative match types, and reporting notes the gap:
+
+| Type | Reported behaviour |
+| --- | --- |
+| Negative exact | Blocks the precise term, plus close misspellings and plurals |
+| Negative phrase | Blocks any query that contains the phrase |
+| Negative broad | **Does not exist** |
+
+The absence of negative broad means a sprawling irrelevant theme cannot be blocked with one entry — it has to be cut off with negative phrase entries at the root words. Reported candidates for pre-loading before launch, before any spend happens: irrelevant sizes, materials, audiences and use cases that your product does not serve.
+
+Reporting also describes a maintenance pass most sellers never do: negating your winning exact terms **out of** broad and phrase campaigns (to stop cannibalisation), and reviewing organic rank — where a term already ranks in the top three organically, some practitioners pause paid coverage on it and negative-exact it, on the argument that the ad is buying a click the listing was getting free.
+
+## A reported launch sequence
+
+One published 2026 playbook lays the first two weeks out concretely. Treat the numbers as one practitioner's template rather than a rule:
+
+| Days | Reported action |
+| --- | --- |
+| 1–7 | One auto + one broad campaign. $20–$40/day each. Dynamic down-only bidding on auto. **No bid changes and no keyword cuts for seven full days.** |
+| 8–14 | First harvest. Terms with ≥1 conversion → phrase campaign. Terms with zero clicks after $3 spend → negative list. First exact campaign opens with the top 3–5 seed terms. |
+
+The same source frames launch economics in a way worth quoting the shape of: the goal of launch PPC is reported as **rank and data, not profitability** — a launch-phase ACOS of 30–50% is described as an investment rather than a failure. Whether *your* margin can fund that investment, and for how many weeks, is exactly what the [budget calculator's](/tools/ppc-budget-calculator/) runway line answers.
+
+For scaling after launch, the reported pattern is gradual: budget increases of 20–30% every three to five days on winners, rather than large jumps the algorithm has to re-learn around.
+
+## What to do
+
+**Build the structure before the first dollar.** Four campaign types, match types separated, branded terms separated, negatives pre-loaded for the obvious irrelevant traffic. Reporting also recommends deciding your harvest rules in advance — the click and conversion thresholds that trigger a promotion or a negative — so the weekly review is mechanical rather than a judgement call made in the mood of the moment.
+
+**Run the harvest weekly, without exception.** The loop is the strategy. A perfect structure with no weekly search-term review decays into the single-campaign mess with extra steps.
+
+**Check the conversion side before adding budget.** Reported benchmark conversion rates for well-run accounts sit around 10–20%; if clicks arrive and orders do not, the problem is usually the [listing](/guides/listing-optimisation-a10/), not the bid.
+
+<Faq items={[
+  { q: 'Why not one campaign with all match types?', a: 'Reported consensus is that mixed campaigns destroy performance visibility and let loose match types consume the budget meant for proven terms. Separate campaigns allow independent bids and budgets per match type.' },
+  { q: 'What is the negative keyword bridge?', a: 'When a search term is promoted from a discovery campaign into exact match, the same term is added as a negative in the source campaign. Without it, both campaigns are reported to bid on the same query in the same auction, raising your own cost per click.' },
+  { q: 'Is a 40% ACOS at launch a failure?', a: 'Reporting frames launch ACOS of 30–50% as an investment in rank and search-term data rather than a failure. The real question is whether your margin and cash can fund it — our PPC budget calculator computes both the ceiling and the runway.' },
+  { q: 'Is there a negative broad match type?', a: 'No. Amazon offers negative exact (the term plus close misspellings and plurals) and negative phrase (any query containing the phrase). Broad themes have to be blocked with negative phrase entries at the root words.' },
+]} />
+
+<Sources items={[
+  { title: 'How to use Amazon PPC in 2026 (launch playbook: auto + broad at $20–$40/day, 7-day no-touch, day 8–14 harvest thresholds, launch ACOS 30–50% framed as investment)', publisher: 'SellerSprite', href: 'https://www.sellersprite.com/en/blog/amazon-ppc-guide-2026-AI-automation', accessed: '2026-08-16' },
+  { title: 'How to structure Amazon PPC campaigns, updated 2026 (match-type separation described as non-negotiable; the negative keyword bridge and self-competition mechanism; negative exact vs negative phrase)', publisher: 'EcomBrainly', href: 'https://ecombrainly.com/amazon-ppc-campaign-structure/', accessed: '2026-08-16' },
+  { title: 'Amazon PPC strategy 2026 (search-term pruning reported to reduce wasted spend 15–25%; negating winning exact terms out of broad and phrase)', publisher: 'Be Bold Digital', href: 'https://www.bebolddigital.com/blog/amazon-ppc-strategy-2026', accessed: '2026-08-16' },
+  { title: 'Amazon Sponsored Products 2026 (four campaign types; scaling at 20–30% budget increases every 3–5 days; pausing paid coverage on top-3 organic terms; 10–20% CVR benchmark)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/amazon-sponsored-products', accessed: '2026-08-16' },
+  { title: 'Amazon PPC strategy in 2026 (weekly harvest loop with 5+ clicks and ≥1 conversion promotion threshold)', publisher: 'CaptenAMZ', href: 'https://captenamz.com/blog/amazon-ppc-strategy-in-2026/', accessed: '2026-08-16' },
+  { title: 'Amazon PPC: the ultimate guide for 2026 (one ASIN per campaign, Objective+ASIN naming, broad match only with strict negative lists and bid caps, branded vs generic separation)', publisher: 'Wake Commerce', href: 'https://www.wakecommerce.co.uk/blog/amazon-ppc-the-ultimate-guide-for-2026', accessed: '2026-08-16' },
+  { title: 'Complete Amazon PPC checklist (pre-loading negatives for irrelevant sizes, materials, audiences and use cases; defining harvest rules before launch)', publisher: 'SalesDuo', href: 'https://salesduo.com/blog/complete-amazon-ppc-checklist/', accessed: '2026-08-16' },
+  { title: 'How to find, use and optimize negative keywords for Amazon PPC (negative exact covers near misspellings and plurals; no negative broad match type exists)', publisher: 'SellerMetrics', href: 'https://sellermetrics.app/negative-keywords-amazon-ppc/', accessed: '2026-08-16' },
+]} />
