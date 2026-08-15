@@ -9,7 +9,7 @@ export const SITE = {
   adsenseEnabled: false,
   /* Set to your provider's form endpoint (Buttondown, MailerLite, Kit...)
      to switch the Fee Watch signup on across the site. Empty = hidden. */
-  newsletterAction: "",
+  newsletterAction: "https://buttondown.com/api/emails/embed-subscribe/fbatactics",
   founded: "2026",
 };
 
