@@ -1,0 +1,142 @@
+---
+title: "On 31 March 2026 Amazon ended commingled inventory. Brand owners stopped stickering; everyone else started."
+description: "One change split the seller base in two. Brand Registry brand owners can now use their GS1 barcodes as the tracking identifier. Resellers must apply an FNSKU to every unit — and Amazon stopped doing that for them on 1 January."
+category: "Shipping & logistics"
+published: "2026-08-17"
+modified: "2026-08-17"
+minutes: 11
+numbered: true
+ledger: "31 Mar 2026: commingling ends, FNSKU mandatory for resellers"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Reporting states Amazon eliminated commingled inventory on 31 March 2026. Brand Registry brand owners with a Brand Representative role can use their GS1 manufacturer barcodes as the primary tracking identifier, with no FNSKU stickers.",
+  "Resellers face the opposite: FNSKU labels are reported as mandatory on all inventory with no exceptions, and inventory received after 31 March without a proper FNSKU is reported as classified as defective.",
+  "The two changes compound. Amazon ended US prep and labelling services on 1 January 2026, so the sellers who now must label everything are also the ones who must pay somebody to do it.",
+  "One estimate puts the industry-wide cost of re-stickering to avoid commingling at roughly $600 million a year. That expense is described as gone for qualifying brand owners.",
+  "Amazon verifies barcodes against the GS1 database. Resold third-party UPCs are reported to fail verification, producing listing suppression — and reported GS1 costs differ by route: $30 for a single GTIN with no renewal, against roughly $250 a year for a prefix.",
+]} />
+
+Two barcode systems, one change date, and opposite consequences depending on which side of Brand Registry you sit. This is probably the single largest structural change of 2026 for resellers, and it received far less coverage than the fee increase.
+
+## The four identifiers, briefly
+
+Sellers confuse these constantly and the distinctions matter for what follows.
+
+| Identifier | What it is |
+| --- | --- |
+| **GTIN** | The umbrella term for global trade item numbers |
+| **UPC** | A 12-digit GTIN format, standard in the US |
+| **EAN** | A 13-digit GTIN format |
+| **ASIN** | Amazon's catalogue identifier for a product page |
+| **FNSKU** | Amazon's internal barcode linking a **physical unit** to **your seller account**. Not a universal product identifier |
+
+The flow: you buy a UPC from GS1, use it to create a listing, Amazon assigns an ASIN, and for FBA Amazon generates an FNSKU for your inventory.
+
+## What changed on 31 March 2026
+
+Reporting states Amazon **eliminated commingled inventory** on that date, and the consequences split by seller type.
+
+**Brand owners in Brand Registry** with a Brand Representative role can use their GS1 manufacturer barcodes — the UPCs printed on their packaging — as the primary tracking identifier. **No FNSKU stickers.** Reporting describes the industry as having spent roughly **$600 million a year on re-stickering** purely to avoid commingling, and that expense as gone for qualifying brand owners.
+
+**Resellers** get the opposite. FNSKU labels are reported as **mandatory on all inventory, no exceptions**, even where the product already carries a compliant GS1 barcode. Inventory received after 31 March without a proper FNSKU is reported as **classified as defective.**
+
+GS1 UK's own note frames the rationale: Amazon is pursuing unit-level traceability so every item can be linked back to the exact seller who supplied it, and manufacturer barcodes alone are no longer accepted for reseller inbound shipments.
+
+<Figure value="$600m" kind="cost" source="Feedvisor, reported annual industry cost of re-stickering to avoid commingling, accessed 8 August 2026">
+  The estimated annual industry spend on re-stickering that the change removes for qualifying brand owners. For resellers, the labelling requirement went the other way.
+</Figure>
+
+## The compounding problem for resellers
+
+Put two 2026 changes side by side.
+
+**1 January:** Amazon ended US FBA prep and labelling services — see the [prep guide](/guides/amazon-stopped-prepping/).
+
+**31 March:** FNSKU labels became mandatory on every reseller unit.
+
+**The same seller now has more labelling to do and no service to do it.** Reported third-party prep costs of $0.35 to $2.00 per unit apply to that labour, and the alternative is doing it yourself.
+
+For a wholesale or reseller business at any volume, that is a new per-unit cost line that did not exist in 2025, on top of the [fee increases](/guides/fba-vs-fbm-breakeven/). It is also a reason the [Brand Registry](/guides/brand-registry-trademark/) question changed shape: registry now removes a per-unit operating cost rather than only unlocking marketing tools.
+
+## Why cheap UPCs fail
+
+Reporting is consistent: **Amazon verifies barcodes against the GS1 global database**, and third-party resold UPCs fail that verification.
+
+The mechanism: if the brand or company associated with a GTIN does not match your seller account information, the code is treated as invalid. Reported consequences include listing suppression, ASIN creation blocks and GTIN verification issues.
+
+**This is the mistake that is expensive to unwind**, because listings built on invalid codes may have to be rebuilt, and rebuilt listings lose their review history and rank.
+
+**Reported GS1 costs differ by route**, and the difference matters:
+
+| Route | Reported cost | Renewal |
+| --- | --- | --- |
+| Single GTIN from GS1 US | $30 per GTIN | No renewal requirement |
+| GS1 prefix (multiple GTINs) | Roughly $250 a year | Annual — and a lapsed prefix is reported to trigger Amazon listing issues |
+
+That renewal point is worth noting. A prefix that lapses in the GS1 database causes listing problems on products that were fine yesterday, and the cause is not obvious from inside Seller Central.
+
+**Each variation needs its own GTIN.** Size, colour, flavour, quantity, bundle configuration. A product in four colours and three sizes is twelve UPCs — which changes the arithmetic between the single-GTIN and prefix routes considerably.
+
+## GTIN exemptions
+
+Amazon offers exemptions allowing listings without a UPC, reported as available for private label, handmade and custom products that genuinely lack barcodes, and for parts, accessories and self-assembled bundles.
+
+Two cautions from reporting:
+
+**You still need FNSKU labels.** An exemption removes the listing requirement, not the FBA unit-labelling requirement.
+
+**Exemptions can be revoked.** Reported as category-specific and potentially withdrawn if a brand grows past a small-scale threshold. One source's conclusion is that most sellers find buying GS1 UPCs simpler than maintaining exemption status — and if your brand or category already uses GS1 barcodes, reporting states you will not qualify anyway.
+
+## Label mechanics
+
+The details that cause receiving problems:
+
+- **Size:** reported at 1 × 2 inches (25 × 51 mm)
+- **Colour:** black ink on white, non-reflective
+- **Placement:** the FNSKU goes **over** the manufacturer barcode, covering it entirely. Two scannable barcodes on one unit is a receiving error
+- **Scannability:** every unit entering a fulfilment centre needs a scannable barcode, or Amazon cannot receive it — leading to relabelling fees, delays or rejection
+
+Reporting names missing or wrong barcodes as **the leading reason FBA shipments are held at receiving or destroyed.**
+
+## What to do
+
+**Establish which side of the change you are on.** Brand Registry brand owner with a Brand Representative role, or reseller. The answer determines your labelling obligation and your per-unit cost.
+
+**If you are a reseller, cost FNSKU labelling into your unit economics** — either your labour or a prep centre's per-unit rate.
+
+**If you are a brand owner not yet in Brand Registry**, the calculation changed. Registry now removes a recurring labelling cost per unit, which for anyone at volume can exceed the trademark cost within a year.
+
+**Buy GTINs from GS1 directly.** Reporting is unanimous that resold codes fail verification. Choose between single GTINs and a prefix based on how many variations you actually need.
+
+**Diarise your GS1 renewal** if you hold a prefix. A lapse produces listing problems with no obvious cause.
+
+**Check your listing data matches your GS1 registration.** Reporting notes product details on the Amazon listing must match what is registered against the barcode.
+
+**Check the FNSKU covers the manufacturer barcode completely** on a sample before a full run — particularly if a supplier or prep centre is doing the labelling.
+
+<Faq items={[
+  { q: "What changed on 31 March 2026?", a: "Reporting states Amazon eliminated commingled inventory. Brand Registry brand owners with a Brand Representative role can use GS1 manufacturer barcodes as the tracking identifier; resellers must apply an FNSKU to every unit, with inventory received without one reported as classified as defective." },
+  { q: "Do I need an FNSKU if my product already has a UPC?", a: "If you are a reseller, yes — reporting states manufacturer barcodes alone are no longer accepted for reseller inbound shipments. If you are a brand owner enrolled in Brand Registry, reporting indicates you can continue using your GS1 barcode." },
+  { q: "Can I buy cheap UPCs from a reseller?", a: "Not reliably. Amazon verifies barcodes against the GS1 database and resold third-party UPCs are reported to fail, producing listing suppression and ASIN creation blocks. Buy from GS1 directly." },
+  { q: "How much does a GTIN cost?", a: "Reported at $30 for a single GTIN from GS1 US with no renewal requirement, or roughly $250 a year for a prefix. Each variation — size, colour, flavour, bundle — needs its own GTIN, which determines which route is cheaper." },
+  { q: "What is a GTIN exemption?", a: "Permission to list without a UPC, reported as available for handmade, custom and certain private-label products. It does not remove the FNSKU requirement for FBA units, it is category-specific, and it can be revoked as a brand grows." },
+  { q: "Where does the FNSKU label go?", a: "Over the manufacturer barcode, covering it entirely, on a 1 × 2 inch white non-reflective label in black ink. Two scannable barcodes on one unit causes receiving errors." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon GTIN guide 2026 (commingled inventory eliminated 31 March 2026; Brand Representative role using manufacturer barcodes; FNSKU mandatory for resellers with inventory received without one classified as defective; roughly $600 million annual industry re-stickering spend; barcode verification against the GS1 database; $30 per GTIN with no renewal)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/gtin/', accessed: '2026-08-08' },
+  { title: 'Amazon UPC codes: requirements, GS1 costs and how to get one (prefix at roughly $250 a year and lapse consequences; each variation needing its own UPC; UPC against FNSKU; resellers without Brand Registry needing FNSKUs after 31 March 2026)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/upc/', accessed: '2026-08-08' },
+  { title: 'Amazon\u2019s new FNSKU labelling requirement: what you need to know (from 31 March 2026 sellers not in Brand Registry must apply an FNSKU to every unit even where a GS1 barcode exists; unit-level traceability rationale; brand owners retaining GS1 barcodes)', publisher: 'GS1 UK', href: 'https://www.gs1uk.org/insights/news/Amazon-new-FNSKU-labelling-requirement-what-you-need-to-know', accessed: '2026-08-08' },
+  { title: 'Amazon FBA barcode requirements: 2026 complete guide (Amazon no longer applying FNSKU labels from January 2026; label size 1 × 2 inches in black on white non-reflective; resold UPCs failing verification; GTIN exemption still requiring FNSKUs and being revocable; stickerless commingled inventory trade-offs)', publisher: 'UPCGen', href: 'https://upcgen.com/learn/amazon-fba-barcode-requirements', accessed: '2026-08-08' },
+  { title: 'Amazon GS1 barcode requirements: complete 2026 guide (GTIN validation against GS1 records; listing suppression and ASIN creation blocks where brand data does not match; exemption categories and the rule that existing GS1 use disqualifies you)', publisher: 'Better World Products', href: 'https://www.betterworldproducts.org/amazon-gs1-barcode-requirements/', accessed: '2026-08-08' },
+  { title: 'Ultimate guide to Amazon barcodes (FNSKU applied over the UPC covering it entirely; one barcode per variation; prohibition on recycled or unauthorised barcodes; listing data matching GS1 registration)', publisher: 'The Selling Guys', href: 'https://www.thesellingguys.com/complete-guide-to-amazon-fba-product-codes-upc-gtin-ean-barcodes-asins-fnskus/', accessed: '2026-08-08' },
+  { title: 'Amazon barcode requirements 2026 (every unit needing a scannable barcode; relabelling fees, receiving delays and rejected shipments where missing)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-barcode-label-requirements/', accessed: '2026-08-08' },
+]} />

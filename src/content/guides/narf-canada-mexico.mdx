@@ -1,0 +1,114 @@
+---
+title: "You can list in Canada and Mexico without shipping anything there. The catch is in the fee and the delivery time."
+description: "Remote Fulfillment with FBA puts your US inventory on Amazon.ca and Amazon.com.mx without cross-border logistics. Reported delivery times are 7 to 12 days for Canada, the fee replaces the FBA fee and is higher — and the customer pays the duty."
+category: "Scaling"
+published: "2026-08-17"
+modified: "2026-08-17"
+minutes: 10
+numbered: true
+ledger: "One inventory pool, three (now four) marketplaces"
+ledgerKind: "recovered"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Remote Fulfillment with FBA lists your US FBA inventory on Amazon.ca and Amazon.com.mx without sending stock across the border. Amazon's own page now also names Brazil.",
+  "Amazon does not support FBA fulfilment between the US, Canada and Mexico. Without remote fulfilment, each country needs its own inventory, its own SKUs and separate management.",
+  "The fee replaces the FBA fee and is reported as higher, reflecting cross-border shipping. Reported Prime delivery times are 5 to 9 days for Mexico and 7 to 12 days for Canada.",
+  "Customers pay import duties and take ownership when the carrier collects from the US fulfilment centre — which removes the importer-of-record problem from you and adds a cost to them.",
+  "One reported advantage rarely mentioned: advertising costs in Canada and Mexico are described as significantly lower than the US, which can offset the higher fulfilment fee.",
+]} />
+
+International expansion usually means inventory, customs and compliance in a second country — as the [Europe guide](/guides/expanding-eu-uk-compliance/) sets out at length. North America has a route that skips most of that, and it is worth understanding what it costs before assuming it is free.
+
+## The constraint it solves
+
+Reporting states plainly that **Amazon does not support FBA fulfilment between the US, Canada and Mexico.** Without remote fulfilment, you set up FBA in each country, inventory is managed separately, and a seller cannot fulfil an order in one country with stock held in another. Reporting also notes Amazon requires different FBA SKUs for each North American selling location.
+
+That is three inventory pools, three forecasts and three restock decisions for the same product.
+
+Remote Fulfillment removes it: **one inventory pool in US fulfilment centres, serving orders across the marketplaces you enrol in.**
+
+<Figure value="One pool" kind="recovered" source="Reported structure of Remote Fulfillment with FBA, accessed 8 August 2026">
+  The structural change. Without it, each North American marketplace needs its own inventory, its own SKUs and its own restock cycle for the same product.
+</Figure>
+
+## What it requires
+
+Reported eligibility, consistent across sources:
+
+- A **Professional** selling account — not Individual
+- A **North America unified account**. Amazon's own page now describes it as a North America **and Brazil** unified selling account
+- **Enrolled in FBA in the US, with FBA Export enabled**
+- **FBA only.** Merchant-fulfilled listings are not eligible, because Amazon must control the shipping to handle cross-border documentation and clearance
+- **Compliance with destination-country regulations.** Restricted items, dangerous goods and prohibited products are ineligible
+
+Most modern accounts are reported to be unified by default; older accounts may need upgrading through an Upgrade to a Unified Account page in settings.
+
+**Enrolment is described as automatic once switched on:** Amazon evaluates your inventory, adds eligible items, and continues adding newly eligible ASINs as you create them. Build International Listings can replicate your US offers and price them automatically for exchange rates, fulfilment costs and referral fee differences.
+
+## What it costs
+
+**A remote fulfilment fee replaces the FBA fee**, and reporting describes it as higher than the standard US fee to reflect cross-border shipping.
+
+**Delivery is slower.** Reported Prime delivery: **5 to 9 days for Mexico**, **7 to 12 days for Canada.** One source is direct that remote fulfilment is not ideal for Canada because of the longer delivery times and higher costs, and frames it as a way to test the market rather than a permanent arrangement.
+
+**Customers pay import duties.** Reporting states the customer takes ownership when the shipping company collects from the US fulfilment centre. That removes the importer-of-record question from you — see the [Incoterms guide](/guides/incoterms-who-is-importer/) for why that matters — and it adds a cost the buyer sees at checkout or on delivery.
+
+**Returns come back to your US fulfilment centre**, handled as US returns are.
+
+## The advantage nobody mentions
+
+One reported point is worth more attention than it gets: **advertising costs in Canada and Mexico are described as significantly lower than in the US** because of lower competition, allowing customer acquisition at a materially lower cost per click.
+
+Against the [US CPC picture](/guides/amazon-ppc-benchmarks/) — reported at $1.00 to $1.25 blended and rising 8% to 12% year on year — that is a genuine offset to the higher fulfilment fee, and it is the strongest argument for testing these markets rather than a marginal one.
+
+## When to graduate to local inventory
+
+Remote fulfilment is a test mechanism. If a market works, local FBA gives you faster delivery, standard fee rates and no duty on the customer.
+
+The trade is what you avoided: local inventory, cross-border shipments, customs clearance, and country-specific compliance. Reporting names **bilingual labelling for Canada** and **Mexican tax requirements** as examples, and notes compliance failures risk penalties or account suspension. Canada also requires consideration of non-resident importer registration and a brokerage arrangement.
+
+**A reasonable rule:** stay remote while you are learning whether demand exists; move local when the fee difference on your actual volume exceeds the cost and complexity of holding inventory there. That is a calculation, and remote fulfilment gives you the data to make it.
+
+## What to do
+
+**Check your account is unified** before anything else — the language switcher in Seller Central shows whether the other marketplaces appear.
+
+**Enable Build International Listings** with automatic pricing at enrolment. Reporting describes it as adjusting for exchange rates, fulfilment costs and referral fee differences, which is exactly the arithmetic you would otherwise do per SKU.
+
+**Review the replicated listings anyway.** Automatic pricing preserves margin mechanically; it does not know whether the resulting price is competitive in that market.
+
+**Check ineligible categories first.** Dangerous goods and restricted products do not qualify — see the [hazmat guide](/guides/hazmat-dangerous-goods/).
+
+**Set expectations on delivery.** Seven to twelve days is not a US Prime experience, and it affects reviews and conversion in ways your US listing history will not predict.
+
+**Test advertising there.** The lower reported CPCs are the part of this that is genuinely undervalued.
+
+**Model the graduation to local inventory** before you need to. Knowing the volume at which local FBA becomes cheaper turns a vague ambition into a trigger.
+
+**Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<Faq items={[
+  { q: "Can I sell in Canada without shipping inventory there?", a: "Yes, through Remote Fulfillment with FBA. Your US FBA inventory is listed on Amazon.ca and Amazon.com.mx, and Amazon's own page now also names Brazil." },
+  { q: "Can I fulfil Canadian orders from US FBA stock without it?", a: "No. Reporting states Amazon does not support FBA fulfilment between the US, Canada and Mexico. Without remote fulfilment each country needs its own inventory and its own FBA SKUs." },
+  { q: "What does it cost?", a: "A remote fulfilment fee replaces the FBA fee and is reported as higher, reflecting cross-border shipping. Customers separately pay import duties and take ownership when the carrier collects from the US fulfilment centre." },
+  { q: "How long does delivery take?", a: "Reported Prime delivery is 5 to 9 days for Mexico and 7 to 12 days for Canada. One source describes it as not ideal for Canada on that basis, and better suited to testing the market." },
+  { q: "What do I need to enrol?", a: "A Professional selling account, a North America unified account, enrolment in FBA in the US with FBA Export enabled, and compliance with destination-country regulations. Merchant-fulfilled listings are not eligible." },
+  { q: "When should I switch to local inventory?", a: "When the fee difference on your actual volume exceeds the cost of holding inventory locally — which brings country-specific requirements such as bilingual labelling for Canada and Mexican tax obligations." },
+]} />
+
+<Sources items={[
+  { title: 'Remote Fulfillment with FBA (Professional plan, North America and Brazil unified selling account, FBA in the US with FBA Export enabled; Build International Listings with automatic pricing for exchange rates, fulfilment costs and referral fees)', publisher: 'Amazon', href: 'https://sell.amazon.com/fulfillment-by-amazon/remote-fulfillment', accessed: '2026-08-08' },
+  { title: 'Amazon NARF program: sell to Canada and Mexico with FBA (Prime delivery 5–9 days Mexico and 7–12 days Canada; a remote fulfilment fee in place of the FBA fee; customers paying import duties and taking ownership at collection; returns to the US fulfilment centre; automatic enrolment of eligible ASINs)', publisher: 'Palmetto Digital Marketing Group', href: 'https://palmettodigitalmarketinggroup.com/the-amazon-narf-program-north-american-remote-fulfillment/', accessed: '2026-08-08' },
+  { title: 'Expand to Canada and Mexico with an Amazon unified account (Amazon not supporting FBA fulfilment between the US, Canada and Mexico; separate inventory per country; different FBA SKUs required per location)', publisher: 'Listing Mirror', href: 'https://www.listingmirror.com/amazon-selling-canada-mexico-us/', accessed: '2026-08-08' },
+  { title: 'Guide to Amazon NARF (unified account requirement and upgrade path; FBA-only eligibility because Amazon controls cross-border documentation and clearance; advertising costs in Canada and Mexico described as significantly lower than the US)', publisher: 'Linktrans', href: 'https://en.link-trans.com/guide-to-amazon-narf-how-to-expand-to-canada-and-mexico/', accessed: '2026-08-08' },
+  { title: 'Amazon North America unified account guide (Canadian FBA inventory not shipping internationally; bilingual labelling for Canada and Mexican tax requirements; Build International Listings)', publisher: 'My Amazon Guy', href: 'https://myamazonguy.com/amazon-canada/amazon-north-america-unified-account/', accessed: '2026-08-08' },
+  { title: 'Expanding to Amazon Canada: a step-by-step guide for US sellers (remote fulfilment described as not ideal for Canada due to longer delivery times and higher costs, and as a way to test the market; non-resident importer registration and brokerage)', publisher: 'AiHello', href: 'https://www.aihello.com/resources/blog/expanding-to-amazon-canada-a-step-by-step-guide-for-us-sellers/', accessed: '2026-08-08' },
+  { title: 'What is Amazon NARF (eligibility requirements: Professional account, unified account, FBA enrolment, trade compliance with destination-country regulations)', publisher: 'Jungle Scout', href: 'https://www.junglescout.com/blog/what-is-amazon-narf/', accessed: '2026-08-08' },
+]} />
