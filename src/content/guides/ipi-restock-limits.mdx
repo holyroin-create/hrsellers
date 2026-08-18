@@ -1,0 +1,148 @@
+---
+title: "If your IPI dropped in the spring evaluation, you cannot stock for Black Friday now"
+description: "Capacity limits are set from a quarterly evaluation. A score that fell in the April to June window restricts your Q3 inbound — which is the window you need to fill for peak. And published thresholds disagree."
+category: "Fees & reimbursements"
+published: "2026-08-18"
+modified: "2026-08-18"
+minutes: 10
+numbered: true
+ledger: "Threshold reported as 400 · and as 450 · and as 500"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The Inventory Performance Index is a 0 to 1,000 score that determines how much you may store at FBA. Below the threshold, Amazon caps your capacity and can block inbound shipments.",
+  "The threshold is reported as 400 by most 2026 sources, as 450 by two, and one article gives both figures in the same piece. Amazon is described as able to adjust it quarterly.",
+  "Capacity was reportedly reduced from six months of forecasted sales to five in 2026, and ASIN-level restock limits have been reactivated — so an individual SKU can be throttled even when your account capacity is not full.",
+  "The timing is the trap. A score that drops in the April to June evaluation restricts your Q3 capacity — the exact window you need to fill for Black Friday.",
+  "IPI is reported to be calculated from four factors, with excess inventory and sell-through carrying the most weight. Reducing days of inventory improves both at once.",
+]} />
+
+Most inventory advice on this site is about what holding stock costs. This one is about not being allowed to hold it — which is a harder problem, because no amount of budget solves it.
+
+## What the score controls
+
+The Inventory Performance Index is a score from 0 to 1,000 assigned to professional FBA sellers, reflecting how efficiently inventory in fulfilment centres is managed.
+
+Reported consequences of falling below the threshold:
+
+- **Storage volume capped** in cubic feet
+- **Inbound shipments restricted** — potentially unable to send new stock until existing inventory clears
+- **ASIN-level restock limits** throttling individual products even when overall capacity is not maxed
+- Higher storage costs on overstocked and aged inventory
+
+One source's framing is the right one: a low score **quietly throttles your ability to grow.** It is not a fee, so it does not appear in any cost model.
+
+## The threshold, and the disagreement
+
+| Source | Reported threshold |
+| --- | --- |
+| Nventory | 400 in 2026, adjustable quarterly |
+| PDMG | Around 400 |
+| Nova Analytics | 400, with 500+ giving comfortable buffer |
+| SellerApp | 400 in one paragraph, **450 in another paragraph of the same article** |
+| Megaficus | Above 450 for higher allocations |
+
+Reported history: raised from 400 to 500 in August 2020, back to 400 by 2022, and 400 in 2026 with Amazon reserving the right to adjust quarterly.
+
+**The working position:** treat 400 as the cliff and manage to 500 or above. Every source agrees that 400 is the floor rather than the target, and that 500+ produces meaningfully better allocations. Managing to the higher number makes the disagreement irrelevant.
+
+Reported bands:
+
+| Score | Reported effect |
+| --- | --- |
+| Below 400 | Capacity limits, restricted inbound, ASIN-level throttling |
+| 400–500 | No restrictions, limited headroom — a few bad weeks can drop you below |
+| 500–600 | Healthy; standard or above-average allocations |
+| 600+ | Excellent |
+
+<Figure value="400 / 450 / 500" kind="cost" source="Published IPI thresholds across five 2026 sources, reviewed 8 August 2026">
+  Three thresholds across five sources — including one article giving two of them. Managing to 500 makes the disagreement moot.
+</Figure>
+
+## What changed
+
+Two reported changes matter more than the threshold argument.
+
+**Capacity allocation tightened.** Reporting states Amazon reduced storage allowances from roughly six months of forecasted sales to **five months** in 2026, and separately that mid-2025 saw capacity tightened and **ASIN-level restock limits reactivated** for individual SKUs.
+
+That second point is the one to understand. Since March 2023 the separate storage volume limit and restock limit were reported as replaced by a single capacity limit measured in cubic feet, with the unit limit eliminated. Reporting now describes ASIN-level limits back in play — meaning **maximum unit quantities set per product, independently of your account capacity and your IPI score.**
+
+So there are two constraints to check, not one.
+
+## The timing trap
+
+This is the most useful thing in this guide and almost nobody states it.
+
+Capacity is evaluated quarterly. **If your IPI drops during the April to June evaluation, you enter Q3 with restricted capacity** — and Q3, specifically August and September, is when you must get inventory in for Black Friday.
+
+Reporting puts it plainly: the worst time to hit your limit is August to September, and by then it is too late to fix, because the score that caused it was set in a window that has closed.
+
+**Which makes IPI a year-round metric rather than a quarterly one.** A seller who lets it drift in May discovers the consequence in September, with no remedy available before peak.
+
+Given today's date, if your capacity feels tight for the [Q4 inbound deadlines](/guides/peak-season-cost-stack/), this is likely why.
+
+## How the score is calculated
+
+Reported as four factors, with the first two carrying the most weight:
+
+1. **Excess inventory percentage** — stock beyond what demand supports
+2. **Sell-through rate** — units sold against units held
+3. **Stranded inventory percentage** — units with no active listing
+4. **In-stock rate** — availability on products with demand
+
+**The tension is deliberate.** Amazon's own guidance is described as keeping inventory lean while holding enough to avoid lost sales — which is precisely the conflict the [low-inventory-level fee](/guides/low-inventory-level-fee/) creates from the other direction. Too much stock lowers your IPI; too little triggers a per-unit fee. The programme is designed to make you accurate rather than cautious.
+
+## What moves the score fastest
+
+Reported as the highest-leverage actions:
+
+**Reduce days of inventory toward 45.** Reporting describes this as improving excess inventory percentage and sell-through simultaneously — two of the four factors, and the two that weigh most, from one action. A catalogue averaging 90 days is holding roughly twice what it needs.
+
+**Resolve stranded listings.** Units in a fulfilment centre with no active listing count against you and sell nothing. Reporting suggests resolving them within 48 hours as a standing habit.
+
+**Remove dead SKUs.** Sort FBA inventory by units sold in the last 90 days; anything at or near zero is dragging the score. See the [removal guide](/guides/removal-vs-hold-decision/) for whether to remove, liquidate or promote.
+
+**Do not confuse promotion with progress.** One reported recovery cost $1,800 in coupon discounts and $340 in removal fees to protect $45,000 a month in Q4 restocking capacity. That is a sensible trade — but it is a cost, and it works because it was made in time.
+
+**Use upstream storage.** Reporting notes AWD stores bulk inventory **outside your FBA capacity limit** — see the [AWD guide](/guides/awd-vs-3pl-warehousing/). For a seller against a capacity ceiling, that is a structural answer rather than a tactical one.
+
+## What to do
+
+**Check your score and your capacity now**, not in September. Seller Central shows both.
+
+**Check for ASIN-level limits separately.** Account capacity being fine does not mean an individual SKU is unrestricted.
+
+**Manage to 500, not 400.** It removes the threshold disagreement and gives headroom for a bad month.
+
+**Target 45 days of inventory.** One action, two of the four factors, both heavily weighted.
+
+**Clear stranded listings weekly.** It is the cheapest of the four factors to fix.
+
+**If capacity is already restricted going into Q4**, route buffer stock through AWD or a 3PL rather than trying to force it into FBA — and read the [peak season guide](/guides/peak-season-cost-stack/) before committing to a Q4 inventory plan you may not be allowed to execute.
+
+<Faq items={[
+  { q: "What is a good IPI score?", a: "Published thresholds disagree — 400 in most 2026 sources, 450 in two, and one article gives both. Every source treats 400 as the floor and 500+ as producing better allocations, so managing to 500 makes the disagreement irrelevant." },
+  { q: "What happens below the threshold?", a: "Reported consequences are capped storage volume in cubic feet, restricted inbound shipments, ASIN-level restock limits on individual products, and higher storage costs on overstocked and aged inventory." },
+  { q: "How much capacity do I get?", a: "Reporting states Amazon adjusted allocations to roughly five months of projected sales volume in 2026, down from six, calculated from recent sales volume and velocity." },
+  { q: "Why does my capacity feel tight before Q4?", a: "Capacity is set from a quarterly evaluation. A score that dropped in the April to June window restricts your Q3 inbound — which is when you need to fill for Black Friday, and too late to fix." },
+  { q: "What improves the score fastest?", a: "Reducing days of inventory toward 45 improves excess inventory percentage and sell-through at once — the two most heavily weighted factors. Resolving stranded listings and removing dead SKUs are the next two." },
+  { q: "Does AWD count against my capacity?", a: "Reporting states AWD stores bulk inventory outside the FBA capacity limit, which makes it a structural option for sellers against a ceiling rather than only a storage cost decision." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon IPI score guide 2026: storage limits and improvement (0–1,000 score; threshold at 400 in 2026 adjustable quarterly; history from 400 to 500 in August 2020 and back to 400 by 2022; score bands and what each means; ASIN-level restock limits back in play)', publisher: 'Nventory', href: 'https://nventory.io/blog/amazon-ipi-score-guide-2026-storage-limits', accessed: '2026-08-08' },
+  { title: 'Amazon FBA restock limits 2026 (limits calculated per storage type; 400 preventing limits and 500+ receiving higher allocations; Q2 evaluation restricting Q3 capacity before Black Friday; AWD storing bulk inventory outside the FBA capacity limit)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/amazon-fba-restock-limits', accessed: '2026-08-08' },
+  { title: 'Amazon IPI score 2026: how to improve it (four calculation factors with excess inventory and sell-through weighted most; 45-day DOI target; resolving stranded listings within 48 hours; worked recovery cost of $1,800 in coupons and $340 in removals)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/amazon-ipi-score', accessed: '2026-08-08' },
+  { title: 'Ins and outs of Amazon Inventory Performance Index in 2026 (threshold given as 400 in one paragraph and 450 in another; capacity reduced from six months to five in mid-2025; ASIN-level restock limits reactivated; Amazon guidance on lean inventory)', publisher: 'SellerApp', href: 'https://www.sellerapp.com/blog/amazon-inventory-performance-index-ipi/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA capacity limits (capacity adjusted to approximately five months of projected sales from six; calculation from the last 90 days of sales volume and velocity; maximum unit quantities set per product independently of account capacity and IPI)', publisher: 'Megaficus', href: 'https://megaficus.com/en/blog/amazon-fba-capacity-limits/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA inventory management and capacity limits (March 2023 replacement of separate storage volume and restock limits with a single capacity limit in cubic feet; unit limit eliminated at that point)', publisher: 'Brandwoven', href: 'https://gobrandwoven.com/resources/articles/understanding-amazon-capacity-limits-for-fba-inventory-amazon-seller-central-inventory-management-explained/', accessed: '2026-08-08' },
+  { title: 'Amazon IPI score 2026 (0–1,000 scale; consequences including limited storage, higher fees on overstocked and aged inventory, and restricted inbound shipments)', publisher: 'Seller Labs', href: 'https://www.sellerlabs.com/blog/amazon-ipi-score-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon Inventory Performance Index (IPI) guide 2026 (score bands from below 400 to 600+; restricted capacity examples; additional fees from slow-moving stock)', publisher: 'Palmetto Digital Marketing Group', href: 'https://palmettodigitalmarketinggroup.com/amazon-inventory-performance-index-ipi-2026/', accessed: '2026-08-08' },
+]} />
