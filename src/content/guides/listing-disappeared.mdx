@@ -1,0 +1,150 @@
+---
+title: "Your listing disappeared. Here are the nine reasons, in the order to check them."
+description: "A suppressed listing does not rank, does not convert and does not appear in search. Amazon rarely explains which rule you broke — but the causes are a short, checkable list, and most of them are covered in detail elsewhere on this site."
+category: "Getting started"
+published: "2026-08-19"
+modified: "2026-08-19"
+minutes: 9
+numbered: true
+ledger: "Nine causes · check in this order"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Suppression is not a warning. The listing stops appearing in search until the underlying problem is fixed.",
+  "Nine distinct causes account for nearly all of it, and they are checkable in about twenty minutes.",
+  "Image compliance is the most common and the least obvious, because reporting describes periodic sweeps suppressing listings that ran fine for weeks.",
+  "Some of what looks like suppression is not: a missing Buy Box on a live listing is a different problem with a different cause.",
+  "Stranded inventory — units in a fulfilment centre with no active listing — is both a symptom and a separate cost, because it counts against your IPI while selling nothing.",
+]} />
+
+This page exists because the same question arrives in different forms — the listing vanished, sessions collapsed, the ASIN says inactive — and the answer is a checklist rather than an explanation.
+
+Work down it. Each cause links to the guide with the detail.
+
+## 1. Main image compliance
+
+**Check first, because it is the most common and the least visible.**
+
+Reporting describes suppression triggered by a background that is not exactly RGB 255, 255, 255, a product filling under 85% of the frame, prohibited text or logos, or resolution below 1,000 pixels.
+
+**And the silent version:** a listing running fine for weeks, then caught by a periodic compliance sweep. A sudden session drop with no other explanation points here.
+
+→ [Main image compliance](/guides/main-image-compliance/)
+
+## 2. Barcode and GTIN verification
+
+Amazon verifies barcodes against the GS1 database. Reporting states that where the brand or company associated with a GTIN does not match your seller account, the code is treated as invalid — producing listing suppression and ASIN creation blocks.
+
+Also, since 31 March 2026: reseller inventory received without a proper FNSKU is reported as **classified as defective.**
+
+→ [Barcodes and FNSKU](/guides/gs1-barcodes-fnsku/)
+
+## 3. A restricted category or brand gate
+
+Gating operates at category, brand and ASIN level independently. Reporting is explicit that **an individual ASIN can be blocked even after category and brand approval** — flagged for safety, compliance, authenticity or dangerous goods.
+
+→ [Ungating and restricted categories](/guides/ungating-restricted-categories/)
+
+## 4. A dangerous goods review
+
+Anything containing a lithium cell, pressurised, flammable, reactive or strongly magnetic can enter review. While it does, you cannot send inventory and existing stock may be held.
+
+→ [Hazmat and dangerous goods](/guides/hazmat-dangerous-goods/)
+
+## 5. A compliance document request
+
+Reporting describes Amazon requesting certificates at any time with a window of around 72 hours, and ASIN suspension as the consequence of missing it. Children's Product Certificates, General Certificates of Conformity, test reports.
+
+→ [US product compliance](/guides/us-product-compliance/)
+
+## 6. An intellectual property or authenticity complaint
+
+A rights owner filed against the listing, or an inauthentic allegation was raised. These are not image or data problems and they do not resolve by editing the listing.
+
+→ [IP complaints](/guides/ip-complaints-retractions/) · [Suspension appeals](/guides/account-suspension-appeal/)
+
+## 7. Insurance non-compliance
+
+Reporting describes a window of typically 30 to 60 days to submit a compliant certificate of insurance before listings are suppressed, once you cross the reported threshold of $10,000 in sales across three consecutive months.
+
+→ [Seller insurance](/guides/seller-insurance-coi/)
+
+## 8. Stranded inventory
+
+Units sitting in a fulfilment centre with no active listing attached. This is usually a **symptom** of one of the causes above rather than a cause itself — but it has its own cost, because stranded inventory percentage is one of the four factors in your IPI score, and it is storing product that cannot sell.
+
+Reporting recommends resolving stranded listings within 48 hours as a standing habit.
+
+→ [IPI and restock limits](/guides/ipi-restock-limits/)
+
+## 9. Capacity restrictions
+
+Not suppression, but frequently mistaken for it: you cannot send inventory in. Below the IPI threshold, Amazon caps capacity and can restrict inbound, and ASIN-level restock limits can throttle individual products.
+
+→ [IPI and restock limits](/guides/ipi-restock-limits/)
+
+<Figure value="~20 minutes" kind="recovered" source="The nine checks compiled from this site's guides, August 2026">
+  Roughly how long it takes to walk the full list. The causes are specific and checkable; what is missing is usually an explanation of which one applies.
+</Figure>
+
+## What is not suppression
+
+Three things that look similar and are not, because the fix is different.
+
+**No Buy Box on a live listing.** The page loses its Add to Cart button and buyers must click through to all buying options. Reporting describes this as generally meaning the lowest landed price on the listing sits high against prices Amazon sees at other retailers, with the Fair Pricing Policy suppressing the box rather than the listing. → [Buy Box](/guides/buy-box-featured-offer/)
+
+**Losing Buy Box share to another seller.** Rotation, not suppression. The listing is fine; your offer is not winning. → [Buy Box](/guides/buy-box-featured-offer/)
+
+**A ranking decline.** Gradual, not sudden, and usually conversion or stock related. Reporting notes rank erodes before a stockout actually happens, as raising prices to conserve inventory drops conversion. → [Listing optimisation](/guides/listing-optimisation-a10/)
+
+**The distinction that separates them:** suppression removes the listing from search entirely. If the listing is still findable, it is not suppressed, and you are looking at a different problem.
+
+## The order to work in
+
+1. **Open the Account Health dashboard.** Policy notifications name the cause where one has been issued. Two minutes.
+2. **Check Manage Inventory** for the ASIN's status and any listing limitation flags.
+3. **Look at your own listing as a customer, on mobile.** Findable or not decides which half of this page applies.
+4. **Check the main image** against RGB 255 with a colour picker, and against the 85% rule.
+5. **Check for stranded inventory** — it often points at the cause.
+6. **Work down causes 2 to 7** in order.
+7. **Fix and resubmit**, then verify the listing is findable again rather than assuming.
+
+## Preventing most of it
+
+Almost every cause above is a document or a specification collected in advance:
+
+- **A verified white canvas** on every main image, checked before upload
+- **GS1 barcodes bought directly**, with listing data matching the registration
+- **Compliance certificates filed per SKU** so a 72-hour request is retrieval rather than research
+- **An SDS or exemption sheet** on anything with a battery or chemical
+- **A certificate of insurance** in place before the threshold
+- **Supplier invoices** in the right form — see [the supplier invoice](/guides/the-supplier-invoice/)
+
+Six habits, one folder per SKU. That is the whole preventive programme.
+
+<Faq items={[
+  { q: "Why did my listing disappear from search?", a: "Most commonly a main image compliance failure, which reporting describes as sometimes arriving weeks later through a periodic sweep. Other causes include GTIN verification failure, a category or brand gate, a dangerous goods review, a compliance document request, an IP complaint, or insurance non-compliance." },
+  { q: "How do I find out which rule I broke?", a: "Start with the Account Health dashboard, where policy notifications name the cause when one has been issued, then Manage Inventory for the ASIN status and any listing limitation flags." },
+  { q: "Is a missing Buy Box the same as suppression?", a: "No. Suppression removes the listing from search. A missing Buy Box leaves the listing findable without an Add to Cart button, and reporting describes it as usually meaning the lowest landed price is high against other retailers." },
+  { q: "What is stranded inventory?", a: "Units in a fulfilment centre with no active listing attached. It is usually a symptom of another problem, and it has its own cost — stranded inventory percentage is one of four factors in your IPI score." },
+  { q: "How fast do I need to respond to a compliance request?", a: "Reporting describes a window of around 72 hours for certificate requests, with ASIN suspension as the consequence. That is retrieval time, not testing time — the document has to already exist." },
+  { q: "How do I stop this happening?", a: "Six things collected in advance: a verified white main image, GS1 barcodes bought directly with matching listing data, compliance certificates filed per SKU, an SDS or exemption sheet where relevant, insurance in place before the threshold, and supplier invoices in the right form." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon product image requirements 2026: the complete seller guide (silent suppression through periodic compliance sweeps; checking image compliance after a sudden session drop)', publisher: 'SNARC Commerce', href: 'https://snarcai.com/blog/amazon-image-requirements/', accessed: '2026-08-08' },
+  { title: 'Amazon GS1 barcode requirements: complete 2026 guide (GTIN validation against GS1 records; listing suppression and ASIN creation blocks where brand data does not match)', publisher: 'Better World Products', href: 'https://www.betterworldproducts.org/amazon-gs1-barcode-requirements/', accessed: '2026-08-08' },
+  { title: 'Amazon restricted categories ungating guide (ASIN-level blocks persisting after category and brand approval, including for safety, compliance, authenticity and dangerous goods)', publisher: 'Soldscope', href: 'https://www.soldscope.com/blog/amazon-restricted-categories-ungating-guide', accessed: '2026-08-08' },
+  { title: 'Amazon compliance requirements 2026 (certificates requested at any time with a window of around 72 hours and ASIN suspension as the consequence)', publisher: '365 Prep Center', href: 'https://365prepcenter.com/blog/amazon-compliance-requirements-2026-full-checklist-every-seller-needs-6/', accessed: '2026-08-08' },
+  { title: 'Amazon dangerous goods classification for FBA sellers (inbound blocked and existing inventory held during review)', publisher: 'AMZ Dudes', href: 'https://amzdudes.com/amazon-dangerous-goods-classification-a-complete-guide-for-fba-sellers/', accessed: '2026-08-08' },
+  { title: 'Amazon COI requirements 2026 (30 to 60 day window to submit a compliant certificate before listings are suppressed)', publisher: 'Ashlin Hadden Insurance', href: 'https://ecom.insure/amazon-coi-requirements/', accessed: '2026-08-08' },
+  { title: 'Amazon IPI score 2026: how to improve it (stranded inventory percentage as one of four IPI factors; resolving stranded listings within 48 hours)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/amazon-ipi-score', accessed: '2026-08-08' },
+  { title: 'Amazon Featured Offer explained (missing Buy Box generally meaning the lowest landed price is high against prices Amazon sees at other retailers)', publisher: 'Repricer', href: 'https://www.repricer.com/blog/amazon-featured-offer-sellers-guide/', accessed: '2026-08-08' },
+]} />

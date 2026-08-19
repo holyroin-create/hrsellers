@@ -1,0 +1,131 @@
+---
+title: "The one element Amazon will hide your entire listing over"
+description: "A main image on an off-white background does not get a warning. The listing stops appearing in search until it is fixed — and reporting describes compliance sweeps suppressing listings that ran fine for weeks."
+category: "Getting started"
+published: "2026-08-19"
+modified: "2026-08-19"
+minutes: 9
+numbered: true
+ledger: "Pure white RGB 255,255,255 · 85% frame fill"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The main image must be a real photograph on a pure white background at exactly RGB 255, 255, 255, with the product filling at least 85% of the frame and no text, logos, watermarks, props or borders.",
+  "Minimum is 1,000 pixels on the longest side; zoom activates there. Sources recommend 1,600 or 2,000+ — one puts the conversion difference from zoom at 15% to 25%.",
+  "Non-compliance suppresses the listing rather than warning you. It does not rank, does not convert and does not appear in search until fixed.",
+  "Reporting describes silent suppression: a listing running fine for weeks, then a periodic compliance sweep catching it. A sudden session drop is worth checking against image compliance first.",
+  "White balance is not a white background. Correcting camera white balance fixes colour cast; it does not force the backdrop to 255, and compression can introduce off-white pixels near the product edge.",
+]} />
+
+Most listing elements degrade gracefully when they are wrong — a weak bullet converts less well. The main image does not. It is the one element where a technical failure removes the listing from search entirely.
+
+## The specification
+
+**Main image, hard requirements:**
+
+| Rule | Requirement |
+| --- | --- |
+| Background | Pure white, exactly **RGB 255, 255, 255** — not off-white, cream or light grey |
+| Frame fill | Product occupies **at least 85%** of the image area |
+| Subject | The actual product only — no props or accessories not included |
+| Content | No text, logos, watermarks, badges, borders or inset images |
+| Minimum size | **1,000 pixels** on the longest side (zoom activates here) |
+| Recommended | 1,600 px minimum; 2,000 × 2,000 widely recommended |
+| Maximum | Not above 10,000 px on any side; under 10 MB |
+| Formats | JPEG, PNG, non-animated GIF, TIFF — JPEG recommended |
+| Colour | sRGB or CMYK |
+| Layers | Flattened before upload |
+
+Two reported exceptions worth knowing: **necklaces may be cropped at the frame edge**, and for apparel, **ghost mannequin photography is required** — the garment should appear to float, with no mannequin or hanger visible.
+
+**File naming** follows a structure: product identifier, a period, the variant code, then the extension — `B012345678.MAIN.jpg`. No spaces or dashes.
+
+<Figure value="RGB 255,255,255" kind="cost" source="Reported Amazon main image background requirement, 2026, accessed 8 August 2026">
+  The background value Amazon's automated scanning enforces. Reporting describes the system detecting deviations invisible to the eye.
+</Figure>
+
+## Why compliant-looking images fail
+
+The two causes that account for most rejections are both about "almost right."
+
+**White balance is not a white background.** Correcting your camera's white balance fixes a colour cast; it does not force the backdrop to 255. One source's recommendation is the reliable one: **isolate the product and place it on a generated 255-white canvas** rather than trusting the camera.
+
+**Compression introduces stray pixels.** Even shot on white, JPEG compression can produce off-white pixels near the product edge. Shadows touching the frame edge, or shadows creating grey gradients, are reported as the same failure. Verify with a colour picker at several points, not one.
+
+**The 85% rule catches people differently.** A product photographed from a distance with lots of white space technically has a white background and still fails the fill requirement. Reporting's framing is right: **the product should dominate the frame.**
+
+## The suppression mechanics
+
+Reported most common causes of image-based suppression:
+
+1. Background not pure white — off-white, grey or transparent
+2. Product filling less than 85% of the frame
+3. Prohibited text, logos, watermarks or promotional badges
+4. Resolution below the 1,000-pixel minimum
+5. Props or accessories shown that are not included
+6. Product not matching the listing — a blue variant on a red listing
+7. A lifestyle shot uploaded into the MAIN slot by mistake
+
+**The silent version is the one to know about.** Reporting describes Amazon not always rejecting non-compliant images immediately: a listing runs fine for weeks, then a periodic compliance sweep suppresses it. **If sessions drop suddenly with no other explanation, check main image compliance first** — see the [reports guide](/guides/seller-central-reports/) for where to look.
+
+**The fix** is Manage Inventory in Seller Central: identify the flagged ASIN and upload a compliant replacement immediately.
+
+## The secondary slots, where the conversion is
+
+The main image is a compliance problem. The other slots are a conversion opportunity, and the rules are much looser: lifestyle images, infographics, text overlays and comparison charts are all permitted. What is not: misleading claims, competitor logos and pricing references.
+
+Reported conversion effects — all from vendors and study summaries without full method, so treat them as directional:
+
+- Zoom-enabled images at 1,600 px or more: **15% to 25% higher conversion**
+- Infographic secondary images: **15% to 30%** above plain product photos
+- Lifestyle images in secondary slots: **22%** higher add-to-cart
+- Size-reference images: **up to 25%** fewer size-related returns
+
+That last one connects directly to the [returns guide](/guides/returns-cost-and-badge/). Size and expectation gaps are the reason codes that drive the returns processing fee and the Frequently Returned Item badge, and a size-reference image is the cheapest available fix.
+
+Reporting suggests using all available slots — typically six to eight, with up to nine permitted — across main, angle, lifestyle, scale and infographic.
+
+**One 2026 note:** reporting states AI tools are permitted to enhance images, create lifestyle backgrounds or generate infographics, provided the core product shown accurately represents the physical item. Fabricating a misleading product image is not permitted.
+
+## What to do
+
+**Verify RGB 255 with a colour picker** at several points, on every main image, before upload. Not by eye.
+
+**Generate the white canvas rather than shooting it.** Isolate the product, place it on a true 255 background, keep contact shadows on the product rather than bleeding into the canvas.
+
+**Shoot at 2,000 × 2,000.** Above the zoom threshold, under the file cap, room to crop.
+
+**Crop to the 85% rule deliberately**, leaving a small margin.
+
+**Check the MAIN slot on every listing.** Uploading a lifestyle shot into it is reported as more common than you would expect.
+
+**Add a size-reference image** to the secondary slots on anything with size-related returns. It is a return-rate fix as much as a conversion one.
+
+**If sessions drop for no reason, check the image before anything else.** Compliance sweeps do not send an obvious warning.
+
+<Faq items={[
+  { q: "What background does the main image need?", a: "Pure white at exactly RGB 255, 255, 255. Off-white, cream, light grey and transparent all trigger automated rejection, and reporting describes the scanning detecting deviations invisible to the eye." },
+  { q: "How large should the product be in the frame?", a: "At least 85% of the image area. A product photographed with a lot of white space around it has a compliant background and still fails this rule." },
+  { q: "What image size should I use?", a: "Minimum 1,000 pixels on the longest side, where zoom activates. Sources recommend 1,600 or 2,000 × 2,000, under a 10 MB file cap. One source puts the conversion difference from zoom at 15% to 25%." },
+  { q: "Why did my listing disappear from search?", a: "An image violation is a common cause, and reporting describes suppression sometimes arriving weeks later through a periodic compliance sweep. Check main image compliance first when sessions drop with no other explanation." },
+  { q: "Can I use AI-generated images?", a: "Reporting states AI tools are permitted in 2026 to enhance images, create lifestyle backgrounds or generate infographics, provided the core product shown accurately represents the physical item." },
+  { q: "What can go in the secondary images?", a: "Lifestyle shots, infographics, text overlays and comparison charts. Not misleading claims, competitor logos or pricing references. Use all available slots — typically six to eight, with up to nine permitted." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon main image requirements 2026: the complete compliance checklist (pure white RGB 255,255,255; 85% fill; 1,600 px for zoom; white balance not equalling white background; compression introducing off-white pixels)', publisher: 'Foca AI', href: 'https://getfoca.ai/blog/amazon-main-image-requirements-2026', accessed: '2026-08-08' },
+  { title: 'Amazon main image requirements 2026: size, background and compliance rules (technical specification including file size, colour mode and formats; reported conversion figures for zoom, infographics, lifestyle and size-reference images)', publisher: 'SellHound', href: 'https://www.sellhound.com/learn/amazon-main-image-requirements', accessed: '2026-08-08' },
+  { title: 'Amazon main image requirements 2026: exact specs to avoid suppression (necklace cropping exception; flattening layers; showing only what the customer receives; common violations and fixes)', publisher: 'ListingForge', href: 'https://www.listing-forge.com/blog/amazon-main-image-requirements', accessed: '2026-08-08' },
+  { title: 'Amazon product image requirements 2026: size, format and guidelines (file naming structure; most common suppression causes; the fix through Manage Inventory; AI image tools permitted with accurate product representation)', publisher: 'EasyParser', href: 'https://easyparser.com/blog/amazon-product-image-guidelines', accessed: '2026-08-08' },
+  { title: 'Amazon product image requirements 2026: the complete seller guide (silent suppression through periodic compliance sweeps; the 85% fill rule catching distant shots; ghost mannequin requirement for apparel; product not matching the listing)', publisher: 'SNARC Commerce', href: 'https://snarcai.com/blog/amazon-image-requirements/', accessed: '2026-08-08' },
+  { title: 'Amazon product image requirements (2026) (nine out of ten rejections attributed to background; 2,000–3,000 px recommendation; image slot strategy)', publisher: 'Snappyit', href: 'https://snappyit.ai/blog/amazon-product-image-requirements', accessed: '2026-08-08' },
+  { title: 'Amazon product image requirements (2026): size, rules and tips (secondary image permissions and prohibitions including misleading claims and competitor logos)', publisher: 'RootAMZ', href: 'https://rootamz.com/blogs/amazon-product-photography-standards-tips-2026', accessed: '2026-08-08' },
+  { title: 'Amazon product image requirements 2026: sizes, background and rules (up to nine images per listing; main image strictest with looser rules on additional slots)', publisher: 'IsoPeel', href: 'https://isopeel.com/guides/amazon-product-image-requirements/', accessed: '2026-08-08' },
+]} />
