@@ -1,0 +1,143 @@
+---
+title: "The freight line is the smallest item on a freight bill"
+description: "One published breakdown puts ocean freight at $80 to $200 of a $485 to $1,130 total for a single cubic metre. Comparing forwarders on the freight quote compares the one line that varies least."
+category: "Shipping & logistics"
+published: "2026-08-21"
+modified: "2026-08-21"
+minutes: 10
+numbered: true
+ledger: "Ocean freight: ~20% of the invoice"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "One reported breakdown for a 1 CBM LCL shipment puts ocean freight at $80–$200 within a total of $485–$1,130. Comparing quotes on the freight line alone compares roughly a fifth of the bill.",
+  "DDP means the forwarder handles freight, customs, duties and last-mile delivery for one price. It is convenient and it makes the forwarder your importer-of-record arrangement — confirm whose name is on the entry.",
+  "Since Amazon ended US prep services on 1 January 2026, a forwarder that preps at origin removes a domestic cost line. Reported origin prep includes FNSKU labelling, poly-bagging and consolidation from multiple suppliers.",
+  "Amazon's receiving is part of the journey. A forwarder that routes correctly into fulfilment centres avoids delays that do not appear in any freight quote.",
+  "Reported peak-season practice is to build buffer time into Q3 and Q4 restocks, when delays are described as common.",
+]} />
+
+Sellers pick a forwarder the way they pick a supplier: by quoting three and taking the cheapest number. The number they compare is the one that matters least.
+
+## What the invoice actually contains
+
+One reported component breakdown for a 1 CBM LCL shipment from Shenzhen to a US fulfilment centre:
+
+| Line | Reported |
+| --- | --- |
+| Ocean freight | $80–$200 |
+| Origin handling | $60–$120 |
+| Export customs (China) | $30–$60 |
+| Destination terminal handling | $80–$150 |
+| Customs brokerage | $80–$200 |
+| ISF filing | $25–$50 |
+| Drayage to the fulfilment centre | $80–$200 |
+| Forwarder service fee | $50–$150 |
+| **Total** | **$485–$1,130** |
+
+Plus import duties, and plus any examination — see the [customs holds guide](/guides/customs-holds-and-exams/), where an intensive exam is reported at $500 to $2,500 and beyond, with the importer paying.
+
+**Ocean freight is roughly a fifth of the total, and it is the line every quote leads with.**
+
+<Figure value="~20%" kind="cost" source="Reported LCL cost breakdown, FBA Freight, accessed 8 August 2026">
+  Ocean freight as a share of a reported total forwarder-related cost for one cubic metre. The other 80% is where forwarders differ, and where quotes are rarely compared.
+</Figure>
+
+For air, reported forwarder fees are typically bundled into an all-in per-kg rate of $5 to $12. For FCL, reported flat handling fees of $200 to $500 plus freight. **Ask which structure you are being quoted in**, because a per-kg air rate and an ocean freight line are not comparable numbers.
+
+## DDP, and the question underneath it
+
+Reported DDP pricing: $800 to $1,800 per CBM by sea, or $6 to $12 per kg by air, all-inclusive. The forwarder handles freight, customs, duties and last-mile delivery, and you pay one price.
+
+**The appeal is real** — one price, one counterparty, no separate brokerage relationship, and reporting recommends it for sellers who do not want to manage customs.
+
+**The question it hides** is the one from the [Incoterms guide](/guides/incoterms-who-is-importer/): whose name appears as importer of record on the CBP entry. DDP shifts cost and arrangement; whether it shifts the legal position depends on who is actually declared. **Ask, in writing, before the first shipment.** Your [classification liability](/guides/hts-classification-basics/) follows the declaration, not the invoice.
+
+**And a second question:** what happens if duty rates move between quote and arrival. A DDP price contains an estimate of duty, and after two years of tariff changes that estimate has been wrong repeatedly.
+
+## What a good forwarder does that a cheap one does not
+
+**Origin prep.** Since Amazon [ended US prep services](/guides/amazon-stopped-prepping/) on 1 January 2026, this changed from a convenience to a cost line. Reported origin services include FNSKU labelling, shipping labels and carton marks to Amazon specification, poly-bagging for suffocation warnings, product inspection before goods leave China, and consolidation from multiple suppliers into one shipment.
+
+**Do the arithmetic:** origin prep at a reported rate against a domestic prep centre at $0.35 to $2.00 per unit. For simple prep on a full container the origin option is usually cheaper; for complex prep or where you want to inspect the work, it is not.
+
+**Correct FBA routing.** Reported middle-mile services check inventory into Amazon within 2 to 4 days. A forwarder unfamiliar with Amazon's appointment and routing requirements produces delays that appear on no quote.
+
+**Consolidation.** Combining goods from several suppliers into one shipment is what makes LCL economics work for a seller buying from multiple factories.
+
+**Compliance filing.** ISF on ocean, and — since 8 July 2026 — [CPSC certificate eFiling](/guides/us-product-compliance/) where applicable. Ask whether they handle it.
+
+## The questions to ask
+
+**Quote structure**
+- Is this all-in or freight only? List every additional charge.
+- What is not included? Duties, exam fees, demurrage, storage.
+- How long is the quote valid? Rates move weekly.
+
+**Customs**
+- Whose name is on the entry as importer of record?
+- Do you file ISF, and what happens if it is late?
+- Do you handle PGA filings — CPSC, FDA — where my products need them?
+
+**Amazon specifics**
+- Do you prep at origin, and at what per-unit rate?
+- Have you delivered to Amazon fulfilment centres before? Which?
+- Who books the delivery appointment?
+- What happens if Amazon refuses the shipment?
+
+**Failure handling**
+- What happens on a customs hold, and who pays?
+- What is your liability for damage or loss?
+- Do you carry cargo insurance, or do I arrange it?
+
+**That last group is the one that separates forwarders**, and it is the one nobody asks until it matters.
+
+## The peak season caveat
+
+Reporting is direct: build buffer time into restocks, especially in Q3 and Q4 when delays are described as common.
+
+Against the [peak season guide](/guides/peak-season-cost-stack/) and Amazon's inbound deadlines, a two-week freight delay in October is not a freight problem — it is a stockout in the highest-demand weeks, at peak fulfilment rates, with capacity you may not be able to replace. **Book earlier than the arithmetic says.**
+
+## What to do
+
+**Quote all-in, not freight only**, and require the component list.
+
+**Get quotes dated this week** and treat validity as short.
+
+**Ask the importer-of-record question in writing** on any DDP arrangement.
+
+**Price origin prep against domestic prep** per SKU, not per shipment.
+
+**Check they have delivered to Amazon before.** It is a routing and appointment competence, not a general freight one.
+
+**Ask what happens when it goes wrong** before you need to know.
+
+**Book Q4 freight earlier than you think you need to.**
+
+**Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+
+<Faq items={[
+  { q: "How much of a freight bill is actually freight?", a: "One reported LCL breakdown puts ocean freight at $80–$200 within a $485–$1,130 total for 1 CBM — roughly a fifth. Duties and any examination costs are additional." },
+  { q: "Should I use DDP?", a: "It is convenient — reported at $800–$1,800 per CBM by sea or $6–$12 per kg by air, all-inclusive. Confirm in writing whose name appears as importer of record, and what happens if duty rates change between quote and arrival." },
+  { q: "Should my forwarder do the prep?", a: "Since Amazon ended US prep services on 1 January 2026, origin prep removes a domestic cost line reported at $0.35 to $2.00 per unit. It works well for simple prep at volume and less well where you want to inspect the work." },
+  { q: "What should I ask a forwarder?", a: "Whether the quote is all-in and what is excluded; whose name is on the customs entry; whether they file ISF and PGA data; whether they have delivered to Amazon fulfilment centres; and what happens on a customs hold or a damaged shipment." },
+  { q: "How long is a freight quote good for?", a: "Weeks at most. Published 2026 rates vary by more than fourfold across sources partly because of genuine volatility — Red Sea routing, Hormuz tensions and tariff changes are all named." },
+  { q: "When should I book Q4 freight?", a: "Earlier than the transit calculation suggests. Reporting describes peak-season delays as common, and a delay in October compounds into a stockout at peak fulfilment rates with capacity you may not be able to replace." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon FBA freight forwarder cost: complete 2026 breakdown (component breakdown totalling $485–$1,130 for 1 CBM; air fees bundled at $5–$12/kg; FCL flat handling $200–$500; DDP at $800–$1,800/CBM or $6–$12/kg)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-freight-forwarder-cost/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA freight forwarder China: complete guide (origin services including FNSKU labelling, carton marks, inspection, poly-bagging and multi-supplier consolidation; customs clearance both ends; peak-season buffer advice; Amazon receiving of 1–3 business days)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-freight-forwarder-china/', accessed: '2026-08-08' },
+  { title: 'Shipping from China to Amazon FBA (2026 guide) (forwarder handling door-to-door complexity including customs, drayage and Amazon FC routing; prep compliance moving to the forwarder after Amazon ended US prep services)', publisher: 'WWS Cargo', href: 'https://wwscargo.com/shipping-china-to-amazon-fba', accessed: '2026-08-08' },
+  { title: 'Sea freight shipping to Amazon FBA (customs clearance included; FBA prep under $1.50 per case; middle-mile checking inventory into Amazon within 2–4 days)', publisher: 'AMZ Prep', href: 'https://amzprep.com/freight/sea-freight/', accessed: '2026-08-08' },
+  { title: 'Cheapest way to ship from China to Amazon FBA in 2026 (DDP with a specialist forwarder as the default for most sellers; tariffs adding roughly 20–30% to value)', publisher: 'Unicargo', href: 'https://www.unicargo.com/blog-cheapest-shipping-china-to-amazon-fba-2026/', accessed: '2026-08-08' },
+  { title: 'China to USA freight: how to choose the right forwarder (DDP sea service including ocean freight, customs clearance, import duties and final delivery)', publisher: 'AEB Logistics', href: 'https://aeblogistics.com/china-to-usa-freight-forwarders-2026-comparison-costs-and-best-services/', accessed: '2026-08-08' },
+  { title: 'Shipping from China to Amazon FBA: DDP freight guide 2026 (DDP rates and FBA prep requirements)', publisher: 'AiDeliv', href: 'https://aideliv.com/ddp-to-amazon-fba', accessed: '2026-08-08' },
+]} />

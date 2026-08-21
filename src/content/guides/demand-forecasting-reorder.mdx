@@ -1,0 +1,152 @@
+---
+title: "Amazon fines you for holding too much and for holding too little. The gap between them is your reorder point."
+description: "Storage escalates above roughly 45 days of cover. A per-unit fee applies below a reported 28-day threshold. Your lead time is longer than both. That is the whole problem, and it has an arithmetic answer."
+category: "Getting started"
+published: "2026-08-21"
+modified: "2026-08-21"
+minutes: 11
+numbered: true
+ledger: "Target 45 days cover · lead time is 60–90"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Two fees push in opposite directions: the low-inventory-level fee charges per unit sold below a reported 28-day threshold, and storage plus the IPI score penalise excess above roughly 45 days of cover.",
+  "The corridor between them is narrower than a typical replenishment lead time, which is why this is an ordering-frequency problem rather than an ordering-quantity problem.",
+  "Total lead time is longer than most sellers count: production, freight, customs, prep, Amazon receiving of a reported 1 to 3 business days, and your own decision lag.",
+  "Reorder point = daily sales × total lead time in days, plus safety stock. Everything else in forecasting is refinement on those two terms.",
+  "Three constraints sit outside the arithmetic: capacity limits you may not be able to exceed, DD+7 cash timing, and Q4 where every input gets slower and more expensive.",
+]} />
+
+Almost every guide on this site ends up here. The storage fees, the low-inventory fee, the IPI score, the capacity limit, the cash cycle and the peak season all converge on one question: how much, how often.
+
+This is the arithmetic, assembled from the constraints the rest of the site documents.
+
+## The corridor
+
+**Below** a reported **28 days** of cover, the [low-inventory-level fee](/guides/low-inventory-level-fee/) charges you per unit sold — a fee for selling while thin, with sources split on whether the threshold is 28 or 35 days.
+
+**Above** roughly **45 days**, two things start working against you. Reported IPI guidance targets 45-day days-of-inventory to improve excess inventory percentage and sell-through simultaneously — see the [IPI guide](/guides/ipi-restock-limits/). And the [storage stack](/guides/fba-storage-four-layers/) begins compounding, with a utilisation surcharge reported above 22 weeks of cover and an aged-inventory trigger at a reported 180 days.
+
+**So the target corridor is roughly 30 to 45 days of cover.**
+
+<Figure value="28 → 45 days" kind="cost" source="Reported low-inventory threshold and IPI days-of-inventory target, reviewed 8 August 2026">
+  The corridor between a fee for holding too little and penalties for holding too much. Typical replenishment lead times are longer than the corridor is wide.
+</Figure>
+
+**And that is the problem.** A corridor of about 15 days, against a replenishment cycle measured in months.
+
+## Total lead time, counted honestly
+
+Most sellers count production and freight. The full chain:
+
+| Stage | Typical reported range |
+| --- | --- |
+| Your decision lag | 0–14 days |
+| Production | Supplier-specific |
+| Origin prep and consolidation | 2–7 days |
+| Freight — ocean LCL door to FBA | 35–55 days |
+| Freight — ocean FCL door to FBA | 30–45 days |
+| Freight — air door to FBA | 8–14 days |
+| Customs clearance | Included above; a hold adds days to weeks |
+| Amazon receiving | 1–3 business days after delivery |
+
+See the [freight guide](/guides/freight-modes/) for the mode figures and the [customs holds guide](/guides/customs-holds-and-exams/) for what a hold does to the timeline.
+
+**Two stages sellers routinely omit:**
+
+**Your own decision lag.** The days between the report saying reorder and the purchase order being sent. It is real, it is often the longest controllable stage, and it is invisible because nobody measures it.
+
+**Amazon receiving.** Delivered is not sellable. One to three business days, longer in Q4.
+
+## The calculation
+
+```
+daily sales      = units sold over the period ÷ days in the period
+
+reorder point    = daily sales × total lead time in days
+                 + safety stock
+
+order quantity   = daily sales × target cover
+                 (30–45 days, per the corridor above)
+```
+
+**Safety stock covers variability**, not average demand. A reasonable starting method: take your worst recent fortnight of daily sales rather than the average, and cover the difference across the lead time.
+
+**Two adjustments that matter more than precision in the average:**
+
+**Order more often rather than more.** If your lead time is 60 days and your target cover is 45, you cannot hold 45 days and reorder only when you hit the reorder point — the corridor is narrower than the cycle. **The answer is overlapping orders**: place the next order before the last one lands. That is uncomfortable and it is what the fee structure requires.
+
+**Use the worst month, not the average month.** For anything seasonal, an average conceals both the stockout and the overstock.
+
+## The three constraints outside the arithmetic
+
+**Capacity.** You may not be permitted to send what the calculation says. Reported capacity is roughly five months of forecast sales, with ASIN-level restock limits back in play, set from a quarterly evaluation — so a score that dropped in spring restricts your autumn. See the [IPI guide](/guides/ipi-restock-limits/).
+
+**Cash.** Under DD+7, reported order-to-bank is 14 to 27 days for FBA. A reorder point calculation that ignores whether the money exists on the day is a wish. See the [DD+7 guide](/guides/dd7-payout-reserve/) and the [cash flow planner](/tools/cash-flow-planner/).
+
+**Q4.** Every input degrades simultaneously: freight slower, receiving slower, storage roughly triple, [peak fulfilment fees](/guides/holiday-peak-fulfilment-fee/) from 15 October, and reported guidance to hold eight to ten weeks of cover rather than ninety days. See the [peak season guide](/guides/peak-season-cost-stack/).
+
+## What breaks a forecast
+
+**A launch.** No sales history, so no daily sales figure. The [freight guide's](/guides/freight-modes/) split shipment — a small air batch while the ocean bulk travels — exists for exactly this.
+
+**A promotion.** A deal compresses weeks of demand into days and leaves you thin afterwards, at the low-inventory threshold. Model the deal quantity separately from baseline demand — see the [deals guide](/guides/deal-and-coupon-fees/).
+
+**A subscription base.** [Subscribe & Save](/guides/subscribe-and-save-economics/) demand is predictable, which helps — but reporting states a stockout cancels subscriptions and those subscribers do not return. Subscribed units deserve their own safety stock.
+
+**A price change.** Moving price changes conversion and therefore velocity, so the daily sales figure that fed the reorder point is stale the moment you reprice.
+
+**Seasonality read from an average.** The most common forecasting failure and the most expensive, because the correction happens in Q4.
+
+## The routine
+
+**Weekly, ten minutes:** check days of cover per SKU against the 28-day floor. Anything approaching it is a reorder decision now, not next week.
+
+**Monthly, thirty minutes:** recalculate daily sales on the last 30 and 90 days. Divergence between the two is a trend — up or down — and the 30-day figure is what the reorder point should use.
+
+**Quarterly:** review actual lead times against assumed ones, per supplier and per freight mode. Most forecasts fail on a lead time assumption that was true two years ago.
+
+**Annually, in August:** decide the Q4 position. Reporting is consistent that the decision window closes on 30 September.
+
+## What to do
+
+**Measure your real total lead time**, including your own decision lag and Amazon receiving. Most sellers under-count by two to three weeks.
+
+**Target 30 to 45 days of cover** and accept that this means ordering more often.
+
+**Place overlapping orders** where lead time exceeds target cover. It is the only arrangement that fits inside the corridor.
+
+**Set safety stock from your worst fortnight**, not your average.
+
+**Check capacity before ordering**, not after the shipment is booked.
+
+**Check cash timing before committing.** The purchase order and the payout do not arrive on the same schedule.
+
+**Treat launches, promotions and seasonal SKUs as separate calculations**, not adjustments to the baseline.
+
+<Faq items={[
+  { q: "How many days of inventory should I hold?", a: "Roughly 30 to 45 days of cover. Below a reported 28-day threshold the low-inventory-level fee applies; above about 45 days the IPI score and the storage stack begin working against you." },
+  { q: "How do I calculate a reorder point?", a: "Daily sales multiplied by total lead time in days, plus safety stock. Total lead time includes your own decision lag, production, prep, freight, customs and Amazon receiving of 1 to 3 business days." },
+  { q: "What if my lead time is longer than my target cover?", a: "It usually is. The answer is overlapping orders — placing the next order before the previous one lands — rather than holding more inventory, because the fee structure penalises the higher cover." },
+  { q: "How much safety stock do I need?", a: "Enough to cover variability rather than average demand. A reasonable starting method is taking your worst recent fortnight of daily sales instead of the average and covering the difference across the lead time." },
+  { q: "Why did my forecast fail in Q4?", a: "Because every input degrades at once: freight and receiving slow down, storage roughly triples, peak fulfilment fees start on 15 October, and reported guidance is eight to ten weeks of cover rather than ninety days. The decision window closes on 30 September." },
+  { q: "What is the most common forecasting mistake?", a: "Under-counting lead time — omitting the decision lag and Amazon receiving — and reading a seasonal product from an average. The first causes stockouts; the second is discovered in Q4 when correcting it is most expensive." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon IPI score 2026: how to improve it (45-day days-of-inventory target improving excess inventory percentage and sell-through simultaneously; stranded listings and dead SKUs)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/amazon-ipi-score', accessed: '2026-08-08' },
+  { title: 'Amazon FBA restock limits 2026 (quarterly capacity evaluation restricting Q3 inbound before Black Friday; ASIN-level restock limits)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/amazon-fba-restock-limits', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fees 2026: monthly, aged and Q4 peak rates (storage utilisation surcharge above 22 weeks of supply; four-layer storage structure)', publisher: 'ConversionPerk', href: 'https://www.conversionperk.com/amazon-fba-storage-fees-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA fees breakdown 2026 (low-inventory-level fee below 28 days of historical sales; eight-to-ten-week peak cover guidance)', publisher: 'Nventory', href: 'https://nventory.io/blog/amazon-fba-fulfillment-fees-breakdown-2026', accessed: '2026-08-08' },
+  { title: 'Amazon FBA freight forwarder China: complete guide (transit times by mode; export and import customs; Amazon receiving of 1–3 business days; peak-season delays)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-freight-forwarder-china/', accessed: '2026-08-08' },
+  { title: 'Shipping from China to Amazon FBA (2026 guide) (35–55 days door-to-FBA for LCL and 30–45 for FCL)', publisher: 'WWS Cargo', href: 'https://wwscargo.com/shipping-china-to-amazon-fba', accessed: '2026-08-08' },
+  { title: 'Amazon\u2019s new DD+7 payout policy (14–27 days from order to bank deposit for FBA)', publisher: 'SlopePay', href: 'https://slopepay.com/blog/amazon-dd7-payout-policy', accessed: '2026-08-08' },
+  { title: 'Amazon Subscribe & Save data deep-dive 2026 (stockouts causing subscription cancellations, with subscribers not returning)', publisher: 'Velocity Sellers', href: 'https://www.velocitysellers.com/2026/07/05/amazon-subscribe-save-data-deep-dive-2026/', accessed: '2026-08-08' },
+]} />
