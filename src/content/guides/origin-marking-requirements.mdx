@@ -1,0 +1,115 @@
+---
+title: "Unmarked goods carry a 10% duty on top of everything else"
+description: "19 USC 1304 requires most imports to be marked with their country of origin, conspicuously, legibly and permanently. Goods that are not are reported to attract a 10% ad valorem marking duty — and CBP may refuse entry entirely."
+category: "Shipping & logistics"
+published: "2026-08-22"
+modified: "2026-08-22"
+minutes: 8
+numbered: true
+ledger: "Marking duty: 10% ad valorem, on top of duty"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Under 19 USC 1304, most goods imported into the United States must be marked with their country of origin in a conspicuous, legible and permanent manner, visible to the ultimate purchaser.",
+  "Goods that are not properly marked are reported to attract a marking duty of 10% ad valorem, in addition to any other applicable duties, and CBP may detain or refuse entry.",
+  "Marking origin and tariff origin are separate determinations. One CBP ruling is cited holding a product Mexican for marking while remaining Chinese for Section 301.",
+  "Amazon requires the same thing. Reporting on US product compliance names country of origin marking among the requirements for goods sold on the marketplace.",
+  "This is a production decision, not a labelling one. Permanent means it survives handling — and fixing it after goods have shipped usually means relabelling in a bonded facility or a return.",
+]} />
+
+Of everything on this site, this is the requirement with the widest gap between how simple it is and how often it goes wrong. It costs nothing to get right at the factory and 10% of the shipment value to get wrong at the border.
+
+## The requirement
+
+**19 USC 1304:** most goods imported into the United States must be marked with their country of origin.
+
+Three qualifiers, and each one does work:
+
+**Conspicuous** — findable by an ordinary purchaser without searching.
+
+**Legible** — readable.
+
+**Permanent** — it survives normal handling and reaching the customer. A sticker that falls off is not permanent marking.
+
+**Visible to the ultimate purchaser in the US** — the end customer, not the importer. Which means marking on an outer carton the customer never sees does not satisfy it for a retail product.
+
+<Figure value="10% ad valorem" kind="cost" source="Reported marking duty for improperly marked goods, 19 USC 1304, accessed 8 August 2026">
+  The marking duty reported for goods not properly marked with country of origin — charged in addition to any other applicable duty. CBP may also detain or refuse entry.
+</Figure>
+
+## What it costs to get wrong
+
+**A marking duty of 10% ad valorem**, in addition to every other duty on the shipment.
+
+Put that against the [tariff stack](/guides/tariff-stack-2026/): a product already carrying 25% arrives at 35% because of a label.
+
+**And CBP may detain or refuse entry** to improperly marked shipments — which as the [customs holds guide](/guides/customs-holds-and-exams/) covers means demurrage, storage and drayage while it is resolved, all paid by the importer.
+
+**The remedies once goods have arrived** are relabelling under customs supervision, export, or destruction. All three cost more than marking at the factory.
+
+## The exemptions, briefly
+
+Reporting names several categories exempt from marking:
+
+- Certain agricultural products
+- Articles that cannot be marked without injury to the article
+- Goods that will be substantially transformed in the US before reaching the ultimate purchaser
+
+**Do not assume you are in the third one.** It means genuine transformation, not repackaging — the same test covered in the [country of origin guide](/guides/country-of-origin-sourcing/).
+
+## Marking origin against tariff origin
+
+The distinction that catches people, and it runs the opposite way to intuition.
+
+Reporting on CBP ruling HQ H300226 describes a product assembled in Mexico from Chinese subassemblies qualifying as **Mexican for marking purposes** under tariff-shift rules, while remaining **Chinese for origin purposes** — and therefore for Section 301.
+
+**Two separate determinations, two different tests, potentially two different answers.**
+
+Which produces an uncomfortable but correct outcome: a product legitimately marked "Made in Mexico" can carry Chinese-origin tariff exposure. Marking it correctly does not reduce the duty, and paying the duty does not change what goes on the label.
+
+**Get advice on both**, separately, if your product is assembled from components of a different origin.
+
+## Where Amazon comes into it
+
+Reporting on US product compliance names 19 CFR Part 134 country of origin marking among the requirements applying to products sold on Amazon.
+
+Which means marking failures can surface in two places: at the border as a marking duty, and on the platform as a [compliance request or listing suppression](/guides/listing-disappeared/).
+
+**And it interacts with the packaging decisions elsewhere on this site.** If you are redesigning packaging to [reduce cubic feet](/guides/fba-storage-four-layers/) or to [qualify for SIPP](/guides/sipp-packaging-program/), the origin marking has to survive the redesign — and under SIPP, the customer receives your packaging directly, so the marking has to be on it correctly.
+
+## What to do
+
+**Specify marking in the purchase order**, with the wording, the placement and the method. Not "mark country of origin" — the exact text, where it goes, and how it is applied.
+
+**Require permanent application.** Printed, moulded, embroidered, engraved or a permanently affixed label. This is the same requirement as [Brand Registry's permanent branding](/guides/brand-registry-trademark/) rule, and the two can be specified together.
+
+**Check it on the sample**, before the production run. A photograph of the marked unit costs nothing and it is the only check that happens before the goods exist.
+
+**Check it survives the packaging.** If the marking is on an inner component the customer never sees, it may not satisfy the visible-to-ultimate-purchaser requirement.
+
+**Ask separately about tariff origin.** Marking origin does not settle it, and the ruling above shows the two can diverge.
+
+**Add it to the launch checklist.** It belongs alongside the compliance certificates in the [launch sequence](/guides/launch-sequence/) — a production specification, fixed before tooling, not a label added later.
+
+<Faq items={[
+  { q: "What does US law require on origin marking?", a: "Under 19 USC 1304, most imported goods must be marked with their country of origin in a conspicuous, legible and permanent manner, visible to the ultimate purchaser in the US." },
+  { q: "What happens if goods are not marked?", a: "Reporting describes a marking duty of 10% ad valorem in addition to any other applicable duties, and states CBP may detain and refuse entry to improperly marked shipments." },
+  { q: "Is a sticker enough?", a: "Only if it is permanent — surviving normal handling and reaching the customer. A label that falls off does not satisfy the permanence requirement." },
+  { q: "Does marking origin match tariff origin?", a: "Not necessarily. One CBP ruling is cited holding a product Mexican for marking purposes while remaining Chinese for Section 301 purposes, because the assembly performed did not amount to substantial transformation." },
+  { q: "Are any goods exempt?", a: "Reporting names certain agricultural products, articles that cannot be marked without injury, and goods that will be substantially transformed in the US before reaching the ultimate purchaser. The third exemption requires genuine transformation, not repackaging." },
+  { q: "Does Amazon require country of origin marking?", a: "Reporting on US product compliance names 19 CFR Part 134 marking among the requirements for products sold on Amazon, so a marking failure can surface both at the border and on the platform." },
+]} />
+
+<Sources items={[
+  { title: 'Country of origin rules: how it is determined (2026) (19 USC 1304 marking requirements — conspicuous, legible, permanent and visible to the ultimate purchaser; 10% ad valorem marking duty; detention and refusal of entry; exemption categories)', publisher: 'Drip Capital', href: 'https://www.dripcapital.com/en-us/resources/blog/country-of-origin', accessed: '2026-08-08' },
+  { title: 'Mexico, China and Section 301 (CBP ruling HQ H300226 distinguishing country of origin for marking from country of origin for tariff purposes)', publisher: 'JD Supra', href: 'https://www.jdsupra.com/legalnews/mexico-china-and-section-301-35920/', accessed: '2026-08-08' },
+  { title: 'Amazon product compliance requirements in the United States (19 CFR Part 134 country of origin marking applying to products sold on Amazon in the US)', publisher: 'Compliance Gate', href: 'https://www.compliancegate.com/amazon-united-states-product-compliance/', accessed: '2026-08-08' },
+  { title: 'Amazon product sourcing outside China in 2026 (substantial transformation test and what does not qualify)', publisher: 'SellerSprite', href: 'https://e.sellersprite.com/en/blog/amazon-sourcing-outside-china-2026', accessed: '2026-08-08' },
+]} />

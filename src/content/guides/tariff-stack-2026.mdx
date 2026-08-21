@@ -1,0 +1,122 @@
+---
+title: "Your duty rate is not one number. It is four layers, and only one of them is in the tariff schedule."
+description: "Base MFN duty, Section 301, Section 232 and IEEPA measures stack on the same entry. Sources report effective rates commonly at 20% to 30% on ordinary consumer categories and far higher on some — and the structure keeps changing."
+category: "Shipping & logistics"
+published: "2026-08-22"
+modified: "2026-08-22"
+minutes: 10
+numbered: true
+ledger: "Four layers · one HTS code"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The 2026 duty stack is reported as layered: base MFN duty from the tariff schedule, Section 301 on Chinese-origin goods, Section 232 on specific materials, and IEEPA-based measures.",
+  "Reported effective rates for common Amazon categories — electronics, textiles, toys, household goods — commonly run 20% to 30%, with sources citing far higher figures on specific categories.",
+  "Section 232 operates at input level, not finished-good level. A product containing steel, aluminium or copper can carry exposure the finished-good classification does not show.",
+  "In March 2026 new Section 301 investigations were reported as launched covering China, Vietnam, Taiwan, Mexico, Japan, the EU and dozens more — with hearings scheduled for May 2026.",
+  "Sources disagree on specific rates and several report figures that were correct on the day written. Treat every published rate as a prompt to check the current schedule for your own HTS code.",
+]} />
+
+Sellers ask what the tariff rate is on their product as though there is one. The answer since 2025 has been that there are several, they come from different legal instruments, and they add.
+
+**This guide is a map of the structure, not a rate table.** Rates in this area changed repeatedly across 2025 and 2026 and several published figures conflict. The structure is what stays useful.
+
+## The four layers
+
+| Layer | What it is | Applies to |
+| --- | --- | --- |
+| **Base MFN duty** | The HTS-specific rate in the tariff schedule, reported as typically 0% to 25% | All imports, by classification |
+| **Section 301** | Tariffs on Chinese-origin goods, reported at 7.5% to 25% on Lists 1–4A with some items elevated to 50%–100% in 2024–2025 actions | Chinese origin, by HTS code |
+| **Section 232** | Tariffs on specific materials — steel, aluminium, copper | Products containing those inputs |
+| **IEEPA-based measures** | Executive-order duties, including those affecting Mexican and Canadian freight | Varies by order |
+
+**Only the first comes from the tariff schedule.** The others are separate legal instruments applied on top, which is why looking up an HTS code and reading the duty rate gives an answer that is right and incomplete.
+
+<Figure value="20–30%" kind="cost" source="Reported effective rates for common Amazon categories, 2026, accessed 8 August 2026">
+  Reported effective duty rates for electronics, textiles, toys and household goods when the layers are combined. Specific products and HTS codes are reported to run considerably higher.
+</Figure>
+
+## The rates, and why the sources conflict
+
+Published 2026 figures found for this guide:
+
+- **145%** on some categories combining base rates with Section 301
+- **100%+** on some categories
+- **20–30%** commonly, for electronics, textiles, toys and household goods
+- **25–145%** depending on HTS code, for Section 301 specifically
+- **7.5–25%** on Lists 1–4A with elevated items at 50–100%
+
+**These are not all describing the same thing.** Some quote Section 301 alone, some the combined stack, some a category ceiling, some a typical case. Several were correct on the day written and have since been overtaken.
+
+**The working position:** there is no substitute for checking the current rate against your specific HTS code and origin. Every source that gives a number says this, and they are right to.
+
+## Section 232, which catches people sideways
+
+One point worth isolating because it does not follow the usual logic.
+
+Reporting states that for products subject to Section 232 on steel, aluminium or copper, **country of origin matters at the input level, not just the finished-good level.**
+
+A product assembled in a country with no Section 301 exposure, using steel from somewhere that has Section 232 exposure, carries that exposure. The finished-good classification does not show it.
+
+**Which means a sourcing shift that solves your Section 301 problem may not touch your Section 232 problem.** If your product contains meaningful metal content, that is a separate question to ask.
+
+## What is moving
+
+Two developments reported for 2026 that change planning rather than rates.
+
+**New Section 301 investigations.** Reporting describes investigations launched in March 2026 targeting imports from China, Vietnam, Taiwan, Mexico, Japan, the EU and dozens more countries, with hearings scheduled for May 2026 and orders potentially following. One source notes no orders had been issued as of its publication date.
+
+**The practical implication is stated well by one source:** importers who shifted sourcing from China to Vietnam or elsewhere in Southeast Asia to reduce tariff exposure **should not assume that exposure is permanently gone.** The alternative-sourcing tariff landscape is in flux.
+
+**And a note on refunds.** Reporting describes unliquidated entries as being re-liquidated automatically where a system change applies, while already-liquidated entries require a formal protest within 180 days of liquidation. See the [prior disclosure and protests guide](/guides/prior-disclosure-protests/) — that window runs on individual entries and expires quietly.
+
+## What this means operationally
+
+**Landed cost is not a constant.** The [landed cost guide](/guides/landed-cost-fee-stack/) builds the calculation; this is why it has to be rebuilt rather than reused. A margin model with a duty rate from last year is describing a different business.
+
+**A DDP quote contains a duty estimate.** As the [Incoterms guide](/guides/incoterms-who-is-importer/) covers, a supplier pricing DDP against an outdated rate has priced a cost that no longer exists — and one reported recommendation is to require explicit duty-rate change provisions in the contract so a mid-year change does not produce unplanned exposure.
+
+**Classification carries more weight than it used to.** When rates were single digits, a classification error cost single digits. At 25% or more, the same error is a different order of magnitude — see the [classification guide](/guides/hts-classification-basics/).
+
+**And the duty reduction tools are worth more.** First sale reduces a base the rate is applied to; the higher the rate, the more that is worth. Same for [FTZ](/guides/foreign-trade-zones/) and drawback.
+
+## What to do
+
+**Get your actual rate, per SKU, from a current source.** Your customs broker or a CBP Form 7501 from a recent entry — not an article.
+
+**Check whether Section 232 reaches your inputs**, separately from your finished-good classification.
+
+**Re-run landed cost quarterly**, not annually.
+
+**Put duty-rate change provisions into supplier contracts** on any DDP arrangement.
+
+**Watch the Section 301 investigation outcomes** if you have shifted or plan to shift sourcing to any of the named countries.
+
+**Check your liquidated entries for protest deadlines** if any rate has been reversed or reduced retrospectively. The window is 180 days from liquidation, per entry.
+
+**Work with a broker who monitors this.** One reported recommendation is to work with someone who tracks tariff developments and adjusts classification strategy proactively, and at these rates that is a real service rather than an upsell.
+
+<Faq items={[
+  { q: "What is my actual duty rate?", a: "It depends on your HTS code and country of origin, and it is the sum of up to four layers: base MFN duty, Section 301 where the origin is China, Section 232 where the product contains covered materials, and any IEEPA-based measure. Check it per SKU against a current source." },
+  { q: "Why do published tariff rates disagree so much?", a: "Because they describe different things — Section 301 alone, the combined stack, a category ceiling or a typical case — and because rates changed repeatedly across 2025 and 2026. Several published figures were correct on the day written." },
+  { q: "Does moving production out of China solve it?", a: "For Section 301, potentially. Not necessarily for Section 232, which reporting says applies at input level rather than finished-good level, and not permanently — new Section 301 investigations covering Vietnam, Mexico and dozens of other countries were reported as launched in March 2026." },
+  { q: "What are typical rates on Amazon categories?", a: "Reporting puts effective rates for electronics, textiles, toys and household goods commonly at 20% to 30%, with specific products and HTS codes running considerably higher." },
+  { q: "Can I get a refund on tariffs already paid?", a: "It depends on entry status. Reporting describes unliquidated entries being re-liquidated automatically where a system change applies, while already-liquidated entries require a formal protest within 180 days of the liquidation date." },
+  { q: "How does this change my duty strategy?", a: "It raises the value of everything that reduces the base or the exposure. At single-digit rates, first sale, FTZ and drawback were marginal. At 25% or more they are material, and a classification error is a different order of magnitude." },
+]} />
+
+<Sources items={[
+  { title: 'US tariffs 2026: Section 301, IEEPA, 232 (the layered stack: base MFN 0–25%, Section 301 at 7.5–25% on Lists 1–4A with items elevated to 50–100%; March 2026 Section 301 investigations covering China, Vietnam, Taiwan, Mexico, Japan and the EU; transshipment as fraud; supplier switching economics)', publisher: 'Suaid Global', href: 'https://suaidglobal.com/insights/us-tariffs-2026-guide/', accessed: '2026-08-08' },
+  { title: 'Amazon product sourcing outside China in 2026 (tariffs reaching 145% on some categories; effective rates commonly 20–30% for electronics, textiles, toys and household goods; advice to check current rates for the specific HS code)', publisher: 'SellerSprite', href: 'https://e.sellersprite.com/en/blog/amazon-sourcing-outside-china-2026', accessed: '2026-08-08' },
+  { title: 'What is country of origin? A US importer\u2019s guide to substantial transformation (Section 232 applying at input level rather than finished-good level; May 2026 hearings; sourcing shifts not guaranteeing permanent removal of exposure)', publisher: 'First Link', href: 'https://firstlinkpartners.com/country-of-origin-imports/', accessed: '2026-08-08' },
+  { title: 'Reduce import duty US 2026 (unliquidated entries re-liquidated automatically against liquidated entries requiring protest within 180 days; DDP contracts with explicit duty-rate change provisions; IEEPA-based duties)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-08-08' },
+  { title: 'How American importers are cutting their 2026 duty bills (the 2026 tariff schedule covering revised Section 301 rates, IEEPA duties on Mexican and Canadian freight, restructured de minimis treatment and an expanding antidumping docket)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-08-08' },
+  { title: 'Country of origin rules: how it is determined (2026) (Section 301 tariffs on Chinese-origin goods reported at 25–145% depending on HTS code; identical products from different origins facing different duty burdens)', publisher: 'Drip Capital', href: 'https://www.dripcapital.com/en-us/resources/blog/country-of-origin', accessed: '2026-08-08' },
+]} />
