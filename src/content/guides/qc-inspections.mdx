@@ -1,0 +1,127 @@
+---
+title: "An inspection costs $150 to $300 a day. A rejected container costs the container."
+description: "Pre-shipment inspection is the last moment you can refuse goods while the supplier still holds them and you still hold the balance payment. After that you are arguing about a refund from another jurisdiction."
+category: "Getting started"
+published: "2026-08-24"
+modified: "2026-08-24"
+minutes: 10
+numbered: true
+ledger: "PSI: $149–$400 per man-day"
+ledgerKind: "recovered"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Reported pre-shipment inspection pricing runs $149 to $400 per man-day, with several providers at $150 to $250 all-inclusive. Factory audits are reported at $100 to $300 per man-day, or $800 to $2,000 for a full SGS or TÜV audit.",
+  "One source's threshold: commission an independent pre-shipment inspection on any order above $10,000 in product value, even where the supplier provides its own QC documentation.",
+  "The timing is the whole mechanism. A PSI happens while the supplier still holds the goods and you still hold the balance payment — the only moment you have leverage.",
+  "AQL is a sampling standard, not a guarantee. Reporting notes it assumes a process under control, which many factories running mixed lines do not have.",
+  "Inspection findings feed the same compliance chain as everything else: labelling, packaging, origin marking and prep are all checkable before the goods ship rather than at an Amazon fulfilment centre.",
+]} />
+
+The [supplier verification guide](/guides/supplier-verification/) covers establishing that a factory exists. This covers establishing that what it made is what you ordered — and it is the cheapest insurance in the entire import process.
+
+## The three inspection points
+
+**Factory audit** — before you order. Verifies the facility, equipment, capacity and systems. Reported at **$100 to $300 per man-day** for basic on-site verification, or **$800 to $2,000** for a full audit by a firm such as SGS or TÜV. One provider is reported at $440 per man-day for audits typically requiring one to two days.
+
+**During-production inspection (DUPRO)** — mid-run. Catches a systematic defect while there is still production left to correct it. The one most sellers skip and the one that saves the most on a first order.
+
+**Pre-shipment inspection (PSI)** — when production is substantially complete and goods are packed. The final check before release.
+
+<Figure value="$149–$400" kind="recovered" source="Reported per-man-day inspection pricing across 2026 providers, accessed 8 August 2026">
+  The reported range for third-party inspection in China. Several providers quote flat all-inclusive rates; reporting notes flat pricing is a signal of a provider built for importers rather than corporate procurement.
+</Figure>
+
+## Why PSI timing is the point
+
+A pre-shipment inspection happens at the moment when **the supplier still has the goods and you still have the balance payment.**
+
+That is the only point in the transaction where refusing costs you nothing but time. After the goods ship, refusing means a refund claim against a company in another jurisdiction, and after they arrive it means a return, a destruction order or selling defective stock.
+
+**This is also why the inspection must be independent.** Reporting is direct that the inspector is almost always a third-party firm you hire, not the factory's own people — and one source recommends commissioning one even where the supplier provides its own QC documentation.
+
+**The threshold to work from:** one source puts it at any order above **$10,000 in product value**, and describes the cost as negligible relative to a defective shipment clearing customs.
+
+## AQL, and what it does not do
+
+AQL — Acceptance Quality Limit — is a sampling standard, described in ISO 2859-1, specifying how a sample size and an acceptance number are derived from a lot size and a chosen quality level.
+
+**It is a tool, and reporting is careful about its limits:** AQL assumes your process is under control. Many factories run mixed lines and mixed operators, which is precisely the condition under which a sample stops representing the lot.
+
+**When full inspection is warranted** rather than sampling, one source gives the test plainly: if the money at risk on returns, chargebacks or brand damage exceeds the inspection and rework bill, you are in full-inspection territory. That is most often true on **first shipments** — when the supplier relationship is unproven, the specification is untested, and the downside is a listing that has not built any resilience yet.
+
+**Note the pricing implication:** one provider is reported at $150 per man-day covering both AQL sampling and 100% full inspection, which makes the choice between them less costly than sellers assume.
+
+## What to have inspected
+
+Most inspection checklists cover function and cosmetics. For a marketplace seller, four additional items belong on it — and each one prevents a problem this site covers elsewhere:
+
+**FNSKU labels and placement.** Applied, scannable, and covering the manufacturer barcode entirely — see the [barcodes guide](/guides/gs1-barcodes-fnsku/). A labelling error discovered at the fulfilment centre is an inbound defect fee.
+
+**Country of origin marking.** Present, permanent, conspicuous — see the [marking guide](/guides/origin-marking-requirements/). Unmarked goods are reported to carry a 10% marking duty.
+
+**Poly bags and suffocation warnings**, where required.
+
+**Packaged dimensions and weight.** Measured, not assumed. They set your size tier and every layer of the [storage bill](/guides/fba-storage-four-layers/), and a carton 2cm larger than specified can move a tier.
+
+**Container loading supervision** is a separate service worth knowing about — verifying loading, quantity, packaging and condition at the point the container is stuffed.
+
+## The alignment problem
+
+One reported failure mode is worth isolating because it is procedural rather than technical: **not aligning all three parties — you, the supplier and the inspector — on quantities, tolerances and criteria.**
+
+An inspection against a specification the factory never agreed to produces a dispute rather than a decision. Reporting's recommendation is to combine inspection with **clear tolerances and photographs**, agreed in advance.
+
+**The practical version:** your purchase order should state the AQL level, the defect classification, the tolerances, and who bears the cost of rework or re-inspection. If that is not in the order, the inspection report is an opinion.
+
+## What to ask an inspection provider
+
+Drawn from what the source material treats as differentiating:
+
+- **Is the rate all-inclusive?** Reporting notes "all-inclusive" often is not, with travel surcharges appearing separately.
+- **What is the reporting turnaround?** Same-day and real-time platforms are reported; a PDF the following morning is slower than the decision window sometimes allows.
+- **Do reports include photographs and measurement notes?** Reporting names defect photos and measurements as the part of the report that actually decides go or no-go.
+- **Can you supervise container loading?**
+- **What happens if the factory refuses access?** It happens, and how the provider handles it tells you what you are buying.
+
+**And one structural caution:** where a sourcing agent runs QC as part of their standard service, the inspection is built in — but it is also not independent of the party who selected the factory. See the [sourcing agents guide](/guides/sourcing-agents/).
+
+## What to do
+
+**Inspect the first order, always.** The supplier relationship is unproven and the specification is untested.
+
+**Use the $10,000 threshold** for subsequent orders unless you have reason to inspect more often.
+
+**Add a DUPRO on any first production run**, not just a PSI. Finding a systematic defect at 80% complete is better than at 100%.
+
+**Put the AQL level, tolerances and rework terms in the purchase order.**
+
+**Add the four marketplace-specific checks** — labels, marking, poly bags, dimensions.
+
+**Never release the balance payment before the report.** The sequence is the whole point: inspection, then payment, then shipment.
+
+<Faq items={[
+  { q: "How much does a pre-shipment inspection cost?", a: "Reported at $149 to $400 per man-day, with several providers at $150 to $250 all-inclusive. Factory audits are reported at $100 to $300 per man-day for basic verification, or $800 to $2,000 for a full SGS or TÜV audit." },
+  { q: "When should I inspect?", a: "One source's threshold is any order above $10,000 in product value, even where the supplier provides its own QC documentation. Inspect the first order regardless of size — the relationship and the specification are both unproven." },
+  { q: "What is AQL?", a: "Acceptance Quality Limit — a sampling standard described in ISO 2859-1 that derives a sample size and acceptance number from the lot size and chosen quality level. Reporting notes it assumes a process under control, which factories running mixed lines often do not have." },
+  { q: "When is full inspection worth it instead of sampling?", a: "One source's test: when the money at risk on returns, chargebacks or brand damage exceeds the inspection and rework bill. That is most often true on first shipments." },
+  { q: "What should be on the checklist besides function?", a: "FNSKU labels and placement, country of origin marking, poly bags and suffocation warnings, and measured packaged dimensions and weight — each of which prevents a problem that otherwise surfaces at a fulfilment centre or the border." },
+  { q: "Why do inspections produce disputes?", a: "Usually because the three parties were not aligned on quantities, tolerances and criteria in advance. An inspection against a specification the factory never agreed to is an opinion rather than a decision — put the AQL level and tolerances in the purchase order." },
+]} />
+
+<Sources items={[
+  { title: 'China sourcing in 2026: reliable channels and picking a sourcing agent (factory audits $100–$300 per man-day, full TÜV or SGS $800–$2,000; PSI $200–$400 per inspection day described as required reading above $10K FOB; AQL, hold-shipment and remedy clauses)', publisher: 'FF Order', href: 'https://www.fforder.com/post/china-sourcing-agent-2026-buyer-playbook', accessed: '2026-08-08' },
+  { title: 'Cheapest third-party inspection services in China 2026 (rates from $150 to $440 per man-day; flat all-inclusive pricing against travel surcharges; real-time reporting platforms; $150 rate covering both AQL sampling and 100% inspection)', publisher: 'TradeAider', href: 'https://www.tradeaiders.com/cheapest-third-party-inspection-services-in-china-2026-price-vs-quality-ranked.html', accessed: '2026-08-08' },
+  { title: 'QC inspection in China: pre-shipment inspection, AQL, cost and buyer checklist (PSI as the final check with the balance payment still held; QA against QC; agent-run QC not being independent)', publisher: 'Stellar Chinese', href: 'https://www.stellarchinese.com/qc-inspection-in-china/', accessed: '2026-08-08' },
+  { title: 'Full inspection China guide: types in 2026 (AQL assuming a process under control; mixed lines and mixed operators; the risk-against-rework test for full inspection; aligning all three parties on quantities and tolerances)', publisher: 'DocShipper', href: 'https://china.docshipper.com/en/sourcing/full-inspection-china-guide-2026/', accessed: '2026-08-08' },
+  { title: 'How to source products from China (2025–2026) (independent third-party PSI on any order above $10,000 at $200–$350, described as negligible against a defective shipment clearing customs)', publisher: 'New Buying Agent', href: 'https://www.newbuyingagent.com/resources/how-to-source-products-from-china-2025-2026-guide', accessed: '2026-08-08' },
+  { title: 'Pre-shipment inspection 2026 complete guide (ISO 2859-1 sampling schemes indexed by AQL for lot-by-lot inspection; types of pre-shipment inspection)', publisher: 'Fami Sourcing', href: 'https://famisourcing.com/pre-shipment-inspection-complete-guide/', accessed: '2026-08-08' },
+  { title: 'Top inspection companies in China (pre-shipment, during-production, supplier audits, container loading supervision and product testing as distinct services)', publisher: 'DDP Chain', href: 'https://ddpchain.com/top-inspection-companies-china/', accessed: '2026-08-08' },
+  { title: 'Pre-shipment inspection China: complete guide (reviewing defect photos and measurement notes; findings pointing to go or no-go; CPSC inspection, testing and certification requirements)', publisher: 'Kingsler', href: 'https://kingslermachinery.com/pre-shipment-inspection-china/', accessed: '2026-08-08' },
+]} />

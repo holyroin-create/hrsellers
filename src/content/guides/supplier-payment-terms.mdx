@@ -1,0 +1,135 @@
+---
+title: "The balance payment is your last piece of leverage. Most sellers give it up before the inspection."
+description: "Deposit, production, inspection, balance, shipment — in that order. Reverse any two steps and you are negotiating a refund instead of a rework, from a jurisdiction where you have no practical recourse."
+category: "Getting started"
+published: "2026-08-24"
+modified: "2026-08-24"
+minutes: 9
+numbered: true
+ledger: "Inspect, then pay, then ship"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The standard structure is a deposit against production and a balance against inspection. The balance is the only leverage you retain once production has started.",
+  "Reported guidance is to treat every transaction as a first transaction until three successful orders, using escrow rather than direct transfer.",
+  "Wire only to an account in the same legal name as the business licence. The most commonly reported scam is a request to pay a different account, framed as saving platform fees.",
+  "Trade Assurance is reported as covering payment up to an order-level cap where the transaction stays entirely inside the platform. It does not cover you off-platform.",
+  "Letters of credit sit further along the same spectrum. Reporting on Incoterms notes they rule out some terms entirely and work best with the C terms.",
+]} />
+
+Payment structure looks like a finance question and behaves like a quality-control one. What you have paid determines what you can insist on.
+
+## The standard structure
+
+**A deposit against production, a balance against inspection.** 30/70 is the arrangement most commonly described, with the deposit funding materials and the balance released once the goods are verified.
+
+**The order is the whole point:**
+
+```
+1. Deposit
+2. Production
+3. During-production inspection (on a first run)
+4. Pre-shipment inspection
+5. Balance payment
+6. Shipment
+```
+
+**Steps 4 and 5 are frequently reversed**, usually because the supplier asks and the seller is inexperienced or in a hurry. Reversing them converts a rework conversation into a refund conversation — with a company in another jurisdiction, after the goods have shipped.
+
+<Figure value="Inspect, then pay" kind="cost" source="Reported payment sequencing practice, 2026, accessed 8 August 2026">
+  The sequence that preserves leverage. The balance payment is the only thing you still hold once production has started, and releasing it before the inspection report gives it away for nothing.
+</Figure>
+
+## The escrow rule
+
+Reported guidance is specific: **until you have shipped three successful orders with a supplier, treat every transaction as a first transaction** — using escrow rather than a direct transfer.
+
+Reported escrow mechanisms include Alibaba Trade Assurance, Payoneer Escrow and third-party escrow services, holding payment until shipment and acceptance conditions are met.
+
+**After three clean orders**, reporting describes moving to a letter of credit or a 30/70 telegraphic transfer for speed — but not before.
+
+**What Trade Assurance actually covers**, per reporting: payment up to an order-level cap against quality and on-time delivery failures, **where the transaction happens entirely within the platform.** It does not cover you if you wire to a personal account or move the conversation off-platform.
+
+## The scam that costs the most
+
+Reported as the most common pattern by some distance, and worth repeating from the [verification guide](/guides/supplier-verification/):
+
+A request to wire the deposit to a different account — often a "subsidiary" in Hong Kong — framed as saving 3% in platform fees.
+
+**The reported outcome is consistent:** the supplier stops replying, or claims a rogue employee stole the funds, and there is no recourse because the transaction left the platform.
+
+**The rules that prevent it:**
+
+- Wire only to an account in the **same legal name as the business licence**, verified at the source registry
+- **Never** to a personal account
+- **Never** by Western Union, PayPal for goods, or cryptocurrency — all reported as designed for one-way transfers with no buyer protection
+- A **change of bank details mid-relationship is verified by voice call** to a number you already held, never by replying to the email that requested it
+
+That last rule matters because account compromise is reported as a real pattern: hackers gaining access to a legitimate supplier's account and intercepting ongoing negotiations. The correspondence looks right because it is in the right thread.
+
+## Letters of credit
+
+Further along the spectrum, and worth knowing about even if you never use one.
+
+An L/C is a bank undertaking to pay against documents. It shifts the risk to a documentary question — did the seller present the required papers — rather than a trust question.
+
+**One reported interaction is worth knowing:** the [Incoterms guide](/guides/incoterms-who-is-importer/) covers how letters of credit constrain term choice. EXW is ruled out because the supplier is paid before pickup. F terms require trust because a cancelled transit leaves no bill of lading to present. D terms require trust because the seller bears all transport cost. **That leaves the four C terms as the best fit** with an L/C.
+
+**When it makes sense:** large orders, new relationships at scale, or where the counterparty requires it. For a marketplace seller at typical order sizes, escrow is usually the proportionate tool and an L/C is bank charges and paperwork for risk that escrow already covers.
+
+## What the payment terms should say in writing
+
+Beyond the split, four things belong in the purchase order:
+
+**The inspection condition.** Balance payable on a passing inspection report from a named third party, at a specified AQL — see the [QC guide](/guides/qc-inspections/).
+
+**Rework and re-inspection cost allocation.** Who pays when the first inspection fails.
+
+**A hold-shipment right.** Your ability to stop shipment on a failed inspection, which is meaningless unless it is written.
+
+**The remedy.** What happens if the goods are unacceptable — rework, replacement, refund, or discount — and on what timeline.
+
+Reporting on agent selection names exactly these — **AQL, hold-shipment and remedy clauses** — as the contract terms to ask about, and notes that where there is no contract, the question becomes what the equivalent recourse mechanism is.
+
+**If the answer is "we trust each other," you have no recourse mechanism.**
+
+## What to do
+
+**Never release the balance before the inspection report.** Everything else in this guide is secondary.
+
+**Use escrow for the first three orders**, without exception.
+
+**Verify the bank account against the business licence** before the first wire, and verify any change by voice.
+
+**Put the AQL level, hold-shipment right, rework allocation and remedy in the purchase order.**
+
+**Keep the invoice requirements in view.** The payment structure and the invoice are separate documents and both matter — see [the supplier invoice](/guides/the-supplier-invoice/), which six separate systems will ask for.
+
+**Do not accelerate the sequence because the shipment is late.** A late shipment is a cost; a released balance against unverified goods is a loss.
+
+**Model it on your own figures.** The [cash flow planner](/tools/cash-flow-planner/) maps deposit, balance, freight, receiving and payout onto a timeline so you can see the gap between money leaving and money returning. Nothing is stored and nothing leaves your browser.
+
+<Faq items={[
+  { q: "What payment terms should I use?", a: "A deposit against production and a balance against a passing inspection — 30/70 is the commonly described split. The sequence matters more than the ratio: inspect, then pay the balance, then ship." },
+  { q: "When can I stop using escrow?", a: "Reported guidance is to treat every transaction as a first transaction until three successful orders have shipped, then consider a letter of credit or a 30/70 telegraphic transfer for speed." },
+  { q: "Does Trade Assurance protect me?", a: "Partially. It is reported to cover payment up to an order-level cap against quality and delivery failures where the transaction happens entirely within the platform. It does not cover you if you wire off-platform or to a personal account." },
+  { q: "My supplier wants payment to a different account to save fees. Should I?", a: "No. It is the most commonly reported scam pattern, and the reported outcome is that the supplier stops replying or claims a rogue employee. Wire only to an account in the same legal name as the business licence." },
+  { q: "Do I need a letter of credit?", a: "Usually not at marketplace order sizes — escrow covers the same risk with less paperwork. Where you do use one, note that it constrains your Incoterm choice, with the four C terms being the best fit." },
+  { q: "What should the purchase order say?", a: "The AQL level and inspection condition on the balance payment, who pays for rework and re-inspection, your right to hold shipment on a failed inspection, and the remedy if goods are unacceptable." },
+]} />
+
+<Sources items={[
+  { title: 'How to avoid getting scammed importing from China (treating every transaction as a first transaction until three successful orders; escrow through Trade Assurance, Payoneer Escrow or third-party escrow; moving to L/C or TT 30/70 afterwards; Trade Assurance covering payment only within the platform)', publisher: 'ChineseCheck', href: 'https://chinesecheck.com/blog/avoid-scam-importing-china', accessed: '2026-08-08' },
+  { title: 'How to verify a Chinese supplier (2026) (wire only to an account in the same legal name as the business licence; never Western Union, PayPal for goods or cryptocurrency; third-party inspection before paying the balance on orders over a threshold)', publisher: 'China With Me', href: 'https://chinawithme.com/guides/verify-chinese-supplier', accessed: '2026-08-08' },
+  { title: 'Alibaba supplier scam: 5 warning signs importers miss (the off-platform wire request framed as saving platform fees; account compromise and intercepted negotiations)', publisher: 'VeriSupplier', href: 'https://verisupplier.com/alibaba-supplier-scam', accessed: '2026-08-08' },
+  { title: 'Incoterms 2026: meaning, chart and list (letters of credit ruling out EXW, requiring trust under F and D terms, and leaving the four C terms as the best fit)', publisher: 'Freightos', href: 'https://www.freightos.com/freight-resources/incoterms-plain-english-freight-shipping-guide/', accessed: '2026-08-08' },
+  { title: 'China sourcing in 2026 (AQL, hold-shipment and remedy clauses as the contract terms to ask about, and the equivalent recourse question where no contract exists)', publisher: 'FF Order', href: 'https://www.fforder.com/post/china-sourcing-agent-2026-buyer-playbook', accessed: '2026-08-08' },
+  { title: 'QC inspection in China (sampling the finished batch so the buyer can verify before releasing the balance payment)', publisher: 'Stellar Chinese', href: 'https://www.stellarchinese.com/qc-inspection-in-china/', accessed: '2026-08-08' },
+]} />

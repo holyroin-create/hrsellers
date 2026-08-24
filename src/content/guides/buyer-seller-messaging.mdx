@@ -1,0 +1,128 @@
+---
+title: "Amazon reads every message you send a customer, and 'we're a family business' can get it blocked"
+description: "Messaging policy divides into necessary and proactive permitted messages. Reporting describes AI scanning every message and blocking persuasive language, external links, emojis, incentives and even the buyer's first name."
+category: "Getting started"
+published: "2026-08-25"
+modified: "2026-08-25"
+minutes: 8
+numbered: true
+ledger: "If unsure, use Request a Review instead"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "Amazon divides seller-to-buyer communication into necessary permitted messages — those required to complete an order or answer a question — and proactive permitted messages, which are narrowly defined.",
+  "Reporting describes AI scanning every buyer-seller message and blocking persuasive language, external links, emojis and incentives, with even 'we're a family business' or 'please leave 5 stars' triggering blocks.",
+  "Reported format rules: no phone numbers or email addresses unless required to complete the order, no attachments unless necessary for fulfilment, no logos or branded images.",
+  "Reported constraints: a 30-day window, the order ID included, and the message written in the buyer's language.",
+  "One reported detail catches everyone: buyer-name personalisation is not permitted. Neutral greetings paired with product-specific detail are the compliant alternative.",
+]} />
+
+Post-purchase messaging is the last place sellers try to build a relationship with an Amazon customer. Amazon's position is that the relationship is theirs, and the policy reflects that.
+
+## The two categories
+
+**Necessary permitted messages** — communications required to complete an order or respond to a customer service inquiry. Answering a buyer's question about product details, resolving a delivery problem, arranging a return.
+
+**Proactive permitted messages** — everything you initiate. Narrowly defined, and reporting notes Amazon already handles much of the post-purchase communication sellers used to send themselves.
+
+**The practical consequence:** if the buyer did not ask and the order does not require it, the message probably does not need to exist.
+
+## What gets blocked
+
+Reported blocked content:
+
+| Blocked | Note |
+| --- | --- |
+| Persuasive or marketing language | Including sentiment such as "we're a family business" |
+| Review requests with sentiment | "Please leave 5 stars" |
+| External links | Any off-Amazon URL |
+| Emojis | Reported as blocked |
+| Incentives | Discounts, free products, compensation of any kind |
+| Phone numbers and email addresses | Unless required to complete the order, described as rare |
+| Attachments | Unless necessary for fulfilment |
+| Logos and branded images | Reported as prohibited |
+| **Buyer-name personalisation** | Reported as not allowed |
+
+<Figure value="Every message" kind="cost" source="Reported AI scanning of buyer-seller messages, 2026, accessed 8 August 2026">
+  What is reviewed. Reporting describes AI scanning every buyer-seller message, with blocks triggered by persuasive language, links, emojis and incentives — and repeated violations escalating to warnings or suspension.
+</Figure>
+
+**The name rule surprises people**, because personalisation is standard practice everywhere else. Reporting gives the example directly: "Hi Sarah! Your 12-pack water bottles are on the way!" is blocked; a neutral greeting paired with product-specific detail — "Hello! Your [product] is on the way" — is the compliant alternative.
+
+## The format rules
+
+Reported requirements for a compliant proactive message:
+
+- **Within 30 days** of the order
+- **Order ID included**
+- **Written in the buyer's language**
+- **No prohibited elements** from the list above
+
+## What happens when you get it wrong
+
+Reported consequences escalate:
+
+**Blocked messages** — the immediate outcome, and the useful one, because nothing reaches the customer.
+
+**Restriction to pre-approved templates** — Amazon limits you to its own message formats.
+
+**Account warnings, and suspension** on repeated violations.
+
+**And the diagnostic problem** covered in the [review manipulation guide](/guides/review-manipulation-risk/): notices do not specify which message triggered them, so a template running across thousands of orders produces a flag you then have to locate yourself.
+
+## The rule that resolves most of it
+
+Reporting's own conclusion, and it is the right one:
+
+**Use Request a Review for feedback. Reserve custom messages for genuine order issues. If you are unsure whether a message complies, do not send it.**
+
+Request a Review sends Amazon's own standardised message between a reported 5 and 30 days after delivery, with content Amazon controls and the seller cannot customise. **That lack of control is the feature** — there is nothing in it for an algorithm to flag.
+
+**Which makes the calculation straightforward.** A custom message might convert marginally better. A blocked-message pattern costs account health, and a review-manipulation flag costs considerably more.
+
+## Where automation fits
+
+Reporting describes tools that automate messaging with templates designed to follow current rules, and recommends reviewing automated campaigns periodically against policy updates.
+
+**Two cautions:**
+
+**A tool does not transfer responsibility.** A template that was compliant when written and is not now is your violation.
+
+**Volume amplifies error.** A slightly non-compliant message sent once is a blocked message; the same message on automation across a catalogue is a pattern — which is what the flagging systems look for.
+
+## What to do
+
+**Audit any active message template** against the blocked list, particularly for buyer names, emojis and persuasive phrasing.
+
+**Remove review-request language entirely** and use Request a Review instead — the same conclusion as the [inserts guide](/guides/product-inserts/).
+
+**Keep proactive messages to genuine necessity.** If the buyer did not ask and the order does not require it, do not send it.
+
+**Include the order ID and stay inside 30 days** on anything you do send.
+
+**Review automated campaigns quarterly** against current policy rather than treating a template as permanent.
+
+**When in doubt, do not send.** Reporting's own advice, and the cost of following it is one message that would probably have been blocked anyway.
+
+<Faq items={[
+  { q: "What can I message a buyer about?", a: "Necessary permitted messages — those required to complete the order or respond to a customer service inquiry. Proactive messages are narrowly defined, and Amazon already handles much of the post-purchase communication sellers used to send." },
+  { q: "Can I use the customer's name?", a: "Reporting states buyer-name personalisation is not permitted. Neutral greetings paired with product-specific detail are the compliant alternative." },
+  { q: "What gets a message blocked?", a: "Persuasive or marketing language, review requests with sentiment, external links, emojis, incentives, phone numbers and email addresses, attachments, and logos or branded images. Reporting describes AI scanning every message." },
+  { q: "What are the format rules?", a: "Within 30 days of the order, order ID included, written in the buyer's language, and free of prohibited elements." },
+  { q: "What happens if I break the rules?", a: "Blocked messages first, then restriction to pre-approved templates, then account warnings and suspension on repeated violations — with notices that do not specify which message triggered them." },
+  { q: "Should I use messaging or Request a Review for feedback?", a: "Request a Review. It sends Amazon's own standardised message that you cannot customise, which is precisely why there is nothing in it to flag." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon buyer-seller messaging rules (necessary against proactive permitted messages; prohibited phone numbers, emails, attachments, logos and branded images; 30-day window, order ID and buyer\u2019s language; using Request a Review for feedback and reserving custom messages for genuine order issues)', publisher: 'SupplyKick', href: 'https://www.supplykick.com/blog/amazon-communication-guidelines-update', accessed: '2026-08-08' },
+  { title: 'Amazon buyer-seller messaging 2026: what not to do (AI scanning every message and blocking persuasive language, external links, emojis and incentives; buyer-name personalisation not allowed with worked examples; blocked messages, restrictions and suspension risk; reviewing automated campaigns periodically)', publisher: 'Seller Labs', href: 'https://www.sellerlabs.com/blog/buyer-seller-messaging-amazon-2026/', accessed: '2026-08-08' },
+  { title: 'Amazon review manipulation suspension: what triggers it (Request a Review as the only officially approved proactive mechanism, sending Amazon\u2019s standardised message 5 to 30 days after delivery with content the seller cannot customise; VA email templates mentioning feedback among the triggers)', publisher: 'DAM Law Firm', href: 'https://damlawfirm.com/blog/amazon-review-manipulation-suspension/', accessed: '2026-08-08' },
+  { title: 'Amazon review manipulation suspensions in 2026 (avoiding review requests through buyer-seller messaging entirely)', publisher: 'SellerSprite', href: 'https://www.sellersprite.com/en/blog/amazon-review-manipulation-suspension', accessed: '2026-08-08' },
+]} />

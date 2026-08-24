@@ -1,0 +1,160 @@
+---
+title: "Every recurring deadline on this site, on one calendar"
+description: "Ninety guides produce about thirty recurring dates: daily checks, monthly reviews, quarterly rebuilds, and a handful of fixed calendar deadlines that decide a whole quarter. This is the assembled version."
+category: "Getting started"
+published: "2026-08-25"
+modified: "2026-08-25"
+minutes: 9
+numbered: true
+ledger: "Two minutes daily · one hour monthly"
+ledgerKind: "recovered"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The whole routine is roughly two minutes a day, fifteen minutes a week and an hour a month, plus four quarterly reviews and a handful of fixed dates.",
+  "The fixed dates matter most because missing them cannot be corrected later: 30 September for the Q4 inventory position, 15 October for peak fulfilment rates, and the deal submission deadlines before each tentpole event.",
+  "The deadlines that expire quietly are the dangerous ones — the 180-day customs protest window per entry, the 90-day appeal window, and the 150-day inventory review that precedes the aged-inventory trigger.",
+  "Two annual reviews are easy to skip and expensive to skip: classification against the current tariff schedule, and the user-fee inflation adjustment effective 1 October.",
+  "Every item links to the guide that explains why it is on the list.",
+]} />
+
+This site now runs to around ninety guides, and most of them end with something to check on a schedule. Collected, those instructions turn out to be a small routine rather than a large one.
+
+## Daily — two minutes
+
+**Account Health dashboard.** Order Defect Rate, late shipment rate, cancellation rate, policy notifications. Reporting describes ODR notifications as arriving *after* you cross 1%, which makes this the only early warning that exists. → [Order defect rate](/guides/order-defect-rate/)
+
+That is the entire daily list.
+
+## Weekly — fifteen minutes
+
+**Feedback Manager** for new negative entries, including any eligible for removal. → [ODR](/guides/order-defect-rate/)
+
+**A-to-z claims** — respond immediately rather than letting them auto-grant.
+
+**Capacity and IPI**, particularly in the run-up to Q4. → [IPI and restock limits](/guides/ipi-restock-limits/)
+
+**Days of cover per SKU** against the 28-day floor. → [Forecasting](/guides/demand-forecasting-reorder/)
+
+**Advertising search terms** — mine converting keywords, cut the rest. → [PPC benchmarks](/guides/amazon-ppc-benchmarks/)
+
+## Monthly — about an hour
+
+**Inventory age report.** The 150-day review, ahead of the reported 180-day aged-inventory trigger. → [Removal decision](/guides/removal-vs-hold-decision/)
+
+**Storage fee report.** What you were actually charged, per ASIN. → [Storage](/guides/fba-storage-four-layers/)
+
+**SKU Economics Report** for the returns processing fee — deducted between the 7th and 15th of the third month after shipment, which is why it needs looking for. → [Returns](/guides/returns-cost-and-badge/)
+
+**Return rate per ASIN** and reason codes. → [Returns](/guides/returns-cost-and-badge/)
+
+**Brand Analytics**, if enrolled. Free, and rarely opened. → [Brand tools](/guides/aplus-content-brand-tools/)
+
+**Stranded inventory** — resolve within 48 hours as a standing habit. → [Listing disappeared](/guides/listing-disappeared/)
+
+<Figure value="~30 dates" kind="recovered" source="Recurring deadlines compiled across this site's guides, August 2026">
+  Roughly how many recurring checks and fixed deadlines the site's guides produce between them. Most are minutes; a handful decide a quarter.
+</Figure>
+
+## Quarterly
+
+**Rebuild landed cost per unit.** Duty rates, freight, user fees. → [Landed cost](/guides/landed-cost-fee-stack/) · [Tariff stack](/guides/tariff-stack-2026/)
+
+**Fee Preview on your top twenty SKUs.** Since price bands became an input, published averages do not describe you. → [Price bands](/guides/price-tier-repricing-trap/)
+
+**Settlement reports** for order-to-cash timing and effective currency conversion rate. → [DD+7](/guides/dd7-payout-reserve/) · [Currency](/guides/currency-conversion-payouts/)
+
+**Actual lead times against assumed ones**, per supplier and freight mode. → [Forecasting](/guides/demand-forecasting-reorder/)
+
+**Automated message templates** against current policy. → [Buyer-seller messaging](/guides/buyer-seller-messaging/)
+
+## The fixed dates
+
+These cannot be caught up later.
+
+| Date | What |
+| --- | --- |
+| **~5 Aug / 5 Sep** | Early-bird deal submission deadlines for the autumn events → [Deals](/guides/deal-and-coupon-fees/) |
+| **30 September** | Last day to fix a Q4 inventory position at off-peak rates → [Peak season](/guides/peak-season-cost-stack/) |
+| **1 October** | Q4 storage rates begin; user-fee inflation adjustments take effect → [Storage](/guides/fba-storage-four-layers/) · [Landed cost](/guides/landed-cost-fee-stack/) |
+| **15 October** | Peak fulfilment fees begin → [Peak fee](/guides/holiday-peak-fulfilment-fee/) |
+| **14 January** | Peak fulfilment fees end — relevant to January clearance timing |
+| **January** | Amazon's recent pattern for annual US fee changes → [Fee changes](/guides/amazon-fba-fee-changes-2026/) |
+
+**The two most consequential are 30 September and 15 October**, and they are two weeks apart. Everything you want fixed before peak has to be fixed before the first; everything you want fulfilled at standard rates has to ship before the second.
+
+## The windows that expire quietly
+
+No notification, no reminder, and each one runs on its own clock.
+
+**180 days from liquidation, per entry** — the customs protest window for recovering overpaid duty. → [Prior disclosure and protests](/guides/prior-disclosure-protests/)
+
+**90 days** — the appeal window on a deactivated account, and the reported fund settlement period. → [Suspension](/guides/account-suspension-appeal/)
+
+**~72 hours** — to produce a compliance certificate on request. Retrieval time, not testing time. → [US compliance](/guides/us-product-compliance/)
+
+**60 days** — your lowest price in this window caps your next deal price. → [Deals](/guides/deal-and-coupon-fees/)
+
+**14 days** — the attribution window before judging an external campaign. → [Attribution](/guides/brand-referral-bonus/)
+
+**30 days** — the buyer-seller messaging window.
+
+## Annually
+
+**Classification review against the current tariff schedule.** Reporting notes the 2026 edition was published on 31 December 2025 with Revision 4 by 25 February — a code correct two years ago may not be correct now. → [Tariff engineering](/guides/tariff-engineering-design/)
+
+**Supplier re-verification.** Registry status, court records, ownership. Verification is not a one-time event. → [Supplier verification](/guides/supplier-verification/)
+
+**GS1 renewal**, if you hold a prefix. A lapse causes listing problems with no obvious cause. → [Barcodes](/guides/gs1-barcodes-fnsku/)
+
+**Trademark renewal.** Brand Registry access depends on it. → [Brand Registry](/guides/brand-registry-trademark/)
+
+**Insurance renewal and limits review.** → [Insurance](/guides/seller-insurance-coi/)
+
+**Customs bond adequacy** against current duty spend — the amount scales with duty, and duty rose. → [Customs bonds](/guides/customs-bonds/)
+
+## The two ahead
+
+**22 September 2026** — CBP Entry Type 13 voluntary test for mail shipments begins.
+
+**1 July 2027** — Section 321 repealed for commercial shipments by statute.
+
+→ [Section 321 repeal](/guides/section-321-repeal-2027/)
+
+## What to do
+
+**Put the daily check in a calendar**, not in your intentions. Two minutes, and it is the only early warning for the metric that suspends accounts by itself.
+
+**Block one hour a month** for the monthly list. It is where the 150-day inventory review and the delayed returns fee both live.
+
+**Diarise 30 September and 15 October now.**
+
+**Set a reminder for any 180-day protest deadline** the moment you learn an entry may be affected. Nothing else will remind you.
+
+**Do the annual reviews in a quiet month** — reporting on the [SFP guide](/guides/seller-fulfilled-prime/) names January to early June and August to mid-October as the low-pressure windows, and the same logic applies to any review that needs attention.
+
+<Faq items={[
+  { q: "How much time does all this take?", a: "Roughly two minutes a day, fifteen minutes a week and an hour a month, plus four quarterly reviews and a short annual list. The fixed calendar dates take no time but cannot be caught up later." },
+  { q: "Which dates matter most?", a: "30 September, the last day to fix a Q4 inventory position at off-peak rates, and 15 October, when peak fulfilment fees begin. They are two weeks apart and between them they decide most of a Q4 cost position." },
+  { q: "Which deadlines expire without warning?", a: "The 180-day customs protest window, which runs per entry from its own liquidation date; the 90-day appeal window; the roughly 72-hour compliance certificate window; and the 60-day price history that caps your next deal price." },
+  { q: "What is the single most important daily check?", a: "The Account Health dashboard. Reporting describes ODR notifications arriving after you cross the 1% threshold rather than while trending toward it, which makes your own daily check the only early warning available." },
+  { q: "Why review classification annually?", a: "Because the tariff schedule moves — reporting notes the 2026 edition was published on 31 December 2025 with Revision 4 by 25 February — and because duty now applies to traffic that previously entered free, so an outdated code costs more than it used to." },
+  { q: "When should I do the annual reviews?", a: "In a quiet month. January to early June and August to mid-October are described as the low-pressure windows, and every annual item here needs attention rather than speed." },
+]} />
+
+<Sources items={[
+  { title: 'Amazon Order Defect Rate (daily Account Health checks; reactive notifications arriving after the threshold is crossed; weekly Feedback Manager review and immediate A-to-z response)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/order-defect-rate/', accessed: '2026-08-08' },
+  { title: 'Amazon returns processing fees: 2026 rate card (deduction between the 7th and 15th of the third month following shipment; SKU Economics Report)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/returns-processing-fees/', accessed: '2026-08-08' },
+  { title: 'Amazon freezes 2026 holiday seller fees (peak fulfilment from 15 October 2026 to 14 January 2027; early-bird deal deadlines of 5 August and 5 September 2026)', publisher: 'PPC Land', href: 'https://ppc.land/amazon-freezes-2026-holiday-seller-fees-cuts-inbound-windows-shorter/', accessed: '2026-08-08' },
+  { title: 'Amazon FBA storage fee overhaul now live (aged-inventory trigger at 180 days; Q4 rates from October; culling units before 30 September)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/news/amazon-fba-storage-fee-overhaul-h2-2026', accessed: '2026-08-08' },
+  { title: 'Reduce import duty US 2026 (protest within 180 days of the liquidation date, checked per entry)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-08-08' },
+  { title: 'Using tariff engineering to lower your 2026 import costs (2026 Basic Edition published 31 December 2025 and Revision 4 on 25 February 2026)', publisher: 'Dedola', href: 'https://dedola.com/blog/using-tariff-engineering-to-lower-your-2026-import-costs/', accessed: '2026-08-08' },
+  { title: 'Amazon Seller Fulfilled Prime: the complete guide for 2026 (January to early June and August to mid-October as the low-pressure operating windows)', publisher: 'EcomBrainly', href: 'https://ecombrainly.com/amazon-seller-fulfilled-prime/', accessed: '2026-08-08' },
+  { title: 'The end of de minimis: new US entry processes (Entry Type 13 test from 22 September 2026; Section 321 repeal effective 1 July 2027)', publisher: 'Avalara', href: 'https://www.avalara.com/blog/en/north-america/2024/11/de-minimis-exemption-changes-coming.html', accessed: '2026-08-08' },
+]} />
