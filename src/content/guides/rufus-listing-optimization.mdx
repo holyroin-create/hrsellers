@@ -1,0 +1,77 @@
+---
+title: "Rufus answers 250 million shoppers now. Here is what that does to a fee-focused listing."
+description: "Amazon's AI assistant is reported at 250M+ users and 38% of Black Friday 2025 sessions — yet classic search still drives 80-85% of discovery. What to change in a listing, in priority order, without burning money on the hype: backend attributes, Rufus's own prompted questions, image alt text, and the partial attribution data in Brand Analytics."
+category: "Scaling"
+published: "2026-08-26"
+modified: "2026-08-26"
+minutes: 10
+numbered: true
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+<Takeaways items={[
+  "The scale is real: Rufus is reported fully rolled out in the US with over 250 million users and interactions up more than 210% year over year; one analysis counts 274 million daily queries by late 2024 and Rufus present in 38% of Black Friday 2025 shopping sessions.",
+  "The proportion matters more: traditional search is still reported to drive roughly 80-85% of discovery traffic as of early 2026. Rufus layers on top of classic ranking — it does not replace it, so keyword work keeps most of its value.",
+  "The mechanism shift: where classic ranking asks whether your listing contains the searched words, the COSMO layer is described as asking whether your product solves the problem the shopper described. Amazon has not officially confirmed COSMO powers Rufus; the seller community treats the link as probable, and so do we — flagged as such.",
+  "The cheapest wins are structural, not creative: filling blank backend attribute columns with standard taxonomy values, answering the questions Rufus itself displays on your listing page, and writing descriptive A+ image alt text — all free, all reported to feed the AI layer directly.",
+  "Measurement exists but is partial: brand-registered sellers are reported to find incomplete Rufus attribution data inside Brand Analytics — directional, not definitive."
+]} />
+
+Every algorithm change on Amazon produces the same two crowds: sellers who ignore it and sellers who panic-buy tools because of it. Rufus deserves neither response. The numbers say it is big and growing; the same numbers say classic search still carries four fifths of discovery. What follows is the fee-desk version of the story: what is reported, what is confirmed, and what a listing owner should actually change — ordered by cost, starting at free.
+
+## The scale, dated and attributed
+
+<Figure value="38%" kind="cost" source="Reported share of Black Friday 2025 shopping sessions involving Rufus; checked August 2026">
+  One analysis reports Rufus present in 38% of Black Friday 2025 sessions, with users 60% more likely to complete a purchase — and Amazon projecting $10 billion in annualized sales impact. Marketing-adjacent figures, but directionally consistent across sources.
+</Figure>
+
+The countervailing number belongs in the same paragraph: as of early 2026, traditional search is still reported at roughly **80-85% of discovery traffic**, with Rufus growing from about 13% of searches in late 2024 toward projections of 35%. Both things are true at once — which is why the right response is re-prioritising listing work, not rebuilding it.
+
+One honesty note this site owes you: the COSMO connection — the "commonsense knowledge graph" widely described as the intelligence under Rufus — **is not officially confirmed by Amazon**. Practitioners infer it from patent filings and observed behaviour. We treat it as probable and label it accordingly; be suspicious of anyone selling certainty here.
+
+## What actually changes in how a listing is read
+
+Classic ranking matches words. The AI layer is described as matching **intent**: a query like "quiet vacuum for a small apartment with a shedding dog" gets decomposed into use cases and constraints, then matched against what your listing *demonstrates*, not just what it repeats. Three reported consequences follow:
+
+| Reported behaviour | Practical meaning |
+| --- | --- |
+| Structured backend fields are preferred over bullet claims — bullets read as "marketing fluff", fields as verified data | The Category Listing Report's blank columns are unclaimed ranking surface |
+| A+ image alt text and on-image text are read as data by the AI layer | "Woman crushing ice with tamper tool" tells the machine compatibility facts a pretty lifestyle shot never will |
+| Listings that justify value — durability, lifespan, cost-per-use — are reported more likely to be recommended | Price justification is no longer just conversion copy; it is machine-readable evidence |
+
+## The action list, ordered by cost
+
+**Free, this week — backend attributes.** Download your Category Listing Report from Seller Central and fill every relevant blank column with **standard taxonomy values** — the reported guidance is blunt: if the dropdown says Navy Blue, do not write Midnight Ocean. Pay special attention to the "Specific Uses for Product" field: specific use cases ("searing", "induction cooking") over generic room names, because these are described as hard-coding the product into intent buckets.
+
+**Free, this week — answer Rufus's own questions.** Open your listing as a shopper and read the questions Rufus prompts under your product. That list is Amazon telling you what the AI wants to answer about your product. Make sure bullets, A+ and Q&A answer them directly — it is the cheapest market research on the platform.
+
+**Free, next content pass — images as data.** Rewrite A+ alt text descriptively and put key noun phrases on your infographic images. Keep the main image clean for humans and [compliance](/guides/main-image-compliance/); make the second image carry the machine-readable text.
+
+**Already-planned money, redirected.** Nothing above requires a subscription. Your existing [listing and conversion work](/guides/listing-optimisation-a10/) still does most of the lifting — conversion rate remains the lever that moves your [cost per ad order](/guides/amazon-ppc-benchmarks/) more than any bid change, and the AI layer reads the same improved listing.
+
+**Measurement, with expectations set.** Brand-registered sellers are reported to find partial Rufus attribution inside Brand Analytics. Incomplete and directional — read it monthly for trend, not weekly for decisions.
+
+## What not to do
+
+Do not delete keyword work: four fifths of discovery is still classic search. Do not buy "AI readiness" tooling before exhausting the free structural list above — the vendors quoting the scariest Rufus numbers are, without exception, selling the antidote. And do not chase certainty about COSMO internals that Amazon has not published; optimise for the observable behaviour, dated, and revisit when the reporting moves.
+
+<Faq items={[
+  { q: 'Is Rufus replacing the classic search algorithm?', a: 'No. Reporting as of early 2026 puts traditional search at roughly 80-85% of discovery traffic, with Rufus layered on top and growing. Keyword-driven work retains most of its value; the AI layer re-orders priorities rather than replacing them.' },
+  { q: 'Is it confirmed that COSMO powers Rufus?', a: 'Amazon has not officially confirmed it. The connection is the widely held understanding among practitioners, inferred from patent filings and observed behaviour. This guide treats it as probable and labels claims accordingly.' },
+  { q: 'What is the single highest-value change?', a: 'Filling blank backend attribute columns in the Category Listing Report with standard taxonomy values. It is free, reported to feed the AI layer directly as verified data, and most catalogues have significant blanks.' },
+  { q: 'Can I measure Rufus traffic to my listings?', a: 'Partially. Brand-registered sellers are reported to find incomplete Rufus attribution data in Brand Analytics — useful as a directional signal, not as campaign-grade measurement.' },
+]} />
+
+<Sources items={[
+  { title: 'Understanding Amazon Rufus AI: the 2026 guide (full US rollout; 250M+ users; interactions +210% YoY; COSMO described as powering contextual intelligence)', publisher: 'ZonGuru', href: 'https://www.zonguru.com/blog/understanding-amazon-rufus-ai', accessed: '2026-08-26' },
+  { title: 'How to optimize your Amazon listing for Rufus: the 2026 playbook (COSMO-Rufus link not officially confirmed but widely held; intent understanding vs keyword matching)', publisher: 'ZonGuru', href: 'https://www.zonguru.com/blog/optimize-amazon-listing-for-rufus', accessed: '2026-08-26' },
+  { title: 'Amazon Rufus and COSMO: is your listing ready for AI-mediated search (274M daily queries late 2024; 38% of Black Friday 2025 sessions; 60% purchase-likelihood lift; $10B projection; traditional search still 80-85% of discovery; 13% to 35% growth path; partial Rufus attribution in Brand Analytics)', publisher: 'Advertpreneur', href: 'https://advertpreneur.com/blog/amazon-rufus-and-cosmo-is-your-listing-ready-for-ai-mediated-search-in-2026/', accessed: '2026-08-26' },
+  { title: 'The 2026 guide to optimizing Amazon listings for Rufus (structured fields preferred over bullets; Category Listing Report blanks; Specific Uses intent buckets; A+ image alt text and on-image noun phrases as AI data)', publisher: 'SellerMetrics', href: 'https://sellermetrics.app/amazon-listing-optimization-for-rufus/', accessed: '2026-08-26' },
+  { title: 'Amazon listing optimization: the complete guide for brands 2026 (Rufus-prompted questions on the listing page as research input; value-justification reported to improve recommendation odds)', publisher: 'Incrementum Digital', href: 'https://incrementumdigital.com/blog/performance-growth/amazon-listing-optimization-an-updated-guide-for-brands-in-2026/', accessed: '2026-08-26' },
+  { title: 'Amazon Rufus and Cosmo explained (introduced early 2024; positioning within Amazon\'s generative-AI direction)', publisher: 'BellaVix', href: 'https://www.bellavix.com/amazon-rufus-and-cosmo-explained-how-amazons-ai-is-changing-search-rankings-and-listing-optimization/', accessed: '2026-08-26' },
+]} />

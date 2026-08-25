@@ -42,6 +42,14 @@ export const POLICY: PolicyEntry[] = [
     short: 'IEEPA tariffs struck down — de minimis unaffected',
   },
   {
+    date: '2026-02-02',
+    title: 'Walmart New-Seller Savings 2026 opens',
+    what: "Walmart's program for stores going live after 1 February 2026 runs to 31 January 2027: tiered discounts of 20-40% off base referral fees by GMV, up to $2,000 in WFS credits, and up to $1,500 in advertising credits. Requires opt-in on the payments page after go-live, per Walmart's terms.",
+    who: 'New Walmart Marketplace sellers',
+    status: 'In force',
+    short: 'Walmart: 20-40% off referral fees for new sellers, to Jan 2027',
+  },
+  {
     date: '2026-01-15',
     title: 'US FBA fulfillment fee changes take effect',
     what: 'Amazon stated an average increase of $0.08 per unit. Selling price became an input to the fulfillment fee for the first time. Referral percentages and storage rates unchanged. Removal, disposal and liquidation fees restructured.',
