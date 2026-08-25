@@ -32,6 +32,7 @@ import Faq from '../../components/Faq.astro';
       <h2>Result</h2>
       <div class="out hero"><span class="k">Daily budget for the target</span><span class="v" id="o-daily">—</span></div>
       <div class="out"><span class="k">Break-even ACOS</span><span class="v" id="o-beacos">—</span></div>
+      <div class="out"><span class="k">Break-even ROAS</span><span class="v" id="o-beroas">—</span></div>
       <div class="out"><span class="k">Cost per ad order (CPA)</span><span class="v" id="o-cpa">—</span></div>
       <div class="out"><span class="k">Launch ACOS at these inputs</span><span class="v" id="o-acos">—</span></div>
       <div class="out"><span class="k">Profit or loss per ad order</span><span class="v" id="o-unit">—</span></div>
@@ -47,6 +48,7 @@ import Faq from '../../components/Faq.astro';
       <thead><tr><th>Output</th><th>Formula</th></tr></thead>
       <tbody>
         <tr><td>Break-even ACOS</td><td>profit margin before ads — spend past this and each ad order loses money</td></tr>
+        <tr><td>Break-even ROAS</td><td>1 ÷ margin — the same ceiling, expressed as revenue per ad dollar</td></tr>
         <tr><td>Clicks per order</td><td>1 ÷ conversion rate</td></tr>
         <tr><td>Cost per ad order</td><td>CPC × clicks per order</td></tr>
         <tr><td>Launch ACOS</td><td>cost per order ÷ selling price</td></tr>
@@ -126,6 +128,7 @@ import Faq from '../../components/Faq.astro';
   <Faq items={[
     { q: 'What daily budget should a new campaign start with?', a: 'Work backwards from orders, not forwards from a round number. Cost per order is CPC divided by conversion rate; multiply by the daily orders you want. A $10/day budget on $1.35 clicks at 10% conversion funds well under one order a day, which is too little data to optimise on.' },
     { q: 'Is a high ACOS at launch a problem?', a: 'Not by itself. Launch ACOS above break-even is the norm, because a new listing converts below its mature rate and has no organic rank to supplement ads. The problem is a high ACOS with no runway plan — losing money per order is a strategy only if you can fund it until conversion improves.' },
+    { q: 'What is break-even ROAS and how does it relate to ACOS?', a: 'They are the same ceiling read from opposite ends. Break-even ACOS is ad spend as a share of revenue; break-even ROAS is revenue per ad dollar, computed as one divided by your pre-ad margin. A 32% margin gives a break-even ACOS of 32% and a break-even ROAS of about 3.13 — below that ROAS, ad orders lose money.' },
     { q: 'Where does the break-even ACOS number come from?', a: 'It equals your profit margin before ad spend. If a unit carries 32% margin with zero advertising, then spending 32% of its price on ads consumes exactly that margin. Our margin calculator computes it from your full fee stack.' },
     { q: 'Is my data sent anywhere?', a: 'No. This page is a static file with no server side. The calculation runs in your browser and nothing is stored or transmitted.' },
   ]} />
@@ -150,6 +153,7 @@ import Faq from '../../components/Faq.astro';
         const set = (id, txt) => { document.getElementById(id).textContent = txt; };
         set('o-daily', isFinite(daily) ? money(daily) + ' / day' : 'n/a');
         set('o-beacos', pct(beacos));
+        set('o-beroas', margin > 0 ? (1/margin).toFixed(2) + 'x' : 'n/a');
         set('o-cpa', isFinite(cpa) ? money(cpa) : 'n/a');
         set('o-acos', isFinite(acos) ? pct(acos) : 'n/a');
         const u = document.getElementById('o-unit');

@@ -10,6 +10,14 @@ export type PolicyEntry = {
 /* Newest first. `short` is the ticker headline — keep it under ~60 characters. */
 export const POLICY: PolicyEntry[] = [
   {
+    date: '2026-08-04',
+    title: 'TikTok Shop US referral fee raised to 8%',
+    what: 'Recent reporting dates an increase in the standard US referral fee from 6% to 8% for most non-food categories to 4 August 2026, with beauty reported above that. Published guides still conflict; confirm the line in your own settlement statement.',
+    who: 'US TikTok Shop sellers',
+    status: 'In force',
+    short: 'TikTok Shop referral fee: 6% to 8% on most US categories',
+  },
+  {
     date: '2026-09-22',
     title: 'CBP Entry Type 13 voluntary test begins',
     what: 'A voluntary electronic test for international mail shipments valued at $2,500 or less is scheduled to begin. Reported as announced; confirm status with CBP before relying on it.',

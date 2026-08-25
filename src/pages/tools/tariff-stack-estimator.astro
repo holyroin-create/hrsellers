@@ -1,0 +1,109 @@
+---
+import PageShell from '../../components/PageShell.astro';
+import Faq from '../../components/Faq.astro';
+---
+<PageShell
+  title="Tariff stack estimator"
+  description="Enter your customs value and the duty layers that apply to your HTS code — base MFN, Section 301, Section 232 and any other measures. Returns your effective duty rate, total duty, per-unit duty, and the 10% marking-duty exposure if goods arrive unmarked."
+  eyebrow="Calculator"
+  h1="Tariff stack estimator"
+  lede="You supply the rates for your own HTS code; this page only does the stacking arithmetic. Nothing is stored and nothing leaves your browser."
+  crumb={{ label: 'Tools', href: '/tools/' }}
+  rail={[{href:'/guides/tariff-stack-2026/',label:'The four duty layers'},{href:'/guides/origin-marking-requirements/',label:'The 10% marking duty'},{href:'/guides/customs-bonds/',label:'Customs bonds'},{href:'/tools/margin-calculator/',label:'Margin & break-even'}]}
+>
+  <div class="calc">
+    <div class="calcbox">
+      <h2>Your shipment</h2>
+      <div class="field"><label for="value">Customs value of the shipment<span class="hint">The dutiable value — see our first sale guide for why this base can vary.</span></label>
+        <div class="inputwrap"><span>$</span><input id="value" type="number" inputmode="decimal" step="1" value="10000" /></div></div>
+      <div class="field"><label for="units">Units in the shipment</label>
+        <div class="inputwrap"><input id="units" type="number" inputmode="decimal" step="1" value="1000" /></div></div>
+      <h2 style="margin-top:1.2rem">The layers for your HTS code</h2>
+      <div class="field"><label for="base">Base MFN duty<span class="hint">The rate printed in the tariff schedule for your code.</span></label>
+        <div class="inputwrap"><input id="base" type="number" inputmode="decimal" step="0.1" value="3.4" /><span class="suf">%</span></div></div>
+      <div class="field"><label for="s301">Section 301<span class="hint">If your product and origin are in scope; otherwise 0.</span></label>
+        <div class="inputwrap"><input id="s301" type="number" inputmode="decimal" step="0.1" value="25" /><span class="suf">%</span></div></div>
+      <div class="field"><label for="s232">Section 232<span class="hint">Mostly steel, aluminium and derivatives; otherwise 0.</span></label>
+        <div class="inputwrap"><input id="s232" type="number" inputmode="decimal" step="0.1" value="0" /><span class="suf">%</span></div></div>
+      <div class="field"><label for="other">Other measures<span class="hint">IEEPA-era or additional measures currently applying to your entry, per your broker.</span></label>
+        <div class="inputwrap"><input id="other" type="number" inputmode="decimal" step="0.1" value="10" /><span class="suf">%</span></div></div>
+      <div class="field"><label for="marked">Origin marking<span class="hint">Unmarked goods are reported to attract a 10% ad valorem marking duty on top — see the marking guide.</span></label>
+        <div class="inputwrap"><select id="marked"><option value="1" selected>Compliantly marked</option><option value="0">Not marked / unsure</option></select></div></div>
+    </div>
+
+    <div class="calcbox">
+      <h2>Result</h2>
+      <div class="out hero"><span class="k">Effective duty rate</span><span class="v" id="o-eff">—</span></div>
+      <div class="out"><span class="k">Total duty on this shipment</span><span class="v" id="o-duty">—</span></div>
+      <div class="out"><span class="k">Duty per unit</span><span class="v" id="o-unit">—</span></div>
+      <div class="out"><span class="k">Marking-duty exposure</span><span class="v" id="o-mark">—</span></div>
+      <div id="o-verdict" class="verdict"></div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <h2>How each line is calculated</h2>
+    <table>
+      <thead><tr><th>Output</th><th>Formula</th></tr></thead>
+      <tbody>
+        <tr><td>Effective duty rate</td><td>base MFN + Section 301 + Section 232 + other measures (+10% if unmarked)</td></tr>
+        <tr><td>Total duty</td><td>customs value × effective rate</td></tr>
+        <tr><td>Duty per unit</td><td>total duty ÷ units</td></tr>
+        <tr><td>Marking exposure</td><td>customs value × 10%, shown only when goods are not compliantly marked</td></tr>
+      </tbody>
+    </table>
+    <p class="note">
+      The layers stack on the same entry — that is the whole point of our
+      <a href="/guides/tariff-stack-2026/">tariff stack guide</a>. Only the base rate is printed in
+      the schedule; the rest attach by product and origin, and the schedule itself changed twice in
+      the first two months of 2026. This page does arithmetic on rates <strong>you</strong> verify —
+      it does not know your HTS code and cannot look rates up for you.
+    </p>
+
+    <h2>What this estimator assumes</h2>
+    <ul>
+      <li><strong>Your rates are current.</strong> Verify each layer against the current HTS edition and your broker before relying on the output — measures have been added, struck down and revised repeatedly this year.</li>
+      <li><strong>Ad valorem only.</strong> Some lines carry specific (per-kg, per-unit) or compound duties; this page models percentage duties only.</li>
+      <li><strong>AD/CVD is out of scope.</strong> Antidumping and countervailing duties are case-by-case and can be very large — check scope separately with our <a href="/guides/antidumping-duties/">AD/CVD guide</a> before sourcing.</li>
+      <li><strong>Duty is not the whole landed cost.</strong> Freight, brokerage, bonds and inbound fees sit on top — the <a href="/guides/landed-cost-fee-stack/">landed cost guide</a> assembles the full stack, and the <a href="/tools/margin-calculator/">margin calculator</a> takes it from there.</li>
+    </ul>
+  </div>
+
+  <Faq items={[
+    { q: 'Where do I find the rates for my product?', a: 'Your HTS code decides everything. The base rate is in the current HTS edition; Section 301, Section 232 and other measures depend on product scope and origin. Our tariff stack guide walks through where each layer comes from, and a licensed customs broker can confirm your specific entry.' },
+    { q: 'Why is there a marking option?', a: 'Under 19 USC 1304, goods not compliantly marked with their country of origin are reported to attract a 10% ad valorem marking duty on top of everything else — and CBP may refuse entry. The toggle shows that exposure explicitly.' },
+    { q: 'Does this cover antidumping or countervailing duties?', a: 'No. AD/CVD rates are set case by case per product and country, without a ceiling, and force formal entry. Check scope separately before sourcing — the AD/CVD guide shows how.' },
+    { q: 'Is my data sent anywhere?', a: 'No. This page is a static file with no server side. The calculation runs in your browser and nothing is stored or transmitted.' },
+    { q: 'Is this legal or customs advice?', a: 'No. It is arithmetic on rates you supply. Entry decisions, classification and compliance belong with a licensed customs broker.' },
+  ]} />
+
+  <script is:inline>
+    (function () {
+      const ids=['value','units','base','s301','s232','other','marked'];
+      const get=id=>parseFloat(document.getElementById(id).value)||0;
+      const money=v=>'$'+v.toLocaleString('en-US',{maximumFractionDigits:2});
+      function calc(){
+        const value=get('value'),units=get('units');
+        const marked=document.getElementById('marked').value==='1';
+        const layers=get('base')+get('s301')+get('s232')+get('other');
+        const eff=layers+(marked?0:10);
+        const duty=value*eff/100;
+        const per=units>0?duty/units:NaN;
+        const set=(id,t)=>{document.getElementById(id).textContent=t;};
+        set('o-eff',eff.toFixed(1)+'%');
+        set('o-duty',money(duty));
+        set('o-unit',isFinite(per)?money(per):'n/a');
+        set('o-mark',marked?'none — marked':money(value*0.10)+' at risk');
+        const v=document.getElementById('o-verdict');
+        let msg,warn=false;
+        if(!marked){warn=true;msg='Unmarked goods add a reported 10% marking duty — and CBP may refuse entry entirely. Fixing the label at the factory is the cheapest line on this page.';}
+        else if(eff>=20){msg='An effective rate of '+eff.toFixed(1)+'% is squarely in the range sources report as common on consumer goods this year. Price your margin off the landed number, not the factory quote — and check whether drawback, first sale or an FTZ changes your math.';}
+        else {msg='A comparatively light stack at these inputs — verify each layer against the current HTS edition before relying on it, and re-check when the schedule revises.';}
+        v.textContent=msg; v.className='verdict'+(warn?' warn':'');
+      }
+      ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));
+      document.getElementById('marked').addEventListener('change',calc);
+      calc();
+    })();
+  </script>
+</PageShell>
