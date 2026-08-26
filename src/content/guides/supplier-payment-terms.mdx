@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The standard structure is a deposit against production and a balance against inspection. The balance is the only leverage you retain once production has started.",
   "Reported guidance is to treat every transaction as a first transaction until three successful orders, using escrow rather than direct transfer.",
@@ -56,6 +60,8 @@ Reported escrow mechanisms include Alibaba Trade Assurance, Payoneer Escrow and 
 **After three clean orders**, reporting describes moving to a letter of credit or a 30/70 telegraphic transfer for speed — but not before.
 
 **What Trade Assurance actually covers**, per reporting: payment up to an order-level cap against quality and on-time delivery failures, **where the transaction happens entirely within the platform.** It does not cover you if you wire to a personal account or move the conversation off-platform.
+
+<StockImage slug="supplier-payment-terms" theme="ecommerce" />
 
 ## The scam that costs the most
 
@@ -115,6 +121,8 @@ Reporting on agent selection names exactly these — **AQL, hold-shipment and re
 **Do not accelerate the sequence because the shipment is late.** A late shipment is a cost; a released balance against unverified goods is a loss.
 
 **Model it on your own figures.** The [cash flow planner](/tools/cash-flow-planner/) maps deposit, balance, freight, receiving and payout onto a timeline so you can see the gap between money leaving and money returning. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What payment terms should I use?", a: "A deposit against production and a balance against a passing inspection — 30/70 is the commonly described split. The sequence matters more than the ratio: inspect, then pay the balance, then ship." },

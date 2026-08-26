@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Reporting states Amazon discontinued US FBA prep and labelling services on 1 January 2026. Sellers must handle FNSKU labelling, poly-bagging and protective packaging themselves or pay somebody else.",
   "Reported third-party prep pricing ranges from $0.35 to $2.00 per unit depending on the work. Two sources give $0.50 to $2.00 and $0.35 to $1.50.",
@@ -70,6 +74,8 @@ None of that became unnecessary. FBA still requires it. Amazon simply stopped be
 
 **When it stops making sense:** almost always sooner than sellers think. Prep is repetitive work with no learning curve after the first hundred units, and the hours it consumes are hours not spent on sourcing or listings.
 
+<StockImage slug="amazon-stopped-prepping" theme="ecommerce" />
+
 ## The cost of getting it wrong
 
 Reporting on the 2026 fee changes puts **inbound defect fees rising from a range of $0.02–$0.07 to $0.32–$5.72**, triggered by mislabelled shipments, delivery to the wrong warehouse, deleted shipment plans, abandoned inventory beyond 30 days and non-compliance with FBA prep requirements.
@@ -101,6 +107,8 @@ Our [warehousing guide](/guides/awd-vs-3pl-warehousing/) works through what that
 **Reconsider bundles.** Bundling raises the unit price — which now moves the [fulfilment fee price band](/guides/price-tier-repricing-trap/) — and raises prep cost, because assembly is charged accordingly. Both need checking together.
 
 **Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Did Amazon really stop prep services?", a: "Reporting states Amazon discontinued US FBA prep and labelling services on 1 January 2026. Sellers must handle FNSKU labelling, poly-bagging and protective packaging themselves or pay a third party." },

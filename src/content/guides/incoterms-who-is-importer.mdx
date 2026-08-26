@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Incoterms allocate cost and risk between buyer and seller. They do not change who US customs treats as the importer of record — that is the entity declared on CBP Form 7501, and it is usually the US buyer.",
   "DDP is the exception, and the one to read carefully: it is described as the only Incoterm placing the seller as importer of record at destination. Doing that requires a US customs bond and a US presence the supplier may not have.",
@@ -55,6 +59,8 @@ So there are two failure modes, and they are opposite.
 **DDP works as intended and that breaks something else.** Reporting notes that some FDA, EPA and USDA regulated goods require the owner to be the importer of record. If your supplier is the importer of record on those goods, your compliance position is wrong even though your paperwork is clean.
 
 **Ask one question and get the answer in writing:** whose name appears as importer of record on the CBP entry. Not who pays, not who arranges — whose name is on the form.
+
+<StockImage slug="incoterms-who-is-importer" theme="ecommerce" />
 
 ## Why DDP quotes go wrong
 
@@ -96,6 +102,8 @@ What happens next is predictable. Either the supplier absorbs a loss they did no
 **Price FOB and DDP against each other on the same shipment.** The DDP premium is the supplier's estimate of freight, duty and risk. If it is small, they have underestimated something and you will hear about it later. If it is large, you are paying for their uncertainty.
 
 **Do not use an Incoterm to avoid learning your duty rate.** DDP moves who pays it. It does not tell you what it is, and you still need that number to price the product.
+
+<MiniCalc variant="stack" />
 
 <Faq items={[
   { q: "Is there an Incoterms 2026?", a: "No. The current version is Incoterms 2020, published by the ICC and in effect since 1 January 2020. Content referring to a 2025 or 2026 edition is describing something that does not exist. Reference the version explicitly in contracts." },

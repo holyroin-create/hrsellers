@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Steps from '../../components/Steps.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The FBA returns processing fee is charged per unit when a product's return rate exceeds its category threshold — reported as typically 5% to 8% depending on category.",
   "Apparel and shoes work differently. Reporting states those categories are charged on every return, with no threshold at all.",
@@ -27,6 +32,14 @@ import Sources from '../../components/Sources.astro';
 Ask a seller what a return costs and you will get the refund amount. That is the smallest of the three costs, and the only one that appears on the day it happens.
 
 ## The three costs
+
+<Steps title="One return, several lines" accent={0} source="The refund is the visible line; the rest arrives quietly"
+  steps={[
+    { t: 'Refund', d: 'visible' },
+    { t: 'Processing', d: 'quiet' },
+    { t: 'Unsellable', d: 'quiet' },
+    { t: 'Kept fees', d: 'quiet' },
+  ]} />
 
 **One: the transaction unwinds badly.** You refund the sale price. Reporting indicates Amazon refunds most of the referral fee but retains a portion in many categories. The outbound fulfilment fee you already paid is not refunded — it is sunk. The unit has to be received, inspected and re-stickered, and it may not be resaleable.
 
@@ -47,6 +60,8 @@ The returns processing fee is deducted between the **7th and 15th of the third m
 Think about what that means operationally. A product shipped in March produces a fee in June. By June you have launched other products, changed prices, run promotions. Unless you are looking at the SKU Economics Report deliberately, the charge arrives as an unexplained deduction with no obvious source.
 
 **This is the single most common reason sellers do not know they have a returns problem.** The signal is delayed past the point where it would have changed a decision.
+
+<StockImage slug="returns-cost-and-badge" theme="payments" />
 
 ## Where the thresholds sit
 
@@ -92,6 +107,8 @@ One agency's position on fashion is that the root cause is almost always a conte
 Reporting from one agency suggests a badge can clear within weeks once the underlying expectation gap is fixed and the rate normalises. That is a vendor's account of its own results, but the mechanism is plausible: the badge tracks the rate, so the rate is what has to move.
 
 **Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "When is the returns processing fee charged?", a: "Between the 7th and 15th of the third month following shipment. It appears in the SKU Economics Report, which is why it is rarely connected to the products that caused it." },

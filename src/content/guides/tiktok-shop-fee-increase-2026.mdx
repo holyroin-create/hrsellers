@@ -8,13 +8,18 @@ minutes: 9
 numbered: true
 ledger: "+2 points on most US categories"
 ledgerKind: "cost"
+news: true
 draft: false
 ---
 
 import Takeaways from '../../components/Takeaways.astro';
+import FeeStack from '../../components/FeeStack.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
 import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
+
+import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
   "Recent reporting dates an increase in TikTok Shop's standard US referral fee from 6% to 8% for most non-food categories to 4 August 2026, with beauty and personal care reported above that — the second move of the year, after the promotional 1.8% rate ended in January.",
@@ -36,6 +41,14 @@ What that conflict means operationally is simple: **treat 8% as the working figu
 
 ## The margin math, worked
 
+<FeeStack title="The $25 unit, before and after" total="Two points = 20% of a 10% margin"
+  source="Worked example - a 10% pre-change net margin unit; checked August 2026"
+  items={[
+    { label: 'Referral 8%', amount: '$2.00', share: 8, tone: 'orange' },
+    { label: 'Other fees + goods', amount: '$21.00', share: 84, tone: 'ink' },
+    { label: 'Net now', amount: '$2.00', share: 8, tone: 'green' },
+  ]} />
+
 <Figure value="-20%" kind="cost" source="Worked example at a 10% pre-change net margin; checked August 2026">
   A $25 unit paying two additional points surrenders $0.50 per unit. If the unit netted $2.50 under 6%, it nets $2.00 under 8% — a fifth of the profit, gone without a single operational change.
 </Figure>
@@ -49,7 +62,11 @@ Two mechanics in the fee base deserve their own line:
 | Platform-funded promos | Referral fee computed on the buyer-paid amount **plus** the platform-funded discount, excluding tax — the subsidy is reimbursed, but the fee applies to the pre-discount value |
 | Returns | Referral fee reverses, but an administration fee of **20% of the referral fee, capped at $5 per SKU**, is retained — and at 8%, that 20% is a bigger number too |
 
+<StockImage slug="tiktok-shop-fee-increase-2026" theme="payments" />
+
 ## What to do — this week, in Seller Center
+
+<MiniCalc variant="margin" />
 
 **Read the settlement, not the guides.** Open your most recent settlement statement and read the actual referral percentage per order. Given the conflicting published record, your own statement is the only authoritative source for your account and categories.
 

@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "eBay's final value fee is reported between 12.9% and 15.3% across six sources. The spread is mostly definitional: whether the per-order fee is included, whether shipping is in the base, and which category.",
   "eBay charges on item plus shipping. A $20 item with $8 shipping is charged on $28 — a structural difference from Amazon and Walmart worth understanding before pricing.",
@@ -73,6 +77,8 @@ One reported 2026 change: clothing and accessories rose from 15% to 15.3%, with 
 
 That is the sharpest published framing of the choice, and it turns on a number you can only measure after selling there for a while.
 
+<StockImage slug="ebay-etsy-for-amazon-sellers" theme="ecommerce" />
+
 ## Which fits which product
 
 Reported guidance, and it is consistent:
@@ -116,6 +122,8 @@ Reported guidance, and it is consistent:
 **Treat these as product-fit decisions, not diversification.** The diversification argument is in the [second marketplace guide](/guides/second-marketplace-decision/); these two are answers to "where does this specific product belong."
 
 **Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What does eBay actually charge?", a: "Reported between 12.9% and 15.3% across six sources plus a per-order fee of $0.30 to $0.40. The spread is mostly definitional — whether the per-order fee is included, whether shipping is in the base, and which category. Payment processing is included." },

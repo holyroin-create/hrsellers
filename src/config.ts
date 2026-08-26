@@ -27,7 +27,7 @@ export const AUTHOR = {
     "BSc in Management Information Systems, Ostim Technical University (2026) · Scrum Fundamentals Certified (SCRUMstudy)",
   ],
   social: [] as { label: string; href: string }[],
-  email: "hrishesabi@outlook.com",
+  email: "contact@fbatactics.com",
 };
 
 export const SOURCING_NOTE =

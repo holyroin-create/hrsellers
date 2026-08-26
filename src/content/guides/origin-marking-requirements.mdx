@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Steps from '../../components/Steps.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Under 19 USC 1304, most goods imported into the United States must be marked with their country of origin in a conspicuous, legible and permanent manner, visible to the ultimate purchaser.",
   "Goods that are not properly marked are reported to attract a marking duty of 10% ad valorem, in addition to any other applicable duties, and CBP may detain or refuse entry.",
@@ -27,6 +32,14 @@ import Sources from '../../components/Sources.astro';
 Of everything on this site, this is the requirement with the widest gap between how simple it is and how often it goes wrong. It costs nothing to get right at the factory and 10% of the shipment value to get wrong at the border.
 
 ## The requirement
+
+<Steps title="The cheapest compliance line" accent={0} source="19 USC 1304 - unmarked goods reported to carry a 10% marking duty; entry can be refused"
+  steps={[
+    { t: 'Spec sheet', d: 'one line' },
+    { t: 'Factory QC', d: 'check the mark' },
+    { t: 'Entry', d: 'clears clean' },
+    { t: 'Unmarked?', d: '+10% or refusal' },
+  ]} />
 
 **19 USC 1304:** most goods imported into the United States must be marked with their country of origin.
 
@@ -53,6 +66,8 @@ Put that against the [tariff stack](/guides/tariff-stack-2026/): a product alrea
 **And CBP may detain or refuse entry** to improperly marked shipments — which as the [customs holds guide](/guides/customs-holds-and-exams/) covers means demurrage, storage and drayage while it is resolved, all paid by the importer.
 
 **The remedies once goods have arrived** are relabelling under customs supervision, export, or destruction. All three cost more than marking at the factory.
+
+<StockImage slug="origin-marking-requirements" theme="logistics" />
 
 ## The exemptions, briefly
 
@@ -97,6 +112,8 @@ Which means marking failures can surface in two places: at the border as a marki
 **Ask separately about tariff origin.** Marking origin does not settle it, and the ruling above shows the two can diverge.
 
 **Add it to the launch checklist.** It belongs alongside the compliance certificates in the [launch sequence](/guides/launch-sequence/) — a production specification, fixed before tooling, not a label added later.
+
+<MiniCalc variant="stack" />
 
 <Faq items={[
   { q: "What does US law require on origin marking?", a: "Under 19 USC 1304, most imported goods must be marked with their country of origin in a conspicuous, legible and permanent manner, visible to the ultimate purchaser in the US." },

@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Published AWD storage rates range from $0.43 to $0.75 per cubic foot per month. The spread is explained by region, by the Smart Storage discount and by publication date — Amazon raised AWD fees on 15 January 2026.",
   "Storage is the smallest line in this comparison. Transportation is reported at roughly $1.40 per cubic foot, transfer to FBA at $0.40 to $0.50 per unit, and processing at $1.40 per box inbound and outbound.",
@@ -50,6 +54,8 @@ The spread resolves into three variables: **region** — reporting describes Ama
 <Figure value="$0.43–$0.75" kind="cost" source="Six published 2026 AWD rate sources, reviewed 8 August 2026">
   The range of published AWD storage rates per cubic foot per month. The spread is region, programme and date — but no published figure is a substitute for your own console.
 </Figure>
+
+<StockImage slug="awd-vs-3pl-warehousing" theme="logistics" />
 
 ## The fees underneath, which decide it
 
@@ -131,6 +137,8 @@ Reporting notes sampled 3PL reserve warehouses average around $0.90 per cubic fo
 **Decide before September.** Both options exist to avoid the Q4 storage spike, and both need inventory in place before it starts.
 
 **Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How much does AWD storage cost?", a: "Published rates range from $0.43 to $0.75 per cubic foot per month across six sources, explained by region, the Smart Storage discount and publication date. Roughly $0.48 outside the West and $0.55 in the West before the discount is a reasonable working figure — verify in your own console." },

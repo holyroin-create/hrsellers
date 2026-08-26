@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The $800 de minimis exemption was suspended for China and Hong Kong on 2 May 2025 and extended to every country of origin on 29 August 2025.",
   "US Customs and Border Protection codified the suspension by regulation with effect from 24 June 2026. It is no longer a temporary administrative measure.",
@@ -57,6 +61,8 @@ The streamlined Section 321 pathway does not exist for these goods. Release from
 
 The classification requirement is the one that catches sellers who have never imported at scale. The 10-digit code determines the duty rate, and getting it wrong produces shortfalls, penalties or holds — not a polite correction.
 
+<StockImage slug="de-minimis-suspension-2026" theme="logistics" />
+
 ## The arithmetic that breaks the parcel model
 
 Where a flat per-shipment fee applies, the effective rate is a function of parcel value, and it is brutal at the low end.
@@ -96,6 +102,8 @@ Four structural options, roughly in order of how many sellers they suit.
 CBP has announced a voluntary electronic test, Entry Type 13, for international mail shipments valued at $2,500 or less, beginning 22 September 2026. Reporting also points to a statutory repeal of de minimis following in 2027, which would move the change from regulation to law.
 
 Trade policy in this area has changed several times in eighteen months. Everything above is accurate as of the date on this article. Verify anything you are about to act on against CBP directly before you commit inventory to it.
+
+<MiniCalc variant="stack" />
 
 <Faq items={[
   { q: "Is the $800 de minimis exemption coming back?", a: "There is no reinstatement, no court order restoring it, and no announced restoration date. CBP codified the suspension by regulation effective 24 June 2026, and reporting points to a statutory repeal following in 2027." },

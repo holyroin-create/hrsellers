@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "An HTS code is the ten-digit number that classifies a product for US import. It determines the duty rate and eligibility for preference programmes.",
   "The importer of record is legally responsible for the classification. Reporting on the statute is explicit that the duty of reasonable care cannot be delegated — if your broker classifies wrongly, you are still liable.",
@@ -45,6 +49,8 @@ The importer of record is legally responsible for the classification. A customs 
 For a seller who has never filed an entry, the instinct is that this is the broker's job and the broker's risk. It is the broker's job. It is not the broker's risk.
 
 That is not an argument for classifying it yourself with no help. It is an argument for knowing which code is on your entries, why it was chosen, and whether the reasoning would survive being asked about.
+
+<StockImage slug="hts-classification-basics" theme="logistics" />
 
 ## What it costs to get wrong
 
@@ -83,6 +89,8 @@ Negligence is described as the most common finding, and mitigation under CBP's p
 **For a product line you will import for years, consider a binding ruling.** Requesting one from CBP takes time but gives you a determination you can rely on rather than an opinion you are hoping is right.
 
 **Re-check when the product changes.** A change in material, construction or fibre blend can move the code. So can a change in how the item is packaged for retail.
+
+<MiniCalc variant="stack" />
 
 <Faq items={[
   { q: "My customs broker chooses the codes. Am I still responsible?", a: "Yes. The importer of record is legally responsible. Brokers act as your agent, and reporting on the statute describes the duty of reasonable care as non-delegable." },

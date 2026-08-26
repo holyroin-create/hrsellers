@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "From 15 January 2026, Amazon calculates FBA fulfilment fees partly from price bands — under $10, $10 to $50, and above $50 — rather than from size and weight alone.",
   "Reported average increases differ sharply by band: about $0.08 per unit in the $10–$50 range, and about $0.31 above $50, with small standard items above $50 reported at about $0.51.",
@@ -66,6 +70,8 @@ One published analysis puts it directly: if your product sits just above $50, it
 
 **This cuts both ways.** A product at $51 might do better at $49.99, keeping the lower fee and gaining the psychological price point. A product at $54 probably should not come down, because the fee difference is fixed while the revenue difference is not.
 
+<StockImage slug="price-tier-repricing-trap" theme="payments" />
+
 ## Where it compounds
 
 The 3.5% fuel and logistics surcharge, reported as effective 17 April 2026, is calculated on the fulfilment fee rather than on the sale price. So crossing a band upward raises the fee, and then raises the surcharge on the new fee.
@@ -108,6 +114,8 @@ If the fulfilment fee in that calculation is a static number entered once, then:
 **Re-run this in January.** Amazon has revised US fulfilment fees in January in recent cycles, with roughly three months' notice in the previous round. Whatever you build now should be reviewed against the next announcement rather than trusted indefinitely.
 
 **Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Does my selling price really change my fulfilment fee?", a: "Yes. From 15 January 2026, reported changes made price bands an input to the FBA fulfilment fee alongside size and weight, with different rates under $10, between $10 and $50, and above $50." },

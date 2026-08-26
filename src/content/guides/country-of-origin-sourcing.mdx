@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Split from '../../components/Split.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Country of origin is where goods were manufactured or substantially transformed. Country of shipment is where they left from. Goods made in China and shipped via Vietnam remain Chinese-origin for tariff purposes.",
   "Reported as not qualifying: repackaging, relabelling, simple final assembly of mostly-complete components, and minor quality checks.",
@@ -27,6 +32,10 @@ import Sources from '../../components/Sources.astro';
 Every seller importing from China has had the conversation about moving production. Most of the advice around it skips the only question that decides whether it works.
 
 ## The rule
+
+<Split source="The substantial-transformation test - CBP reported to be enforcing the line more rigorously"
+  left={{ title: 'Changes origin', badge: 'QUALIFIES', tone: 'green', rows: ['Real manufacturing', 'Substantial transformation of inputs'] }}
+  right={{ title: 'Does not', badge: 'ROUTING ONLY', tone: 'orange', rows: ['Repackaging & relabelling', 'Simple final assembly', 'Third-country transit'] }} />
 
 **Country of origin** is where a product was manufactured or **substantially transformed**.
 
@@ -56,6 +65,8 @@ Reported as qualifying: **meaningful manufacturing or processing that changes th
 **Marking origin and tariff origin can differ.** A product can legitimately be marked as made in one country while carrying the tariff exposure of another.
 
 **"Assembled in" is not a safe harbour.** The question is whether the assembly transformed the product, and simple assembly is reported as not doing so.
+
+<StockImage slug="country-of-origin-sourcing" theme="logistics" />
 
 ## The enforcement position
 
@@ -121,6 +132,8 @@ Two cautions from the reporting.
 **Get the marking right separately.** Marking origin and tariff origin can differ, and marking has its own rules — see the [marking guide](/guides/origin-marking-requirements/).
 
 **Refuse transshipment proposals in writing.** The exposure is yours, and reporting describes the consequence as seizure and criminal liability rather than a penalty.
+
+<MiniCalc variant="stack" />
 
 <Faq items={[
   { q: "Can I ship Chinese goods through Vietnam to avoid tariffs?", a: "No. Country of origin is where goods were substantially transformed, not where they shipped from. Reporting describes routing without genuine transformation as fraud inviting seizure and criminal liability, with CBP enforcement stepped up." },

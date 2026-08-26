@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Cash accounting records a cost when money leaves and revenue when it arrives. For an inventory business those two events are months apart, which makes monthly margin meaningless.",
   "Accrual accounting matches the cost of a unit to the month that unit sold. That is the only basis on which a per-SKU margin figure means anything.",
@@ -64,6 +68,8 @@ Two changes widened the gap between the money and the transaction.
 **The returns processing fee.** Deducted between the 7th and 15th of the third month following shipment, as the [returns guide](/guides/returns-cost-and-badge/) covers. On cash basis it appears in a month with no connection to the product that caused it.
 
 So a cash-basis December shows revenue that belongs to November, no cost for the goods sold, and a returns fee for September. There is no decision that number supports.
+
+<StockImage slug="accrual-accounting-cogs" theme="ecommerce" />
 
 ## What accrual actually requires
 
@@ -123,6 +129,8 @@ A workable order:
 6. **Get an accountant who has worked with inventory businesses.** Marketplace accounting is a specialism, and the difference between an accountant who has seen it and one who has not is substantial.
 
 **Note the tax point.** Cash basis is described as acceptable for tax purposes. Moving your management accounts to accrual is a decision about information quality, and whether your tax filing basis should also change is a question for an accountant with sight of your circumstances. This site does not give tax advice.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What is the difference between cash and accrual accounting?", a: "Cash records transactions when money moves. Accrual records them when the underlying event happens — revenue when the sale occurs, and the cost of a unit in the month that unit sold rather than the month you paid for it." },

@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Entry requires itemised invoices showing at least $50,000 in qualifying refurbished purchases in the previous 90 days — or 180 days for Home, Tools, Kitchen and Lawn & Garden.",
   "Reported thresholds by brand: $2.5 million for Apple, with one source giving the same figure for Samsung wireless and $100,000 for non-wireless Apple and Samsung.",
@@ -55,6 +59,8 @@ Amazon's own programme page specifies what those invoices must show: **authentic
 **Trademark documentation or Brand Registry enrolment** if you are the manufacturer or brand owner.
 
 **Application** is reported through Seller Central or by email to Amazon's Renewed application address, with a response in about 10 to 12 business days.
+
+<StockImage slug="amazon-renewed" theme="ecommerce" />
 
 ## Who it is for
 
@@ -101,6 +107,8 @@ Amazon's own page names the seller types: **distributors and resellers, manufact
 **If you are a brand owner, consider it for your own returns** — that is the case where you already hold most of what the programme asks for.
 
 **If you are looking to clear returns you did not manufacture, look elsewhere.** The threshold is the answer.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What do I need to join Amazon Renewed?", a: "Itemised invoices showing at least $50,000 in qualifying refurbished purchases in the previous 90 days — 180 days for Home, Tools, Kitchen and Lawn & Garden — an Order Defect Rate of 0.8% or below, sample product and packaging images, and agreement to back all units with the Amazon Renewed Guarantee." },

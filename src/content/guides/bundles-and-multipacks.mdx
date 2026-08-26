@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The fee saving is real: one published example puts three small items at about $3.22 each in fulfilment fees against roughly $4.65 for a single bundled unit under 1.5 lb.",
   "But bundling raises the unit price, and since January 2026 price bands are an input to the fulfilment fee — so the saving and a fee increase can arrive together.",
@@ -76,6 +80,8 @@ If the bundle is a variation within an existing family, the [February 2026 chang
 
 Whether a multipack counts as a significant feature difference is not established in the sources found — the named examples are storage capacity, materials, model year and hardware specification. **But a bundle launched on the assumption that it inherits the parent's review count is a bundle with an untested assumption in it.**
 
+<StockImage slug="bundles-and-multipacks" theme="ecommerce" />
+
 ## The calculation
 
 Per bundle, before creating it:
@@ -127,6 +133,8 @@ Then the question nobody asks: **would a customer buy three?** A bundle that hal
 **Test demand before committing inventory.** The fee saving is arithmetic; whether people want three is not.
 
 **Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Does bundling reduce my fees?", a: "On the fulfilment line, usually yes — one published example puts three items at about $3.22 each against roughly $4.65 for a bundled unit under 1.5 lb. Whether the total cost falls depends on the price band, the size tier, storage, prep and the GTIN." },

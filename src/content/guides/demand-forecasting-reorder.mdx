@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Two fees push in opposite directions: the low-inventory-level fee charges per unit sold below a reported 28-day threshold, and storage plus the IPI score penalise excess above roughly 45 days of cover.",
   "The corridor between them is narrower than a typical replenishment lead time, which is why this is an ordering-frequency problem rather than an ordering-quantity problem.",
@@ -64,6 +68,8 @@ See the [freight guide](/guides/freight-modes/) for the mode figures and the [cu
 **Your own decision lag.** The days between the report saying reorder and the purchase order being sent. It is real, it is often the longest controllable stage, and it is invisible because nobody measures it.
 
 **Amazon receiving.** Delivered is not sellable. One to three business days, longer in Q4.
+
+<StockImage slug="demand-forecasting-reorder" theme="ecommerce" />
 
 ## The calculation
 
@@ -130,6 +136,8 @@ order quantity   = daily sales × target cover
 **Check cash timing before committing.** The purchase order and the payout do not arrive on the same schedule.
 
 **Treat launches, promotions and seasonal SKUs as separate calculations**, not adjustments to the baseline.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How many days of inventory should I hold?", a: "Roughly 30 to 45 days of cover. Below a reported 28-day threshold the low-inventory-level fee applies; above about 45 days the IPI score and the storage stack begin working against you." },

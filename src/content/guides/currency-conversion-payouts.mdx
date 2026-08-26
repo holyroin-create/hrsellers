@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Amazon's own page describes volume-based pricing for its currency converter, with a flat 2.0% for sellers receiving Japanese yen and a worked example showing 1.0% at $1.1 million in annual net proceeds.",
   "Third-party sources give 1.5%, 1.5–2.5%, 2.5–4%, 3–4% and 3.75%. Every one of them sells or promotes a competing foreign exchange service.",
@@ -60,6 +64,8 @@ This is the only number that matters, and the method is published consistently a
 One source's benchmark: **if you are consistently trailing mid-market by more than 2%, you are paying too much.**
 
 That threshold is reasonable and it is also the point at which a third-party service becomes worth the setup effort.
+
+<StockImage slug="currency-conversion-payouts" theme="ecommerce" />
 
 ## What Amazon's own page actually says
 
@@ -106,6 +112,8 @@ Reported third-party costs cluster **under 0.5%** in some accounts and at **1% t
 **Do not act on a published percentage**, including the ones in this guide. The range across sources is a factor of five and the parties quoting the high end all sell the remedy.
 
 **This is not financial advice.** Currency exposure, hedging and cross-border payment structuring depend on your volumes and jurisdiction, and a conversation with an accountant familiar with cross-border ecommerce will be worth more than any article.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How much does Amazon's currency converter cost?", a: "Amazon's own page describes volume-based pricing, with a flat 2.0% for sellers receiving Japanese yen and a worked example at 1.0% for $1.1 million in annual net proceeds. Third-party sources claim 1.5% to 3.75%, and each of those sells an alternative." },

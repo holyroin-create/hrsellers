@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The widely reported 2026 change was an average $0.08 per unit increase in US FBA fulfilment fees, effective 15 January 2026, with no new fee types introduced.",
   "A separate 3.5% fuel and logistics surcharge is reported as layering on top of every FBA fulfilment fee from 17 April 2026. Several 2026 rate breakdowns published the same quarter do not mention it at all.",
@@ -53,6 +57,8 @@ Consider three units, using illustrative fulfilment fees to show the shape of th
 
 The seller who read the announcement and added eight cents to every SKU is under-forecasting by two and a half times on the heavy end of their catalogue and by half on the light end. Nobody is over-forecasting.
 
+<StockImage slug="fba-fuel-logistics-surcharge-2026" theme="logistics" />
+
 ## The compounding nobody modelled
 
 Here is the part that outlasts this year's rate.
@@ -84,6 +90,8 @@ None of these are unreasonable publications. They are simply written at differen
 **Re-check your repricing floor.** If your minimum price was set against a fixed fulfilment assumption, it is now wrong on any SKU near a price-band boundary. Identify those SKUs first; they are where the compounding bites.
 
 **Model the heavy end of your catalogue separately.** A percentage surcharge concentrates cost in exactly the SKUs that were already marginal. For bulky and heavy items, this is the year to run the merchant-fulfilled comparison properly rather than assuming FBA wins on convenience.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Is the surcharge on the whole order or just fulfilment?", a: "It is reported as applying to the FBA fulfilment fee, not to the referral fee or the sale price. Confirm against the current rate card in Seller Central before modelling — this is the point in the fee stack where published sources vary most." },

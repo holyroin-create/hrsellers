@@ -20,11 +20,15 @@ export const NAV = [
     { href: '/marketplaces/amazon/', label: 'Amazon', note: 'The 2026 fee stack, line by line' },
     { href: '/marketplaces/walmart/', label: 'Walmart', note: 'WFS economics and the under-$10 surcharge' },
     { href: '/marketplaces/ebay/', label: 'eBay', note: 'What the 13.6% is actually charged on' },
-    { href: '/marketplaces/tiktok-shop/', label: 'TikTok Shop', note: 'Why a 6% fee costs about 30%' },
+    { href: '/marketplaces/tiktok-shop/', label: 'TikTok Shop', note: 'Why an 8% fee costs about a third' },
     { href: '/marketplaces/etsy/', label: 'Etsy', note: 'Three fees, and the one you cannot refuse' },
     { href: '/marketplaces/aliexpress/', label: 'AliExpress', note: 'Lowest headline fee, and an unsettled one' },
     { href: '/marketplaces/shopify/', label: 'Shopify', note: 'No referral fee, and no traffic either' },
     { href: '/reviews/', label: 'Software pricing', note: 'Nine tools, sourced and dated' },
+  ]},
+  { label: 'News', href: '/news/', children: [
+    { href: '/news/', label: 'Latest developments', note: 'Dated marketplace news, analysed' },
+    { href: '/policy-log/', label: 'Fee & policy log', note: 'Every change, on the record' },
   ]},
   { label: 'Reference', href: '/glossary/', children: [
     { href: '/glossary/', label: 'Glossary', note: '26 terms, one page' },

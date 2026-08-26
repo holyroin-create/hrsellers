@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Cubic feet come from the packaged unit and multiply every layer of the storage bill, every month, permanently. A 12×10×8 box is 0.556 cu ft; an 8×8×6 is 0.222.",
   "Dimensions and weight set the size tier, which sets the fulfilment fee. Reporting notes a product profitable in one tier can lose margin when the box pushes it into a higher one.",
@@ -72,6 +76,8 @@ Most packaging conversations happen in terms of appearance. This is the list tha
 
 **Every one of these is cheaper to specify than to fix.** A packaging change after tooling means another production run.
 
+<StockImage slug="packaging-design-fba" theme="ecommerce" />
+
 ## The three habits that cost most
 
 **Air-filled packaging.** Void space is cubic feet you pay for monthly and dimensional weight you pay for per shipment. Reporting names it among the most exposed categories after the 2026 size-tier changes.
@@ -118,6 +124,8 @@ The single highest-return exercise, and it takes an afternoon:
 **Re-check when Amazon revises size tiers**, and when you change anything about the product.
 
 **Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How much does packaging size actually cost me?", a: "Cubic feet multiply every layer of the storage bill monthly, and dimensions plus weight set the size tier that determines the fulfilment fee. A 12×10×8 box is 0.556 cubic feet against 0.222 for an 8×8×6 — roughly 60% less on every storage layer." },

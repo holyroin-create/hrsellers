@@ -3,9 +3,9 @@ import Base from '../layouts/Base.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
 import AdSlot from './AdSlot.astro';
 import AuthorBox from './AuthorBox.astro';
-const { title, description, eyebrow, h1, lede, crumb, rail = [] } = Astro.props;
+const { title, description, eyebrow, h1, lede, crumb, rail = [], ogImage } = Astro.props;
 ---
-<Base title={title} description={description}>
+<Base title={title} description={description} ogImage={ogImage}>
 <div class="wrap"><Breadcrumbs trail={[{ label: crumb.label, href: crumb.href }]} /></div>
 <div class="wrap">
   <div class="article-grid">

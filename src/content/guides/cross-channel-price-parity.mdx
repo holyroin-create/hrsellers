@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Walmart enforces a price parity policy: your Walmart price cannot be higher than on other channels, including your own website.",
   "Amazon compares your price against other retailers. Reporting describes the Fair Pricing Policy suppressing the Buy Box entirely where the lowest offer on a listing sits high against external benchmarks.",
@@ -47,6 +51,8 @@ Reported off-peak storage is $0.75 per cubic foot on Walmart against $0.87 on Am
 **Same price, different margin.** And in Q4, materially different.
 
 The instinct is to price the more expensive channel higher. Both policies point the other way.
+
+<StockImage slug="cross-channel-price-parity" theme="ecommerce" />
 
 ## The workable positions
 
@@ -89,6 +95,8 @@ If the Buy Box disappears on a live listing — not the listing itself, just the
 **Model margin per channel at the same price.** The fee stacks differ, so the same price is a different business on each — and the difference widens in Q4.
 
 **Read the current policy text for each platform.** These are enforcement rules that change, and the consequence of getting them wrong is silent.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Can I charge more on the marketplace with higher fees?", a: "Generally no. Walmart's price parity policy requires your price there to be no higher than on other channels, and Amazon's Fair Pricing Policy is described as suppressing the Buy Box where your price sits significantly above external benchmarks." },

@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Steps from '../../components/Steps.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Antidumping and countervailing duties are separate from the tariff stack. They apply to specific products from specific countries under individual orders, at rates set case by case.",
   "Reporting describes formal entry as required for goods subject to antidumping or countervailing duties regardless of shipment value — so the informal entry route is unavailable.",
@@ -29,6 +34,14 @@ Every other duty on this site is predictable once you know the code and the orig
 **This is not legal advice**, and AD/CVD is an area where the consequences of getting it wrong are severe enough that specialist input is not optional.
 
 ## What they are
+
+<Steps title="Check scope before the PO" accent={0} source="AD/CVD attaches case by case, with no rate ceiling, and forces formal entry"
+  steps={[
+    { t: 'Your HTS code', d: 'confirm it' },
+    { t: 'True origin', d: 'not ship-from' },
+    { t: 'Scope language', d: 'read the text' },
+    { t: 'Pending cases', d: 'early warning' },
+  ]} />
 
 **Antidumping duties (AD)** are imposed where goods are found to be sold into the United States below fair value.
 
@@ -49,6 +62,8 @@ Every other duty on this site is predictable once you know the code and the orig
 **Rates can be extreme.** Because they are calculated to offset a margin of dumping or a subsidy rather than to raise revenue, they are not bounded the way ordinary duty rates are.
 
 **And they are retroactive in effect.** Entries can be subject to review after the fact, with the final rate determined later than the entry.
+
+<StockImage slug="antidumping-duties" theme="ecommerce" />
 
 ## The entry consequence
 
@@ -109,6 +124,8 @@ For most marketplace sellers, most of the time, AD/CVD does not apply. The categ
 **Re-check periodically.** The docket is described as expanding, and a product outside every order today may not be next year.
 
 **Take any suggestion of routing around an order seriously as a warning sign.** A supplier proposing it is proposing something with consequences that land on the importer of record.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What are antidumping and countervailing duties?", a: "Additional duties imposed under individual orders — antidumping where goods are sold below fair value, countervailing where producers are subsidised. They cover defined merchandise from named countries at rates set case by case, often at company level." },

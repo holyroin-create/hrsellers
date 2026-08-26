@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "CPSC states that from 8 July 2026, importers of most regulated consumer products must electronically file certificates of compliance with CBP via a Partner Government Agency message set.",
   "That moves the certificate from a document you produce when Amazon asks to a document required at import. The failure mode changes from a listing suppression to a shipment that does not clear.",
@@ -49,6 +53,8 @@ Our [customs holds guide](/guides/customs-holds-and-exams/) covers what a PGA ho
 Reported requirements for both: produced by the manufacturer or importer, referencing the applicable standards, naming the certifying party, and giving the contact details of the testing laboratory.
 
 **The definition is not yours to make.** Reporting is explicit that you cannot arbitrarily determine whether a product is a children's product; Amazon takes CPSC guidance into account when deciding. A product marketed to adults that CPSC guidance treats as intended primarily for children is a children's product.
+
+<StockImage slug="us-product-compliance" theme="ecommerce" />
 
 ## The rest of the US stack
 
@@ -107,6 +113,8 @@ Compliance documents now sit at the intersection of four systems this site cover
 | SDS or exemption sheet | [Dangerous goods review](/guides/hazmat-dangerous-goods/) | Inventory blocked from FBA |
 
 Four documents, four systems, one filing habit.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What changed on 8 July 2026?", a: "CPSC states that importers of most regulated consumer products must electronically file certificates of compliance with CBP via a Partner Government Agency message set from that date. Amazon published parallel guidance for sellers." },

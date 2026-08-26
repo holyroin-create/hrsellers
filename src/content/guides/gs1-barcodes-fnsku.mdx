@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Reporting states Amazon eliminated commingled inventory on 31 March 2026. Brand Registry brand owners with a Brand Representative role can use their GS1 manufacturer barcodes as the primary tracking identifier, with no FNSKU stickers.",
   "Resellers face the opposite: FNSKU labels are reported as mandatory on all inventory with no exceptions, and inventory received after 31 March without a proper FNSKU is reported as classified as defective.",
@@ -53,6 +57,8 @@ GS1 UK's own note frames the rationale: Amazon is pursuing unit-level traceabili
 <Figure value="$600m" kind="cost" source="Feedvisor, reported annual industry cost of re-stickering to avoid commingling, accessed 8 August 2026">
   The estimated annual industry spend on re-stickering that the change removes for qualifying brand owners. For resellers, the labelling requirement went the other way.
 </Figure>
+
+<StockImage slug="gs1-barcodes-fnsku" theme="ecommerce" />
 
 ## The compounding problem for resellers
 
@@ -121,6 +127,8 @@ Reporting names missing or wrong barcodes as **the leading reason FBA shipments 
 **Check your listing data matches your GS1 registration.** Reporting notes product details on the Amazon listing must match what is registered against the barcode.
 
 **Check the FNSKU covers the manufacturer barcode completely** on a sample before a full run — particularly if a supplier or prep centre is doing the labelling.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What changed on 31 March 2026?", a: "Reporting states Amazon eliminated commingled inventory. Brand Registry brand owners with a Brand Representative role can use GS1 manufacturer barcodes as the tracking identifier; resellers must apply an FNSKU to every unit, with inventory received without one reported as classified as defective." },

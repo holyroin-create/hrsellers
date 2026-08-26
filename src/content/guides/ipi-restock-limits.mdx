@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The Inventory Performance Index is a 0 to 1,000 score that determines how much you may store at FBA. Below the threshold, Amazon caps your capacity and can block inbound shipments.",
   "The threshold is reported as 400 by most 2026 sources, as 450 by two, and one article gives both figures in the same piece. Amazon is described as able to adjust it quarterly.",
@@ -65,6 +69,8 @@ Reported bands:
 <Figure value="400 / 450 / 500" kind="cost" source="Published IPI thresholds across five 2026 sources, reviewed 8 August 2026">
   Three thresholds across five sources — including one article giving two of them. Managing to 500 makes the disagreement moot.
 </Figure>
+
+<StockImage slug="ipi-restock-limits" theme="payments" />
 
 ## What changed
 
@@ -126,6 +132,8 @@ Reported as the highest-leverage actions:
 **Clear stranded listings weekly.** It is the cheapest of the four factors to fix.
 
 **If capacity is already restricted going into Q4**, route buffer stock through AWD or a 3PL rather than trying to force it into FBA — and read the [peak season guide](/guides/peak-season-cost-stack/) before committing to a Q4 inventory plan you may not be allowed to execute.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What is a good IPI score?", a: "Published thresholds disagree — 400 in most 2026 sources, 450 in two, and one article gives both. Every source treats 400 as the floor and 500+ as producing better allocations, so managing to 500 makes the disagreement irrelevant." },

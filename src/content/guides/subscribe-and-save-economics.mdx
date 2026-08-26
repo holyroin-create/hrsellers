@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The funding split is the fact that matters: the base discount you choose (0%, 5% or 10%, with 15–20% options reported in some categories) is seller-funded on every subscription order. The additional 5% when a customer's delivery contains five or more subscribed items is reported as Amazon-funded.",
   "Amazon is reported to charge no separate participation fee — but standard referral and FBA fees apply to the discounted price, so the discount comes straight out of margin, not out of Amazon's side.",
@@ -53,6 +57,8 @@ A published 2026 analysis runs a concrete SKU through it, and both halves of the
 
 The general form: the S&S discount is competing against your **acquisition cost per order**, not against zero. Where your TACOS on a SKU exceeds the funding tier, the reorder is the cheaper sale. Our [PPC budget calculator](/tools/ppc-budget-calculator/) puts a number on what an ad-driven order costs you; that number is what the discount should be compared against.
 
+<StockImage slug="subscribe-and-save-economics" theme="payments" />
+
 ## What it takes to get in, and to stay in
 
 Reported eligibility gates: **Brand Registry** enrolment, a strong fulfilment history, an **in-stock rate above 90%**, and consistent pricing without inflated list prices. Eligible FBA products are reported to be enrolled automatically at the 0% tier; Fulfilled-by-Merchant sellers must request access.
@@ -74,6 +80,8 @@ On tier choice, published guidance pushes restraint from both directions. Jumpin
 **Fund only what the margin carries, and compare against CPC, not against zero.** The discount is a customer-acquisition cost that replaces a different one. Where TACOS on the SKU exceeds the funding tier, the subscription order is your cheapest sale.
 
 **Treat subscriber inventory as senior debt.** A stockout on a subscribed SKU is reported to cancel the subscription, not delay it. Reorder points on S&S SKUs deserve worst-case lead times, not average ones.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: 'Does Amazon charge a fee for Subscribe & Save?', a: 'No separate participation fee is reported. The cost is the seller-funded base discount itself — 5% or 10% of the subscription price on every order — with standard referral and FBA fees still applying to the discounted price.' },

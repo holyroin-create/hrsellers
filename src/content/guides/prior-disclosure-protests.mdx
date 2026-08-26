@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Two situations, two mechanisms. Underpayment is a prior disclosure question; overpayment is a protest or post summary correction question.",
   "Reporting puts the protest window at 180 days from the liquidation date, running per entry rather than per account — so entries expire individually and quietly.",
@@ -57,6 +61,8 @@ More common, and more often ignored, because nobody sends a letter about it.
 **Protest** — for entries already liquidated. Reporting puts the window at **180 days from the liquidation date.**
 
 **The detail that costs money:** the window runs **per entry**, from that entry's liquidation date. There is no account-level deadline and no notification you would notice. Reporting on retrospective tariff changes states the position plainly — check every liquidated entry individually and file before its specific deadline expires.
+
+<StockImage slug="prior-disclosure-protests" theme="ecommerce" />
 
 ## The retrospective tariff case
 
@@ -109,6 +115,8 @@ Both mechanisms run on records:
 **If you find an overpayment, act on the oldest entries first.** They are the ones closest to expiring.
 
 **Do not fix it going forward and leave the past alone.** That is a decision, and it is one made without advice.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "I have been using the wrong HTS code. What do I do?", a: "It depends on the direction. Underpayment is a prior disclosure question and should go to a customs attorney before anything else is filed. Overpayment is recoverable through a post summary correction on unliquidated entries or a protest within 180 days of liquidation." },

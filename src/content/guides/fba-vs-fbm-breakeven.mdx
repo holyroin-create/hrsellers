@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Reporting puts cumulative FBA fee increases since 2020 at 25% to 35% depending on size tier. That is the trend the crossover question exists because of.",
   "The 2026 changes moved it further: an average $0.08 per unit increase, a reported 3.5% fuel and logistics surcharge on the fulfilment fee, and the end of US prep services on 1 January 2026.",
@@ -51,6 +55,8 @@ Read that as a price. If leaving FBA saves $2 per unit and costs you the ability
 **The handling baseline.** Reporting describes an October 2025 change making **0-day handling** the fulfilment speed baseline for FBM sellers on Seller-Fulfilled Prime or premium shipping, with two-day handling losing rotation to every FBA and SFP offer automatically. If you cannot ship same day, this decision is largely made for you on contested listings.
 
 **Conversion and ranking.** Delivery speed feeds conversion, and conversion is the dominant ranking signal — see the [listing guide](/guides/listing-optimisation-a10/). A slower offer converts worse, which ranks worse, which reduces the traffic the saving was calculated against.
+
+<StockImage slug="fba-vs-fbm-breakeven" theme="ecommerce" />
 
 ## The comparison, done properly
 
@@ -134,6 +140,8 @@ Framed as a rule rather than a philosophy:
 **Test on one SKU before moving a catalogue.** Move a slow mover with a high fee load, run it for a quarter, and measure the actual difference rather than the modelled one.
 
 **Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Is FBM cheaper than FBA in 2026?", a: "For some SKUs. Heavy and oversize items, slow movers, high-return categories and low-price items are where the fee stack most often exceeds self-fulfilment cost. For fast-turning small standard items on contested listings, FBA usually still wins." },

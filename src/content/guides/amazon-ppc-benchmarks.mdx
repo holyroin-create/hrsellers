@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "One agency's H1 2026 dataset of 38 US accounts reports a median ACOS of 38% per account but 30% when weighted by spend — larger budgets are managed harder toward efficiency, and averages hide that.",
   "Reported 2026 CPCs cluster around $1.00 to $1.25, described as up 8% to 12% year on year from roughly $0.97 in 2024. Category spread runs from about $0.30 to over $4.00.",
@@ -64,6 +68,8 @@ At a 40% margin, a 40% ACOS is break-even on ad-attributed sales. A 25% ACOS lea
 Which means **a 32% ACOS is excellent at a 50% margin and ruinous at a 25% margin.** Any article telling you 30% is healthy without asking your margin is telling you nothing.
 
 Note where the margin comes from. It is after everything in the [fee stack](/guides/landed-cost-fee-stack/) — landed cost, referral, fulfilment, the surcharge, storage, returns. Sellers routinely calculate break-even ACOS against gross margin and wonder why a "profitable" ACOS produces no profit. Run it through the [margin calculator](/tools/margin-calculator/) first.
+
+<StockImage slug="amazon-ppc-benchmarks" theme="analytics" />
 
 ## Why the cheap click is often the expensive sale
 
@@ -130,6 +136,8 @@ Three additions that turn a budget into a real number.
 **Budget 1.3× to 1.5× your raw spend** if you use an agency or tools, and plan a higher allocation for Prime Day and Q4.
 
 **Fix the listing before raising the bid.** Relevance is an input to what you pay.
+
+<MiniCalc variant="ppc" />
 
 <Faq items={[
   { q: "What is a good ACOS in 2026?", a: "There is no universal answer. Published figures range from a 38% median account to a 30% spend-weighted portfolio to a 30.2% all-category average. What matters is your break-even ACOS, which equals your margin after all fees." },

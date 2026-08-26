@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Product inserts are permitted. What is prohibited is directing customers to write a positive review, offering any incentive for a review, or directing dissatisfied customers to contact you instead of reviewing.",
   "Reporting quotes Amazon's own wording: directing customers to write a positive review, or to contact the seller instead of leaving a negative review, is prohibited.",
@@ -58,6 +62,8 @@ Reported prohibitions, and each one catches a common template:
 <Figure value="Same sentence" kind="cost" source="Reported compliance technique for product inserts, accessed 8 August 2026">
   The structural rule from published guidance: separating the customer service offer from any review mention. Pairing them makes the connection for the buyer, and making that connection is the violation.
 </Figure>
+
+<StockImage slug="product-inserts" theme="ecommerce" />
 
 ## The technique that separates the two
 
@@ -104,6 +110,8 @@ Amazon's system is reported to flag **patterns rather than confirmed violations*
 **Use Request a Review** as the proactive mechanism and let the insert be genuinely useful instead.
 
 **Reprint rather than use up existing stock** if the current card is non-compliant. A reprint costs a few hundred dollars; the alternative is an unexplained flag on the account.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Are product inserts allowed on Amazon?", a: "Yes, provided they do not manipulate reviews, offer incentives for feedback, or redirect customers off Amazon in ways that violate seller policies. Setup instructions, support offers and Amazon-only cross-sell are the low-risk uses." },

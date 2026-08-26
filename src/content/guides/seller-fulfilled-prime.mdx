@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Reported ongoing requirements: on-time delivery at or above 93.5%, valid tracking at or above 99%, pre-fulfilment cancellations under 0.5%, late shipments under 4% and order defect rate under 1%.",
   "On 6 July 2026 Amazon raised delivery-speed coverage requirements: standard-size one-day from 30% to 40%, two-day from 70% to 75%, oversize one-day from 10% to 15%, extra-large two-day from 15% to 25%.",
@@ -67,6 +71,8 @@ These are **coverage percentages** — the share of shoppers who see that delive
 
 Reporting also describes a **zip-code-level delivery promise tool planned for September 2026**, and a temporary exclusion of weekend page views from speed-metric evaluation running **31 May to 17 October 2026.** That exclusion does not remove the weekend fulfilment obligation — it is a grace period on the metric, not on the work.
 
+<StockImage slug="seller-fulfilled-prime" theme="ecommerce" />
+
 ## Weekend operations, which is the real cost
 
 Amazon requires one weekend operating day: downloading Prime orders, packing them and getting them to a carrier.
@@ -112,6 +118,8 @@ Against that: weekend operations at $3 to $7 per order, multiple warehouse locat
 **One useful feature few sellers use:** Prime order volume management, which lets you set daily capacity limits rather than accepting unlimited Prime orders. For a warehouse near its limit, that protects the metrics that keep you in the programme.
 
 **The honest test** is the one reporting states: not whether the Prime badge would help, but whether **each SKU can support fast free delivery at a reliable contribution margin.** That is a per-SKU calculation, and the weekend surcharge belongs in it.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What are the SFP requirements in 2026?", a: "Reported as on-time delivery at or above 93.5%, valid tracking at or above 99%, pre-fulfilment cancellations under 0.5%, late shipment under 4%, order defect rate under 1%, zero-day handling, and at least one weekend operating day." },

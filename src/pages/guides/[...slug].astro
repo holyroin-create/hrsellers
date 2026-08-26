@@ -32,13 +32,13 @@ const toc = headings.filter(h => h.depth === 2).map(h => {
 });
 const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
-<Base title={d.title} description={d.description} type="Article" published={d.published} modified={d.modified}>
+<Base title={d.title} description={d.description} type="Article" published={d.published} modified={d.modified} ogImage={`/og/g-${entry.id}.png`}>
 <div class="wrap">
   <Breadcrumbs trail={[{ label: 'Guides', href: '/guides/' }, { label: d.category, href: '/guides/' }]} />
 
   <div class="article-grid">
     <article>
-      <p class="eyebrow" style="margin-bottom:.7rem">{d.category}</p>
+      <p class="eyebrow" style="margin-bottom:.7rem">{d.category}{d.news && <span style="margin-left:.6rem;background:#e06e14;color:#fff;padding:.15rem .5rem;border-radius:6px;font-size:.72rem;letter-spacing:.08em">NEWS</span>}</p>
       <h1 style="max-width:22ch">{d.title}</h1>
       <p style="max-width:44ch;font-size:1.12rem;color:var(--ink-soft);margin:1.1rem 0 1.5rem">{d.description}</p>
 
@@ -52,6 +52,13 @@ const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', mon
         <Cover slug={entry.id} category={d.category} wide={true} />
         <figcaption class="cap">The figure this guide is about, drawn from the sources listed at the foot of the page.</figcaption>
       </figure>
+
+      {toc.length >= 3 && (
+        <nav class="routemap" aria-label="The route through this guide">
+          <span class="rm-k">THE ROUTE</span>
+          {toc.map((h, i) => <a href={`#${h.slug}`}><i>{h.num ?? String(i + 1).padStart(2, '0')}</i>{h.text}</a>)}
+        </nav>
+      )}
 
       {d.ledger && <p style="margin:0 0 1.6rem"><span class={d.ledgerKind === 'cost' ? 'ledger cost' : 'ledger'}><b>{d.ledger}</b></span></p>}
 
@@ -68,6 +75,11 @@ const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', mon
       {related.length > 0 && (
         <section class="nextread">
           <h2>Read next</h2>
+          <a class="next-cta" href={`/guides/${related[0].id}/`}>
+            <span>NEXT STEP</span>
+            <strong>{related[0].data.title}</strong>
+            <em>Continue →</em>
+          </a>
           <div class="nextread-grid">
             {related.map(g => (
               <a class="nextread-card" href={`/guides/${g.id}/`}>
@@ -109,4 +121,16 @@ const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', mon
     </aside>
   </div>
 </div>
+<style>
+  .routemap { display:flex; flex-wrap:wrap; gap:.45rem; align-items:center; margin:0 0 1.8rem; padding:.8rem .9rem; border:1px solid var(--rule,#d2d6dc); border-radius:10px; background:#fff; }
+  .routemap .rm-k { font:700 .68rem/1 'Barlow',system-ui; letter-spacing:.14em; color:#e06e14; margin-right:.3rem; }
+  .routemap a { display:inline-flex; align-items:center; gap:.35rem; font:600 .8rem/1 'Barlow',system-ui; color:#20242b; text-decoration:none; border:1px solid #eceef1; border-radius:999px; padding:.35rem .7rem .35rem .35rem; }
+  .routemap a:hover { border-color:#e06e14; color:#e06e14; }
+  .routemap a i { font-style:normal; font-weight:800; font-size:.7rem; background:#14171b; color:#fff; border-radius:999px; width:1.35rem; height:1.35rem; display:inline-flex; align-items:center; justify-content:center; }
+  .next-cta { display:flex; flex-direction:column; gap:.25rem; border:2px solid #14171b; border-radius:12px; padding:1rem 1.2rem; margin:0 0 1rem; text-decoration:none; background:#fff; }
+  .next-cta span { font:700 .68rem/1 'Barlow'; letter-spacing:.14em; color:#e06e14; }
+  .next-cta strong { font:800 1.05rem/1.3 'Barlow'; color:#14171b; }
+  .next-cta em { font:700 .85rem/1 'Barlow'; font-style:normal; color:#e06e14; }
+  .next-cta:hover { border-color:#e06e14; }
+</style>
 </Base>

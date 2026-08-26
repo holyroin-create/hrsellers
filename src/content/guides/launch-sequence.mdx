@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Sequence by lead time, not by logical order. A trademark is reported at eight to fourteen months to registration; third-party product testing takes weeks; a GS1 prefix is immediate. Start the slow things first.",
   "Several decisions are irreversible or expensive to reverse: Vine enrolment is once per ASIN for its lifetime, permanent branding is a production decision, and packaging dimensions set your size tier permanently.",
@@ -61,6 +65,8 @@ Before anything else, the durations that decide the sequence:
 **5. Check for dangerous goods.** Anything with a lithium cell, pressurised, flammable, reactive or strongly magnetic. → [Hazmat](/guides/hazmat-dangerous-goods/)
 
 **6. Build landed cost, not invoice price.** Duty, user fees, broker, bond, prep. → [Landed cost](/guides/landed-cost-fee-stack/)
+
+<StockImage slug="launch-sequence" theme="ecommerce" />
 
 ## Phase 2 — Start the slow clocks
 
@@ -135,6 +141,8 @@ Worth isolating, because everything else can be fixed later:
 5. **The trademark name** — must match everywhere, exactly, including punctuation
 
 **Everything on that list costs a production run or a lifetime to change.** Everything else is an afternoon.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What should I do first?", a: "Start the slowest clock. If you are building a brand, that is the trademark at a reported eight to fourteen months. Meanwhile, validate the cost side — it is knowable, and demand is not." },

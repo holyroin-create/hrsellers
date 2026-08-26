@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Steps from '../../components/Steps.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The 2026 duty stack is reported as layered: base MFN duty from the tariff schedule, Section 301 on Chinese-origin goods, Section 232 on specific materials, and IEEPA-based measures.",
   "Reported effective rates for common Amazon categories — electronics, textiles, toys, household goods — commonly run 20% to 30%, with sources citing far higher figures on specific categories.",
@@ -29,6 +34,14 @@ Sellers ask what the tariff rate is on their product as though there is one. The
 **This guide is a map of the structure, not a rate table.** Rates in this area changed repeatedly across 2025 and 2026 and several published figures conflict. The structure is what stays useful.
 
 ## The four layers
+
+<Steps title="Four layers on one entry" accent={3} source="Only layer 1 is printed in the tariff schedule - the rest attach by product and origin"
+  steps={[
+    { t: 'Base MFN', d: 'in the schedule' },
+    { t: 'Section 301', d: 'by origin/scope' },
+    { t: 'Section 232', d: 'by product' },
+    { t: 'IEEPA-era', d: 'by measure' },
+  ]} />
 
 | Layer | What it is | Applies to |
 | --- | --- | --- |
@@ -56,6 +69,8 @@ Published 2026 figures found for this guide:
 **These are not all describing the same thing.** Some quote Section 301 alone, some the combined stack, some a category ceiling, some a typical case. Several were correct on the day written and have since been overtaken.
 
 **The working position:** there is no substitute for checking the current rate against your specific HTS code and origin. Every source that gives a number says this, and they are right to.
+
+<StockImage slug="tariff-stack-2026" theme="logistics" />
 
 ## Section 232, which catches people sideways
 
@@ -102,6 +117,8 @@ Two developments reported for 2026 that change planning rather than rates.
 **Check your liquidated entries for protest deadlines** if any rate has been reversed or reduced retrospectively. The window is 180 days from liquidation, per entry.
 
 **Work with a broker who monitors this.** One reported recommendation is to work with someone who tracks tariff developments and adjusts classification strategy proactively, and at these rates that is a real service rather than an upsell.
+
+<MiniCalc variant="stack" />
 
 <Faq items={[
   { q: "What is my actual duty rate?", a: "It depends on your HTS code and country of origin, and it is the sum of up to four layers: base MFN duty, Section 301 where the origin is China, Section 232 where the product contains covered materials, and any IEEPA-based measure. Check it per SKU against a current source." },

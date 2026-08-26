@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import StockImage from '../../components/StockImage.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import AdSlot from '../../components/AdSlot.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 const { m } = Astro.props;
 const others = MARKETPLACES.filter(x => x.slug !== m.slug);
 ---
-<Base title={`Selling on ${m.name}`} description={m.lede.slice(0, 180)}>
+<Base title={`Selling on ${m.name}`} description={m.lede.slice(0, 180)} ogImage={`/og/mp-${m.slug}.png`}>
 <div class="wrap">
   <Breadcrumbs trail={[{ label: 'Marketplaces', href: '/marketplaces/' }, { label: m.name, href: `/marketplaces/${m.slug}/` }]} />
 
@@ -22,6 +23,7 @@ const others = MARKETPLACES.filter(x => x.slug !== m.slug);
       <p class="eyebrow">{m.eyebrow}</p>
       <h1 style="max-width:22ch">{m.h1}</h1>
       <p style="max-width:46ch;font-size:1.15rem;color:var(--ink-soft);margin:1.2rem 0 1.4rem">{m.lede}</p>
+      <StockImage slug={m.slug} theme="ecommerce" caption={"Selling on " + m.name} />
       <p class="note" style="margin:0 0 2rem">Rates checked {m.checked}. Marketplaces revise fee schedules on their own timetable — confirm anything you are about to price against before you use it.</p>
 
       <div class="prose">

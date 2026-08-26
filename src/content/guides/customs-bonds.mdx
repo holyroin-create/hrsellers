@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Steps from '../../components/Steps.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "A customs bond is a financial guarantee to CBP that duties, taxes and fees on your entries will be paid. It is not insurance for you — it protects the government.",
   "Reporting describes a bond as mandatory for almost all formal CBP entries, and indicates CBP may require one on informal entries valued at or below $2,500.",
@@ -27,6 +32,14 @@ import Sources from '../../components/Sources.astro';
 Before the de minimis suspension, most marketplace sellers never filed a formal entry and therefore never needed a bond. That changed, and the change arrived quietly inside a policy most coverage described in other terms.
 
 ## What a bond is
+
+<Steps title="Where the bond sits" accent={1} source="Continuous bonds reported around 10% of annual duty - sized before the entry, not after"
+  steps={[
+    { t: 'Formal entry', d: 'filed' },
+    { t: 'Bond', d: 'guarantees CBP' },
+    { t: 'Duty', d: 'assessed' },
+    { t: 'Release', d: 'goods move' },
+  ]} />
 
 A financial guarantee to CBP that the duties, taxes and fees owed on your entries will be paid.
 
@@ -45,6 +58,8 @@ Reporting describes a customs bond as **mandatory for almost all formal CBP entr
 <Figure value="~10% of duty" kind="cost" source="Reported continuous bond sizing, 2026, accessed 8 August 2026">
   Reported sizing basis for a continuous customs bond — a percentage of annual duties paid, subject to a minimum. Which means the bond requirement grew alongside the duty rates.
 </Figure>
+
+<StockImage slug="customs-bonds" theme="logistics" />
 
 ## The two shapes
 
@@ -99,6 +114,8 @@ Against the [launch sequence](/guides/launch-sequence/), this belongs with the s
 **Arrange it before peak**, not during it.
 
 **Read what you are guaranteeing.** A bond is a credit instrument with recourse against you, and the terms are worth reading once rather than never.
+
+<MiniCalc variant="stack" />
 
 <Faq items={[
   { q: "Do I need a customs bond?", a: "Reporting describes one as mandatory for almost all formal CBP entries, and indicates CBP may require a bond on informal entries valued at or below $2,500. Since the de minimis suspension, commercial shipments that previously entered free now need an entry — and often a bond." },

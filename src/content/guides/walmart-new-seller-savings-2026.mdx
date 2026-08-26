@@ -8,6 +8,7 @@ minutes: 9
 numbered: true
 ledger: "20-40% off referral fees, first year"
 ledgerKind: "recovered"
+news: true
 draft: false
 ---
 
@@ -15,6 +16,10 @@ import Takeaways from '../../components/Takeaways.astro';
 import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
+
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
   "Walmart's New-Seller Savings 2026 runs from 2 February 2026 to 31 January 2027 and is open to sellers whose store goes live after 1 February 2026 — including international sellers from 14 listed countries.",
@@ -49,6 +54,8 @@ Now the honest ceiling. Reaching the headline "up to $75K" (Walmart itemises "up
 
 One more calibration: the surrounding claims on the program page — 270 million weekly customers, 50% average GMV growth for WFS-tagged items, 7x sales for Walmart Connect advertisers — are Walmart's own first-party marketing data, dated windows and all. Read them as a vendor's best foot forward, not as your forecast.
 
+<StockImage slug="walmart-new-seller-savings-2026" theme="ecommerce" />
+
 ## Where this meets the decision you were already weighing
 
 This site's position on Walmart has not changed: it is the most credible second channel for an established Amazon seller, and our [Walmart fee page](/marketplaces/walmart/) prices the WFS stack line by line. What the program changes is **timing math**. The [second-marketplace decision](/guides/second-marketplace-decision/) usually turns on whether early, thin volume justifies the setup cost; a first-year discount tier lowers exactly that hurdle. Two cautions stay in force, program or no program:
@@ -63,6 +70,8 @@ This site's position on Walmart has not changed: it is the most credible second 
 **Calendar the opt-in.** The discount is claimed on the payments page **after** go-live, per Walmart's FAQ. Put it in the launch checklist as a dated task, not a mental note.
 
 **Model the credits as spend triggers, not free money.** The SEM credit reimburses after eligible spend and the WFS credit arrives as 10% off fulfilled items — both reward activity you would need to justify anyway. If the activity was not in your plan, $500 of credits should not put it there.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: 'Who qualifies for New-Seller Savings 2026?', a: 'Sellers whose Walmart Marketplace store goes live after 1 February 2026, through the program end on 31 January 2027. Walmart lists eligibility for domestic sellers and international sellers based in 14 countries, and standard onboarding requirements — business verification, GS1-based GTINs, and returns-capable US fulfilment — still apply.' },

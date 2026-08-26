@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The Brand Referral Bonus credits a category-based percentage of tagged external sales back against your referral fees. It is available to US-store sellers enrolled in Brand Registry, and it requires enrolment — eligibility alone earns nothing.",
   "The advertised 10% is an average. Reported category rates range from roughly 5% to as high as 30%, and published sources disagree on the per-category figures — the authoritative table is the Brand Referral Bonus help page in your own Seller Central.",
@@ -59,6 +63,8 @@ These do not fully agree with each other, and that is the finding: **the only au
 
 One planning implication reported for multi-category sellers: since the bonus rate varies this much, it can make sense to weight external ad spend toward the SKUs in higher-bonus categories — the same click is worth more credit there.
 
+<StockImage slug="brand-referral-bonus" theme="ecommerce" />
+
 ## The plumbing: Attribution tags
 
 The entire programme runs on one mechanical foundation. **Untagged traffic earns nothing**, however much of it converts.
@@ -92,6 +98,8 @@ The bonus does not make bad external marketing good. What it does is take market
 **Tag per channel, not per campaign burst.** One tag per source keeps the attribution data readable — which reporting notes is worth having even independently of the bonus, since it is external-conversion data Amazon otherwise never shows you.
 
 **Check your own category's rate before shifting budget.** Given how much the published figures disagree, read the rate table in Seller Central rather than any blog — including this one.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: 'Is the bonus paid in cash?', a: 'No. It is reported as a credit applied against referral fees on subsequent sales, arriving after a roughly two-month waiting period that accounts for cancellations and returns.' },

@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The dominant product research error is not picking a bad product. It is validating demand thoroughly and cost casually — using an estimate for the fee stack and a real number for the revenue.",
   "Box dimensions decide the size tier, the storage cost and the inbound placement fee. Sellers measure the product; Amazon charges on the packaged unit.",
@@ -53,6 +57,8 @@ Dimensions also set the size tier, and the size tier sets the fulfilment fee. Re
 <Figure value="0.222 vs 0.556" kind="cost" source="Cubic-foot calculation on two package sizes, August 2026">
   Cubic feet for the same product in an 8 × 8 × 6 box against a 12 × 10 × 8 box. Every storage charge is multiplied by this number, every month, permanently.
 </Figure>
+
+<StockImage slug="product-research-cost-errors" theme="ecommerce" />
 
 ## 3. Modelling at a price you will not sell at
 
@@ -99,6 +105,8 @@ Before a candidate goes on the shortlist, five numbers:
 5. **Weeks of demand in the worst month**, not the average month
 
 If you cannot fill all five, you have not finished researching the product. You have finished researching the demand.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What is the single most expensive product research mistake?", a: "Modelling the cost side approximately. Demand is a forecast and cost is knowable from published schedules; spending the effort on the uncertain half while estimating the certain half is the wrong way round." },

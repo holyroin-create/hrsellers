@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The reported consensus structure is four campaign types with separated roles: auto for discovery, broad for controlled research, exact for proven performance, and product targeting for competitor placements — never mixed in one campaign.",
   "The harvest loop is the engine: converting search terms are promoted from discovery campaigns into exact match, and the same terms are added as negatives in the source campaign so the two do not bid against each other in the same auction.",
@@ -59,6 +63,8 @@ Step 4 is the one people skip, and reporting is explicit about the cost: without
   Reported reduction in wasted ad spend from consistent search-term pruning and negative keyword management. On a launch budget, this is measured in weeks of runway.
 </Figure>
 
+<StockImage slug="ppc-campaign-structure-launch" theme="analytics" />
+
 ## Negative keywords: the two types and the missing third
 
 Amazon offers two negative match types, and reporting notes the gap:
@@ -93,6 +99,8 @@ For scaling after launch, the reported pattern is gradual: budget increases of 2
 **Run the harvest weekly, without exception.** The loop is the strategy. A perfect structure with no weekly search-term review decays into the single-campaign mess with extra steps.
 
 **Check the conversion side before adding budget.** Reported benchmark conversion rates for well-run accounts sit around 10–20%; if clicks arrive and orders do not, the problem is usually the [listing](/guides/listing-optimisation-a10/), not the bid.
+
+<MiniCalc variant="ppc" />
 
 <Faq items={[
   { q: 'Why not one campaign with all match types?', a: 'Reported consensus is that mixed campaigns destroy performance visibility and let loose match types consume the budget meant for proven terms. Separate campaigns allow independent bids and budgets per match type.' },

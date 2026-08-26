@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Q4 base storage roughly triples on published 2026 rates — standard size from $0.87 to $2.40 per cubic foot per month, oversize from $0.56 to $1.40.",
   "CPCs are reported to rise 60% to 80% during Prime Day and Q4, reaching $1.35 to $1.45. A fixed monthly ad budget overspends in the cheap months and runs out in the expensive ones.",
@@ -57,6 +61,8 @@ The reasoning is arithmetic rather than caution. Peak storage applies to what is
 There is a counterweight and it deserves naming: understocking on a fast SKU triggers the [low-inventory-level fee](/guides/low-inventory-level-fee/), charged per unit sold while you are below the threshold. So the target is not "send less" — it is **send less, more often**, with a reorder trigger that accounts for supplier lead time, transit, customs and Amazon receiving.
 
 That is harder in Q4 because every part of that chain is slower.
+
+<StockImage slug="peak-season-cost-stack" theme="ecommerce" />
 
 ## The cash problem, which is the one that ends businesses
 
@@ -115,6 +121,8 @@ Everything below is cheaper and more effective before 1 October.
 **Do not fund the cash gap by cutting inventory on SKUs that are selling.** That runs into the low-inventory fee and lost sales in the highest-demand weeks, which makes January worse than the cash problem you were solving.
 
 **Do not treat January as recovery.** January is when unsold peak inventory is still in the network, ageing, at rates that have fallen but on a position that has not.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How much do storage fees rise in Q4?", a: "Roughly threefold on published 2026 rates — standard size from $0.87 to $2.40 per cubic foot per month, oversize from $0.56 to $1.40. It applies to daily average volume in the network, including stock that arrived months earlier." },

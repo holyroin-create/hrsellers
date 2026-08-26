@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Reporting states that from 12 February 2026, reviews stopped pooling across product variations Amazon judges to have significant feature differences.",
   "Named examples of significant differences include storage capacity, materials, model year and hardware specification. Colour and size are the classic pooling cases and are not named as broken.",
@@ -56,6 +60,8 @@ Three consequences follow.
 
 **New variation launches lost a shortcut.** Adding a variation to an established family used to inherit credibility on day one. Where the new variation has significant feature differences, that inheritance is reduced.
 
+<StockImage slug="variations-review-pooling" theme="ecommerce" />
+
 ## The Vine strategy that closed
 
 Worth including because it demonstrates how the enforcement works, and because the described penalty is severe.
@@ -93,6 +99,8 @@ Some variation families were built for the review pooling rather than because th
 **Do not restructure the catalogue to evade the rule.** Merging to pool reviews is the pattern reporting describes as detected and penalised by permanent removal.
 
 **Reconsider whether weak children should exist.** A variation that only worked because it inherited reviews, in a family where reviews no longer pool, may not be a product worth stocking — and every SKU carries [storage cost](/guides/fba-storage-four-layers/) whether it sells or not.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What changed on 12 February 2026?", a: "Reporting states Amazon stopped sharing reviews across product variations it judges to have significant feature differences. Before that, reviews on any child ASIN pooled to the parent." },

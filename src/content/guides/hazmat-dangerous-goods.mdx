@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The category is wider than sellers assume. Reporting describes anything containing a lithium cell, pressurised, flammable, chemically reactive or strongly magnetic as capable of entering a dangerous goods review.",
   "While an ASIN is in review you cannot send new inventory of it to FBA, and stock already at a fulfilment centre may be placed on hold.",
@@ -60,6 +64,8 @@ Once an ASIN enters the review queue:
 Think about that against a fast-moving SKU. A week of blocked inbound plus held stock is a stockout, which means lost rank — see the [listing guide](/guides/listing-optimisation-a10/) on how ranking decays before the stockout even happens — plus the [low-inventory-level fee](/guides/low-inventory-level-fee/) on whatever does sell.
 
 **The review is not the cost. The block is.**
+
+<StockImage slug="hazmat-dangerous-goods" theme="ecommerce" />
 
 ## The three outcomes
 
@@ -128,6 +134,8 @@ Documentation applies at two levels — Amazon's internal requirements, and inte
 **Remember it is marketplace-specific.** Dangerous goods approval in one marketplace does not carry to others.
 
 **Keep classification stable.** Temporary clearance followed by re-flagging weeks later is described as what happens when the underlying classification signal was never addressed.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What makes a product hazmat on Amazon?", a: "Reporting describes anything containing a lithium cell, pressurised, flammable, chemically reactive or strongly magnetic as capable of entering review — which is far wider than chemicals and captures most consumer electronics." },

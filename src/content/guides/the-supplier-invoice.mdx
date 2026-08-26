@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Six separate systems ask for the same document: FBA reimbursements, suspension appeals, IP complaints, category ungating, customs valuation, and acquisition diligence.",
   "Each system was documented separately across this site, and the requirements they publish independently converge on nearly the same fields.",
@@ -63,6 +67,8 @@ Assembled from the requirements each system publishes separately, the union is s
 
 **The union of six independent requirement lists is roughly one page.** That is the useful finding: you are not maintaining six document sets. You are maintaining one, properly.
 
+<StockImage slug="the-supplier-invoice" theme="ecommerce" />
+
 ## Why retail receipts fail everywhere
 
 Reporting names them explicitly in two contexts and the reason is the same in all six: a retail receipt records that a purchase occurred. It does not record that the seller was **authorised to sell those goods to you.**
@@ -103,6 +109,8 @@ Every system that asks asks under time pressure:
 ---
 
 There is no clever version of this. It is a filing habit that takes minutes per purchase order and, on the evidence of six independent systems, decides more outcomes than any tool you could buy.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Why does one invoice matter so much?", a: "Because six separate systems ask for it: FBA reimbursements, suspension appeals, IP complaints, ungating, customs valuation and acquisition diligence. Each publishes its own requirements, and those requirements converge on nearly the same fields." },

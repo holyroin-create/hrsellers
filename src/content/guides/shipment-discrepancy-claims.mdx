@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "One source puts the share of FBA shipments arriving with some discrepancy at roughly 20%. Amazon does not proactively flag them — identifying them is the seller's job.",
   "Claims can only be filed once a shipment reaches Closed status, and there is a waiting period before that. Filing early gets the case declined rather than queued.",
@@ -59,6 +63,8 @@ Reporting groups inbound discrepancies into three shapes that follow the same ru
 | Returns | Customer returns and their disposition status |
 
 Cross-referencing those three finds units that were received or sold but are missing without a corresponding credit.
+
+<StockImage slug="shipment-discrepancy-claims" theme="payments" />
 
 ## The claim window, which nobody agrees on
 
@@ -120,6 +126,8 @@ Most of this belongs to work covered elsewhere on this site:
 **Enter sourcing costs per SKU** before you need them — it decides what every claim pays.
 
 **Check automatic credits against your own landed cost.** A credit is not proof of a correct credit.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How common are inbound shipment discrepancies?", a: "One source puts the share of FBA shipments with some discrepancy at roughly 20%. Amazon does not proactively flag them, so identifying them is the seller's responsibility." },

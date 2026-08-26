@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Reporting describes Amazon's automated system as flagging patterns rather than confirmed violations, with false positives documented and common in 2026 and acknowledged in Seller Central forums.",
   "The notice does not specify which reviews, which messages, or which third-party service created the pattern. You have to identify the trigger before you can address it.",
@@ -50,6 +54,8 @@ This is the part that makes the risk different from other policy areas.
 <Figure value="Pattern, not proof" kind="cost" source="Reported basis of Amazon review manipulation flags, 2026, accessed 8 August 2026">
   What the automated system acts on. Reporting describes flags raised on patterns rather than confirmed violations, with the notice naming neither the reviews nor the messages involved.
 </Figure>
+
+<StockImage slug="review-manipulation-risk" theme="ecommerce" />
 
 ## What can trigger it without you doing anything wrong
 
@@ -112,6 +118,8 @@ The [suspension guide](/guides/account-suspension-appeal/) covers the process in
 **Keep the archive.** Template versions, supplier instructions, dated policies. It is what an appeal in this category is built from.
 
 **Use Request a Review, and nothing else.**
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What triggers a review manipulation flag?", a: "Reporting names inserts requesting reviews, VA email templates mentioning feedback, a sudden organic review spike, agency connections to prohibited services, supplier packaging with review requests, and competitor reports — alongside paid reviews. The system flags patterns rather than confirmed violations." },

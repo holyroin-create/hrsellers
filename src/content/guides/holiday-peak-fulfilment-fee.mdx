@@ -12,9 +12,12 @@ draft: false
 ---
 
 import Takeaways from '../../components/Takeaways.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
 import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
+
+import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
   "Reporting states holiday peak fulfilment fees apply from 15 October 2026 to 14 January 2027, at an average increase of $0.32 per unit over non-peak rates.",
@@ -27,6 +30,8 @@ import Sources from '../../components/Sources.astro';
 The Q4 storage spike gets covered every year. This one does not, and it is charged on every unit you actually sell rather than on the ones that sit — which for a seller having a good peak is the larger number.
 
 ## What it is
+
+<MiniCalc variant="margin" />
 
 Reporting states holiday peak fulfilment fees apply again **from 15 October 2026 through 14 January 2027**, matching the same window as the previous year, at a **per-unit increase over non-peak rates averaging $0.32.**
 
@@ -47,6 +52,8 @@ Thirty-two cents is not dramatic. The window is.
 **It closes 14 January**, two weeks into the following year. Everything you sell in the first fortnight of January — including returns exchanges and the post-Christmas clearance most sellers run to shift peak overstock — is fulfilled at peak rates.
 
 That second point interacts badly with the [removal decision](/guides/removal-vs-hold-decision/). A seller who plans to clear unsold peak inventory through January promotions is discounting **and** paying peak fulfilment on every unit that moves.
+
+<StockImage slug="holiday-peak-fulfilment-fee" theme="payments" />
 
 ## The full peak cost picture
 

@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "One reported breakdown for a 1 CBM LCL shipment puts ocean freight at $80–$200 within a total of $485–$1,130. Comparing quotes on the freight line alone compares roughly a fifth of the bill.",
   "DDP means the forwarder handles freight, customs, duties and last-mile delivery for one price. It is convenient and it makes the forwarder your importer-of-record arrangement — confirm whose name is on the entry.",
@@ -61,6 +65,8 @@ Reported DDP pricing: $800 to $1,800 per CBM by sea, or $6 to $12 per kg by air,
 **The question it hides** is the one from the [Incoterms guide](/guides/incoterms-who-is-importer/): whose name appears as importer of record on the CBP entry. DDP shifts cost and arrangement; whether it shifts the legal position depends on who is actually declared. **Ask, in writing, before the first shipment.** Your [classification liability](/guides/hts-classification-basics/) follows the declaration, not the invoice.
 
 **And a second question:** what happens if duty rates move between quote and arrival. A DDP price contains an estimate of duty, and after two years of tariff changes that estimate has been wrong repeatedly.
+
+<StockImage slug="choosing-a-freight-forwarder" theme="logistics" />
 
 ## What a good forwarder does that a cheap one does not
 
@@ -122,6 +128,8 @@ Against the [peak season guide](/guides/peak-season-cost-stack/) and Amazon's in
 **Book Q4 freight earlier than you think you need to.**
 
 **Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How much of a freight bill is actually freight?", a: "One reported LCL breakdown puts ocean freight at $80–$200 within a $485–$1,130 total for 1 CBM — roughly a fifth. Duties and any examination costs are additional." },

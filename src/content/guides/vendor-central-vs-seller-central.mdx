@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "One source reports 3P net margins at 25% to 35% of retail against 10% to 18% for 1P — described as 2 to 3 times higher profit per unit sold.",
   "Vendor Central is invite-only with no open application. Reporting describes vendor purges pushing brands under $5M to $10M annually out of the 1P ecosystem.",
@@ -49,6 +53,8 @@ One source's figures: **3P net margins of 25% to 35% of retail price against 10%
 <Figure value="10–18% vs 25–35%" kind="cost" source="Nova Analytics, reported net margins by model, accessed 8 August 2026">
   Reported net margin as a percentage of retail price for 1P vendors against 3P sellers. One source's figures, published by an analytics firm serving 3P sellers — the direction is consistent across sources, the precision is not established.
 </Figure>
+
+<StockImage slug="vendor-central-vs-seller-central" theme="ecommerce" />
 
 ## What changed in 2026
 
@@ -111,6 +117,8 @@ Reporting states **nearly half of 1P vendors run hybrid**: high-volume or hero S
 **And ask whether the invite is worth pursuing at all.** That is reporting's own question given the contraction trend, and it is the right one.
 
 **Migrating the other way** — 1P to 3P — is reported as accelerating since 2021, needing a Seller Central account, new listings, FBA setup and time to build metrics, with a planning horizon of 2 to 3 months to full capacity.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Is Vendor Central better than Seller Central?", a: "One source reports 3P net margins at 25% to 35% against 10% to 18% for 1P. Reporting across sources describes 1P as suiting large established manufacturers and 3P as the better model for most brands, with control, data and margin all favouring 3P." },

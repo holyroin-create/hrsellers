@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Removal is a one-off per-unit cost, reported at roughly $0.97 to $1.78. Storage is a recurring per-cubic-foot cost that escalates with age and with weeks of cover.",
   "The break-even is not a rule of thumb. It is removal cost divided by monthly holding cost, which gives you the number of months of holding that removal buys back.",
@@ -85,6 +89,8 @@ Same unit, same removal cost, completely different answer. Removal now buys back
 
 **This is why generic advice on this topic is useless.** "Remove slow movers" and "keep 90 days of cover" are both defensible in one season and expensive in the other.
 
+<StockImage slug="removal-vs-hold-decision" theme="payments" />
+
 ## The four options, and what each one is for
 
 Removal is one of four responses, and they solve different problems.
@@ -124,6 +130,8 @@ Removal is one of four responses, and they solve different problems.
 **Check the removal fee before you commit.** Rates are reported as a range, and they vary by size tier and by the type of removal. The figure that matters is the one on your own removal order confirmation.
 
 **Feed the answer into your reorder quantities.** If a SKU has needed removal once, its reorder quantity is wrong, not its storage plan.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How do I know whether to remove or hold?", a: "Divide the removal cost per unit by the holding cost per unit per month. That gives the months of holding removal buys back. If the SKU will not sell within that window, removal is cheaper." },

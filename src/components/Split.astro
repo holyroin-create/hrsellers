@@ -1,0 +1,21 @@
+---
+/** Two-panel comparison card. left/right: { title, badge, rows: [..] , tone } */
+const { left, right, source = '' } = Astro.props;
+const panels = [left, right];
+---
+<figure class="figpanel diagram" style="margin:1.8rem 0 2rem">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#d2d6dc;border:1px solid #d2d6dc;border-radius:8px;overflow:hidden">
+    {panels.map((p) => (
+      <div style="background:#fff;padding:1rem 1.1rem">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.6rem">
+          <strong style="font:800 1rem 'Barlow', system-ui;color:#14171b">{p.title}</strong>
+          {p.badge && <span style={`font:700 .68rem 'Barlow';letter-spacing:.08em;padding:.22rem .5rem;border-radius:6px;background:${p.tone === 'green' ? '#e7f2ee' : '#faecde'};color:${p.tone === 'green' ? '#1b6b52' : '#e06e14'}`}>{p.badge}</span>}
+        </div>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:.42rem">
+          {p.rows.map((r) => <li style="font:400 .88rem/1.4 'Barlow', system-ui;color:#3a4048;border-top:1px solid #eceef1;padding-top:.42rem">{r}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+  {source && <figcaption class="cap">{source}</figcaption>}
+</figure>

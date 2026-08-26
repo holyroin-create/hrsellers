@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "MCF ships orders from Shopify, eBay, Walmart, WooCommerce or your own site out of the same inventory pool FBA uses. Pricing is per unit, set by size tier, weight, units per order and delivery speed, with no subscription or setup fee.",
   "Rates rose on 15 January 2026: most single-unit orders are reported up $0.35–$0.41 per unit — described as four to five times FBA's own $0.08 base increase — while orders of 3+ units in the small and large standard tiers were spared.",
@@ -54,6 +58,8 @@ Then from **2 May 2026**, Amazon applied a **3.5% fuel and logistics surcharge**
 
 And for Q4: **holiday peak fulfilment fees run 15 October 2026 to 14 January 2027**, per Amazon, with the same per-unit increases as the prior year — reported at **$0.35 per unit for small standard, scaling to $1.00 for extra-large** — and the 3.5% surcharge applied on top. The FBA side of that story is in our [holiday peak guide](/guides/holiday-peak-fulfilment-fee/); if MCF is part of your Q4 plan, both stacks apply to you at once.
 
+<StockImage slug="mcf-off-amazon-orders" theme="ecommerce" />
+
 ## The referral-fee wrinkle that flatters MCF
 
 One line makes MCF look better than a raw rate comparison suggests: **MCF orders carry no referral fee.** The sale happened on your Shopify store; Amazon only fulfilled it. Reporting frames this as saving the 8–15% an equivalent marketplace sale would surrender — which partially offsets the same reporting's finding that comparable MCF fulfilment runs **30–50% above FBA rates**, and often above dedicated 3PL rates, particularly past 3 lb.
@@ -76,6 +82,8 @@ The constraints are where multi-channel brands reportedly hit the wall:
 **Add the surcharges before comparing to a 3PL.** The honest MCF number is the rate card **plus 3.5%**, and in Q4 plus the peak fee too. Reporting suggests dedicated 3PLs pull ahead for heavy items, specialty SKUs, and volumes past roughly 1,000–2,500 orders a month — and unlock branded packaging besides.
 
 **Decide what the plain box costs you.** For a marketplace-led seller adding a side channel, nothing. For a brand whose Shopify store is the main act, the unboxing moment may be worth more than the fee delta.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: 'Do MCF orders pay a referral fee?', a: 'No. The referral fee applies to sales made on Amazon\'s marketplace. MCF fulfils orders you sold elsewhere, which reporting frames as saving the 8–15% referral fee an equivalent Amazon sale would carry.' },

@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Steps from '../../components/Steps.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Best Deals, Lightning Deals and Prime Exclusive Price Discounts are reported at $100 upfront per promotion plus a variable fee of 1.5% of promotional sales, capped at $5,000.",
   "Coupons are reported separately at $5 upfront plus 2.5% of sales on redeemed coupons — a higher variable rate than the deal formats.",
@@ -27,6 +32,14 @@ import Sources from '../../components/Sources.astro';
 Deal participation used to be roughly margin-neutral: you gave up price and got traffic. Reporting on the current structure describes it as **an explicit profit and loss commitment**, and that is the right way to think about it.
 
 ## What it costs
+
+<Steps title="The bill before the first extra sale" accent={2} source="Promo fees bill on the promo, not the result - current rates dated below"
+  steps={[
+    { t: 'Funded discount', d: 'you pay' },
+    { t: 'Placement fee', d: 'you pay' },
+    { t: 'Referral + FBA', d: 'still apply' },
+    { t: 'Volume needed', d: 'name it first' },
+  ]} />
 
 | Promotion | Reported fee |
 | --- | --- |
@@ -55,6 +68,8 @@ Reported requirement: **the deal price must be equal to or lower than the lowest
 The consequence is a planning one. Run a coupon in April, and your June deal price has to beat it. Discount to clear stock in September, and your Black Friday price is anchored to that. **Your own promotional history becomes the ceiling on your next promotion.**
 
 This is a good reason to stop running small tactical discounts on SKUs you intend to put into a tentpole event. The cheap coupon in the quiet month costs you discount room in the expensive one.
+
+<StockImage slug="deal-and-coupon-fees" theme="ecommerce" />
 
 ## The arithmetic
 
@@ -104,6 +119,8 @@ Prime Day 2026 ran in June, with submissions open from 24 March to 26 May and th
 **Remember the variable fee is on promotional sales**, so a deal that works is more expensive than one that does not. The $5,000 cap matters only above roughly $333,000 of promotional sales.
 
 **Count the inventory cost.** A deal that sells through stock you cannot replace in time creates a stockout in the highest-demand weeks — see the [peak season guide](/guides/peak-season-cost-stack/).
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How much does a Lightning Deal cost?", a: "Reported at $100 upfront per promotion plus a variable fee of 1.5% of promotional sales, capped at $5,000. Submitting before the early deadline reduces the upfront fee to $50." },

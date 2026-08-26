@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Ships in Product Packaging lets qualifying items ship in their own box with no Amazon over-box, removing a packaging cost from every unit.",
   "Reporting states that average base fees for bulky items actually decreased in 2026 — but only for sellers enrolled in SIPP. Outside the programme, the decrease does not reach you.",
@@ -53,6 +57,8 @@ Two consequences:
 **Your tier may have moved without your product changing.** If you sell bulky items and have not checked the tier since 2025, check it. A product at the bottom of the old Large Bulky range may now be Small Bulky, with different economics.
 
 **The published saving is conditional.** Any 2026 article telling you bulky fulfilment got cheaper is describing the enrolled case.
+
+<StockImage slug="sipp-packaging-program" theme="ecommerce" />
 
 ## The arithmetic, done honestly
 
@@ -106,6 +112,8 @@ For those, the alternative lever is the one in our [product research guide](/gui
 **Test one SKU, measure for a month, then scale.** The published saving figure is a large seller's number. Yours is a calculation, not a headline.
 
 **Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What is SIPP?", a: "Ships in Product Packaging — an Amazon programme allowing qualifying items to ship in their own packaging with no Amazon over-box, removing the packaging cost from the fulfilment fee." },

@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Amazon gates at three levels: category, brand and individual ASIN. Approval at one level does not clear the others, and an ASIN can be blocked even after both category and brand approval.",
   "The reported invoice standard is consistent: from an authorised distributor rather than a retail store, at least 10 units, dated within 90 to 180 days, and matching your Seller Central business name and address exactly.",
@@ -65,6 +69,8 @@ Where sources disagree:
 | Number of invoices | One · usually three |
 
 **The working position:** aim for three invoices dated within 90 days. If your documents satisfy the tighter reading they satisfy the looser one, and the cost of over-preparing is a few emails.
+
+<StockImage slug="ungating-restricted-categories" theme="ecommerce" />
 
 ## Account health is a prerequisite
 
@@ -126,6 +132,8 @@ Reporting is split, and both positions are worth knowing.
 **Stack easy approvals first.**
 
 **Remember it is per marketplace.** Expanding to Europe means doing this again — see the [expansion guide](/guides/expanding-eu-uk-compliance/).
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Why was my ungating application rejected?", a: "Most commonly the invoice: a retail receipt rather than an authorised distributor invoice, fewer than 10 units, outside the date window, or business details that do not match Seller Central exactly." },

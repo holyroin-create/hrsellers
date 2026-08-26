@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "ACE now rejects Entry Type 86 cargo release transactions, and the Section 321 manifest option was removed from the Truck Manifest Trade Portal. The route is closed at the system level, not merely discouraged.",
   "Two entry types remain for goods that used to clear on de minimis: informal Type 11 for shipments at or under $2,500, and formal Type 01 above that.",
@@ -49,6 +53,8 @@ For any seller shipping direct to consumer from overseas, that was the entire bu
 Paper entry forms are no longer accepted for low-value imports. Whatever route you take, it is filed in ACE.
 
 The $2,500 line is the one to plan around, because it is the only place where a shipment's structure changes its fee basis rather than just its fee amount. Below it you pay a flat per-entry charge; above it you pay a percentage.
+
+<StockImage slug="entry-type-11-vs-01" theme="ecommerce" />
 
 ## What that does to your consolidation strategy
 
@@ -97,6 +103,8 @@ Separately, CBP's Entry Type 13 voluntary test for mail shipments valued at $2,5
 **Stop treating the postal route as the cheap option.** For anything above trivial value it usually no longer is, and the per-package bands make that worse as price falls.
 
 **Ask who your importer of record is, and be sure of the answer.** If a supplier offers delivered-duty-paid terms, find out whose name is on the entry. The legal responsibility for classification and valuation follows the importer of record, and it is not something you can outsource by accepting an incoterm.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Can I still use Entry Type 86?", a: "No. ACE rejects Entry Type 86 cargo release transactions, and the Section 321 manifest filing option was removed from the Truck Manifest Trade Portal." },

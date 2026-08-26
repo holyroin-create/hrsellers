@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Remote Fulfillment with FBA lists your US FBA inventory on Amazon.ca and Amazon.com.mx without sending stock across the border. Amazon's own page now also names Brazil.",
   "Amazon does not support FBA fulfilment between the US, Canada and Mexico. Without remote fulfilment, each country needs its own inventory, its own SKUs and separate management.",
@@ -51,6 +55,8 @@ Reported eligibility, consistent across sources:
 Most modern accounts are reported to be unified by default; older accounts may need upgrading through an Upgrade to a Unified Account page in settings.
 
 **Enrolment is described as automatic once switched on:** Amazon evaluates your inventory, adds eligible items, and continues adding newly eligible ASINs as you create them. Build International Listings can replicate your US offers and price them automatically for exchange rates, fulfilment costs and referral fee differences.
+
+<StockImage slug="narf-canada-mexico" theme="ecommerce" />
 
 ## What it costs
 
@@ -93,6 +99,8 @@ The trade is what you avoided: local inventory, cross-border shipments, customs 
 **Model the graduation to local inventory** before you need to. Knowing the volume at which local FBA becomes cheaper turns a vague ambition into a trigger.
 
 **Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Can I sell in Canada without shipping inventory there?", a: "Yes, through Remote Fulfillment with FBA. Your US FBA inventory is listed on Amazon.ca and Amazon.com.mx, and Amazon's own page now also names Brazil." },

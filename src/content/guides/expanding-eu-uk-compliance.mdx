@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Storing inventory in a country generally triggers local VAT registration there, regardless of where your customers are. OSS simplifies reporting on cross-border sales; it does not replace registration where stock sits.",
   "Amazon's Pan-European FBA programme is reported to require VAT registration numbers in a minimum of five EU countries as of January 2026, up from four.",
@@ -75,6 +79,8 @@ There is also a £135 per-consignment import threshold that changes how VAT is h
 
 You will also need an EORI number — and separate EU and UK EORI numbers if you import into both.
 
+<StockImage slug="expanding-eu-uk-compliance" theme="ecommerce" />
+
 ## EPR: the one that deactivates listings
 
 Extended Producer Responsibility makes you responsible for the environmental cost of the packaging and products you put on a market. It is entirely separate from VAT and it is enforced by the marketplace directly.
@@ -128,6 +134,8 @@ This guide does not give you a total, because the honest answer is that it depen
 Amazon provides a Compliance Reference tool and a Manage Your Compliance dashboard. Reporting characterises these as navigational aids that show you what is required rather than doing it for you — which is a fair description and worth internalising before you rely on them.
 
 **Model the compliance cost as a fixed annual overhead against expected volume in that market.** A market that works at 5,000 units a year may not work at 500.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Do I need VAT registration to sell in Europe?", a: "It depends on the model. Storing stock in a country generally triggers registration there. Selling cross-border from one country may be handled through OSS above the €10,000 threshold, and for some transactions the marketplace is the deemed supplier." },

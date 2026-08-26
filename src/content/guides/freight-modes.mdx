@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Published LCL rates range from $80 to $400 per cubic metre across six 2026 sources, and FCL from $1,500 to $7,425 for a container. Freight pricing is volatile and dated quotes are worthless.",
   "The volume thresholds are far more stable than the rates: reported guidance is air or express below about 2 CBM, LCL between 2 and 15, and FCL above roughly 15.",
@@ -56,6 +60,8 @@ Reported consistently, and this is the actionable part:
 | Above ~15 CBM | **FCL** — one 40ft container is reported as often cheaper than three LCL shipments of the same total volume, and faster |
 
 **Why LCL loses at both ends.** Below 2 CBM, the fixed origin and destination charges dominate. Above 15, you are paying consolidation and deconsolidation costs on volume that would fill a container — and waiting for both.
+
+<StockImage slug="freight-modes" theme="logistics" />
 
 ## Transit times
 
@@ -127,6 +133,8 @@ That total against an ocean freight line of $80 to $200 is the reason a cheap fr
 **Build freight into landed cost per unit**, not as a shipment-level expense — see the [landed cost guide](/guides/landed-cost-fee-stack/).
 
 **Model it on your own figures.** The [cash flow planner](/tools/cash-flow-planner/) maps deposit, balance, freight, receiving and payout onto a timeline so you can see the gap between money leaving and money returning. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Should I use air or sea freight?", a: "Sea for regular replenishment — reported at 80% to 85% cheaper per kg. Air for launches, emergency restocks, and light high-value goods. Volume decides first: under about 2 CBM, air or express is usually cheaper once port and destination charges are counted." },

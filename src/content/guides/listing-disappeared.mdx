@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Suppression is not a warning. The listing stops appearing in search until the underlying problem is fixed.",
   "Nine distinct causes account for nearly all of it, and they are checkable in about twenty minutes.",
@@ -45,6 +49,8 @@ Amazon verifies barcodes against the GS1 database. Reporting states that where t
 Also, since 31 March 2026: reseller inventory received without a proper FNSKU is reported as **classified as defective.**
 
 → [Barcodes and FNSKU](/guides/gs1-barcodes-fnsku/)
+
+<StockImage slug="listing-disappeared" theme="analytics" />
 
 ## 3. A restricted category or brand gate
 
@@ -128,6 +134,8 @@ Almost every cause above is a document or a specification collected in advance:
 - **Supplier invoices** in the right form — see [the supplier invoice](/guides/the-supplier-invoice/)
 
 Six habits, one folder per SKU. That is the whole preventive programme.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Why did my listing disappear from search?", a: "Most commonly a main image compliance failure, which reporting describes as sometimes arriving weeks later through a periodic sweep. Other causes include GTIN verification failure, a category or brand gate, a dangerous goods review, a compliance document request, an IP complaint, or insurance non-compliance." },

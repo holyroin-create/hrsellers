@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The low-inventory-level fee is charged per unit sold while a SKU's historical days of supply sits below Amazon's threshold. It is a penalty on selling, not on holding.",
   "Published 2026 guidance splits between a 28-day threshold and a 35-day threshold. Both appear in sources dated within months of each other.",
@@ -49,6 +53,8 @@ These cannot all be current. One of them is stale, or describing a different mea
 **The working position:** treat the threshold as at least 35 days for planning purposes, and confirm the current figure in Seller Central before you commit to a reorder policy. Planning to the wider number costs you some working capital. Planning to the narrower one costs you the fee on every sale in the gap. The asymmetry is obvious once you write it down.
 
 This is a good example of why every figure on this site carries a date and a source. A rate card without either is not usable for a decision that turns on a week.
+
+<StockImage slug="low-inventory-level-fee" theme="payments" />
 
 ## The variant trap
 
@@ -89,6 +95,8 @@ Add those, add a buffer for the threshold uncertainty above, and you have a reor
 **Two structural options** worth considering if the arithmetic keeps failing. Amazon's own upstream warehousing sits outside the FBA inventory pool and is reported to sidestep the low-inventory measure while allowing automated replenishment into FBA. A third-party warehouse close to a fulfilment centre achieves something similar with more control and more work. Both convert a fee problem into a logistics decision, which is generally the better kind of problem.
 
 **Model it on your own figures.** The [cash flow planner](/tools/cash-flow-planner/) maps deposit, balance, freight, receiving and payout onto a timeline so you can see the gap between money leaving and money returning. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Am I charged for being out of stock?", a: "No. The fee applies to units that sell while the SKU is below the threshold. Being out of stock costs you the sale, not the fee." },

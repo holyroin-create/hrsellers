@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "All 45 US states with a general sales tax, plus DC, have marketplace facilitator laws. Amazon collects and remits sales tax on your marketplace orders in every one of them.",
   "Marketplace laws touch sales tax and nothing else. Income tax, franchise tax and gross-receipts tax arising from FBA inventory are reported as entirely the seller's responsibility.",
@@ -70,6 +74,8 @@ Reporting states that many states still want you registered and filing returns â
 
 There are also gaps at the local level. Reporting notes some states, with Arizona, California and Colorado named, require separate seller filings for local taxes even where Amazon handles state-level collection, and that marketplaces often do not collect city-level taxes such as certain Colorado home-rule rates or some Alabama local variations.
 
+<StockImage slug="sales-tax-nexus" theme="ecommerce" />
+
 ## The realistic exposure picture
 
 | Obligation | Covered by Amazon? |
@@ -115,6 +121,8 @@ For an FBA business the records that matter go beyond receipts:
 **Take it to a specialist if you have multi-state inventory or a second channel.** Reporting describes voluntary disclosure agreements as a route that limits the look-back period, against unlimited exposure on unfiled returns. That is a conversation to have before a state contacts you, not after.
 
 **Keep the records for seven years**, and keep them in a form somebody else could follow.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Does Amazon handle my sales tax?", a: "For orders placed through the Amazon marketplace, yes, in all 45 sales-tax states plus DC. It does not cover your direct sales, certain local taxes, your registration obligations, or any income and franchise tax." },

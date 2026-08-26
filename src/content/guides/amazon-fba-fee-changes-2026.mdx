@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "US FBA fulfillment fees rose on 15 January 2026 by an average Amazon states as $0.08 per unit — its first increase since 2024, after holding fees flat through 2025.",
   "The average is doing heavy lifting: third-party breakdowns put small standard-size increases between $0.12 and $0.51 per unit depending on the item's price tier.",
@@ -52,6 +56,8 @@ The two readings disagree on how to slice it, which is itself worth knowing. Nei
 
 **What to do instead of trusting any of these figures, including ours:** run your actual ASINs through Amazon's Revenue Calculator and the Fee and Economics Preview report. Amazon updated both with 2026 rates ahead of the change. The per-SKU answer is the only one that affects your P&L.
 
+<StockImage slug="amazon-fba-fee-changes-2026" theme="payments" />
+
 ## The structural change nobody led with
 
 Here is the part that outlasts this year's increase.
@@ -83,6 +89,8 @@ Ranked by how much of your time it deserves.
 **Do not restructure your catalogue over eight cents.** For most sellers the correct response to this specific increase is a spreadsheet update, not an operational change. The increase is smaller than the swing you would get from one week of bad PPC. Treat the price-tier coupling as the thing worth engineering around, and the eight cents as the thing worth knowing.
 
 **Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Did Amazon raise referral fees in 2026?", a: "No. The January 2026 change applied to FBA fulfillment fees. Referral fee percentages were unchanged, as were storage rates." },

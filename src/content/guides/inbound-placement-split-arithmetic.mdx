@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The inbound placement service fee is charged per unit and covers Amazon distributing your inventory across its network on your behalf. Sending to fewer destinations costs more.",
   "Reported rates run from around $0.23 to $1.58 per unit for minimal splits. Accepting Amazon-optimised splits across five or more destinations is reported to take the fee to zero.",
@@ -88,6 +92,8 @@ The pattern holds generally: **the optimised split wins as volume per shipment r
 
 Note what this means for a small seller. The advice most commonly given — take the optimised split, the fee goes to zero — is advice for someone shipping thousands of units at a time. At 500 units it can be straightforwardly wrong.
 
+<StockImage slug="inbound-placement-split-arithmetic" theme="logistics" />
+
 ## What the arithmetic leaves out
 
 Three things are real costs that do not appear in either column.
@@ -111,6 +117,8 @@ Three things are real costs that do not appear in either column.
 **Treat partnered carrier programmes as a third column.** Using Amazon's partnered carrier changes both sides of the comparison at once — freight rate and placement treatment. It belongs in the model as its own option, not as a footnote to one of the other two.
 
 **Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Does the placement fee go to zero at five destinations?", a: "That is what current reporting says for Amazon-optimised splits. Confirm the current threshold and rates in Seller Central when you create the shipment — the fee estimate is shown against each option at that point." },

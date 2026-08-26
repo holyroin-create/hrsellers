@@ -1,0 +1,32 @@
+---
+/** Horizontal stacked-bar diagram of a fee stack. Pure inline SVG, no deps.
+ *  items: [{ label, amount, share (0-100), tone: 'ink'|'orange'|'green'|'soft' }]
+ *  total: right-hand summary line, e.g. "Net $33.71 of $50.00" */
+const { title = 'Where the sale goes', items = [], total = '', source = '' } = Astro.props;
+const W = 640, H = 118 + items.length * 0;
+const barY = 44, barH = 34;
+let x = 24; const span = W - 48;
+const segs = items.map((it) => {
+  const w = Math.max(2, (it.share / 100) * span);
+  const s = { ...it, x, w };
+  x += w;
+  return s;
+});
+const fills = { ink: '#20242b', orange: '#e06e14', green: '#1b6b52', soft: '#aab0ba' };
+---
+<figure class="figpanel diagram" style="margin:1.8rem 0 2rem">
+  <svg viewBox={`0 0 ${W} 168`} role="img" aria-label={title} xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+    <text x="24" y="26" style="font:700 13px/1 'Barlow', system-ui;letter-spacing:.14em;fill:#5a606a">{title.toUpperCase()}</text>
+    <rect x="24" y={barY} width={span} height={barH} rx="4" fill="#eceef1" />
+    {segs.map((s) => <rect x={s.x} y={barY} width={s.w} height={barH} fill={fills[s.tone] || fills.ink} />)}
+    {segs.map((s, i) => (
+      <g>
+        <line x1={s.x + s.w / 2} y1={barY + barH} x2={s.x + s.w / 2} y2={barY + barH + 12 + (i % 2) * 26} stroke="#d2d6dc" stroke-width="1" />
+        <text x={s.x + s.w / 2} y={barY + barH + 26 + (i % 2) * 26} text-anchor="middle" style="font:600 12px 'Barlow', system-ui;fill:#20242b">{s.label}</text>
+        <text x={s.x + s.w / 2} y={barY + barH + 40 + (i % 2) * 26} text-anchor="middle" style="font:700 12px 'Barlow', system-ui;fill:#e06e14">{s.amount}</text>
+      </g>
+    ))}
+    {total && <text x={W - 24} y="26" text-anchor="end" style="font:800 14px 'Barlow', system-ui;fill:#14171b">{total}</text>}
+  </svg>
+  {source && <figcaption class="cap">{source}</figcaption>}
+</figure>

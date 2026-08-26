@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Reporting puts the trigger at $10,000 in sales during three consecutive months, and the requirement at $1 million per occurrence with $2 million general aggregate, including products and completed operations coverage.",
   "Amazon must be named as an additional insured. Reported wording varies slightly between sources — one gives 'Amazon.com Services LLC, its Affiliates and Assignees' — so use the wording Amazon's own current policy specifies.",
@@ -56,6 +60,8 @@ The coverage required:
 **The additional insured wording.** Sources give slightly different forms — one gives "Amazon.com Services LLC, its Affiliates and Assignees", another "Amazon.com, Inc., and its affiliates and assignees". **Use the wording in Amazon's own current policy page**, not from an article. This is exactly the kind of detail that changes and that a broker will get wrong if you do not supply it.
 
 **Products liability specifically included.** General liability alone is not sufficient; the policy must include products and completed operations coverage.
+
+<StockImage slug="seller-insurance-coi" theme="ecommerce" />
 
 ## Cost, and timing
 
@@ -104,6 +110,8 @@ Reporting names coverage that general liability does not include:
 **Reconsider the limits if you sell in a higher-risk category.** Children's products, supplements, cosmetics and anything electrical carry different exposure from a phone case, and Amazon's minimum is a minimum.
 
 **This is not insurance advice.** Coverage adequacy depends on your products, volume and jurisdiction, and a broker who has written policies for ecommerce sellers will ask better questions than an article can.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "When does Amazon require insurance?", a: "Reporting puts the trigger at $10,000 in sales during three consecutive months, at which point commercial general liability of $1 million per occurrence and $2 million aggregate, including product liability, is required." },

@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "ODR combines negative feedback, A-to-z Guarantee claims and service chargebacks into one percentage on a rolling 60-day window. Reporting describes it as the single most consequential metric Amazon tracks.",
   "The published threshold is 1%. Reporting says an early-warning flag fires around 0.8%, top sellers hold below 0.3%, and notifications are reactive — arriving after you cross, not at 0.7% while you are trending.",
@@ -51,6 +55,8 @@ ODR is a percentage, and on a rolling 60-day window. **At low order volume, each
 At 1,000 orders in 60 days, one defect is 0.1%. At 100 orders, one defect is 1% — the threshold, from a single unhappy customer. Reporting notes this directly: a string of negative reviews from a bad batch can push ODR past 1% inside a week, especially for sellers with low order volume.
 
 **Which means new and small sellers are structurally more exposed to this metric than large ones**, and the standard advice to "keep ODR low" is not equally achievable at every scale. The practical response is not better averages — it is preventing individual defects, because at low volume each one matters.
+
+<StockImage slug="order-defect-rate" theme="ecommerce" />
 
 ## The warning problem
 
@@ -137,6 +143,8 @@ Reporting also links feedback to the Buy Box: during high-traffic periods, selle
 **Review negative feedback for removable entries** — product reviews, abusive content, and FBA shipping complaints.
 
 **If you are above 0.8%, stop everything else.** Reporting's own prioritisation is to audit the last 60 days of claims, feedback and chargebacks before working on anything else. It is the one metric that suspends an account by itself.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What is a good Order Defect Rate?", a: "The published threshold is below 1%. Reporting describes an early-warning flag around 0.8% and top sellers maintaining below 0.3%. Treat 1% as the cliff edge rather than the target." },

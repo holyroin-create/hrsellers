@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Under 19 USC 1467, CBP may examine any shipment entering the United States, and the importer bears the cost of that examination. This applies to commercial and personal shipments alike.",
   "There are three escalating exam types. Published costs: X-ray or NII from around $150 to $600; tailgate from around $100 to $350; intensive from around $500 to $2,500 and beyond.",
@@ -51,6 +55,8 @@ The statistical validation hold is the one small importers trigger most often wi
 <Figure value="$150 → $2,500+" kind="cost" source="Published exam fee ranges from five 2026 sources, reviewed 8 August 2026">
   The escalation from a scan to a full unload. Each step can promote to the next, and the importer pays at every level.
 </Figure>
+
+<StockImage slug="customs-holds-and-exams" theme="logistics" />
 
 ## The bill is not the exam fee
 
@@ -97,6 +103,8 @@ The same logic runs the other way. A clean history, accurate ISF filed on time, 
 3. **Ask for the itemised invoice.** The published guidance is to request a breakdown of all examination-related charges rather than accepting a single figure.
 4. **Check whether it promoted.** If CBP has finished but the cargo is still held, a partner agency is probably reviewing it, and that is a separate timeline.
 5. **Write down what triggered it.** The hold is information about your filing profile. Fixing the cause is the only thing that lowers next quarter's probability.
+
+<MiniCalc variant="stack" />
 
 <Faq items={[
   { q: "Do I have to pay for a customs exam I did not cause?", a: "Yes. Under 19 USC 1467 CBP may examine any shipment and the importer bears the cost. On LCL shipments, costs are typically split proportionally between importers sharing the container." },

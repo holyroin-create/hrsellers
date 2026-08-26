@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import PortalCard from '../../components/PortalCard.astro';
+import Newsletter from '../../components/Newsletter.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import StockImage from '../../components/StockImage.astro';
+import { POLICY } from '../../data/policy';
+import { getCollection } from 'astro:content';
+const news = (await getCollection('guides', ({ data }) => !data.draft && data.news))
+  .sort((a, b) => +new Date(b.data.published) - +new Date(a.data.published));
+const log = POLICY.slice(0, 5);
+---
+<Base title="News" description="Dated marketplace developments, analysed for sellers: what changed, what it costs per unit, and what to do in your account this week." ogImage="/og/p-news.png">
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span aria-current="page">News</span></nav>
+  <div class="portal">
+    <div>
+      <div class="pagehead"><h1>News</h1></div>
+      <p class="resultline">Marketplace developments with a date, a source and the per-unit math — not press releases.
+      When a fee moves it lands here first, then on the <a href="/policy-log/">policy log</a>, then in every affected guide.</p>
+      <div class="plist">
+        {news.map(g => (
+          <PortalCard href={`/guides/${g.id}/`} slug={g.id} category={g.data.category} title={g.data.title}
+            summary={g.data.description} minutes={g.data.minutes} published={g.data.published}
+            modified={g.data.modified} ledger={g.data.ledger} ledgerKind={g.data.ledgerKind} />
+        ))}
+      </div>
+      {news.length === 0 && <p class="resultline">No dated developments on file this week — which is itself information.</p>}
+      <AdSlot inline={true} label="news index — below the list" />
+    </div>
+    <aside class="rail">
+      <div class="rail-box">
+        <h4>Latest on the policy log</h4>
+        <ul class="toc">{log.map(e => <li><a href="/policy-log/">{e.short}</a></li>)}</ul>
+      </div>
+      <div class="rail-box orange">
+        <h4>Fee Watch</h4>
+        <p>One email per fee change: the date it bites and what it costs. No digest, no offers.</p>
+        <Newsletter compact={true} />
+      </div>
+      <StockImage slug="news" theme="analytics" caption="The news desk" />
+      <AdSlot label="news rail" />
+    </aside>
+  </div>
+</div>
+</Base>

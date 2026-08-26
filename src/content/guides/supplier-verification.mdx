@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Platform badges are filters, not verification. Gold Supplier is reported as a paid membership costing roughly $4,500 to $5,000 a year, and paying for it is the qualifying criterion.",
   "One due-diligence firm reports that 12% of new supplier listings on Alibaba in 2026 are outright scams or trading companies presenting as factories. Treat the figure as one firm's sample, and treat the pattern as real.",
@@ -65,6 +69,8 @@ These take a few hours and they happen away from the supplier's profile page.
 
 **8. Commission a third-party inspection above a threshold.** Reported practice is to use an established inspection firm for orders above a few thousand dollars, and to avoid very cheap inspection services on the grounds that they are unreliable.
 
+<StockImage slug="supplier-verification" theme="ecommerce" />
+
 ## Red flags that recur
 
 - Pressure and urgency, used to prevent exactly the checks above
@@ -108,6 +114,8 @@ One guide's stated threshold is that by the time a SKU reaches around $100,000 i
 9. Second source qualified before the SKU becomes load-bearing
 
 Steps 1 and 2 cost nothing and eliminate the majority of the risk. Almost nobody does them.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Does the Gold Supplier badge mean the supplier is verified?", a: "It means they paid for a membership, reported at roughly $4,500 to $5,000 a year. It is a ranking and advertising package, and it is a tiebreaker rather than a verification." },

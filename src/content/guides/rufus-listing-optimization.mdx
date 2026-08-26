@@ -14,6 +14,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The scale is real: Rufus is reported fully rolled out in the US with over 250 million users and interactions up more than 210% year over year; one analysis counts 274 million daily queries by late 2024 and Rufus present in 38% of Black Friday 2025 shopping sessions.",
   "The proportion matters more: traditional search is still reported to drive roughly 80-85% of discovery traffic as of early 2026. Rufus layers on top of classic ranking — it does not replace it, so keyword work keeps most of its value.",
@@ -44,6 +48,8 @@ Classic ranking matches words. The AI layer is described as matching **intent**:
 | A+ image alt text and on-image text are read as data by the AI layer | "Woman crushing ice with tamper tool" tells the machine compatibility facts a pretty lifestyle shot never will |
 | Listings that justify value — durability, lifespan, cost-per-use — are reported more likely to be recommended | Price justification is no longer just conversion copy; it is machine-readable evidence |
 
+<StockImage slug="rufus-listing-optimization" theme="analytics" />
+
 ## The action list, ordered by cost
 
 **Free, this week — backend attributes.** Download your Category Listing Report from Seller Central and fill every relevant blank column with **standard taxonomy values** — the reported guidance is blunt: if the dropdown says Navy Blue, do not write Midnight Ocean. Pay special attention to the "Specific Uses for Product" field: specific use cases ("searing", "induction cooking") over generic room names, because these are described as hard-coding the product into intent buckets.
@@ -59,6 +65,8 @@ Classic ranking matches words. The AI layer is described as matching **intent**:
 ## What not to do
 
 Do not delete keyword work: four fifths of discovery is still classic search. Do not buy "AI readiness" tooling before exhausting the free structural list above — the vendors quoting the scariest Rufus numbers are, without exception, selling the antidote. And do not chase certainty about COSMO internals that Amazon has not published; optimise for the observable behaviour, dated, and revisit when the reporting moves.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: 'Is Rufus replacing the classic search algorithm?', a: 'No. Reporting as of early 2026 puts traditional search at roughly 80-85% of discovery traffic, with Rufus layered on top and growing. Keyword-driven work retains most of its value; the AI layer re-orders priorities rather than replacing them.' },

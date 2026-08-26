@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The main image must be a real photograph on a pure white background at exactly RGB 255, 255, 255, with the product filling at least 85% of the frame and no text, logos, watermarks, props or borders.",
   "Minimum is 1,000 pixels on the longest side; zoom activates there. Sources recommend 1,600 or 2,000+ — one puts the conversion difference from zoom at 15% to 25%.",
@@ -60,6 +64,8 @@ The two causes that account for most rejections are both about "almost right."
 **Compression introduces stray pixels.** Even shot on white, JPEG compression can produce off-white pixels near the product edge. Shadows touching the frame edge, or shadows creating grey gradients, are reported as the same failure. Verify with a colour picker at several points, not one.
 
 **The 85% rule catches people differently.** A product photographed from a distance with lots of white space technically has a white background and still fails the fill requirement. Reporting's framing is right: **the product should dominate the frame.**
+
+<StockImage slug="main-image-compliance" theme="ecommerce" />
 
 ## The suppression mechanics
 
@@ -109,6 +115,8 @@ Reporting suggests using all available slots — typically six to eight, with up
 **Add a size-reference image** to the secondary slots on anything with size-related returns. It is a return-rate fix as much as a conversion one.
 
 **If sessions drop for no reason, check the image before anything else.** Compliance sweeps do not send an obvious warning.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What background does the main image need?", a: "Pure white at exactly RGB 255, 255, 255. Off-white, cream, light grey and transparent all trigger automated rejection, and reporting describes the scanning detecting deviations invisible to the eye." },

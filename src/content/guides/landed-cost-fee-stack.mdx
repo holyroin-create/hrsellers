@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Steps from '../../components/Steps.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Duty is one line. Underneath it sit the Merchandise Processing Fee, the Harbor Maintenance Fee on ocean cargo, a bond, a broker fee and, for ocean, an ISF filing.",
   "MPF on formal entries is consistently reported at 0.3464% of customs value, with a floor and a cap. The cap is quoted as $651.50 by one source and $634.62 by another.",
@@ -27,6 +32,15 @@ import Sources from '../../components/Sources.astro';
 Most landed cost models stop at duty. That is understandable — duty is the biggest single line and the one everybody talks about. It is also the one line your supplier and your forwarder will both quote you without being asked. The rest arrives on the entry summary, after the goods have shipped.
 
 ## The stack, in the order it appears
+
+<Steps title="What lands on one unit" accent={3} source="Margin math starts after line 4, not line 1"
+  steps={[
+    { t: 'Factory price', d: 'line 1' },
+    { t: 'Freight + ins.', d: 'line 2' },
+    { t: 'Duty + entry', d: 'line 3' },
+    { t: 'Inbound + prep', d: 'line 4' },
+    { t: 'Landed cost', d: 'the real cost' },
+  ]} />
 
 | Line | Basis | Applies to |
 | --- | --- | --- |
@@ -62,6 +76,8 @@ Some of this is explicable: the fees are inflation-adjusted annually, one adjust
 
 **The working position:** use 0.3464% with a cap, verify the current floor, cap and informal figures against CBP's own fee schedule or your broker's entry summary, and treat every blog rate card — including the table above — as a prompt to check rather than a number to model.
 
+<StockImage slug="landed-cost-fee-stack" theme="ecommerce" />
+
 ## Where the cap changes behaviour
 
 The MPF maximum is one of the few fees where the ceiling matters operationally. At roughly 0.3464%, the cap is reached somewhere around $183,000 of customs value on one source's arithmetic. Above that point, additional value carries no additional MPF.
@@ -93,6 +109,8 @@ Then take that per-unit figure to the [margin calculator](/tools/margin-calculat
 **Recheck in October.** The user fees carry an annual inflation adjustment effective 1 October. One analysis notes that several rose by more than 4% at the FY2026 adjustment. Diarise it.
 
 **Distinguish quotes from entries.** A forwarder's landed-cost quote is an estimate made before classification. The entry summary is what actually happened. When they disagree, the entry summary is the fact.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Are MPF and HMF percentages of the duty?", a: "No. Both are calculated on customs value in parallel with duty. Treating them as a multiple of the duty rate produces errors in both directions depending on how high the tariff is." },

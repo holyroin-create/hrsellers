@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "No monthly subscription. Reporting is consistent that Walmart charges no equivalent of Amazon's $39.99 Professional plan, and that referral fees include payment processing.",
   "Off-peak storage is reported at $0.75 per cubic foot against Amazon's $0.87 — a difference one source puts at three cents. The gap opens in Q4, where Amazon is reported at $2.40 and Walmart at $0.75 under 30 days and $1.50 beyond.",
@@ -54,6 +58,8 @@ One source puts the combined effect of no subscription and included processing a
 **And the surcharge stack does not follow you.** Our [storage guide](/guides/fba-storage-four-layers/) sets out Amazon's four separate charges and the [aged-inventory trigger](/guides/removal-vs-hold-decision/) at a reported 180 days. Reporting states Walmart does not apply that stack and has no separate peak storage increase.
 
 **So the honest rule:** the platform difference matters most on the SKUs you are worst at forecasting. Fast movers are roughly cost-neutral; slow movers are where the money is.
+
+<StockImage slug="walmart-wfs" theme="ecommerce" />
 
 ## The tiered referral trap
 
@@ -108,6 +114,8 @@ Read that as two effects pointing opposite ways:
 **Do not move the catalogue.** Reporting's own advice is that there is no rule requiring one fulfilment method for a whole catalogue. Test the SKUs where the storage difference is largest.
 
 **Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Is Walmart cheaper than Amazon?", a: "On fee structure, generally yes: no monthly subscription, payment processing included in the referral fee, and lower storage. One source puts the effective difference at 2 to 5 percentage points. The trade is substantially lower traffic." },

@@ -14,6 +14,7 @@ const guides = defineCollection({
     ledgerKind: z.enum(['recovered', 'cost']).optional(),
     numbered: z.boolean().default(false),
     draft: z.boolean().default(false),
+    news: z.boolean().default(false),
   }),
 });
 

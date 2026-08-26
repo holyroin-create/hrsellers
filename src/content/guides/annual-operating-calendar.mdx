@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "The whole routine is roughly two minutes a day, fifteen minutes a week and an hour a month, plus four quarterly reviews and a handful of fixed dates.",
   "The fixed dates matter most because missing them cannot be corrected later: 30 September for the Q4 inventory position, 15 October for peak fulfilment rates, and the deal submission deadlines before each tentpole event.",
@@ -43,6 +47,8 @@ That is the entire daily list.
 **Days of cover per SKU** against the 28-day floor. → [Forecasting](/guides/demand-forecasting-reorder/)
 
 **Advertising search terms** — mine converting keywords, cut the rest. → [PPC benchmarks](/guides/amazon-ppc-benchmarks/)
+
+<StockImage slug="annual-operating-calendar" theme="ecommerce" />
 
 ## Monthly — about an hour
 
@@ -138,6 +144,8 @@ No notification, no reminder, and each one runs on its own clock.
 **Set a reminder for any 180-day protest deadline** the moment you learn an entry may be affected. Nothing else will remind you.
 
 **Do the annual reviews in a quiet month** — reporting on the [SFP guide](/guides/seller-fulfilled-prime/) names January to early June and August to mid-October as the low-pressure windows, and the same logic applies to any review that needs attention.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How much time does all this take?", a: "Roughly two minutes a day, fifteen minutes a week and an hour a month, plus four quarterly reviews and a short annual list. The fixed calendar dates take no time but cannot be caught up later." },

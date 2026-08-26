@@ -12,9 +12,14 @@ draft: false
 ---
 
 import Takeaways from '../../components/Takeaways.astro';
+import Steps from '../../components/Steps.astro';
 import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
+
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
   "DD+7 is officially the Delivery Date Based Reserve. Funds move from deferred transactions to your available balance seven calendar days after confirmed delivery — not after shipment, and not after the order.",
@@ -29,6 +34,14 @@ There was no email that most sellers remember receiving. Reporting is fairly dir
 The mechanism is simple and the consequences are not.
 
 ## What actually changed
+
+<Steps title="Where the money waits" accent={2} source="DD+7 reserve pattern - checked on the site's dated sources"
+  steps={[
+    { t: 'Order placed', d: 'sale on paper' },
+    { t: 'Delivered', d: 'clock starts' },
+    { t: 'DD + 7 days', d: 'reserve holds' },
+    { t: 'Next payout', d: 'cash arrives' },
+  ]} />
 
 Under the previous arrangement, many sellers were on a rolling disbursement cycle tied to when the order was placed. Under the Delivery Date Based Reserve, the clock does not start until the buyer's package arrives.
 
@@ -60,6 +73,8 @@ Amazon's stated reasoning is risk mitigation: buyers get time to report problems
 The spread across those figures is not sloppiness. It reflects that DD+7 is **one layer of a stack**, and the others vary by account. Reporting describes several accounts waiting considerably longer than the headline seven days because an account-level reserve sits underneath.
 
 **For a new seller the stacking is severe.** One account describes a new seller carrying a 14-day base reserve plus DD+7 waiting 21 to 28 days for revenue from their first sales. That is close to a month of funded operations before a single dollar returns.
+
+<StockImage slug="dd7-payout-reserve" theme="ecommerce" />
 
 ## Who it actually hit
 
@@ -104,6 +119,8 @@ Three places it lands first:
 **Do not fund the gap with inventory cuts you will regret.** Cutting a reorder to preserve cash on a SKU that is selling well runs you into the low-inventory fee and lost sales, which makes the cash position worse the following month.
 
 **Do not assume the seven days is the whole delay.** Account-level reserves sit underneath it, and the ACH transfer sits on top.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What does DD+7 stand for?", a: "Delivery Date plus seven days. The official name is the Delivery Date Based Reserve. The most common misreading is treating DD as disbursement date — it is the delivery date." },

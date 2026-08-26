@@ -16,6 +16,11 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import Steps from '../../components/Steps.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "An FTZ is a designated area within the United States treated as outside customs territory for duty purposes. Goods enter without duty being paid until they leave the zone for US commerce.",
   "Three mechanisms: duty deferral improving cash flow, duty elimination on goods re-exported from the zone, and inverted tariff treatment where you assemble inside it.",
@@ -27,6 +32,13 @@ import Sources from '../../components/Sources.astro';
 Of the four duty-reduction tools this site covers, this is the one with the highest barrier and the widest ceiling. It is also the one most often described in terms that make it sound like a manufacturer's programme, which understates where it reaches.
 
 ## What an FTZ is
+
+<Steps title="Three levers, one address" accent={1} source="A zone is inside the country, outside customs territory"
+  steps={[
+    { t: 'Defer', d: 'duty waits' },
+    { t: 'Re-export', d: 'no duty at all' },
+    { t: 'Inverted tariff', d: 'lower rate' },
+  ]} />
 
 A designated area within the United States that is **legally considered outside US customs territory for duty purposes.**
 
@@ -45,6 +57,8 @@ Goods can be brought into the zone without paying duty. Duty becomes payable onl
 **3. Inverted tariff treatment.** If you manufacture or assemble inside the zone using imported components, you may pay duty at **either the component rate or the finished-product rate, whichever is lower.**
 
 That third one is the mechanism with the largest ceiling. Reporting describes combining it with product modification: import high-duty components into a zone, manufacture them into a finished product classified under a lower-duty heading, and pay the finished-product rate. **This is described as perfectly legal and exactly what FTZs were designed to facilitate.**
+
+<StockImage slug="foreign-trade-zones" theme="ecommerce" />
 
 ## The version that applies to a seller
 
@@ -101,6 +115,8 @@ Reporting frames these as complementary rather than competing: **tariff engineer
 **Do the classification review first.** Every duty tool is applied to a rate, and a wrong rate makes all of them wrong.
 
 **Get professional advice at the point it becomes real.** FTZ operation and inverted tariff treatment are specialist areas, and reporting places them in the same expert market as first sale and drawback.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "What is a Foreign Trade Zone?", a: "A designated area within the United States legally considered outside customs territory for duty purposes. Goods enter without duty being paid; duty becomes payable only when they leave the zone and enter US commerce." },

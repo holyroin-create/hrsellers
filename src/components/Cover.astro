@@ -45,6 +45,16 @@ const marks = c.kind === 'cliff' ? (wide ? c.marks : c.marks.slice(0, 1)) : [];
 /* Ruled paper: the site's premise is reading from the invoice up. */
 const rules = Array.from({ length: Math.floor(L.h / L.rule) }, (_, i) => (i + 1) * L.rule);
 
+/* Background motif varies by slug so a wall of covers doesn't read as one
+   repeated texture: 0 = ruled paper, 1 = dot grid, 2 = diagonal hatch. */
+const motif = Array.from(slug).reduce((a, ch) => a + ch.charCodeAt(0), 0) % 3;
+const dots = motif === 1
+  ? rules.flatMap(y => Array.from({ length: Math.floor(L.w / L.rule) }, (_, j) => ({ x: (j + 1) * L.rule, y })))
+  : [];
+const hatch = motif === 2
+  ? Array.from({ length: Math.floor((L.w + L.h) / (L.rule * 1.6)) }, (_, i) => (i + 1) * L.rule * 1.6)
+  : [];
+
 let seg = { a: 0, b: 0, mid: 0 };
 if (c.kind === 'range') {
   /* Scale to the data, not to zero. A narrow range (0.78 against 0.87) would
@@ -93,7 +103,9 @@ const aria =
   xmlns="http://www.w3.org/2000/svg"
 >
   <rect width="100%" height="100%" class="cv-paper" />
-  {rules.map(y => <line x1="0" y1={y} x2={L.w} y2={y} class="cv-rule" />)}
+  {motif === 0 && rules.map(y => <line x1="0" y1={y} x2={L.w} y2={y} class="cv-rule" />)}
+  {motif === 1 && dots.map(d => <circle cx={d.x} cy={d.y} r="0.9" class="cv-rule" fill="currentColor" stroke="none" />)}
+  {motif === 2 && hatch.map(o => <line x1={o} y1="0" x2={o - L.h} y2={L.h} class="cv-rule" />)}
 
   <text x={x0} y={L.labelY} class="cv-label" style={`font-size:${L.label}px`}>{labelText}</text>
   <text x={x0} y={L.figY} class="cv-fig" style={`font-size:${figSize}px`}>{c.figure}</text>

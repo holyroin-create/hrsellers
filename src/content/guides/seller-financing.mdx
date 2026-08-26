@@ -16,6 +16,10 @@ import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
 
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
 <Takeaways items={[
   "Reporting states Amazon Lending is now fully third-party — naming Parafin, Uncapped, Lendistry, Slope and QuickBooks Capital — and remains invite-only with no published eligibility criteria.",
   "One analysis puts a 6% flat fee at 18% to 36% annualised depending on the repayment period. Flat fees and factor rates are not comparable to interest rates until converted.",
@@ -57,6 +61,8 @@ Other reported costs:
 - Uncapped: $100,000 to $10 million for sellers at $100,000+ monthly sales
 
 **Ask every provider for the annualised cost and the total dollar cost.** If they will only give you a flat fee or a factor rate, convert it yourself before comparing.
+
+<StockImage slug="seller-financing" theme="ecommerce" />
 
 ## The four instruments, and what each is for
 
@@ -107,6 +113,8 @@ Before pricing any of this, three things are usually cheaper than capital:
 **Check whether the margin supports the cost.** If a SKU works at a 25% contribution margin and financing costs 30% annualised on the inventory cycle, the financing consumes the product. **Run the [fee stack](/guides/landed-cost-fee-stack/) before the loan application, not after.**
 
 **Consider whether the problem is size rather than timing.** Financing solves a timing problem. If the business only works when cash returns in 14 days, borrowing to close a permanent seven-day gap postpones the question.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "How much does Amazon Lending cost?", a: "It varies by third-party provider and is not published. The critical step is converting whatever you are quoted — a flat fee or a factor rate — into an annualised cost. One analysis puts a 6% flat fee at 18% to 36% annualised depending on the repayment period." },

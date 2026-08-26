@@ -12,9 +12,14 @@ draft: false
 ---
 
 import Takeaways from '../../components/Takeaways.astro';
+import Steps from '../../components/Steps.astro';
 import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
+
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
   "Storage is not one fee. It is a base monthly rate, an aged-inventory surcharge, a storage utilisation surcharge tied to weeks of cover, and Q4 peak pricing. A slow-moving overstocked box can attract three of them simultaneously.",
@@ -29,6 +34,14 @@ Most sellers hold one number in their head for storage: a rate per cubic foot pe
 This guide takes the four charges apart, then puts them back together, and shows the working on why the published figures disagree.
 
 ## The unit everything is measured in
+
+<Steps title="Four layers on the same pallet" accent={1} source="Current per-cubic-foot rates and dates: the tables below"
+  steps={[
+    { t: 'Monthly base', d: 'always on' },
+    { t: 'Q4 step-up', d: 'Oct-Dec rates' },
+    { t: 'Aged surcharge', d: 'scales with age' },
+    { t: 'Utilization', d: 'ratio-based' },
+  ]} />
 
 Every storage charge is per **cubic foot per month**, calculated on your daily average inventory volume rather than a snapshot.
 
@@ -67,6 +80,8 @@ Two things are worth sitting with here.
 </Figure>
 
 **The working position for this guide:** treat the off-peak standard rate as $0.87 and the Q4 standard rate as $2.40, and verify both in Seller Central before you commit capital to a Q4 plan. Apparel is reported separately at $0.56 off-peak and $2.10 in peak.
+
+<StockImage slug="fba-storage-four-layers" theme="payments" />
 
 ## Layer 2 — Q4 peak pricing
 
@@ -142,6 +157,8 @@ That gap is the entire reason this guide exists. It is not that any single rate 
 **Re-check the rates in October and January.** Reporting points to a change effective 1 July 2026 and a fee cycle that has run in January in recent years. Rate tables you built in the spring will be wrong by the autumn.
 
 **Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+
+<MiniCalc variant="margin" />
 
 <Faq items={[
   { q: "Is the off-peak standard rate $0.78 or $0.87?", a: "Sources published before July 2026 say $0.78; a July 2026 report describes a change effective 1 July 2026 moving it to $0.87. Verify in Seller Central. This guide uses $0.87 and says so." },
