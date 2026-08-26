@@ -1,4 +1,5 @@
 ---
+import fs from 'node:fs';
 /**
  * Cover art built from the article's own numbers.
  *
@@ -47,6 +48,8 @@ const rules = Array.from({ length: Math.floor(L.h / L.rule) }, (_, i) => (i + 1)
 
 /* Background motif varies by slug so a wall of covers doesn't read as one
    repeated texture: 0 = ruled paper, 1 = dot grid, 2 = diagonal hatch. */
+const photo = fs.existsSync(`public/covers/g-${slug}.jpg`) ? `/covers/g-${slug}.jpg` : null;
+
 const motif = Array.from(slug).reduce((a, ch) => a + ch.charCodeAt(0), 0) % 3;
 const dots = motif === 1
   ? rules.flatMap(y => Array.from({ length: Math.floor(L.w / L.rule) }, (_, j) => ({ x: (j + 1) * L.rule, y })))
@@ -94,6 +97,9 @@ const aria =
       ? `${c.label}: ${c.before} falling to ${c.after}`
       : `${c.label}`;
 ---
+{photo ? (
+  <img class="cover coverphoto" src={photo} alt="" width="1200" height="514" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block" />
+) : (
 <svg
   class={`cover cover--${tone}`}
   viewBox={`0 0 ${L.w} ${L.h}`}
@@ -172,3 +178,4 @@ const aria =
 
   <text x={x0} y={L.stampY} class="cv-stamp" style={`font-size:${L.stamp}px`}>{stampText}</text>
 </svg>
+)}
