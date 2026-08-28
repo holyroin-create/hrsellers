@@ -1,0 +1,48 @@
+---
+title: "Peak season pricing confirmed: ~$0.32 a unit — and it stacks with the fuel surcharge"
+description: "Reported 2026 holiday peak fulfillment pricing averages $0.32 per unit, matching last year — but this year it stacks on the 3.5% fuel and logistics surcharge introduced in the spring. Same headline, different bill."
+category: "Fees & reimbursements"
+published: "2026-08-28"
+modified: "2026-08-28"
+minutes: 5
+numbered: true
+ledger: "~$0.32/unit avg, stacked"
+ledgerKind: "cost"
+news: true
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
+<Takeaways items={[
+  "Reported peak surcharge for the 2026 window: an average of $0.32 per unit, in line with last year — running mid-October to mid-January, per the schedule on our dated peak guide.",
+  "The real story is stacking: the 3.5% fuel and logistics surcharge introduced this spring applies underneath, so the same $0.32 headline produces a larger total than last year's identical headline.",
+  "The trap named in the reporting: sellers planning Q4 on 2025 math will find deals and prices that cleared last year running margin-negative this year.",
+  "One afternoon fixes it: rerun every Q4 SKU at the stacked October fee stack — the repricing worksheet exists for exactly this."
+]} />
+
+The peak fulfillment schedule for the 2026 holiday window is reported at an **average of $0.32 per unit — the same average as last year.** Sellers will be tempted to file it under "no change." That filing would be wrong, and the reason is one word: stacking.
+
+## Same number, bigger bill
+
+This spring Amazon introduced a **3.5% fuel and logistics surcharge** (dated on our [fee pages](/guides/fba-fuel-logistics-surcharge-2026/)); reporting on the peak schedule confirms the two now apply together. A $12 fulfilment fee that picks up $0.32 of peak also carries roughly $0.42 of fuel line — about $0.74 of 2026-only cost on a unit whose 2025 Q4 math assumed half that. Multiply by size tier and by your catalogue, and "unchanged average" quietly becomes the most expensive unchanged average you have shipped through. The [peak guide](/guides/holiday-peak-fulfilment-fee/) has the per-tier figures; the [margin calculator](/tools/margin-calculator/) turns them into an absorb/raise/exit decision per SKU before mid-October does it for you.
+
+<StockImage slug="peak-surcharge-2026-schedule" theme="payments" />
+
+<MiniCalc variant="margin" />
+
+<Faq items={[
+  { q: 'Is $0.32 the fee on my products?', a: 'It is the reported average across units. Your actual peak charge depends on size tier and weight — the per-tier schedule on the peak guide is the number to price with, plus the 3.5% fuel line underneath.' },
+  { q: 'When does the stacked cost start and stop?', a: 'The peak window runs mid-October to mid-January per the published schedule; the fuel surcharge continues after the window closes. January prices should assume the fuel line stays.' },
+]} />
+
+<Sources items={[
+  { title: 'Amazon seller news, August 2026 (peak surcharge averaging $0.32/unit matching last year; stacking with the 3.5% fuel and logistics surcharge; warning on 2025 fee math)', publisher: 'Mr. Jeff', href: 'https://mrjeffamz.com/blog/amazon-seller-news-2026', accessed: '2026-08-28' },
+  { title: 'Holiday peak fulfillment fee guide (per-tier window charges, dated)', publisher: 'FBA Tactics', href: 'https://fbatactics.com/guides/holiday-peak-fulfilment-fee/', accessed: '2026-08-28' },
+]} />
