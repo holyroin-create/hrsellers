@@ -1,0 +1,75 @@
+---
+title: "Etsy's Offsite Ads: the fee you can refuse exactly once"
+description: "Under $10,000 in trailing sales the program is optional at 15%; cross the threshold once and it is mandatory for the life of the shop at 12% — Etsy's own policy says so. The economics at handmade price points, the $100 cap, and the decision to make before the threshold makes it for you."
+category: "Fees & reimbursements"
+published: "2026-08-28"
+modified: "2026-08-28"
+minutes: 9
+numbered: true
+ledger: "12-15% on attributed orders"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import FeeStack from '../../components/FeeStack.astro';
+import MiniCalc from '../../components/MiniCalc.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
+<Takeaways items={[
+  "The rule, per Etsy's fees policy: shops under $10,000 USD in trailing-365-day sales pay 15% on Offsite-Ads-attributed orders and may opt out; shops that reach $10,000 pay 12% and participation becomes mandatory for the lifetime of the shop.",
+  "The lock is permanent and retroactive to intent: an opt-out made before crossing the threshold is voided once you cross it — and falling back below $10,000 later does not restore the choice, per the same policy.",
+  "The fee base is the total order — listing price plus shipping and gift wrap — with the fee reported capped at $100 on a single attributed order, and attribution running 30 days from the ad click.",
+  "It stacks on the regular rail: the $0.20 listing fee, the 6.5% transaction fee on price plus shipping, and payment processing all still apply to the same order.",
+  "The decision worth making early: sellers approaching the threshold should price as if permanently enrolled at 12% — because within months, they will be."
+]} />
+
+Most Etsy fee lines are small and predictable. Offsite Ads is neither: it is the one program where a milestone you celebrate — $10,000 in trailing sales — permanently changes your fee structure without a signature. The rules come from Etsy's own fees policy, so this one can be stated rather than estimated.
+
+## The mechanism, from the policy
+
+Etsy advertises listings on external platforms — search and social — at its own discretion. When a shopper clicks such an ad and orders within the attribution window, the fee applies to that order. The tiering, per Etsy's policy: under $10,000 in prior-365-day sales (assessed on the first of each month), the rate is **15% and participation is optional**; at or above $10,000, the rate is **12% and participation is required for the life of the shop** — including for sellers who had previously opted out, and regardless of whether sales later fall back under the threshold. Reported guardrails: the fee is capped at $100 on a single order, and attribution runs 30 days from click.
+
+## The math at a handmade price point
+
+<FeeStack title="A $42 attributed order, split" total="Seller keeps ~$31.8"
+  source="Worked example at the 15% tier; regular Etsy rail included — checked August 2026"
+  items={[
+    { label: 'Offsite Ads 15%', amount: '$6.30', share: 15, tone: 'orange' },
+    { label: 'Transaction 6.5%', amount: '$2.73', share: 6.5, tone: 'ink' },
+    { label: 'Processing', amount: '~$1.51', share: 3.6, tone: 'soft' },
+    { label: 'You keep', amount: '~$31.83', share: 74.9, tone: 'green' },
+  ]} />
+
+<Figure value="-$6.30" kind="cost" source="Worked example on a $42 attributed order at 15%; checked August 2026">
+  A $36 item with $6 shipping is a $42 fee base. At the 15% tier the Offsite Ads line alone is $6.30 — before the 6.5% transaction fee (~$2.73), processing, and the listing fee on the same order.
+</Figure>
+
+Stack the rail and an attributed order at handmade price points can carry roughly a fifth to a quarter of its value in platform fees before materials and labor. That is not an argument against the program — attributed orders are incremental reach you did not buy elsewhere — it is an argument for **pricing from the full stack up**, which is the same discipline every marketplace on this site gets held to.
+
+<StockImage slug="etsy-offsite-ads-economics" theme="payments" />
+
+## The decision, made before the threshold makes it
+
+<MiniCalc variant="margin" />
+
+Three postures, honestly compared: **Under $10K and thin-margin** — opting out is legitimate; the 15% tier on low-margin work can turn attributed orders into charity. **Under $10K and growing** — price as if enrolled at 12% now, because the threshold is coming and the policy voids your earlier opt-out the day it arrives. **Over $10K** — the question is closed; the open question is product mix: push the catalogue toward items whose margins carry a 12% line, and let the $100 cap work for you on high-ticket orders, where the effective rate falls below 12%.
+
+<Faq items={[
+  { q: 'Can I opt out of Offsite Ads?', a: "Only while your shop is under $10,000 USD in trailing-365-day sales, per Etsy's fees policy. Once the threshold is reached, participation is mandatory for the lifetime of the shop at 12% — and a prior opt-out no longer applies." },
+  { q: 'What is the fee charged on?', a: 'The total order amount for attributed orders — listing price plus shipping and gift wrap — with the fee reported capped at $100 on a single order. Attribution is reported at 30 days from the ad click.' },
+  { q: 'Does the fee replace the normal Etsy fees?', a: 'No. The listing fee, the 6.5% transaction fee on price plus shipping, and payment processing all still apply to the same order. Offsite Ads is an additional line, which is why pricing from the full stack matters.' },
+  { q: 'Is the program bad for sellers?', a: 'It is a trade: genuinely incremental external reach, paid per sale rather than per click, against a double-digit fee you cannot always refuse. The economics turn on your margin structure — high-margin and high-ticket catalogues fare best, helped by the per-order cap.' },
+]} />
+
+<Sources items={[
+  { title: "Fees & Payments Policy (Offsite Ads: 15% under $10,000 with opt-out; 12% mandatory for the lifetime of the shop once the threshold is reached, assessed monthly on trailing-365-day sales; fee base of price plus shipping and gift wrap; prior opt-outs voided on crossing)", publisher: 'Etsy', href: 'https://www.etsy.com/legal/fees/', accessed: "2026-08-27" },
+  { title: 'Etsy Offsite Ads fees: 12% vs 15%, the $10k rule, and the $100 cap (per-order cap and tier mechanics)', publisher: 'FeeProofed', href: 'https://www.feeproofed.com/guides/etsy-offsite-ads-fees/', accessed: "2026-08-27" },
+  { title: 'Etsy Offsite Ads explained: fees, opt-out rules and real cost examples (lifetime lock and re-enrollment nuance)', publisher: 'Craftybase', href: 'https://craftybase.com/blog/everything-you-should-know-about-etsy-offsite-ads', accessed: "2026-08-27" },
+  { title: 'Etsy Offsite Ads: a complete guide (30-day attribution window)', publisher: 'Outfy', href: 'https://www.outfy.com/blog/etsy-offsite-ads/', accessed: "2026-08-27" },
+  { title: 'Etsy fees explained: complete 2026 breakdown ($0.20 listing, 6.5% transaction on price plus shipping, processing and currency lines)', publisher: 'SellerToolsHQ', href: 'https://sellertoolshq.com/guides/etsy-fees-explained/', accessed: "2026-08-27" },
+]} />
