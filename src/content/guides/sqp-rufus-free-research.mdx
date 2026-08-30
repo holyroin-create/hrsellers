@@ -1,0 +1,65 @@
+---
+title: "The free Rufus research most brands never open"
+description: "Two data sources already inside Seller Central tell you what Amazon's AI wants to know about your product: the Search Query Performance dashboard and the questions Rufus itself displays on your listing. How to read both, and turn them into listing edits — without buying a single tool."
+category: "Scaling"
+published: "2026-08-30"
+modified: "2026-08-30"
+minutes: 8
+numbered: true
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Steps from '../../components/Steps.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
+<Takeaways items={[
+  "Before paying for AI-readiness tooling, two free sources answer most of the question: Search Query Performance in Brand Analytics, and the question prompts Rufus displays directly on your own listing page.",
+  "Rufus's prompted questions are Amazon showing its hand — reported guidance is to make bullets, A+ and Q&A answer those exact questions, because they are what the assistant wants to resolve about your product.",
+  "Search Query Performance shows the real query language your impressions come from — the raw material for the intent phrasing the AI layer is described as rewarding.",
+  "Brand-registered sellers are also reported to find partial Rufus attribution data inside Brand Analytics — incomplete, directional, and free.",
+  "The output is a listing edit list, not a subscription: field fixes and copy answers first, measurement monthly, tools only if the free loop runs dry."
+]} />
+
+Our [Rufus guide](/guides/rufus-listing-optimization/) made the argument that the cheapest AI-era wins are structural. This is the companion piece: where the raw material for those edits already sits, free, inside accounts most sellers already have.
+
+## Source one: the questions Rufus asks about you
+
+Open your own listing as a shopper and read the question prompts Rufus surfaces beneath it. Reported guidance treats that list as direct research: those are the questions the assistant considers unresolved and answerable about your product. The work: for each prompt, check whether your bullets, A+ content or Q&A answer it **explicitly** — not implied, stated. Every unanswered prompt is a hole the AI fills from a competitor.
+
+## Source two: Search Query Performance
+
+Inside Brand Analytics, the Search Query Performance dashboard shows the actual query phrasings behind your impressions and purchases — including the long, conditional, problem-shaped phrasings that intent-based matching is described as rewarding. Read it for **nouns and constraints** — "for small apartments", "with dogs", "under-cabinet" — and carry those exact phrases into backend attribute fields and A+ copy, per the structural playbook in the Rufus guide. Brand-registered sellers are also reported to find partial Rufus attribution data in Brand Analytics: incomplete, but a free directional read on whether the AI layer is sending you anyone.
+
+<StockImage slug="sqp-rufus-free-research" theme="analytics" />
+
+## The loop, monthly
+
+<Steps title="The 15-minute monthly loop" accent={3} source="All free — Brand Analytics + your own listing page"
+  steps={[
+    { t: 'Read prompts', d: 'Rufus, on-listing' },
+    { t: 'Scan SQP', d: 'new phrasings' },
+    { t: 'Ship edits', d: 'fields + copy' },
+    { t: 'Note trend', d: 'partial data' },
+  ]} />
+
+Fifteen minutes: read the prompts, scan SQP for new phrasings, ship the edit list, note the partial attribution trend. Only when that loop stops producing edits does paid tooling earn a conversation — the same order-of-spend discipline as everywhere else on this site: free and structural first, [conversion fundamentals](/guides/listing-optimisation-a10/) always, subscriptions last.
+
+<MiniCalc variant="margin" />
+
+<Faq items={[
+  { q: 'Do I need Brand Registry for this?', a: 'Search Query Performance and the reported partial Rufus attribution live in Brand Analytics, which requires Brand Registry. The Rufus question prompts on your listing page are visible to anyone — start there even without registry.' },
+  { q: 'How is this different from keyword research?', a: 'Keyword research finds words to match; this finds questions to answer and constraints to state. The AI layer is described as evaluating whether a listing resolves the shopper\'s problem — SQP and the Rufus prompts show you the problems in the shopper\'s own phrasing.' },
+  { q: 'When does paid tooling make sense?', a: 'After the free loop stops producing edits: prompts answered, attribute fields complete, SQP phrasings incorporated, and a monthly measurement habit in place. Tools that score AI-readiness are selling structure you can mostly build from these free sources first.' },
+]} />
+
+<Sources items={[
+  { title: 'Amazon listing optimization: the complete guide for brands 2026 (Rufus-prompted questions on the listing page as direct research input)', publisher: 'Incrementum Digital', href: 'https://incrementumdigital.com/blog/performance-growth/amazon-listing-optimization-an-updated-guide-for-brands-in-2026/', accessed: "2026-08-27" },
+  { title: 'Amazon Rufus and COSMO: is your listing ready for AI-mediated search (partial Rufus attribution reported in Brand Analytics; discovery-share context)', publisher: 'Advertpreneur', href: 'https://advertpreneur.com/blog/amazon-rufus-and-cosmo-is-your-listing-ready-for-ai-mediated-search-in-2026/', accessed: "2026-08-27" },
+  { title: 'The 2026 guide to optimizing Amazon listings for Rufus (structured fields and intent phrasing as machine-readable data)', publisher: 'SellerMetrics', href: 'https://sellermetrics.app/amazon-listing-optimization-for-rufus/', accessed: "2026-08-27" },
+]} />
