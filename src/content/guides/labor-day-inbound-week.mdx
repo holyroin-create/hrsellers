@@ -1,0 +1,61 @@
+---
+title: "Labor Day week: the short-week trap in your inbound plan"
+description: "September 7 removes a working day from carriers, ports and receiving docks in the same week your Q4 freight is supposed to move. What a holiday week actually does to transit and check-in times, and the two adjustments that cost nothing this week and save a scramble next week."
+category: "Shipping & logistics"
+published: "2026-08-31"
+modified: "2026-08-31"
+minutes: 6
+numbered: true
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Steps from '../../components/Steps.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+
+import MiniCalc from '../../components/MiniCalc.astro';
+
+import StockImage from '../../components/StockImage.astro';
+
+<Takeaways items={[
+  "Labor Day (7 September 2026) removes a working day from trucking, drayage, port operations and warehouse receiving simultaneously — a compounding delay, not a single lost day.",
+  "Holiday weeks squeeze from both sides: shipments racing to move before the holiday congest the days before it, and the backlog congests the days after — a two-week soft zone around one date.",
+  "The Q4 stakes make this year's version sharper: this is the exact window in which most sellers' peak-season freight is moving, per the backwards count in our Q4 freight guide.",
+  "Two free adjustments: pad every appointment and transit estimate touching the first half of September by several working days, and move any time-critical booking or document deadline to before the holiday, not after.",
+  "The general rule outlasts the date: every US federal holiday in Q3-Q4 deserves a line in the logistics calendar, because carriers plan around them and sellers mostly do not."
+]} />
+
+Nothing about a national holiday is surprising, which is what makes the annual damage it does to inbound plans so avoidable. The mechanism is simple: one date removes capacity from every link of the chain at once, and the chain was already running at Q4 load.
+
+## What one day off actually costs
+
+<Steps title="The two-week soft zone around September 7" accent={2} source="The pattern, not a promise — pad your own dates"
+  steps={[
+    { t: 'Race-in days', d: 'pre-holiday jam' },
+    { t: 'Fri before', d: 'paperwork dies' },
+    { t: 'Mon Sep 7', d: 'capacity out' },
+    { t: 'Tue-Thu', d: 'backlog clears' },
+    { t: 'Week after', d: 'appointments slip' },
+  ]} />
+
+A holiday Monday is not one lost day. Trucking capacity tightens in the days before it as shippers race the date; ports and rail run reduced or no operations; receiving docks reopen Tuesday to Monday's backlog plus Tuesday's arrivals. The practical effect, repeated every year: appointments slip, check-in buffers stretch, and a shipment that was "arriving the week of the 7th" quietly becomes mid-month. If your [Q4 backwards count](/guides/q4-freight-booking-window/) assumed normal weeks, the first half of September is where that assumption breaks.
+
+## The two free adjustments
+
+**Pad everything the holiday touches.** Any transit estimate, carrier appointment or receiving expectation landing between early and mid September gets several extra working days in the plan. If the plan cannot absorb that padding, the plan — not the calendar — is the problem, and the [freight modes guide](/guides/freight-modes/) covers the split-shipment escape valve.
+
+**Front-load the paperwork.** Bookings, ISF filings, supplier document requests, anything requiring a human on the other end: before the holiday. The Friday-before inbox is where Q4 timelines go to die quietly.
+
+<MiniCalc variant="margin" />
+
+<StockImage slug="labor-day-inbound-week" theme="logistics" />
+
+<Faq items={[
+  { q: 'Why does one holiday matter this much?', a: 'Because it removes capacity from trucking, ports and receiving simultaneously, and the congestion spreads both before and after the date. In a normal quarter that costs days; in the Q4 inbound window it can cost the selling week the freight was booked for.' },
+  { q: 'Which other dates deserve the same treatment?', a: 'Every US federal holiday through the end of the year, plus the peak-season cutoffs published by carriers and marketplaces. The habit is the point: holidays go into the logistics calendar at planning time, not discovery time.' },
+]} />
+
+<Sources items={[
+  { title: 'The Q4 freight window: counting backwards from October 15 (the backwards count these paddings feed into)', publisher: 'FBA Tactics', href: 'https://fbatactics.com/guides/q4-freight-booking-window/', accessed: "2026-08-31" },
+]} />
