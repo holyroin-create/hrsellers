@@ -20,14 +20,14 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Amazon's own description of the programme: sellers choose a base funding level of 0%, 5% or 10%, paid by the seller on every subscription order. When a customer's delivery contains five or more subscribed items, Amazon funds an additional 5% on top. That is the whole funding split.",
+  "Amazon's own description of the program: sellers choose a base funding level of 0%, 5% or 10%, paid by the seller on every subscription order. When a customer's delivery contains five or more subscribed items, Amazon funds an additional 5% on top. That is the whole funding split.",
   "There is no participation fee. Referral and FBA fees apply to the discounted price, so the discount comes out of your contribution margin, not out of Amazon's.",
   "Eligible FBA products are auto-enrolled at 0%. At 0% the customer sees no seller discount on baskets under five items — which is why most 'S&S did nothing' verdicts come from sellers who never funded it.",
   "The right comparison is against your advertising cost per order. A subscription reorder arrives without a click; a one-time sale carries your full TACOS. Where TACOS on the SKU exceeds the funding tier, the reorder is the cheaper sale.",
   "A stockout on a subscribed SKU cancels subscriptions rather than pausing them. Inventory on S&S SKUs is planned on worst-case lead times.",
 ]} />
 
-Subscribe & Save is the only Seller Central lever that turns a one-time buyer into recurring revenue, and it fails in two symmetrical ways: sellers who never switch it on, and sellers who switch it on at 0%, see nothing happen, and conclude it does not work.
+Subscribe & Save is the only lever in Seller Central that turns a one-time buyer into recurring revenue. It fails two ways, and they mirror each other. Some sellers never switch it on. Others switch it on at 0%, watch nothing happen, and decide the program doesn't work. It was never running.
 
 ## Who funds what
 
@@ -44,7 +44,7 @@ Two facts complete the cost picture. Amazon charges **no separate fee for partic
 
 `Seller Central > Advertising > Subscribe & Save > Manage products` — funding level per SKU, automatic-enrolment preference, active subscription counts and inventory status. This is where the 0% default is changed; it is not changed from the listing.
 
-<Figure value="0 / 5 / 10%" kind="cost" source="Amazon Seller Central, Subscribe & Save programme description; checked 4 September 2026">
+<Figure value="0 / 5 / 10%" kind="cost" source="Amazon Seller Central, Subscribe & Save program description; checked September 4, 2026">
   The three seller-funded base levels. Amazon adds 5% for five-item deliveries; the seller never pays that layer.
 </Figure>
 
@@ -74,9 +74,9 @@ The [PPC budget calculator](/tools/ppc-budget-calculator/) gives you the TACOS s
 
 ## What it takes to get in, and to stay in
 
-Amazon determines eligibility from fulfilment history, in-stock rate, sales performance and price consistency; FBA products meeting the bar are auto-enrolled at the 0% base, and merchant-fulfilled sellers must request enrolment per product. Brand Registry is not a stated requirement but is the practical route to the listing controls that make the programme work. The in-stock expectation in seller reporting is 90% or above.
+Amazon determines eligibility from fulfillment history, in-stock rate, sales performance and price consistency; FBA products meeting the bar are auto-enrolled at the 0% base, and merchant-fulfilled sellers must request enrolment per product. Brand Registry is not a stated requirement but is the practical route to the listing controls that make the program work. The in-stock expectation in seller reporting is 90% or above.
 
-The in-stock requirement is not bureaucratic. Subscriptions are commitments, and the failure mode is blunt: **a stockout does not pause subscription sales — it cancels subscriptions**, and cancelled subscribers rarely re-subscribe. Once a customer subscribes at a given discount, that rate is locked for them until they skip or cancel; you cannot quietly lower it later.
+The in-stock requirement is not bureaucratic. Subscriptions are commitments, and the failure mode is blunt: **a stockout does not pause subscription sales — it cancels subscriptions**, and canceled subscribers rarely re-subscribe. Once a customer subscribes at a given discount, that rate is locked for them until they skip or cancel; you cannot quietly lower it later.
 
 The compensating gift: the Subscribe & Save dashboard forecasts committed demand — active subscribers, delivery frequency, churn — 60 to 90 days out. No one-time SKU gives you a forward order book.
 
@@ -88,19 +88,21 @@ On the tier, start at 5%, measure conversion and subscriber growth on the dashbo
 
 ## What to do
 
-- **Check what tier your auto-enrolled SKUs sit at.** If the programme was "tried" at 0%, it was never tried.
+- **Check what tier your auto-enrolled SKUs sit at.** If the program was "tried" at 0%, it was never tried.
 - **Fund only what the margin carries, and compare against TACOS, not zero.** The discount is a customer-acquisition cost replacing a different one.
 - **Treat subscriber inventory as senior debt.** Reorder points on S&S SKUs use worst-case lead times, not averages — and the [low-inventory-level fee](/guides/low-inventory-level-fee/) is charged on those same units if they run thin.
 - **Do not raise the list price to fund the discount.** Price consistency is an eligibility factor, and the customer comparison is against your own recent price.
 
 <MiniCalc variant="margin" />
 
+Go to Manage products and read the funding column. If it says 0% next to a consumable that sells, you have found the cheapest test you will run this quarter.
+
 <Faq items={[
   { q: 'Does Amazon charge a fee for Subscribe & Save?', a: 'No participation fee. The cost is the seller-funded base discount — 5% or 10% of the subscription price on every order — with referral and FBA fees charged on the discounted price.' },
   { q: 'Who pays the "up to 15%" the customer sees?', a: 'Two funders. The base 0%, 5% or 10% is seller-funded. The additional 5% when a delivery contains five or more subscribed items is Amazon-funded. Your exposure is your chosen base tier, never the full 15%.' },
   { q: 'Why did S&S do nothing for my product?', a: 'Usually because it was enrolled at the 0% default, which shows no seller discount to a customer with fewer than five subscriptions. Change the funding level under Advertising, Subscribe & Save, Manage products.' },
   { q: 'Is the discount worth it?', a: 'Compare it with your advertising cost per order on that SKU. A reorder carries no CPC; a one-time sale carries your full TACOS. If TACOS exceeds the funding tier, the subscription order is the cheaper sale.' },
-  { q: 'What happens if a subscribed SKU goes out of stock?', a: 'Subscriptions are cancelled, not paused, and cancelled subscribers rarely return. Plan S&S inventory on worst-case lead times.' },
+  { q: 'What happens if a subscribed SKU goes out of stock?', a: 'Subscriptions are canceled, not paused, and canceled subscribers rarely return. Plan S&S inventory on worst-case lead times.' },
 ]} />
 
 <Sources items={[

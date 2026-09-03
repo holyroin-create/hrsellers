@@ -1,9 +1,10 @@
 ---
 title: "Amazon credits you roughly 10% for bringing your own traffic. Most brands never claim it."
-description: "The Brand Referral Bonus credits part of the referral fee back when tagged external traffic — Google, Meta, email, creators — converts on Amazon. The average is reported around 10%, the range runs from about 5% to as high as 30% by category, and the whole thing hinges on one mechanical detail: the Attribution tag."
+seoTitle: "Amazon Brand Referral Bonus: ~10% Back on Tagged External Traffic"
+description: "The Brand Referral Bonus credits part of the referral fee back when tagged external traffic — Google, Meta, email, creators — converts on Amazon. The average is around 10%, the range runs from about 5% to as high as 30% by category, and the whole thing hinges on one mechanical detail: the Attribution tag."
 category: "Scaling"
 published: "2026-08-16"
-modified: "2026-08-16"
+modified: "2026-09-04"
 minutes: 11
 numbered: true
 ledger: "≈10% average credit on tagged external sales"
@@ -21,101 +22,104 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "The Brand Referral Bonus credits a category-based percentage of tagged external sales back against your referral fees. It is available to US-store sellers enrolled in Brand Registry, and it requires enrolment — eligibility alone earns nothing.",
-  "The advertised 10% is an average. Reported category rates range from roughly 5% to as high as 30%, and published sources disagree on the per-category figures — the authoritative table is the Brand Referral Bonus help page in your own Seller Central.",
-  "The bonus is a credit against referral fees, not cash. It arrives after a roughly two-month waiting period that accommodates cancellations and returns, and reporting is refreshed weekly with a lag.",
-  "Every credit depends on Amazon Attribution tags. Untagged external traffic earns nothing, traffic from Amazon's own ads (Sponsored Products, Sponsored Brands) is excluded, and Amazon's guidance states Attribution tags cannot be combined with Amazon Affiliates links.",
-  "The reported attribution window is 14 days from click to purchase.",
+ "The Brand Referral Bonus credits a category-based percentage of tagged external sales back against your referral fees. It is available to US-store sellers enrolled in Brand Registry, and it requires enrollment — eligibility alone earns nothing.",
+ "The advertised 10% is an average. Category rates range from roughly 5% to as high as 30%, and published sources disagree on the per-category figures — the authoritative table is the Brand Referral Bonus help page in your own Seller Central.",
+ "The bonus is a credit against referral fees, not cash. It arrives after a roughly two-month waiting period that accommodates cancellations and returns, and reporting is refreshed weekly with a lag.",
+ "Every credit depends on Amazon Attribution tags. Untagged external traffic earns nothing, traffic from Amazon's own ads (Sponsored Products, Sponsored Brands) is excluded, and Amazon's guidance states Attribution tags cannot be combined with Amazon Affiliates links.",
+ "The attribution window is 14 days from click to purchase.",
 ]} />
 
-If you already run any traffic to your Amazon listings from outside Amazon — Meta ads, Google, an email list, creators — this programme changes the arithmetic of that spend. If you do not, it changes the case for starting. Either way it costs nothing to be enrolled in, which makes non-enrolment the strange default it reportedly still is.
+Send a shopper from Instagram to your Amazon listing with a tagged link and Amazon hands back an average of 10% of the sale as a credit against your referral fees. Most brands running external traffic never claim it. If you already buy Meta or Google traffic, this program changes the arithmetic of that spend; if you don't, it changes the case for starting. Either way it costs nothing to be enrolled in, which makes non-enrollment the strange default it reportedly still is.
 
-## What the programme is
+## What the program is
 
-The Brand Referral Bonus credits part of the referral fee back to brands that drive **tracked** external traffic to their Amazon listings. The requirements reported consistently:
+The Brand Referral Bonus credits part of the referral fee back to brands that drive **tracked** external traffic to their Amazon listings. The requirements, from Amazon's program page:
 
 | Requirement | Detail |
 | --- | --- |
 | Store | Amazon US |
 | Registration | [Brand Registry](/guides/brand-registry-trademark/), with a Brand Representative role |
-| Enrolment | Explicit — the programme must be joined in Seller Central |
+| Enrollment | Explicit — the program must be joined in Seller Central |
 | Tracking | Amazon Attribution tags on every external link |
 | Excluded traffic | Amazon's own advertising — Sponsored Products, Sponsored Brands video |
 
 Amazon's own worked example makes the mechanism concrete: a $100 backpack carrying a 14% referral fee earns, say, a 7% bonus when the sale comes through a tagged external link — a credit that offsets referral fees on later sales, moving net proceeds on that unit from $86 to $93.
 
-<Figure value="$86 → $93" kind="recovered" source="Amazon, Brand Referral Bonus overview (backpack example: $100 sale, 14% referral fee, 7% bonus credit), accessed 16 August 2026">
-  Amazon's own illustration of the mechanism. The bonus is applied as a credit against referral fees rather than paid as cash.
+<Figure value="$86 → $93" kind="recovered" source="Amazon, Brand Referral Bonus overview (backpack example: $100 sale, 14% referral fee, 7% bonus credit), accessed August 16, 2026">
+ Amazon's own illustration of the mechanism. The bonus is applied as a credit against referral fees rather than paid as cash.
 </Figure>
 
 ## The rate is a range, and the sources disagree
 
-The headline 10% is reported everywhere as an **average**. Beyond that, published figures diverge in a way worth showing rather than smoothing over:
+The headline 10% is an **average**, and Amazon says so. Beyond that, published figures diverge in a way worth showing rather than smoothing over:
 
-| Source | Reported category rates |
+| Source | Category rates |
 | --- | --- |
-| Multiple 2025–2026 industry analyses | Amazon Device Accessories up to 30%; Automotive & Power Sports 7–8% |
+| Multiple 2025–2026 industry analyzes | Amazon Device Accessories up to 30%; Automotive & Power Sports 7–8% |
 | Nova Analytics, 2026 | Range roughly 5–25%; Luxury Beauty toward the top of it |
 | SellerMetrics, 2026 | Toys and Apparel around 10%; Electronics around 5%; Jewelry up to 14% |
 | Hector AI, 2026 | Clothing and Footwear 10–12%; Electronics and Grocery 5–8% |
 
 These do not fully agree with each other, and that is the finding: **the only authoritative rate table is the Brand Referral Bonus help page inside your own Seller Central**, which every one of these sources ultimately defers to. Reporting also notes the realised amount moves with shipping and gift-wrap charges, and shrinks with cancellations and returns.
 
-One planning implication reported for multi-category sellers: since the bonus rate varies this much, it can make sense to weight external ad spend toward the SKUs in higher-bonus categories — the same click is worth more credit there.
+One planning implication for multi-category sellers: since the bonus rate varies this much, it can make sense to weight external ad spend toward the SKUs in higher-bonus categories — the same click is worth more credit there.
 
 <StockImage slug="brand-referral-bonus" theme="ecommerce" />
 
 ## The plumbing: Attribution tags
 
-The entire programme runs on one mechanical foundation. **Untagged traffic earns nothing**, however much of it converts.
+The entire program runs on one mechanical foundation. **Untagged traffic earns nothing**, however much of it converts.
 
-The reported workflow: in Seller Central, under Brands → Amazon Attribution, a unique tracking tag is created per traffic source — one for Google, one for Meta, one for the email list — and that tagged URL is what goes into the campaign. The tag follows the shopper from click to purchase, with a reported attribution window of **14 days**.
+The workflow: in Seller Central, under Brands → Amazon Attribution, a unique tracking tag is created per traffic source — one for Google, one for Meta, one for the email list — and that tagged URL is what goes into the campaign. The tag follows the shopper from click to purchase, with a reported attribution window of **14 days**.
 
-Three reported constraints on the plumbing:
+Three constraints on the plumbing:
 
 - **Amazon's own ads are excluded.** The bonus is for traffic Amazon did not already charge you for.
 - **Attribution tags cannot be combined with Amazon Affiliates links**, per Amazon's current tag guidance — a detail that matters if you work with affiliate partners.
-- **Paid creators must disclose.** Reported guidance is the standard one: material connections disclosed clearly, placed with the endorsement, hard to miss.
+- **Paid creators must disclose.** The FTC rule is the standard one: material connections disclosed clearly, placed with the endorsement, hard to miss.
 
 ## The money arrives late, and the reports arrive later
 
-Two timing facts shape how this programme feels in practice.
+Two timing facts shape how this program feels in practice.
 
-The credit lands after a **waiting period of roughly two months**, reported as accommodating cancellations and returns — the same reason the figure can shrink between the sale and the credit. And the reporting on estimated bonus earnings is described as refreshing **weekly, with a lag of up to two months** behind qualifying sales. Earned bonuses are reviewable on the Transaction Details page.
+The credit lands after a **waiting period of roughly two months**, which accommodates cancellations and returns — the same reason the figure can shrink between the sale and the credit. And the reporting on estimated bonus earnings is described as refreshing **weekly, with a lag of up to two months** behind qualifying sales. Earned bonuses are reviewable on the Transaction Details page.
 
-The practical consequence: this is not a lever you can optimise week to week. It is a background rebate that rewards a decision you make once — tag everything — and it belongs in your quarterly economics rather than your weekly dashboard, alongside the payout timing effects covered in our [DD7 reserve guide](/guides/dd7-payout-reserve/).
+The practical consequence: this is not a lever you can optimize week to week. It is a background rebate that rewards a decision you make once — tag everything — and it belongs in your quarterly economics rather than your weekly dashboard, alongside the payout timing effects covered in our [DD7 reserve guide](/guides/dd7-payout-reserve/).
 
 ## Where this sits in the bigger picture
 
-External traffic has a second reported effect beyond the credit: sales from outside Amazon are described as feeding the ranking algorithm's velocity signals, with knock-on effects on organic rank. And unlike PPC spend, external channels build assets you keep — an email list, a social following — which is the argument our [diversification guide](/guides/off-amazon-diversification/) makes at full length.
+External traffic has a second effect beyond the credit: sales from outside Amazon feed the ranking algorithm's velocity signals, with knock-on effects on organic rank. And unlike PPC spend, external channels build assets you keep — an email list, a social following — which is the argument our [diversification guide](/guides/off-amazon-diversification/) makes at full length.
 
 The bonus does not make bad external marketing good. What it does is take marketing you were arguably doing anyway and hand back a mid-single-digit to double-digit percentage of the attributed sales — for the cost of using a different URL.
 
 ## What to do
 
-**Enrol now if you are Brand Registered in the US store.** Reported enrolment effort is minutes, and there is no participation cost. The failure mode is not enrolling and running tagged-looking campaigns that credit nothing.
+**Enroll now if you are Brand Registered in the US store.** Enrollment takes minutes, and there is no participation cost. The failure mode is not enrolling and running tagged-looking campaigns that credit nothing.
 
-**Tag per channel, not per campaign burst.** One tag per source keeps the attribution data readable — which reporting notes is worth having even independently of the bonus, since it is external-conversion data Amazon otherwise never shows you.
+**Tag per channel, not per campaign burst.** One tag per source keeps the attribution data readable — which is worth having even independently of the bonus, since it is external-conversion data Amazon otherwise never shows you.
 
 **Check your own category's rate before shifting budget.** Given how much the published figures disagree, read the rate table in Seller Central rather than any blog — including this one.
 
 <MiniCalc variant="margin" />
 
+Open Amazon Attribution and count your active tags. If the number is zero and you are spending anything off-Amazon, every one of those sales has been paying the full referral fee for no reason.
+
 <Faq items={[
-  { q: 'Is the bonus paid in cash?', a: 'No. It is reported as a credit applied against referral fees on subsequent sales, arriving after a roughly two-month waiting period that accounts for cancellations and returns.' },
-  { q: 'Does traffic from my Sponsored Products ads qualify?', a: 'No. Amazon states the bonus is not available for its own advertising, including Sponsored Products and Sponsored Brands video. The programme is for traffic you bring from outside — search, social, email, creators.' },
-  { q: 'What exactly is the bonus rate?', a: 'Category-dependent. The advertised 10% is an average; published sources report a range from about 5% to as high as 30% and disagree on per-category figures. The authoritative table is the Brand Referral Bonus help page in Seller Central.' },
-  { q: 'How long does a click stay attributable?', a: 'The reported attribution window is 14 days. A purchase within 14 days of clicking your tagged link earns the credit.' },
-  { q: 'Can resellers use this?', a: 'No. The programme is reported as limited to Brand Registered sellers with a Brand Representative role — it excludes resellers and those selling brands they do not own.' },
+ { q: 'Is the bonus paid in cash?', a: 'No. It is a credit applied against referral fees on subsequent sales, arriving after a roughly two-month waiting period that accounts for cancellations and returns.' },
+ { q: 'Does traffic from my Sponsored Products ads qualify?', a: 'No. Amazon states the bonus is not available for its own advertising, including Sponsored Products and Sponsored Brands video. The program is for traffic you bring from outside — search, social, email, creators.' },
+ { q: 'What exactly is the bonus rate?', a: 'Category-dependent. The advertised 10% is an average; published sources report a range from about 5% to as high as 30% and disagree on per-category figures. The authoritative table is the Brand Referral Bonus help page in Seller Central.' },
+ { q: 'How long does a click stay attributable?', a: 'The attribution window is 14 days. A purchase within 14 days of clicking your tagged link earns the credit.' },
+ { q: 'Can resellers use this?', a: 'No. The program is limited to Brand Registered sellers with a Brand Representative role — it excludes resellers and those selling brands they do not own.' },
 ]} />
 
 <Sources items={[
-  { title: 'Brand Referral Bonus: drive traffic and boost your bottom line (backpack worked example; credit mechanism; two-month waiting period; Brand Registry eligibility)', publisher: 'Amazon', href: 'https://sell.amazon.com/blog/brand-referral-bonus', accessed: '2026-08-16' },
-  { title: 'Amazon Brand Referral Bonus: rates, eligibility and setup (US-only, Brand Representative role; exclusion of Amazon advertising; tags not combinable with Amazon Affiliates links; creator disclosure; Transaction Details review)', publisher: 'SalesDuo', href: 'https://salesduo.com/blog/amazon-brand-referral-bonus-guide/', accessed: '2026-08-16' },
-  { title: 'Amazon Brand Referral Bonus 2026: complete guide (14-day attribution window; two-month payout; Toys/Apparel ~10%, Electronics ~5%, Jewelry up to 14%; credit not cash)', publisher: 'SellerMetrics', href: 'https://sellermetrics.app/amazon-brand-referral/', accessed: '2026-08-16' },
-  { title: 'Amazon Brand Referral Bonus and external traffic, 2026 (rates roughly 5–25% with ~10% average; Luxury Beauty at the high end; external sales velocity and organic rank; owned-asset argument)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/news/amazon-brand-referral-bonus-external-traffic-2026', accessed: '2026-08-16' },
-  { title: 'Brand Referral Bonus on Amazon: complete breakdown (Device Accessories up to 30%; Automotive & Power Sports 7–8%; attribution tagging as the mechanical foundation)', publisher: 'Advertise Purple', href: 'https://www.advertisepurple.com/brand-referral-bonus-on-amazon-complete-breakdown/', accessed: '2026-08-16' },
-  { title: 'What is the Amazon Brand Referral Bonus (weekly report refresh with two-month lag; 10% described as an average with lower actuals by category; Brand Registry limitation excluding resellers)', publisher: 'Adbrew', href: 'https://adbrew.io/blog/what-is-the-amazon-brand-referral-bonus', accessed: '2026-08-16' },
-  { title: 'Amazon Brand Referral Program: how it works (Clothing/Footwear 10–12%, Electronics/Grocery 5–8%; bonus applied to attributed sale value; batched credits against referral fee charges)', publisher: 'Hector AI', href: 'https://hectorai.live/blog/amazon-brand-referral-program', accessed: '2026-08-16' },
-  { title: 'The Amazon Brand Referral Bonus: what to know (segmenting external ad spend by category bonus rate; multichannel brand-equity trade-off)', publisher: 'Ware2Go', href: 'https://ware2go.co/articles/amazon-brand-referral-bonus/', accessed: '2026-08-16' },
+  { title: 'Brand Referral Bonus program overview (average 10% bonus on qualifying sales from tagged non-Amazon traffic; credit against referral fees; requires Brand Registry and Amazon Attribution tags; roughly two-month waiting period)', publisher: 'Amazon, sell.amazon.com program page', accessed: '2026-09-04' },
+ { title: 'Brand Referral Bonus: drive traffic and boost your bottom line (backpack worked example; credit mechanism; two-month waiting period; Brand Registry eligibility)', publisher: 'Amazon', href: 'https://sell.amazon.com/blog/brand-referral-bonus', accessed: '2026-09-04' },
+ { title: 'Amazon Brand Referral Bonus: rates, eligibility and setup (US-only, Brand Representative role; exclusion of Amazon advertising; tags not combinable with Amazon Affiliates links; creator disclosure; Transaction Details review)', publisher: 'SalesDuo', href: 'https://salesduo.com/blog/amazon-brand-referral-bonus-guide/', accessed: '2026-09-04' },
+ { title: 'Amazon Brand Referral Bonus 2026: complete guide (14-day attribution window; two-month payout; Toys/Apparel ~10%, Electronics ~5%, Jewelry up to 14%; credit not cash)', publisher: 'SellerMetrics', href: 'https://sellermetrics.app/amazon-brand-referral/', accessed: '2026-09-04' },
+ { title: 'Amazon Brand Referral Bonus and external traffic, 2026 (rates roughly 5–25% with ~10% average; Luxury Beauty at the high end; external sales velocity and organic rank; owned-asset argument)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/news/amazon-brand-referral-bonus-external-traffic-2026', accessed: '2026-09-04' },
+ { title: 'Brand Referral Bonus on Amazon: complete breakdown (Device Accessories up to 30%; Automotive & Power Sports 7–8%; attribution tagging as the mechanical foundation)', publisher: 'Advertise Purple', href: 'https://www.advertisepurple.com/brand-referral-bonus-on-amazon-complete-breakdown/', accessed: '2026-09-04' },
+ { title: 'What is the Amazon Brand Referral Bonus (weekly report refresh with two-month lag; 10% described as an average with lower actuals by category; Brand Registry limitation excluding resellers)', publisher: 'Adbrew', href: 'https://adbrew.io/blog/what-is-the-amazon-brand-referral-bonus', accessed: '2026-09-04' },
+ { title: 'Amazon Brand Referral Program: how it works (Clothing/Footwear 10–12%, Electronics/Grocery 5–8%; bonus applied to attributed sale value; batched credits against referral fee charges)', publisher: 'Hector AI', href: 'https://hectorai.live/blog/amazon-brand-referral-program', accessed: '2026-09-04' },
+ { title: 'The Amazon Brand Referral Bonus: what to know (segmenting external ad spend by category bonus rate; multichannel brand-equity trade-off)', publisher: 'Ware2Go', href: 'https://ware2go.co/articles/amazon-brand-referral-bonus/', accessed: '2026-09-04' },
 ]} />

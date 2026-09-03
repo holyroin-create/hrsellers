@@ -1,50 +1,100 @@
 ---
-title: "Peak season pricing confirmed: ~$0.32 a unit — and it stacks with the fuel surcharge"
-description: "Reported 2026 holiday peak fulfillment pricing averages $0.32 per unit, matching last year — but this year it stacks on the 3.5% fuel and logistics surcharge introduced in the spring. Same headline, different bill."
+title: "Q4 unit cost worksheet: what one unit costs to fulfil from October 15, tier by tier, 2025 versus 2026"
+seoTitle: "Q4 2026 FBA Unit Cost Worksheet: Peak Fee + Surcharge"
+description: "The peak fee guide explains the rule. This page is the arithmetic: base 2026 fee, plus the peak uplift, times 1.035, for six representative size tiers — against what the same unit cost last peak. Copy the sheet, replace the fees with yours."
 category: "Fees & reimbursements"
 published: "2026-08-28"
-modified: "2026-08-28"
-minutes: 5
+modified: "2026-09-04"
+minutes: 6
 numbered: true
-ledger: "~$0.32/unit avg, stacked"
+ledger: "Q4 unit cost = (base + peak uplift) × 1.035"
 ledgerKind: "cost"
 news: true
-draft: true
+draft: false
 ---
 
-{/* RETIRED 2026-09-04: thin duplicate of a full guide; 301 in public/_redirects. Kept in the repo for history only. */}
-
 import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
-
 import MiniCalc from '../../components/MiniCalc.astro';
-
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Reported peak surcharge for the 2026 window: an average of $0.32 per unit, in line with last year — running mid-October to mid-January, per the schedule on our dated peak guide.",
-  "The real story is stacking: the 3.5% fuel and logistics surcharge introduced this spring applies underneath, so the same $0.32 headline produces a larger total than last year's identical headline.",
-  "The trap named in the reporting: sellers planning Q4 on 2025 math will find deals and prices that cleared last year running margin-negative this year.",
-  "One afternoon fixes it: rerun every Q4 SKU at the stacked October fee stack — the repricing worksheet exists for exactly this."
+  "Three numbers make a 2026 Q4 unit fulfillment cost: the January 2026 base fee for the size tier, the holiday peak uplift for that tier (average $0.32, range roughly $0.19 to $2.81), and the 3.5% surcharge on the sum. Last peak had two of the three.",
+  "On a light small-standard unit the 2026-over-2025 difference is about 15 cents; on a large oversize unit it is over a dollar. The headline 'peak fee unchanged' is true of the middle number only.",
+  "Repricing decisions that cross $10 or $50 change the base fee and therefore both other numbers. Run the worksheet at the price you will actually sell at in November.",
+  "The worksheet uses illustrative base fees. Replace them with the figures from your Fee Preview report, which has had peak rates loaded since July.",
 ]} />
 
-The peak fulfillment schedule for the 2026 holiday window is reported at an **average of $0.32 per unit — the same average as last year.** Sellers will be tempted to file it under "no change." That filing would be wrong, and the reason is one word: stacking.
+The [holiday peak fee guide](/guides/holiday-peak-fulfilment-fee/) covers the window, the programs and the deadlines. This page does one thing. It runs the arithmetic per unit, so "peak fee unchanged" never gets mistaken for "unit cost unchanged."
 
-## Same number, bigger bill
+## The formula
 
-This spring Amazon introduced a **3.5% fuel and logistics surcharge** (dated on our [fee pages](/guides/fba-fuel-logistics-surcharge-2026/)); reporting on the peak schedule confirms the two now apply together. A $12 fulfilment fee that picks up $0.32 of peak also carries roughly $0.42 of fuel line — about $0.74 of 2026-only cost on a unit whose 2025 Q4 math assumed half that. Multiply by size tier and by your catalogue, and "unchanged average" quietly becomes the most expensive unchanged average you have shipped through. The [peak guide](/guides/holiday-peak-fulfilment-fee/) has the per-tier figures; the [margin calculator](/tools/margin-calculator/) turns them into an absorb/raise/exit decision per SKU before mid-October does it for you.
+```
+2025 peak unit cost = base fee (2025)  + peak uplift (tier)
+2026 peak unit cost = [base fee (2026) + peak uplift (tier)] × 1.035
+difference          = base fee change + 3.5% of (2026 base + uplift)
+```
+
+Amazon confirmed on July 7, 2026 that the per-tier uplift is unchanged from last peak and that the 3.5% fuel and logistics surcharge applies on top of peak fees. The base fee rose on January 15, 2026 by an average of $0.08.
+
+## The worksheet
+
+Six representative units. Base fees are illustrative round numbers for the tier; uplifts follow the range Amazon publishes per tier. Replace all three inputs with yours.
+
+| Unit | 2025 base | Uplift | **2025 peak cost** | 2026 base | Uplift | × 1.035 | **2026 peak cost** | **Δ per unit** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Small standard, 4 oz | $3.15 | $0.19 | $3.34 | $3.22 | $0.19 | 1.035 | $3.53 | +$0.19 |
+| Small standard, 12 oz | $3.60 | $0.24 | $3.84 | $3.68 | $0.24 | 1.035 | $4.06 | +$0.22 |
+| Large standard, 1 lb | $4.30 | $0.32 | $4.62 | $4.38 | $0.32 | 1.035 | $4.86 | +$0.24 |
+| Large standard, 3 lb | $6.10 | $0.40 | $6.50 | $6.20 | $0.40 | 1.035 | $6.83 | +$0.33 |
+| Large bulky, 10 lb | $12.00 | $0.95 | $12.95 | $12.30 | $0.95 | 1.035 | $13.71 | +$0.76 |
+| Large oversize, 40 lb | $30.00 | $2.81 | $32.81 | $30.60 | $2.81 | 1.035 | $34.58 | +$1.77 |
+
+<Figure value="+$0.19 to +$1.77" kind="cost" source="Worksheet above; illustrative base fees; Amazon uplift range and 3.5% surcharge per July 7, 2026 announcement">
+  The 2026-over-2025 change in peak unit fulfillment cost across six tiers. "Unchanged" describes the middle column only.
+</Figure>
+
+Two things the table shows that the announcement does not. The surcharge is the larger of the two additions on every tier above 1 lb. And the absolute gap grows with size: the seller who needs this worksheet most is the one shipping bulky.
 
 <StockImage slug="peak-surcharge-2026-schedule" theme="payments" />
 
+## Add the price-band check
+
+The 2026 base fee depends on the selling price band: under $10, $10 to $50, over $50. A November promotion that takes a $52 item to $49 moves it down a band and lowers all three numbers; a price rise from $9.99 to $10.49 takes it out of Low-Price FBA rates and raises them. Run the worksheet at the price you will sell at during the window, not the list price.
+
+## Then add what is not in the fee
+
+| Line | Where it comes from |
+| --- | --- |
+| Peak storage, 1 Oct – 31 Dec | $2.40 per cubic foot standard, $1.40 oversize — [storage guide](/guides/fba-storage-four-layers/) |
+| Deal and coupon fees | Per-event and per-redemption — [deals guide](/guides/deal-and-coupon-fees/) |
+| Advertising | Q4 CPCs — [PPC benchmarks](/guides/amazon-ppc-benchmarks/) |
+| Cash timing | DD+7 payouts through the window — [payout reserve guide](/guides/dd7-payout-reserve/) |
+
+## Where to get your inputs
+
+`Seller Central > Reports > Fulfillment > Payments > Fee Preview` — export, filter to your Q4 SKUs; the fulfillment fee column already reflects 2026 base rates and, in the peak columns, the uplift.
+
+`Seller Central > Growth > Profit Analytics` — per-product unit economics with fee lines separated, useful for checking the surcharge line against your worksheet.
+
+**Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes the 2026 peak cost from your worksheet and returns net margin and the maximum ACOS the product can carry in Q4. Nothing is stored and nothing leaves your browser.
+
 <MiniCalc variant="margin" />
 
+Copy the table, paste your own base fees from Fee Preview, and look at the right-hand column. Which SKU moved the most? That one gets repriced first.
+
 <Faq items={[
-  { q: 'Is $0.32 the fee on my products?', a: 'It is the reported average across units. Your actual peak charge depends on size tier and weight — the per-tier schedule on the peak guide is the number to price with, plus the 3.5% fuel line underneath.' },
-  { q: 'When does the stacked cost start and stop?', a: 'The peak window runs mid-October to mid-January per the published schedule; the fuel surcharge continues after the window closes. January prices should assume the fuel line stays.' },
+  { q: 'Is the 2026 peak fee higher than 2025?', a: 'The per-tier uplift is unchanged, averaging $0.32 per unit. The unit cost is higher because the base fee rose in January 2026 and the 3.5% surcharge applies on top of the peak fee. The difference runs from about 15 cents on light units to over a dollar on large oversize.' },
+  { q: 'Is the surcharge applied before or after the peak uplift?', a: 'On the sum. Amazon states the 3.5% applies on top of holiday peak fulfillment fees, so the calculation is (base fee + peak uplift) × 1.035.' },
+  { q: 'Where do I get the exact uplift for my tier?', a: 'The Fee Preview report has carried peak rates since July 2026, and the Revenue Calculator shows peak versus non-peak per ASIN. Amazon publishes per-tier example uplifts on the holiday peak fulfillment fee help page.' },
+  { q: 'Does the worksheet apply to MCF orders?', a: 'Yes. The peak uplift and the surcharge both apply to Multi-Channel Fulfillment; use the MCF rate card for the base fee.' },
 ]} />
 
 <Sources items={[
-  { title: 'Amazon seller news, August 2026 (peak surcharge averaging $0.32/unit matching last year; stacking with the 3.5% fuel and logistics surcharge; warning on 2025 fee math)', publisher: 'Mr. Jeff', href: 'https://mrjeffamz.com/blog/amazon-seller-news-2026', accessed: '2026-08-28' },
-  { title: 'Holiday peak fulfillment fee guide (per-tier window charges, dated)', publisher: 'FBA Tactics', href: 'https://fbatactics.com/guides/holiday-peak-fulfilment-fee/', accessed: '2026-08-28' },
+  { title: 'Holiday 2026: same fees, same eligibility, earlier deadlines (same per-unit uplift as last year, average $0.32; 3.5% surcharge on top; peak rates in Revenue Calculator and Fee Preview)', publisher: 'Amazon Seller Central, Seller Forums announcement, July 7, 2026', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/3e31fbb7-04e0-4ed4-873e-f74b1052e2ff', accessed: '2026-09-04' },
+  { title: 'Fuel and logistics-related surcharge: FBA, MCF, and BWP in US and CA (3.5% of fulfillment fees)', publisher: 'Amazon Seller Central, Seller Forums announcement, April 2, 2026', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/7cbc0233-ee5b-4359-978a-dee7cad5c6f4', accessed: '2026-09-04' },
+  { title: 'Update to U.S. Referral and Fulfillment by Amazon fees for 2026 (base fee +$0.08 average from January 15, 2026)', publisher: 'Amazon Selling Partner Services', href: 'https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026', accessed: '2026-09-04' },
+  { title: "Amazon's 2026 holiday fees: the real stack behind $0.32 (per-tier example uplifts $0.19 to $2.81 from the Seller Central help page)", publisher: 'Eightx', href: 'https://eightx.co/blog/amazon-holiday-fulfillment-fees-peak-surcharge', accessed: '2026-09-04' },
 ]} />

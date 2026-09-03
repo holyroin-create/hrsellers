@@ -1,7 +1,7 @@
 ---
 title: "Amazon's low-inventory-level fee: the 28-day rule, the 2026 FNSKU change, and a reorder trigger that survives both"
 seoTitle: "Amazon Low-Inventory-Level Fee: 28-Day Rule & 2026 Changes"
-description: "The threshold is 28 historical days of supply on both the 30-day and 90-day windows — Amazon's own figure, not a blog's. Since 15 January 2026 it is measured per FNSKU and reaches bulky items. Here is where to read it in Seller Central and how to set the reorder point."
+description: "The threshold is 28 historical days of supply on both the 30-day and 90-day windows — Amazon's own figure, not a blog's. Since January 15, 2026 it is measured per FNSKU and reaches bulky items. Here is where to read it in Seller Central and how to set the reorder point."
 category: "Fees & reimbursements"
 published: "2026-08-08"
 modified: "2026-09-04"
@@ -21,13 +21,13 @@ import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
   "The fee applies only when a product's historical days of supply is below 28 on BOTH the short-term (last 30 days) and long-term (last 90 days) measure. If either window is at 28 or above, no fee. That is Amazon's published rule.",
-  "Since 15 January 2026 the metric is calculated per seller-FNSKU, not per parent ASIN, and small-bulky and large-bulky products are now in scope. Grocery is exempt.",
-  "It is charged per unit shipped while you are under the line, on top of the normal fulfilment fee. Published 2026 rate cards put standard-size bands at roughly $0.32 to $1.11 per unit and bulky up to about $2.09; the exact figure for your tier is on the low-inventory-level fee page in Seller Central.",
+  "Since January 15, 2026 the metric is calculated per seller-FNSKU, not per parent ASIN, and small-bulky and large-bulky products are now in scope. Grocery is exempt.",
+  "It is charged per unit shipped while you are under the line, on top of the normal fulfillment fee. Published 2026 rate cards put standard-size bands at roughly $0.32 to $1.11 per unit and bulky up to about $2.09; the exact figure for your tier is on the low-inventory-level fee page in Seller Central.",
   "Exemptions worth checking before you panic: your first 365 days on FBA, the first 180 days of a new parent ASIN, products that shipped fewer than 20 units in the trailing 7 days, and FNSKUs auto-replenished from Amazon Warehousing and Distribution.",
   "The fix is a reorder trigger that includes supplier, transit, customs and Amazon check-in time on top of the 28 days — because the fee is charged during the replenishment gap, not after it.",
 ]} />
 
-The threshold is 28 days. Amazon states it, Seller Central shows the metric per FNSKU, and the fee switches on only when both the 30-day and the 90-day historical days of supply are under it. An earlier version of this guide treated the threshold as uncertain because third-party rate cards disagreed. They disagreed because some of them were wrong; the primary source is not ambiguous, and this rewrite uses it.
+Twenty-eight days. That is the threshold, Amazon publishes it, and Seller Central shows you the metric for every FNSKU you own. The fee switches on only when both the 30-day and the 90-day historical days of supply sit under that line. An earlier version of this guide hedged on the number because third-party rate cards disagreed with each other. Some of them were simply wrong. Amazon is not.
 
 ## How the metric is calculated
 
@@ -46,24 +46,24 @@ Amazon computes it over two windows and applies the fee only when both fall belo
 
 The two-window design is your escape hatch. A SKU that dipped to 20 days of supply in the last month but averaged 35 days over the quarter is not charged. The fee lands on products that have been thin for a sustained period.
 
-<Figure value="28 days" kind="cost" source="Amazon Seller Central, low-inventory-level fee explanation; Seller Forums announcement. Checked 4 September 2026.">
+<Figure value="28 days" kind="cost" source="Amazon Seller Central, low-inventory-level fee explanation; Seller Forums announcement. Checked September 4, 2026.">
   Both the 30-day and the 90-day historical days of supply must be below this before a single unit is charged.
 </Figure>
 
-## What changed on 15 January 2026
+## What changed on January 15, 2026
 
 Two structural changes, both in Amazon's 2026 US fee update:
 
-1. **Per-FNSKU measurement.** The metric was previously assessed at parent-ASIN level. It is now assessed for each seller-FNSKU. A ten-variant listing with one thin colour used to be protected by the healthy siblings. Now that colour is charged on its own sales, and the other nine are not. This is better targeted than the old rule, but it means your slowest variant sets its own exposure.
+1. **Per-FNSKU measurement.** The metric was previously assessed at parent-ASIN level. It is now assessed for each seller-FNSKU. A ten-variant listing with one thin color used to be protected by the healthy siblings. Now that color is charged on its own sales, and the other nine are not. This is better targeted than the old rule, but it means your slowest variant sets its own exposure.
 2. **Bulky products are in scope.** Small bulky and large bulky size tiers were exempt before 2026. They are not now, and their rate bands are the highest on the card.
 
 Grocery remains exempt. Dangerous goods follow the standard bands.
 
 ## Where to read it in Seller Central
 
-Do not estimate days of supply from your own spreadsheet. Read Amazon's figure, because Amazon's figure is the one it bills on.
+Don't estimate days of supply from your own spreadsheet. Read Amazon's figure. Amazon's figure is the one it bills on.
 
-`Seller Central > Inventory > FBA Inventory` — the table has a **Historical days of supply** column. Sort ascending. Anything under 28 is being charged now; anything between 28 and about 40 is your watch list. Use the column filter to show only rows under a threshold rather than scrolling the catalogue.
+`Seller Central > Inventory > FBA Inventory` — the table has a **Historical days of supply** column. Sort ascending. Anything under 28 is being charged now; anything between 28 and about 40 is your watch list. Use the column filter to show only rows under a threshold rather than scrolling the catalog.
 
 `Seller Central > Reports > Fulfillment > Payments > Fee Preview` — shows the estimated fee per FNSKU at current supply.
 
@@ -93,14 +93,14 @@ Check these before you restructure anything. Per Amazon's fee page and the 2026 
 - **New-to-FBA sellers:** no fee for the first 365 days after your first inventory arrives.
 - **New parent ASINs:** no fee for the first 180 days after the ASIN's first unit is received.
 - **Low-volume products:** no fee if the FNSKU shipped fewer than 20 units in the trailing 7 days.
-- **AWD auto-replenishment:** FNSKUs replenished into FBA from Amazon Warehousing and Distribution are eligible for a waiver. Amazon applies an auto-replenishment ratio test; reporting puts the ratio at 70% or more of inbound units coming via AWD. Confirm the current ratio on the AWD programme page before relying on it.
+- **AWD auto-replenishment:** FNSKUs replenished into FBA from Amazon Warehousing and Distribution are eligible for a waiver. Amazon applies an auto-replenishment ratio test; reporting puts the ratio at 70% or more of inbound units coming via AWD. Confirm the current ratio on the AWD program page before relying on it.
 - **Grocery:** exempt.
 
 There is no seasonal exemption. Q4 sell-through that drains a SKU is charged like any other.
 
 ## The reorder trigger that survives this
 
-Holding more stock is the instinct and the wrong answer: it walks straight into the [aged-inventory surcharge at day 181 and the storage utilisation surcharge above 22 weeks of cover](/guides/fba-storage-four-layers/). The fee is a **timing** penalty, so the fix is a timing rule.
+Your instinct will be to hold more stock. Resist it: it walks straight into the [aged-inventory surcharge at day 181 and the storage utilization surcharge above 22 weeks of cover](/guides/fba-storage-four-layers/). The fee is a **timing** penalty, so the fix is a timing rule.
 
 Your reorder point, in days of supply, is the whole replenishment gap plus the threshold:
 
@@ -113,7 +113,7 @@ reorder point (days) = 28
                      + your own reaction time (PO approval, payment, booking)
 ```
 
-Worked example, a standard-size SKU shipping 10 units a day: 28 + 25 production + 30 ocean + 4 customs + 10 receiving + 3 reaction = **100 days of supply at the moment you place the order**, i.e. 1,000 units on hand. If that number frightens you, the alternatives are shorter lead times (air, domestic buffer stock) or holding the buffer outside FBA — in AWD, which also earns the waiver, or in a 3PL near a fulfilment centre (the trade-off is worked through in [AWD versus a 3PL for buffer stock](/guides/awd-vs-3pl-warehousing/)) — and feeding FBA in smaller, more frequent lots. Both convert a fee problem into a logistics decision, which is the better kind of problem.
+Worked example, a standard-size SKU shipping 10 units a day: 28 + 25 production + 30 ocean + 4 customs + 10 receiving + 3 reaction = **100 days of supply at the moment you place the order**, i.e. 1,000 units on hand. If that number frightens you, the alternatives are shorter lead times (air, domestic buffer stock) or holding the buffer outside FBA — in AWD, which also earns the waiver, or in a 3PL near a fulfillment center (the trade-off is worked through in [AWD versus a 3PL for buffer stock](/guides/awd-vs-3pl-warehousing/)) — and feeding FBA in smaller, more frequent lots. Both convert a fee problem into a logistics decision, which is the better kind of problem.
 
 **Model the cash side.** The [cash flow planner](/tools/cash-flow-planner/) maps deposit, balance, freight, receiving and payout onto a timeline so you can see how long the buffer ties up money. Nothing is stored and nothing leaves your browser.
 
@@ -122,21 +122,23 @@ Worked example, a standard-size SKU shipping 10 units a day: 28 + 25 production 
 ## Common mistakes
 
 - **Reading parent-level stock.** Since January 2026 the fee is per FNSKU. A dashboard that only shows the parent is the wrong shape for this fee.
-- **Treating "in transit" as "in stock".** Units on a truck or in a fulfilment-centre yard are not available inventory and do not count toward days of supply — which is one more reason the [inbound placement split decision](/guides/inbound-placement-split-arithmetic/) is a receiving-time decision, not just a fee decision.
+- **Treating "in transit" as "in stock".** Units on a truck or in a fulfillment-center yard are not available inventory and do not count toward days of supply — which is one more reason the [inbound placement split decision](/guides/inbound-placement-split-arithmetic/) is a receiving-time decision, not just a fee decision.
 - **Reordering at 28 days.** By the time the order arrives you have been under the line for the whole lead time and paid on every unit.
-- **Confusing this with the storage utilisation surcharge.** That one uses weeks of cover over 13 weeks and punishes *excess*; this one uses days of supply over 30 and 90 days and punishes *shortage*. The safe corridor between them is roughly 28 days to about 22 weeks of supply.
+- **Confusing this with the storage utilization surcharge.** That one uses weeks of cover over 13 weeks and punishes *excess*; this one uses days of supply over 30 and 90 days and punishes *shortage*. The safe corridor between them is roughly 28 days to about 22 weeks of supply.
+
+One check before you close this tab: open FBA Inventory, sort by historical days of supply, and count how many FNSKUs sit under 40. That number is your exposure for the next reorder cycle.
 
 <Faq items={[
   { q: "What is the low-inventory-level fee threshold?", a: "28 historical days of supply. Amazon assesses the metric over the last 30 days and the last 90 days and charges the fee only when both are below 28. If either window is 28 or above, the fee does not apply." },
   { q: "Am I charged for being out of stock?", a: "No. The fee is charged per unit shipped while the FNSKU is below the threshold. A product with zero sales incurs nothing; a product selling briskly while thin is charged on every order." },
-  { q: "Does one low variant affect the whole listing?", a: "Not since 15 January 2026. The metric is now calculated per seller-FNSKU, so only the thin variant's own units are charged. Before 2026 it was assessed at parent-ASIN level." },
+  { q: "Does one low variant affect the whole listing?", a: "Not since January 15, 2026. The metric is now calculated per seller-FNSKU, so only the thin variant's own units are charged. Before 2026 it was assessed at parent-ASIN level." },
   { q: "Where do I see my historical days of supply?", a: "Seller Central, Inventory, FBA Inventory: the table has a Historical days of supply column you can sort and filter. The Fee Preview report under Reports, Fulfillment shows the estimated fee per FNSKU." },
-  { q: "Does Amazon Warehousing and Distribution avoid it?", a: "FNSKUs auto-replenished from AWD are eligible for a waiver, subject to an auto-replenishment ratio that Amazon publishes on the AWD programme page. Holding buffer stock in AWD and feeding FBA from it is the main structural way round the fee." },
-  { q: "Is the fee avoidable by switching to merchant fulfilment?", a: "Yes, in that it is an FBA charge. Whether the trade is worth making depends on your own fulfilment cost — run both through the margin calculator." },
+  { q: "Does Amazon Warehousing and Distribution avoid it?", a: "FNSKUs auto-replenished from AWD are eligible for a waiver, subject to an auto-replenishment ratio that Amazon publishes on the AWD program page. Holding buffer stock in AWD and feeding FBA from it is the main structural way round the fee." },
+  { q: "Is the fee avoidable by switching to merchant fulfillment?", a: "Yes, in that it is an FBA charge. Whether the trade is worth making depends on your own fulfillment cost — run both through the margin calculator." },
 ]} />
 
 <Sources items={[
-  { title: 'Update to U.S. Referral and Fulfillment by Amazon fees for 2026 (average +$0.08 per unit; no new fee types; effective 15 January 2026)', publisher: 'Amazon Selling Partner Services', href: 'https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026', accessed: '2026-09-04' },
+  { title: 'Update to U.S. Referral and Fulfillment by Amazon fees for 2026 (average +$0.08 per unit; no new fee types; effective January 15, 2026)', publisher: 'Amazon Selling Partner Services', href: 'https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026', accessed: '2026-09-04' },
   { title: '2026 US Referral and FBA fee changes summary (low-inventory-level fee at seller-FNSKU level; bulky products in scope)', publisher: 'Amazon Seller Central Help', href: 'https://sellercentral.amazon.com/help/hub/reference/external/G201411300', accessed: '2026-09-04' },
   { title: 'Low-inventory-level fee further explained (28-day threshold on both 30-day and 90-day windows; AWD auto-replenishment waiver)', publisher: 'Amazon Seller Forums, official announcement', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/aa9f98e5-fa91-4949-af8f-6cf918c86a77', accessed: '2026-09-04' },
   { title: 'Amazon low-inventory-level fee explained: 2026 rates and exemptions ($0.32–$1.11 standard, ~$2.09 bulky; 365-day, 180-day and 20-unit exemptions)', publisher: 'PrepVia', href: 'https://www.prepvia.com/blogs/amazon-low-inventory-level-fee-explained', accessed: '2026-09-04' },

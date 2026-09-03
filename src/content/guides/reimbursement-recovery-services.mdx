@@ -1,9 +1,10 @@
 ---
 title: "Every published estimate of what you are owed comes from a company that wants a share of it"
+seoTitle: "Reimbursement Recovery Services: Do the Math Before You Pay 25%"
 description: "Reimbursement recovery services charge a percentage of what they recover. The figures they publish about how much you are losing are marketing for that percentage. Here is how to work out whether you need one, from your own reports."
 category: "Software"
 published: "2026-08-18"
-modified: "2026-08-18"
+modified: "2026-09-04"
 minutes: 10
 numbered: true
 ledger: "Decide from your own reimbursement report, not theirs"
@@ -19,20 +20,20 @@ import Sources from '../../components/Sources.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Published estimates of the impact of the 2025 reimbursement change range from 40% to over 75%. Each one is published by a company selling recovery services or software, and none discloses a method or sample.",
-  "The change itself is real: since 31 March 2025 inventory lost before a customer orders is reimbursed at documented sourcing cost rather than sale price.",
-  "That change cuts both ways for these services. It reduces the value of each recovered claim, which means the case for paying a percentage got weaker, not stronger.",
-  "The only figure that matters is your own: pull twelve months of reimbursement data and compare it against your own margin and loss rate.",
-  "The highest-return action is not a service. It is entering sourcing costs per SKU, which decides what every future claim pays regardless of who files it.",
+ "Published estimates of the impact of the 2025 reimbursement change range from 40% to over 75%. Each one is published by a company selling recovery services or software, and none discloses a method or sample.",
+ "The change itself is real: since March 2025 Amazon reimburses inventory lost or damaged before a customer order at documented manufacturing cost, not sale price. Amazon announced it on December 10, 2024 for March 10; most sellers saw it applied from March 31.",
+ "That change cuts both ways for these services. It reduces the value of each recovered claim, which means the case for paying a percentage got weaker, not stronger.",
+ "The only figure that matters is your own: pull twelve months of reimbursement data and compare it against your own margin and loss rate.",
+ "The highest-return action is not a service. It is entering sourcing costs per SKU, which decides what every future claim pays regardless of who files it.",
 ]} />
 
-This site's first guide was about the reimbursement policy change. This one is about the industry that grew around it, because the question sellers actually ask — should I pay someone to recover this — has an answer they can calculate rather than buy.
+Every number you have read about how much Amazon owes you was published by a company that wants a cut of it. This site's first guide covered the reimbursement policy change. This one covers the industry that grew around it, because the question sellers actually ask — should I pay someone to recover this — has an answer they can calculate rather than buy.
 
 ## What the vendors publish
 
 Circulating estimates of the reduction in reimbursement payouts following the 2025 change:
 
-| Reported impact | Publisher | What they sell |
+| Impact | Publisher | What they sell |
 | --- | --- | --- |
 | 40% to 60% | Gowrath | Reimbursement recovery |
 | Up to 60% | Refunzo | Reimbursement recovery |
@@ -44,14 +45,14 @@ Circulating estimates of the reduction in reimbursement payouts following the 20
 That does not make them false. It means they were produced by parties with a commercial interest in the loss appearing large, and none of them should enter your model.
 
 <Figure value="0 of 4" kind="cost" source="Review of published impact estimates, August 2026">
-  The number of published impact estimates found for this guide that disclosed a sample size or calculation method. All four were published by companies selling recovery services.
+ The number of published impact estimates found for this guide that disclosed a sample size or calculation method. All four were published by companies selling recovery services.
 </Figure>
 
 ## The argument the vendors do not make
 
 Here is the part that follows logically from their own subject and appears in none of their material.
 
-Before 31 March 2025, a lost unit was reimbursed at something near sale price. After it, at documented **sourcing cost** — see the [reimbursement guide](/guides/fba-reimbursement-sourcing-cost/).
+Before March 2025, a lost unit was reimbursed at something near sale price. After it, at documented **sourcing cost** — see the [reimbursement guide](/guides/fba-reimbursement-sourcing-cost/).
 
 **A recovery service charges a percentage of what it recovers.** If the value of each recovered claim fell — which is precisely what these firms are telling you happened — then the absolute value a service can return to you fell by the same proportion, while its percentage stayed the same.
 
@@ -71,7 +72,7 @@ Twenty minutes, and it replaces every figure above.
 
 ```
 annual recoverable value
-  = units lost per year × your documented sourcing cost per unit
+ = units lost per year × your documented sourcing cost per unit
 ```
 
 Note it is sourcing cost, not sale price. That is the whole point of the change.
@@ -111,9 +112,9 @@ Questions worth asking, drawn from what the published material does not address:
 
 **What is your evidence standard?** A service filing weakly evidenced claims at volume is using your account to do it.
 
-**Can you show recovery on accounts like mine?** Not a case study — a range, on comparable catalogue size and category.
+**Can you show recovery on accounts like mine?** Not a case study — a range, on comparable catalog size and category.
 
-**Will you tell me my sourcing costs are missing?** If they do not raise it, they are optimising the claim rather than the payout.
+**Will you tell me my sourcing costs are missing?** If they do not raise it, they are optimizing the claim rather than the payout.
 
 ## What to do
 
@@ -127,23 +128,26 @@ Questions worth asking, drawn from what the published material does not address:
 
 **Price a service against the residue**, after your own reconciliation is working — not against a headline about what the industry is losing.
 
-**Remember what a recovered reimbursement is.** It is your own money returning at cost. It is not revenue, and treating recovery as a profit centre distracts from the fee lines that are ten times larger.
+**Remember what a recovered reimbursement is.** It is your own money returning at cost. It is not revenue, and treating recovery as a profit center distracts from the fee lines that are ten times larger.
+
+Before you sign anything with a recovery firm, open Manage Inventory and count how many of your active SKUs have a blank cost field. That blank is what every future claim will be paid against — and no service can fill it for you.
 
 <Faq items={[
-  { q: "How much are sellers actually losing on reimbursements?", a: "Published estimates range from 40% to over 75%, and all four found for this guide were published by companies selling recovery services without a stated method or sample. Calculate your own from twelve months of reimbursement data." },
-  { q: "Are recovery services worth it?", a: "It depends on the residue left after your own reconciliation, and on the fee. One vendor figure puts average seller recovery at $1,500 to $3,000 a year — enough to make it arithmetic rather than a matter of opinion." },
-  { q: "Did the 2025 change make recovery services more valuable?", a: "The opposite, logically. If each recovered claim now pays sourcing cost rather than sale price, the absolute value a service returns fell while its percentage did not. That argument appears in none of their material." },
-  { q: "What is the single highest-return action?", a: "Entering sourcing costs per SKU. Without them Amazon estimates your cost from comparable products, and that estimate becomes the basis for every reimbursement — including any a service recovers for you." },
-  { q: "What should I ask a recovery service?", a: "The fee base and whether it covers auto-processed reimbursements, what account access is required, their evidence standard, whether they file duplicates, and whether they will tell you your sourcing costs are missing." },
-  { q: "Is a reimbursement revenue?", a: "No. It is your own money returning at cost. Treating recovery as a profit centre distracts from fee lines that are usually an order of magnitude larger." },
+ { q: "How much are sellers actually losing on reimbursements?", a: "Published estimates range from 40% to over 75%, and all four found for this guide were published by companies selling recovery services without a stated method or sample. Calculate your own from twelve months of reimbursement data." },
+ { q: "Are recovery services worth it?", a: "It depends on the residue left after your own reconciliation, and on the fee. One vendor figure puts average seller recovery at $1,500 to $3,000 a year — enough to make it arithmetic rather than a matter of opinion." },
+ { q: "Did the 2025 change make recovery services more valuable?", a: "The opposite, logically. If each recovered claim now pays sourcing cost rather than sale price, the absolute value a service returns fell while its percentage did not. That argument appears in none of their material." },
+ { q: "What is the single highest-return action?", a: "Entering sourcing costs per SKU. Without them Amazon estimates your cost from comparable products, and that estimate becomes the basis for every reimbursement — including any a service recovers for you." },
+ { q: "What should I ask a recovery service?", a: "The fee base and whether it covers auto-processed reimbursements, what account access is required, their evidence standard, whether they file duplicates, and whether they will tell you your sourcing costs are missing." },
+ { q: "Is a reimbursement revenue?", a: "No. It is your own money returning at cost. Treating recovery as a profit center distracts from fee lines that are usually an order of magnitude larger." },
 ]} />
 
 <Sources items={[
-  { title: 'New Amazon FBA inventory reimbursement policy: managing sourcing cost (the sourcing-cost basis and the documentation required to establish it)', publisher: 'Brandwoven', href: 'https://gobrandwoven.com/resources/articles/new-amazon-fba-inventory-reimbursement-policy-managing-sourcing-cost/', accessed: '2026-08-08' },
-  { title: 'Amazon reimbursement policy changes: what every seller needs to know (vendor estimate of up to 60%)', publisher: 'Refunzo', href: 'https://www.refunzo.com/blog/amazon-reimbursement-policy-changes-2025/', accessed: '2026-08-08' },
-  { title: '2025 trends in Amazon FBA reimbursement claims (vendor estimate of over 75%, from the same publisher as the preceding source)', publisher: 'Refunzo', href: 'https://www.refunzo.com/insights/amazon-fba-reimbursement-claims-trends', accessed: '2026-08-08' },
-  { title: 'Amazon FBA reimbursements 2025 (vendor estimate of 40–60%)', publisher: 'Gowrath', href: 'https://www.gowrath.com/blog/amazon-fba-reimbursements-2025-your-complete-guide-to-claiming-lost-profits-under-new', accessed: '2026-08-08' },
-  { title: 'Amazon reimbursement policy overhaul: manufacturing cost basis (vendor estimate of 50–75%)', publisher: 'Nova Analytics', href: 'https://www.novadata.io/resources/news/amazon-reimbursement-policy-manufacturing-cost', accessed: '2026-08-08' },
-  { title: 'Amazon FBA fee changes 2026 (average seller recovery reported at $1,500–$3,000 per year)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-08-08' },
-  { title: 'FBA reimbursement policy updates for 2025', publisher: 'eComEngine', href: 'https://www.ecomengine.com/blog/fba-reimbursement-policy', accessed: '2026-08-08' },
+  { title: 'Update to the FBA inventory reimbursement policy (reimbursement at product manufacturing cost for inventory lost or damaged before a customer order; definition of manufacturing cost; seller-provided cost option)', publisher: 'Amazon Seller Central, Seller Forums announcement, December 2024', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/68864b6f-0ab8-41ef-be18-069c33df6336', accessed: '2026-09-04' },
+ { title: 'New Amazon FBA inventory reimbursement policy: managing sourcing cost (the sourcing-cost basis and the documentation required to establish it)', publisher: 'Brandwoven', href: 'https://gobrandwoven.com/resources/articles/new-amazon-fba-inventory-reimbursement-policy-managing-sourcing-cost/', accessed: '2026-09-04' },
+ { title: 'Amazon reimbursement policy changes: what every seller needs to know (vendor estimate of up to 60%)', publisher: 'Refunzo', href: 'https://www.refunzo.com/blog/amazon-reimbursement-policy-changes-2025/', accessed: '2026-09-04' },
+ { title: '2025 trends in Amazon FBA reimbursement claims (vendor estimate of over 75%, from the same publisher as the preceding source)', publisher: 'Refunzo', href: 'https://www.refunzo.com/insights/amazon-fba-reimbursement-claims-trends', accessed: '2026-09-04' },
+ { title: 'Amazon FBA reimbursements 2025 (vendor estimate of 40–60%)', publisher: 'Gowrath', href: 'https://www.gowrath.com/blog/amazon-fba-reimbursements-2025-your-complete-guide-to-claiming-lost-profits-under-new', accessed: '2026-09-04' },
+ { title: 'Amazon reimbursement policy overhaul: manufacturing cost basis (vendor estimate of 50–75%)', publisher: 'Nova Analytics', href: 'https://www.novadata.io/resources/news/amazon-reimbursement-policy-manufacturing-cost', accessed: '2026-09-04' },
+ { title: 'Amazon FBA fee changes 2026 (average seller recovery at $1,500–$3,000 per year)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-09-04' },
+ { title: 'FBA reimbursement policy updates for 2025', publisher: 'eComEngine', href: 'https://www.ecomengine.com/blog/fba-reimbursement-policy', accessed: '2026-09-04' },
 ]} />

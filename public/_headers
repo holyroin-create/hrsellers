@@ -1,0 +1,7 @@
+# Cloudflare Pages headers.
+# Downloadable spreadsheets and the RSS feed are not content pages; keep them out of the index
+# so they never appear in a quality review as thin URLs.
+/downloads/*
+  X-Robots-Tag: noindex
+/rss.xml
+  X-Robots-Tag: noindex

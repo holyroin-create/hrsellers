@@ -1,9 +1,10 @@
 ---
 title: "One number can suspend your account on its own. Amazon tells you about it after it is too late."
-description: "Order Defect Rate rolls negative feedback, A-to-z claims and chargebacks into one percentage on a 60-day window. The published threshold is 1%. Reporting says the alert arrives after you cross it, not while you are heading there."
+seoTitle: "Amazon Order Defect Rate: the 1% Line, What Counts, How to Stay Under"
+description: "Order Defect Rate rolls negative feedback, A-to-z claims and chargebacks into one percentage on a 60-day window. The published threshold is 1%. the alert arrives after you cross it, not while you are heading there."
 category: "Scaling"
 published: "2026-08-14"
-modified: "2026-08-14"
+modified: "2026-09-04"
 minutes: 10
 numbered: true
 ledger: "ODR threshold 1% · top sellers hold below 0.3%"
@@ -21,29 +22,29 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "ODR combines negative feedback, A-to-z Guarantee claims and service chargebacks into one percentage on a rolling 60-day window. Reporting describes it as the single most consequential metric Amazon tracks.",
-  "The published threshold is 1%. Reporting says an early-warning flag fires around 0.8%, top sellers hold below 0.3%, and notifications are reactive — arriving after you cross, not at 0.7% while you are trending.",
-  "Only 1-star and 2-star feedback counts. A 3-star rating is neutral. And multiple negative signals on the same order count as one defect, not two.",
-  "A-to-z claims count whether granted or not, according to one source — which makes preventing the claim more valuable than winning it.",
-  "The Account Health Rating starts at 200. Reporting puts 200+ as healthy, 100 to 199 as at risk, and below 100 as capable of triggering suspension.",
+ "ODR combines negative feedback, A-to-z Guarantee claims and service chargebacks into one percentage on a rolling 60-day window. it as the single most consequential metric Amazon tracks.",
+ "The published threshold is 1%. an early-warning flag fires around 0.8%, top sellers hold below 0.3%, and notifications are reactive — arriving after you cross, not at 0.7% while you are trending.",
+ "Only 1-star and 2-star feedback counts. A 3-star rating is neutral. And multiple negative signals on the same order count as one defect, not two.",
+ "Which A-to-z claim outcomes count is defined on Amazon's Order Defect Rate help page, and agency guides disagree about whether a denied claim drops out. Do not assume winning a claim removes the defect — check your Account Health page — which makes preventing the claim more valuable than defending it.",
+ "The Account Health Rating starts at 200. 200+ as healthy, 100 to 199 as at risk, and below 100 as capable of triggering suspension.",
 ]} />
 
-Every metric Amazon publishes has a threshold. This one is different in two ways: reporting describes it as capable of suspending an account **on its own**, regardless of how everything else looks, and the warning system is described as telling you after the fact.
+One percent. Cross it and Amazon can deactivate the account on that metric alone, and the notification arrives after you have crossed, not while you are drifting toward it. Every metric Amazon publishes has a threshold. This one is different in two ways: it as capable of suspending an account **on its own**, regardless of how everything else looks, and the warning system is telling you after the fact.
 
 ## What counts as a defect
 
 Three signals, on a rolling 60-day window:
 
 - **Negative feedback** — only 1-star and 2-star. A 3-star rating is neutral and does not count
-- **A-to-z Guarantee claims** filed against you — reported by one source as counting **whether granted or not**
+- **A-to-z Guarantee claims** filed against you — Amazon's ODR page defines which outcomes count, and agency guides disagree on whether a denied claim drops out; check your own Account Health page rather than assuming
 - **Service chargebacks**
 
 **Multiple negative signals on the same order count as one defect, not two or three.** A buyer who leaves 1-star feedback and files an A-to-z claim on the same order produces one defect.
 
-Note also that since August 2025, reporting states buyers can submit **star-only ratings with no written comment** — which means a defect can appear with no explanation attached and nothing to diagnose from.
+Note also that since August 2025, buyers can submit **star-only ratings with no written comment** — which means a defect can appear with no explanation attached and nothing to diagnose from.
 
-<Figure value="1% / 0.8% / 0.3%" kind="cost" source="Feedvisor, 2026 account health analysis, accessed 8 August 2026">
-  Amazon's published ODR threshold, the level at which reporting describes an early-warning flag firing, and the level top sellers are described as maintaining. The gap between the first and the third is the operating margin.
+<Figure value="1% / 0.8% / 0.3%" kind="cost" source="1% threshold: Amazon Seller Central, Order Defect Rate policy. 0.8% and 0.3%: Feedvisor 2026 analysis, not Amazon figures. Checked September 4, 2026">
+ Amazon's published ODR threshold, the level at which an early-warning flag firing, and the level top sellers are maintaining. The gap between the first and the third is the operating margin.
 </Figure>
 
 ## The small-seller problem
@@ -52,7 +53,7 @@ This is the structural point nobody states plainly.
 
 ODR is a percentage, and on a rolling 60-day window. **At low order volume, each defect carries far more statistical weight.**
 
-At 1,000 orders in 60 days, one defect is 0.1%. At 100 orders, one defect is 1% — the threshold, from a single unhappy customer. Reporting notes this directly: a string of negative reviews from a bad batch can push ODR past 1% inside a week, especially for sellers with low order volume.
+At 1,000 orders in 60 days, one defect is 0.1%. At 100 orders, one defect is 1% — the threshold, from a single unhappy customer. this directly: a string of negative reviews from a bad batch can push ODR past 1% inside a week, especially for sellers with low order volume.
 
 **Which means new and small sellers are structurally more exposed to this metric than large ones**, and the standard advice to "keep ODR low" is not equally achievable at every scale. The practical response is not better averages — it is preventing individual defects, because at low volume each one matters.
 
@@ -60,9 +61,9 @@ At 1,000 orders in 60 days, one defect is 0.1%. At 100 orders, one defect is 1% 
 
 ## The warning problem
 
-Reporting describes the notification system as reactive: **you get an alert after your ODR exceeds 1%, not when it is trending toward it at 0.7%.**
+the notification system as reactive: **you get an alert after your ODR exceeds 1%, not when it is trending toward it at 0.7%.**
 
-The metric moves on a 60-day window, so by the time the alert arrives, the defects causing it are up to two months old and there is nothing to undo. The window is described as short enough that a bad week of holiday orders can spike your rate before you have time to react.
+The metric moves on a 60-day window, so by the time the alert arrives, the defects causing it are up to two months old and there is nothing to undo. The window is short enough that a bad week of holiday orders can spike your rate before you have time to react.
 
 **The answer is your own monitoring, at a cadence Amazon does not provide.** One published routine takes under fifteen minutes a week:
 
@@ -71,25 +72,25 @@ The metric moves on a 60-day window, so by the time the alert arrives, the defec
 3. A-to-z claims **immediately** — do not let them auto-grant
 4. Track which SKUs generate defects
 
-That fourth item is the one that changes outcomes. Reporting describes tracking defect-generating SKUs as the fastest way to lower ODR, because defects cluster by product rather than distributing evenly.
+That fourth item is the one that changes outcomes. tracking defect-generating SKUs as the fastest way to lower ODR, because defects cluster by product rather than distributing evenly.
 
 ## Preventing the claim rather than winning it
 
-If A-to-z claims count whether granted or not, defending a claim successfully still leaves the defect.
+If a denied claim stays in your rate — and you should verify this on your Account Health page rather than assume it — then defending a claim successfully still leaves the defect.
 
-Reporting describes A-to-z claims as following a predictable pattern — **shipment delayed, seller unresponsive, buyer escalates** — that can be interrupted before it reaches the claim stage.
+A-to-z claims as following a predictable pattern — **shipment delayed, seller unresponsive, buyer escalates** — that can be interrupted before it reaches the claim stage.
 
 Two things follow.
 
-**Respond to buyer messages within 24 hours.** Reporting describes this as directly affecting ODR and being tracked, rather than being a courtesy standard.
+**Respond to buyer messages within 24 hours.** this as directly affecting ODR and being tracked, rather than being a courtesy standard.
 
-**Refund proactively before a claim is filed.** Reporting is explicit: a proactive refund prevents the claim existing in your ODR at all. On a $25 item, refunding to avoid a defect is cheap insurance — particularly at low order volume where one defect is a large percentage.
+**Refund proactively before a claim is filed.** a proactive refund prevents the claim existing in your ODR at all. On a $25 item, refunding to avoid a defect is cheap insurance — particularly at low order volume where one defect is a large percentage.
 
 That is an uncomfortable conclusion for anyone who believes in defending the position, and it is the arithmetic.
 
 ## Feedback removal
 
-Reporting describes Amazon automatically removing feedback that:
+Amazon automatically removing feedback that:
 
 - Contains a product review rather than seller experience feedback
 - Contains abusive language
@@ -101,7 +102,7 @@ Buyers also have 60 days to remove feedback themselves.
 
 ## Account Health Rating
 
-Reporting describes the AHR as consolidating compliance into one score:
+the AHR as consolidating compliance into one score:
 
 | Score | Status |
 | --- | --- |
@@ -111,22 +112,22 @@ Reporting describes the AHR as consolidating compliance into one score:
 
 It is calculated across customer service performance, policy compliance and shipping performance for merchant-fulfilled orders.
 
-Two operational notes from reporting. **Pulling an ASIN without addressing the underlying violation is described as the most common mistake** — it leaves the point deduction in place. And **delayed responses to violations can result in additional deductions**, so a Plan of Action submitted within 24 hours is better than a better one submitted next week.
+Two operational notes from reporting. **Pulling an ASIN without addressing the underlying violation is the most common mistake** — it leaves the point deduction in place. And **delayed responses to violations can result in additional deductions**, so a Plan of Action submitted within 24 hours is better than a better one submitted next week.
 
 ## The other metrics, briefly
 
-| Metric | Reported threshold |
+| Metric | Threshold |
 | --- | --- |
 | Order Defect Rate | Below 1% |
 | Late Shipment Rate | Under 4% — two consecutive months above typically triggers a notification |
 | Valid Tracking Rate | Above 95% |
 | Cancellation Rate | Amazon-set |
-| On-Time Delivery Rate | Reported as tightened for Prime-eligible sellers in early 2026 |
-| Feedback rating | Aim 95%+; below 90% reported to affect Buy Box win rate |
+| On-Time Delivery Rate | Tightened for Prime-eligible sellers in early 2026, per agency reports |
+| Feedback rating | Aim 95%+; below 90% affects Buy Box win rate |
 
-**For FBA-only sellers**, reporting notes Amazon handles the shipping metrics, so ODR and policy compliance dominate. That is one genuine argument for FBA that does not appear in fee comparisons — see the [FBA against FBM guide](/guides/fba-vs-fbm-breakeven/).
+**For FBA-only sellers**, Amazon handles the shipping metrics, so ODR and policy compliance dominate. That is one genuine argument for FBA that does not appear in fee comparisons — see the [FBA against FBM guide](/guides/fba-vs-fbm-breakeven/).
 
-Reporting also links feedback to the Buy Box: during high-traffic periods, sellers rated 4.5 stars or above are described as winning the Buy Box roughly 79% of the time, with a drop below 4.3 affecting it. See the [Buy Box guide](/guides/buy-box-featured-offer/).
+Reporting also links feedback to the Buy Box: during high-traffic periods, sellers rated 4.5 stars or above are winning the Buy Box roughly 79% of the time, with a drop below 4.3 affecting it. See the [Buy Box guide](/guides/buy-box-featured-offer/).
 
 ## What to do
 
@@ -142,24 +143,28 @@ Reporting also links feedback to the Buy Box: during high-traffic periods, selle
 
 **Review negative feedback for removable entries** — product reviews, abusive content, and FBA shipping complaints.
 
-**If you are above 0.8%, stop everything else.** Reporting's own prioritisation is to audit the last 60 days of claims, feedback and chargebacks before working on anything else. It is the one metric that suspends an account by itself.
+**If you are above 0.8%, stop everything else.** The right order is to audit the last 60 days of claims, feedback and chargebacks before working on anything else. It is the one metric that suspends an account by itself.
 
 <MiniCalc variant="margin" />
 
+Open Account Health now and read the ODR number, not the color. If it starts with 0.8 or 0.9, the next sixty days of orders decide whether you still have an account — and no notification is coming to tell you that.
+
 <Faq items={[
-  { q: "What is a good Order Defect Rate?", a: "The published threshold is below 1%. Reporting describes an early-warning flag around 0.8% and top sellers maintaining below 0.3%. Treat 1% as the cliff edge rather than the target." },
-  { q: "Does a 3-star review count against me?", a: "No. Only 1-star and 2-star feedback counts toward ODR. A 3-star rating is neutral." },
-  { q: "Do A-to-z claims count if I win them?", a: "One source states claims count whether granted or not. That makes preventing the claim — through fast responses and proactive refunds — more valuable than defending it." },
-  { q: "Why did I not get a warning before crossing the threshold?", a: "Reporting describes notifications as reactive: the alert arrives after ODR exceeds 1%, not while it is trending at 0.7%. Your own daily monitoring is the only early warning available." },
-  { q: "Why is ODR harder for small sellers?", a: "It is a percentage on a 60-day window. At 100 orders, a single defect is 1% — the threshold. At 1,000 orders it is 0.1%. Low volume means each defect carries far more weight." },
-  { q: "Can negative feedback be removed?", a: "Reporting describes Amazon automatically removing feedback that is a product review rather than seller feedback, contains abusive language, or — for FBA orders — complains about shipping that was Amazon's responsibility. Buyers can also remove their own within 60 days." },
+ { q: "What is a good Order Defect Rate?", a: "The published threshold is below 1%. an early-warning flag around 0.8% and top sellers maintaining below 0.3%. Treat 1% as the cliff edge rather than the target." },
+ { q: "Does a 3-star review count against me?", a: "No. Only 1-star and 2-star feedback counts toward ODR. A 3-star rating is neutral." },
+ { q: "Do A-to-z claims count if I win them?", a: "Amazon defines the counted outcomes on the Order Defect Rate help page and agency sources disagree on whether a denied claim drops out; verify on your Account Health page. Either way, preventing the claim — through fast responses and proactive refunds — more valuable than defending it." },
+ { q: "Why did I not get a warning before crossing the threshold?", a: "notifications as reactive: the alert arrives after ODR exceeds 1%, not while it is trending at 0.7%. Your own daily monitoring is the only early warning available." },
+ { q: "Why is ODR harder for small sellers?", a: "It is a percentage on a 60-day window. At 100 orders, a single defect is 1% — the threshold. At 1,000 orders it is 0.1%. Low volume means each defect carries far more weight." },
+ { q: "Can negative feedback be removed?", a: "Amazon automatically removing feedback that is a product review rather than seller feedback, contains abusive language, or — for FBA orders — complains about shipping that was Amazon's responsibility. Buyers can also remove their own within 60 days." },
 ]} />
 
 <Sources items={[
-  { title: 'Amazon Order Defect Rate: what it measures and how to fix it (three defect signals; multiple signals on one order counting as one defect; only 1-star and 2-star counting; star-only ratings since August 2025; reactive notifications; the weekly monitoring cadence; tracking defects by SKU; proactive refunds preventing claims)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/order-defect-rate/', accessed: '2026-08-08' },
-  { title: 'Amazon seller rating 2026: account health and metrics guide (1% threshold as the cliff edge; flag at 0.8%; top sellers below 0.3%; 60-day window; feedback removal categories; 4.5-star sellers winning the Buy Box roughly 79% of the time in high-traffic periods)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/seller-rating/', accessed: '2026-08-08' },
-  { title: 'Amazon account health: metrics, warnings and appeals (ODR combining feedback, A-to-z claims whether granted or not, and chargebacks on a rolling 60-day window; low order volume giving each defect more statistical weight; late shipment under 4%; on-time delivery tightened for Prime-eligible sellers in early 2026)', publisher: 'Keywords.am', href: 'https://keywords.am/blog/amazon-account-health/', accessed: '2026-08-08' },
-  { title: 'Amazon Account Health Rating: the complete seller guide for 2026 (AHR starting at 200; 200+ healthy, 100–199 at risk, below 100 capable of triggering suspension; three calculation categories; delayed responses producing additional deductions)', publisher: 'Enso Brands', href: 'https://ensobrands.com/amazon-account-health-rating/', accessed: '2026-08-08' },
-  { title: 'Amazon account health: prevent suspension (2026 guide) (ODR as the most consequential single metric, capable of triggering suspension on its own; FBA sellers having shipping metrics handled by Amazon)', publisher: 'Evolve Media Agency', href: 'https://evolveamz.com/amazon-account-health-suspension-prevention/', accessed: '2026-08-08' },
-  { title: 'Amazon customer service strategy that prevents suspensions (24-hour response time affecting ODR directly; the predictable delay-unresponsive-escalate pattern behind A-to-z claims)', publisher: 'Olifant Digital', href: 'https://olifantdigital.com/blog/amazon-customer-service-strategy', accessed: '2026-08-08' },
+  { title: 'Order Defect Rate (ODR): definition, 60-day window, the 1% target, and which negative feedback, A-to-z Guarantee claim and chargeback events count', publisher: 'Amazon Seller Central Help, Account Health', accessed: '2026-09-04' },
+  { title: 'Account Health Rating: scoring scale and the Healthy / At risk / Critical bands', publisher: 'Amazon Seller Central Help', accessed: '2026-09-04' },
+ { title: 'Amazon Order Defect Rate: what it measures and how to fix it (three defect signals; multiple signals on one order counting as one defect; only 1-star and 2-star counting; star-only ratings since August 2025; reactive notifications; the weekly monitoring cadence; tracking defects by SKU; proactive refunds preventing claims)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/order-defect-rate/', accessed: '2026-09-04' },
+ { title: 'Amazon seller rating 2026: account health and metrics guide (1% threshold as the cliff edge; flag at 0.8%; top sellers below 0.3%; 60-day window; feedback removal categories; 4.5-star sellers winning the Buy Box roughly 79% of the time in high-traffic periods)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/seller-rating/', accessed: '2026-09-04' },
+ { title: 'Amazon account health: metrics, warnings and appeals (ODR combining feedback, A-to-z claims whether granted or not, and chargebacks on a rolling 60-day window; low order volume giving each defect more statistical weight; late shipment under 4%; on-time delivery tightened for Prime-eligible sellers in early 2026)', publisher: 'Keywords.am', href: 'https://keywords.am/blog/amazon-account-health/', accessed: '2026-09-04' },
+ { title: 'Amazon Account Health Rating: the complete seller guide for 2026 (AHR starting at 200; 200+ healthy, 100–199 at risk, below 100 capable of triggering suspension; three calculation categories; delayed responses producing additional deductions)', publisher: 'Enso Brands', href: 'https://ensobrands.com/amazon-account-health-rating/', accessed: '2026-09-04' },
+ { title: 'Amazon account health: prevent suspension (2026 guide) (ODR as the most consequential single metric, capable of triggering suspension on its own; FBA sellers having shipping metrics handled by Amazon)', publisher: 'Evolve Media Agency', href: 'https://evolveamz.com/amazon-account-health-suspension-prevention/', accessed: '2026-09-04' },
+ { title: 'Amazon customer service strategy that prevents suspensions (24-hour response time affecting ODR directly; the predictable delay-unresponsive-escalate pattern behind A-to-z claims)', publisher: 'Olifant Digital', href: 'https://olifantdigital.com/blog/amazon-customer-service-strategy', accessed: '2026-09-04' },
 ]} />

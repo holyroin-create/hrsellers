@@ -1,50 +1,123 @@
 ---
-title: "Aged inventory just got a new top tier: 15+ months is its own surcharge now"
-description: "The 2026 schedule adds a 15+ month aged-inventory tier — reported at $0.35 per unit or $7.90 per cubic foot, whichever is greater — above a 12-15 month tier reported at $0.30/$6.90. Old stock now gets more expensive twice on its way to a year and a half."
+title: "From day 181 to month 15: the sell-down, liquidate or remove decision at every step of the aged-inventory ladder"
+seoTitle: "Aged Inventory Surcharge: Sell, Liquidate or Remove by Day"
+description: "The storage guide explains the aged-inventory surcharge. This one decides. At each band from day 181 to the new 15-month tier, here is the monthly cost of holding one unit, the cost of removing it, and the discount at which selling it down beats both."
 category: "Fees & reimbursements"
 published: "2026-08-29"
-modified: "2026-08-29"
-minutes: 5
+modified: "2026-09-04"
+minutes: 8
 numbered: true
-ledger: "15+ mo: ~$0.35/unit or $7.90/ft³"
+ledger: "Decision points: day 150, day 240, day 330, month 12"
 ledgerKind: "cost"
 news: true
-draft: true
+draft: false
 ---
 
-{/* RETIRED 2026-09-04: thin duplicate of a full guide; 301 in public/_redirects. Kept in the repo for history only. */}
-
 import Takeaways from '../../components/Takeaways.astro';
+import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
-
 import MiniCalc from '../../components/MiniCalc.astro';
-
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Structural change in the 2026 schedule: a new 15+ month aged-inventory tier — 365+ days is no longer the end of the escalator.",
-  "Reported figures: 12-15 months at $0.30 per unit or $6.90 per cubic foot; 15+ months at $0.35 per unit or $7.90 per cubic foot, whichever is greater — verify against the fee schedule in Seller Central before acting.",
-  "The compounding is the point: aged surcharges sit on top of monthly storage, which steps up for Q4 in October — the oldest stock pays the most layers at exactly the most expensive time of year.",
-  "The pre-Q4 move: pull the aged-inventory report this week and give everything past 180 days a decision — sell down, liquidate, or dispose — before October rates and the new tier meet your slow movers."
+  "The aged-inventory surcharge is assessed on the 15th of each month on units that have been in the network 181 days or more, per cubic foot or per unit, whichever is greater. For 2026 Amazon raised the per-unit minimum on the 271–365-day bands to $0.30 and added a 15-month-plus tier at $7.90 per cubic foot or $0.35 per unit.",
+  "The decision is not 'is this unit old' but 'is the next month of holding it worth more than the cost of getting rid of it'. That comparison changes at each band, and it changes again in October when the base rate triples.",
+  "Removal (return to you) costs a per-unit fee that rises with size; disposal is cheaper; liquidation via Amazon's program pays you a fraction of value but ends storage immediately. Each has a break-even against another month of surcharge.",
+  "Four calendar decision points: day 150 (before the surcharge starts), day 240 (before the $3.80 band), day 330 (before $4.20 and the 12-month step), and month 12 (before the 15-month tier at $7.90).",
+  "Pull the Inventory Age report; do not estimate age from your purchase orders. Amazon's clock starts at receipt, and it is Amazon's clock that bills.",
 ]} />
 
-The aged-inventory escalator grew a new top step in 2026: **a 15+ month tier**, reported at **$0.35 per unit or $7.90 per cubic foot** (whichever is greater), above a 12-15 month tier at $0.30/$6.90. The message in the structure is blunter than the rates: Amazon no longer treats "over a year old" as one problem — it now prices a year and a half separately, and worse.
+The [storage guide](/guides/fba-storage-four-layers/) explains the aged-inventory surcharge. This page is for a different moment: you're looking at a unit that has sat in the network for 200 days and you have to decide. Hold, discount, liquidate, or pull it. The answer at day 200 is not the answer at day 280, and neither is the answer at month 13.
 
-## Why this matters in September specifically
+## The ladder, as a monthly cost per unit
 
-Aged surcharges stack on monthly storage, and monthly storage [steps up for Q4](/guides/fba-storage-four-layers/) from October. A unit crossing its 15-month birthday in November pays the new top tier on top of peak-season rates — the most expensive possible combination, billed monthly, for stock that by definition is not selling. The September discipline: pull the aged-inventory report, and force a decision on everything past 180 days while the exits are cheap — a removal or liquidation now costs less than three months of stacked winter rent on a unit that will still be there in February. The [returns and disposal math](/guides/returns-cost-and-badge/) prices the exit options.
+Take one standard-size unit of 0.5 cubic feet. Monthly cost to hold it, base rate plus surcharge, off-peak and in Q4:
+
+| Age | Surcharge (per cu ft / per-unit min) | Off-peak monthly cost | Q4 monthly cost |
+| --- | --- | --- | --- |
+| 0–180 days | none | $0.39 | $1.20 |
+| 181–210 | $0.50 | $0.64 | $1.45 |
+| 211–240 | $1.00 | $0.89 | $1.70 |
+| 241–270 | $1.50 | $1.14 | $1.95 |
+| 271–300 | $3.80 / $0.30 | $2.29 | $3.10 |
+| 301–330 | $4.00 / $0.30 | $2.39 | $3.20 |
+| 331–365 | $4.20 / $0.30 | $2.49 | $3.30 |
+| 12–15 months | $6.90 / $0.30 | $3.84 | $4.65 |
+| 15 months and over | $7.90 / $0.35 — new for 2026 | $4.34 | $5.15 |
+
+Base rates: $0.78 per cubic foot off-peak, $2.40 in October–December. Surcharge assessed on the 15th on units at that age on that date. A unit that reaches day 181 on the 14th pays the full month.
+
+<Figure value="$0.39 → $4.34" kind="cost" source="2026 US FBA storage and aged-inventory rate card; 0.5 cu ft standard unit; checked September 4, 2026">
+  Off-peak monthly cost of holding one 0.5-cubic-foot unit, new versus fifteen months old. The unit did not change. The bill did, eleven times over.
+</Figure>
+
+## The three exits, and what each costs
+
+**Removal order (return to you).** A per-unit removal fee by size tier and weight — roughly $1 to $2.50 for standard-size units in 2026, more for bulky — plus the time to process. Priced at the moment the order is placed. You get the unit back to re-list elsewhere, bundle, or sell through another channel.
+
+**Disposal order.** Cheaper than removal per unit — Amazon destroys or donates. You recover nothing but you stop the meter.
+
+**Liquidation (FBA Liquidations).** Amazon sells the unit to a liquidator and pays you a percentage of the average selling price — typically a small fraction. Storage stops when the liquidation order is accepted. The recovery is low; the point is speed and zero handling.
+
+**Sell-down.** A coupon, price cut or deal that moves the unit before the next 15th. It costs the discount plus the peak fulfillment fee if you are in the window, but the unit produces revenue rather than a fee.
+
+`Seller Central > Inventory > FBA Inventory > select units > Create removal order` (choose Return, Dispose or Liquidate). `Seller Central > Reports > Fulfillment > Inventory > Inventory Age` for the age buckets and the estimated surcharge per FNSKU.
+
+## The break-even at each band
+
+The rule that makes the decision mechanical:
+
+```
+hold another month if:  expected sale probability this month × contribution per sale
+                        > monthly holding cost at the NEXT band
+otherwise:              take the cheapest exit
+```
+
+Worked example, the same 0.5 cu ft unit, $20 price, $6 contribution before storage, off-peak:
+
+| Age today | Holding cost next month | Sale probability needed to justify holding |
+| --- | --- | --- |
+| Day 200 | $0.89 | 15% |
+| Day 260 | $2.29 | 38% |
+| Day 320 | $2.49 | 42% |
+| Day 350 | $3.84 | 64% |
+| Month 14 | $4.34 | 72% |
+
+Read the right-hand column against your actual sell-through. A SKU selling 10% of its remaining stock per month is worth holding at day 200 and is a liquidation candidate by day 260. In Q4, add roughly $0.81 to every holding cost and the thresholds move up by 15 to 20 points — which is why the decision belongs in September.
 
 <StockImage slug="aged-inventory-15-month-tier" theme="logistics" />
 
+## The four calendar decision points
+
+1. **Day 150.** The surcharge has not started. A 30-day sell-down still clears the unit before day 181 at $0 surcharge. This is the cheapest exit there is.
+2. **Day 240.** The next band is $3.80 per cubic foot — the ladder's biggest single step. A unit you cannot sell in 30 days at day 240 should be on a removal or liquidation order.
+3. **Day 330.** Two steps ahead: $4.20, then $6.90 at twelve months. If the sell-down has not worked in five months it is not going to work in the sixth.
+4. **Month 12.** The last cheap decision before the 15-month tier. Anything reaching this point has cost you roughly $12 per cubic foot in surcharge alone; holding to month 15 adds another $20.
+
+## What to do this week
+
+- **Run the Inventory Age report and add one column:** days until the next band. Sort by it.
+- **Give every unit past day 150 a named exit and a date.** "Watch it" is not an exit.
+- **Batch removal orders before September 30** if you are removing at all; processing times lengthen in Q4 and the base rate triples on October 1.
+- **Check the removal fee against liquidation recovery** for units you would not re-list anyway. Paying to get back stock you will not sell is the most common error.
+
+**Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) returns contribution per unit; the [dimensional weight calculator](/tools/dimensional-weight/) returns the cubic feet. Together they fill in the table above for your SKU.
+
 <MiniCalc variant="margin" />
 
+Which band is your oldest SKU in right now? If you can't answer without opening a report, open the report — the 15th is closer than it looks.
+
 <Faq items={[
-  { q: 'Are the $0.35/$7.90 figures official?', a: 'They are reported by seller-tool publishers covering the 2026 schedule; this guide labels them accordingly. The authoritative number is the FBA fee schedule and your own Fee Preview report in Seller Central — check the tier Amazon has assigned before acting.' },
-  { q: 'What is the cheapest way out for stock approaching the tier?', a: 'Usually a deliberate sell-down at reduced margin, then liquidation, then removal or disposal — in that order. The wrong answer is the default one: paying stacked Q4 storage plus the new tier to warehouse a decision you did not make.' },
+  { q: 'What changed in the aged-inventory surcharge for 2026?', a: 'The per-unit minimum for the 271–365-day bands rose to $0.30, and a new tier for inventory aged 15 months or more was added at $7.90 per cubic foot or $0.35 per unit, whichever is greater. The entry point at day 181 and the intermediate bands did not change.' },
+  { q: 'When is the surcharge assessed?', a: 'On the 15th of each month, on units that have reached the age band on that date, in addition to the monthly base storage fee.' },
+  { q: 'Is removal or liquidation cheaper?', a: 'Per unit, liquidation usually costs nothing and pays a small recovery; removal costs a per-unit fee and returns the stock to you. If you would re-sell the unit elsewhere at a margin above the removal fee, remove it; if not, liquidate or dispose.' },
+  { q: 'Does the surcharge stop when I place a removal order?', a: 'Storage and surcharge apply until the unit leaves the fulfillment center, so an order placed on the 10th that processes after the 15th is still charged that month. Place removal orders early in the month.' },
 ]} />
 
 <Sources items={[
-  { title: 'Amazon FBA fee changes in 2026 (new 15+ month aged-inventory tier; escalating surcharges at 181/271 days, 12-15 months, 15+ months)', publisher: 'Seller Labs', href: 'https://www.sellerlabs.com/knowledge-base/amazon-fba-fee-changes-in-2026-whats-new-how-to-adapt/', accessed: '2026-08-29' },
-  { title: 'Amazon 2026 FBA fees guide (reported tier rates: 12-15 months $0.30/unit or $6.90/ft³; 15+ months $0.35/unit or $7.90/ft³)', publisher: 'SellerEngine', href: 'https://sellerengine.com/amazon-2026-fba-fees/', accessed: '2026-08-29' },
+  { title: '2026 US Referral and FBA fee changes summary (aged inventory surcharge: $0.30 per-unit minimum for 271–365 days; new 15-month-plus tier)', publisher: 'Amazon Seller Central Help', href: 'https://sellercentral.amazon.com/help/hub/reference/external/G201411300', accessed: '2026-09-04' },
+  { title: 'Update to U.S. Referral and Fulfillment by Amazon fees for 2026 (removal, disposal and liquidation changes; faster removals processing)', publisher: 'Amazon Selling Partner Services', href: 'https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026', accessed: '2026-09-04' },
+  { title: 'Amazon FBA fees 2026: full breakdown (12–15 months $0.30/unit or $6.90/cu ft; 15+ months $0.35/unit or $7.90/cu ft)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-fba-fees/', accessed: '2026-09-04' },
+  { title: '2026 Amazon FBA fee changes: full rate card (monthly storage $0.78 / $2.40; removal and disposal fee restructuring)', publisher: 'Goat Consulting', href: 'https://www.goatconsulting.com/amazon-fulfillment/amazon-fba-fee-changes-for-2026', accessed: '2026-09-04' },
 ]} />

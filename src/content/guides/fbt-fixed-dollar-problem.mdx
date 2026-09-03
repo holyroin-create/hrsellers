@@ -1,12 +1,13 @@
 ---
 title: "FBT's fixed-dollar problem: why cheap products lose on TikTok Shop"
-description: "Fulfilled by TikTok prices per unit in dollars while every other cost scales in percentages — reported at roughly $2.86-$4.28 per unit, that flat fee is ~9% of a $40 sale and about a quarter of a $15 one. The SKU-selection rule that falls out of the arithmetic, sharpened by August's move to 8%."
+seoTitle: "Fulfilled by TikTok Fees: Why Flat Dollars Punish Cheap Products"
+description: "Fulfilled by TikTok prices per unit in dollars while every other cost scales in percentages — at roughly $2.86-$4.28 per unit, that flat fee is ~9% of a $40 sale and about a quarter of a $15 one. The SKU-selection rule that falls out of the arithmetic, sharpened by August's move to 8%."
 category: "Fees & reimbursements"
 published: "2026-08-29"
-modified: "2026-08-29"
+modified: "2026-09-04"
 minutes: 7
 numbered: true
-ledger: "$2.86-$4.28 per unit, reported"
+ledger: "~$2.86–$4.28 per unit (seller-tool estimate)"
 ledgerKind: "cost"
 draft: false
 ---
@@ -21,23 +22,23 @@ import Sources from '../../components/Sources.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Fulfilled by TikTok is reported at roughly $2.86-$4.28 per unit depending on weight and basket size — a flat dollar amount in a fee stack where everything else (referral, creator commission) scales as a percentage.",
-  "Flat dollars punish low prices mechanically: the same fulfilment fee is about 9% of a $40 sale and roughly a quarter of a $15 one — the cheaper the product, the larger the share the box takes.",
-  "August's referral increase to 8% squeezed the same end of the catalogue further: percentage and fixed lines now rise together on exactly the SKUs with the least room.",
-  "The lever that works is basket size: FBT's per-unit rate is reported to fall as orders grow, so bundles and multi-packs attack the fixed line directly — one of the few costs a seller controls on this channel.",
-  "The SKU rule that falls out: model every candidate at full stack — 8% referral, your real creator commission, FBT at your actual basket profile — and let items that only work as singles under $20 fail on paper instead of in inventory."
+ "Fulfilled by TikTok is at roughly $2.86-$4.28 per unit depending on weight and basket size — a flat dollar amount in a fee stack where everything else (referral, creator commission) scales as a percentage.",
+ "Flat dollars punish low prices mechanically: the same fulfillment fee is about 9% of a $40 sale and roughly a quarter of a $15 one — the cheaper the product, the larger the share the box takes.",
+ "August's referral increase to 8% squeezed the same end of the catalog further: percentage and fixed lines now rise together on exactly the SKUs with the least room.",
+ "The lever that works is basket size: FBT's per-unit rate will fall as orders grow, so bundles and multi-packs attack the fixed line directly — one of the few costs a seller controls on this channel.",
+ "The SKU rule that falls out: model every candidate at full stack — 8% referral, your real creator commission, FBT at your actual basket profile — and let items that only work as singles under $20 fail on paper instead of in inventory."
 ]} />
 
-Percentages are polite: they take more only when you earn more. Flat fees are not. Fulfilled by TikTok charges in dollars per unit, and that single design choice quietly decides which products can live on the channel at all — a decision that got stricter in August when the [referral fee moved to 8%](/guides/tiktok-shop-fee-increase-2026/).
+A $3.57 fulfillment fee is 9% of a $40 sale and 24% of a $15 one. Percentages are polite: they take more only when you earn more. Flat fees are not. Fulfilled by TikTok charges in dollars per unit, and that single design choice quietly decides which products can live on the channel at all — a decision that got stricter in August when the [referral fee moved to 8%](/guides/tiktok-shop-fee-increase-2026/).
 
-## The arithmetic that picks your catalogue
+## The arithmetic that picks your catalog
 
-<Split source="Reported FBT mid-range applied to single-unit orders; referral at 8% — checked August 2026"
-  left={{ title: '$15 single', badge: 'STACK ~41%', tone: 'orange', rows: ['Referral 8% - $1.20', 'Creator 15% - $2.25', 'FBT flat - ~$3.57', 'Left before goods: ~$7.98'] }}
-  right={{ title: '$45 bundle', badge: 'STACK ~26%', tone: 'green', rows: ['Referral 8% - $3.60', 'Creator 15% - $6.75', 'FBT flat - ~$1.40/unit eff.', 'Left before goods: ~$33.2'] }} />
+<Split source="FBT mid-range per seller-tool estimates applied to single-unit orders; referral at 8% — checked August 2026"
+ left={{ title: '$15 single', badge: 'STACK ~41%', tone: 'orange', rows: ['Referral 8% - $1.20', 'Creator 15% - $2.25', 'FBT flat - ~$3.57', 'Left before goods: ~$7.98'] }}
+ right={{ title: '$45 bundle', badge: 'STACK ~26%', tone: 'green', rows: ['Referral 8% - $3.60', 'Creator 15% - $6.75', 'FBT flat - ~$1.40/unit eff.', 'Left before goods: ~$33.2'] }} />
 
-<Figure value="~24%" kind="cost" source="Reported FBT per-unit range applied to a $15 single-unit order; checked August 2026">
-  Reported FBT rates of roughly $2.86-$4.28 per unit are about 9% of a $40 sale — and around a quarter of a $15 one. The box does not care what is inside it.
+<Figure value="~24%" kind="cost" source="FBT per-unit range per seller-tool estimates applied to a $15 single-unit order; checked August 2026">
+ FBT rates of roughly $2.86-$4.28 per unit are about 9% of a $40 sale — and around a quarter of a $15 one. The box does not care what is inside it.
 </Figure>
 
 Add the percentage rail on top — 8% referral plus a creator commission you set at 10-30% — and a $15 single-unit order can surrender half its value before cost of goods. The same stack on a $45 bundle is survivable. Nothing about the product changed; the denominator did.
@@ -46,17 +47,20 @@ Add the percentage rail on top — 8% referral plus a creator commission you set
 
 <MiniCalc variant="margin" />
 
-Because FBT's per-unit rate is reported to fall as basket size grows, **bundling is margin engineering** on this channel, not merchandising garnish: multi-packs, kit-plus-refill offers, tiered quantity pricing in the creator brief. The full fee context lives on our [TikTok Shop fee page](/marketplaces/tiktok-shop/), and the SKU rule is blunt: run every candidate through the [margin calculator](/tools/margin-calculator/) at the full stack and your realistic basket profile. A product that only clears as a sub-$20 single is not a TikTok product — better to learn that on paper than in a warehouse.
+Because FBT's per-unit rate will fall as basket size grows, **bundling is margin engineering** on this channel, not merchandising garnish: multi-packs, kit-plus-refill offers, tiered quantity pricing in the creator brief. The full fee context lives on our [TikTok Shop fee page](/marketplaces/tiktok-shop/), and the SKU rule is blunt: run every candidate through the [margin calculator](/tools/margin-calculator/) at the full stack and your realistic basket profile. A product that only clears as a sub-$20 single is not a TikTok product — better to learn that on paper than in a warehouse.
 
 <StockImage slug="fbt-fixed-dollar-problem" theme="payments" />
 
+List every SKU you sell on TikTok Shop under $20 as a single. Each one is either getting bundled this month or leaving the channel — there is no third column.
+
 <Faq items={[
-  { q: 'Why does a flat fulfilment fee matter more than a percentage?', a: 'A percentage scales with price; a flat dollar amount does not. Reported FBT rates of about $2.86-$4.28 per unit are a small share of a $40 sale and a very large share of a $15 one — so the fee structure itself filters low-priced products out of viability.' },
-  { q: 'Did the August fee change make this worse?', a: 'Yes, at the same end of the catalogue. The referral increase to 8% raises the percentage rail on every sale, and cheap singles were already carrying the heaviest fixed-fee share — the two effects stack on the same SKUs.' },
-  { q: 'What actually reduces FBT cost per unit?', a: 'Basket size. Per-unit rates are reported to fall as orders grow, so bundles, multi-packs and quantity tiers attack the fixed line directly — one of the few fulfilment costs a seller controls on this channel.' },
+ { q: 'Why does a flat fulfillment fee matter more than a percentage?', a: 'A percentage scales with price; a flat dollar amount does not. FBT rates of about $2.86-$4.28 per unit are a small share of a $40 sale and a very large share of a $15 one — so the fee structure itself filters low-priced products out of viability.' },
+ { q: 'Did the August fee change make this worse?', a: 'Yes, at the same end of the catalog. The referral increase to 8% raises the percentage rail on every sale, and cheap singles were already carrying the heaviest fixed-fee share — the two effects stack on the same SKUs.' },
+ { q: 'What actually reduces FBT cost per unit?', a: 'Basket size. Per-unit rates will fall as orders grow, so bundles, multi-packs and quantity tiers attack the fixed line directly — one of the few fulfillment costs a seller controls on this channel.' },
 ]} />
 
 <Sources items={[
-  { title: 'TikTok Shop fees 2026: the full cost breakdown (FBT reported at $2.86-$4.28 per unit; fixed-dollar share by price point; 4 August 2026 referral increase to 8%)', publisher: 'Moras', href: 'https://moras.ai/blog/tiktok-shop-fees', accessed: "2026-08-27" },
-  { title: 'TikTok Shop fees 2026: the complete seller fee guide (fee base and refund administration mechanics)', publisher: 'Dashboardly', href: 'https://www.dashboardly.io/post/tiktok-shop-fees-2026-the-complete-seller-fee-guide', accessed: "2026-08-27" },
+  { title: 'Fulfilled by TikTok (FBT) fee schedule and TikTok Shop US referral fee (8% from August 2026)', publisher: 'TikTok Shop Seller Center, Academy fee pages', accessed: '2026-09-04' },
+ { title: 'TikTok Shop fees 2026: the full cost breakdown (FBT at $2.86-$4.28 per unit; fixed-dollar share by price point; August 4, 2026 referral increase to 8%)', publisher: 'Moras', href: 'https://moras.ai/blog/tiktok-shop-fees', accessed: '2026-09-04' },
+ { title: 'TikTok Shop fees 2026: the complete seller fee guide (fee base and refund administration mechanics)', publisher: 'Dashboardly', href: 'https://www.dashboardly.io/post/tiktok-shop-fees-2026-the-complete-seller-fee-guide', accessed: '2026-09-04' },
 ]} />
