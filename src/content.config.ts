@@ -5,6 +5,7 @@ const guides = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/guides' }),
   schema: z.object({
     title: z.string(),
+    seoTitle: z.string().max(70).optional(),
     description: z.string(),
     category: z.enum(['Fees & reimbursements', 'Shipping & logistics', 'Getting started', 'Scaling', 'Software']),
     published: z.string(),

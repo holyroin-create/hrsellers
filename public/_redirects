@@ -13,6 +13,10 @@
 /guides/scaling/second-sales-channel/                     /marketplaces/                           301
 /guides/shipping-logistics/shipment-discrepancy-claims/   /guides/fba-reimbursement-sourcing-cost/ 301
 
+# --- retired 2026-09 audit: thin news duplicates folded into full guides ---
+/guides/aged-inventory-15-month-tier/     /guides/fba-storage-four-layers/       301
+/guides/peak-surcharge-2026-schedule/     /guides/holiday-peak-fulfilment-fee/   301
+
 # --- retired category index pages ----------------------------------------
 /guides/account-management/    /guides/   301
 /guides/fees-reimbursements/   /guides/   301

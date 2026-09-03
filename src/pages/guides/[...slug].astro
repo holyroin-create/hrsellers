@@ -32,7 +32,7 @@ const toc = headings.filter(h => h.depth === 2).map(h => {
 });
 const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
-<Base title={d.title} description={d.description} type="Article" published={d.published} modified={d.modified} ogImage={`/og/g-${entry.id}.png`}>
+<Base title={d.title} seoTitle={d.seoTitle} description={d.description} type="Article" published={d.published} modified={d.modified} ogImage={`/og/g-${entry.id}.png`}>
 <div class="wrap">
   <Breadcrumbs trail={[{ label: 'Guides', href: '/guides/' }, { label: d.category, href: '/guides/' }]} />
 

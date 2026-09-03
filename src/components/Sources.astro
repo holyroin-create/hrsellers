@@ -1,13 +1,50 @@
 ---
+/**
+ * Sources block.
+ *
+ * Link hygiene (AdSense / E-E-A-T):
+ *  - Primary authorities (Amazon's own documentation, US government, standards
+ *    bodies) are linked DOFOLLOW. Nofollowing the regulator you are citing tells
+ *    crawlers you do not vouch for your own evidence.
+ *  - Everything else (vendor blogs, agencies, forums) stays nofollow.
+ *  - Set `sponsored: true` on an item to emit rel="sponsored" (affiliate/SaaS).
+ *  - `kind` is rendered so readers can tell an official rate card from a blog.
+ */
 const { items = [] } = Astro.props;
+
+const PRIMARY = [
+  'amazon.com', 'aboutamazon.com', 'aboutamazon.eu', 'amazon.co.uk', 'advertising.amazon.com',
+  'developer-docs.amazon.com', 'sell.amazon.com',
+  'cbp.gov', 'usitc.gov', 'uspto.gov', 'cpsc.gov', 'fda.gov', 'ftc.gov', 'epa.gov', 'irs.gov',
+  'federalregister.gov', 'ecfr.gov', 'govinfo.gov', 'trade.gov', 'census.gov', 'whitehouse.gov',
+  'walmart.com', 'ebay.com', 'etsy.com', 'tiktok.com', 'shopify.com', 'shopify.dev',
+  'gs1.org', 'gs1us.org', 'iccwbo.org', 'developers.google.com', 'gov.uk', 'europa.eu',
+];
+
+function host(href: string) {
+  try { return new URL(href).hostname.replace(/^www\./, ''); } catch { return ''; }
+}
+function isPrimary(href: string) {
+  const h = host(href);
+  return PRIMARY.some(d => h === d || h.endsWith('.' + d));
+}
+function rel(s: any) {
+  if (s.sponsored) return 'sponsored noopener noreferrer';
+  return isPrimary(s.href) ? 'noopener noreferrer' : 'nofollow noopener noreferrer';
+}
+function label(s: any) {
+  if (s.kind) return s.kind;
+  return isPrimary(s.href) ? 'Primary source' : 'Secondary';
+}
 ---
 <section class="sources" aria-labelledby="src-h">
   <h2 id="src-h">Sources</h2>
   <ol>
     {items.map((s: any) => (
       <li>
-        {s.href ? <a href={s.href} rel="nofollow noopener" target="_blank">{s.title}</a> : s.title}
+        {s.href ? <a href={s.href} rel={rel(s)} target="_blank">{s.title}</a> : s.title}
         {s.publisher && <>, {s.publisher}</>}
+        {s.href && <> <span class="acc">{label(s)}</span></>}
         {s.accessed && <> <span class="acc">accessed {s.accessed}</span></>}
       </li>
     ))}

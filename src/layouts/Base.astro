@@ -6,6 +6,8 @@ import { SITE, AUTHOR } from '../config';
 
 const {
   title,
+  /* Short search title (55–60 chars). Falls back to the editorial headline. */
+  seoTitle,
   description = SITE.description,
   published,
   modified,
@@ -18,7 +20,8 @@ const {
 
 const canonical = new URL(Astro.url.pathname, SITE.domain).href;
 const ogImageAbs = new URL(ogImage, SITE.domain).href;
-const fullTitle = title === SITE.name ? title : `${title} — ${SITE.name}`;
+const baseTitle = seoTitle ?? title;
+const fullTitle = baseTitle === SITE.name ? baseTitle : `${baseTitle} — ${SITE.name}`;
 
 const person = {
   '@type': 'Person',
@@ -37,8 +40,9 @@ const person = {
 const schema = type === 'Article'
   ? {
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'TechArticle',
       headline: title,
+      alternativeHeadline: seoTitle,
       description,
       author: person,
       publisher: { '@type': 'Organization', name: SITE.publisher, url: SITE.domain, email: AUTHOR.email },

@@ -1,12 +1,13 @@
 ---
 title: "Avoiding the inbound placement fee costs you freight. Here is where the two lines cross."
-description: "Send a shipment to one fulfilment centre and Amazon charges a placement fee. Send it to five or more and the fee can reach zero — but you are now paying to ship to five destinations. Almost no coverage models both sides."
+seoTitle: "FBA Inbound Placement Fee 2026: When to Pay It"
+description: "Amazon-optimised splits carry no placement fee but need five or more cartons per SKU and five freight legs. Minimal splits cost a per-unit fee that rose ~$0.05 on 15 January 2026. The crossover formula, the 2026 structure, and the Seller Central path."
 category: "Shipping & logistics"
 published: "2026-08-08"
-modified: "2026-08-08"
-minutes: 8
+modified: "2026-09-04"
+minutes: 9
 numbered: true
-ledger: "Placement fee: up to ~$1.58/unit, or $0"
+ledger: "Optimised split: $0/unit. Minimal split: per-unit fee by size, weight and region"
 ledgerKind: "cost"
 draft: false
 ---
@@ -15,69 +16,85 @@ import Takeaways from '../../components/Takeaways.astro';
 import Figure from '../../components/Figure.astro';
 import Faq from '../../components/Faq.astro';
 import Sources from '../../components/Sources.astro';
-
 import MiniCalc from '../../components/MiniCalc.astro';
-
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "The inbound placement service fee is charged per unit and covers Amazon distributing your inventory across its network on your behalf. Sending to fewer destinations costs more.",
-  "Reported rates run from around $0.23 to $1.58 per unit for minimal splits. Accepting Amazon-optimised splits across five or more destinations is reported to take the fee to zero.",
-  "Zero is not free. Five destinations means five freight legs, five sets of handling, and inventory divided into smaller lots that are harder to plan against.",
-  "The crossover depends on your freight cost per destination and your units per shipment — both of which you know and no published rate card does.",
-  "Advice to 'always take the optimised split' is a shipping recommendation dressed as a fee recommendation, and it is wrong for low-volume and heavy shipments.",
+  "The inbound placement service fee is a per-unit charge for letting Amazon redistribute inventory you sent to fewer locations than it wanted. Amazon-optimised shipment splits carry no fee; minimal splits carry the full fee.",
+  "Since 20 February 2025 the partial-split option no longer exists for standard-size products — it is optimised or minimal. Partial splits remain only for bulky tiers.",
+  "On 15 January 2026 minimal-split fees for standard-size rose by an average of $0.05 per unit, large standard items between 3 and 20 lb were re-cut into five weight bands, and the old large-bulky tier was split into small bulky and large bulky. Late, missing or misrouted shipments now take a single inbound defect fee averaging $0.60 per unit.",
+  "Optimised splits require at least five identical cartons (or pallets) of each SKU. Below that you are not offered the zero-fee option at all, whatever the article you read said.",
+  "Zero is not free: five destinations means five freight legs. The crossover is a formula of your freight rates and your units per shipment, and only your carrier quote can fill it in.",
 ]} />
 
-This is the fee where general advice is least useful, because the right answer depends on a number that varies more between sellers than the fee itself does: what it costs you to move a pallet.
+This is the fee where general advice is least useful, because the right answer depends on a number that varies more between sellers than the fee itself does: what it costs you to move a pallet to five places instead of one.
 
-## What you are actually choosing between
+## What you are choosing between
 
-When you create an inbound shipment, Amazon offers placement options and shows a fee estimate against each. The structure is straightforward once stated plainly:
+When you create a shipment plan, Amazon shows placement options with a fee estimate against each. Since February 2025 there are two for standard-size inventory:
 
-- **Minimal splits.** You ship to the fewest destinations. Amazon redistributes across its network. You pay a per-unit placement fee.
-- **Amazon-optimised splits.** You ship to more destinations, chosen by Amazon. The placement fee falls, and at five or more destinations it is reported to reach zero.
+- **Amazon-optimised shipment splits.** You ship to the destinations Amazon chooses — typically four or five. Placement fee: **$0**. Condition: at least five cartons or pallets of each SKU in the plan, each carton identical in contents and quantity. If a SKU has fewer than five cartons, this option is not offered for it.
+- **Minimal shipment splits.** You ship to one location (occasionally two). Amazon redistributes across its network and charges a per-unit placement fee that depends on size tier, weight band and the inbound region.
 
-Amazon is charging you for work you have declined to do. The fee is not arbitrary — moving inventory from one receiving point to the right regional centres is genuinely expensive — but it is optional in the sense that you can do that work yourself, through your carrier, instead.
+Bulky tiers keep a third option, **partial splits** (three or four destinations) at a reduced fee.
 
-<Figure value="$0.23–$1.58" kind="cost" source="2026 FBA rate breakdown, Nova Analytics, accessed 8 August 2026">
-  The reported per-unit range for inbound placement fees on minimal splits. The spread is wide because the fee varies by size tier and by how far your inventory has to travel.
+Amazon is charging you for work you declined to do. The fee is not arbitrary — moving inventory from one inbound point to the right regional centres is genuinely expensive — but it is optional, because you can do that work yourself through your carrier.
+
+`Seller Central > Inventory > Shipments > Send to Amazon > Step 2 (Confirm shipping) > Shipment placement options` — the estimated fee per unit is shown against each option before you commit. That screen is the rate card for your shipment; nothing published elsewhere, including here, is.
+
+## The 2026 structure
+
+Amazon's 15 January 2026 fee update changed the shape of the minimal-split card rather than the principle:
+
+| Change | What it means for you |
+| --- | --- |
+| Standard-size minimal-split fees up ~$0.05/unit average | Small increase; the ranking of options does not change |
+| Large standard 3–20 lb re-cut into five weight bands | Heavier standard items now pay disproportionately more on a minimal split |
+| Large bulky split into small bulky and large bulky | Check which tier your bulky SKUs fell into; the fee gap between them is wide |
+| Single inbound defect fee, ~$0.60/unit average | Late (abandoned), missing or misrouted shipments no longer pay placement *and* defect fees — one charge |
+| FBA New Selection waiver | Placement fees waived on up to 100 units per new parent ASIN enrolled in the programme; confirm current terms on the programme page |
+
+Published readings of the 2026 card (secondary sources, below) put small standard minimal-split fees in the low tens of cents per unit — roughly $0.20 to $0.35 — and large standard from about $0.30 rising to around $1.90 for the heaviest new bands, with bulky tiers above $2. The exact figure for your SKU is on the Send to Amazon screen.
+
+<Figure value="$0 vs per-unit" kind="cost" source="Amazon Seller Central, inbound placement service fee page; 2026 US fee changes summary. Checked 4 September 2026.">
+  The optimised split removes the fee entirely. Whether it removes cost depends on your freight to four or five destinations.
 </Figure>
 
 ## The arithmetic nobody publishes
 
 Every article recommending the optimised split stops at the fee. The complete comparison has two sides.
 
-**Cost of the minimal split**
-
 ```
-placement fee per unit × units in shipment
-+ freight to one destination
-```
-
-**Cost of the optimised split**
-
-```
-freight to each destination, summed
-+ any additional handling, pallet or LTL minimums per destination
+minimal split cost   = (placement fee per unit × units) + freight to one destination
+optimised split cost = freight to each destination, summed
+                       + per-destination minimums, pallet charges, LTL accessorials
 ```
 
-The placement fee scales with units. Freight scales with destinations and weight. Those are different curves, and where they cross is a property of your shipment, not of the fee schedule.
+Set them equal and solve for units, and you have your crossover:
+
+```
+crossover units = (freight to N destinations − freight to one destination)
+                  ÷ placement fee per unit
+```
+
+Above the crossover, the optimised split is cheaper. Below it, pay the fee and ship to one place.
 
 ### Worked comparison
 
-Two shipments, both 1,000 units, illustrative figures used to show the shape:
+Two shipments, both 1,000 units, illustrative freight figures used to show the shape:
 
 | | Small standard, 0.4 lb | Large standard, 6 lb |
 | --- | --- | --- |
-| Placement fee per unit | $0.30 | $0.95 |
+| Placement fee per unit (minimal) | $0.30 | $0.95 |
 | Placement fee, 1,000 units | $300 | $950 |
 | Freight to one destination | $420 | $1,150 |
 | **Minimal split total** | **$720** | **$2,100** |
 | Freight to five destinations | $1,050 | $2,600 |
 | **Optimised split total** | **$1,050** | **$2,600** |
-| **Cheaper option** | Minimal split | Minimal split |
+| Crossover units | (1,050 − 420) ÷ 0.30 = **2,100** | (2,600 − 1,150) ÷ 0.95 = **1,526** |
+| **Cheaper at 1,000 units** | Minimal split | Minimal split |
 
-Now the same shipment at 5,000 units:
+The same shipments at 5,000 units:
 
 | | Small standard, 0.4 lb | Large standard, 6 lb |
 | --- | --- | --- |
@@ -86,51 +103,48 @@ Now the same shipment at 5,000 units:
 | **Minimal split total** | **$2,480** | **$8,150** |
 | Freight to five destinations | $1,750 | $5,900 |
 | **Optimised split total** | **$1,750** | **$5,900** |
-| **Cheaper option** | Optimised split | Optimised split |
+| **Cheaper at 5,000 units** | Optimised split | Optimised split |
 
-The pattern holds generally: **the optimised split wins as volume per shipment rises**, because the placement fee is per unit while freight is largely per destination and per weight. Below the crossover, taking the fee and shipping to one place is the cheaper answer.
+The pattern holds generally: **the optimised split wins as units per shipment rise**, because the placement fee is per unit while freight is largely per destination and per weight. The 2026 re-banding of heavy standard items pushes their crossover lower — a 6 lb item now reaches the optimised-wins region sooner than it did in 2025.
 
-Note what this means for a small seller. The advice most commonly given — take the optimised split, the fee goes to zero — is advice for someone shipping thousands of units at a time. At 500 units it can be straightforwardly wrong.
+Note what this means for a small seller. "Take the optimised split, the fee goes to zero" is advice for someone shipping thousands of units at a time. At 500 units — or with fewer than five cartons per SKU, where the option is not even offered — it can be straightforwardly wrong.
 
 <StockImage slug="inbound-placement-split-arithmetic" theme="logistics" />
 
 ## What the arithmetic leaves out
 
-Three things are real costs that do not appear in either column.
+**Working capital in transit.** Five consignments across five lanes take longer to be fully received than one. Inventory in transit is inventory you cannot sell.
 
-**Working capital in transit.** Five smaller consignments across five lanes take longer to be fully received than one consolidated shipment. Inventory in transit is inventory you cannot sell and cash you cannot recover.
+**Planning granularity.** 1,000 units split five ways is 200 per region. Demand is never evenly distributed; Amazon fulfils across regions at its own cost, so this is a receiving-time problem rather than a fee problem — but receiving time is exactly what the [low-inventory-level fee](/guides/low-inventory-level-fee/) punishes.
 
-**Planning granularity.** Splitting 1,000 units five ways gives you 200 units in each region. If demand is not evenly distributed — and it never is — you will have surplus in one region and a shortfall in another, and Amazon will fulfil across regions at its own cost, not yours. But the SKU-level days of supply that drives the low-inventory-level fee does not care where your stock is.
+**Discrepancy risk.** More consignments means more receiving events and more [shipment discrepancy claims](/guides/shipment-discrepancy-claims/) to file.
 
-**Discrepancy risk.** More consignments means more receiving events, and each one is an opportunity for a shipment discrepancy. Every additional destination adds reconciliation work.
-
-**Carrier rate structure.** This is where a 3PL relationship changes the answer entirely. If your negotiated rate has a low per-shipment minimum, five destinations cost close to five times a single leg. If you can consolidate onto LTL with favourable multi-stop pricing, the optimised split gets much cheaper than the table above suggests. Nobody publishing a rate card knows your rate card.
+**Carrier rate structure.** If your negotiated rate has a low per-shipment minimum, five destinations cost close to five single legs. If you can consolidate onto LTL with multi-stop pricing, the optimised split gets much cheaper than the tables above suggest. Amazon's partnered carrier programme changes both sides of the comparison at once and belongs in the model as its own column.
 
 ## What to do about it
 
-**Calculate it once per shipment profile, not once per shipment.** You do not need to redo this for every purchase order. Work out the crossover volume for each of your two or three typical shipment shapes — light small standard, heavy standard, oversize — and then apply the rule.
+- **Pull ninety days of actual placement charges** before any structural change: `Seller Central > Reports > Payments > Transaction View`, filter Service fee, search "placement". Sellers frequently find the fee is either far larger than assumed or immaterial.
+- **Calculate the crossover once per shipment profile**, not per shipment. Two or three typical shapes — light standard, heavy standard, bulky — and a rule for each.
+- **Ask your carrier for a five-destination quote** before assuming (what to ask for is in [choosing a freight forwarder](/guides/choosing-a-freight-forwarder/)). The optimised-split case rests entirely on that number.
+- **Fix carton counts at the packing stage.** If a SKU habitually ships in three or four cartons, either consolidate it into fewer, larger POs so it clears five, or accept the minimal-split fee as the cost of small lots.
+- **Check the bulky tier after the January 2026 split.** Small bulky and large bulky sit on different fee lines; a packaging change that moves a SKU between them changes the answer.
 
-**Pull ninety days of actual placement charges.** Before making any structural change, find out what this fee has actually cost you. Sellers frequently discover it is either far larger than assumed or immaterial, and the two situations call for different responses.
-
-**Ask your carrier for a five-destination quote before assuming.** The optimised-split case rests entirely on what your freight actually costs to five points. That is a quote request, not an estimate.
-
-**Treat partnered carrier programmes as a third column.** Using Amazon's partnered carrier changes both sides of the comparison at once — freight rate and placement treatment. It belongs in the model as its own option, not as a footnote to one of the other two.
-
-**Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes your packed dimensions and weight and returns billable weight and cubic feet — the two figures that drive freight and storage. Nothing is stored and nothing leaves your browser.
+**Check it on your own package.** The [dimensional weight calculator](/tools/dimensional-weight/) takes packed dimensions and weight and returns billable weight and cubic feet — the figures that drive both freight and placement tier. Nothing is stored and nothing leaves your browser.
 
 <MiniCalc variant="margin" />
 
 <Faq items={[
-  { q: "Does the placement fee go to zero at five destinations?", a: "That is what current reporting says for Amazon-optimised splits. Confirm the current threshold and rates in Seller Central when you create the shipment — the fee estimate is shown against each option at that point." },
-  { q: "Is the optimised split always cheaper?", a: "No. It wins as units per shipment rise, because the placement fee is per unit and freight is largely per destination. At low volumes, paying the fee and shipping to one destination is often cheaper." },
-  { q: "Did inbound placement rates change for 2026?", a: "Sources conflict. One reports the structure unchanged from 2025 while base fulfilment fees rose; another reports minimal-split placement fees up about $0.05 on average for standard-size items. Check the estimate shown in your own shipment workflow." },
-  { q: "Does splitting affect the low-inventory-level fee?", a: "The low-inventory measure is based on days of supply for the SKU, not on where the units sit. Splitting does not by itself change that exposure, but the longer receiving time on multi-destination shipments can." },
+  { q: "Does the placement fee go to zero with Amazon-optimised splits?", a: "Yes. The optimised split carries no inbound placement service fee. It requires at least five identical cartons or pallets per SKU in the plan, and it means shipping to the four or five destinations Amazon selects." },
+  { q: "Is the optimised split always cheaper?", a: "No. It wins as units per shipment rise, because the placement fee is per unit and freight is largely per destination. Below the crossover — (freight to N destinations minus freight to one) divided by the per-unit fee — paying the fee and shipping to one place is cheaper." },
+  { q: "What changed for inbound placement in 2026?", a: "From 15 January 2026 minimal-split fees for standard-size rose by an average of $0.05 per unit, large standard items of 3–20 lb were re-banded into five weight tiers, large bulky was split into small and large bulky, and late, missing or misrouted shipments now pay a single inbound defect fee averaging $0.60 per unit." },
+  { q: "Can I still choose a partial split?", a: "Only for bulky size tiers. Amazon removed the partial-split option for standard-size products on 20 February 2025." },
+  { q: "Does splitting affect the low-inventory-level fee?", a: "Not directly — that fee uses days of supply for the FNSKU regardless of where units sit. But multi-destination shipments take longer to be fully received, and unreceived units do not count as available inventory." },
 ]} />
 
 <Sources items={[
-  { title: 'Amazon FBA fee changes 2026: every new rate explained (inbound placement $0.23–$1.58 per unit)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-08-08' },
-  { title: 'Amazon 2026 FBA fee changes (optimised splits to five or more destinations)', publisher: 'eFulfillment Service', href: 'https://www.efulfillmentservice.com/2026/04/amazon-2026-fba-fee-changes-what-sellers-need-to-know/', accessed: '2026-08-08' },
-  { title: 'Amazon inbound placement FBA fees explained in 2026 (structure unchanged from 2025)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-inbound-placement-fees/', accessed: '2026-08-08' },
-  { title: 'Amazon 2026 FBA fees: what sellers need to know (minimal-split fees up ~$0.05)', publisher: 'SellerEngine', href: 'https://sellerengine.com/amazon-2026-fba-fees/', accessed: '2026-08-08' },
-  { title: 'Amazon 2026 fees breakdown: FBA, referral, inbound placement', publisher: 'Brandwoven', href: 'https://gobrandwoven.com/resources/articles/amazon-2026-fees-breakdown-fba-referral-inbound-placement/', accessed: '2026-08-08' },
+  { title: 'Update to U.S. Referral and Fulfillment by Amazon fees for 2026 (lower fees available by selecting lower-cost inbound shipment options; effective 15 January 2026)', publisher: 'Amazon Selling Partner Services', href: 'https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026', accessed: '2026-09-04' },
+  { title: '2026 US Referral and FBA fee changes summary (inbound placement: standard-size minimal split +$0.05 average; consolidated inbound defect fee)', publisher: 'Amazon Seller Central Help', href: 'https://sellercentral.amazon.com/help/hub/reference/external/G201411300', accessed: '2026-09-04' },
+  { title: 'Amazon FBA fees 2026: new rates and cost guide (partial splits retired for standard-size 20 February 2025; five identical cartons requirement; $0.60 inbound defect fee; New Selection 100-unit waiver)', publisher: 'SellerApp', href: 'https://www.sellerapp.com/blog/amazon-fba-fees-calculator-guide/', accessed: '2026-09-04' },
+  { title: "Amazon's inbound placement fee: why it exists and how to control it (2026 minimal-split ranges; 3–20 lb re-banding; five-carton eligibility)", publisher: 'PrepMeisters', href: 'https://prepmeisters.com/blog/amazon-inbound-placement-fee', accessed: '2026-09-04' },
+  { title: 'Amazon inbound placement FBA fees explained in 2026 (small bulky / large bulky split; weight-band restructuring)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-inbound-placement-fees/', accessed: '2026-09-04' },
 ]} />
