@@ -1,9 +1,10 @@
 ---
 title: "The ten-digit number you are legally responsible for, even when your broker picks it"
+seoTitle: "HTS Codes: Reasonable Care, 19 U.S.C. 1592 Penalties, and Refunds"
 description: "Every product you import needs an HTS code, and it sets your duty rate. Under US law the importer of record carries the duty of reasonable care — and that duty cannot be delegated to the broker who chose the code."
 category: "Getting started"
 published: "2026-08-08"
-modified: "2026-08-08"
+modified: "2026-09-05"
 minutes: 8
 numbered: true
 ledger: "Liability sits with the importer, not the broker"
@@ -21,14 +22,14 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "An HTS code is the ten-digit number that classifies a product for US import. It determines the duty rate and eligibility for preference programmes.",
-  "The importer of record is legally responsible for the classification. Reporting on the statute is explicit that the duty of reasonable care cannot be delegated — if your broker classifies wrongly, you are still liable.",
-  "Penalties for negligent misclassification are described in reporting as reaching the lesser of the merchandise's domestic value or four times the duties owed, with higher exposure for gross negligence and fraud.",
-  "Overpayment is the more common error and it is recoverable, but only through a Post Summary Correction or protest within a limited window after liquidation.",
-  "The rule that catches sellers is that you classify the product as imported, not as the code you would prefer to pay.",
+ "An HTS code is the ten-digit number that classifies a product for US import. It determines the duty rate and eligibility for preference programs.",
+ "The importer of record is legally responsible for the classification. the duty of reasonable care cannot be delegated — if your broker classifies wrongly, you are still liable.",
+ "Penalties under 19 U.S.C. § 1592 scale with culpability: negligence up to the lesser of the domestic value or two times the duties lost; gross negligence up to the lesser of the domestic value or four times; fraud up to the full domestic value.",
+ "Overpayment is the more common error and it is recoverable, but only through a Post Summary Correction or protest within a limited window after liquidation.",
+ "The rule that catches sellers is that you classify the product as imported, not as the code you would prefer to pay.",
 ]} />
 
-Under de minimis, most small sellers never confronted this. Parcels under $800 cleared without a classification decision that anyone had to defend. That protection is gone, and with it the last reason a seller could avoid learning what an HTS code is.
+The ten-digit code is your legal statement, not your broker's, and 19 U.S.C. § 1484 says so. Under de minimis, most small sellers never confronted this. Parcels under $800 cleared without a classification decision that anyone had to defend. That protection is gone, and with it the last reason a seller could avoid learning what an HTS code is.
 
 ## What the number actually is
 
@@ -36,8 +37,8 @@ An HTS code is ten digits. The first six are the international Harmonized System
 
 It is not a label. It is a legal determination about what your product *is*, made under a body of rules, and it is checkable after the fact.
 
-<Figure value="Non-delegable" kind="cost" source="Peacock Tariff Consulting, on the importer's duty of reasonable care under 19 U.S.C. § 1484, accessed 8 August 2026">
-  The status of the importer's duty of reasonable care. Brokers act as your agent; reporting on the statute is clear that hiring one does not transfer the obligation.
+<Figure value="Non-delegable" kind="cost" source="Peacock Tariff Consulting, on the importer's duty of reasonable care under 19 U.S.C. § 1484, checked September 5, 2026">
+ The status of the importer's duty of reasonable care. Brokers act as your agent; reporting on the statute is clear that hiring one does not transfer the obligation.
 </Figure>
 
 ## The liability point, stated plainly
@@ -58,13 +59,13 @@ Reporting on 19 U.S.C. § 1592 describes three tiers of exposure.
 
 | Finding | Described exposure |
 | --- | --- |
-| Negligence — failure to exercise reasonable care | The lesser of the merchandise's domestic value or four times the duties, taxes and fees lost |
+| Negligence — failure to exercise reasonable care | The lesser of the merchandise's domestic value or **two times** the duties, taxes and fees lost |
 | Gross negligence — actual knowledge or wanton disregard | The lesser of the domestic value or four times the revenue loss, with more limited mitigation |
 | Fraud — knowing, intentional misclassification | Up to the full domestic value, with possible criminal referral |
 
-Negligence is described as the most common finding, and mitigation under CBP's published guidelines is routine — but a mitigated penalty is still a penalty. One agency analysis attributes a significant share of the penalties CBP assessed in fiscal year 2025 to classification errors.
+Negligence is the most common finding, and mitigation under CBP's published guidelines is routine — but a mitigated penalty is still a penalty. One agency analysis attributes a significant share of the penalties CBP assessed in fiscal year 2025 to classification errors.
 
-**The more common outcome is quieter.** You overpay. Overpayment is recoverable, but only through a Post Summary Correction or a protest filed within a limited window after liquidation. Miss the window and the overpayment is simply gone, and you will not have noticed it happening.
+**The more common outcome is quieter.** You overpay. Overpayment is recoverable, but only through a Post Summary Correction (before liquidation, within 300 days of entry) or a protest under 19 U.S.C. § 1514 filed within 180 days after liquidation. Miss the window and the overpayment is simply gone, and you will not have noticed it happening.
 
 ## The four mistakes that produce most of it
 
@@ -92,17 +93,21 @@ Negligence is described as the most common finding, and mitigation under CBP's p
 
 <MiniCalc variant="stack" />
 
+Pull your last entry summary and read the ten digits your broker chose. Then find them in the HTS yourself and read the heading text. If you cannot explain in one sentence why the product belongs there, neither can you in a penalty case.
+
 <Faq items={[
-  { q: "My customs broker chooses the codes. Am I still responsible?", a: "Yes. The importer of record is legally responsible. Brokers act as your agent, and reporting on the statute describes the duty of reasonable care as non-delegable." },
-  { q: "What happens if I have been using the wrong code?", a: "If you underpaid, you have exposure under 19 U.S.C. § 1592 and should take advice on a prior disclosure. If you overpaid, recovery runs through a Post Summary Correction or protest within a limited window after liquidation." },
-  { q: "Can I choose the code with the lowest duty rate?", a: "No. The product is classified in its condition as imported. Choosing a heading because it is cheaper is precisely the pattern that moves a finding from negligence toward something worse." },
-  { q: "Where do I look up a code?", a: "CBP's CROSS rulings database shows prior classifications of similar goods. Commercial tools are useful for a first pass. Neither replaces a documented reasoning file, and for a long-term product line a binding ruling is worth the time." },
-  { q: "Does this apply to me if I only ship small parcels?", a: "Yes. With de minimis suspended, low-value commercial shipments require an entry, and an entry requires a classification." },
+ { q: "My customs broker chooses the codes. Am I still responsible?", a: "Yes. The importer of record is legally responsible. Brokers act as your agent, and reporting on the statute describes the duty of reasonable care as non-delegable." },
+ { q: "What happens if I have been using the wrong code?", a: "If you underpaid, you have exposure under 19 U.S.C. § 1592 and should take advice on a prior disclosure. If you overpaid, recovery runs through a Post Summary Correction or protest within a limited window after liquidation." },
+ { q: "Can I choose the code with the lowest duty rate?", a: "No. The product is classified in its condition as imported. Choosing a heading because it is cheaper is precisely the pattern that moves a finding from negligence toward something worse." },
+ { q: "Where do I look up a code?", a: "CBP's CROSS rulings database shows prior classifications of similar goods. Commercial tools are useful for a first pass. Neither replaces a documented reasoning file, and for a long-term product line a binding ruling is worth the time." },
+ { q: "Does this apply to me if I only ship small parcels?", a: "Yes. With de minimis suspended, low-value commercial shipments require an entry, and an entry requires a classification." },
 ]} />
 
 <Sources items={[
-  { title: 'What is an HTS code? The 2026 importer\u2019s guide (importer of record liability; CROSS; Post Summary Correction window)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/what-is-hts-code/', accessed: '2026-08-08' },
-  { title: 'Complete guide to HTS classification 2026 (penalty tiers under 19 U.S.C. § 1592; FY2025 penalty context)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/hts-classification-complete-guide-2026', accessed: '2026-08-08' },
-  { title: 'HTS codes: definition and import guide (common misclassification patterns; apparel fibre content)', publisher: 'Shopify', href: 'https://www.shopify.com/blog/hts-codes', accessed: '2026-08-08' },
-  { title: 'HTS code classification guide 2026 (duty over- and underpayment consequences)', publisher: 'TEU Global', href: 'https://teuinc.com/blog/hts-code-classification-guide-2026', accessed: '2026-08-08' },
+  { title: '19 U.S.C. § 1484 (entry of merchandise; importer of record\u2019s duty to use reasonable care), § 1592 (penalties for fraud, gross negligence and negligence: domestic value; lesser of domestic value or four times duties; lesser of domestic value or two times duties) and § 1514 (protests within 180 days of liquidation)', publisher: 'United States Code, Title 19', accessed: '2026-09-05' },
+  { title: 'Harmonized Tariff Schedule of the United States and the CROSS rulings database', publisher: 'U.S. International Trade Commission; U.S. Customs and Border Protection', href: 'https://hts.usitc.gov/', accessed: '2026-09-05' },
+ { title: 'What is an HTS code? The 2026 importer\u2019s guide (importer of record liability; CROSS; Post Summary Correction window)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/what-is-hts-code/', accessed: '2026-09-05' },
+ { title: 'Complete guide to HTS classification 2026 (penalty tiers under 19 U.S.C. § 1592; FY2025 penalty context)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/hts-classification-complete-guide-2026', accessed: '2026-09-05' },
+ { title: 'HTS codes: definition and import guide (common misclassification patterns; apparel fibre content)', publisher: 'Shopify', href: 'https://www.shopify.com/blog/hts-codes', accessed: '2026-09-05' },
+ { title: 'HTS code classification guide 2026 (duty over- and underpayment consequences)', publisher: 'TEU Global', href: 'https://teuinc.com/blog/hts-code-classification-guide-2026', accessed: '2026-09-05' },
 ]} />

@@ -1,7 +1,7 @@
 ---
 const { items = [] } = Astro.props;
 ---
-<section class="takeaways" aria-labelledby="kt">
+<section class="takeaways" aria-labeledby="kt">
   <h2 id="kt">Key takeaways</h2>
   <ul>{items.map((t: string) => <li>{t}</li>)}</ul>
 </section>

@@ -11,8 +11,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "verify": "node tools/verify.mjs",
-    "check": "astro build && node tools/verify.mjs",
-    "local-preview": "astro build && node tools/make-local-preview.mjs"
+    "check": "astro build && node tools/verify.mjs && node tools/audit-guide.mjs --done",
+    "local-preview": "astro build && node tools/make-local-preview.mjs",
+    "audit:guides": "node tools/audit-guide.mjs --done"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.5",

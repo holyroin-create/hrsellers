@@ -1,12 +1,13 @@
 ---
 title: "Six sources give six different prices for AWD storage. The cheapest one is not the answer anyway."
-description: "AWD storage is reported anywhere between $0.43 and $0.75 per cubic foot depending on region, programme and who is publishing. But storage is a fraction of the cost, and the fees that decide this comparison are the ones underneath it."
+seoTitle: "AWD vs 3PL in 2026: Storage Is Not the Number That Decides It"
+description: "AWD storage is anywhere between $0.43 and $0.75 per cubic foot depending on region, program and who is publishing. But storage is a fraction of the cost, and the fees that decide this comparison are the ones underneath it."
 category: "Shipping & logistics"
 published: "2026-08-13"
-modified: "2026-08-13"
+modified: "2026-09-04"
 minutes: 12
 numbered: true
-ledger: "AWD storage: $0.43–$0.75 reported"
+ledger: "AWD storage: $0.43–$0.78/cu ft (published range) — transport and prep decide it"
 ledgerKind: "cost"
 draft: false
 ---
@@ -21,24 +22,24 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Published AWD storage rates range from $0.43 to $0.75 per cubic foot per month. The spread is explained by region, by the Smart Storage discount and by publication date — Amazon raised AWD fees on 15 January 2026.",
-  "Storage is the smallest line in this comparison. Transportation is reported at roughly $1.40 per cubic foot, transfer to FBA at $0.40 to $0.50 per unit, and processing at $1.40 per box inbound and outbound.",
-  "AWD does not prep. Since Amazon ended US prep services on 1 January 2026, the honest comparison is AWD storage plus prep elsewhere against 3PL storage with prep included.",
-  "AWD is not a sellable inventory layer — customers cannot buy from it. It exists to replenish FBA, which is why it is a poor fit for multi-channel sellers.",
-  "The genuine case for AWD is buffer stock that would otherwise age past the aged-inventory trigger in FBA, or sit through the Q4 storage spike. For fast-turning SKUs it adds complexity without saving anything.",
+ "Published AWD storage rates range from $0.43 to $0.78 per cubic foot per month, depending on region, program tier and publication date. The spread is explained by region, by the Smart Storage discount and by publication date — Amazon raised AWD fees on January 15, 2026.",
+ "Storage is the smallest line in this comparison. Transportation is at roughly $1.40 per cubic foot, transfer to FBA at $0.40 to $0.50 per unit, and processing at $1.40 per box inbound and outbound.",
+ "AWD does not prep. Since Amazon ended US prep services on January 1, 2026, the honest comparison is AWD storage plus prep elsewhere against 3PL storage with prep included.",
+ "AWD is not a sellable inventory layer — customers cannot buy from it. It exists to replenish FBA, which is why it is a poor fit for multi-channel sellers.",
+ "The genuine case for AWD is buffer stock that would otherwise age past the aged-inventory trigger in FBA, or sit through the Q4 storage spike. For fast-turning SKUs it adds complexity without saving anything.",
 ]} />
 
-Three changes landed close together and reset this calculation: FBA storage got more punishing, Amazon raised AWD's own fees on 15 January 2026, and Amazon stopped prepping inventory. Most published comparisons predate at least one of them.
+The cheapest AWD storage quote you will read is off by a factor of three once transport, processing and prep are added. Three changes landed close together and reset this calculation: FBA storage got more punishing, Amazon raised AWD's own fees on January 15, 2026, and Amazon stopped prepping inventory. Most published comparisons predate at least one of them.
 
 ## What AWD is, precisely
 
-Amazon Warehousing and Distribution is **upstream bulk storage that sits between your factory or 3PL and FBA.** Inventory ships in case packs, palletised, is stored at a flat rate, and moves to FBA in a reported three to seven days when you trigger replenishment.
+Amazon Warehousing and Distribution is **upstream bulk storage that sits between your factory or 3PL and FBA.** Inventory ships in case packs, palletized, is stored at a flat rate, and moves to FBA in a reported three to seven days when you trigger replenishment.
 
 **What it is not:** a sellable inventory layer. Customers cannot buy from AWD stock. That single fact settles the multi-channel question before any arithmetic.
 
 ## The storage rates, and why they disagree
 
-| Source | Reported AWD storage |
+| Source | Awd storage |
 | --- | --- |
 | Seller Essentials | $0.43 East, $0.51 West (Smart Storage) |
 | SKU Compass | $0.48 flat |
@@ -47,12 +48,12 @@ Amazon Warehousing and Distribution is **upstream bulk storage that sits between
 | 3PL Guys (comparison) | $0.45–$0.75 |
 | Racklify | As low as $0.43 with Smart Storage, described as a 10% discount for maintaining inventory levels |
 
-The spread resolves into three variables: **region** — reporting describes Amazon introducing a West-region premium on 15 January 2026, with one source putting the West increase at about 19%; **programme** — Smart Storage is described as a 10% discount conditional on maintaining sufficient inventory; and **date**.
+The spread resolves into three variables: **region** — Amazon introducing a West-region premium on January 15, 2026, with one source putting the West increase at about 19%; **program** — Smart Storage is a 10% discount conditional on maintaining sufficient inventory; and **date**.
 
 **The working position:** roughly $0.48 outside the West and roughly $0.55 in the West, before the Smart Storage discount. Verify in your own AWD console, because this is precisely the figure that moves.
 
-<Figure value="$0.43–$0.75" kind="cost" source="Six published 2026 AWD rate sources, reviewed 8 August 2026">
-  The range of published AWD storage rates per cubic foot per month. The spread is region, programme and date — but no published figure is a substitute for your own console.
+<Figure value="$0.43–$0.75" kind="cost" source="Six published 2026 AWD rate sources, checked September 4, 2026">
+ The range of published AWD storage rates per cubic foot per month. The spread is region, program and date — but no published figure is a substitute for your own console.
 </Figure>
 
 <StockImage slug="awd-vs-3pl-warehousing" theme="logistics" />
@@ -66,22 +67,22 @@ Storage is the headline and the smallest line. Reported additional AWD charges:
 | Transportation | ~$1.40 per cubic foot (~$1.26 under Amazon-managed distribution) |
 | Processing | $1.40 per box, inbound and outbound |
 | Transfer to FBA | $0.40–$0.50 per unit, varying by case-pack count |
-| Inbound from suppliers | Typically free if case-packed and palletised |
+| Inbound from suppliers | Typically free if case-packed and palletized |
 | Multichannel distribution | Additional per-shipment fees plus carrier rates |
 
 **The transfer fee has a detail worth knowing.** It varies by case-pack count: a SKU packed twelve to a case costs less per unit to transfer than one packed four to a case. Reporting recommends running the calculation on your specific top twenty SKUs before changing storage strategy, which is sound.
 
-One genuine advantage: reporting states AWD **eliminates the FBA inbound placement fee** by bundling that work into the service. Against the [placement arithmetic](/guides/inbound-placement-split-arithmetic/), that is worth real money at volume.
+One genuine advantage: AWD **eliminates the FBA inbound placement fee** by bundling that work into the service. Against the [placement arithmetic](/guides/inbound-placement-split-arithmetic/), that is worth real money at volume.
 
 ## The prep problem
 
-**AWD does not prep.** Since Amazon ended US prep services on 1 January 2026 — see the [prep guide](/guides/amazon-stopped-prepping/) — inventory must arrive at AWD already FBA-ready.
+**AWD does not prep.** Since Amazon ended US prep services on January 1, 2026 — see the [prep guide](/guides/amazon-stopped-prepping/) — inventory must arrive at AWD already FBA-ready.
 
-Reporting frames the resulting comparison precisely: not "AWD storage against 3PL storage" but **"AWD storage plus prep somewhere else" against "3PL storage with prep built in."** At a reported $0.35 to $2.00 per unit for prep, that narrows the storage advantage considerably and can reverse it.
+the resulting comparison precisely: not "AWD storage against 3PL storage" but **"AWD storage plus prep somewhere else" against "3PL storage with prep built in."** At a reported $0.35 to $2.00 per unit for prep, that narrows the storage advantage considerably and can reverse it.
 
 ## The claims worth discounting
 
-Two sources in this research are prep centres and 3PLs. Their claims about AWD deserve the same scepticism this site applies elsewhere.
+Two sources in this research are prep centers and 3PLs. Their claims about AWD deserve the same skepticism this site applies elsewhere.
 
 Reported by 3PL operators: AWD inventory loss rates of 5% to 10%, receiving times of two to four weeks, and reimbursement at manufacturing cost typically 40% to 50% of what was paid.
 
@@ -93,40 +94,40 @@ The receiving-time claim is the one to test rather than believe. If inventory si
 
 **Ship factory-direct to FBA** when a SKU turns in 30 to 60 days. Reporting is direct that upstream storage adds operational complexity without saving anything on fast movers.
 
-**AWD** when you hold buffer stock that would otherwise age past the aged-inventory trigger in FBA, or sit through the Q4 storage spike. Reporting describes AWD as winning for Amazon-dominant mid-market brands with 60% or more of revenue through FBA. Both AWD and a 3PL reserve skip the [Q4 storage spike](/guides/peak-season-cost-stack/) entirely, which is the largest single saving available.
+**AWD** when you hold buffer stock that would otherwise age past the aged-inventory trigger in FBA, or sit through the Q4 storage spike. AWD as winning for Amazon-dominant mid-market brands with 60% or more of revenue through FBA. Both AWD and a 3PL reserve skip the [Q4 storage spike](/guides/peak-season-cost-stack/) entirely, which is the largest single saving available.
 
-**An independent 3PL** when you fulfil off Amazon, need kitting, custom packaging or inserts, or have SKUs requiring prep and customisation. A 3PL can serve Shopify, Walmart, B2B and direct-to-consumer; AWD cannot.
+**An independent 3PL** when you fulfil off Amazon, need kitting, custom packaging or inserts, or have SKUs requiring prep and customization. A 3PL can serve Shopify, Walmart, B2B and direct-to-consumer; AWD cannot.
 
-**Both** is reported as the right answer for many multi-channel sellers, and that is not a fudge. AWD feeds FBA; a 3PL feeds everything else.
+**Both** is the right answer for many multi-channel sellers, and that is not a fudge. AWD feeds FBA; a 3PL feeds everything else.
 
 ## The comparison to actually run
 
 Storage rate alone tells you nothing. Per SKU, per month:
 
 ```
-AWD total   = (cu ft × storage rate)
-            + transportation
-            + processing per box
-            + (units × transfer fee)
-            + (units × prep cost, paid elsewhere)
+AWD total  = (cu ft × storage rate)
+      + transportation
+      + processing per box
+      + (units × transfer fee)
+      + (units × prep cost, paid elsewhere)
 
-3PL total   = (cu ft × storage rate)
-            + receiving
-            + (units × prep, usually included)
-            + outbound to FBA
-            + pick/pack if fulfilling directly
+3PL total  = (cu ft × storage rate)
+      + receiving
+      + (units × prep, usually included)
+      + outbound to FBA
+      + pick/pack if fulfilling directly
 
-FBA direct  = (cu ft × FBA rate, tripling in Q4)
-            + aged-inventory surcharge if it sits
-            + inbound placement
-            + (units × prep, paid elsewhere)
+FBA direct = (cu ft × FBA rate, tripling in Q4)
+      + aged-inventory surcharge if it sits
+      + inbound placement
+      + (units × prep, paid elsewhere)
 ```
 
-Reporting notes sampled 3PL reserve warehouses average around $0.90 per cubic foot once pallet pricing is converted — a standard pallet holding roughly 50 cubic feet — against AWD's Smart Storage rates. **Both beat FBA's standard rate and both skip the Q4 spike.** That is the finding that matters more than which of the two is cheaper.
+sampled 3PL reserve warehouses average around $0.90 per cubic foot once pallet pricing is converted — a standard pallet holding roughly 50 cubic feet — against AWD's Smart Storage rates. **Both beat FBA's standard rate and both skip the Q4 spike.** That is the finding that matters more than which of the two is cheaper.
 
 ## What to do
 
-**Run it on your top twenty SKUs**, not on your catalogue. Case-pack counts, cubic feet and turn rates vary enough that a blended answer is wrong for most of them.
+**Run it on your top twenty SKUs**, not on your catalog. Case-pack counts, cubic feet and turn rates vary enough that a blended answer is wrong for most of them.
 
 **Split by velocity, not by preference.** Fast movers direct to FBA, slow movers and buffer stock upstream. That single rule captures most of the available saving.
 
@@ -140,21 +141,25 @@ Reporting notes sampled 3PL reserve warehouses average around $0.90 per cubic fo
 
 <MiniCalc variant="margin" />
 
+Ask your 3PL for a quote that includes prep and one FBA transfer per month. Put it next to AWD's storage plus transport plus outside prep. Whichever total is lower is your answer — and it will not be the one with the lowest storage rate.
+
 <Faq items={[
-  { q: "How much does AWD storage cost?", a: "Published rates range from $0.43 to $0.75 per cubic foot per month across six sources, explained by region, the Smart Storage discount and publication date. Roughly $0.48 outside the West and $0.55 in the West before the discount is a reasonable working figure — verify in your own console." },
-  { q: "Is AWD cheaper than a 3PL?", a: "On the raw storage line, generally yes — sampled 3PL reserve warehouses are reported around $0.90 per cubic foot converted from pallet pricing. Once prep, transfer fees and processing are added, the comparison narrows and can reverse." },
-  { q: "Can customers buy from AWD stock?", a: "No. AWD is upstream bulk storage that replenishes FBA. It is not a sellable inventory layer, which is why it does not work as a multi-channel solution." },
-  { q: "Does AWD prep my inventory?", a: "No. Inventory must arrive already prepped for FBA. Since Amazon ended US prep services on 1 January 2026, that means a separate prep step at a reported $0.35 to $2.00 per unit." },
-  { q: "When is AWD worth it?", a: "For buffer stock that would otherwise age past the FBA aged-inventory trigger or sit through the Q4 storage spike, and for Amazon-dominant sellers. For SKUs turning in 30 to 60 days it adds complexity without saving anything." },
-  { q: "Should I use AWD or a 3PL?", a: "Reporting suggests many multi-channel sellers use both — AWD feeding FBA, a 3PL feeding everything else. If you fulfil off Amazon or need kitting and custom packaging, a 3PL is not optional." },
+ { q: "How much does AWD storage cost?", a: "Published rates range from $0.43 to $0.75 per cubic foot per month across six sources, explained by region, the Smart Storage discount and publication date. Roughly $0.48 outside the West and $0.55 in the West before the discount is a reasonable working figure — verify in your own console." },
+ { q: "Is AWD cheaper than a 3PL?", a: "On the raw storage line, generally yes — sampled 3PL reserve warehouses are around $0.90 per cubic foot converted from pallet pricing. Once prep, transfer fees and processing are added, the comparison narrows and can reverse." },
+ { q: "Can customers buy from AWD stock?", a: "No. AWD is upstream bulk storage that replenishes FBA. It is not a sellable inventory layer, which is why it does not work as a multi-channel solution." },
+ { q: "Does AWD prep my inventory?", a: "No. Inventory must arrive already prepped for FBA. Since Amazon ended US prep services on January 1, 2026, that means a separate prep step at a reported $0.35 to $2.00 per unit." },
+ { q: "When is AWD worth it?", a: "For buffer stock that would otherwise age past the FBA aged-inventory trigger or sit through the Q4 storage spike, and for Amazon-dominant sellers. For SKUs turning in 30 to 60 days it adds complexity without saving anything." },
+ { q: "Should I use AWD or a 3PL?", a: "Reporting suggests many multi-channel sellers use both — AWD feeding FBA, a 3PL feeding everything else. If you fulfil off Amazon or need kitting and custom packaging, a 3PL is not optional." },
 ]} />
 
 <Sources items={[
-  { title: 'Amazon AWD cost guide (2026) ($0.57/cu ft West and $0.48 elsewhere after the 15 January 2026 fee changes; transportation ~$1.40/cu ft or ~$1.26 under Amazon-managed distribution; $1.40 per box inbound and outbound processing; AWD as upstream infrastructure rather than multi-channel fulfilment)', publisher: 'WarehousingCosts', href: 'https://warehousingcosts.com/guides/amazon-awd-costs', accessed: '2026-08-08' },
-  { title: 'AWD pricing math: is Amazon warehousing worth it (2026) ($0.48/cu ft flat; transfer to FBA $0.40–$0.50 per unit varying by case-pack count; case-pack-only inbound; AWD not a sellable layer; buffer stock against 181-day ageing; using both AWD and a 3PL)', publisher: 'SKU Compass', href: 'https://skucompass.com/amazon-awd-pricing-math-2026/', accessed: '2026-08-08' },
-  { title: 'AWD against a 3PL reserve warehouse: the honest 2026 comparison ($0.43 East and $0.51 West Smart Storage; West fees up about 19% on 15 January 2026; 3PL reserve averaging around $0.90/cu ft converted from pallet pricing; prep at $0.35–$1.50 per unit)', publisher: 'Seller Essentials', href: 'https://selleressentials.com/awd-vs-3pl-reserve-warehouse/', accessed: '2026-08-08' },
-  { title: 'Amazon AWD fees and pricing guide 2026 ($0.56/cu ft; vendor-reported inventory loss of 5–10%, receiving times and reimbursement at 40–50% of paid cost; separate prep at $0.50–$1.50+ per unit)', publisher: '3PL Guys', href: 'https://3plguys.com/articles/amazon-awd-fees-pricing-guide', accessed: '2026-08-08' },
-  { title: 'Amazon AWD vs FBA vs 3PL (storage at $0.45–$0.75 against $1–$2+ at most 3PLs; prep requirement before AWD; vendor-reported receiving and stockout claims)', publisher: '3PL Guys', href: 'https://3plguys.com/articles/awd-vs-3pl-amazon-sellers-2026', accessed: '2026-08-08' },
-  { title: 'Amazon Warehousing and Distribution (AWD eliminating the FBA inbound placement fee by bundling it; Smart Storage described as a 10% discount bringing storage to as low as $0.43 per cubic foot)', publisher: 'Racklify', href: 'https://racklify.com/news/amazon-warehousing-distribution-awd/', accessed: '2026-08-08' },
-  { title: 'Amazon FBA vs 3PL: 2026 US cost comparison (hybrid staging of bulk inventory with a 3PL or AWD while sending fast movers into FBA; worked storage cost example across January and November)', publisher: 'Olimp Warehousing', href: 'https://olimpwarehousing.com/3pl-vs-amazon-fba-cost-comparison-2026-usa/', accessed: '2026-08-08' },
+  { title: 'Amazon Warehousing and Distribution: rate card and program terms (storage per cubic foot by region and program; processing and transportation fees; auto-replenishment to FBA; no prep services)', publisher: 'Amazon Seller Central Help, AWD', accessed: '2026-09-04' },
+  { title: 'Amazon FBA capacity limits 2026 (AWD at $0.43–$0.78 per cubic foot monthly; AWD stock does not count against FBA capacity)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-fba-capacity-cut-seller-guide/', accessed: '2026-09-04' },
+ { title: 'Amazon AWD cost guide (2026) ($0.57/cu ft West and $0.48 elsewhere after the January 15, 2026 fee changes; transportation ~$1.40/cu ft or ~$1.26 under Amazon-managed distribution; $1.40 per box inbound and outbound processing; AWD as upstream infrastructure rather than multi-channel fulfillment)', publisher: 'WarehousingCosts', href: 'https://warehousingcosts.com/guides/amazon-awd-costs', accessed: '2026-09-04' },
+ { title: 'AWD pricing math: is Amazon warehousing worth it (2026) ($0.48/cu ft flat; transfer to FBA $0.40–$0.50 per unit varying by case-pack count; case-pack-only inbound; AWD not a sellable layer; buffer stock against 181-day ageing; using both AWD and a 3PL)', publisher: 'SKU Compass', href: 'https://skucompass.com/amazon-awd-pricing-math-2026/', accessed: '2026-09-04' },
+ { title: 'AWD against a 3PL reserve warehouse: the honest 2026 comparison ($0.43 East and $0.51 West Smart Storage; West fees up about 19% on January 15, 2026; 3PL reserve averaging around $0.90/cu ft converted from pallet pricing; prep at $0.35–$1.50 per unit)', publisher: 'Seller Essentials', href: 'https://selleressentials.com/awd-vs-3pl-reserve-warehouse/', accessed: '2026-09-04' },
+ { title: 'Amazon AWD fees and pricing guide 2026 ($0.56/cu ft; vendor-reported inventory loss of 5–10%, receiving times and reimbursement at 40–50% of paid cost; separate prep at $0.50–$1.50+ per unit)', publisher: '3PL Guys', href: 'https://3plguys.com/articles/amazon-awd-fees-pricing-guide', accessed: '2026-09-04' },
+ { title: 'Amazon AWD vs FBA vs 3PL (storage at $0.45–$0.75 against $1–$2+ at most 3PLs; prep requirement before AWD; vendor-reported receiving and stockout claims)', publisher: '3PL Guys', href: 'https://3plguys.com/articles/awd-vs-3pl-amazon-sellers-2026', accessed: '2026-09-04' },
+ { title: 'Amazon Warehousing and Distribution (AWD eliminating the FBA inbound placement fee by bundling it; Smart Storage described as a 10% discount bringing storage to as low as $0.43 per cubic foot)', publisher: 'Racklify', href: 'https://racklify.com/news/amazon-warehousing-distribution-awd/', accessed: '2026-09-04' },
+ { title: 'Amazon FBA vs 3PL: 2026 US cost comparison (hybrid staging of bulk inventory with a 3PL or AWD while sending fast movers into FBA; worked storage cost example across January and November)', publisher: 'Olimp Warehousing', href: 'https://olimpwarehousing.com/3pl-vs-amazon-fba-cost-comparison-2026-usa/', accessed: '2026-09-04' },
 ]} />

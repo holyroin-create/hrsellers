@@ -1,5 +1,5 @@
 ---
-/** Free-licence stock photo, deterministically picked per page from /public/stock. */
+/** Free-license stock photo, deterministically picked per page from /public/stock. */
 import { stockFor } from '../data/stock';
 const { slug = '', theme = 'ecommerce', caption = '' } = Astro.props;
 const s = stockFor(slug, theme);
@@ -7,5 +7,5 @@ const s = stockFor(slug, theme);
 <figure class="figpanel stockimg" style="margin:1.8rem 0 2rem">
   <img src={s.src} alt={s.alt} width={s.w} height={s.h} loading="lazy" decoding="async"
     style="width:100%;height:auto;border-radius:10px;display:block" />
-  <figcaption class="cap">{caption || s.alt} · Photo: free-licence stock (Pexels / Pixabay)</figcaption>
+  <figcaption class="cap">{caption || s.alt} · Photo: free-license stock (Pexels / Pixabay)</figcaption>
 </figure>

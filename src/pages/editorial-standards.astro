@@ -4,7 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { AUTHOR } from '../config';
 const updated = '8 August 2026';
 ---
-<Base title="Editorial standards" description="How figures get onto this site, what is labelled how, where the disagreements are recorded, and what we do not do.">
+<Base title="Editorial standards" description="How figures get onto this site, what is labeled how, where the disagreements are recorded, and what we do not do.">
 <div class="wrap"><Breadcrumbs trail={[{ label: 'Editorial standards', href: '/editorial-standards/' }]} /></div>
 <section class="wrap" style="padding:1.5rem 1.25rem 0">
   <p class="eyebrow">Policy</p>
@@ -28,7 +28,7 @@ const updated = '8 August 2026';
     <h3>2. First-party operational data, with the period stated</h3>
     <p>
       Figures drawn from operations the author worked on directly. Where such a figure appears, it is
-      labelled as first-party and the period it covers is stated on the page. Client, employer and partner
+      labeled as first-party and the period it covers is stated on the page. Client, employer and partner
       data is never published, in any form, aggregated or otherwise.
     </p>
     <p>
@@ -38,9 +38,9 @@ const updated = '8 August 2026';
       say this plainly than let a byline imply something the article does not contain.
     </p>
 
-    <h2>Secondary sources, and how they are labelled</h2>
+    <h2>Secondary sources, and how they are labeled</h2>
     <p>
-      Vendor blogs, agency analyses and rate cards are used, because they frequently surface details the
+      Vendor blogs, agency analyzes and rate cards are used, because they frequently surface details the
       platform documentation buries. They are used with two rules attached.
     </p>
     <ul>
@@ -50,10 +50,12 @@ const updated = '8 August 2026';
         a number being large does not make it wrong, but the reader is entitled to know it exists.
       </li>
       <li>
-        <strong>Disagreements are recorded, not resolved.</strong> When two sources give different values
-        for the same fee — and in this subject they routinely do — both figures and both publishers are
-        shown, and the reader is sent to the primary source. Quietly picking one and presenting it as
-        settled is the practice that produced the problem in the first place.
+        <strong>Disagreements are resolved at the primary source, not recorded as a spread.</strong> When
+        two secondary sources give different values for a fee the platform publishes, we go to the platform
+        and print that figure. Only where the platform publishes no figure — Buy Box tolerances, advertising
+        benchmarks, buyer behavior — do we show the estimates side by side, labeled as estimates, with each
+        publisher named. An earlier version of this page treated the spread itself as the finding; the
+        September 2026 audit showed that practice let wrong figures survive as long as a second source repeated them.
       </li>
     </ul>
 
@@ -61,13 +63,22 @@ const updated = '8 August 2026';
     <p>
       Every rate, threshold and percentage on this site carries the date it was checked. Every article
       carries a published date and, where it has been revised, a modified date. A fee figure without a
-      date is not a fact, it is a rumour with a decimal point, and it does not get published here.
+      date is not a fact, it is a rumor with a decimal point, and it does not get published here.
     </p>
 
+    <h2>The September 2026 audit</h2>
+    <p>
+      In September 2026 every published guide was re-audited against primary sources under a written
+      protocol: each numerical claim listed, traced to the platform or regulator, and either sourced,
+      labeled as an estimate, or removed. Figures that turned out to be wrong are logged on the{' '}
+      <a href="/corrections/">corrections page</a> with what was published, what replaced it and why. One
+      vendor publication was found to have supplied several fabricated figures and is no longer cited as
+      a source for any rate.
+    </p>
     <h2>Illustrative figures</h2>
     <p>
-      Some worked examples use illustrative fulfilment, freight or storage figures to demonstrate the shape
-      of a calculation rather than to quote a rate card. Those are labelled illustrative in the sentence
+      Some worked examples use illustrative fulfillment, freight or storage figures to demonstrate the shape
+      of a calculation rather than to quote a rate card. Those are labeled illustrative in the sentence
       that introduces them, and the reader is told to substitute their own. They are never presented as
       quoted rates.
     </p>

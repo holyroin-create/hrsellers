@@ -1,12 +1,13 @@
 ---
-title: "Your selling price now sets your fulfilment fee. Your repricer does not know that."
-description: "Since January 2026 Amazon calculates the FBA fulfilment fee partly from your price band. Raise a $49 item to $52 and you can cross a boundary, take a larger fee, and take a larger surcharge on that larger fee — while your repricer still models fulfilment as a constant."
+title: "Your selling price now sets your fulfillment fee. Your repricer does not know that."
+seoTitle: "Amazon Price Bands Set Your FBA Fee: The Repricing Trap"
+description: "Since January 2026 Amazon calculates the FBA fulfillment fee partly from your price band. Raise a $49 item to $52 and you can cross a boundary, take a larger fee, and take a larger surcharge on that larger fee — while your repricer still models fulfillment as a constant."
 category: "Fees & reimbursements"
 published: "2026-08-08"
-modified: "2026-08-08"
+modified: "2026-09-05"
 minutes: 11
 numbered: true
-ledger: "Price is now an input to the fulfilment fee"
+ledger: "Price is now an input to the fulfillment fee"
 ledgerKind: "cost"
 draft: false
 ---
@@ -21,33 +22,33 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "From 15 January 2026, Amazon calculates FBA fulfilment fees partly from price bands — under $10, $10 to $50, and above $50 — rather than from size and weight alone.",
-  "Reported average increases differ sharply by band: about $0.08 per unit in the $10–$50 range, and about $0.31 above $50, with small standard items above $50 reported at about $0.51.",
-  "Items under $10 fall into Low-Price FBA, reported at roughly $0.86 below standard rates on average — but that discount is a reason to check the boundary, not to ignore it.",
-  "A 3.5% fuel and logistics surcharge is reported as applying to the fulfilment fee from 17 April 2026, so crossing into a higher band raises the surcharge too.",
-  "Any repricing rule with a fixed fulfilment cost baked into its floor is now running a model that stopped describing the platform in January.",
+  "From January 15, 2026, Amazon calculates FBA fulfillment fees partly from price bands — under $10, $10 to $50, and above $50 — rather than from size and weight alone.",
+  "Third-party readings of the fee tables put average increases sharply apart by band: about $0.08 per unit in the $10–$50 range, and about $0.31 above $50, with small standard items above $50 reported at about $0.51.",
+  "Items under $10 fall into Low-Price FBA, which Amazon says average about $0.86 below standard rates — but that discount is a reason to check the boundary, not to ignore it.",
+  "A 3.5% fuel and logistics surcharge has applied to the fulfillment fee since April 17, 2026, so crossing into a higher band raises the surcharge too.",
+  "Any repricing rule with a fixed fulfillment cost baked into its floor is now running a model that stopped describing the platform in January.",
 ]} />
 
-For most of FBA's history, the fulfilment fee was a function of two things you could measure with a scale and a tape measure. Price was not one of them. You could reprice all day and the pick-and-pack cost stayed where it was.
+For most of FBA's history, the fulfillment fee was a function of two things you could measure with a scale and a tape measure. Price was not one of them. You could reprice all day and the pick-and-pack cost stayed where it was.
 
 That is no longer true, and the consequence is not obvious: it is now possible to raise a price and reduce your contribution per unit.
 
 ## What changed
 
-From 15 January 2026, Amazon updated how fulfilment fees are calculated so that they reflect product price brackets alongside size and weight. Three bands are reported for US standard-size items:
+From January 15, 2026, Amazon updated how fulfillment fees are calculated so that they reflect product price brackets alongside size and weight. Three bands appear on Amazon's 2026 fulfillment fee page — under $10, $10 to $50, above $50 — and third-party readings of the tables report for US standard-size items:
 
-| Band | Reported treatment |
+| Band | Treatment |
 | --- | --- |
-| Under $10 | Low-Price FBA rates, reported at roughly $0.86 below standard on average |
-| $10 to $50 | Standard rates; reported average increase of about $0.08 per unit |
-| Above $50 | Standard rates; reported average increase of about $0.31 per unit |
+| Under $10 | Low-Price FBA rates, averaging about $0.86 below standard (Amazon) |
+| $10 to $50 | Standard rates; average increase about $0.08 per unit (Amazon's headline average) |
+| Above $50 | Standard rates; average increase about $0.31 per unit (third-party reading of the tables) |
 
 Within the above-$50 band, reporting breaks the increase down further: about $0.51 for small standard and about $0.31 for large standard. In the $10–$50 band, about $0.25 for small standard and about $0.05 for large standard.
 
 Note what that means. **The increase is roughly five times larger for small standard items above $50 than for small standard items between $10 and $50.** The widely quoted $0.08 average is the middle band's number, and it is the number Amazon led with.
 
-<Figure value="$0.05 to $0.51" kind="cost" source="Reported per-unit fulfilment fee increases by size and price band, 2026, reviewed 8 August 2026">
-  The spread of reported 2026 per-unit increases across standard-size bands. The $0.08 figure that dominated the coverage sits near the bottom of this range.
+<Figure value="$0.05 to $0.51" kind="cost" source="Third-party readings of Amazon's 2026 fulfillment fee tables by size and price band; checked September 5, 2026">
+  The spread of published 2026 per-unit increases across standard-size bands. The $0.08 figure that dominated the coverage sits near the bottom of this range.
 </Figure>
 
 ## The two boundaries and what happens at them
@@ -56,15 +57,15 @@ There are two places on the price line where a small move produces a step change
 
 ### The $10 boundary
 
-Below it you are in Low-Price FBA, reported at around $0.86 per unit cheaper on average, with the discount ranging by size and weight from roughly $0.30 to $0.77 per unit on one account. Above it you pay standard rates.
+Below it you are in Low-Price FBA, which Amazon says average about $0.86 per unit cheaper, with the discount ranging by size and weight from roughly $0.30 to $0.77 per unit on one account. Above it you pay standard rates.
 
-For a product sitting at $9.49, a move to $10.49 is a 10.5% price increase that also adds most of a dollar to your fulfilment cost. On a low-price item that is frequently more than the extra revenue.
+For a product sitting at $9.49, a move to $10.49 is a 10.5% price increase that also adds most of a dollar to your fulfillment cost. On a low-price item that is frequently more than the extra revenue.
 
 **Do the arithmetic before crossing upward.** Extra revenue is price increase minus the referral fee on it. Extra cost is the lost Low-Price discount plus the surcharge on the larger fee. For a $1.00 increase at a 15% referral rate you gain $0.85 and can lose most of it.
 
 ### The $50 boundary
 
-Below it, standard rates with the smaller 2026 increase. Above it, standard rates with the larger one — reported at about $0.51 per unit for small standard.
+Below it, standard rates with the smaller 2026 increase. Above it, standard rates with the larger one — about $0.51 per unit for small standard in one logistics provider's reading.
 
 One published analysis puts it directly: if your product sits just above $50, it is worth running the numbers on whether a pricing adjustment makes sense.
 
@@ -74,22 +75,22 @@ One published analysis puts it directly: if your product sits just above $50, it
 
 ## Where it compounds
 
-The 3.5% fuel and logistics surcharge, reported as effective 17 April 2026, is calculated on the fulfilment fee rather than on the sale price. So crossing a band upward raises the fee, and then raises the surcharge on the new fee.
+The 3.5% fuel and logistics surcharge, in force since April 17, 2026, is calculated on the fulfillment fee rather than on the sale price. So crossing a band upward raises the fee, and then raises the surcharge on the new fee.
 
 The effect is small in absolute terms and worth understanding structurally:
 
-| Scenario | Fulfilment fee | 3.5% surcharge | Total |
+| Scenario | Fulfillment fee | 3.5% surcharge | Total |
 | --- | --- | --- | --- |
 | Small standard, $10–$50 band | $3.32 | $0.12 | $3.44 |
 | Same item, above $50 | $3.83 | $0.13 | $3.96 |
 
-Illustrative, using a reported small-standard rate of about $3.32 in the $10–$50 band and adding the reported $0.51 above-$50 increase. The point is not the 52 cents. The point is that **one price change moved three numbers**, and a margin model that treats fulfilment as fixed caught none of them.
+Illustrative, using a published small-standard rate of about $3.32 in the $10–$50 band and adding the $0.51 above-$50 increase from the same reading. The point is not the 52 cents. The point is that **one price change moved three numbers**, and a margin model that treats fulfillment as fixed caught none of them.
 
 ## Why this breaks repricers specifically
 
-A repricer works from a floor: the lowest price at which the SKU still makes an acceptable margin. That floor is calculated from cost of goods, referral fee, fulfilment fee and a target.
+A repricer works from a floor: the lowest price at which the SKU still makes an acceptable margin. That floor is calculated from cost of goods, referral fee, fulfillment fee and a target.
 
-If the fulfilment fee in that calculation is a static number entered once, then:
+If the fulfillment fee in that calculation is a static number entered once, then:
 
 **Your floor is wrong on any SKU near a boundary.** A repricer that drops a $10.40 item to $9.95 to win the buy box has actually improved your margin more than it thinks, because the item moved into Low-Price FBA. A repricer that raises a $49.50 item to $51 has worsened it more than it thinks.
 
@@ -101,38 +102,42 @@ If the fulfilment fee in that calculation is a static number entered once, then:
 
 **List every SKU within 10% of a boundary.** Anything between $9 and $11, and anything between $45 and $55. That list is short, and it is where the entire problem lives. Everything else can wait.
 
-**Get the real fee, per SKU, from Amazon.** The Selling Economics and Fee Preview report gives current fulfilment fees at SKU level. That is your input. An average from a rate card is not.
+**Get the real fee, per SKU, from Amazon.** The Selling Economics and Fee Preview report gives current fulfillment fees at SKU level. That is your input. An average from a rate card is not.
 
-**Check whether your repricer supports variable fulfilment cost.** Some do; some accept a static cost per SKU that you must update yourself. If yours is static, the fix is to maintain the number for boundary SKUs manually, which is tolerable because the list is short.
+**Check whether your repricer supports variable fulfillment cost.** Some do; some accept a static cost per SKU that you must update yourself. If yours is static, the fix is to maintain the number for boundary SKUs manually, which is tolerable because the list is short.
 
-**Set floors band by band, not catalogue-wide.** A single margin percentage applied across a catalogue produces a wrong floor on every boundary SKU. Three rules — one per band — costs almost nothing to maintain.
+**Set floors band by band, not catalog-wide.** A single margin percentage applied across a catalog produces a wrong floor on every boundary SKU. Three rules — one per band — costs almost nothing to maintain.
 
 **Re-examine bundling.** Bundling small items raises the unit price, which can push the bundle across the $10 or $50 line, changing the fee band. It also changes the size tier and the dimensional weight. Reporting gives an example of three small items at about $3.22 each in fees against a single bundled unit at about $4.65 under 1.5 lb — a real saving, but one that has to be checked against the band effect and the new size tier rather than assumed.
 
 **Do not chase the boundary at the expense of the customer.** Pricing at $49.99 to stay under $50 is sensible if the market supports it. Cutting a $58 product to $49.99 to save fifty cents of fee is not — you gave away eight dollars of revenue to save half of one.
 
-**Re-run this in January.** Amazon has revised US fulfilment fees in January in recent cycles, with roughly three months' notice in the previous round. Whatever you build now should be reviewed against the next announcement rather than trusted indefinitely.
+**Re-run this in January.** Amazon has revised US fulfillment fees in January in recent cycles, with roughly three months' notice in the previous round. Whatever you build now should be reviewed against the next announcement rather than trusted indefinitely.
 
-**Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+**Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfillment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
 
 <MiniCalc variant="margin" />
 
+Open your repricer's rules for every SKU listed between $9 and $11 and between $48 and $52. If the floor and ceiling do not stop at the band edge, the repricer is still working for the fee schedule that ended in January.
+
 <Faq items={[
-  { q: "Does my selling price really change my fulfilment fee?", a: "Yes. From 15 January 2026, reported changes made price bands an input to the FBA fulfilment fee alongside size and weight, with different rates under $10, between $10 and $50, and above $50." },
-  { q: "How much bigger is the increase above $50?", a: "Reporting puts the average increase at about $0.08 per unit in the $10–$50 band and about $0.31 above $50, with small standard items above $50 at about $0.51 — roughly five times the middle-band figure for that size." },
-  { q: "Is Low-Price FBA automatic?", a: "Reporting indicates products priced under $10 qualify automatically, at roughly $0.86 below standard rates on average. Verify eligibility for your specific SKUs in Seller Central." },
-  { q: "Does the fuel surcharge apply to the price or the fee?", a: "To the fulfilment fee. Reported as 3.5% effective 17 April 2026. That is why crossing into a higher band raises the surcharge as well as the fee." },
-  { q: "Which SKUs should I check first?", a: "Anything priced between $9 and $11, and anything between $45 and $55. Boundary-adjacent SKUs are where a repricer's static fulfilment assumption produces a wrong floor." },
+  { q: "Does my selling price really change my fulfillment fee?", a: "Yes. From January 15, 2026, Amazon's fee update made price bands an input to the FBA fulfillment fee alongside size and weight, with different rates under $10, between $10 and $50, and above $50." },
+  { q: "How much bigger is the increase above $50?", a: "Third-party readings put the average increase at about $0.08 per unit in the $10–$50 band and about $0.31 above $50, with small standard items above $50 at about $0.51 — roughly five times the middle-band figure for that size." },
+  { q: "Is Low-Price FBA automatic?", a: "Third-party readings indicate products priced under $10 qualify automatically, at roughly $0.86 below standard rates on average. Verify eligibility for your specific SKUs in Seller Central." },
+  { q: "Does the fuel surcharge apply to the price or the fee?", a: "To the fulfillment fee: 3.5% since April 17, 2026, per Amazon's announcement. That is why crossing into a higher band raises the surcharge as well as the fee." },
+  { q: "Which SKUs should I check first?", a: "Anything priced between $9 and $11, and anything between $45 and $55. Boundary-adjacent SKUs are where a repricer's static fulfillment assumption produces a wrong floor." },
   { q: "Should I reprice to stay under a boundary?", a: "Only when the market supports the lower price. Saving fifty cents of fee by giving up eight dollars of revenue is a worse trade than paying the fee." },
 ]} />
 
 <Sources items={[
-  { title: 'Amazon fee changes 2026: significant fee updates (band breakdown: +$0.25 small standard and +$0.05 large standard at $10–$50; +$0.51 and +$0.31 above $50)', publisher: 'Seller Snap', href: 'https://sellersnap.io/amazon-fee-changes-and-updates/', accessed: '2026-08-08' },
-  { title: 'Amazon FBA fees 2026: complete calculator and impact guide (effective 15 January 2026; +$0.08 at $10–$50; +$0.31 above $50; Low-Price FBA $0.86 discount)', publisher: 'Payability', href: 'https://www.payability.com/blog/amazon-fba-fees-2026-calculator-guide/', accessed: '2026-08-08' },
-  { title: 'Amazon FBA fee changes 2026: what changed and how to prepare (fees calculated on price brackets, not size and weight alone)', publisher: 'Sellerise', href: 'https://sellerise.com/blog/amazon-fba-fee-changes/', accessed: '2026-08-08' },
-  { title: 'Amazon FBA fees 2026: full breakdown (small standard about $2.46 sub-$10 and about $3.32 at $10–$50; 3.5% surcharge from 17 April 2026; Low-Price discount raised from $0.77 to $0.86)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-fba-fees/', accessed: '2026-08-08' },
-  { title: 'Amazon 2026 FBA fee changes: what sellers need to know (running the numbers on products sitting just above $50; Small Bulky and Large Bulky split)', publisher: 'eFulfillment Service', href: 'https://www.efulfillmentservice.com/2026/04/amazon-2026-fba-fee-changes-what-sellers-need-to-know/', accessed: '2026-08-08' },
-  { title: 'Amazon FBA and fulfillment costs (Low-Price FBA running roughly $0.30–$0.77 below standard depending on size and weight)', publisher: 'SupplyKick', href: 'https://www.supplykick.com/blog/amazon-fba-fulfillment-costs', accessed: '2026-08-08' },
-  { title: 'Amazon FBA fees in 2026: what sellers need to check before pricing (surcharge applied to the fulfilment fee; size tier effects of packaging)', publisher: 'Demotix', href: 'https://demotix.com/amazon-fba-fees/', accessed: '2026-08-08' },
-  { title: 'Amazon FBA fee changes 2026: every new rate explained (bundling example: three items at about $3.22 each against a bundled unit at about $4.65)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-08-08' },
+  { title: '2026 US FBA fulfillment fee changes (price bands: under $10, $10–$50, over $50; Low-Price FBA rates for items under $10)', publisher: 'Amazon Seller Central Help', href: 'https://sellercentral.amazon.com/help/hub/reference/external/GABBX6GZPA8MSZGW', accessed: '2026-09-05' },
+  { title: 'Fuel and logistics-related surcharge: FBA, MCF, and BWP in US and CA (3.5% from April 17, 2026)', publisher: 'Amazon Seller Central, Seller Forums announcement, April 2, 2026', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/7cbc0233-ee5b-4359-978a-dee7cad5c6f4', accessed: '2026-09-05' },
+  { title: 'Amazon fee changes 2026: significant fee updates (band breakdown: +$0.25 small standard and +$0.05 large standard at $10–$50; +$0.51 and +$0.31 above $50)', publisher: 'Seller Snap', href: 'https://sellersnap.io/amazon-fee-changes-and-updates/', accessed: '2026-09-05' },
+  { title: 'Amazon FBA fees 2026: complete calculator and impact guide (effective January 15, 2026; +$0.08 at $10–$50; +$0.31 above $50; Low-Price FBA $0.86 discount)', publisher: 'Payability', href: 'https://www.payability.com/blog/amazon-fba-fees-2026-calculator-guide/', accessed: '2026-09-05' },
+  { title: 'Amazon FBA fee changes 2026: what changed and how to prepare (fees calculated on price brackets, not size and weight alone)', publisher: 'Sellerise', href: 'https://sellerise.com/blog/amazon-fba-fee-changes/', accessed: '2026-09-05' },
+  { title: 'Amazon FBA fees 2026: full breakdown (small standard about $2.46 sub-$10 and about $3.32 at $10–$50; 3.5% surcharge from April 17, 2026; Low-Price discount raised from $0.77 to $0.86)', publisher: 'AMZ Prep', href: 'https://amzprep.com/amazon-fba-fees/', accessed: '2026-09-05' },
+  { title: 'Amazon 2026 FBA fee changes: what sellers need to know (running the numbers on products sitting just above $50; Small Bulky and Large Bulky split)', publisher: 'eFulfillment Service', href: 'https://www.efulfillmentservice.com/2026/04/amazon-2026-fba-fee-changes-what-sellers-need-to-know/', accessed: '2026-09-05' },
+  { title: 'Amazon FBA and fulfillment costs (Low-Price FBA running roughly $0.30–$0.77 below standard depending on size and weight)', publisher: 'SupplyKick', href: 'https://www.supplykick.com/blog/amazon-fba-fulfillment-costs', accessed: '2026-09-05' },
+  { title: 'Amazon FBA fees in 2026: what sellers need to check before pricing (surcharge applied to the fulfillment fee; size tier effects of packaging)', publisher: 'Demotix', href: 'https://demotix.com/amazon-fba-fees/', accessed: '2026-09-05' },
+  { title: 'Amazon FBA fee changes 2026: every new rate explained (bundling example: three items at about $3.22 each against a bundled unit at about $4.65)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-09-05' },
 ]} />

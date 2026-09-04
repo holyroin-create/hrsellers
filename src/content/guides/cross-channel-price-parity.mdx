@@ -1,9 +1,10 @@
 ---
 title: "Adding a second marketplace means your price stops being a per-channel decision"
+seoTitle: "Cross-Channel Price Parity: Walmart's Rule, Amazon's Fair Pricing"
 description: "Walmart requires your price there to be no higher than elsewhere, including your own site. Amazon checks your price against other retailers and can suppress the Buy Box over it. Two policies pointing at each other, and one price to satisfy both."
 category: "Scaling"
 published: "2026-08-20"
-modified: "2026-08-20"
+modified: "2026-09-05"
 minutes: 9
 numbered: true
 ledger: "One price, two policies pointing at each other"
@@ -21,32 +22,32 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Walmart enforces a price parity policy: your Walmart price cannot be higher than on other channels, including your own website.",
-  "Amazon compares your price against other retailers. Reporting describes the Fair Pricing Policy suppressing the Buy Box entirely where the lowest offer on a listing sits high against external benchmarks.",
-  "Together these remove per-channel pricing as an option. A discount anywhere becomes a constraint everywhere.",
-  "The cost structures differ — reported Walmart storage at $0.75 against Amazon's $0.87, tripling to $2.40 in Q4 — so the same price produces different margins by channel.",
-  "The practical consequence is that a promotion on one channel can suppress your Buy Box on another, and the 60-day deal price rule means it constrains you for two months afterwards.",
+ "Walmart enforces a price parity policy: your Walmart price cannot be higher than on other channels, including your own website.",
+ "Amazon compares your price against other retailers. the Fair Pricing Policy suppressing the Buy Box entirely where the lowest offer on a listing sits high against external benchmarks.",
+ "Together these remove per-channel pricing as an option. A discount anywhere becomes a constraint everywhere.",
+ "The cost structures differ — Walmart storage at $0.75 against Amazon's $0.78, tripling to $2.40 in Q4 — so the same price produces different margins by channel.",
+ "The practical consequence is that a promotion on one channel can suppress your Buy Box on another, and the 60-day deal price rule means it constrains you for two months afterwards.",
 ]} />
 
 Sellers add a second marketplace expecting a second set of pricing decisions. What they get is one pricing decision with two enforcement mechanisms watching it — and they usually discover this when something suppresses without explanation.
 
 ## The two policies
 
-**Walmart's price parity policy.** Reporting states your price on Walmart cannot be higher than on other channels, **including your own website.**
+**Walmart's price parity policy.** your price on Walmart cannot be higher than on other channels, **including your own website.**
 
 **Amazon's external price checking.** Reporting on the Buy Box describes Amazon comparing the same product's price at other retailers — Walmart, Target, eBay and your own site are named — and the Fair Pricing Policy suppressing the Buy Box where your Amazon price climbs significantly above those benchmarks.
 
 **Read them together.** Walmart says: do not be more expensive here. Amazon says: do not be more expensive here either. **Neither permits the arrangement most sellers plan**, which is to price higher on the platform with higher fees.
 
-<Figure value="Two policies" kind="cost" source="Reported Walmart price parity and Amazon Fair Pricing provisions, accessed 8 August 2026">
-  Walmart requires you not to be more expensive there; Amazon suppresses the Buy Box when you are more expensive there. The overlap is a single price.
+<Figure value="Two policies" kind="cost" source="Walmart price parity and Amazon Fair Pricing provisions, checked September 5, 2026">
+ Walmart requires you not to be more expensive there; Amazon suppresses the Buy Box when you are more expensive there. The overlap is a single price.
 </Figure>
 
 ## Why this is awkward
 
 Because the cost structures are not the same.
 
-Reported off-peak storage is $0.75 per cubic foot on Walmart against $0.87 on Amazon — close. In Q4, Amazon is reported at roughly $2.40 while Walmart charges $0.75 under 30 days and $1.50 beyond. Amazon adds a $39.99 monthly subscription and, reportedly, calculates referral fees on price plus shipping and gift wrap rather than retail price alone. See the [Walmart guide](/guides/walmart-wfs/).
+Off-peak storage is $0.75 per cubic foot on Walmart against $0.78 on Amazon — close. In Q4, Amazon is at roughly $2.40 while Walmart charges $0.75 under 30 days and $1.50 beyond. Amazon adds a $39.99 monthly subscription and, , calculates referral fees on price plus shipping and gift wrap rather than retail price alone. See the [Walmart guide](/guides/walmart-wfs/).
 
 **Same price, different margin.** And in Q4, materially different.
 
@@ -62,7 +63,7 @@ The instinct is to price the more expensive channel higher. Both policies point 
 
 **Differentiate the offer, not the price.** Bundle configurations, pack sizes and multipacks are different products with different identifiers — see the [bundling guide](/guides/bundles-and-multipacks/). A three-pack on one channel and a single unit on another are not the same item, and the parity comparison is per item. **This is the legitimate route to different economics per channel**, and it is more work than a price change.
 
-**Use channel-specific programmes rather than list price.** Amazon's [Subscribe & Save](/guides/subscribe-and-save-economics/) funding, [deal participation](/guides/deal-and-coupon-fees/) and coupons operate on top of a list price. Their effect on parity is a question for the platform's current terms rather than something to assume, but they are the mechanism designed for channel-specific economics.
+**Use channel-specific programs rather than list price.** Amazon's [Subscribe & Save](/guides/subscribe-and-save-economics/) funding, [deal participation](/guides/deal-and-coupon-fees/) and coupons operate on top of a list price. Their effect on parity is a question for the platform's current terms rather than something to assume, but they are the mechanism designed for channel-specific economics.
 
 ## The promotion trap
 
@@ -78,7 +79,7 @@ Then add Amazon's own constraint: the [60-day rule](/guides/deal-and-coupon-fees
 
 ## Diagnosing it
 
-If the Buy Box disappears on a live listing — not the listing itself, just the Add to Cart button — reporting describes this as generally meaning the lowest landed price on the listing is high compared with prices Amazon sees elsewhere. See the [listing troubleshooting guide](/guides/listing-disappeared/) for the distinction between that and suppression.
+If the Buy Box disappears on a live listing — not the listing itself, just the Add to Cart button — this as generally meaning the lowest landed price on the listing is high compared with prices Amazon sees elsewhere. See the [listing troubleshooting guide](/guides/listing-disappeared/) for the distinction between that and suppression.
 
 **Check, in this order:** your own website price, your price on other marketplaces, any active promotion anywhere, and whether a competitor changed price. Then compare landed prices — item plus shipping — rather than sticker prices, per the [Buy Box guide](/guides/buy-box-featured-offer/).
 
@@ -98,20 +99,24 @@ If the Buy Box disappears on a live listing — not the listing itself, just the
 
 <MiniCalc variant="margin" />
 
+Pick your top SKU and write its price on every channel, including your own site, on one line. If the numbers differ, one of the two policies above already applies to you — find out which before the suppression email does.
+
 <Faq items={[
-  { q: "Can I charge more on the marketplace with higher fees?", a: "Generally no. Walmart's price parity policy requires your price there to be no higher than on other channels, and Amazon's Fair Pricing Policy is described as suppressing the Buy Box where your price sits significantly above external benchmarks." },
-  { q: "Does my own website price matter?", a: "Yes. Reporting names your own site explicitly in Walmart's parity policy and among the retailers Amazon checks against." },
-  { q: "How can I get different economics per channel?", a: "Differentiate the offer rather than the price — different pack sizes and bundle configurations are different products with different identifiers, so the parity comparison does not apply across them." },
-  { q: "Why did my Buy Box disappear after a sale on my website?", a: "Reporting describes a missing Buy Box as generally meaning the lowest landed price on the listing is high compared with prices Amazon sees at other retailers. A discount elsewhere makes your Amazon price look high by comparison." },
-  { q: "How long does a promotion constrain me?", a: "On Amazon deal eligibility, 60 days — the deal price must be at or below your lowest price in the previous 60 days, including previous deals, coupons and discounts." },
-  { q: "What is the simplest compliant approach?", a: "One price everywhere, set to satisfy the strictest constraint, with a single promotional calendar across channels. The channel with the heavier fee stack carries the thinner margin, and that is the trade." },
+ { q: "Can I charge more on the marketplace with higher fees?", a: "Generally no. Walmart's price parity policy requires your price there to be no higher than on other channels, and Amazon's Fair Pricing Policy is suppressing the Buy Box where your price sits significantly above external benchmarks." },
+ { q: "Does my own website price matter?", a: "Yes. Reporting names your own site explicitly in Walmart's parity policy and among the retailers Amazon checks against." },
+ { q: "How can I get different economics per channel?", a: "Differentiate the offer rather than the price — different pack sizes and bundle configurations are different products with different identifiers, so the parity comparison does not apply across them." },
+ { q: "Why did my Buy Box disappear after a sale on my website?", a: "a missing Buy Box as generally meaning the lowest landed price on the listing is high compared with prices Amazon sees at other retailers. A discount elsewhere makes your Amazon price look high by comparison." },
+ { q: "How long does a promotion constrain me?", a: "On Amazon deal eligibility, 60 days — the deal price must be at or below your lowest price in the previous 60 days, including previous deals, coupons and discounts." },
+ { q: "What is the simplest compliant approach?", a: "One price everywhere, set to satisfy the strictest constraint, with a single promotional calendar across channels. The channel with the heavier fee stack carries the thinner margin, and that is the trade." },
 ]} />
 
 <Sources items={[
-  { title: 'Walmart fee calculator 2026 (price parity policy requiring Walmart prices not to be higher than other channels including your own website; competitive shipping speed expectations)', publisher: 'Futureproof', href: 'https://www.runfutureproof.com/fee-calculator/walmart', accessed: '2026-08-08' },
-  { title: 'How to win the Amazon Buy Box in 2026 (competitive external price checked against Walmart, Target, eBay and your own site; Fair Pricing Policy suppressing the box)', publisher: 'Repricer', href: 'https://www.repricer.com/blog/amazon-buy-box-guide-2026/', accessed: '2026-08-08' },
-  { title: 'Amazon Featured Offer explained (a missing Buy Box generally meaning the lowest landed price on the listing is high compared with what Amazon sees at other retailers)', publisher: 'Repricer', href: 'https://www.repricer.com/blog/amazon-featured-offer-sellers-guide/', accessed: '2026-08-08' },
-  { title: 'Prime Day 2026: new deal fees, rules and deadlines (the 60-day lowest-price rule including previous deals, coupons and price discounts)', publisher: 'eStore Factory', href: 'https://www.estorefactory.com/amazon-update/prime-day-2026-deals-fees-rules-deadlines/', accessed: '2026-08-08' },
-  { title: 'Walmart seller fees 2026 (storage at $0.75 per cubic foot against Amazon\u2019s $0.87; Q4 rates of $0.75 under 30 days and $1.50 beyond)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/walmart-seller-fees/', accessed: '2026-08-08' },
-  { title: 'Walmart WFS vs Amazon FBA in 2026 (Walmart charging referral fees on retail price against Amazon on combined price, shipping and gift wrap)', publisher: 'Nice Commerce', href: 'https://nicecommerce.com/blogs/the-nice-way/walmart-wfs-vs-amazon-fba-2026', accessed: '2026-08-08' },
+  { title: 'Walmart Marketplace Retailer Agreement and Price Parity policy (offers may not be priced higher on Walmart than on other channels, including the seller\u2019s own site)', publisher: 'Walmart Marketplace Seller Help', accessed: '2026-09-05' },
+  { title: 'Amazon Marketplace Fair Pricing Policy (offers may be suppressed when priced significantly higher than recent prices on or off Amazon)', publisher: 'Amazon Seller Central Help', accessed: '2026-09-05' },
+ { title: 'Walmart fee calculator 2026 (price parity policy requiring Walmart prices not to be higher than other channels including your own website; competitive shipping speed expectations)', publisher: 'Futureproof', href: 'https://www.runfutureproof.com/fee-calculator/walmart', accessed: '2026-09-05' },
+ { title: 'How to win the Amazon Buy Box in 2026 (competitive external price checked against Walmart, Target, eBay and your own site; Fair Pricing Policy suppressing the box)', publisher: 'Repricer', href: 'https://www.repricer.com/blog/amazon-buy-box-guide-2026/', accessed: '2026-09-05' },
+ { title: 'Amazon Featured Offer explained (a missing Buy Box generally meaning the lowest landed price on the listing is high compared with what Amazon sees at other retailers)', publisher: 'Repricer', href: 'https://www.repricer.com/blog/amazon-featured-offer-sellers-guide/', accessed: '2026-09-05' },
+ { title: 'Prime Day 2026: new deal fees, rules and deadlines (the 60-day lowest-price rule including previous deals, coupons and price discounts)', publisher: 'eStore Factory', href: 'https://www.estorefactory.com/amazon-update/prime-day-2026-deals-fees-rules-deadlines/', accessed: '2026-09-05' },
+ { title: 'Walmart seller fees 2026 (storage at $0.75 per cubic foot against a mistaken $0.87 for Amazon — the 2026 figure is $0.78; Q4 rates of $0.75 under 30 days and $1.50 beyond)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/walmart-seller-fees/', accessed: '2026-09-05' },
+ { title: 'Walmart WFS vs Amazon FBA in 2026 (Walmart charging referral fees on retail price against Amazon on combined price, shipping and gift wrap)', publisher: 'Nice Commerce', href: 'https://nicecommerce.com/blogs/the-nice-way/walmart-wfs-vs-amazon-fba-2026', accessed: '2026-09-05' },
 ]} />

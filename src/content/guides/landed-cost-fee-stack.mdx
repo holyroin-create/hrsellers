@@ -1,9 +1,10 @@
 ---
 title: "Four published sources, four different values for the same customs fee. Here is how to build a landed cost anyway."
+seoTitle: "Landed Cost: MPF 0.3464%, HMF 0.125%, Bond, Broker, ISF — Built"
 description: "Duty is the line everyone models. The user fees underneath it — MPF, HMF, bond, broker, ISF — are where landed cost quietly grows. And the published rate cards for those fees do not agree with each other."
 category: "Shipping & logistics"
 published: "2026-08-08"
-modified: "2026-08-08"
+modified: "2026-09-05"
 minutes: 9
 numbered: true
 ledger: "Informal MPF: $1.16 / $2.49 / $2.69 / $2.72"
@@ -22,11 +23,11 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Duty is one line. Underneath it sit the Merchandise Processing Fee, the Harbor Maintenance Fee on ocean cargo, a bond, a broker fee and, for ocean, an ISF filing.",
-  "MPF on formal entries is consistently reported at 0.3464% of customs value, with a floor and a cap. The cap is quoted as $651.50 by one source and $634.62 by another.",
-  "MPF on informal entries is reported at $1.16, $2.49, $2.69 and $2.72 across four sources published within months of each other. All four cannot be current.",
-  "HMF is 0.125% of customs value, ocean only, with no minimum and no maximum. Air, truck and rail do not pay it.",
-  "User fees are calculated on customs value in parallel with duty — they are not a percentage of the duty. Building them as a multiplier of the duty rate overstates them on high-tariff goods and understates them on low-tariff goods.",
+ "Duty is one line. Underneath it sit the Merchandise Processing Fee, the Harbor Maintenance Fee on ocean cargo, a bond, a broker fee and, for ocean, an ISF filing.",
+ "MPF on formal entries is consistently at 0.3464% of customs value, with a floor and a cap. The cap is quoted as $651.50 by one source and $634.62 by another.",
+ "MPF on informal entries is at $1.16, $2.49, $2.69 and $2.72 across four sources published within months of each other. All four cannot be current.",
+ "HMF is 0.125% of customs value, ocean only, with no minimum and no maximum. Air, truck and rail do not pay it.",
+ "User fees are calculated on customs value in parallel with duty — they are not a percentage of the duty. Building them as a multiplier of the duty rate overstates them on high-tariff goods and understates them on low-tariff goods.",
 ]} />
 
 Most landed cost models stop at duty. That is understandable — duty is the biggest single line and the one everybody talks about. It is also the one line your supplier and your forwarder will both quote you without being asked. The rest arrives on the entry summary, after the goods have shipped.
@@ -34,13 +35,13 @@ Most landed cost models stop at duty. That is understandable — duty is the big
 ## The stack, in the order it appears
 
 <Steps title="What lands on one unit" accent={3} source="Margin math starts after line 4, not line 1"
-  steps={[
-    { t: 'Factory price', d: 'line 1' },
-    { t: 'Freight + ins.', d: 'line 2' },
-    { t: 'Duty + entry', d: 'line 3' },
-    { t: 'Inbound + prep', d: 'line 4' },
-    { t: 'Landed cost', d: 'the real cost' },
-  ]} />
+ steps={[
+  { t: 'Factory price', d: 'line 1' },
+  { t: 'Freight + ins.', d: 'line 2' },
+  { t: 'Duty + entry', d: 'line 3' },
+  { t: 'Inbound + prep', d: 'line 4' },
+  { t: 'Landed cost', d: 'the real cost' },
+ ]} />
 
 | Line | Basis | Applies to |
 | --- | --- | --- |
@@ -68,17 +69,17 @@ This is where a landed cost model quietly goes wrong, and it is worth showing ra
 
 The rate itself is agreed. Everything bounded by a dollar figure is not.
 
-Some of this is explicable: the fees are inflation-adjusted annually, one adjustment took effect on 1 October 2025, and articles written on either side of that date will differ. Some of it is not explicable — the informal figures split four ways, and at least one source dates the de minimis suspension to February 2026, which does not match the sequence CBP actually published.
+Some of this is explicable: the fees are inflation-adjusted annually, one adjustment took effect on October 1, 2025, and articles written on either side of that date will differ. Some of it is not explicable — the informal figures split four ways, and at least one source dates the de minimis suspension to February 2026, which does not match the sequence CBP actually published.
 
-<Figure value="4 values" kind="cost" source="Review of 2026 customs fee guides, August 2026">
-  Published values found for the informal-entry Merchandise Processing Fee, across four sources dated within months of each other. None of them cite the CBP schedule directly.
+<Figure value="4 values" kind="cost" source="Review of 2026 customs fee guides against CBP user-fee notices; checked September 5, 2026">
+ Published values found for the informal-entry Merchandise Processing Fee, across four sources dated within months of each other. None of them cite the CBP schedule directly.
 </Figure>
 
 **The working position:** use 0.3464% with a cap, verify the current floor, cap and informal figures against CBP's own fee schedule or your broker's entry summary, and treat every blog rate card — including the table above — as a prompt to check rather than a number to model.
 
 <StockImage slug="landed-cost-fee-stack" theme="ecommerce" />
 
-## Where the cap changes behaviour
+## Where the cap changes behavior
 
 The MPF maximum is one of the few fees where the ceiling matters operationally. At roughly 0.3464%, the cap is reached somewhere around $183,000 of customs value on one source's arithmetic. Above that point, additional value carries no additional MPF.
 
@@ -95,7 +96,7 @@ Work in this order, because each step needs the one before it.
 3. **Origin.** Determines trade-remedy duties. A product's country of origin is where it was substantially transformed, which is not always where it shipped from.
 4. **Duty.** Base rate, plus any Section 301 or Section 232 layer.
 5. **User fees.** MPF on customs value. HMF on customs value if it came by sea.
-6. **Per-shipment costs.** Broker fee, ISF if ocean, bond amortised across the year's entries.
+6. **Per-shipment costs.** Broker fee, ISF if ocean, bond amortized across the year's entries.
 7. **Divide by units.** Landed cost per unit is the only number that goes into a pricing decision. Everything above it is intermediate.
 
 Then take that per-unit figure to the [margin calculator](/tools/margin-calculator/) as your cost of goods, rather than the invoice price from your supplier. The gap between those two numbers is what sank a lot of businesses in the last eighteen months.
@@ -106,23 +107,26 @@ Then take that per-unit figure to the [margin calculator](/tools/margin-calculat
 
 **Amortise the annual costs.** Continuous bond and any compliance software are annual, not per-shipment. Spreading them across your expected entry count gives a per-unit figure that behaves properly in a margin model.
 
-**Recheck in October.** The user fees carry an annual inflation adjustment effective 1 October. One analysis notes that several rose by more than 4% at the FY2026 adjustment. Diarise it.
+**Recheck in October.** The user fees carry an annual inflation adjustment effective October 1. One analysis notes that several rose by more than 4% at the FY2026 adjustment. Diarize it.
 
 **Distinguish quotes from entries.** A forwarder's landed-cost quote is an estimate made before classification. The entry summary is what actually happened. When they disagree, the entry summary is the fact.
 
 <MiniCalc variant="margin" />
 
+Take your last commercial invoice and add the five lines below duty by hand, in this order: MPF, HMF, bond, broker, ISF. If the total surprises you, your landed-cost spreadsheet has been missing it on every shipment.
+
 <Faq items={[
-  { q: "Are MPF and HMF percentages of the duty?", a: "No. Both are calculated on customs value in parallel with duty. Treating them as a multiple of the duty rate produces errors in both directions depending on how high the tariff is." },
-  { q: "Does HMF apply to air freight?", a: "No. HMF applies to commercial imports unloaded from a vessel at a US port. Air, truck and rail do not pay it." },
-  { q: "Which MPF figure should I use for informal entries?", a: "Published sources give $1.16, $2.49, $2.69 and $2.72 within months of each other. Verify against the current CBP fee schedule or a recent entry summary before modelling — this guide will not pick one for you." },
-  { q: "When does the MPF cap start to matter?", a: "Around $183,000 of customs value on one published calculation, using the 0.3464% rate against the reported maximum. Below that the cap is irrelevant and per-entry charges dominate." },
-  { q: "Do these fees change?", a: "Yes, annually. The user fees carry an inflation adjustment effective 1 October each year, which is a large part of why published rate cards disagree." },
+ { q: "Are MPF and HMF percentages of the duty?", a: "No. Both are calculated on customs value in parallel with duty. Treating them as a multiple of the duty rate produces errors in both directions depending on how high the tariff is." },
+ { q: "Does HMF apply to air freight?", a: "No. HMF applies to commercial imports unloaded from a vessel at a US port. Air, truck and rail do not pay it." },
+ { q: "Which MPF figure should I use for informal entries?", a: "Published sources give $1.16, $2.49, $2.69 and $2.72 within months of each other. Verify against the current CBP fee schedule or a recent entry summary before modeling — this guide will not pick one for you." },
+ { q: "When does the MPF cap start to matter?", a: "Around $183,000 of customs value on one published calculation, using the 0.3464% rate against the reported maximum. Below that the cap is irrelevant and per-entry charges dominate." },
+ { q: "Do these fees change?", a: "Yes, annually. The user fees carry an inflation adjustment effective October 1 each year, which is a large part of why published rate cards disagree." },
 ]} />
 
 <Sources items={[
-  { title: 'MPF & HMF customs fees: 2026 rates, caps and who pays (0.3464%; max $634.62; min $32.71; informal $2.49 manual / $1.16 electronic; HMF 0.125%)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/mpf-hmf-fees-explained/', accessed: '2026-08-08' },
-  { title: 'MPF fee guide 2026: rates and exemptions (0.3464%; min $33.58; max $651.50; informal automated $2.69; manual up to $12.09; effective 1 Oct 2025)', publisher: 'FreightAmigo', href: 'https://www.freightamigo.com/en/blog/logistics/understanding-the-merchandise-processing-fee-mpf-in-2026-rates-exemptions-and-importer-strategies/', accessed: '2026-08-08' },
-  { title: 'US customs user fees explained: MPF, HMF, COBRA and APHIS rates for 2026 (fees calculated on entered value, not on the duty; FY2026 adjustments)', publisher: 'FreightFigures', href: 'https://www.freightfigures.com/articles/us-customs-user-fees-mpf-hmf-2026', accessed: '2026-08-08' },
-  { title: 'Import duty from China to USA: every tariff, rate and fee (informal MPF $2.72; ISF and broker fee ranges; continuous bond sizing)', publisher: 'GingerControl', href: 'https://gingercontrol.com/blog/importing-from-china-tariff-guide', accessed: '2026-08-08' },
+  { title: 'Customs user fees: Merchandise Processing Fee 0.3464% ad valorem with FY2026 minimum $33.58 and maximum $651.50 (FY2025: $32.71 / $634.62); Harbor Maintenance Fee 0.125% on ocean imports; annual inflation adjustment under COBRA effective October 1', publisher: 'U.S. Customs and Border Protection, Federal Register notice of user fee adjustments', accessed: '2026-09-05' },
+ { title: 'MPF & HMF customs fees: 2026 rates, caps and who pays (0.3464%; max $634.62; min $32.71; informal $2.49 manual / $1.16 electronic; HMF 0.125%)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/mpf-hmf-fees-explained/', accessed: '2026-09-05' },
+ { title: 'MPF fee guide 2026: rates and exemptions (0.3464%; min $33.58; max $651.50; informal automated $2.69; manual up to $12.09; effective 1 Oct 2025)', publisher: 'FreightAmigo', href: 'https://www.freightamigo.com/en/blog/logistics/understanding-the-merchandise-processing-fee-mpf-in-2026-rates-exemptions-and-importer-strategies/', accessed: '2026-09-05' },
+ { title: 'US customs user fees explained: MPF, HMF, COBRA and APHIS rates for 2026 (fees calculated on entered value, not on the duty; FY2026 adjustments)', publisher: 'FreightFigures', href: 'https://www.freightfigures.com/articles/us-customs-user-fees-mpf-hmf-2026', accessed: '2026-09-05' },
+ { title: 'Import duty from China to USA: every tariff, rate and fee (informal MPF $2.72; ISF and broker fee ranges; continuous bond sizing)', publisher: 'GingerControl', href: 'https://gingercontrol.com/blog/importing-from-china-tariff-guide', accessed: '2026-09-05' },
 ]} />

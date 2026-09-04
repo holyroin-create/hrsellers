@@ -10,7 +10,7 @@ const news = (await getCollection('guides', ({ data }) => !data.draft && data.ne
   .sort((a, b) => +new Date(b.data.published) - +new Date(a.data.published));
 const log = POLICY.slice(0, 5);
 ---
-<Base title="News" description="Dated marketplace developments, analysed for sellers: what changed, what it costs per unit, and what to do in your account this week." ogImage="/og/p-news.png">
+<Base title="News" description="Dated marketplace developments, analyzed for sellers: what changed, what it costs per unit, and what to do in your account this week." ogImage="/og/p-news.png">
 <div class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">›</span><span aria-current="page">News</span></nav>
   <div class="portal">

@@ -31,4 +31,4 @@ export const AUTHOR = {
 };
 
 export const SOURCING_NOTE =
-  "Every figure here is cited to a source with the date it was retrieved. Where a figure comes from operations the author worked on directly, it is labelled as first-party and the period it covers is stated. Nothing is published without one or the other.";
+  "Every figure here is cited to a source with the date it was retrieved. Where a figure comes from operations the author worked on directly, it is labeled as first-party and the period it covers is stated. Nothing is published without one or the other.";

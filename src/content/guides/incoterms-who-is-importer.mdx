@@ -1,9 +1,10 @@
 ---
 title: "Three letters on a quotation decide who pays the tariff. Most sellers never read them."
+seoTitle: "Incoterms 2020 and the Importer of Record: Who Pays the Tariff"
 description: "EXW, FOB and DDP look like shipping jargon sitting next to the price. They determine who clears customs, who carries the tariff risk, and whose name goes on the entry — which is the name CBP holds responsible."
 category: "Shipping & logistics"
 published: "2026-08-08"
-modified: "2026-08-08"
+modified: "2026-09-05"
 minutes: 10
 numbered: true
 ledger: "DDP is the only term making the seller importer of record"
@@ -21,14 +22,14 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Incoterms allocate cost and risk between buyer and seller. They do not change who US customs treats as the importer of record — that is the entity declared on CBP Form 7501, and it is usually the US buyer.",
-  "DDP is the exception, and the one to read carefully: it is described as the only Incoterm placing the seller as importer of record at destination. Doing that requires a US customs bond and a US presence the supplier may not have.",
-  "The current version is Incoterms 2020. Despite what a lot of 2026 content implies, no 2025 or 2026 edition was issued. Reference the version explicitly in your contract.",
-  "The most common DDP failure is a quote priced against yesterday's duty rates. After eighteen months of tariff changes, a stale DDP quote is a dispute waiting to happen.",
-  "Always name the exact place: FOB Shanghai, not FOB China. The risk transfer point is a location, not a country.",
+ "Incoterms allocate cost and risk between buyer and seller. They do not change who US customs treats as the importer of record — that is the entity declared on CBP Form 7501, and it is usually the US buyer.",
+ "DDP is the exception, and the one to read carefully: it is the only Incoterm under which the seller undertakes import clearance, which in practice means acting as importer of record — CBP itself only recognizes whoever is declared on the entry. Doing that requires a US customs bond and a US presence the supplier may not have.",
+ "The current version is Incoterms 2020. Despite what a lot of 2026 content implies, no 2025 or 2026 edition was issued. Reference the version explicitly in your contract.",
+ "The most common DDP failure is a quote priced against yesterday's duty rates. After eighteen months of tariff changes, a stale DDP quote is a dispute waiting to happen.",
+ "Always name the exact place: FOB Shanghai, not FOB China. The risk transfer point is a location, not a country.",
 ]} />
 
-Ask a supplier for a price and you get a number with three letters next to it. Those letters look like a formality. They decide who arranges the freight, who insures it, who files the customs entry, who pays the tariff, and who is left holding a detained container.
+DDP on a quotation means your supplier is promising to be the US importer of record — with a US bond, a US broker and a duty rate they priced months ago. Ask a supplier for a price and you get a number with three letters next to it. Those letters look like a formality. They decide who arranges the freight, who insures it, who files the customs entry, who pays the tariff, and who is left holding a detained container.
 
 Since the de minimis suspension, that last question stopped being theoretical for anyone importing at any scale.
 
@@ -40,8 +41,8 @@ Since the de minimis suspension, that last question stopped being theoretical fo
 
 **DDP — Delivered Duty Paid.** The supplier pays everything to your door: export clearance, freight, import clearance, duties and taxes. Maximum seller obligation under Incoterms 2020. It looks like the easy option and it is the one that produces the most disputes.
 
-<Figure value="Form 7501" kind="cost" source="TariffWise, Incoterms 2026 guide for importers, accessed 8 August 2026">
-  The document that decides who US customs holds responsible. Regardless of Incoterm, the importer of record is the entity declared on it — normally the US buyer.
+<Figure value="Form 7501" kind="cost" source="TariffWise, Incoterms 2026 guide for importers, checked September 5, 2026">
+ The document that decides who US customs holds responsible. Regardless of Incoterm, the importer of record is the entity declared on it — normally the US buyer.
 </Figure>
 
 ## The part that is not negotiable
@@ -50,13 +51,13 @@ Incoterms are a commercial agreement between two companies. CBP is not a party t
 
 Reporting on this is direct: regardless of the Incoterm, the US importer of record is whoever is declared on CBP Form 7501, and that is normally the US buyer. Your classification liability, your valuation liability and your duty of reasonable care — covered in our [classification guide](/guides/hts-classification-basics/) — follow that declaration, not your purchase order.
 
-**DDP is described as the only Incoterm that lists the seller as importer of record at destination.** That is a real transfer of responsibility, and it is also why DDP is operationally difficult in practice: the seller needs a customs bond and a US tax presence, or must hire a US agent to act for them.
+**DDP is the only Incoterm that lists the seller as importer of record at destination.** That is a real transfer of responsibility, and it is also why DDP is operationally difficult in practice: the seller needs a customs bond and a US tax presence, or must hire a US agent to act for them.
 
 So there are two failure modes, and they are opposite.
 
 **You think DDP protects you, and it does not**, because the entry was actually filed with your name on it and your supplier merely paid the invoice. You carry the liability without the control.
 
-**DDP works as intended and that breaks something else.** Reporting notes that some FDA, EPA and USDA regulated goods require the owner to be the importer of record. If your supplier is the importer of record on those goods, your compliance position is wrong even though your paperwork is clean.
+**DDP works as intended and that breaks something else.** some FDA, EPA and USDA regulated goods require the owner to be the importer of record. If your supplier is the importer of record on those goods, your compliance position is wrong even though your paperwork is clean.
 
 **Ask one question and get the answer in writing:** whose name appears as importer of record on the CBP entry. Not who pays, not who arranges — whose name is on the form.
 
@@ -78,7 +79,7 @@ What happens next is predictable. Either the supplier absorbs a loss they did no
 
 **Assuming DDP includes unloading.** It does not. The buyer unloads under DDP. If you need the seller to unload, the term is DPU.
 
-**Assuming CIF means you are insured.** Reporting notes CIF requires only minimum-cover insurance. If you need real coverage, CIP obliges the seller to obtain higher cover — or arrange your own.
+**Assuming CIF means you are insured.** CIF requires only minimum-cover insurance. If you need real coverage, CIP obliges the seller to obtain higher cover — or arrange your own.
 
 **Letting the term change silently.** One forwarder describes a recurring pattern where a supplier shifts from FOB to EXW after the deposit is paid, leaving the buyer to find an export agent at short notice. The term, the named place and the version belong in the purchase order, not in a chat message.
 
@@ -105,20 +106,24 @@ What happens next is predictable. Either the supplier absorbs a loss they did no
 
 <MiniCalc variant="stack" />
 
+Open your last supplier quotation and find the three letters. If they say DDP, ask the supplier which US bond and broker they used on your last shipment. Their answer — or their silence — is the whole risk assessment.
+
 <Faq items={[
-  { q: "Is there an Incoterms 2026?", a: "No. The current version is Incoterms 2020, published by the ICC and in effect since 1 January 2020. Content referring to a 2025 or 2026 edition is describing something that does not exist. Reference the version explicitly in contracts." },
-  { q: "Does DDP mean I have no customs responsibility?", a: "Only if the seller is genuinely the importer of record on the entry, which requires them to have a US customs bond and presence or a US agent. Confirm whose name is on CBP Form 7501 rather than assuming the Incoterm settled it." },
-  { q: "FOB or DDP for imports from Asia?", a: "One sourcing firm's stated default across hundreds of projects is FOB unless there is a specific reason otherwise: cheaper, more transparent, and you keep control of the freight leg." },
-  { q: "What is the difference between DDP and DAP?", a: "Who pays import duties. Under DDP the seller pays and clears customs; under DAP the buyer does. Freight and transit risk are identical." },
-  { q: "Does the Incoterm affect my Amazon fees?", a: "No. It affects your landed cost, which is your cost of goods. See the landed cost guide for the fee stack that sits between the two." },
+ { q: "Is there an Incoterms 2026?", a: "No. The current version is Incoterms 2020, published by the ICC and in effect since January 1, 2020. Content referring to a 2025 or 2026 edition is describing something that does not exist. Reference the version explicitly in contracts." },
+ { q: "Does DDP mean I have no customs responsibility?", a: "Only if the seller is genuinely the importer of record on the entry, which requires them to have a US customs bond and presence or a US agent. Confirm whose name is on CBP Form 7501 rather than assuming the Incoterm settled it." },
+ { q: "FOB or DDP for imports from Asia?", a: "One sourcing firm's stated default across hundreds of projects is FOB unless there is a specific reason otherwise: cheaper, more transparent, and you keep control of the freight leg." },
+ { q: "What is the difference between DDP and DAP?", a: "Who pays import duties. Under DDP the seller pays and clears customs; under DAP the buyer does. Freight and transit risk are identical." },
+ { q: "Does the Incoterm affect my Amazon fees?", a: "No. It affects your landed cost, which is your cost of goods. See the landed cost guide for the fee stack that sits between the two." },
 ]} />
 
 <Sources items={[
-  { title: 'Incoterms 2026: complete guide for importers (importer of record is the entity on CBP Form 7501; DDP requires a customs bond and US tax presence; name the place, not the country)', publisher: 'TariffWise', href: 'https://tariffwise.co/import/incoterms-2026/', accessed: '2026-08-08' },
-  { title: 'Incoterms 2026: meaning, chart and list (DDP as the only term listing the seller as importer of record at destination; FOB and EXW transfer points)', publisher: 'Freightos', href: 'https://www.freightos.com/freight-resources/incoterms-plain-english-freight-shipping-guide/', accessed: '2026-08-08' },
-  { title: 'DDP Incoterms 2026: delivered duty paid (DDP against DAP; unloading; stale duty quotes; regulated goods requiring the owner as importer of record)', publisher: 'Suaid Global', href: 'https://suaidglobal.com/insights/ddp-incoterms-delivered-duty-paid/', accessed: '2026-08-08' },
-  { title: 'Delivered duty paid (DDP) Incoterms 2020 rule (article-by-article commentary; why DDP is problematic in cross-ocean trade)', publisher: 'Trade Finance Global', href: 'https://www.tradefinanceglobal.com/incoterms/ddp-delivery-duty-paid/', accessed: '2026-08-08' },
-  { title: 'FOB against DDP from a sourcing practitioner\u2019s perspective (FOB as the stated default for importers sourcing from Asia)', publisher: 'Cosmo Sourcing', href: 'https://www.cosmosourcing.com/blog/fob-vs-ddp-incoterms-pros-and-cons', accessed: '2026-08-08' },
-  { title: 'DDP against FOB against EXW for China shipments (no 2025 or 2026 Incoterms version issued; suppliers switching term after deposit)', publisher: 'Topway Shipping', href: 'https://www.topwayshipping.com/ddp-vs-fob-vs-exw-what-each-incoterm-actually-means-for-your-china-shipment/', accessed: '2026-08-08' },
-  { title: 'Know your Incoterms', publisher: 'International Trade Administration, trade.gov', href: 'https://www.trade.gov/know-your-incoterms', accessed: '2026-08-08' },
+  { title: 'Incoterms 2020 rules (EXW, FOB, DDP and the other nine terms; current edition; no 2025 or 2026 edition issued)', publisher: 'International Chamber of Commerce', href: 'https://iccwbo.org/', accessed: '2026-09-05' },
+  { title: '19 U.S.C. § 1484 — importer of record; CBP Form 7501 entry summary', publisher: 'United States Code, Title 19; U.S. Customs and Border Protection', accessed: '2026-09-05' },
+ { title: 'Incoterms 2026: complete guide for importers (importer of record is the entity on CBP Form 7501; DDP requires a customs bond and US tax presence; name the place, not the country)', publisher: 'TariffWise', href: 'https://tariffwise.co/import/incoterms-2026/', accessed: '2026-09-05' },
+ { title: 'Incoterms 2026: meaning, chart and list (DDP as the only term listing the seller as importer of record at destination; FOB and EXW transfer points)', publisher: 'Freightos', href: 'https://www.freightos.com/freight-resources/incoterms-plain-english-freight-shipping-guide/', accessed: '2026-09-05' },
+ { title: 'DDP Incoterms 2026: delivered duty paid (DDP against DAP; unloading; stale duty quotes; regulated goods requiring the owner as importer of record)', publisher: 'Suaid Global', href: 'https://suaidglobal.com/insights/ddp-incoterms-delivered-duty-paid/', accessed: '2026-09-05' },
+ { title: 'Delivered duty paid (DDP) Incoterms 2020 rule (article-by-article commentary; why DDP is problematic in cross-ocean trade)', publisher: 'Trade Finance Global', href: 'https://www.tradefinanceglobal.com/incoterms/ddp-delivery-duty-paid/', accessed: '2026-09-05' },
+ { title: 'FOB against DDP from a sourcing practitioner\u2019s perspective (FOB as the stated default for importers sourcing from Asia)', publisher: 'Cosmo Sourcing', href: 'https://www.cosmosourcing.com/blog/fob-vs-ddp-incoterms-pros-and-cons', accessed: '2026-09-05' },
+ { title: 'DDP against FOB against EXW for China shipments (no 2025 or 2026 Incoterms version issued; suppliers switching term after deposit)', publisher: 'Topway Shipping', href: 'https://www.topwayshipping.com/ddp-vs-fob-vs-exw-what-each-incoterm-actually-means-for-your-china-shipment/', accessed: '2026-09-05' },
+ { title: 'Know your Incoterms', publisher: 'International Trade Administration, trade.gov', href: 'https://www.trade.gov/know-your-incoterms', accessed: '2026-09-05' },
 ]} />

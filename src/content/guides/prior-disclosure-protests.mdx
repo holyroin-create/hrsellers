@@ -1,9 +1,10 @@
 ---
 title: "You discover you have been importing under the wrong code. There are two doors, and one closes in 180 days."
+seoTitle: "Wrong HTS Code: Prior Disclosure vs Protest, and the 180-Day Door"
 description: "If you underpaid, a prior disclosure filed before CBP finds it changes the exposure. If you overpaid, a protest recovers it — but only within 180 days of liquidation, per entry, and the window runs quietly."
 category: "Shipping & logistics"
 published: "2026-08-22"
-modified: "2026-08-22"
+modified: "2026-09-05"
 minutes: 9
 numbered: true
 ledger: "Protest window: 180 days from liquidation, per entry"
@@ -21,14 +22,14 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Two situations, two mechanisms. Underpayment is a prior disclosure question; overpayment is a protest or post summary correction question.",
-  "Reporting puts the protest window at 180 days from the liquidation date, running per entry rather than per account — so entries expire individually and quietly.",
-  "Prior disclosure is described across the trade compliance market as a standard service. Filing before CBP identifies an issue is the entire point of the mechanism.",
-  "Where a tariff has been reversed or reduced retrospectively, reporting describes unliquidated entries being re-liquidated automatically while already-liquidated entries require a formal protest.",
-  "Neither is a do-it-yourself exercise. Both are described as sitting in the specialist market between routine brokerage and trade litigation.",
+ "Two situations, two mechanisms. Underpayment is a prior disclosure question; overpayment is a protest or post summary correction question.",
+ "the protest window at 180 days from the liquidation date, running per entry rather than per account — so entries expire individually and quietly.",
+ "Prior disclosure is described across the trade compliance market as a standard service. Filing before CBP identifies an issue is the entire point of the mechanism.",
+ "Where a tariff has been reversed or reduced retrospectively, unliquidated entries being re-liquidated automatically while already-liquidated entries require a formal protest.",
+ "Neither is a do-it-yourself exercise. Both are sitting in the specialist market between routine brokerage and trade litigation.",
 ]} />
 
-Every classification review produces the same uncomfortable moment. You look at three years of entries and realise something was wrong.
+Every classification review produces the same uncomfortable moment. You look at three years of entries and realize something was wrong.
 
 **Which direction it was wrong in determines everything that follows**, and both directions have a clock.
 
@@ -46,8 +47,8 @@ The exposure is the penalty regime in 19 U.S.C. § 1592, covered in the [classif
 
 **Which makes the discovery moment decisive.** A seller who finds a classification error and decides to fix it going forward without addressing the past has made a choice about the past — see the [customs holds guide](/guides/customs-holds-and-exams/) on how algorithmic targeting uses importer history.
 
-<Figure value="180 days" kind="cost" source="Reported protest window from liquidation date, 2026, accessed 8 August 2026">
-  The reported window to file a formal protest on an already-liquidated entry. It runs per entry from that entry's liquidation date, which is why it expires without an obvious trigger.
+<Figure value="180 days" kind="cost" source="protest window from liquidation date, 2026, checked September 5, 2026">
+ The window to file a formal protest on an already-liquidated entry. It runs per entry from that entry's liquidation date, which is why it expires without an obvious trigger.
 </Figure>
 
 ## If you overpaid
@@ -58,7 +59,7 @@ More common, and more often ignored, because nobody sends a letter about it.
 
 **Post Summary Correction** — for entries not yet liquidated. Reporting on classification describes overpayment as recoverable through a post summary correction or protest within a limited window after liquidation.
 
-**Protest** — for entries already liquidated. Reporting puts the window at **180 days from the liquidation date.**
+**Protest** — for entries already liquidated. the window at **180 days from the liquidation date.**
 
 **The detail that costs money:** the window runs **per entry**, from that entry's liquidation date. There is no account-level deadline and no notification you would notice. Reporting on retrospective tariff changes states the position plainly — check every liquidated entry individually and file before its specific deadline expires.
 
@@ -68,7 +69,7 @@ More common, and more often ignored, because nobody sends a letter about it.
 
 This is where it stopped being theoretical for a lot of importers.
 
-Where a tariff measure is reversed, reduced or struck down, reporting describes two treatments:
+Where a tariff measure is reversed, reduced or struck down, two treatments:
 
 **Unliquidated entries** — re-liquidated automatically where the system supports it.
 
@@ -118,19 +119,22 @@ Both mechanisms run on records:
 
 <MiniCalc variant="margin" />
 
+Check the liquidation dates on your last twelve months of entries in ACE. Count how many are within 180 days. That number is how many protests you can still file — and it gets smaller every day.
+
 <Faq items={[
-  { q: "I have been using the wrong HTS code. What do I do?", a: "It depends on the direction. Underpayment is a prior disclosure question and should go to a customs attorney before anything else is filed. Overpayment is recoverable through a post summary correction on unliquidated entries or a protest within 180 days of liquidation." },
-  { q: "How long do I have to claim back overpaid duty?", a: "Reporting puts the protest window at 180 days from the liquidation date, running per entry. There is no account-level deadline and no notification you would ordinarily notice." },
-  { q: "What is a prior disclosure?", a: "The mechanism for coming forward to CBP about an error before it identifies the issue. Reporting names prior-disclosure filings among the standard services of the trade compliance market, and the value depends on filing before an inquiry begins." },
-  { q: "A tariff I paid was reversed. Do I get it back automatically?", a: "It depends on entry status. Reporting describes unliquidated entries being re-liquidated automatically where the system supports it, while already-liquidated entries require a formal protest within 180 days of liquidation." },
-  { q: "What records do I need?", a: "Entry summaries with liquidation dates per entry, dated classification reasoning, and supplier documentation connecting the goods to the entries. If you do not have them, ask your broker for a complete entry history first." },
-  { q: "Can I just fix it going forward?", a: "You can, and it is a decision about the past rather than an avoidance of one. Given that importer history feeds algorithmic targeting and that penalties distinguish disclosed errors from discovered ones, it is worth making that decision with advice." },
+ { q: "I have been using the wrong HTS code. What do I do?", a: "It depends on the direction. Underpayment is a prior disclosure question and should go to a customs attorney before anything else is filed. Overpayment is recoverable through a post summary correction on unliquidated entries or a protest within 180 days of liquidation." },
+ { q: "How long do I have to claim back overpaid duty?", a: "the protest window at 180 days from the liquidation date, running per entry. There is no account-level deadline and no notification you would ordinarily notice." },
+ { q: "What is a prior disclosure?", a: "The mechanism for coming forward to CBP about an error before it identifies the issue. Reporting names prior-disclosure filings among the standard services of the trade compliance market, and the value depends on filing before an inquiry begins." },
+ { q: "A tariff I paid was reversed. Do I get it back automatically?", a: "It depends on entry status. unliquidated entries being re-liquidated automatically where the system supports it, while already-liquidated entries require a formal protest within 180 days of liquidation." },
+ { q: "What records do I need?", a: "Entry summaries with liquidation dates per entry, dated classification reasoning, and supplier documentation connecting the goods to the entries. If you do not have them, ask your broker for a complete entry history first." },
+ { q: "Can I just fix it going forward?", a: "You can, and it is a decision about the past rather than an avoidance of one. Given that importer history feeds algorithmic targeting and that penalties distinguish disclosed errors from discovered ones, it is worth making that decision with advice." },
 ]} />
 
 <Sources items={[
-  { title: 'Reduce import duty US 2026 (unliquidated entries re-liquidated automatically against already-liquidated entries requiring a formal protest within 180 days of liquidation; checking every liquidated entry individually)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-08-08' },
-  { title: 'How American importers are cutting their 2026 duty bills (prior-disclosure filings among the services of the tariff mitigation market, alongside classification reviews, first sale valuation and drawback recovery)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-08-08' },
-  { title: 'What is an HTS code? The 2026 importer\u2019s guide (overpayment recoverable through a Post Summary Correction or protest within a limited window after liquidation; underpayment exposure under 19 U.S.C. § 1592 including duty, interest and civil penalties)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/what-is-hts-code/', accessed: '2026-08-08' },
-  { title: 'Complete guide to HTS classification 2026 (penalty tiers under 19 U.S.C. § 1592 for negligence, gross negligence and fraud)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/hts-classification-complete-guide-2026', accessed: '2026-08-08' },
-  { title: 'Navigating US customs holds and exams: a 2026 guide (algorithmic targeting drawing on importer history)', publisher: 'FreightAmigo', href: 'https://www.freightamigo.com/en/blog/logistics/navigating-us-customs-holds-and-exams-a-comprehensive-guide/', accessed: '2026-08-08' },
+  { title: '19 U.S.C. § 1592(c)(4) (prior disclosure) and 19 CFR 162.74; 19 U.S.C. § 1514 (protests within 180 days of liquidation); 19 CFR 174', publisher: 'United States Code, Title 19; U.S. Customs and Border Protection', accessed: '2026-09-05' },
+ { title: 'Reduce import duty US 2026 (unliquidated entries re-liquidated automatically against already-liquidated entries requiring a formal protest within 180 days of liquidation; checking every liquidated entry individually)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-09-05' },
+ { title: 'How American importers are cutting their 2026 duty bills (prior-disclosure filings among the services of the tariff mitigation market, alongside classification reviews, first sale valuation and drawback recovery)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-09-05' },
+ { title: 'What is an HTS code? The 2026 importer\u2019s guide (overpayment recoverable through a Post Summary Correction or protest within a limited window after liquidation; underpayment exposure under 19 U.S.C. § 1592 including duty, interest and civil penalties)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/what-is-hts-code/', accessed: '2026-09-05' },
+ { title: 'Complete guide to HTS classification 2026 (penalty tiers under 19 U.S.C. § 1592 for negligence, gross negligence and fraud)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/hts-classification-complete-guide-2026', accessed: '2026-09-05' },
+ { title: 'Navigating US customs holds and exams: a 2026 guide (algorithmic targeting drawing on importer history)', publisher: 'FreightAmigo', href: 'https://www.freightamigo.com/en/blog/logistics/navigating-us-customs-holds-and-exams-a-comprehensive-guide/', accessed: '2026-09-05' },
 ]} />

@@ -1,9 +1,10 @@
 ---
 title: "The Q4 freight window: counting backwards from October 15"
+seoTitle: "Q4 Freight Booking: Counting Backward From October 15"
 description: "Peak fulfillment fees start October 15 and Q4 storage steps up October 1 — which means your freight booking date is already decided by arithmetic, not preference. The backwards count from selling window to PO date, mode by mode."
 category: "Shipping & logistics"
 published: "2026-08-27"
-modified: "2026-08-27"
+modified: "2026-09-05"
 minutes: 8
 numbered: true
 draft: false
@@ -19,11 +20,11 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Two dated anchors define Q4 logistics: elevated storage rates from October, and the holiday peak fulfillment window running mid-October to mid-January — both covered, with current figures, in our dated fee guides.",
-  "Freight is a calendar decision before it is a price decision: ocean transit plus receiving time means a late-September sail is already a November arrival — after the storage step-up and inside the peak window.",
-  "The backwards count is mechanical: selling date, minus receiving buffer, minus transit, minus production — the result is your PO deadline, and for most ocean-freight plans that deadline is now.",
-  "Split shipments remain the honest hedge: air a launch or replenishment slice to stay in stock through the cutoffs, float the bulk by sea — pay a premium on part of the volume to protect all of it.",
-  "Booking early is also a fee decision: stock that arrives too early pays elevated Q4 storage for longer, so the target is a corridor, not simply 'as soon as possible'."
+ "Two dated anchors define Q4 logistics: elevated storage rates from October, and the holiday peak fulfillment window running mid-October to mid-January — both covered, with current figures, in our dated fee guides.",
+ "Freight is a calendar decision before it is a price decision: ocean transit plus receiving time means a late-September sail is already a November arrival — after the storage step-up and inside the peak window.",
+ "The backwards count is mechanical: selling date, minus receiving buffer, minus transit, minus production — the result is your PO deadline, and for most ocean-freight plans that deadline is now.",
+ "Split shipments remain the honest hedge: air a launch or replenishment slice to stay in stock through the cutoffs, float the bulk by sea — pay a premium on part of the volume to protect all of it.",
+ "Booking early is also a fee decision: stock that arrives too early pays elevated Q4 storage for longer, so the target is a corridor, not simply 'as soon as possible'."
 ]} />
 
 Every year the same email thread happens in October: a seller, a forwarder, and a container that will now arrive after the moment it was bought for. The cause is never the ocean. It is that Q4 logistics is a backwards-counting exercise, and the count was started forwards.
@@ -35,13 +36,13 @@ The holiday quarter has two fee events that do not move for your convenience. St
 ## The backwards count
 
 <Steps title="Counting backwards from the selling week" accent={0} source="Typical ranges — your supplier's and lane's real numbers replace these"
-  steps={[
-    { t: 'PO + production', d: '2-6 weeks' },
-    { t: 'Ocean transit', d: '3-6 weeks' },
-    { t: 'Receiving buffer', d: '1-3 weeks' },
-    { t: 'Storage step-up', d: 'from Oct' },
-    { t: 'Peak window', d: 'mid-Oct' },
-  ]} />
+ steps={[
+  { t: 'PO + production', d: '2-6 weeks' },
+  { t: 'Ocean transit', d: '3-6 weeks' },
+  { t: 'Receiving buffer', d: '1-3 weeks' },
+  { t: 'Storage step-up', d: 'from Oct' },
+  { t: 'Peak window', d: 'mid-Oct' },
+ ]} />
 
 Start from the week you want the product selling. Then subtract, honestly:
 
@@ -57,17 +58,20 @@ Run that against a November selling target and the conclusion writes itself: **t
 
 ## The corridor, not the panic
 
-"Book as early as possible" is half wrong. Inventory that lands in early September sits through the storage step-up for the whole quarter — a cost our storage guide prices per layer. The target is a corridor: late enough to minimise elevated-rate storage weeks, early enough to clear receiving before congestion. For most plans that corridor is roughly late September arrival for early-Q4 sellers, with a split-shipment air slice as insurance — the [forwarder conversation](/guides/choosing-a-freight-forwarder/) to have this week, not next month.
+"Book as early as possible" is half wrong. Inventory that lands in early September sits through the storage step-up for the whole quarter — a cost our storage guide prices per layer. The target is a corridor: late enough to minimize elevated-rate storage weeks, early enough to clear receiving before congestion. For most plans that corridor is roughly late September arrival for early-Q4 sellers, with a split-shipment air slice as insurance — the [forwarder conversation](/guides/choosing-a-freight-forwarder/) to have this week, not next month.
 
 <MiniCalc variant="margin" />
 
+Take October 15, subtract your ocean transit, port dwell, drayage and receiving time, and write the date down. If it is before today, your Q4 stock is going by air or it is not going.
+
 <Faq items={[
-  { q: 'When is the real deadline for Q4 ocean freight?', a: 'Work it backwards from your selling week: subtract receiving buffer, transit and production. For November selling targets on typical Asia-US lanes, the PO decision lands in late August to early September — which is why this guide is dated now.' },
-  { q: 'Is arriving early always safer?', a: 'No. Early arrivals sit through elevated Q4 storage rates for longer. Aim for a corridor: cleared receiving before congestion, minimal weeks at the stepped-up rate. The storage guide prices what each early week costs.' },
-  { q: 'What if I have already missed the ocean window?', a: 'Split the plan: air a smaller slice to stay in stock through the cutoffs and float what remains by sea for later in the quarter. The freight modes guide walks the cost logic of paying a premium on part of the volume to protect the whole plan.' },
+ { q: 'When is the real deadline for Q4 ocean freight?', a: 'Work it backwards from your selling week: subtract receiving buffer, transit and production. For November selling targets on typical Asia-US lanes, the PO decision lands in late August to early September — which is why this guide is dated now.' },
+ { q: 'Is arriving early always safer?', a: 'No. Early arrivals sit through elevated Q4 storage rates for longer. Aim for a corridor: cleared receiving before congestion, minimal weeks at the stepped-up rate. The storage guide prices what each early week costs.' },
+ { q: 'What if I have already missed the ocean window?', a: 'Split the plan: air a smaller slice to stay in stock through the cutoffs and float what remains by sea for later in the quarter. The freight modes guide walks the cost logic of paying a premium on part of the volume to protect the whole plan.' },
 ]} />
 
 <Sources items={[
-  { title: 'Holiday peak fulfillment fee guide (window and per-tier charges, dated)', publisher: 'FBA Tactics', href: 'https://fbatactics.com/guides/holiday-peak-fulfilment-fee/', accessed: "2026-08-27" },
-  { title: 'FBA storage: the four layers (Q4 step-up and surcharge mechanics, dated)', publisher: 'FBA Tactics', href: 'https://fbatactics.com/guides/fba-storage-four-layers/', accessed: "2026-08-27" },
+  { title: 'Holiday 2026: same fees, same eligibility, earlier deadlines (deal submission for Black Friday Week and Cyber Monday closes October 20; $50 early-submission discount by August 5 for Prime Big Deal Days and September 5 for Black Friday / Cyber Monday; Prime Big Deal Days prices excluded from the 30/60-day lookback)', publisher: 'Amazon Seller Central, Seller Forums announcement, July 7, 2026', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/3e31fbb7-04e0-4ed4-873e-f74b1052e2ff', accessed: '2026-09-05' },
+ { title: 'Holiday peak fulfillment fee guide (window and per-tier charges, dated)', publisher: 'FBA Tactics', href: 'https://fbatactics.com/guides/holiday-peak-fulfilment-fee/', accessed: '2026-09-05' },
+ { title: 'FBA storage: the four layers (Q4 step-up and surcharge mechanics, dated)', publisher: 'FBA Tactics', href: 'https://fbatactics.com/guides/fba-storage-four-layers/', accessed: '2026-09-05' },
 ]} />

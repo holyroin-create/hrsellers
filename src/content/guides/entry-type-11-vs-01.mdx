@@ -1,9 +1,10 @@
 ---
 title: "Release from manifest is gone. Your parcels now need a customs entry, and there are two of them."
+seoTitle: "Entry Type 11 vs Type 01 After De Minimis: Which One Your Parcels Need"
 description: "Entry Type 86 let low-value parcels clear duty-free with minimal data. ACE now rejects those filings. Every shipment needs Type 11 or Type 01 — and the choice between them changes your fees, your bond and your broker bill."
 category: "Shipping & logistics"
 published: "2026-08-08"
-modified: "2026-08-08"
+modified: "2026-09-05"
 minutes: 9
 numbered: true
 ledger: "Type 86 → Type 11 or Type 01"
@@ -21,14 +22,14 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "ACE now rejects Entry Type 86 cargo release transactions, and the Section 321 manifest option was removed from the Truck Manifest Trade Portal. The route is closed at the system level, not merely discouraged.",
-  "Two entry types remain for goods that used to clear on de minimis: informal Type 11 for shipments at or under $2,500, and formal Type 01 above that.",
-  "Formal entry means a customs bond. Reporting indicates CBP may also require a bond on informal entries at or below $2,500 — a cost that did not exist on this traffic before.",
-  "Congress repealed Section 321 for commercial shipments effective 1 July 2027, so the current arrangement is a transition, not an endpoint.",
-  "Postal shipments follow a separate track with a per-package fee tied to the origin country's reciprocal tariff band, reported at $80, $160 or $200.",
+ "ACE now rejects Entry Type 86 cargo release transactions, and the Section 321 manifest option was removed from the Truck Manifest Trade Portal. The route is closed at the system level, not merely discouraged.",
+ "Two entry types remain for goods that used to clear on de minimis: informal Type 11 for shipments at or under $2,500, and formal Type 01 above that.",
+ "Formal entry means a customs bond. CBP may also require a bond on informal entries at or below $2,500 — a cost that did not exist on this traffic before.",
+ "Congress repealed Section 321 for commercial shipments effective July 1, 2027, so the current arrangement is a transition, not an endpoint.",
+ "Postal shipments follow a separate track: since July 24, 2026 they need a postal informal entry with a bond and a 10-digit HTS code, assessed ad valorem. The $80 / $160 / $200 flat per-package option ended on February 28, 2026, and CBP's voluntary Entry Type 13 test for mail shipments starts September 22, 2026.",
 ]} />
 
-The de minimis guide on this site covers what changed and why. This one covers the part that actually lands on your desk: the paperwork your goods now need to enter the country, and what each option costs.
+Every parcel that used to clear on a manifest line now clears on an entry, and there are two kinds. The [de minimis guide](/guides/de-minimis-suspension-2026/) covers what changed and why. This one covers the part that actually lands on your desk: the paperwork your goods now need to enter the country, and what each option costs.
 
 ## What Type 86 was, and why it mattered
 
@@ -36,8 +37,8 @@ Entry Type 86 was an informal entry type created in 2019 to let Section 321 low-
 
 For any seller shipping direct to consumer from overseas, that was the entire business model. It is now unavailable.
 
-<Figure value="Rejected" kind="cost" source="CBP guidance on de minimis suspension, reported by GHY International, accessed 8 August 2026">
-  What ACE now returns for an Entry Type 86 cargo release transaction. The Section 321 manifest filing option was removed from the Truck Manifest Trade Portal at the same time.
+<Figure value="Rejected" kind="cost" source="CBP guidance on de minimis suspension, via GHY International, checked September 5, 2026">
+ What ACE now returns for an Entry Type 86 cargo release transaction. The Section 321 manifest filing option was removed from the Truck Manifest Trade Portal at the same time.
 </Figure>
 
 ## The two entries that replaced it
@@ -76,20 +77,20 @@ The duty is the same either way — duty follows the goods, not the paperwork. W
 
 A customs bond is effectively a guarantee to CBP that the duties will be paid. It is mandatory on almost all formal entries. Under de minimis, most small sellers never needed one, because they never filed a formal entry.
 
-There are two shapes. A single-entry bond covers one shipment. A continuous bond covers a year of them, and reporting puts its sizing at around 10% of annual duties with a minimum — a figure that has become materially larger now that duty applies to traffic that used to be free.
+There are two shapes. A single-entry bond covers one shipment. A continuous bond covers a year of them, and its sizing at around 10% of annual duties with a minimum — a figure that has become materially larger now that duty applies to traffic that used to be free.
 
-Reporting also indicates CBP may require a bond on informal entries at or below $2,500. Confirm this with your broker before assuming informal entry avoids the cost.
+CBP may require a bond on informal entries at or below $2,500. Confirm this with your broker before assuming informal entry avoids the cost.
 
 ## The postal track is separate
 
-If your goods move through the international postal system rather than a commercial carrier, a different mechanism applies. Reported terms are either the applicable reciprocal duty rate, or a flat per-package fee banded by that rate: $80 where the reciprocal tariff is under 16%, $160 between 16% and 25%, and $200 above 25%.
+If your goods move through the international postal system rather than a commercial carrier, a different mechanism applies, and it changed twice in 2026. For six months after August 29, 2025 postal shipments could be assessed either ad valorem or under a flat per-package duty of $80, $160 or $200, banded by the origin country's tariff rate. **That flat option ended February 28, 2026.** Since July 24, 2026, under CBP's interim final rule, every postal shipment requires a postal informal entry — a bond, a 10-digit HTS code and the duty calculation — filed before release, with a compliance deadline of October 22, 2026. CBP's voluntary electronic **Entry Type 13** test for mail shipments valued at $2,500 or less begins September 22, 2026.
 
-A flat per-package fee is brutal arithmetic on a cheap item. On a $30 parcel, $80 is not a cost line — it is the end of that product as a proposition.
+The flat fee is gone; the arithmetic it produced is worth remembering anyway. On a $30 parcel, $80 was not a cost line — it was the end of that product as a proposition. Ad valorem plus a bonded entry is cheaper per parcel and more expensive per shipment in paperwork, which pushes the same product toward consolidation rather than back toward the mailbag.
 
-Separately, CBP's Entry Type 13 voluntary test for mail shipments valued at $2,500 or less is scheduled to begin on 22 September 2026, offering an alternative electronic informal process for mail. It is a test, and it is voluntary. Do not build around it until it is settled.
+Separately, CBP's Entry Type 13 voluntary test for mail shipments valued at $2,500 or less is scheduled to begin on September 22, 2026, offering an alternative electronic informal process for mail. It is a test, and it is voluntary. Do not build around it until it is settled.
 
-<Figure value="1 Jul 2027" kind="cost" source="One Big Beautiful Bill Act of 2025, as reported by Avalara, accessed 8 August 2026">
-  The date Congress repealed Section 321 for commercial shipments. The current arrangement is a transition to that, not a settled state.
+<Figure value="1 Jul 2027" kind="cost" source="One Big Beautiful Bill Act, Public Law 119-21, Section 70531; checked September 5, 2026">
+ The date Congress repealed Section 321 for commercial shipments. The current arrangement is a transition to that, not a settled state.
 </Figure>
 
 ## What to do about it
@@ -106,19 +107,24 @@ Separately, CBP's Entry Type 13 voluntary test for mail shipments valued at $2,5
 
 <MiniCalc variant="margin" />
 
+Ask your forwarder one question this week: on my last shipment, which entry type did you file, and whose name was on it? If they cannot answer in one sentence, you have found the problem before CBP does.
+
 <Faq items={[
-  { q: "Can I still use Entry Type 86?", a: "No. ACE rejects Entry Type 86 cargo release transactions, and the Section 321 manifest filing option was removed from the Truck Manifest Trade Portal." },
-  { q: "What is the difference between Type 11 and Type 01?", a: "Type 11 is informal entry for shipments at or under $2,500; Type 01 is formal entry above that. Formal entry requires a customs bond and uses a percentage-based Merchandise Processing Fee rather than a flat one." },
-  { q: "Do I need a customs bond now?", a: "For formal entries, effectively yes. Reporting also indicates CBP may require a bond on informal entries at or below $2,500. Confirm your position with a licensed broker rather than assuming." },
-  { q: "Does consolidating parcels reduce my duty?", a: "No. Duty follows the goods and their classification, not the number of entries. Consolidation reduces the administrative layer — filings, per-entry fees and broker charges — which at volume is where the cost sits." },
-  { q: "Is this the final state of the rules?", a: "No. Congress repealed Section 321 for commercial shipments effective 1 July 2027, and CBP's Entry Type 13 mail test begins 22 September 2026. Treat current arrangements as transitional." },
+ { q: "Can I still use Entry Type 86?", a: "No. ACE rejects Entry Type 86 cargo release transactions, and the Section 321 manifest filing option was removed from the Truck Manifest Trade Portal." },
+ { q: "What is the difference between Type 11 and Type 01?", a: "Type 11 is informal entry for shipments at or under $2,500; Type 01 is formal entry above that. Formal entry requires a customs bond and uses a percentage-based Merchandise Processing Fee rather than a flat one." },
+ { q: "Do I need a customs bond now?", a: "For formal entries, effectively yes. CBP may require a bond on informal entries at or below $2,500. Confirm your position with a licensed broker rather than assuming." },
+ { q: "Does consolidating parcels reduce my duty?", a: "No. Duty follows the goods and their classification, not the number of entries. Consolidation reduces the administrative layer — filings, per-entry fees and broker charges — which at volume is where the cost sits." },
+ { q: "Is this the final state of the rules?", a: "No. Congress repealed Section 321 for commercial shipments effective July 1, 2027, and CBP's Entry Type 13 mail test begins September 22, 2026. Treat current arrangements as transitional." },
 ]} />
 
 <Sources items={[
-  { title: 'The end of de minimis: new US entry processes (Type 11, Type 01, Type 13 test, Section 321 repeal effective 1 July 2027)', publisher: 'Avalara', href: 'https://www.avalara.com/blog/en/north-america/2024/11/de-minimis-exemption-changes-coming.html', accessed: '2026-08-08' },
-  { title: 'US to end de minimis exemption for low-value imports (ACE rejects Type 86 cargo release; manifest option removed)', publisher: 'GHY International', href: 'https://www.ghy.com/trade-compliance/us-to-end-de-minimis-exemption-for-low-value-imports-on-august-29/', accessed: '2026-08-08' },
-  { title: 'US de minimis exemption for commercial goods ends (bond on informal entries; postal per-package bands $80 / $160 / $200)', publisher: 'BorderBuddy', href: 'https://borderbuddy.com/trade-tariff-news/u-s-de-minimus-exemption-for-commercial-goods-ends', accessed: '2026-08-08' },
-  { title: 'Type 11, the new Section 321 (consolidated informal entry from manifest data; bond requirement)', publisher: 'Jet Worldwide', href: 'https://www.jetworldwide.com/blog/type-11..-the-new-section-321', accessed: '2026-08-08' },
-  { title: 'Test concerning entry of Section 321 low-value shipments through ACE (Entry Type 86), republication with modifications', publisher: 'Federal Register', href: 'https://www.federalregister.gov/documents/2024/01/16/2024-00698/test-concerning-entry-of-section-321-low-value-shipments-through-the-automated-commercial', accessed: '2026-08-08' },
-  { title: 'Entry of low-value shipments (background on the Section 321 Data Pilot and Entry Type 86 Test)', publisher: 'Federal Register', href: 'https://www.federalregister.gov/documents/2025/01/14/2025-00551/entry-of-low-value-shipments', accessed: '2026-08-08' },
+  { title: 'Indefinite Suspension of the De Minimis Exemption for Mail Shipments and New Postal Informal Entry Process (interim final rule; postal informal entry with bond from July 24, 2026; compliance date October 22, 2026; flat specific-duty option ended February 28, 2026)', publisher: 'Federal Register / U.S. Customs and Border Protection, June 24, 2026', href: 'https://www.federalregister.gov/documents/2026/06/24/2026-12669/indefinite-suspension-of-the-de-minimis-exemption-for-mail-shipments-and-new-postal-informal-entry', accessed: '2026-09-05' },
+  { title: '19 CFR Part 143, Subpart C — informal entry ($2,500 limit; 19 CFR 143.21) and Part 141 formal entry requirements', publisher: 'Electronic Code of Federal Regulations, U.S. Customs and Border Protection', accessed: '2026-09-05' },
+  { title: 'Entry Type 13 — Informal Mail Entry test (voluntary; mail shipments valued at $2,500 or less; commences September 22, 2026)', publisher: 'U.S. Customs and Border Protection, Federal Register notice, June 24, 2026', accessed: '2026-09-05' },
+ { title: 'The end of de minimis: new US entry processes (Type 11, Type 01, Type 13 test, Section 321 repeal effective July 1, 2027)', publisher: 'Avalara', href: 'https://www.avalara.com/blog/en/north-america/2024/11/de-minimis-exemption-changes-coming.html', accessed: '2026-09-05' },
+ { title: 'US to end de minimis exemption for low-value imports (ACE rejects Type 86 cargo release; manifest option removed)', publisher: 'GHY International', href: 'https://www.ghy.com/trade-compliance/us-to-end-de-minimis-exemption-for-low-value-imports-on-august-29/', accessed: '2026-09-05' },
+ { title: 'US de minimis exemption for commercial goods ends (bond on informal entries; postal per-package bands $80 / $160 / $200)', publisher: 'BorderBuddy', href: 'https://borderbuddy.com/trade-tariff-news/u-s-de-minimus-exemption-for-commercial-goods-ends', accessed: '2026-09-05' },
+ { title: 'Type 11, the new Section 321 (consolidated informal entry from manifest data; bond requirement)', publisher: 'Jet Worldwide', href: 'https://www.jetworldwide.com/blog/type-11..-the-new-section-321', accessed: '2026-09-05' },
+ { title: 'Test concerning entry of Section 321 low-value shipments through ACE (Entry Type 86), republication with modifications', publisher: 'Federal Register', href: 'https://www.federalregister.gov/documents/2024/01/16/2024-00698/test-concerning-entry-of-section-321-low-value-shipments-through-the-automated-commercial', accessed: '2026-09-05' },
+ { title: 'Entry of low-value shipments (background on the Section 321 Data Pilot and Entry Type 86 Test)', publisher: 'Federal Register', href: 'https://www.federalregister.gov/documents/2025/01/14/2025-00551/entry-of-low-value-shipments', accessed: '2026-09-05' },
 ]} />

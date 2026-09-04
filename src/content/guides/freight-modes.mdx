@@ -1,9 +1,10 @@
 ---
 title: "Six published sources give six different ocean freight rates. The mode decision is still easy."
-description: "LCL is quoted between $80 and $400 per cubic metre depending on who you ask. Air runs $4 to $12 per kg. The rates move constantly — but the thresholds that decide which mode to use barely move at all."
+seoTitle: "Ocean vs Air vs Express: The Mode Decision Behind Volatile Rates"
+description: "LCL is quoted between $80 and $400 per cubic meter depending on who you ask. Air runs $4 to $12 per kg. The rates move constantly — but the thresholds that decide which mode to use barely move at all."
 category: "Shipping & logistics"
 published: "2026-08-21"
-modified: "2026-08-21"
+modified: "2026-09-05"
 minutes: 11
 numbered: true
 ledger: "Under 2 CBM air · 2–15 LCL · above 15 FCL"
@@ -21,11 +22,11 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Published LCL rates range from $80 to $400 per cubic metre across six 2026 sources, and FCL from $1,500 to $7,425 for a container. Freight pricing is volatile and dated quotes are worthless.",
-  "The volume thresholds are far more stable than the rates: reported guidance is air or express below about 2 CBM, LCL between 2 and 15, and FCL above roughly 15.",
-  "Air is reported at 4 to 6 times the cost of sea and 3 to 5 times faster. Sea is described as 80% to 85% cheaper per kg.",
-  "Air charges on chargeable weight — the greater of actual and volumetric weight — which penalises bulky, light goods specifically.",
-  "The split shipment is the technique worth knowing: a small air batch to start selling while the ocean bulk is in transit, which protects rank and avoids a launch stockout.",
+ "Published LCL rates range from $80 to $400 per cubic meter across six 2026 sources, and FCL from $1,500 to $7,425 for a container. Freight pricing is volatile and dated quotes are worthless.",
+ "The volume thresholds are far more stable than the rates: reported guidance is air or express below about 2 CBM, LCL between 2 and 15, and FCL above roughly 15.",
+ "Air is at 4 to 6 times the cost of sea and 3 to 5 times faster. Sea is 80% to 85% cheaper per kg.",
+ "Air charges on chargeable weight — the greater of actual and volumetric weight — which penalizes bulky, light goods specifically.",
+ "The split shipment is the technique worth knowing: a small air batch to start selling while the ocean bulk is in transit, which protects rank and avoids a launch stockout.",
 ]} />
 
 Freight guides are written by freight forwarders and they all quote rates. Those rates were correct on the day they were written and are a starting point for a conversation now, nothing more.
@@ -45,8 +46,8 @@ The FCL spread is more than fourfold. One source's July 2026 figures are roughly
 
 **Both can be right.** Reporting names Red Sea routing, Hormuz tensions and tariff-driven volatility as swinging rates and timing more than they used to. **The lesson is not which number to use — it is that a freight rate has a shelf life of weeks.**
 
-<Figure value="$80–$400" kind="cost" source="Published LCL per-cubic-metre rates across six 2026 sources, reviewed 8 August 2026">
-  The range of published LCL rates per cubic metre. A fivefold spread across sources dated within months of each other — which is why a current quote beats any published figure.
+<Figure value="$80–$400" kind="cost" source="Published LCL per-cubic-meter rates across six 2026 sources, checked September 5, 2026">
+ The range of published LCL rates per cubic meter. A fivefold spread across sources dated within months of each other — which is why a current quote beats any published figure.
 </Figure>
 
 ## The thresholds, which do not move
@@ -57,7 +58,7 @@ Reported consistently, and this is the actionable part:
 | --- | --- |
 | Under ~2 CBM | Air or express — below this, port and destination charges make LCL more expensive |
 | 2–15 CBM | **LCL** |
-| Above ~15 CBM | **FCL** — one 40ft container is reported as often cheaper than three LCL shipments of the same total volume, and faster |
+| Above ~15 CBM | **FCL** — one 40ft container is often cheaper than three LCL shipments of the same total volume, and faster |
 
 **Why LCL loses at both ends.** Below 2 CBM, the fixed origin and destination charges dominate. Above 15, you are paying consolidation and deconsolidation costs on volume that would fill a container — and waiting for both.
 
@@ -72,9 +73,9 @@ Reported consistently, and this is the actionable part:
 | Ocean FCL | 14–22 days WC, 25–35 EC | 30–45 days |
 | Ocean LCL | 10–17 to 25–40 days | 35–55 days |
 
-**Note the LCL door-to-FBA figure.** Reporting puts it at 35 to 55 days once supplier production slack, customs and prep are counted — longer than FCL, because consolidation at origin and deconsolidation at destination each add time.
+**Note the LCL door-to-FBA figure.** it at 35 to 55 days once supplier production slack, customs and prep are counted — longer than FCL, because consolidation at origin and deconsolidation at destination each add time.
 
-**And add Amazon's own receiving:** reported at 1 to 3 business days after delivery, which is not optional in your planning even though nobody quotes it.
+**And add Amazon's own receiving:** at 1 to 3 business days after delivery, which is not optional in your planning even though nobody quotes it.
 
 ## The chargeable weight trap
 
@@ -88,7 +89,7 @@ That formula punishes bulky, lightweight goods specifically. A carton of cushion
 
 This is the technique worth taking from this guide.
 
-Reported practice among experienced sellers: **send a small air batch — one source gives 100 to 300 kg — to start selling immediately, and the bulk by ocean to arrive three to four weeks later.**
+Reported practice among experienced sellers: **send a small air batch — one published estimate gives 100 to 300 kg — to start selling immediately, and the bulk by ocean to arrive three to four weeks later.**
 
 The air batch generates sales and reviews while the ocean batch is in transit. It costs slightly more than pure ocean shipping and it prevents a launch stockout.
 
@@ -118,7 +119,7 @@ That total against an ocean freight line of $80 to $200 is the reason a cheap fr
 
 ## What to do
 
-**Calculate your CBM first.** Volume decides the mode before price does. Length × width × height in metres, per carton, times carton count.
+**Calculate your CBM first.** Volume decides the mode before price does. Length × width × height in meters, per carton, times carton count.
 
 **Get quotes dated this week.** Anything older is a range, not a price.
 
@@ -136,23 +137,26 @@ That total against an ocean freight line of $80 to $200 is the reason a cheap fr
 
 <MiniCalc variant="margin" />
 
+Price your next shipment on all three modes with the same landed-cost sheet, including the cash tied up during ocean transit. The rate that looked cheapest rarely survives the third column.
+
 <Faq items={[
-  { q: "Should I use air or sea freight?", a: "Sea for regular replenishment — reported at 80% to 85% cheaper per kg. Air for launches, emergency restocks, and light high-value goods. Volume decides first: under about 2 CBM, air or express is usually cheaper once port and destination charges are counted." },
-  { q: "When does FCL beat LCL?", a: "Above roughly 15 CBM. One 40ft container is reported as often cheaper than three LCL shipments of the same total volume, and faster because there is no consolidation wait at origin." },
-  { q: "What does ocean freight cost from China in 2026?", a: "Published figures range from $80 to $400 per CBM for LCL and $1,500 to $7,425 for containers across six sources. The spread reflects real volatility — get a quote dated this week rather than using a published rate." },
-  { q: "How long does it take door to FBA?", a: "Reported at 30 to 45 days for FCL, 35 to 55 for LCL, 8 to 14 for air and 3 to 7 for express — plus Amazon's own receiving of 1 to 3 business days after delivery." },
-  { q: "What is chargeable weight?", a: "The greater of actual weight and volumetric weight, used to price air freight. It penalises bulky lightweight goods specifically, which is why air viability depends on density rather than only on urgency." },
-  { q: "What is a split shipment?", a: "Sending a small air batch — one source gives 100 to 300 kg — to start selling while the bulk travels by ocean. It costs slightly more than pure ocean and prevents a launch stockout, which protects rank and avoids the low-inventory fee." },
+ { q: "Should I use air or sea freight?", a: "Sea for regular replenishment — at 80% to 85% cheaper per kg. Air for launches, emergency restocks, and light high-value goods. Volume decides first: under about 2 CBM, air or express is usually cheaper once port and destination charges are counted." },
+ { q: "When does FCL beat LCL?", a: "Above roughly 15 CBM. One 40ft container is often cheaper than three LCL shipments of the same total volume, and faster because there is no consolidation wait at origin." },
+ { q: "What does ocean freight cost from China in 2026?", a: "Published figures range from $80 to $400 per CBM for LCL and $1,500 to $7,425 for containers across six sources. The spread reflects real volatility — get a quote dated this week rather than using a published rate." },
+ { q: "How long does it take door to FBA?", a: "At 30 to 45 days for FCL, 35 to 55 for LCL, 8 to 14 for air and 3 to 7 for express — plus Amazon's own receiving of 1 to 3 business days after delivery." },
+ { q: "What is chargeable weight?", a: "The greater of actual weight and volumetric weight, used to price air freight. It penalizes bulky lightweight goods specifically, which is why air viability depends on density rather than only on urgency." },
+ { q: "What is a split shipment?", a: "Sending a small air batch — one published estimate gives 100 to 300 kg — to start selling while the bulk travels by ocean. It costs slightly more than pure ocean and prevents a launch stockout, which protects rank and avoids the low-inventory fee." },
 ]} />
 
 <Sources items={[
-  { title: 'Shipping from China to USA: air, sea freight and FBA direct (2026) (LCL for 2–15 CBM with air cheaper below 2 and FCL cheaper above 15; express $6–$12/kg, air $4–$8/kg, LCL $80–$220/CBM West Coast, containers $2,500–$6,500; sea 5–10× cheaper per kg)', publisher: 'Union Delta', href: 'https://blog.union-delta.com/shipping-from-china-to-usa-guide/', accessed: '2026-08-08' },
-  { title: 'Amazon FBA freight forwarder cost: complete 2026 breakdown (component-by-component LCL cost breakdown totalling $485–$1,130 for 1 CBM; air $4–$9/kg at 4–6× sea cost; DDP rates)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-freight-forwarder-cost/', accessed: '2026-08-08' },
-  { title: 'Cheapest way to ship from China to Amazon FBA in 2026 (March 2026 benchmarks: LCL $110–$150/CBM, FCL West Coast $1,900–$3,200/40ft, air $4.85–$9/kg; 20–45 days door to FC)', publisher: 'Unicargo', href: 'https://www.unicargo.com/blog-cheapest-shipping-china-to-amazon-fba-2026/', accessed: '2026-08-08' },
-  { title: 'China to USA freight: how to choose the right forwarder (July 2026 FCL $5,400–$6,600 for 20GP and $6,075–$7,425 for 40HQ; LCL $130/CBM with 10–17 day transit; air $7.40/kg for 1,000kg+ shipments)', publisher: 'AEB Logistics', href: 'https://aeblogistics.com/china-to-usa-freight-forwarders-2026-comparison-costs-and-best-services/', accessed: '2026-08-08' },
-  { title: 'Shipping from China to Amazon FBA (2026 guide) (35–55 days door-to-FBA for LCL and 30–45 for FCL; FCL beating LCL past ~15 m³; Red Sea routing, Hormuz tensions and tariff volatility; prep compliance moving to the forwarder)', publisher: 'WWS Cargo', href: 'https://wwscargo.com/shipping-china-to-amazon-fba', accessed: '2026-08-08' },
-  { title: 'Sea freight shipping to Amazon FBA (sea 80–85% cheaper per kg; 14–20 days West Coast and 25–35 East Coast port to port; door to door adding 5–10 days)', publisher: 'AMZ Prep', href: 'https://amzprep.com/freight/sea-freight/', accessed: '2026-08-08' },
-  { title: 'Shipping from China to Amazon FBA: DDP freight guide 2026 (split shipment technique with a 100–300 kg air batch alongside 5–20 CBM by ocean; FCL from 15+ CBM)', publisher: 'AiDeliv', href: 'https://aideliv.com/ddp-to-amazon-fba', accessed: '2026-08-08' },
-  { title: 'Amazon FBA freight forwarder China: complete guide (transit times by mode including customs and Amazon receiving of 1–3 business days; peak season delays)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-freight-forwarder-china/', accessed: '2026-08-08' },
-  { title: 'Sea freight vs air freight FBA: 2026 cost guide (chargeable weight as the greater of actual and volumetric weight; mode choice starting with landed margin and stockout risk rather than the cheapest quote)', publisher: 'ForwarderOne', href: 'https://www.forwarderone.com/post/sea-freight-vs-air-freight-fba-2026-cost-guide', accessed: '2026-08-08' },
+  { title: 'Freightos Baltic Index (FBX): weekly container spot rates by lane', publisher: 'Freightos', href: 'https://www.freightos.com/freight-resources', accessed: '2026-09-05' },
+ { title: 'Shipping from China to USA: air, sea freight and FBA direct (2026) (LCL for 2–15 CBM with air cheaper below 2 and FCL cheaper above 15; express $6–$12/kg, air $4–$8/kg, LCL $80–$220/CBM West Coast, containers $2,500–$6,500; sea 5–10× cheaper per kg)', publisher: 'Union Delta', href: 'https://blog.union-delta.com/shipping-from-china-to-usa-guide/', accessed: '2026-09-05' },
+ { title: 'Amazon FBA freight forwarder cost: complete 2026 breakdown (component-by-component LCL cost breakdown totaling $485–$1,130 for 1 CBM; air $4–$9/kg at 4–6× sea cost; DDP rates)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-freight-forwarder-cost/', accessed: '2026-09-05' },
+ { title: 'Cheapest way to ship from China to Amazon FBA in 2026 (March 2026 benchmarks: LCL $110–$150/CBM, FCL West Coast $1,900–$3,200/40ft, air $4.85–$9/kg; 20–45 days door to FC)', publisher: 'Unicargo', href: 'https://www.unicargo.com/blog-cheapest-shipping-china-to-amazon-fba-2026/', accessed: '2026-09-05' },
+ { title: 'China to USA freight: how to choose the right forwarder (July 2026 FCL $5,400–$6,600 for 20GP and $6,075–$7,425 for 40HQ; LCL $130/CBM with 10–17 day transit; air $7.40/kg for 1,000kg+ shipments)', publisher: 'AEB Logistics', href: 'https://aeblogistics.com/china-to-usa-freight-forwarders-2026-comparison-costs-and-best-services/', accessed: '2026-09-05' },
+ { title: 'Shipping from China to Amazon FBA (2026 guide) (35–55 days door-to-FBA for LCL and 30–45 for FCL; FCL beating LCL past ~15 m³; Red Sea routing, Hormuz tensions and tariff volatility; prep compliance moving to the forwarder)', publisher: 'WWS Cargo', href: 'https://wwscargo.com/shipping-china-to-amazon-fba', accessed: '2026-09-05' },
+ { title: 'Sea freight shipping to Amazon FBA (sea 80–85% cheaper per kg; 14–20 days West Coast and 25–35 East Coast port to port; door to door adding 5–10 days)', publisher: 'AMZ Prep', href: 'https://amzprep.com/freight/sea-freight/', accessed: '2026-09-05' },
+ { title: 'Shipping from China to Amazon FBA: DDP freight guide 2026 (split shipment technique with a 100–300 kg air batch alongside 5–20 CBM by ocean; FCL from 15+ CBM)', publisher: 'AiDeliv', href: 'https://aideliv.com/ddp-to-amazon-fba', accessed: '2026-09-05' },
+ { title: 'Amazon FBA freight forwarder China: complete guide (transit times by mode including customs and Amazon receiving of 1–3 business days; peak season delays)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-freight-forwarder-china/', accessed: '2026-09-05' },
+ { title: 'Sea freight vs air freight FBA: 2026 cost guide (chargeable weight as the greater of actual and volumetric weight; mode choice starting with landed margin and stockout risk rather than the cheapest quote)', publisher: 'ForwarderOne', href: 'https://www.forwarderone.com/post/sea-freight-vs-air-freight-fba-2026-cost-guide', accessed: '2026-09-05' },
 ]} />

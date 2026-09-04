@@ -1,9 +1,10 @@
 ---
 title: "New rule: AI-generated people in your images must now carry a metadata tag"
+seoTitle: "Amazon's AI Image Tag: 'contains-synthetic-performer' Since July 27"
 description: "Amazon now requires product images and A+ Content featuring photorealistic AI-generated people to include 'contains-synthetic-performer' in the image file's XMP metadata before upload — with real people, AI-edited real people and non-photorealistic figures reported exempt."
 category: "Scaling"
 published: "2026-08-30"
-modified: "2026-08-30"
+modified: "2026-09-05"
 minutes: 5
 numbered: true
 news: true
@@ -19,10 +20,10 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "The reported rule: product images and A+ Content featuring photorealistic AI-generated people must include the keyword 'contains-synthetic-performer' in the image file's XMP metadata before upload.",
-  "The reported exemptions draw the line: real people, AI-edited photos of real people, and non-photorealistic figures (illustration, cartoon) do not need the tag — the rule targets synthetic humans that look real.",
-  "This lands in an enforcement season: AI systems are increasingly flagging listing problems before any human reviews them, so an untagged synthetic model is a compliance signal waiting to fire.",
-  "The operational fix is a workflow line, not a crisis: if your creative pipeline uses AI-generated models, tagging happens at export — one metadata field, set once in the template."
+ "Amazon's rule, posted to Seller News on July 27, 2026: product images and A+ Content featuring photorealistic AI-generated people must include the keyword 'contains-synthetic-performer' in the image file's XMP metadata before upload.",
+ "The reported exemptions draw the line: real people, AI-edited photos of real people, and non-photorealistic figures (illustration, cartoon) do not need the tag — the rule targets synthetic humans that look real.",
+ "This lands in an enforcement season: AI systems are increasingly flagging listing problems before any human reviews them, so an untagged synthetic model is a compliance signal waiting to fire.",
+ "The operational fix is a workflow line, not a crisis: if your creative pipeline uses AI-generated models, tagging happens at export — one metadata field, set once in the template."
 ]} />
 
 A niche rule with a wide blast radius, per this month's reporting: images and A+ Content that feature **photorealistic AI-generated people** must now carry **"contains-synthetic-performer"** in the file's XMP metadata at upload. Real people stay untagged; so do AI-touched photos of real people and obviously non-photorealistic figures. The target is the synthetic human who could pass for a hired model.
@@ -35,12 +36,17 @@ Because of who reads it. This lands in a season the seller press is calling enfo
 
 <MiniCalc variant="margin" />
 
+Open your lifestyle images and ask one question of each: is the person in it real? If any answer is no, the file needs the tag before Amazon's filter asks the question for you.
+
 <Faq items={[
-  { q: 'Does this apply to AI-edited photos of real models?', a: 'Reported exemptions say no — real people, AI-edited real people, and non-photorealistic figures are outside the rule. The tag is for photorealistic people who do not exist.' },
-  { q: 'How do I add XMP metadata?', a: 'Most design tools and DAM systems expose XMP keyword fields at export (in Photoshop: File Info). Add contains-synthetic-performer as a keyword in the export preset so compliance is automatic rather than remembered.' },
+ { q: 'Does this apply to AI-edited photos of real models?', a: 'Reported exemptions say no — real people, AI-edited real people, and non-photorealistic figures are outside the rule. The tag is for photorealistic people who do not exist.' },
+ { q: 'How do I add XMP metadata?', a: 'Most design tools and DAM systems expose XMP keyword fields at export (in Photoshop: File Info). Add contains-synthetic-performer as a keyword in the export preset so compliance is automatic rather than remembered.' },
 ]} />
 
 <Sources items={[
-  { title: "August 2026 ecommerce news for sellers (Amazon requirement: 'contains-synthetic-performer' XMP metadata for photorealistic AI-generated people in product images and A+ Content; reported exemptions)", publisher: 'Stack Influence', href: 'https://stackinfluence.com/blog/august-2026-ecommerce-news-and-updates-for-sellers', accessed: '2026-08-30' },
-  { title: 'Amazon seller news, August 2026 (AI-first enforcement context: automated flagging ahead of human review)', publisher: 'Mr. Jeff', href: 'https://mrjeffamz.com/blog/amazon-seller-news-2026', accessed: '2026-08-30' },
+  { title: 'Identifying photorealistic AI-generated people in product images and A+ Content (IPTC metadata keyword contains-synthetic-performer in the dc:subject field; applies before upload; real people and product-only images exempt)', publisher: 'Amazon Seller Central, Seller News announcement, July 27, 2026', accessed: '2026-09-05' },
+  { title: "Amazon's AI-generated image rule: what sellers must do (metadata tag mechanics on Windows, macOS and command line)", publisher: 'Goat Consulting', href: 'https://www.goatconsulting.com/amazon-policy/amazon-ai-generated-images', accessed: '2026-09-05' },
+  { title: 'Amazon new AI image rule 2026: how sellers should tag AI-generated people (exemptions; Creative Studio auto-tagging; moderator guidance)', publisher: 'Ecomclips', href: 'https://ecomclips.com/blog/amazon-new-ai-image-rule-2026-how-sellers-should-tag-ai-generated-people/', accessed: '2026-09-05' },
+ { title: "August 2026 ecommerce news for sellers (Amazon requirement: 'contains-synthetic-performer' XMP metadata for photorealistic AI-generated people in product images and A+ Content; reported exemptions)", publisher: 'Stack Influence', href: 'https://stackinfluence.com/blog/august-2026-ecommerce-news-and-updates-for-sellers', accessed: '2026-09-05' },
+ { title: 'Amazon seller news, August 2026 (AI-first enforcement context: automated flagging ahead of human review)', publisher: 'Mr. Jeff', href: 'https://mrjeffamz.com/blog/amazon-seller-news-2026', accessed: '2026-09-05' },
 ]} />

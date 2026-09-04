@@ -1,12 +1,13 @@
 ---
 title: "Ungating is an invoice test disguised as a category application"
-description: "Amazon gates at three levels — category, brand and individual ASIN — and clearing one does not clear the others. Almost every rejection traces back to the same document: an invoice that was not from an authorised distributor, or did not match the account exactly."
+seoTitle: "Amazon Ungating: The Invoice Test Behind the Category Application"
+description: "Amazon gates at three levels — category, brand and individual ASIN — and clearing one does not clear the others. Almost every rejection traces back to the same document: an invoice that was not from an authorized distributor, or did not match the account exactly."
 category: "Getting started"
 published: "2026-08-12"
-modified: "2026-08-12"
+modified: "2026-09-05"
 minutes: 11
 numbered: true
-ledger: "Invoice: authorised distributor, 10+ units, 90–180 days"
+ledger: "Invoice: authorized distributor, 10+ units, 90–180 days"
 ledgerKind: "cost"
 draft: false
 ---
@@ -21,11 +22,11 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Amazon gates at three levels: category, brand and individual ASIN. Approval at one level does not clear the others, and an ASIN can be blocked even after both category and brand approval.",
-  "The reported invoice standard is consistent: from an authorised distributor rather than a retail store, at least 10 units, dated within 90 to 180 days, and matching your Seller Central business name and address exactly.",
-  "Sources disagree on the date window — 90 days in some, 180 in others — and on how many invoices are needed. Some report three as the norm. Check the requirement shown against your specific ASIN.",
-  "Account health is a prerequisite, not a nice-to-have. Reported thresholds are order defect rate below 1%, late shipment rate under 4%, and valid tracking above 95%.",
-  "Ungating is marketplace-specific. Approval in the US does not carry to the UK or Germany, and the requirements may differ.",
+ "Amazon gates at three levels: category, brand and individual ASIN. Approval at one level does not clear the others, and an ASIN can be blocked even after both category and brand approval.",
+ "The invoice standard is consistent: from an authorized distributor rather than a retail store, at least 10 units, dated within 90 to 180 days, and matching your Seller Central business name and address exactly.",
+ "Sources disagree on the date window — 90 days in some, 180 in others — and on how many invoices are needed. Some report three as the norm. Check the requirement shown against your specific ASIN.",
+ "Account health is a prerequisite, not a nice-to-have. Thresholds are order defect rate below 1%, late shipment rate under 4%, and valid tracking above 95%.",
+ "Ungating is marketplace-specific. Approval in the US does not carry to the UK or Germany, and the requirements may differ.",
 ]} />
 
 Most guidance on this subject reads like a checklist for an application form. It is more useful to understand what Amazon is actually testing, because once you see that, the rejections stop being mysterious.
@@ -34,7 +35,7 @@ Most guidance on this subject reads like a checklist for an application form. It
 
 ## The three levels
 
-Reporting describes gating operating at three levels, and they are independent.
+gating operating at three levels, and they are independent.
 
 | Level | What it restricts | Cleared by |
 | --- | --- | --- |
@@ -46,26 +47,26 @@ The third one catches people who assume the work is done. Reporting is explicit:
 
 Note also the distinction between **restricted** and **prohibited**. Restricted means you need permission. Prohibited means never, and no application changes it.
 
-<Figure value="Three gates" kind="cost" source="Reported Amazon gating structure, 2026, reviewed 8 August 2026">
-  Category, brand and ASIN gates operate independently. Clearing one does not clear the others, which is why sellers get approved and still cannot list.
+<Figure value="Three gates" kind="cost" source="Amazon gating structure, 2026, checked September 5, 2026">
+ Category, brand and ASIN gates operate independently. Clearing one does not clear the others, which is why sellers get approved and still cannot list.
 </Figure>
 
 ## The invoice, which is the whole test
 
 Published requirements are consistent on substance and inconsistent on detail. The substance:
 
-- **From an authorised distributor or wholesaler.** Not a retail store. Reporting names retail receipts as the single most common reason for rejection, and the [suspension guide](/guides/account-suspension-appeal/) covers the same document failing in a different context.
+- **From an authorized distributor or wholesaler.** Not a retail store. Reporting names retail receipts as the single most common reason for rejection, and the [suspension guide](/guides/account-suspension-appeal/) covers the same document failing in a different context.
 - **At least 10 units** of the product.
 - **Business details that are verifiable** — supplier name, address, phone and website.
 - **Your business name and address matching Seller Central exactly.** Not approximately.
-- **Official letterhead, clear formatting.** PDFs are reported as preferred over photographs.
-- **Product names, quantities and unit prices** itemised.
+- **Official letterhead, clear formatting.** PDFs are preferred over photographs.
+- **Product names, quantities and unit prices** itemized.
 
 Where sources disagree:
 
-| Detail | Reported values |
+| Detail | Values |
 | --- | --- |
-| Date window | Within 90 days · within 180 days · 90 to 180 days |
+| Date window | Amazon's help page says within 180 days; agency guides recommend within 90 to be safe |
 | Number of invoices | One · usually three |
 
 **The working position:** aim for three invoices dated within 90 days. If your documents satisfy the tighter reading they satisfy the looser one, and the cost of over-preparing is a few emails.
@@ -74,28 +75,28 @@ Where sources disagree:
 
 ## Account health is a prerequisite
 
-Reported thresholds that must be in order before applying:
+Thresholds that must be in order before applying:
 
 - Order defect rate **below 1%**
 - Late shipment rate **under 4%**
 - Valid tracking on **95%+** of orders
 
-Reporting also describes some applications being auto-approved depending on account age and which categories you already hold, which means **approvals compound.** A clean account with two existing approvals is a different applicant from a new one with the same invoice.
+some applications being auto-approved depending on account age and which categories you already hold, which means **approvals compound.** A clean account with two existing approvals is a different applicant from a new one with the same invoice.
 
-That has a strategic implication. Reporting describes the easier categories in 2026 as typically Beauty (excluding Topicals and Hazmat subcategories), Grocery and Gourmet Food, Toys and Games, Sports and Outdoors, and Automotive — and suggests stacking easier approvals first to build momentum toward harder brand gates.
+That has a strategic implication. the easier categories in 2026 as typically Beauty (excluding Topicals and Hazmat subcategories), Grocery and Gourmet Food, Toys and Games, Sports and Outdoors, and Automotive — and suggests stacking easier approvals first to build momentum toward harder brand gates.
 
-The categories described as rarely worth pursuing unless they are your primary business: Fine Art, Fine Jewellery and Entertainment Collectibles.
+The categories described as rarely worth pursuing unless they are your primary business: Fine Art, Fine Jewelry and Entertainment Collectibles.
 
 ## The mechanics
 
-1. Professional seller account — reported at $39.99 per month
+1. Professional seller account — at $39.99 per month
 2. Inventory, then **Add a Product**
 3. Search the ASIN, UPC or product name
 4. If restricted, **Listing Limitations Apply** appears — click **Show limitations**
 5. That screen shows **the exact documentation required for that item.** Read it rather than a blog
 6. **Apply to Sell**
 
-**Step 5 is the one people skip.** The requirement varies by item, and the screen tells you which of invoices, certificates or brand authorisation your specific ASIN needs.
+**Step 5 is the one people skip.** The requirement varies by item, and the screen tells you which of invoices, certificates or brand authorization your specific ASIN needs.
 
 ## Category-specific documents
 
@@ -104,20 +105,20 @@ Beyond invoices, reported requirements by product type:
 - **Children's products** — a Children's Product Certificate and a third-party test report from an accepted lab. See the [compliance guide](/guides/us-product-compliance/)
 - **Supplements** — Certificate of Analysis, GMP certification, FDA registration where applicable
 - **Topicals, OTC medications** — safety data sheets and certificates
-- **Jewellery and watches** — product images are sometimes requested
+- **Jewelry and watches** — product images are sometimes requested
 - **Anything with a battery, aerosol or chemical** — likely a [dangerous goods review](/guides/hazmat-dangerous-goods/) as well
 
 ## Paid ungating services
 
 Reporting is split, and both positions are worth knowing.
 
-**The case for:** where a brand sits behind a category Amazon rarely approves directly, a broker with genuine distributor relationships is described as potentially worth around $300.
+**The case for:** where a brand sits behind a category Amazon rarely approves directly, a broker with genuine distributor relationships is potentially worth around $300.
 
 **The case against:** one source warns explicitly about services that will "torch your account," and describes the brand-direct approach as saving money and protecting the account. Another reports DIY first-attempt success rates of 30% to 40% — a figure published by a company selling ungating services, which is worth noting.
 
 **The distinction that matters:** a service that introduces you to a real distributor is buying you a supply relationship. A service that supplies you with an invoice is buying you a document, and a document you did not earn from a supplier you do not have is a fabrication attached to your account permanently.
 
-**The brand-direct route** is the one most sellers never try: contact the brand, ask to become an authorised reseller, and get a letter of authorisation. It is slower and it produces something durable.
+**The brand-direct route** is the one most sellers never try: contact the brand, ask to become an authorized reseller, and get a letter of authorization. It is slower and it produces something durable.
 
 ## What to do
 
@@ -127,7 +128,7 @@ Reporting is split, and both positions are worth knowing.
 
 **Get invoices in the right form at purchase time**, not retrospectively. The same discipline serves five other purposes — see the [invoice guide](/guides/the-supplier-invoice/).
 
-**Apply with well-known brands** where you can. Reporting suggests applications using recognised brand items have better odds, even where those are not the products you intend to sell.
+**Apply with well-known brands** where you can. Reporting suggests applications using recognized brand items have better odds, even where those are not the products you intend to sell.
 
 **Stack easy approvals first.**
 
@@ -135,22 +136,25 @@ Reporting is split, and both positions are worth knowing.
 
 <MiniCalc variant="margin" />
 
+Before you apply for anything, pull your most recent supplier invoice and check three fields: the date, the unit count, and the name and address against your Seller Central account. If any of the three fails, the application fails, and the fix is upstream.
+
 <Faq items={[
-  { q: "Why was my ungating application rejected?", a: "Most commonly the invoice: a retail receipt rather than an authorised distributor invoice, fewer than 10 units, outside the date window, or business details that do not match Seller Central exactly." },
-  { q: "Can I use a receipt from a retail store?", a: "No. Reporting consistently names retail receipts as invalid because they do not establish authorised sourcing. The same document fails in suspension appeals for the same reason." },
-  { q: "How recent must the invoice be?", a: "Sources give 90 days and 180 days. Aim for within 90 — documents that satisfy the tighter reading also satisfy the looser one." },
-  { q: "Does category approval let me sell any brand in it?", a: "No. Gating operates at category, brand and ASIN level independently. An ASIN can be blocked for safety, compliance or dangerous goods reasons after both category and brand approval." },
-  { q: "Should I pay an ungating service?", a: "Sources disagree. A broker with genuine distributor relationships may be worth it for a hard brand gate. A service that supplies you with an invoice rather than a supplier is attaching a document to your account that you cannot defend." },
-  { q: "Does US approval work in the UK?", a: "No. Ungating is marketplace-specific and the requirements may differ by marketplace." },
+ { q: "Why was my ungating application rejected?", a: "Most commonly the invoice: a retail receipt rather than an authorized distributor invoice, fewer than 10 units, outside the date window, or business details that do not match Seller Central exactly." },
+ { q: "Can I use a receipt from a retail store?", a: "No. Reporting consistently names retail receipts as invalid because they do not establish authorized sourcing. The same document fails in suspension appeals for the same reason." },
+ { q: "How recent must the invoice be?", a: "Sources give 90 days and 180 days. Aim for within 90 — documents that satisfy the tighter reading also satisfy the looser one." },
+ { q: "Does category approval let me sell any brand in it?", a: "No. Gating operates at category, brand and ASIN level independently. An ASIN can be blocked for safety, compliance or dangerous goods reasons after both category and brand approval." },
+ { q: "Should I pay an ungating service?", a: "Sources disagree. A broker with genuine distributor relationships may be worth it for a hard brand gate. A service that supplies you with an invoice rather than a supplier is attaching a document to your account that you cannot defend." },
+ { q: "Does US approval work in the UK?", a: "No. Ungating is marketplace-specific and the requirements may differ by marketplace." },
 ]} />
 
 <Sources items={[
-  { title: 'How to get ungated on Amazon: 2026 approval guide (invoice standard: authorised distributor, 10+ units, 90–180 days, matching Seller Central name and address; easier categories in 2026; brand-direct route; warning on paid services)', publisher: 'Aura', href: 'https://goaura.com/blog/amazon-top-restricted-brands-in-2025', accessed: '2026-08-08' },
-  { title: 'Amazon restricted products: 2026 list and approval guide (restricted against prohibited; invoices from authorised distributors dated within 180 days; letters of authorisation; CPC and CoA requirements)', publisher: 'Red Stag Fulfillment', href: 'https://redstagfulfillment.com/amazon-restricted-categories/', accessed: '2026-08-08' },
-  { title: 'Amazon restricted categories: complete guide 2026 (subcategory-level approval; usually three invoices showing 10+ units; safety data sheets; product images for jewellery and watches; most categories remaining ungated)', publisher: 'BrandUMentals', href: 'https://www.brandumentals.com/blog/amazon-restricted-categories', accessed: '2026-08-08' },
-  { title: 'Amazon ungating guide 2026 (account health thresholds: ODR below 1%, late shipment under 4%, valid tracking above 95%; reported DIY first-attempt success of 30–40%)', publisher: 'Upsell Wholesale', href: 'https://upsellwholesale.com/amazon-ungating-guide-2026/', accessed: '2026-08-08' },
-  { title: 'How to get ungated on Amazon in 2026: step-by-step (Seller Central path via Add a Product and Show limitations; auto-approval based on account age and existing approvals)', publisher: 'The Selling Guys', href: 'https://www.thesellingguys.com/how-to-get-ungated-in-amazon-restricted-categories/', accessed: '2026-08-08' },
-  { title: 'Amazon restricted categories ungating guide (ASIN-level blocks persisting after category and brand approval; brand enforcement posture)', publisher: 'Soldscope', href: 'https://www.soldscope.com/blog/amazon-restricted-categories-ungating-guide', accessed: '2026-08-08' },
-  { title: 'How to get ungated in restricted categories on Amazon (invoice dated within 180 days; official letterhead; PDFs preferred; ungating being marketplace-specific)', publisher: 'Jarvio', href: 'https://jarvio.io/blog/get-ungated-amazon-categories', accessed: '2026-08-08' },
-  { title: 'How to get brand approval on Amazon (difference between brand gating and category gating; invoice requirements of 10+ units and exact name matching)', publisher: 'Catalist', href: 'https://catalistai.com/amazon/how-to-get-brand-approval/', accessed: '2026-08-08' },
+  { title: 'Categories and products requiring approval; documentation requirements (invoices dated within 180 days from a manufacturer or distributor, minimum 10 units, matching seller information)', publisher: 'Amazon Seller Central Help', accessed: '2026-09-05' },
+ { title: 'How to get ungated on Amazon: 2026 approval guide (invoice standard: authorized distributor, 10+ units, 90–180 days, matching Seller Central name and address; easier categories in 2026; brand-direct route; warning on paid services)', publisher: 'Aura', href: 'https://goaura.com/blog/amazon-top-restricted-brands-in-2025', accessed: '2026-09-05' },
+ { title: 'Amazon restricted products: 2026 list and approval guide (restricted against prohibited; invoices from authorized distributors dated within 180 days; letters of authorisation; CPC and CoA requirements)', publisher: 'Red Stag Fulfillment', href: 'https://redstagfulfillment.com/amazon-restricted-categories/', accessed: '2026-09-05' },
+ { title: 'Amazon restricted categories: complete guide 2026 (subcategory-level approval; usually three invoices showing 10+ units; safety data sheets; product images for jewelry and watches; most categories remaining ungated)', publisher: 'BrandUMentals', href: 'https://www.brandumentals.com/blog/amazon-restricted-categories', accessed: '2026-09-05' },
+ { title: 'Amazon ungating guide 2026 (account health thresholds: ODR below 1%, late shipment under 4%, valid tracking above 95%; reported DIY first-attempt success of 30–40%)', publisher: 'Upsell Wholesale', href: 'https://upsellwholesale.com/amazon-ungating-guide-2026/', accessed: '2026-09-05' },
+ { title: 'How to get ungated on Amazon in 2026: step-by-step (Seller Central path via Add a Product and Show limitations; auto-approval based on account age and existing approvals)', publisher: 'The Selling Guys', href: 'https://www.thesellingguys.com/how-to-get-ungated-in-amazon-restricted-categories/', accessed: '2026-09-05' },
+ { title: 'Amazon restricted categories ungating guide (ASIN-level blocks persisting after category and brand approval; brand enforcement posture)', publisher: 'Soldscope', href: 'https://www.soldscope.com/blog/amazon-restricted-categories-ungating-guide', accessed: '2026-09-05' },
+ { title: 'How to get ungated in restricted categories on Amazon (invoice dated within 180 days; official letterhead; PDFs preferred; ungating being marketplace-specific)', publisher: 'Jarvio', href: 'https://jarvio.io/blog/get-ungated-amazon-categories', accessed: '2026-09-05' },
+ { title: 'How to get brand approval on Amazon (difference between brand gating and category gating; invoice requirements of 10+ units and exact name matching)', publisher: 'Catalist', href: 'https://catalistai.com/amazon/how-to-get-brand-approval/', accessed: '2026-09-05' },
 ]} />

@@ -1,9 +1,10 @@
 ---
 title: "If you export any of what you import, you may be owed up to 99% of the duty back"
-description: "Duty drawback refunds duty paid on imported goods that are subsequently exported — in the same form or after manufacturing. Reporting describes it as underutilised by importers who export part of their production."
+seoTitle: "Duty Drawback: Up to 99% Back on Duty You Paid, If You Export"
+description: "Duty drawback refunds duty paid on imported goods that are subsequently exported — in the same form or after manufacturing. it as underutilised by importers who export part of their production."
 category: "Shipping & logistics"
 published: "2026-08-23"
-modified: "2026-08-23"
+modified: "2026-09-05"
 minutes: 9
 numbered: true
 ledger: "Refund of up to 99% of duty paid"
@@ -22,11 +23,11 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Drawback is a refund of up to 99% of duties paid on imported goods that are later exported — either unchanged or after manufacturing into a different product.",
-  "Reporting describes it as underutilised by importers who export some or all of their production, which after the tariff increases of 2025 and 2026 is a larger sum than it used to be.",
-  "For a marketplace seller the relevant cases are narrower than the general description suggests, and worth identifying precisely rather than assuming.",
-  "It is a claims process with record-keeping requirements, not an automatic credit. The link between the imported unit and the exported unit has to be demonstrable.",
-  "Where it applies at scale it is usually worth professional handling — the same specialist market that handles first sale and classification review.",
+ "Drawback is a refund of up to 99% of duties paid on imported goods that are later exported — either unchanged or after manufacturing into a different product.",
+ "it as underutilised by importers who export some or all of their production, which after the tariff increases of 2025 and 2026 is a larger sum than it used to be.",
+ "For a marketplace seller the relevant cases are narrower than the general description suggests, and worth identifying precisely rather than assuming.",
+ "It is a claims process with record-keeping requirements, not an automatic credit. The link between the imported unit and the exported unit has to be demonstrable.",
+ "Where it applies at scale it is usually worth professional handling — the same specialist market that handles first sale and classification review.",
 ]} />
 
 Drawback is the oldest duty-reduction mechanism in US trade law and the one most often left unclaimed. The reason is structural: it only helps importers who also export, and most marketplace sellers assume that is not them.
@@ -35,16 +36,16 @@ Sometimes it is.
 
 ## What it is
 
-<Split source="Reported qualifying categories - checked against the sources at the foot of this guide"
-  left={{ title: 'Qualifies', badge: 'UP TO 99% BACK', tone: 'green', rows: ['Cross-border fulfilment from US stock', 'Exported returns', 'Re-export after manufacturing'] }}
-  right={{ title: 'Does not', badge: 'NO REFUND', tone: 'orange', rows: ['US-only sales', 'Goods consumed domestically', 'Unmatched import-export records'] }} />
+<Split source="qualifying categories - checked against the sources at the foot of this guide"
+ left={{ title: 'Qualifies', badge: 'UP TO 99% BACK', tone: 'green', rows: ['Cross-border fulfillment from US stock', 'Exported returns', 'Re-export after manufacturing'] }}
+ right={{ title: 'Does not', badge: 'NO REFUND', tone: 'orange', rows: ['US-only sales', 'Goods consumed domestically', 'Unmatched import-export records'] }} />
 
 A refund of **up to 99% of duties paid** on imported goods that are subsequently exported — either in the same condition, or after being manufactured into a different product.
 
 The logic is straightforward: the United States charged duty on goods entering its commerce. If the goods left again, the reason for the charge went with them.
 
-<Figure value="Up to 99%" kind="recovered" source="Reported duty drawback refund rate, 2026, accessed 8 August 2026">
-  The reported refund available on duties paid for goods subsequently exported. Reporting describes the mechanism as underutilised by importers who export part of their production.
+<Figure value="Up to 99%" kind="recovered" source="duty drawback refund rate, 2026, checked September 5, 2026">
+ The reported refund available on duties paid for goods subsequently exported. the mechanism as underutilised by importers who export part of their production.
 </Figure>
 
 ## Where it actually applies to a marketplace seller
@@ -77,9 +78,9 @@ The arithmetic is simple and worth doing before anything else:
 
 ```
 annual drawback opportunity
-  ≈ units exported per year
-  × duty paid per unit
-  × 0.99
+ ≈ units exported per year
+ × duty paid per unit
+ × 0.99
 ```
 
 **Then compare that against the cost of claiming.** Drawback specialists typically work on a percentage of recovery or a fee basis, and the record-keeping requirement has an internal cost too.
@@ -108,19 +109,22 @@ The four are not alternatives. A seller could, in principle, engineer a lower cl
 
 <MiniCalc variant="stack" />
 
+Count the units you shipped to Canada, Mexico or any non-US customer in the last five years from inventory you paid US duty on. If the number is not zero, you have a drawback claim, and the five-year clock on the oldest of them is already running.
+
 <Faq items={[
-  { q: "What is duty drawback?", a: "A refund of up to 99% of duties paid on imported goods that are subsequently exported, either in the same form or after being manufactured into a different product." },
-  { q: "Does it apply to Amazon sellers?", a: "Sometimes. The relevant cases are selling into Canada or Mexico from US inventory through Remote Fulfillment, exporting to other markets from US stock, exporting returned or excess inventory, and manufacturing in the US for export. Goods sold entirely to US customers do not qualify." },
-  { q: "How do I know if it is worth claiming?", a: "Units exported annually multiplied by duty paid per unit multiplied by 0.99, compared against the cost of claiming and the record-keeping burden. The 2026 tariff increases made the first number materially larger for many importers." },
-  { q: "What records do I need?", a: "Documentation linking the imported goods on which duty was paid to the exported goods — entry summaries, export documentation and inventory records supporting the match. Time limits apply; confirm the current windows with a specialist." },
-  { q: "Can I combine drawback with other duty strategies?", a: "Yes. Reporting describes duty reduction as layered: tariff engineering on the product side, first sale on the transaction side, and FTZ or drawback on the operations side. Drawback is the only one that returns money already spent." },
-  { q: "Why is drawback described as underutilised?", a: "Because it only helps importers who also export, and many assume that is not them. Sellers fulfilling cross-border orders from US inventory frequently do not think of themselves as exporters." },
+ { q: "What is duty drawback?", a: "A refund of up to 99% of duties paid on imported goods that are subsequently exported, either in the same form or after being manufactured into a different product." },
+ { q: "Does it apply to Amazon sellers?", a: "Sometimes. The relevant cases are selling into Canada or Mexico from US inventory through Remote Fulfillment, exporting to other markets from US stock, exporting returned or excess inventory, and manufacturing in the US for export. Goods sold entirely to US customers do not qualify." },
+ { q: "How do I know if it is worth claiming?", a: "Units exported annually multiplied by duty paid per unit multiplied by 0.99, compared against the cost of claiming and the record-keeping burden. The 2026 tariff increases made the first number materially larger for many importers." },
+ { q: "What records do I need?", a: "Documentation linking the imported goods on which duty was paid to the exported goods — entry summaries, export documentation and inventory records supporting the match. Time limits apply; confirm the current windows with a specialist." },
+ { q: "Can I combine drawback with other duty strategies?", a: "Yes. duty reduction as layered: tariff engineering on the product side, first sale on the transaction side, and FTZ or drawback on the operations side. Drawback is the only one that returns money already spent." },
+ { q: "Why is drawback described as underutilised?", a: "Because it only helps importers who also export, and many assume that is not them. Sellers fulfilling cross-border orders from US inventory frequently do not think of themselves as exporters." },
 ]} />
 
 <Sources items={[
-  { title: 'Tariff engineering: legal strategies to reduce import duties 2026 (drawback as a refund of up to 99% of duties on goods subsequently exported, in the same form or after manufacturing; described as underutilised by importers who export part of their production)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/tariff-engineering-strategies-guide', accessed: '2026-08-08' },
-  { title: '7 legal strategies to reduce import duties for US importers (layered approach: tariff engineering on product design, first sale on the transaction side, FTZ or drawback on operations)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/blog/tariff-reduction-strategies-us-importers', accessed: '2026-08-08' },
-  { title: 'Reduce import duty US 2026 (using duty drawback where exported goods incorporate Chinese-origin inputs; drawback management as part of a trade compliance programme)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-08-08' },
-  { title: 'How American importers are cutting their 2026 duty bills (drawback recovery among the services in the tariff mitigation market alongside classification review and first sale valuation)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-08-08' },
-  { title: 'How to reduce import duties: the complete guide (drawback among the recognised legal strategies; the distinction between legal duty reduction and duty evasion)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/how-to-reduce-import-duties-complete-guide/', accessed: '2026-08-08' },
+  { title: '19 CFR Part 190 — Modernized drawback (refund of up to 99% of duties, taxes and fees on imported merchandise that is subsequently exported or destroyed; five-year filing window from import)', publisher: 'U.S. Customs and Border Protection', accessed: '2026-09-05' },
+ { title: 'Tariff engineering: legal strategies to reduce import duties 2026 (drawback as a refund of up to 99% of duties on goods subsequently exported, in the same form or after manufacturing; described as underutilised by importers who export part of their production)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/tariff-engineering-strategies-guide', accessed: '2026-09-05' },
+ { title: '7 legal strategies to reduce import duties for US importers (layered approach: tariff engineering on product design, first sale on the transaction side, FTZ or drawback on operations)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/blog/tariff-reduction-strategies-us-importers', accessed: '2026-09-05' },
+ { title: 'Reduce import duty US 2026 (using duty drawback where exported goods incorporate Chinese-origin inputs; drawback management as part of a trade compliance program)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-09-05' },
+ { title: 'How American importers are cutting their 2026 duty bills (drawback recovery among the services in the tariff mitigation market alongside classification review and first sale valuation)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-09-05' },
+ { title: 'How to reduce import duties: the complete guide (drawback among the recognized legal strategies; the distinction between legal duty reduction and duty evasion)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/how-to-reduce-import-duties-complete-guide/', accessed: '2026-09-05' },
 ]} />

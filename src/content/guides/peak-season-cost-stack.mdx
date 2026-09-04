@@ -1,12 +1,13 @@
 ---
 title: "Four of your costs rise in Q4 at once, and one of them is your own cash"
-description: "Storage roughly triples. CPCs are reported to spike 60% to 80%. Aged inventory keeps ageing. And DD+7 means the revenue funding all of it arrives two to four weeks after the sale. Peak season is a liquidity event before it is a sales event."
+seoTitle: "Q4 Cost Stack: Storage ×3, Peak Fee, CPC Spike, DD+7 Cash Gap"
+description: "Storage roughly triples. Agency data puts the CPC spike at 60% to 80%. Aged inventory keeps ageing. And DD+7 means the revenue funding all of it arrives two to four weeks after the sale. Peak season is a liquidity event before it is a sales event."
 category: "Scaling"
 published: "2026-08-10"
-modified: "2026-08-10"
+modified: "2026-09-05"
 minutes: 11
 numbered: true
-ledger: "Decide by 30 September, not in November"
+ledger: "Decide by September 30, not in November"
 ledgerKind: "cost"
 draft: false
 ---
@@ -21,11 +22,11 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "Q4 base storage roughly triples on published 2026 rates — standard size from $0.87 to $2.40 per cubic foot per month, oversize from $0.56 to $1.40.",
-  "CPCs are reported to rise 60% to 80% during Prime Day and Q4, reaching $1.35 to $1.45. A fixed monthly ad budget overspends in the cheap months and runs out in the expensive ones.",
-  "Under DD+7, funds arrive seven days after delivery plus the disbursement cycle — reported at 14 to 27 days from order to bank for FBA. Q4 is when the gap between spend and receipt is widest.",
-  "Reporting is consistent that the peak inventory rule is eight to ten weeks of cover, not ninety days. A September shipment of ninety days' supply pays peak storage on the unsold part through November and December.",
-  "Every corrective action — removal, liquidation, promotion — costs more and works slower once peak starts. The decision window closes on 30 September.",
+ "Q4 base storage roughly triples on published 2026 rates — standard size from $0.78 to $2.40 per cubic foot per month, oversize from $0.56 to $1.40.",
+ "CPCs will rise 60% to 80% during Prime Day and Q4, reaching $1.35 to $1.45. A fixed monthly ad budget overspends in the cheap months and runs out in the expensive ones.",
+ "Under DD+7, funds arrive seven days after delivery plus the disbursement cycle — at 14 to 27 days from order to bank for FBA. Q4 is when the gap between spend and receipt is widest.",
+ "By every account, the peak inventory rule is eight to ten weeks of cover, not ninety days. A September shipment of ninety days' supply pays peak storage on the unsold part through November and December.",
+ "Every corrective action — removal, liquidation, promotion — costs more and works slower once peak starts. The decision window closes on September 30.",
 ]} />
 
 Peak season is discussed as a demand event. Operationally it is a cost and liquidity event that happens to coincide with demand, and the four cost lines that move do so in the same direction at the same time.
@@ -36,25 +37,25 @@ This guide assembles what the other guides on this site cover separately, becaus
 
 | Cost | Off-peak | Peak | Source |
 | --- | --- | --- | --- |
-| Storage, standard | $0.87 / cu ft / month | $2.40 | Published 2026 rates |
+| Storage, standard | $0.78 / cu ft / month | $2.40 | Amazon 2026 rate card |
 | Storage, oversize | $0.56 / cu ft / month | $1.40 | Published 2026 rates |
 | CPC, blended | ~$1.07–$1.22 | $1.35–$1.45 | Reported 60–80% spike |
-| Aged inventory surcharge | Runs continuously | Runs continuously | Trigger reported at 180 days |
+| Aged inventory surcharge | Runs continuously | Runs continuously | Starts at day 181 |
 | Cash | 14–27 days order to bank | Same, on larger volumes | DD+7 |
 
 The storage figures come from the [storage guide](/guides/fba-storage-four-layers/), which also covers why published rates for this disagree and how the disagreement resolves by date. The advertising figures come from the [PPC benchmarks guide](/guides/amazon-ppc-benchmarks/). The payment timing comes from the [DD+7 guide](/guides/dd7-payout-reserve/).
 
 **The compounding is the point.** Individually each is manageable. Together they arrive in the same eight weeks, on your largest inventory position of the year, funded by revenue that has not landed yet.
 
-<Figure value="~3×" kind="cost" source="Published 2026 FBA storage rates, reviewed 8 August 2026">
-  The Q4 multiplier on base monthly storage, standard and oversize alike. It applies to the daily average volume in the network — including stock that arrived in June and has not moved.
+<Figure value="~3×" kind="cost" source="Published 2026 FBA storage rates, checked September 5, 2026">
+ The Q4 multiplier on base monthly storage, standard and oversize alike. It applies to the daily average volume in the network — including stock that arrived in June and has not moved.
 </Figure>
 
 ## The inventory question, answered properly
 
 The instinct is to send everything. The published rule across sources is **eight to ten weeks of cover during peak, not ninety days.**
 
-The reasoning is arithmetic rather than caution. Peak storage applies to what is in the network, not to what sells. Sending ninety days of supply in September means paying roughly three times the off-peak rate through November and December on whatever does not move — and reporting notes the aged-inventory clock keeps running underneath that.
+The reasoning is arithmetic rather than caution. Peak storage applies to what is in the network, not to what sells. Sending ninety days of supply in September means paying roughly three times the off-peak rate through November and December on whatever does not move — and the aged-inventory clock keeps running underneath that.
 
 **Tighter replenishment beats one large shipment**, which is the opposite of the instinct and the opposite of what most sellers do.
 
@@ -73,13 +74,13 @@ Under DD+7, revenue arrives seven days after the customer receives the order, pl
 Now put that on a Q4 timeline:
 
 ```
-Aug–Sep   Pay supplier for peak inventory
-Sep       Pay freight, duty, user fees
-Oct       Storage rate triples on everything held
-Oct–Dec   Ad spend rises 60–80% and is charged continuously
-Nov       Sales peak
-Nov–Dec   Revenue from those sales begins landing
-Jan       Storage rate falls, unsold stock still there
+Aug–Sep  Pay supplier for peak inventory
+Sep    Pay freight, duty, user fees
+Oct    Storage rate triples on everything held
+Oct–Dec  Ad spend rises 60–80% and is charged continuously
+Nov    Sales peak
+Nov–Dec  Revenue from those sales begins landing
+Jan    Storage rate falls, unsold stock still there
 ```
 
 **Every outflow happens before the inflow.** That is always true in retail; what changed is that the gap widened by a week on a season when the amounts are largest.
@@ -88,7 +89,7 @@ The failure mode is specific and worth naming: a seller sells well through Black
 
 ## The advertising question
 
-Reported CPC spikes of 60% to 80% mean your ad budget buys 40% fewer clicks in November than in September at the same spend.
+Cpc spikes of 60% to 80% mean your ad budget buys 40% fewer clicks in November than in September at the same spend.
 
 Two implications:
 
@@ -98,13 +99,13 @@ Two implications:
 
 ## The September decision list
 
-Everything below is cheaper and more effective before 1 October.
+Everything below is cheaper and more effective before October 1.
 
-**1. Age your inventory.** Pull the inventory age report. Anything approaching the 180-day trigger gets decided now — see the [removal guide](/guides/removal-vs-hold-decision/), which shows the same unit costing 0.58 months of holding to remove in November against 2.9 months in May.
+**1. Age your inventory.** Pull the inventory age report. Anything approaching the day-181 surcharge gets decided now — see the [removal guide](/guides/removal-vs-hold-decision/), which shows the same unit costing 0.58 months of holding to remove in November against 2.9 months in May.
 
 **2. Remove or liquidate the dead stock.** In September, at off-peak rates, with time for the removal to process.
 
-**3. Set peak cover per SKU at eight to ten weeks**, not by catalogue rule. Fast movers and slow movers need different answers.
+**3. Set peak cover per SKU at eight to ten weeks**, not by catalog rule. Fast movers and slow movers need different answers.
 
 **4. Model the cash timeline on delivery date.** Use the [cash flow planner](/tools/cash-flow-planner/) with your own DD+7 figure, measured from your own Payments data rather than an average.
 
@@ -112,7 +113,7 @@ Everything below is cheaper and more effective before 1 October.
 
 **6. Confirm your reorder triggers include Q4 lead times.** Suppliers, freight, customs and Amazon receiving are all slower in the fourth quarter.
 
-**7. Decide the January exit now.** What happens to unsold stock on 2 January, and who decides. Making that decision in September costs nothing; making it in January costs a month of peak storage you already paid.
+**7. Decide the January exit now.** What happens to unsold stock on January 2, and who decides. Making that decision in September costs nothing; making it in January costs a month of peak storage you already paid.
 
 ## What not to do
 
@@ -124,21 +125,24 @@ Everything below is cheaper and more effective before 1 October.
 
 <MiniCalc variant="margin" />
 
+Take last November's storage bill, multiply by three, and add the peak fee times last November's units. If that number is bigger than the cash you will have on hand by mid-November under DD+7, the Q4 problem is not fees. It is funding.
+
 <Faq items={[
-  { q: "How much do storage fees rise in Q4?", a: "Roughly threefold on published 2026 rates — standard size from $0.87 to $2.40 per cubic foot per month, oversize from $0.56 to $1.40. It applies to daily average volume in the network, including stock that arrived months earlier." },
-  { q: "How much inventory should I send for peak?", a: "Published guidance is consistently eight to ten weeks of cover rather than ninety days, with tighter replenishment cycles rather than one large shipment. Balance that against the low-inventory-level fee on fast movers." },
-  { q: "Do advertising costs really rise that much?", a: "Reporting puts CPC increases at 60% to 80% during Prime Day and Q4, reaching $1.35 to $1.45. At the same spend that is materially fewer clicks, and a higher ACOS at the same conversion rate." },
-  { q: "Why is cash tighter in Q4 2026 than previous years?", a: "DD+7 applied to North American accounts from 12 March 2026, holding funds seven days after delivery. Reported order-to-bank timing is 14 to 27 days for FBA, and Q4 is when the amounts and the gap are largest." },
-  { q: "What is the deadline for fixing an inventory position?", a: "30 September. From 1 October the base storage rate roughly triples, and every corrective action — removal, liquidation, promotion — costs more and works slower during peak." },
-  { q: "What should I decide in September about January?", a: "What happens to unsold stock and who decides it. That decision is free in September and costs a month of peak storage if it waits until January." },
+ { q: "How much do storage fees rise in Q4?", a: "Roughly threefold on published 2026 rates — standard size from $0.78 to $2.40 per cubic foot per month, oversize from $0.56 to $1.40. It applies to daily average volume in the network, including stock that arrived months earlier." },
+ { q: "How much inventory should I send for peak?", a: "Published guidance is consistently eight to ten weeks of cover rather than ninety days, with tighter replenishment cycles rather than one large shipment. Balance that against the low-inventory-level fee on fast movers." },
+ { q: "Do advertising costs really rise that much?", a: "CPC increases at 60% to 80% during Prime Day and Q4, reaching $1.35 to $1.45. At the same spend that is materially fewer clicks, and a higher ACOS at the same conversion rate." },
+ { q: "Why is cash tighter in Q4 2026 than previous years?", a: "DD+7 applied to North American accounts from March 12, 2026, holding funds seven days after delivery. Reported order-to-bank timing is 14 to 27 days for FBA, and Q4 is when the amounts and the gap are largest." },
+ { q: "What is the deadline for fixing an inventory position?", a: "September 30. From October 1 the base storage rate roughly triples, and every corrective action — removal, liquidation, promotion — costs more and works slower during peak." },
+ { q: "What should I decide in September about January?", a: "What happens to unsold stock and who decides it. That decision is free in September and costs a month of peak storage if it waits until January." },
 ]} />
 
 <Sources items={[
-  { title: 'Amazon FBA fees breakdown 2026 (peak storage at three times the off-peak rate; eight-to-ten-week peak cover rule; consequences of a 90-day September shipment)', publisher: 'Nventory', href: 'https://nventory.io/blog/amazon-fba-fulfillment-fees-breakdown-2026', accessed: '2026-08-08' },
-  { title: 'Amazon FBA storage fee overhaul now live (standard $0.87 Jan–Sep and $2.40 Oct–Dec effective 1 July 2026; aged-inventory trigger at 180 days; culling units before 30 September)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/news/amazon-fba-storage-fee-overhaul-h2-2026', accessed: '2026-08-08' },
-  { title: 'Amazon ads cost 2026 (CPCs spiking 60–80% during Prime Day and Q4 to $1.35–$1.45; fixed ad budgets being hit hardest)', publisher: 'Xneeti', href: 'https://xneeti.com/blog/how-much-do-amazon-ads-cost-average-cpc-budgets', accessed: '2026-08-08' },
-  { title: 'Amazon\u2019s new DD+7 payout policy (14–27 days from order to bank deposit for FBA; funds released seven days after confirmed delivery)', publisher: 'SlopePay', href: 'https://slopepay.com/blog/amazon-dd7-payout-policy', accessed: '2026-08-08' },
-  { title: 'Amazon FBA storage fees 2026: monthly, aged and Q4 peak rates (surcharge tiers unchanged during peak while the base rate rises)', publisher: 'ConversionPerk', href: 'https://www.conversionperk.com/amazon-fba-storage-fees-2026/', accessed: '2026-08-08' },
-  { title: 'Delivery-date-based reserve DD+7 payout policy explained (liquidity pressure during Q4 peaks, Prime Day and high-volume launches)', publisher: 'Big Internet Seller Services', href: 'https://biginternetcommerce.com/delivery-date-based-reserve-dd7-amazon-payout-policy-explained-2025%E2%86%922026-cash-flow-risks-timelines-and-a-seller-playbook/', accessed: '2026-08-08' },
-  { title: 'Amazon PPC benchmarks 2026 (median blended CPC $1.07 across managed accounts in H1 2026)', publisher: 'SellerPlex', href: 'https://sellerplex.com/amazon-ppc-benchmarks-2026/', accessed: '2026-08-08' },
+  { title: 'Holiday 2026: same fees, same eligibility, earlier deadlines (peak fulfillment October 15, 2026 to January 14, 2027; 3.5% surcharge on top)', publisher: 'Amazon Seller Central, Seller Forums announcement, July 7, 2026', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/3e31fbb7-04e0-4ed4-873e-f74b1052e2ff', accessed: '2026-09-05' },
+ { title: '2026 US Referral and FBA fee changes summary (monthly storage $0.78 / $2.40 standard; aged-inventory surcharge from day 181)', publisher: 'Amazon Seller Central Help', href: 'https://sellercentral.amazon.com/help/hub/reference/external/G201411300', accessed: '2026-09-05' },
+ { title: 'Amazon FBA fees breakdown 2026 (peak storage at three times the off-peak rate; eight-to-ten-week peak cover rule; consequences of a 90-day September shipment)', publisher: 'Nventory', href: 'https://nventory.io/blog/amazon-fba-fulfillment-fees-breakdown-2026', accessed: '2026-09-05' },
+ { title: 'Amazon ads cost 2026 (CPCs spiking 60–80% during Prime Day and Q4 to $1.35–$1.45; fixed ad budgets being hit hardest)', publisher: 'Xneeti', href: 'https://xneeti.com/blog/how-much-do-amazon-ads-cost-average-cpc-budgets', accessed: '2026-09-05' },
+ { title: 'Amazon\u2019s new DD+7 payout policy (14–27 days from order to bank deposit for FBA; funds released seven days after confirmed delivery)', publisher: 'SlopePay', href: 'https://slopepay.com/blog/amazon-dd7-payout-policy', accessed: '2026-09-05' },
+ { title: 'Amazon FBA storage fees 2026: monthly, aged and Q4 peak rates (surcharge tiers unchanged during peak while the base rate rises)', publisher: 'ConversionPerk', href: 'https://www.conversionperk.com/amazon-fba-storage-fees-2026/', accessed: '2026-09-05' },
+ { title: 'Delivery-date-based reserve DD+7 payout policy explained (liquidity pressure during Q4 peaks, Prime Day and high-volume launches)', publisher: 'Big Internet Seller Services', href: 'https://biginternetcommerce.com/delivery-date-based-reserve-dd7-amazon-payout-policy-explained-2025%E2%86%922026-cash-flow-risks-timelines-and-a-seller-playbook/', accessed: '2026-09-05' },
+ { title: 'Amazon PPC benchmarks 2026 (median blended CPC $1.07 across managed accounts in H1 2026)', publisher: 'SellerPlex', href: 'https://sellerplex.com/amazon-ppc-benchmarks-2026/', accessed: '2026-09-05' },
 ]} />

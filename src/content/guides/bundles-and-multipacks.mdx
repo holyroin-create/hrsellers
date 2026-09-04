@@ -1,9 +1,10 @@
 ---
 title: "Bundling changes six numbers at once, and most sellers check one"
-description: "A multipack raises the unit price, which moves the fulfilment fee band. It changes the dimensions, which moves the size tier and every storage layer. It needs its own barcode, its own prep and its own review pool. The fee saving is real — it is just not the only thing that moved."
+seoTitle: "Amazon Bundles and Multipacks: Six Numbers That Change at Once"
+description: "A multipack raises the unit price, which moves the fulfillment fee band. It changes the dimensions, which moves the size tier and every storage layer. It needs its own barcode, its own prep and its own review pool. The fee saving is real — it is just not the only thing that moved."
 category: "Getting started"
 published: "2026-08-18"
-modified: "2026-08-18"
+modified: "2026-09-05"
 minutes: 10
 numbered: true
 ledger: "One decision, six moving numbers"
@@ -21,25 +22,25 @@ import MiniCalc from '../../components/MiniCalc.astro';
 import StockImage from '../../components/StockImage.astro';
 
 <Takeaways items={[
-  "The fee saving is real: one published example puts three small items at about $3.22 each in fulfilment fees against roughly $4.65 for a single bundled unit under 1.5 lb.",
-  "But bundling raises the unit price, and since January 2026 price bands are an input to the fulfilment fee — so the saving and a fee increase can arrive together.",
-  "It changes the packaged dimensions, which set the size tier and multiply every layer of the storage bill.",
-  "A bundle needs its own GTIN, its own FNSKU where applicable, and assembly prep — which Amazon stopped doing on 1 January 2026.",
-  "Where a bundle is a variation of an existing family, the February 2026 change to review pooling may mean it does not inherit the review count you were counting on.",
+ "The fee saving is real: one published example puts three small items at about $3.22 each in fulfillment fees against roughly $4.65 for a single bundled unit under 1.5 lb.",
+ "But bundling raises the unit price, and since January 2026 price bands are an input to the fulfillment fee — so the saving and a fee increase can arrive together.",
+ "It changes the packaged dimensions, which set the size tier and multiply every layer of the storage bill.",
+ "A bundle needs its own GTIN, its own FNSKU where applicable, and assembly prep — which Amazon stopped doing on January 1, 2026.",
+ "Where a bundle is a variation of an existing family, the February 2026 change to review pooling may mean it does not inherit the review count you were counting on.",
 ]} />
 
-Bundling is presented as a straightforward fee optimisation: fewer units shipped, fewer fulfilment fees, better average order value. The first part is true. The rest of the consequences arrive later.
+Bundling is presented as a straightforward fee optimization: fewer units shipped, fewer fulfillment fees, better average order value. The first part is true. The rest of the consequences arrive later.
 
 ## The saving that makes people do it
 
-One published example: three small items sold separately at roughly **$3.22 each in fulfilment fees — $9.66 total** — against a single bundled unit at roughly **$4.65** if it stays under 1.5 lb.
+One published example: three small items sold separately at roughly **$3.22 each in fulfillment fees — $9.66 total** — against a single bundled unit at roughly **$4.65** if it stays under 1.5 lb.
 
-That is about a 52% reduction on the fulfilment line, and on a product where three units genuinely sell together it is free money.
+That is about a 52% reduction on the fulfillment line, and on a product where three units genuinely sell together it is free money.
 
 **The condition is in the sentence.** "If under 1.5 lb" is a weight threshold, and the bundle has to stay inside it. Which brings us to everything else that moved.
 
-<Figure value="$9.66 → $4.65" kind="recovered" source="Published bundling example, Nova Analytics, reviewed 8 August 2026">
-  Fulfilment fees for three small items sold separately against one bundled unit under 1.5 lb. The saving is real; it is also the only line in this comparison that most sellers check.
+<Figure value="$9.66 → $4.65" kind="recovered" source="Published bundling example from a vendor blog; unverified illustrative figures">
+ Fulfillment fees for three small items sold separately against one bundled unit under 1.5 lb. The saving is real; it is also the only line in this comparison that most sellers check.
 </Figure>
 
 ## The five things that also moved
@@ -48,15 +49,15 @@ That is about a 52% reduction on the fulfilment line, and on a product where thr
 
 Three items at $9 each is three sales inside the under-$10 Low-Price FBA band. A bundle at $27 sits in the $10–$50 band, at standard rates.
 
-Since 15 January 2026, price is an input to the fulfilment fee — see the [price band guide](/guides/price-tier-repricing-trap/). Reported band variation runs from $0.05 to $0.51 per unit. **Bundling can move you out of the discounted band you were benefiting from**, and if the bundle lands above $50 it moves into the band with the largest reported increase.
+Since January 15, 2026, price is an input to the fulfillment fee — see the [price band guide](/guides/price-tier-repricing-trap/). Reported band variation runs from $0.05 to $0.51 per unit. **Bundling can move you out of the discounted band you were benefiting from**, and if the bundle lands above $50 it moves into the band with the largest reported increase.
 
 Check where the bundle price sits relative to $10 and $50 before assuming the saving.
 
 ### 2. The size tier and every storage layer
 
-A bundle is physically bigger. Packaged dimensions set the size tier, which sets the fulfilment fee — and cubic feet multiply **every layer** of the [storage bill](/guides/fba-storage-four-layers/), monthly, permanently.
+A bundle is physically bigger. Packaged dimensions set the size tier, which sets the fulfillment fee — and cubic feet multiply **every layer** of the [storage bill](/guides/fba-storage-four-layers/), monthly, permanently.
 
-A bundle assembled loosely into an oversized box can consume the fulfilment saving in storage inside a quarter.
+A bundle assembled loosely into an oversized box can consume the fulfillment saving in storage inside a quarter.
 
 **Reporting is explicit** that a product looking profitable in one size tier can lose margin when the packaging pushes it into a higher one, and that this bites hardest on low-priced products, bundles, home goods, toys and anything with air-filled packaging. **Bundles are named on that list.**
 
@@ -64,11 +65,11 @@ A bundle assembled loosely into an oversized box can consume the fulfilment savi
 
 A bundle is a distinct product. It needs its **own GTIN** — reporting is clear that each variation, including bundle configuration, needs its own. Buy from GS1 directly; resold codes fail verification. See the [barcodes guide](/guides/gs1-barcodes-fnsku/).
 
-Reporting also notes self-assembled bundles as one of the categories where a GTIN exemption may apply — which does not remove the FNSKU requirement for FBA units.
+self-assembled bundles as one of the categories where a GTIN exemption may apply — which does not remove the FNSKU requirement for FBA units.
 
 ### 4. Prep
 
-Somebody has to assemble it, and since **1 January 2026 that somebody is not Amazon** — see the [prep guide](/guides/amazon-stopped-prepping/).
+Somebody has to assemble it, and since **January 1, 2026 that somebody is not Amazon** — see the [prep guide](/guides/amazon-stopped-prepping/).
 
 Assembly is more expensive than a poly bag and a label. Reported third-party prep runs $0.35 to $2.00 per unit depending on the work, and bundle assembly sits at the upper end.
 
@@ -87,13 +88,13 @@ Whether a multipack counts as a significant feature difference is not establishe
 Per bundle, before creating it:
 
 ```
-saving   = (fulfilment fee × units) − bundle fulfilment fee
+saving  = (fulfillment fee × units) − bundle fulfillment fee
 
-cost     = price band change, if any
-         + storage change from new cubic feet
-         + assembly prep per bundle
-         + one GTIN
-         + the risk that reviews do not pool
+cost   = price band change, if any
+     + storage change from new cubic feet
+     + assembly prep per bundle
+     + one GTIN
+     + the risk that reviews do not pool
 ```
 
 Then the question nobody asks: **would a customer buy three?** A bundle that halves your fee and sells a third as often is not a saving.
@@ -112,11 +113,11 @@ Then the question nobody asks: **would a customer buy three?** A bundle that hal
 
 **Bundling to escape a low price point.** If the single unit does not work at $9, three of them at $27 usually does not work either — the problem was the margin, not the quantity.
 
-**Bundling unrelated items** because they share a fulfilment fee. Customers do not buy logistics.
+**Bundling unrelated items** because they share a fulfillment fee. Customers do not buy logistics.
 
-**Anything crossing $50 without checking**, since that band carries the largest reported fulfilment increase.
+**Anything crossing $50 without checking**, since that band carries the largest reported fulfillment increase.
 
-**Anything where the bundle box is materially larger than the sum of its parts.** That is storage cost paid monthly against a fulfilment saving taken once.
+**Anything where the bundle box is materially larger than the sum of its parts.** That is storage cost paid monthly against a fulfillment saving taken once.
 
 ## What to do
 
@@ -126,31 +127,34 @@ Then the question nobody asks: **would a customer buy three?** A bundle that hal
 
 **Run the fee preview on the bundle**, not on an estimate. See the [reports guide](/guides/seller-central-reports/).
 
-**Quote bundle prep separately.** Assembly is not the same job as labelling.
+**Quote bundle prep separately.** Assembly is not the same job as labeling.
 
 **Buy the GTIN from GS1.**
 
 **Test demand before committing inventory.** The fee saving is arithmetic; whether people want three is not.
 
-**Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfilment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
+**Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfillment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
 
 <MiniCalc variant="margin" />
 
+Take one SKU under $10 and price a two-pack of it. Run both through the calculator. The two-pack usually wins — and if it does, the packaging spec is the next thing to send your supplier.
+
 <Faq items={[
-  { q: "Does bundling reduce my fees?", a: "On the fulfilment line, usually yes — one published example puts three items at about $3.22 each against roughly $4.65 for a bundled unit under 1.5 lb. Whether the total cost falls depends on the price band, the size tier, storage, prep and the GTIN." },
-  { q: "Does a bundle need its own barcode?", a: "Yes. Each distinct configuration, including bundles, needs its own GTIN. Buy from GS1 directly; resold codes are reported to fail Amazon's verification." },
-  { q: "Who assembles the bundle?", a: "You, your supplier or a prep centre — Amazon ended US prep and labelling services on 1 January 2026. Reported third-party prep is $0.35 to $2.00 per unit, and assembly sits at the upper end." },
-  { q: "Will my bundle inherit the parent listing's reviews?", a: "Not necessarily. Reporting states reviews stopped pooling across variations with significant feature differences from 12 February 2026. Whether a multipack qualifies is not established in the sources found, so treat inheritance as an assumption to test." },
-  { q: "When does bundling clearly win?", a: "When it removes a specific named fee — for example crossing Walmart's reported flat $1.00 surcharge on items retailing under $10 — and when the bundle stays inside its weight and size thresholds." },
-  { q: "What is the most common bundling mistake?", a: "Checking the fulfilment fee and nothing else. The price band, the size tier and the storage multiplier all move at the same time, and two of them are charged monthly rather than once." },
+ { q: "Does bundling reduce my fees?", a: "On the fulfillment line, usually yes — one published example puts three items at about $3.22 each against roughly $4.65 for a bundled unit under 1.5 lb. Whether the total cost falls depends on the price band, the size tier, storage, prep and the GTIN." },
+ { q: "Does a bundle need its own barcode?", a: "Yes. Each distinct configuration, including bundles, needs its own GTIN. Buy from GS1 directly; resold codes will fail Amazon's verification." },
+ { q: "Who assembles the bundle?", a: "You, your supplier or a prep center — Amazon ended US prep and labeling services on January 1, 2026. Reported third-party prep is $0.35 to $2.00 per unit, and assembly sits at the upper end." },
+ { q: "Will my bundle inherit the parent listing's reviews?", a: "Not necessarily. reviews stopped pooling across variations with significant feature differences from February 12, 2026. Whether a multipack qualifies is not established in the sources found, so treat inheritance as an assumption to test." },
+ { q: "When does bundling clearly win?", a: "When it removes a specific named fee — for example crossing Walmart's reported flat $1.00 surcharge on items retailing under $10 — and when the bundle stays inside its weight and size thresholds." },
+ { q: "What is the most common bundling mistake?", a: "Checking the fulfillment fee and nothing else. The price band, the size tier and the storage multiplier all move at the same time, and two of them are charged monthly rather than once." },
 ]} />
 
 <Sources items={[
-  { title: 'Amazon FBA fee changes 2026: every new rate explained (bundling example of three items at about $3.22 each against a bundled unit at about $4.65 under 1.5 lb)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-08-08' },
-  { title: 'Amazon FBA fees in 2026: what sellers need to check before pricing products (size tier shifts on packaged units; bundles named among the product types most affected)', publisher: 'Demotix', href: 'https://demotix.com/amazon-fba-fees/', accessed: '2026-08-08' },
-  { title: 'Amazon UPC codes: requirements, GS1 costs and how to get one (each variation including bundle configuration needing its own UPC)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/upc/', accessed: '2026-08-08' },
-  { title: 'Amazon GS1 barcode requirements: complete 2026 guide (self-assembled custom bundles among GTIN exemption categories)', publisher: 'Better World Products', href: 'https://www.betterworldproducts.org/amazon-gs1-barcode-requirements/', accessed: '2026-08-08' },
-  { title: 'Amazon FBA vs 3PL: full cost comparison (third-party prep at $0.50–$2.00 per unit after US prep services ended on 1 January 2026)', publisher: 'WarehousingCosts', href: 'https://warehousingcosts.com/guides/amazon-fba-vs-3pl', accessed: '2026-08-08' },
-  { title: 'Amazon review program (cross-variation review pooling ending 12 February 2026 for variations with significant feature differences)', publisher: 'Sequence Commerce', href: 'https://sequencecommerce.com/what-is-amazon-review-program/', accessed: '2026-08-08' },
-  { title: 'Walmart WFS fees 2026 (flat $1.00 surcharge on items retailing under $10)', publisher: 'WarehousingCosts', href: 'https://warehousingcosts.com/guides/walmart-wfs-fees', accessed: '2026-08-08' },
+  { title: 'Product bundling policy and multipack listing requirements; FBA fulfillment fees by size tier and price band (2026)', publisher: 'Amazon Seller Central Help', accessed: '2026-09-05' },
+ { title: 'Amazon FBA fee changes 2026: every new rate explained (bundling example of three items at about $3.22 each against a bundled unit at about $4.65 under 1.5 lb)', publisher: 'Nova Analytics', href: 'https://novadata.io/resources/blog/2026-amazon-fba-fee-changes', accessed: '2026-09-05' },
+ { title: 'Amazon FBA fees in 2026: what sellers need to check before pricing products (size tier shifts on packaged units; bundles named among the product types most affected)', publisher: 'Demotix', href: 'https://demotix.com/amazon-fba-fees/', accessed: '2026-09-05' },
+ { title: 'Amazon UPC codes: requirements, GS1 costs and how to get one (each variation including bundle configuration needing its own UPC)', publisher: 'Feedvisor', href: 'https://feedvisor.com/university/upc/', accessed: '2026-09-05' },
+ { title: 'Amazon GS1 barcode requirements: complete 2026 guide (self-assembled custom bundles among GTIN exemption categories)', publisher: 'Better World Products', href: 'https://www.betterworldproducts.org/amazon-gs1-barcode-requirements/', accessed: '2026-09-05' },
+ { title: 'Amazon FBA vs 3PL: full cost comparison (third-party prep at $0.50–$2.00 per unit after US prep services ended on January 1, 2026)', publisher: 'WarehousingCosts', href: 'https://warehousingcosts.com/guides/amazon-fba-vs-3pl', accessed: '2026-09-05' },
+ { title: 'Amazon review program (cross-variation review pooling ending February 12, 2026 for variations with significant feature differences)', publisher: 'Sequence Commerce', href: 'https://sequencecommerce.com/what-is-amazon-review-program/', accessed: '2026-09-05' },
+ { title: 'Walmart WFS fees 2026 (flat $1.00 surcharge on items retailing under $10)', publisher: 'WarehousingCosts', href: 'https://warehousingcosts.com/guides/walmart-wfs-fees', accessed: '2026-09-05' },
 ]} />

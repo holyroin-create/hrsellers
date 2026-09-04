@@ -79,9 +79,9 @@ import Faq from '../../components/Faq.astro';
       <tbody>
         <tr><td>Selling price</td><td>$29.99</td><td>Your listing</td></tr>
         <tr><td>Cost of goods, landed</td><td>−$6.20</td><td>Supplier invoice plus freight, duty and prep per unit</td></tr>
-        <tr><td>Inbound to the fulfilment centre</td><td>−$0.55</td><td>Your carrier invoice divided by units in the shipment</td></tr>
+        <tr><td>Inbound to the fulfillment center</td><td>−$0.55</td><td>Your carrier invoice divided by units in the shipment</td></tr>
         <tr><td>Referral fee at 15%</td><td>−$4.50</td><td>Category referral rate</td></tr>
-        <tr><td>Fulfilment fee</td><td>−$5.60</td><td>Fee Preview report, at your size tier and price band</td></tr>
+        <tr><td>Fulfillment fee</td><td>−$5.60</td><td>Fee Preview report, at your size tier and price band</td></tr>
         <tr><td>Storage, allocated per unit</td><td>−$0.18</td><td>Monthly storage bill divided by units sold that month</td></tr>
         <tr><td>Returns at a 6% rate</td><td>−$0.74</td><td>Return rate from your own returns report</td></tr>
         <tr><td>Advertising at 9% TACOS</td><td>−$2.70</td><td>Ad spend divided by total sales, not ad-attributed sales</td></tr>
@@ -103,10 +103,11 @@ import Faq from '../../components/Faq.astro';
       guess with a rounded corner.
     </p>
     <ul>
-      <li><strong>One unit, one sale.</strong> Multipacks and bundles change the fulfilment fee and the size tier — enter the packed configuration you actually ship.</li>
-      <li><strong>A returned unit costs you the outbound fulfilment and, depending on condition, the unit itself.</strong> That is the default here. Where returns are resold as new, your real return cost is lower.</li>
+      <li><strong>One unit, one sale.</strong> Multipacks and bundles change the fulfillment fee and the size tier — enter the packed configuration you actually ship.</li>
+      <li><strong>A returned unit costs you the outbound fulfillment and, depending on condition, the unit itself.</strong> That is the default here. Where returns are resold as new, your real return cost is lower.</li>
       <li><strong>Storage is a per-unit allocation.</strong> It is not a per-unit charge in reality; it is a monthly bill on volume held. Allocating it per unit sold is the practical approximation.</li>
-      <li><strong>No peak-season adjustment.</strong> Q4 storage and holiday fulfilment surcharges are not modelled — run peak separately with the higher figures.</li>
+      <li><strong>Enter the fulfillment fee with the surcharge included.</strong> Since April 17, 2026 every US and Canada FBA fulfillment fee carries a 3.5% fuel and logistics surcharge; the Fee Preview report already includes it. If you type a rate-card figure instead, multiply it by 1.035 first.</li>
+      <li><strong>No peak-season adjustment.</strong> Q4 storage and holiday fulfillment surcharges are not modelled — run peak separately with the higher figures.</li>
       <li><strong>Referral fee is applied to the selling price alone.</strong> Some marketplaces charge on price plus shipping; on those, enter an effective rate rather than the headline one.</li>
       <li><strong>No currency conversion.</strong> If you bank in a different currency from the marketplace, your real proceeds are lower by the conversion cost.</li>
     </ul>
