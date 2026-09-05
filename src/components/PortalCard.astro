@@ -17,21 +17,15 @@ const SHORT: Record<string, string> = {
   'Scaling': 'Scaling',
 };
 
-/* Relative age, the way a news list reads. Falls back to the date. */
-function ago(iso: string): string {
-  const then = new Date(iso).getTime();
-  if (Number.isNaN(then)) return iso;
-  const days = Math.floor((Date.now() - then) / 86400000);
-  if (days <= 0) return 'Today';
-  if (days === 1) return 'Yesterday';
-  if (days < 7) return `${days} days ago`;
-  if (days < 14) return '1 week ago';
-  if (days < 31) return `${Math.floor(days / 7)} weeks ago`;
-  if (days < 62) return '1 month ago';
-  if (days < 365) return `${Math.floor(days / 30)} months ago`;
-  return `${Math.floor(days / 365)} year${days < 730 ? '' : 's'} ago`;
-}
-const stamp = modified ?? published;
+/* Absolute publication date. A static build cannot honestly say "Today":
+   the string is frozen at build time, and it was reading `modified`, so a
+   site-wide source re-verification made every card claim it was new.
+   The review date belongs on the article page, next to the sources. */
+const fmt = (s: string) => {
+  const d = new Date(s);
+  return Number.isNaN(d.getTime()) ? s : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+};
+const stamp = published;
 ---
 <a class="pcard" href={href}>
   <div class="pthumb">
@@ -41,7 +35,7 @@ const stamp = modified ?? published;
   <div>
     <p class="pmeta">
       <span class={`badge ${BADGE[category] ?? 'start'}`}>{SHORT[category] ?? category}</span>
-      <span class="ago">{ago(stamp)}</span>
+      <span class="ago">{fmt(stamp)}</span>
     </p>
     <h3>{title}</h3>
     <p>{summary}</p>

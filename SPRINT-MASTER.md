@@ -64,3 +64,7 @@ AUDIT-STATUS.md rows to add:
 ```
 
 Follow-up flagged, not executed: `buy-box-featured-offer.mdx` describes seller-level eligibility (lines 84, 107) that the July 2026 change retires. Needs a re-verified `modified` pass (all `accessed` dates must move to ≥ the new modified date), so it is a separate package.
+
+### Template fix (Day 1, same commit)
+
+`PortalCard.astro` rendered a relative age ("Today", "Yesterday") computed at build time from `modified ?? published`. Two defects: a static build freezes the string, and the site-wide source re-verification of Sept 4–5 set every card to "Today". Cards now show the absolute `published` date. The article byline shows `Published`; the review date is labeled "Sources re-verified" in the fact box and the closing disclosure. Schema `datePublished` / `dateModified` unchanged.

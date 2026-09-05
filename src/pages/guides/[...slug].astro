@@ -45,7 +45,7 @@ const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', mon
       <div class="byline">
         <span class="av" aria-hidden="true">{AUTHOR.initials}</span>
         <span>By <a href="/about/">{AUTHOR.name}</a> &middot; {d.minutes} min read</span>
-        <span class="reviewed">Reviewed {fmt(d.modified ?? d.published)}</span>
+        <span class="reviewed">Published {fmt(d.published)}</span>
       </div>
 
       <figure class="figpanel" style="margin:0 0 2.2rem">
@@ -67,7 +67,7 @@ const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', mon
       <div class="prose"><Content /></div>
 
       <p class="disclosure">
-        Published {fmt(d.published)}{d.modified && <> &middot; last reviewed {fmt(d.modified)}</>}.
+        Published {fmt(d.published)}{d.modified && <> &middot; sources re-verified {fmt(d.modified)}</>}.
         Marketplace fees and software pricing change often — verify anything material against the
         marketplace's own documentation before acting on it. Corrections: <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.
       </p>
@@ -113,7 +113,8 @@ const fmt = (s) => new Date(s).toLocaleDateString('en-US', { day: 'numeric', mon
         <dl class="factbox">
           <dt>Author</dt><dd>{AUTHOR.name}</dd>
           <dt>Category</dt><dd>{d.category}</dd>
-          <dt>Last reviewed</dt><dd>{fmt(d.modified ?? d.published)}</dd>
+          <dt>Published</dt><dd>{fmt(d.published)}</dd>
+          <dt>Sources re-verified</dt><dd>{fmt(d.modified ?? d.published)}</dd>
           <dt>Method</dt><dd><a href="/how-we-test/" style="color:var(--recovered)">How we test</a></dd>
         </dl>
       </div>
