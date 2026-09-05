@@ -362,6 +362,42 @@ export const COVERS: Record<string, Cover> = {
     tone: 'neutral',
   },
 
+
+  'featured-offer-eligibility-gate-removed': {
+    kind: 'ledger',
+    label: 'Featured Offer selection · what the 2026 change touches',
+    labelShort: 'What the change touches',
+    figure: '1 of 2',
+    caption: 'The seller screen goes. The ranking, and every price-based gate, stay.',
+    rows: [
+      { k: 'Step 1 — seller eligibility screen', v: 'removed by end 2026', tone: 'gain' },
+      { k: 'Step 2 — offer ranking (price, speed, performance)', v: 'unchanged', tone: 'cost' },
+      { k: 'Above Competitive External Price', v: 'still ineligible', tone: 'cost' },
+      { k: 'Suspected pricing error', v: 'still deactivated', tone: 'cost' },
+    ],
+    stamp: 'Amazon Seller Central announcement, July 6, 2026 · checked Sep 6, 2026',
+    stampShort: 'Amazon, Jul 6, 2026',
+    tone: 'cost',
+  },
+
+  'pricing-health-featured-offer-fix-order': {
+    kind: 'timeline',
+    label: 'Pricing Health · the fix order',
+    labelShort: 'Fix order',
+    figure: '3 rows',
+    caption: 'Deactivated, ineligible, eligible-and-close. Three rows, three different decisions.',
+    points: [
+      { x: 0.05, date: 'Export', note: 'both lists, dated' },
+      { x: 0.28, date: 'Inactive', note: 'confirm price' },
+      { x: 0.52, date: 'Ineligible', note: 'CEP: match or hold' },
+      { x: 0.75, date: 'Within 5%', note: 'rotation call' },
+      { x: 0.95, date: 'Guardrails', note: 'min from margin' },
+    ],
+    stamp: 'Tabs and the 5% band per Amazon, sell.amazon.com pricing guidance · checked Sep 6, 2026',
+    stampShort: 'Amazon pricing guidance',
+    tone: 'cost',
+  },
+
   'dd7-payout-reserve': {
     kind: 'range',
     label: 'Order to bank deposit, reported',

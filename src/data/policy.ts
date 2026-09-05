@@ -34,6 +34,14 @@ export const POLICY: PolicyEntry[] = [
     short: 'TikTok Shop referral fee: 6% to 8% on most US categories',
   },
   {
+    date: '2026-07-06',
+    title: 'Featured Offer: seller-eligibility step removed',
+    what: 'Amazon is removing the seller-performance eligibility screen from Featured Offer selection, rolling out across all stores from July 2026 and completing by the end of 2026. The ranking step and its criteria — competitive pricing, delivery speed, performance — are unchanged, as are the price-based reasons an offer becomes ineligible. Announced in Seller Central on July 6, 2026.',
+    who: 'All Amazon sellers; most relevant to accounts previously locked out at the seller level',
+    status: 'In force',
+    short: 'Featured Offer: seller-eligibility screen being removed',
+  },
+  {
     date: '2026-07-30',
     title: 'FBA New Selection Program: referral-fee cap on new ASINs',
     what: 'For new-to-FBA branded parent ASINs, the referral fee is capped at 10% on the first 100 units and 5% on the next 100, with 120 days of free storage, returns processing and liquidations on those units. Introductory terms run through October 31, 2026.',

@@ -126,5 +126,7 @@ Kademe A = tam yeniden yazım (halüsinasyon riski: Nova Analytics atfı veya 3+
 | C | `amazon-200-billion-quarter` | DONE (Paket 16) | 0 | 3 | 0 | 0 | evet |
 | C | `bsa-collateral-change-2026` | DONE (Paket 19) | 0 | 1 | 0 | 0 | evet |
 | C | `walmart-new-seller-savings-2026` | DONE (Paket 16) | 0 | 3 | 3 | 0 | evet |
+| C | `featured-offer-eligibility-gate-removed` | DONE (Sprint D1, 2026-09-06) | 0 | 5 | 5 | 0 | evet |
+| B | `pricing-health-featured-offer-fix-order` | DONE (Sprint D1, 2026-09-06) | 0 | 7 | 6 | 0 |  |
 
 Toplam: 112 rehber — A: 69 (57 tamam), B: 34, C: 9.

@@ -1,0 +1,106 @@
+---
+title: "Amazon is removing the seller-eligibility gate on the Featured Offer. The price gate stays."
+seoTitle: "Amazon Drops Featured Offer Seller Eligibility: What Changes"
+description: "Amazon's July 6, 2026 announcement removes the first step in Featured Offer selection — the seller-performance screen — in every store by the end of 2026. The ranking step, and the pricing rules that suppress offers, are unchanged. What the announcement says, what it does not say, and what to check in your account."
+category: "Scaling"
+published: "2026-09-06"
+minutes: 7
+numbered: true
+news: true
+ledger: "One of two steps removed; selection criteria unchanged"
+ledgerKind: "cost"
+draft: false
+---
+
+import Takeaways from '../../components/Takeaways.astro';
+import Steps from '../../components/Steps.astro';
+import Split from '../../components/Split.astro';
+import Figure from '../../components/Figure.astro';
+import Faq from '../../components/Faq.astro';
+import Sources from '../../components/Sources.astro';
+import StockImage from '../../components/StockImage.astro';
+
+<Takeaways items={[
+  "Amazon's Seller Central announcement of July 6, 2026 removes the seller-eligibility step from Featured Offer selection. The rollout began in July 2026, runs store by store worldwide, and completes by the end of 2026. No seller action is required.",
+  "Until now selection ran in two steps: Amazon first decided which sellers were eligible on seller-performance criteria, then ranked the offers from that pool. Only the first step goes. The ranking step, and the criteria Amazon names for it — competitive pricing, delivery speed, performance — stay exactly as they were.",
+  "Being considered is not being featured. Amazon says so in the announcement. An offer that was locked out for account reasons now enters the ranking; it does not win the ranking because it entered.",
+  "The suppressions that most sellers actually see are price-driven and are not touched: an offer priced above Amazon's Competitive External Price, or significantly above recent prices, still loses eligibility, and an offer deactivated for a suspected pricing error still sits in Pricing Health until you confirm the price.",
+  "Two places to look this month: the Featured Offer eligible column in Manage All Inventory, and the Pricing Opportunities tab in Pricing Health. If an ASIN was ineligible for account reasons it should flip during the rollout; if it stays ineligible, the reason is price.",
+]} />
+
+Amazon announced a change to how the Featured Offer is awarded, and most of the coverage I have seen reads it as a bigger deal than the text supports. The announcement is four paragraphs. It removes one of two steps. It leaves the step that decides who actually wins untouched, and it says nothing about the pricing rules that suppress the box on healthy accounts every day. Read the four paragraphs before you change anything.
+
+## What the announcement says
+
+The post, titled "Updates to Featured Offer eligibility requirements" and published by Amazon's News account in Seller Forums on July 6, 2026, states that Amazon will begin removing seller eligibility requirements for the Featured Offer starting in July 2026, rolling out gradually across all Amazon stores globally and completing by the end of 2026. Existing offers are included automatically.
+
+The mechanism it describes is a two-step process. Step one: Amazon determines which sellers are eligible, based on seller performance criteria. Step two: Amazon ranks all offers listed by eligible sellers for a product and selects the Featured Offer from that pool. Amazon says step one is no longer delivering additional value to customers and is being removed.
+
+Then the sentence that matters: Amazon is not changing how the Featured Offer is selected. It will continue to evaluate offers and pick the Featured Offer on the criteria it says matter most to customers — competitive pricing, delivery speed, and performance — and being considered does not guarantee being featured.
+
+<Steps title="Featured Offer selection, before and after the change" accent={0} source="Amazon Seller Central, 'Updates to Featured Offer eligibility requirements', July 6, 2026"
+ steps={[
+  { t: 'Seller screen', d: 'REMOVED by end 2026' },
+  { t: 'Offer ranking', d: 'price, speed, performance' },
+  { t: 'Selection', d: 'one offer per ASIN' },
+  { t: 'Rotation', d: 'unchanged' },
+ ]} />
+
+## What it does not say
+
+The announcement does not name the performance criteria being retired, and the replies under it asked repeatedly without an answer from Amazon. It does not say that pricing-based suppression ends. It does not say that a brand owner who is the only seller on a listing will now hold the box regardless of price — which is the question most of the 84 replies were really asking. On all three points the text is silent, so this article is too.
+
+What can be said is where the remaining gates are, because Amazon publishes those elsewhere. Its own selling guide lists the reasons an offer becomes ineligible to be featured: out of stock, price too high, price too low — the last one triggering a suspected-pricing-error hold that the seller has to clear. And the FAQ on the Pricing Health page describes the price test itself: an offer is ineligible when its total price, item plus shipping, is above the Competitive External Price where Amazon has one, or otherwise significantly higher than recent prices. None of that is in scope of the July change.
+
+<Split
+  left={{ title: 'Removed', badge: 'STEP 1', tone: 'green', rows: [
+    'Seller-level eligibility screen',
+    'Based on seller performance criteria (unspecified)',
+    'Rolling out store by store, done by end of 2026',
+    'No action required; offers auto-included',
+  ]}}
+  right={{ title: 'Unchanged', badge: 'STEP 2 + PRICE GATES', tone: 'orange', rows: [
+    'Ranking on competitive pricing, delivery speed, performance',
+    'Ineligible above the Competitive External Price',
+    'Ineligible when significantly above recent prices',
+    'Deactivation on suspected pricing error until confirmed',
+    'Out of stock = not featured',
+  ]}}
+  source="Left: the July 6, 2026 announcement. Right: Amazon's Featured Offer guide and the Pricing Health FAQ. Checked September 6, 2026." />
+
+## Who this actually helps
+
+**Accounts that were locked out at the seller level.** New accounts, accounts with a defect history, accounts on a plan or status that kept them out of the pool. If your ASINs showed as not eligible in Manage All Inventory while your price sat at or below the Featured Offer price, the change is aimed at you. You enter the ranking. Whether you win it is still decided on price, delivery speed and performance, and an FBA or Seller Fulfilled Prime offer with fast delivery still has the structural edge described in the [Buy Box guide](/guides/buy-box-featured-offer/).
+
+**Sole-seller brand owners.** Much of the anger in the replies came from private-label sellers who lose the box on their own listing. If the loss was an account gate, the change fixes it. If it was a price gate — a Competitive External Price scraped from another retailer, or a price that moved up after a promotion — nothing in this announcement changes the outcome. The [cross-channel price parity guide](/guides/cross-channel-price-parity/) covers why a promotion on one channel can suppress the box on Amazon.
+
+**Everyone else.** More offers in the pool means more competition for the rotation on contested ASINs. Amazon has not published anything on the size of that effect and neither has anyone else with data, so I will not put a number on it. The direction is not in your favor if you were winning on account health rather than price.
+
+<Figure value="1 of 2" kind="cost" source="Amazon Seller Central announcement, July 6, 2026. Checked September 6, 2026.">
+  Steps in Featured Offer selection being removed. The ranking step, and every price-based reason an offer loses eligibility, remain in force.
+</Figure>
+
+<StockImage slug="featured-offer-eligibility-gate-removed" theme="analytics" />
+
+## What to check in your account
+
+1. **Turn on the eligibility column.** Inventory → Manage All Inventory → Preferences → enable "Featured Offer eligible." This is the check Amazon's own forum moderators point sellers to. Export it once now and once after the rollout reaches your store so you have a before-and-after.
+2. **Read Pricing Health, both tabs.** Pricing → Pricing Health. Inactive Offers lists SKUs deactivated for a potential pricing error; Pricing Opportunities lists offers that are ineligible and offers that are eligible and priced within 5% of the Featured Offer price. Anything on the ineligible list after the rollout is there for price, not account, reasons. The [Pricing Health guide](/guides/pricing-health-featured-offer-fix-order/) walks the fix order.
+3. **Do not reprice on the announcement.** Nothing about the price test changed. If a SKU is ineligible against a Competitive External Price you cannot match at margin, the decision is the same one it was before July: hold and sell without the box, or move the price and check the contribution margin first.
+4. **Watch the rotation share, not the eligibility flag.** Eligibility going green is the change working. Your share of the box on a contested ASIN is the number that pays, and it is decided by the step Amazon did not touch.
+
+Pull the eligibility column export this week, before the rollout reaches your store, so you can prove later which ASINs the change actually moved.
+
+<Faq items={[
+  { q: 'Does this mean my offer will win the Featured Offer?', a: 'No. Amazon states that being considered does not guarantee being featured. The change removes the seller-level screen that kept some accounts out of the ranking; the ranking itself — competitive pricing, delivery speed, performance — is unchanged.' },
+  { q: 'Does it end price-based suppression?', a: 'No. The announcement does not mention pricing rules. Amazon\'s Featured Offer guide and Pricing Health FAQ still make an offer ineligible when its total price is above the Competitive External Price, or significantly above recent prices, and still deactivate offers on a suspected pricing error until the seller confirms the price.' },
+  { q: 'When does it reach my account?', a: 'Amazon says the rollout started in July 2026, proceeds gradually across all stores, and completes by the end of 2026. It has not published a per-store schedule. Check the Featured Offer eligible column in Manage All Inventory to see when your ASINs flip.' },
+]} />
+
+<Sources items={[
+  { title: 'Updates to Featured Offer eligibility requirements (seller-eligibility step removed; rollout July to end of 2026; selection criteria unchanged)', publisher: 'Amazon Seller Central, Seller Forums News and Announcements, July 6, 2026', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/7336583f-09ac-41de-99d1-667017a88db2', accessed: '2026-09-06' },
+  { title: 'Maximize your sales potential with the Amazon Featured Offer (reasons an offer becomes ineligible: out of stock, price too high, price too low with pricing-error confirmation)', publisher: 'Amazon, sell.amazon.com seller blog', href: 'https://sell.amazon.com/blog/buy-box-featured-offer', accessed: '2026-09-06' },
+  { title: 'Amazon pricing strategies (Pricing Health tabs: Inactive Offers and Pricing Opportunities; the 5% band; Automate Pricing)', publisher: 'Amazon, sell.amazon.com seller blog', href: 'https://sell.amazon.com/blog/amazon-pricing-strategies', accessed: '2026-09-06' },
+  { title: 'Featured Offer lost after price change — Amazon moderator reply pointing to the Featured Offer eligible column in Manage Inventory and the Pricing Health help page', publisher: 'Amazon Seller Central, Seller Forums, April 17, 2026', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/4bcdd35f-cd0c-4830-a226-468387dd1dea', accessed: '2026-09-06' },
+  { title: 'No featured offers available — thread quoting the Pricing Health FAQ on the Competitive External Price and recent-price test', publisher: 'Amazon Seller Central, Seller Forums, February 8, 2025', href: 'https://sellercentral.amazon.com/seller-forums/discussions/t/4664232f-1c4d-41e4-9f77-c7e79e7ca98c', accessed: '2026-09-06' },
+]} />
