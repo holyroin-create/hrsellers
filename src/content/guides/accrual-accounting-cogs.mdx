@@ -1,117 +1,140 @@
 ---
-title: "Inventory and COGS for Sellers: IRS Rules for Tax Year 2025"
-description: "How IRS Publications 334 and 538 treat inventory, the $31 million small business taxpayer test for 2025, what goes into COGS, and Schedule C lines 35-42."
-category: "Operations & accounting"
-published: "2026-08-11"
+title: "Inventory and Cost of Goods Sold for Small Sellers (2025)"
+description: "How the IRS wants resellers to count inventory and figure cost of goods sold on Schedule C lines 35–42, and the $31 million small business taxpayer exception."
+pillar: "money"
+type: "guide"
+published: "2026-11-08"
 modified: "2026-11-08"
 lastVerified: "2026-11-08"
-minutes: 6
+minutes: 9
+photo:
+  subject: "a small stockroom with labeled cardboard bins on metal shelving, a clipboard with a printed count sheet resting on a carton, no people, no logos"
+  alt: "Stockroom shelving with labeled bins and a clipboard holding an inventory count sheet"
+keyFacts:
+  - { label: "Small business taxpayer test", value: "$31M avg. gross receipts, 3 prior years", claim: "accrual-accounting-cogs-03" }
+  - { label: "Where COGS is figured", value: "Schedule C, lines 35–42", claim: "accrual-accounting-cogs-16" }
+  - { label: "Where COGS lands", value: "Schedule C, line 4", claim: "accrual-accounting-cogs-16" }
+  - { label: "Valuation options", value: "Cost, lower of cost or market, or IRS-approved method", claim: "accrual-accounting-cogs-24" }
 summary:
-  - "IRS Publication 334 (2025) applies to 2025 returns and sets the small business taxpayer test at average annual gross receipts of $31 million or less for the 3 prior tax years."
-  - "A small business taxpayer may choose not to keep an inventory if it treats inventory as non-incidental materials and supplies or follows its financial accounting treatment."
-  - "Otherwise, when inventories are required, you generally must use an accrual method for purchases and sales."
-  - "Cost of goods sold is figured on Schedule C, lines 35 through 42, from beginning inventory, purchases, labor, materials and other costs, less ending inventory."
-hero:
-  kind: "stat"
-  figure: "$31 million"
-  label: "Average annual gross receipts limit for the small business taxpayer exception (Pub. 334, 2025)"
-  claim: "accrual-accounting-cogs-05"
-related: ["tariff-stack-2026", "hts-classification-basics"]
+  - "If buying and selling merchandise produces your income, the IRS says you generally must take inventories into account."
+  - "A small business taxpayer — average annual gross receipts of $31 million or less for the 3 prior tax years, per the 2025 Publication 334 — can choose not to keep an inventory."
+  - "Cost of goods sold is beginning inventory plus purchases and other inventory costs (lines 35–39), minus ending inventory (line 41), carried to Schedule C line 4."
+  - "The cost of merchandise you buy is the invoice price minus discounts plus transportation and other charges to acquire it."
+  - "Inventory can be valued at cost, lower of cost or market, or another IRS-approved method, and items can be identified by specific identification, FIFO or LIFO."
+faq:
+  - { q: "What is included in cost of goods sold?", a: "On Schedule C, cost of goods sold is beginning inventory, purchases (less items you took for personal use), labor, materials and supplies, and other costs, minus ending inventory. For merchandise you buy, cost means invoice price minus discounts plus transportation or other acquisition charges.", claims: ["accrual-accounting-cogs-16", "accrual-accounting-cogs-14", "accrual-accounting-cogs-28"] }
+  - { q: "What is cost of goods sold on Schedule C?", a: "It is the line 42 result of Part III — line 40 minus ending inventory on line 41 — entered on line 4 and subtracted from net receipts to get gross profit.", claims: ["accrual-accounting-cogs-16", "accrual-accounting-cogs-20"] }
+  - { q: "Does inventory become cost of goods sold?", a: "The part you sell does. Beginning inventory plus purchases and other costs gives the cost of goods available for sale (line 40); subtracting ending inventory (line 41) leaves cost of goods sold, and that ending inventory usually becomes next year's beginning inventory.", claims: ["accrual-accounting-cogs-14", "accrual-accounting-cogs-16", "accrual-accounting-cogs-15"] }
+  - { q: "Does cost of goods sold include shipping?", a: "Inbound shipping does: IRS Publication 538 puts transportation charges incurred in acquiring goods into their cost, and Publication 334 treats freight-in on merchandise purchased for sale as part of cost of goods sold (line 39).", claims: ["accrual-accounting-cogs-28", "accrual-accounting-cogs-13"] }
+related: ["form-1099-k-marketplace-sellers", "sales-tax-nexus"]
 ---
 
-A seller who buys goods for resale deducts their cost through cost of goods sold (COGS), not as an ordinary expense, and figures it on Schedule C, lines 35 through 42. <C id="accrual-accounting-cogs-11" /> <C id="accrual-accounting-cogs-12" /> Whether you must keep a formal inventory, and therefore use an accrual method for purchases and sales, depends on the small business taxpayer test: for 2025 returns, IRS Publication 334 sets it at average annual gross receipts of $31 million or less for the 3 prior tax years, and you must not be a tax shelter. <C id="accrual-accounting-cogs-01" /> <C id="accrual-accounting-cogs-05" />
+If you buy products and resell them on a marketplace, the IRS generally expects you to account for inventory and deduct what you sold through cost of goods sold (COGS), not as an ordinary expense in the year you paid the supplier. <C id="accrual-accounting-cogs-02"/> <C id="accrual-accounting-cogs-08"/> The 2025 rules give smaller sellers a way out: if your average annual gross receipts were $31 million or less for the 3 prior tax years, you can choose not to keep an inventory, though you still need a method that clearly reflects income. <C id="accrual-accounting-cogs-03"/> <C id="accrual-accounting-cogs-05"/> This guide walks through who qualifies, what goes into COGS, and how the numbers move through Schedule C.
 
-If you meet that test, you can choose not to keep an inventory, but you still need a method that clearly reflects income: either treat inventory as non-incidental materials and supplies, or follow your financial accounting treatment. <C id="accrual-accounting-cogs-06" /> This page walks through those choices and the COGS lines, using the current revisions of Publication 334 (2025) and Publication 538.
+<Stat value="$31 million" label="Average annual gross receipts (3 prior tax years) for small business taxpayer status in the 2025 IRS guidance" claim="accrual-accounting-cogs-03" />
 
-<Callout type="note" title="Scope of this page">
-This page summarizes IRS Publication 334 (2025) and Publication 538 (Rev. January 2022). It is not tax advice; for your return, a CPA or enrolled agent is the route. Publication 334 is written for individuals who file Schedule C.
-</Callout>
+## Which publication and which year
 
-## Which publications and which year
+Publication 334, *Tax Guide for Small Business*, is labeled for use in preparing 2025 returns, and the 2025 Schedule C instructions repeat the same $31 million test. <C id="accrual-accounting-cogs-01"/> <C id="accrual-accounting-cogs-04"/> Publication 538, the IRS guide to accounting periods and methods, still carries a January 2022 revision and quotes the $26 million figure from that older revision. <C id="accrual-accounting-cogs-31"/> Both describe the threshold as indexed for inflation. <C id="accrual-accounting-cogs-03"/> <C id="accrual-accounting-cogs-31"/> Use Pub 538 for how the inventory methods work; take the dollar threshold from the publication and instructions for the year you are filing.
 
-Publication 334 is titled "Tax Guide for Small Business (For Individuals Who Use Schedule C)," and the current revision is "for use in preparing 2025 Returns." <C id="accrual-accounting-cogs-01" /> Publication 538, Accounting Periods and Methods, is still the January 2022 revision; its gross receipts test text gives "$26 million or less (indexed for inflation)," a figure frozen at that revision date. It is not the 2025 amount. <C id="accrual-accounting-cogs-20" /> For tax year 2025, use the Publication 334 figure.
+## Do you have to keep an inventory?
 
-## Cash, accrual, and the inventory rule
+The baseline rule: when the production, purchase, or sale of merchandise is an income-producing factor in your business, you generally must take inventories into account. <C id="accrual-accounting-cogs-02"/> For a reseller that is almost always the case. The small business taxpayer exception changes the mechanics, not the requirement to measure income properly.
 
-Under the cash method you report income you "actually or constructively receive during your tax year." <C id="accrual-accounting-cogs-02" /> "Under an accrual method of accounting, you generally report income in the year earned." <C id="accrual-accounting-cogs-03" /> When you are required to account for inventories, "you must generally use an accrual method of accounting for your purchases and sales." <C id="accrual-accounting-cogs-04" />
-
-The exception is for small business taxpayers. Qualification requires "average annual gross receipts of $31 million or less for the 3 prior tax years (indexed for inflation)" and not being a tax shelter as defined in section 448(d)(3). <C id="accrual-accounting-cogs-05" />
-
-### The two options if you qualify
-
-<Flow title="Inventory method choice under Publication 334 (2025)" claim="accrual-accounting-cogs-06" steps={[
-  {t: "Gross receipts test", d: "Average of 3 prior years at or under $31 million, not a tax shelter"},
-  {t: "Option A", d: "Treat inventory as non-incidental materials and supplies"},
-  {t: "Option B", d: "Follow your financial accounting treatment of inventories"},
-  {t: "Otherwise", d: "Keep inventories; accrual method for purchases and sales"}
+<Decision title="Which inventory approach is open to you" rows={[
+  {if:"Average annual gross receipts for the 3 prior tax years are above $31 million", then:"Keep an inventory and figure COGS on Schedule C lines 35–42 (or the equivalent on your entity return).", claim:"accrual-accounting-cogs-03"},
+  {if:"You are a small business taxpayer and want the simplest tax-only approach", then:"Treat inventory as non-incidental materials and supplies and deduct the cost in the year items are first used or consumed in your operations.", claim:"accrual-accounting-cogs-07"},
+  {if:"You are a small business taxpayer and your books already track inventory", then:"Follow a method that conforms to your financial accounting treatment of inventories.", claim:"accrual-accounting-cogs-06"},
+  {if:"You are a small business taxpayer but prefer full inventory accounting", then:"You may still keep an inventory; choosing not to is an option, not a requirement.", claim:"accrual-accounting-cogs-05"}
 ]} />
 
-- **Non-incidental materials and supplies.** Inventory treated this way "is used or consumed in your business in the year you provide" it to customers. <C id="accrual-accounting-cogs-07" /> For a reseller, that ties the cost to the year the goods go to customers, not the year of purchase.
-- **Financial accounting treatment.** Your treatment "is determined with regard to the method of accounting you use" in your applicable financial statement, or, without one, in your books and records under your own accounting procedures. <C id="accrual-accounting-cogs-08" />
+<Callout type="note" title="Non-incidental does not mean deduct at purchase">
+Under the non-incidental materials and supplies treatment, the deduction comes in the year the inventoriable items are first used or consumed in your operations — not automatically when you pay the supplier. <C id="accrual-accounting-cogs-07"/> For a reseller, stock that is still sitting in a warehouse at year-end has not been consumed.
+</Callout>
 
 ## What goes into cost of goods sold
 
-"If you make or buy goods to sell, you can deduct the cost of goods sold from your gross receipts." <C id="accrual-accounting-cogs-11" /> Schedule C lays out the calculation:
+For merchandise you buy, cost is the invoice price minus appropriate discounts plus transportation or other charges incurred in acquiring the goods. <C id="accrual-accounting-cogs-28"/> Two kinds of discount reduce that cost. Trade discounts are the gap between the stated price and the price you actually pay. <C id="accrual-accounting-cogs-22"/> Cash discounts are amounts a supplier lets you deduct from the invoice for paying promptly. <C id="accrual-accounting-cogs-32"/>
 
-| Schedule C line | Item |
+What counts as "in" your inventory at year-end matters as much as what it cost. Pub 538 includes purchased merchandise once title has passed to you, even if it is still in transit, and goods you have sent out on consignment. <C id="accrual-accounting-cogs-29"/> For importers, that means a container on the water may already belong in your count, depending on when title transfers under your purchase terms.
+
+| Schedule C Part III line | What it holds |
 |---|---|
-| 35 | Inventory at beginning of year |
-| 36 | Purchases less cost of items withdrawn for personal use |
-| 37 | Cost of labor |
-| 38 | Materials and supplies |
-| 39 | Other costs |
-| 40 | Add lines 35 through 39 |
-| 41 | Inventory at end of year |
-| 42 | Cost of goods sold |
+| 35 — Inventory at beginning of year | Last year's closing inventory; attach an explanation if different |
+| 36 — Purchases less personal withdrawals | Merchandise bought for sale, excluding the cost of items you took for personal use |
+| 37 — Cost of labor | Labor costs, usually only in manufacturing or mining; never amounts paid to yourself |
+| 38 — Materials and supplies | Items such as hardware and chemicals used in manufacturing goods |
+| 39 — Other costs | Freight-in on merchandise purchased for sale, integral containers and packages, overhead such as rent, heat, light, power, insurance |
+| 40 — Add lines 35–39 | Cost of goods available for sale |
+| 41 — Inventory at end of year | Closing inventory, which usually becomes next year's line 35 |
+| 42 — Cost of goods sold | Line 40 minus line 41; also entered on line 4 |
 
-*Source: IRS, Publication 334 (2025), chapter 6, "Figuring Cost of Goods Sold on Schedule C, Lines 35 Through 42," checked Nov 8, 2026.* <C id="accrual-accounting-cogs-12" />
+*Source: IRS — Publication 334 (2025), checked Nov 8, 2026.* <C id="accrual-accounting-cogs-09"/> <C id="accrual-accounting-cogs-10"/> <C id="accrual-accounting-cogs-11"/> <C id="accrual-accounting-cogs-12"/> <C id="accrual-accounting-cogs-13"/> <C id="accrual-accounting-cogs-14"/> <C id="accrual-accounting-cogs-15"/> <C id="accrual-accounting-cogs-16"/>
 
-Line-by-line points from Publication 334 that matter for importers and resellers:
+Most resellers will have little or nothing on lines 37 and 38; Pub 334 frames those lines around manufacturing. <C id="accrual-accounting-cogs-11"/> <C id="accrual-accounting-cogs-12"/> Line 39 matters more: freight-in on merchandise purchased for sale is listed there. If you bundle, kit or private-label goods, read the container example closely: containers and packages count there when they are an integral part of the product manufactured. <C id="accrual-accounting-cogs-13"/>
 
-- **Line 35.** Beginning inventory is "usually identical" to the prior year's closing inventory; a difference must be explained in a schedule attached to the return. <C id="accrual-accounting-cogs-13" />
-- **Line 36.** "If you are a merchant, use the cost of all merchandise you bought for sale." You use the prices you pay, not stated prices, and deduct all returns and allowances from total purchases. <C id="accrual-accounting-cogs-14" /> Merchandise withdrawn for personal or family use must be excluded. <C id="accrual-accounting-cogs-15" />
-- **Line 37.** "Labor costs are usually an element of cost of goods sold only in a manufacturing or mining business." <C id="accrual-accounting-cogs-16" />
-- **Line 39.** Freight-in, express-in and cartage-in on merchandise bought for sale are part of cost of goods sold, as are containers and packages that are an integral part of a manufactured product. <C id="accrual-accounting-cogs-17" /> Overhead includes items "such as rent, heat, light, power, insurance" when they belong in COGS. <C id="accrual-accounting-cogs-18" />
+## How COGS flows to the top of Schedule C
 
-Inbound freight on merchandise bought for sale is therefore part of cost of goods sold rather than a separate shipping expense. Duties and tariffs on imported goods are covered on [the 2026 tariff stack page](/guides/tariff-stack-2026/); how they are classified for tax purposes is a question for your preparer.
+<Steps title="From sales to gross profit on Schedule C" steps={[
+  {t:"Line 1: gross receipts", d:"Enter gross receipts from the business and check them against any Forms 1099 you received for business income.", claim:"accrual-accounting-cogs-19"},
+  {t:"Line 2: returns and allowances", d:"Customer refunds, rebates and other allowances, entered as a positive number.", claim:"accrual-accounting-cogs-18"},
+  {t:"Line 3: net receipts", d:"Line 1 minus line 2.", claim:"accrual-accounting-cogs-20"},
+  {t:"Line 4: cost of goods sold", d:"The line 42 result from Part III.", claim:"accrual-accounting-cogs-16"},
+  {t:"Gross profit", d:"Subtract line 4 from line 3.", claim:"accrual-accounting-cogs-20"}
+]} />
 
-### Uniform capitalization
+Returns and allowances include cash or credit refunds to customers, rebates and other allowances. <C id="accrual-accounting-cogs-17"/> One detail that catches marketplace sellers: if you collect state or local sales tax that is imposed on you as the seller, the amount collected belongs in gross receipts. <C id="accrual-accounting-cogs-21"/> See the [sales tax nexus guide](/guides/sales-tax-nexus/) for when marketplaces collect on your behalf.
 
-Under the uniform capitalization rules, "you must capitalize the direct costs and part of the indirect costs for production or resale activities," and small business taxpayers are listed among the exceptions. <C id="accrual-accounting-cogs-19" />
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: beginning inventory $8,000; merchandise purchased $40,000, of which $300 was taken home for personal use; inbound freight $2,500; ending inventory counted at $10,500; gross receipts $95,000; customer refunds $4,000.
+
+- Line 35: $8,000
+- Line 36: $40,000 − $300 = $39,700
+- Line 39: $2,500
+- Line 40: $8,000 + $39,700 + $2,500 = $50,200
+- Line 41: $10,500
+- Line 42 (and line 4): $50,200 − $10,500 = $39,700
+- Line 3: $95,000 − $4,000 = $91,000
+- Gross profit: $91,000 − $39,700 = $51,300
+
+The $10,500 still on the shelf is not deducted this year; it becomes next year's line 35.
+</Callout>
 
 ## Valuing and identifying inventory
 
-If you keep inventories, "you must value your inventory at the beginning and end of each tax year," <C id="accrual-accounting-cogs-09" /> and your method "must conform to generally accepted accounting principles for similar businesses". <C id="accrual-accounting-cogs-10" /> Inventory includes "merchandise or stock in trade," along with raw materials, work in process, finished products and supplies that physically become part of the item for sale. <C id="accrual-accounting-cogs-21" />
+Whatever approach you use, the IRS requires that it conform to generally accepted accounting principles for similar businesses and clearly reflect income. <C id="accrual-accounting-cogs-23"/> Line 33 of Schedule C asks how you valued closing inventory: at cost, at the lower of cost or market, or by another IRS-approved method. <C id="accrual-accounting-cogs-24"/>
 
-Publication 538 sets out how to identify which costs are in ending inventory:
-
-| Method | What it assumes or requires (Pub. 538) |
-|---|---|
-| Specific identification | Used when you can identify and match the actual cost to the items in inventory |
-| FIFO (first-in first-out) | Items purchased or produced first are the first items sold |
-| LIFO (last-in first-out) | Items purchased or produced last are sold first; Form 970 or a statement filed with the return for the first LIFO year |
-
-*Source: IRS, Publication 538 (Rev. January 2022), Inventories, checked Nov 8, 2026.* <C id="accrual-accounting-cogs-22" />
-
-The valuation methods generally available are cost, lower of cost or market, and retail; goods accounted for under LIFO are excluded from lower of cost or market and "must be inventoried at cost." <C id="accrual-accounting-cogs-23" /> "You must use the same accounting method from year to year," and changing your inventory accounting requires Form 3115. <C id="accrual-accounting-cogs-24" />
-
-<Callout type="example" title="Worked example (hypothetical inputs)">
-A seller starts the year with $40,000 of inventory (line 35), buys $150,000 of merchandise and takes $2,000 of it for personal use (line 36: $148,000), pays $6,000 of freight-in (line 39), and counts $55,000 of inventory at year end (line 41). Line 40 is $40,000 + $148,000 + $6,000 = $194,000. Cost of goods sold on line 42 is $194,000 − $55,000 = $139,000.
-</Callout>
-
-<Checklist title="Year-end inventory and COGS checks" items={[
-  "Compute average annual gross receipts for the 3 prior tax years against the figure in the current Publication 334",
-  "Record which inventory method you use and apply it the same way each year",
-  "Count and value ending inventory at year end if you keep inventories",
-  "Confirm this year's line 35 equals last year's line 41, or prepare the explanation",
-  "Add freight-in on merchandise to inventory cost, not to shipping expense",
-  "Exclude merchandise taken for personal or family use from purchases",
-  "File Form 3115 before changing an inventory method; file Form 970 in the first LIFO year"
+<Compare title="Ways to identify which units you sold" columns={["Specific identification","FIFO","LIFO"]} rows={[
+  {label:"Core assumption", values:["Match the actual cost to the actual item","Items bought first are sold first","Items bought last are sold first"], claim:"accrual-accounting-cogs-25"},
+  {label:"Source wording", values:["Use when you can identify and match actual cost to items","Assumes items purchased first are the first disposed of","Assumes items purchased last are the first disposed of"], claim:"accrual-accounting-cogs-26"},
+  {label:"Publication", values:["Pub 538","Pub 538","Pub 538"], claim:"accrual-accounting-cogs-27"}
 ]} />
 
-## What to check yourself
+Damaged, returned-unsellable or shelf-worn goods get their own rule. Pub 538 calls goods you cannot sell at normal prices "subnormal" and says to value them at their bona fide selling price minus the direct cost of disposition, whichever method you use. <C id="accrual-accounting-cogs-30"/>
 
-1. Open Publication 334 on irs.gov, confirm the revision year on the title, and read chapter 2 (Accounting Methods, Inventories) and chapter 6 (How To Figure Cost of Goods Sold).
-2. Check the small business taxpayer gross receipts figure stated for the tax year you are filing; it is indexed for inflation.
-3. Read Publication 538, Inventories, for identification and valuation methods, and the section on changing accounting methods.
-4. Compare your Schedule C lines 35 through 42 with your inventory records before filing.
+## Common mistakes to check before you file
+
+| Mistake | What the IRS guidance says instead |
+|---|---|
+| Expensing a full year of stock purchases | COGS is purchases plus beginning inventory minus ending inventory; unsold stock carries forward |
+| Leaving out goods in transit | Purchased merchandise counts once title passes, even in transit |
+| Counting your own draw as labor | Line 37 excludes any amounts paid to yourself |
+| Ignoring personal withdrawals | Exclude the cost of items taken for personal use from purchases |
+| Valuing damaged returns at full cost | Subnormal goods: bona fide selling price minus direct cost of disposition |
+| Opening inventory that doesn't match last year | Attach an explanation of any difference |
+
+*Source: IRS — Publications 334 (2025) and 538, checked Nov 8, 2026.* <C id="accrual-accounting-cogs-16"/> <C id="accrual-accounting-cogs-29"/> <C id="accrual-accounting-cogs-11"/> <C id="accrual-accounting-cogs-10"/> <C id="accrual-accounting-cogs-30"/> <C id="accrual-accounting-cogs-09"/>
+
+<Checklist title="Year-end inventory checklist" items={[
+  "Confirm your average annual gross receipts for the 3 prior tax years against the current year's IRS figure",
+  "Decide (and document) whether you keep an inventory or use a small business taxpayer alternative",
+  "Count stock in your own space, at 3PLs and at marketplace fulfillment centers",
+  "Add purchased goods in transit where title has already passed",
+  "Record inbound freight and supplier discounts against product cost",
+  "Separate unsellable or damaged units and value them as subnormal goods",
+  "Reconcile ending inventory so it can serve as next year's line 35"
+]} />
+
+## How to confirm it for your return
+
+Read the inventory and cost of goods sold sections of [IRS Publication 334](https://www.irs.gov/publications/p334) and the Part III instructions in the [Schedule C instructions](https://www.irs.gov/instructions/i1040sc) for the tax year you are filing; the gross receipts threshold is indexed, so the figure for a later year may differ. Method detail is in [Publication 538](https://www.irs.gov/publications/p538). This page explains the Schedule C mechanics only; if you are thinking of switching inventory methods, or you file a partnership or corporate return, work it through with a tax professional before filing.

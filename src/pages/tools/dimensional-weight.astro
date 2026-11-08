@@ -1,44 +1,48 @@
 ---
 import Tool from '../../layouts/Tool.astro';
 ---
-<Tool title="Dimensional weight checker" description="Check whether a parcel is billed on actual or dimensional weight, using the dimensional divisor from your own carrier rate guide or contract." lede="Carriers can bill on the greater of actual weight and dimensional (volumetric) weight. Enter the divisor your carrier publishes for your service and see which applies.">
-  <form slot="calc" class="calc" id="dw" onsubmit="this.dispatchEvent(new Event('input'));return false">
-    <fieldset><legend>Parcel</legend>
-      <div class="field"><label for="u">Units</label><select id="u"><option value="in">inches and pounds</option><option value="cm">centimeters and kilograms</option></select></div>
-      <div class="field"><label for="l">Length</label><input id="l" type="number" min="0" step="0.1" value="12" inputmode="decimal" /></div>
-      <div class="field"><label for="w">Width</label><input id="w" type="number" min="0" step="0.1" value="9" inputmode="decimal" /></div>
-      <div class="field"><label for="h">Height</label><input id="h" type="number" min="0" step="0.1" value="4" inputmode="decimal" /></div>
-      <div class="field"><label for="a">Actual weight</label><input id="a" type="number" min="0" step="0.01" value="1.5" inputmode="decimal" /></div>
-      <div class="field"><label for="d">Dimensional divisor <span class="hint">Required. Copy it from your carrier’s current rate guide or your contract for the service you use. There is no single correct number.</span></label><input id="d" type="number" min="1" step="1" placeholder="e.g. from your rate guide" inputmode="numeric" /></div>
-      <button class="btn btn-tag" type="submit">Calculate</button>
-    </fieldset>
-    <fieldset aria-live="polite"><legend>Result</legend>
-      <div class="out"><span>Volume</span><span class="v" id="o-vol">—</span></div>
-      <div class="out"><span>Dimensional weight</span><span class="v" id="o-dim">—</span></div>
-      <div class="out"><span>Actual weight</span><span class="v" id="o-act">—</span></div>
-      <div class="out big"><span>Greater of the two</span><span class="v" id="o-bill">—</span></div>
-      <div class="out"><span>Rounded up to whole unit</span><span class="v" id="o-round">—</span></div>
-      <p class="verdict" id="o-v">Enter your carrier’s divisor to see the result.</p>
-    </fieldset>
+<Tool title="Dimensional weight checker" description="Check whether a parcel is billed on actual or dimensional weight, using the dimensional divisor from your own carrier rate guide, and see how much box volume to cut." lede="Carriers can bill on the greater of actual and dimensional weight. Enter your carrier's divisor for the service you use and see which one governs.">
+  <form slot="calc" class="calc" id="dw" onsubmit="return false">
+    <div class="calc-in"><h2>Your parcel</h2>
+      <div class="field"><label for="u">Units</label><select id="u"><option value="in">Inches &amp; pounds</option><option value="cm">Centimeters &amp; kilograms</option></select></div>
+      <div class="field-row"><div class="field"><label for="l">Length</label><input id="l" type="number" min="0" step="0.1" value="14" /></div><div class="field"><label for="w">Width</label><input id="w" type="number" min="0" step="0.1" value="10" /></div></div>
+      <div class="field-row"><div class="field"><label for="h">Height</label><input id="h" type="number" min="0" step="0.1" value="6" /></div><div class="field"><label for="a">Actual weight</label><input id="a" type="number" min="0" step="0.01" value="3" /></div></div>
+      <div class="field"><label for="d">Dimensional divisor <span class="hint">Required. Copy it from your carrier's current rate guide or contract — it differs by carrier, service and agreement.</span></label><input id="d" type="number" min="1" step="1" placeholder="From your rate guide" /></div>
+      <button class="btn btn-cta" type="submit">Check</button>
+    </div>
+    <div class="calc-out" aria-live="polite"><h2>Billable weight</h2>
+      <div class="out big"><span>Greater of the two</span><span class="v" id="o-b">—</span></div>
+      <div class="out"><span>Dimensional weight</span><span class="v" id="o-d">—</span></div>
+      <div class="out"><span>Actual weight</span><span class="v" id="o-a">—</span></div>
+      <div class="out"><span>Rounded up</span><span class="v" id="o-r">—</span></div>
+      <p class="verdict" id="o-v">Enter your carrier's divisor to see the result.</p>
+    </div>
   </form>
-  <h2>How the calculation works</h2>
-  <p>Dimensional weight is the parcel’s volume divided by a divisor: <code>length × width × height ÷ divisor</code>. With inches the result is in pounds; with centimeters it is in kilograms. The calculator then takes the greater of that figure and the actual weight, and also shows it rounded up to the next whole pound or kilogram, because many rate tables are priced in whole weight units.</p>
-  <h2>Why the divisor is left blank</h2>
-  <p>Divisors differ by carrier, by service (ground, air, international), and by contract, and carriers change them. A default value would be a fact this site could not keep current for every reader, so the field is empty until you enter the figure printed in your own rate guide or agreement. Measure the packed parcel at its longest points, including bulges, and check how your carrier rounds each dimension before multiplying — some round each side to the nearest whole inch first.</p>
-  <h2>Reading the result</h2>
-  <p>If dimensional weight is the larger number, reducing the box size lowers the billed weight even when the product weighs the same. The verdict line shows how much volume you would need to remove for dimensional weight to fall to the actual weight. Marketplace fulfillment programs use their own measurement and size-tier rules, which this calculator does not model; use the platform’s published tables for those fees.</p>
+  <h2>The formula</h2>
+  <p>Dimensional weight = length × width × height ÷ divisor. With inches the result is in pounds; with centimeters, kilograms. Billable weight is the greater of dimensional and actual weight, often rounded up to the next whole unit. Measure the packed parcel at its widest points, and check how your carrier rounds each side before multiplying.</p>
+  <h2>Why there is no default divisor</h2>
+  <p>Divisors vary by carrier, by service and by negotiated contract, and carriers change them. A single default would be wrong for many readers, so the field stays empty until you copy the figure from your own rate guide.</p>
+  <h2>Worked example (hypothetical divisor)</h2>
+  <p>A packed box measures 14 × 10 × 8 inches and weighs 4 pounds on the scale. Its volume is 1,120 cubic inches. With a divisor of 139 (an example only; use your carrier's figure), the dimensional weight is 1,120 ÷ 139 ≈ 8.06 pounds. That is more than the 4-pound actual weight, so the box is billed on its size. To let actual weight govern at that divisor, the box would need to shrink to about 556 cubic inches (4 × 139) — for example 12 × 9 × 5 inches, which is 540.</p>
+  <h2>Ways to lower billed weight</h2>
+  <ul>
+    <li>Measure the packed parcel, not the product: bulges, handles and void fill all count.</li>
+    <li>Test a smaller carton size or a mailer for light items; a few inches on each side compounds because the three sides multiply.</li>
+    <li>Compare the result under each service you use: divisors and rounding rules can differ between ground and express services of the same carrier.</li>
+    <li>For many small units, check whether one master carton bills lower than several separate parcels.</li>
+  </ul>
+  <h2>Where to find your divisor</h2>
+  <p>Carriers publish their divisors and measuring rules in their service guides or rate documents, and negotiated contracts can change them. Copy the figure that applies to your account and service, and note the date you checked it, because divisors are revised. Marketplace fulfillment programs set their own size tiers and dimensional rules; for those, use the program's fee page rather than a carrier divisor.</p>
   <script>
     const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
     function run() {
-      const cm = $('u').value === 'cm'; const L = +$('l').value, W = +$('w').value, H = +$('h').value, A = +$('a').value, D = +$('d').value;
-      const wu = cm ? 'kg' : 'lb', vu = cm ? 'cm³' : 'in³';
-      const vol = L * W * H; $('o-vol').textContent = vol ? `${vol.toLocaleString('en-US', { maximumFractionDigits: 1 })} ${vu}` : '—';
-      $('o-act').textContent = A ? `${A} ${wu}` : '—';
-      if (!(D > 0) || !vol) { ['o-dim', 'o-bill', 'o-round'].forEach((i) => ($(i).textContent = '—')); $('o-v').textContent = 'Enter your carrier’s divisor to see the result.'; return; }
-      const dim = vol / D, bill = Math.max(dim, A);
-      $('o-dim').textContent = `${dim.toFixed(2)} ${wu}`; $('o-bill').textContent = `${bill.toFixed(2)} ${wu}`; $('o-round').textContent = `${Math.ceil(bill - 1e-9)} ${wu}`;
-      $('o-v').textContent = dim > A ? `Dimensional weight is higher. Volume would need to fall by about ${(vol - A * D).toLocaleString('en-US', { maximumFractionDigits: 0 })} ${vu} (to ${(A * D).toLocaleString('en-US', { maximumFractionDigits: 0 })} ${vu}) for actual weight to govern.` : 'Actual weight is higher or equal, so the box size is not what drives the billed weight.';
+      const cm = $('u').value === 'cm', L = +$('l').value, W = +$('w').value, H = +$('h').value, A = +$('a').value, D = +$('d').value, u = cm ? 'kg' : 'lb', vu = cm ? 'cm³' : 'in³', vol = L * W * H;
+      $('o-a').textContent = `${A} ${u}`;
+      if (!(D > 0)) { ['o-b', 'o-d', 'o-r'].forEach((i) => ($(i).textContent = '—')); $('o-v').textContent = "Enter your carrier's divisor to see the result."; return; }
+      const dim = vol / D, b = Math.max(dim, A);
+      $('o-d').textContent = `${dim.toFixed(2)} ${u}`; $('o-b').textContent = `${b.toFixed(2)} ${u}`; $('o-r').textContent = `${Math.ceil(b - 1e-9)} ${u}`;
+      $('o-v').textContent = dim > A ? `Box size drives the bill. Cutting volume by ${(vol - A * D).toLocaleString('en-US', { maximumFractionDigits: 0 })} ${vu} would let actual weight govern.` : 'Actual weight governs; a smaller box would not lower the billed weight.';
     }
-    document.getElementById('dw')!.addEventListener('input', run); run();
+    document.getElementById('dw')!.addEventListener('input', run); document.getElementById('dw')!.addEventListener('submit', run); run();
   </script>
 </Tool>

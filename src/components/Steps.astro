@@ -1,0 +1,11 @@
+---
+import Icon from './Icon.astro';
+import Cites from './Cites.astro';
+import SrcLine from './SrcLine.astro';
+const { title, steps = [] } = Astro.props as { title: string; steps: { t: string; d?: string; claim?: string }[] };
+---
+<figure class="fig"><figcaption class="fig-title"><Icon name="route" />{title}</figcaption>
+  <ol class="steps">{steps.map((s) => <li><div><b>{s.t}{s.claim && <Cites ids={[s.claim]} />}</b>{s.d && <span>{s.d}</span>}</div></li>)}</ol>
+  {!steps.some((s) => s.claim) && <p class="fig-source">Diagram: FBA Tactics, summarizing the steps described on this page.</p>}
+  {steps.some((s) => s.claim) && <SrcLine ids={steps.map((s) => s.claim!).filter(Boolean)} />}
+</figure>

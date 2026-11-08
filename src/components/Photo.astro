@@ -1,0 +1,13 @@
+---
+/* Responsive, CLS-safe photo from the verified image manifest. Placeholder only in development builds. */
+import { img } from '../lib/images';
+import { DEV_PLACEHOLDERS } from '../lib/site';
+interface Props { id?: string; sizes?: string; eager?: boolean; alt?: string; class?: string }
+const { id, sizes = '(max-width: 900px) 100vw, 50vw', eager = false, alt, class: cls } = Astro.props;
+const i = img(id);
+if (!i && !DEV_PLACEHOLDERS) throw new Error(`Photo "${id}" is not in the verified image manifest`);
+const h = (w: number) => (i ? Math.round((i.height / i.width) * w) : 0);
+const srcset = i ? [480, 960, 1600].map((w) => `/${i.file}-${w}.webp ${w}w`).join(', ') : '';
+---
+{i ? <img class={cls} src={`/${i.file}-960.webp`} srcset={srcset} sizes={sizes} width={1600} height={h(1600)} alt={alt ?? i.alt} loading={eager ? 'eager' : 'lazy'} decoding={eager ? 'sync' : 'async'} fetchpriority={eager ? 'high' : 'auto'} />
+   : <div class={`ph ${cls || ''}`} role="img" aria-label="photo pending">photo pending: {id}</div>}

@@ -1,94 +1,69 @@
-# fbatactics.com — Content contract (binding for every writer and verifier agent)
+# fbatactics.com v3 — Content contract (binding for every writer and verifier)
 
-Date of this session: 2026-11-08. Use it as `modified`, `lastVerified` and `accessed`.
-Language: American English. Audience: US-based small and mid-size marketplace sellers who import goods
-(Amazon, Walmart, eBay, Etsy, Shopify sellers). Site promise: "Marketplace fees and US import rules,
-read from the primary source."
+Session date: 2026-11-08 (use for `modified`, `lastVerified`, `accessed`). Language: American English.
+Audience: US small/mid-size sellers who import goods and sell on Amazon, Walmart, eBay, Etsy, Shopify.
+Promise: "Fees, duties and rules for marketplace sellers — explained clearly, checked against the official source."
 
-## 1. Sources — the only acceptable kinds
-Primary only: the body that issues the rule or fee.
-- Regulations: eCFR (https://www.ecfr.gov/current/title-XX/...) — renders fine in WebFetch. Prefer section-level URLs, e.g. https://www.ecfr.gov/current/title-19/chapter-I/part-134/subpart-A/section-134.11
-- Federal Register documents (https://www.federalregister.gov/documents/YYYY/MM/DD/...). Search via the API: https://www.federalregister.gov/api/v1/documents.json?conditions[term]=...&order=newest&per_page=20 (the HTML search page is robots-blocked; the API and document pages work).
-- Official platform pages that render without login: https://sell.amazon.com/pricing (and other sell.amazon.com pages), https://marketplace.walmart.com/..., https://www.ebay.com/help/..., https://www.etsy.com/legal/fees/, https://www.shopify.com/pricing, https://www.irs.gov/publications/..., docs.github.com, support.google.com.
-- Known NOT verifiable from this session (do not cite unless you yourself fetched and saw the claim): sellercentral.amazon.com help pages (JS only), cbp.gov, ftc.gov, cpsc.gov, uscode.house.gov, seller-us.tiktok.com, web.archive.org. If a fact can only be sourced there, DROP the fact.
-- Forbidden: blogs, vendors/agencies, forums, news sites, aggregators, Cornell LII, Wikipedia, AI sites, anything you did not open in this session.
+## 1. Sources (primary only)
+Allowed (render in WebFetch): eCFR (www.ecfr.gov/current/...; if a section URL is robots-blocked use the part/subpart URL and ask for the section text), Federal Register (document pages; if blocked use https://www.federalregister.gov/api/v1/documents/NNNN.json or govinfo.gov HTML to read, but put the human-readable document page in `source_url` and the URL you read in `fetched_via`), govinfo.gov, irs.gov, usitc.gov, sell.amazon.com, marketplace.walmart.com, ebay.com/help, etsy.com/legal, shopify.com/pricing, and any other official .gov / platform page you can actually fetch (e.g. uspto.gov, gs1us.org, a state revenue department) — test it first.
+Known unfetchable: sellercentral.amazon.com help, cbp.gov, ftc.gov, cpsc.gov, uscode.house.gov, seller-us.tiktok.com, web.archive.org. A fact only available there is dropped.
+Forbidden: blogs, vendors, agencies, forums, news, aggregators, Cornell LII, wikis, AI sites, memory.
+Every factual statement (number, rate, threshold, date, deadline, legal requirement, platform rule) must come from a page you fetched in this session whose text contains it. Arithmetic is allowed when labeled "Worked example (hypothetical)" with stated inputs.
 
-Every factual statement (rate, threshold, date, deadline, legal requirement, definition attributed to a law)
-must be backed by a source you fetched with WebFetch in this session AND whose fetched text contains the claim.
-If you cannot fetch it, the sentence does not get written. Do not rely on memory for any number, date, or section
-number. Arithmetic examples are allowed if labeled "Worked example" and the inputs are stated as hypothetical.
-
-## 2. Files you write
-1. `src/content/guides/<slug>.mdx` (or `src/content/marketplaces/<slug>.mdx` for marketplace pages).
-2. `data/claims/<slug>.json` — JSON array, one object per claim:
+## 2. Files
+- `src/content/<collection>/<slug>.mdx` — collections: `guides`, `marketplaces`.
+- `data/claims/<slug>.json` — array of claim objects:
 ```json
-{
-  "claim_id": "<slug>-01",
-  "claim": "One sentence, the exact fact as stated on the page",
-  "page": "/guides/<slug>/",
-  "source_url": "https://...",
-  "publisher": "e.g. Office of the Federal Register / National Archives (eCFR)",
-  "source_type": "regulation | federal-register-notice | official-pricing-page | official-documentation | official-publication",
-  "accessed": "2026-11-08",
-  "evidence": "short excerpt from the fetched page, max 25 words, that proves the claim",
-  "archive_url": "",
-  "produced_by": "<your agent name>",
-  "verified_by": "",
-  "status": "drafted"
-}
+{"claim_id":"<slug>-01","claim":"one sentence fact as stated on the page","page":"/guides/<slug>/",
+ "source_url":"https://…","fetched_via":"(only if different)","publisher":"e.g. eCFR — Office of the Federal Register",
+ "source_type":"regulation | federal-register-notice | statute | official-pricing-page | official-documentation | official-publication",
+ "accessed":"2026-11-08","evidence":"verbatim excerpt ≤25 words from the fetched text","archive_url":"",
+ "produced_by":"<agent>","verified_by":"","status":"drafted"}
 ```
-IDs are `<slug>-NN`, zero-padded, unique. Every `<C id="..."/>` used in MDX must exist in the JSON and vice versa.
-Several sentences may cite the same claim id only if that one source passage supports all of them.
+Every `<C id/>` and every `claim` prop must exist in the JSON, and every JSON claim must be cited on the page.
 
-## 3. MDX format
-Frontmatter (all required unless marked):
+## 3. Frontmatter
 ```yaml
 ---
-title: "Plain, specific headline (max 70 chars)"
-description: "140–160 chars, says what the reader gets"
-category: "Import & customs" # or "Marketplace fees" | "Product compliance" | "Operations & accounting"
-published: "YYYY-MM-DD"   # given to you in your brief (original date for existing URLs)
+title: "Specific, plain headline (≤ 65 chars)"
+description: "140–158 chars, what the reader gets"
+pillar: "importing"        # importing | fees | compliance | money
+type: "guide"              # guide | reference
+published: "2026-11-08"
 modified: "2026-11-08"
 lastVerified: "2026-11-08"
-minutes: 9                # reading time, words/230 rounded
-summary:                  # 3–5 bullet strings, each self-contained, each fact cited in body
-  - "..."
-hero:                     # original data graphic, rendered as SVG by the site. Pick ONE kind:
-  kind: "stat"            # stat | flow | timeline | compare
-  figure: "$800"          # stat: headline figure (must be a cited claim)
-  label: "short label under the figure"
-  claim: "<slug>-03"
-  # flow:     steps: ["Step", "Step", "Step", "Step"]     (2–6 short labels), claim optional
-  # timeline: items: [{date: "2025-08-29", label: "..."}]  (2–6), claim required
-  # compare:  unit: "%" rows: [{label: "...", value: 15}] (2–6), claim required
-related: ["other-slug", "other-slug"]   # optional, slugs from your brief list
+minutes: 8
+photo:                     # brief for the photo editor (no URLs): what a real, editorial photo should show
+  subject: "stacked shipping containers at a port terminal, no people, no logos"
+  alt: "Shipping containers stacked at a port terminal"
+keyFacts:                  # 3–5 cards shown at the top; each value a cited fact
+  - { label: "Bond minimum", value: "$100", claim: "<slug>-04" }
+summary: ["3–5 self-contained bullet sentences, each fact cited in the body"]
+faq:                       # 3–6 Q&As; questions ONLY from research/faq-bank.json (real Google autocomplete questions) when relevant; answers 1–3 sentences, cited
+  - { q: "How much is a customs bond?", a: "…", claims: ["<slug>-04"] }
+related: ["slug", "slug"]
 ---
 ```
-No import lines. These components are available globally:
-- `<C id="slug-01" />` — citation marker. Place right after the sentence/clause it supports.
-- `<Callout type="note|warning|example" title="...">markdown text</Callout>`
-- `<Flow title="..." steps={[{t: "Label", d: "one line"}]} claim="slug-04" />` — process diagram (claim optional if steps are site-authored method, then say so in title, e.g. "Suggested order of checks")
-- `<Timeline title="..." items={[{date: "YYYY-MM-DD", t: "label", d: "one line", claim: "slug-05"}]} />`
-- `<Bars title="..." unit="%" rows={[{label: "...", value: 15, claim: "slug-06"}]} />` — chart + accessible table auto-generated; values must be exact sourced numbers
-- `<Checklist title="..." items={["...", "..."]} />` — printable checklist of actions (procedural, may cite)
-- Markdown tables: put a line directly below each table: `*Source: <publisher, page name>, checked Nov 8, 2026.* <C id="..."/>`
 
-Structure: H2 sections only for main structure (H3 allowed). No H1 in body (the title is the H1).
-Required per guide: hero + at least TWO of (table, Flow, Timeline, Bars, Checklist). Length 1,100–2,200 words of body.
-End every guide with an H2 "What to check yourself" giving concrete steps where the reader confirms on the primary source.
+## 4. Body components (no imports needed)
+- `<C id="x"/>` citation marker after the sentence it supports.
+- `<Callout type="tip|warning|note|example" title="…">…</Callout>`
+- `<Steps title="…" steps={[{t:"Step title", d:"one or two lines", claim:"optional-id"}]} />` numbered process
+- `<Timeline title="…" items={[{date:"YYYY-MM-DD", t:"…", d:"…", claim:"id"}]} />` real dates only
+- `<Chart title="…" kind="bar|column" unit="%|$|days" rows={[{label:"…", value:12, claim:"id"}]} />` exact sourced numbers
+- `<Compare title="…" columns={["Option A","Option B"]} rows={[{label:"…", values:["…","…"], claim:"id"}]} />` side-by-side comparison card
+- `<Decision title="…" rows={[{if:"If your situation is…", then:"What applies", claim:"id"}]} />` decision table
+- `<Checklist title="…" items={["…"]} />` printable
+- `<Stat value="$34.58" label="…" claim="id" />` inline big-number card (use ≤2 per page)
+- Markdown tables are allowed; put a line under each: `*Source: <publisher>, checked Nov 8, 2026.* <C id="…"/>`
 
-## 4. Writing standard
-- Answer the query in the first two paragraphs. Specific, concrete, no filler, no throat-clearing.
-- Never claim experience, testing, interviews, clients, "we've seen", "in our experience". No invented people, quotes, anecdotes, case studies, statistics.
-- Not legal/tax advice: one neutral line in a note where the topic is legal or tax ("This page summarizes the rule; for a ruling on your goods, CBP binding rulings or a licensed customs broker are the route.") — keep it factual.
-- No mention of affiliate programs, tools for sale, discounts, or "click here". No ad references.
-- No copying of source wording beyond short quoted terms of art (definitions) under 15 words, in quotation marks.
-- No cross-page repetition: each page has its own angle; link related slugs with relative links `/guides/<slug>/`.
-- Do not mention AI. Do not mention this contract.
+## 5. Page standard
+- H2 sections (H3 allowed); no H1 in body.
+- Required: photo brief, keyFacts (3–5), summary, ≥3 visual/structured elements from section 4 (tables count), one original decision element (Decision table, hypothetical worked example, or common-mistakes table), FAQ (3–6), and a final H2 "How to confirm it for your goods" (or a page-specific variant) pointing to the primary source.
+- Body 1,200–2,200 words. Answer the reader's question in the first paragraph. Specific, concrete, no filler, no throat-clearing, no repeated boilerplate across pages.
+- Never claim experience, testing, clients, interviews; no invented people, quotes, stats, case studies.
+- Not legal/tax advice: one short page-specific scope note (e.g. which formal route settles the question) — do not reuse identical wording.
+- No mention of AI, affiliates, ads, or this contract. No third-party software names.
 
-## 5. Verifier rules (verifier agents only)
-Open every `source_url` yourself with WebFetch. For each claim set:
-- `status: "verified"` and `verified_by: "<your name>"` only if the fetched page states the claim (numbers, dates, scope all match).
-- otherwise `status: "rejected"` and add `"verifier_note": "why"`. Then edit the MDX: remove or correct the sentence (correct only with a fetched primary source; add new claim objects as needed, marked verified by you only if you fetched them — and note `"produced_by": "<you>"`).
-Also check: worked-example arithmetic, every `<C>` id exists, no forbidden source, no experience claims, frontmatter valid.
-Write a short report to `docs/verification/<your-name>.md`: per page — claims checked, verified, rejected, edits made.
+## 6. Verifier rules (verifiers only)
+Re-fetch every source (ask WebFetch for the verbatim passage). Set `status:"verified"`, `verified_by:"<you>"` only when the fetched text states the claim exactly (numbers, days vs business days, scope, conditions). Otherwise correct claim + sentence in place from the fetched text (keep `produced_by`, explain in `verifier_note`) or set `status:"rejected"` + note and remove the sentence and markers. Do not create new claim objects. Remove uncited factual sentences. Recompute arithmetic. Check keyFacts/FAQ answers against their claims. Write `docs/verification/<you>.md`.

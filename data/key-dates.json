@@ -1,0 +1,186 @@
+[
+  {
+    "date": "2026-01-01",
+    "title": "Illinois drops its 200-transaction test",
+    "detail": "Illinois removes the 200-transaction threshold, leaving $100,000 or more in cumulative gross receipts from sales to Illinois purchasers during the lookback period as the only threshold.",
+    "who": "Remote retailers and marketplace facilitators selling into Illinois",
+    "href": "/guides/sales-tax-nexus/",
+    "claim_ids": [
+      "sales-tax-nexus-16"
+    ]
+  },
+  {
+    "date": "2026-02-06",
+    "title": "CBP electronic refunds rule takes effect",
+    "detail": "Subject to limited exceptions, CBP now issues all refunds electronically.",
+    "who": "Importers and others who receive refunds from CBP",
+    "href": "/policy-log/#2026-01-02-electronic-refunds",
+    "claim_ids": [
+      "policy-log-01",
+      "policy-log-02"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "title": "De minimis suspension continued for all countries",
+    "detail": "Under Executive Order 14388, for goods entered on or after 12:01 a.m. EST, de minimis does not apply (except for articles covered by 50 U.S.C. 1702(b)), regardless of value, origin, transport mode or entry method.",
+    "who": "Importers of low-value shipments from any country",
+    "href": "/policy-log/#2026-02-25-eo-14388",
+    "claim_ids": [
+      "policy-log-05",
+      "policy-log-06"
+    ]
+  },
+  {
+    "date": "2026-02-24",
+    "title": "Section 122 surcharge of 10% begins",
+    "detail": "Proclamation 11012 imposes a 10% ad valorem temporary import surcharge under section 122, starting at 12:01 a.m. EST.",
+    "who": "Importers of goods covered by the surcharge",
+    "href": "/policy-log/#2026-02-25-proclamation-11012",
+    "claim_ids": [
+      "policy-log-07",
+      "policy-log-08"
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "title": "Section 232 metals duties move to full value",
+    "detail": "For goods entered on or after this date, Section 232 metals duties apply to the full customs value of the product, regardless of metal content.",
+    "who": "Importers of steel, aluminum and copper articles and derivatives",
+    "href": "/policy-log/#2026-04-09-proclamation-11021",
+    "claim_ids": [
+      "policy-log-09"
+    ]
+  },
+  {
+    "date": "2026-06-24",
+    "title": "De minimis suspended for non-postal shipments",
+    "detail": "CBP's interim final rule took effect, and CBP names Entry Type 11 as the main informal entry method for these shipments.",
+    "who": "Importers of low-value shipments arriving by modes other than mail",
+    "href": "/policy-log/#2026-06-24-de-minimis-non-postal",
+    "claim_ids": [
+      "policy-log-12",
+      "policy-log-13"
+    ]
+  },
+  {
+    "date": "2026-07-24",
+    "title": "Postal de minimis rule takes effect",
+    "detail": "CBP's postal rule took effect (its 19 CFR 145.31 suspension took effect June 24), with a new postal informal entry for mail shipments valued at $2,500 or less, subject to conditions.",
+    "who": "Senders and importers of mail shipments",
+    "href": "/policy-log/#2026-06-24-de-minimis-postal",
+    "claim_ids": [
+      "policy-log-14",
+      "policy-log-15"
+    ]
+  },
+  {
+    "date": "2026-07-24",
+    "title": "Section 122 surcharge period ends",
+    "detail": "The 150-day surcharge was set to run through 12:01 a.m. EDT on this date unless extended by an Act of Congress.",
+    "who": "Importers of goods covered by the surcharge",
+    "href": "/policy-log/#2026-02-25-proclamation-11012",
+    "claim_ids": [
+      "policy-log-08"
+    ]
+  },
+  {
+    "date": "2026-07-24",
+    "title": "Forced-labor Section 301 tariffs apply",
+    "detail": "USTR's tariffs apply to goods entered on or after 12:01 a.m. ET, at 12.5% for products of China and for investigated economies not otherwise listed, except as the annexes provide.",
+    "who": "Importers of goods from the investigated economies",
+    "href": "/policy-log/#2026-07-28-section-301-forced-labor",
+    "claim_ids": [
+      "policy-log-18",
+      "policy-log-19",
+      "policy-log-32"
+    ]
+  },
+  {
+    "date": "2026-09-08",
+    "title": "Comment deadline: IEEPA refund worksheet",
+    "detail": "Comments on CBP's Court-Ordered Refunds under IEEPA Worksheet were due by this date.",
+    "who": "Importers due court-ordered IEEPA tariff refunds",
+    "href": "/policy-log/#2026-07-08-ieepa-refund-worksheet",
+    "claim_ids": [
+      "policy-log-16"
+    ]
+  },
+  {
+    "date": "2026-09-18",
+    "title": "CBP enhanced enforcement of IOR data begins",
+    "detail": "CBP warns that inaccurate importer of record information may result in immediate voiding of IOR numbers.",
+    "who": "Importers of record",
+    "href": "/policy-log/#2026-08-19-ior-data-accuracy",
+    "claim_ids": [
+      "policy-log-22",
+      "policy-log-23"
+    ]
+  },
+  {
+    "date": "2026-10-01",
+    "title": "FY2027 customs user fees required",
+    "detail": "The adjusted fees apply, with a merchandise processing fee minimum of $34.58 and maximum of $670.86.",
+    "who": "Importers paying customs user fees",
+    "href": "/policy-log/#2026-07-31-fy2027-user-fees",
+    "claim_ids": [
+      "policy-log-20",
+      "policy-log-21"
+    ]
+  },
+  {
+    "date": "2026-10-22",
+    "title": "Postal rule compliance date for 19 CFR 145.12(a)(2)(v)-(vi)",
+    "detail": "This is the compliance date for 19 CFR 145.12(a)(2)(v) and (vi) under CBP's postal de minimis rule.",
+    "who": "Filers of postal informal entries",
+    "href": "/guides/de-minimis-suspension-2026/",
+    "claim_ids": [
+      "de-minimis-suspension-2026-18"
+    ]
+  },
+  {
+    "date": "2026-12-01",
+    "title": "Comment deadline: supply chain disclosures",
+    "detail": "Comments are due on CBP's notice on amending its regulations for greater visibility into the supply chains of imported goods.",
+    "who": "Importers and anyone wishing to comment",
+    "href": "/policy-log/#2026-09-02-supply-chain-disclosures",
+    "claim_ids": [
+      "policy-log-24",
+      "policy-log-25"
+    ]
+  },
+  {
+    "date": "2026-12-07",
+    "title": "Comment deadline: low-value shipments proposal",
+    "detail": "Comments are due on CBP's proposal to create entry type 13 for mail shipments of $2,500 or less and require a basic importation and entry bond for entry type 11 and 13 filers.",
+    "who": "Importers and filers of low-value entries",
+    "href": "/policy-log/#2026-10-08-low-value-shipments-proposal",
+    "claim_ids": [
+      "policy-log-27",
+      "policy-log-28",
+      "policy-log-31"
+    ]
+  },
+  {
+    "date": "2027-01-05",
+    "title": "Foreign importer of record rule takes effect",
+    "detail": "CBP's interim final rule sets new requirements for foreign importers of record when making entry.",
+    "who": "Foreign importers of record",
+    "href": "/policy-log/#2026-11-06-foreign-importers-of-record",
+    "claim_ids": [
+      "policy-log-29",
+      "policy-log-30"
+    ]
+  },
+  {
+    "date": "2027-07-01",
+    "title": "De minimis exemption terminated by statute",
+    "detail": "CBP states that the One Big Beautiful Bill Act, enacted July 4, 2025, terminated the de minimis exemption effective this date.",
+    "who": "Importers of low-value shipments",
+    "href": "/guides/section-321-repeal-2027/",
+    "claim_ids": [
+      "section-321-repeal-2027-02",
+      "de-minimis-suspension-2026-22"
+    ]
+  }
+]

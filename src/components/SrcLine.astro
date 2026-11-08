@@ -1,0 +1,8 @@
+---
+import { claim, fmtDate } from '../lib/claims';
+import Cites from './Cites.astro';
+const { ids = [] } = Astro.props as { ids?: string[] };
+const list = [...new Set(ids)].filter(Boolean);
+const pubs = [...new Set(list.map((i) => claim(i).publisher))];
+---
+{list.length > 0 && <p class="fig-source">Source: {pubs.join('; ')} · checked {fmtDate(claim(list[0]).accessed)} <Cites ids={list} /></p>}

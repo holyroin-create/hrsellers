@@ -1,0 +1,7 @@
+[
+ {"platform":"Amazon","label":"Everything Else referral fee on total price incl. shipping and gift wrap (selling plan and fulfillment excluded)","pct":15,"fixed":0,"min":0.3,"on_shipping":true,"claim_ids":["marketplace-amazon-03","marketplace-amazon-15","amazon-referral-fees-02"]},
+ {"platform":"Walmart","label":"Everything Else referral fee, charged on the total sales price incl. shipping","pct":15,"fixed":0,"min":0,"on_shipping":true,"claim_ids":["marketplace-walmart-01","marketplace-walmart-38"]},
+ {"platform":"eBay","label":"Most categories, no Store: 13.6% final value fee (on totals up to $7,500) + per-order fee","pct":13.6,"fixed":0.4,"fixed_small":0.3,"small_max":10,"min":0,"on_shipping":true,"claim_ids":["marketplace-ebay-02","marketplace-ebay-03","marketplace-ebay-04"]},
+ {"platform":"Etsy","label":"Listing $0.20 + 6.5% transaction + 3% + $0.25 processing (US bank)","pct":9.5,"fixed":0.45,"min":0,"on_shipping":true,"claim_ids":["marketplace-etsy-01","marketplace-etsy-04","marketplace-etsy-05","marketplace-etsy-07","marketplace-etsy-08"]},
+ {"platform":"Shopify","label":"Basic plan, standard online card rate (monthly plan fee excluded)","pct":2.9,"fixed":0.3,"min":0,"on_shipping":false,"claim_ids":["marketplace-shopify-03"]}
+]

@@ -1,23 +1,11 @@
 import fs from 'node:fs';
-import { allClaims } from './claims';
+import { isVerified } from './claims';
+const read = (f: string) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : []);
 export type LogEntry = { id: string; date: string; effective?: string; agency: string; title: string; summary: string; url: string; claim_ids: string[] };
-export function policyLog(): LogEntry[] {
-  const f = 'data/policy-log.json';
-  if (!fs.existsSync(f)) return [];
-  const all: LogEntry[] = JSON.parse(fs.readFileSync(f, 'utf8'));
-  const claims = allClaims();
-  return all.filter((e) => e.claim_ids.every((id) => claims.get(id)?.status === 'verified') || process.env.ALLOW_UNVERIFIED === '1').sort((a, b) => b.date.localeCompare(a.date));
-}
-export type Rate = { label: string; value: string; claim_id: string; href: string };
-export function rateboard(): Rate[] {
-  const f = 'data/rateboard.json';
-  if (!fs.existsSync(f)) return [];
-  const claims = allClaims();
-  return (JSON.parse(fs.readFileSync(f, 'utf8')) as Rate[]).filter((r) => claims.get(r.claim_id)?.status === 'verified');
-}
-export const CATS = [
-  { name: 'Import & customs', id: 'import-customs', d: 'Entry types, bonds, classification, origin, valuation and the duties that stack on one shipment.' },
-  { name: 'Marketplace fees', id: 'marketplace-fees', d: 'What each platform charges, from its own fee pages, worked through on a hypothetical item.' },
-  { name: 'Product compliance', id: 'product-compliance', d: 'Certificates of conformity, hazardous materials in shipping, and the federal rule on reviews.' },
-  { name: 'Operations & accounting', id: 'operations-accounting', d: 'Inventory, cost of goods sold and the records the IRS expects.' },
-];
+export const policyLog = (): LogEntry[] => read('data/policy-log.json').filter((e: LogEntry) => e.claim_ids.every(isVerified)).sort((a: LogEntry, b: LogEntry) => b.date.localeCompare(a.date));
+export type KeyNumber = { label: string; value: string; claim_id: string; href: string };
+export const keyNumbers = (): KeyNumber[] => read('data/key-numbers.json').filter((k: KeyNumber) => isVerified(k.claim_id));
+export const glossary = () => read('data/glossary.json').filter((t: any) => t.claim_ids.every(isVerified));
+export const quiz = () => read('data/quiz.json').filter((q: any) => q.claim_ids.every(isVerified));
+export const keyDates = () => read('data/key-dates.json').filter((k: any) => k.claim_ids.every(isVerified)).sort((a: any, b: any) => a.date.localeCompare(b.date));
+export const sitefaq = () => read('data/site-faq.json').filter((q: any) => q.claim_ids.every(isVerified));

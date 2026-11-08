@@ -1,29 +1,25 @@
 ---
+import Logo from './Logo.astro';
 import { SITE } from '../lib/site';
+const cols = [
+  ['Fees', [['/marketplaces/amazon/', 'Amazon'], ['/marketplaces/walmart/', 'Walmart'], ['/marketplaces/ebay/', 'eBay'], ['/marketplaces/etsy/', 'Etsy'], ['/marketplaces/shopify/', 'Shopify']]],
+  ['Importing', [['/guides/#importing', 'Import guides'], ['/guides/tariff-stack-2026/', 'How duties stack'], ['/policy-log/', 'Policy log'], ['/reference/key-dates/', 'Key dates'], ['/resources/', 'Primary sources']]],
+  ['Use', [['/tools/', 'Calculators'], ['/checklists/', 'Checklists'], ['/quiz/', 'Knowledge check'], ['/faq/', 'Seller FAQ'], ['/glossary/', 'Glossary']]],
+  ['Site', [['/about/', 'About'], ['/editorial-standards/', 'How we check facts'], ['/corrections/', 'Corrections'], ['/contact/', 'Contact'], ['/privacy/', 'Privacy'], ['/cookie-policy/', 'Cookies'], ['/terms/', 'Terms'], ['/disclaimer/', 'Disclaimer'], ['/image-credits/', 'Image credits'], ['/sitemap/', 'Site map']]],
+] as const;
 ---
-<footer class="foot">
+<footer class="site-footer">
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h2>FBA Tactics</h2>
-        <p>Fee schedules and US import rules for marketplace sellers. Every figure links to the regulation, notice or platform page it comes from, with the date it was checked.</p>
-        <p>Published by {SITE.publisherName}. <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p>
+        <Logo light />
+        <p>Marketplace fees, US import duties and seller compliance rules — explained in plain English and checked against the official source, with the date each figure was confirmed.</p>
+        <p><a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p>
       </div>
-      <div><h2>Read</h2><ul>
-        <li><a href="/guides/">All guides</a></li><li><a href="/marketplaces/">Fee reference</a></li>
-        <li><a href="/policy-log/">Policy log</a></li><li><a href="/glossary/">Glossary</a></li><li><a href="/resources/">Primary sources</a></li>
-      </ul></div>
-      <div><h2>Use</h2><ul>
-        <li><a href="/tools/">Calculators</a></li><li><a href="/quiz/">Knowledge check</a></li><li><a href="/start-here/">Start here</a></li><li><a href="/sitemap/">Site map</a></li>
-      </ul></div>
-      <div><h2>Site</h2><ul>
-        <li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/editorial-standards/">Editorial &amp; sourcing</a></li>
-        <li><a href="/corrections/">Corrections</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/cookie-policy/">Cookies</a></li>
-        <li><a href="/terms/">Terms</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/image-credits/">Image credits</a></li>
-      </ul></div>
+      {cols.map(([h, links]) => <div><h2>{h}</h2><ul>{links.map(([u, t]) => <li><a href={u}>{t}</a></li>)}</ul></div>)}
     </div>
     <div class="foot-legal">
-      <p>Not affiliated with, endorsed by, or sponsored by Amazon, Walmart, eBay, Etsy, Shopify, or any government agency. Platform and agency names are used only to identify the source of a fee or rule. Information, not legal or tax advice.</p>
+      <p>FBA Tactics is independent. It is not affiliated with or endorsed by Amazon, Walmart, eBay, Etsy, Shopify or any government agency; their names identify whose fees or rules are described. General information, not legal or tax advice.</p>
       <p>© {new Date().getFullYear()} {SITE.publisherName}</p>
     </div>
   </div>

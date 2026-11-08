@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+import Cites from './Cites.astro';
+import SrcLine from './SrcLine.astro';
+const { title, columns = [], rows = [] } = Astro.props as { title: string; columns: string[]; rows: { label: string; values: string[]; claim?: string; claims?: string[] }[] };
+const ids = rows.flatMap((r) => [r.claim, ...(r.claims || [])]).filter(Boolean) as string[];
+---
+<figure class="fig"><figcaption class="fig-title"><Icon name="scale" />{title}</figcaption>
+  <div class="cmp" style={`--cols:${columns.length}`} role="table" aria-label={title}>
+    <div class="cmp-row cmp-head" role="row"><div role="columnheader"></div>{columns.map((c) => <div role="columnheader">{c}</div>)}</div>
+    {rows.map((r) => <div class="cmp-row" role="row"><div role="rowheader">{r.label}<Cites ids={[r.claim, ...(r.claims || [])].filter(Boolean) as string[]} /></div>{r.values.map((v) => <div role="cell">{v}</div>)}</div>)}
+  </div>
+  <SrcLine ids={ids} />
+</figure>

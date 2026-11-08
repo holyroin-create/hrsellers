@@ -1,0 +1,11 @@
+import C from '../components/C.astro';
+import Callout from '../components/Callout.astro';
+import Steps from '../components/Steps.astro';
+import Timeline from '../components/Timeline.astro';
+import Chart from '../components/Chart.astro';
+import Compare from '../components/Compare.astro';
+import Decision from '../components/Decision.astro';
+import Checklist from '../components/Checklist.astro';
+import Stat from '../components/Stat.astro';
+import TableWrap from '../components/TableWrap.astro';
+export const MDX = { C, Callout, Steps, Timeline, Chart, Compare, Decision, Checklist, Stat, table: TableWrap };

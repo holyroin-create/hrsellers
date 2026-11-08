@@ -1,49 +1,46 @@
 ---
 import Tool from '../../layouts/Tool.astro';
 ---
-<Tool title="Inventory cash flow planner" description="See the month-by-month cash position of one inventory purchase: deposit, balance, transit, sell-through and payout lag, all from numbers you enter." lede="One purchase order, followed month by month from the deposit you pay the supplier to the payouts that bring the money back.">
-  <form slot="calc" class="calc" id="cf" onsubmit="this.dispatchEvent(new Event('input'));return false">
-    <fieldset><legend>Purchase and sales</legend>
-      <div class="field"><label for="units">Units ordered</label><input id="units" type="number" min="1" value="1000" /></div>
-      <div class="field"><label for="cost">Landed cost per unit ($) <span class="hint">Product, freight, duty and entry fees</span></label><input id="cost" type="number" min="0" step="0.01" value="6" /></div>
-      <div class="field"><label for="dep">Deposit at order (%)</label><input id="dep" type="number" min="0" max="100" value="30" /></div>
-      <div class="field"><label for="bal">Balance paid in month</label><input id="bal" type="number" min="0" max="12" value="2" /><span class="hint">Months after the order month (0 = same month)</span></div>
-      <div class="field"><label for="live">First sales in month</label><input id="live" type="number" min="0" max="18" value="3" /></div>
-      <div class="field"><label for="rate">Units sold per month</label><input id="rate" type="number" min="1" value="200" /></div>
-      <div class="field"><label for="net">Net received per unit sold ($) <span class="hint">Price minus all platform fees and ad cost</span></label><input id="net" type="number" min="0" step="0.01" value="11" /></div>
-      <div class="field"><label for="lag">Payout lag (months)</label><input id="lag" type="number" min="0" max="3" value="1" /></div>
-      <button class="btn btn-tag" type="submit">Calculate</button>
-    </fieldset>
-    <fieldset aria-live="polite"><legend>Result</legend>
-      <div class="out big"><span>Lowest cumulative cash</span><span class="v" id="o-min">—</span></div>
-      <div class="out"><span>Month cash turns positive</span><span class="v" id="o-be">—</span></div>
-      <div class="out"><span>Total profit when sold out</span><span class="v" id="o-tot">—</span></div>
-      <table class="data" id="o-tab"><thead><tr><th>Month</th><th>Out</th><th>In</th><th>Cumulative</th></tr></thead><tbody></tbody></table>
-    </fieldset>
+<Tool title="Inventory cash flow planner" description="Follow one inventory purchase month by month: supplier deposit, balance, sales start, sell-through and payout lag — and see the lowest cash point and payback month." lede="One purchase order from deposit to the last payout. Find the most cash you need on hand and the month the order pays for itself.">
+  <form slot="calc" class="calc" id="cf" onsubmit="return false">
+    <div class="calc-in"><h2>Your order</h2>
+      <div class="field-row"><div class="field"><label for="units">Units ordered</label><input id="units" type="number" min="1" value="1000" /></div><div class="field"><label for="cost">Landed cost / unit ($)</label><input id="cost" type="number" min="0" step="0.01" value="6" /></div></div>
+      <div class="field-row"><div class="field"><label for="dep">Deposit (%)</label><input id="dep" type="number" min="0" max="100" value="30" /></div><div class="field"><label for="bal">Balance paid in month</label><input id="bal" type="number" min="0" max="12" value="2" /></div></div>
+      <div class="field-row"><div class="field"><label for="live">First sales in month</label><input id="live" type="number" min="0" max="18" value="3" /></div><div class="field"><label for="rate">Units sold / month</label><input id="rate" type="number" min="1" value="200" /></div></div>
+      <div class="field-row"><div class="field"><label for="net">Net received / unit ($) <span class="hint">After all fees and ads</span></label><input id="net" type="number" min="0" step="0.01" value="11" /></div><div class="field"><label for="lag">Payout lag (months)</label><input id="lag" type="number" min="0" max="3" value="1" /></div></div>
+      <button class="btn btn-cta" type="submit">Plan</button>
+    </div>
+    <div class="calc-out" aria-live="polite"><h2>Cash position</h2>
+      <div class="out big"><span>Lowest cash point</span><span class="v" id="o-min">—</span></div>
+      <div class="out"><span>Pays back in</span><span class="v" id="o-be">—</span></div>
+      <div class="out"><span>Profit when sold out</span><span class="v" id="o-tot">—</span></div>
+      <svg id="o-chart" viewBox="0 0 400 140" role="img" aria-label="Cumulative cash by month" style="margin-top:14px;width:100%"></svg>
+    </div>
   </form>
-  <h2>What the planner models</h2>
-  <p>The order month is month 0. The deposit percentage of the total landed cost leaves in month 0 and the balance leaves in the month you set. Sales start in the month you set and continue at a flat rate until the units run out. Money from a month’s sales arrives after the payout lag. The lowest point of the cumulative line is the cash you need available to carry this order; the month it crosses zero is when the order has paid for itself.</p>
-  <h2>What it leaves out</h2>
-  <p>Real sell-through is uneven, platforms hold reserves on some accounts, and storage or ad costs may rise while stock waits. Put those into the net-per-unit figure or run the planner twice with pessimistic and optimistic inputs. The planner assumes one purchase; reorders overlap and need their own run.</p>
+  <h2>What the planner assumes</h2>
+  <p>Month 0 is the order month. The deposit leaves in month 0 and the balance in the month you set. Sales run at a flat rate from the month you set until stock runs out, and each month's sales arrive after the payout lag. Real sales are uneven and platforms may hold reserves, so run it twice — once with cautious inputs — and plan around the lower line.</p>
+  <h2>Worked example (hypothetical numbers)</h2>
+  <p>An order of 1,000 units at a landed cost of $6.00 a unit commits $6,000. With a 30% deposit, $1,800 leaves in month 0 and the $4,200 balance in month 2. If the goods go live in month 3, sell 250 units a month and pay out $9.00 net per unit one month after each sale, the first money arrives in month 4. The lowest point of the line is −$6,000 in months 2 and 3, the most cash the order ties up. Four months of payouts at $2,250 each bring the running total back above zero in month 6 and finish at +$3,000 once all 1,000 units have sold.</p>
+  <h2>How to use it</h2>
+  <ul>
+    <li><strong>Lowest point</strong> is the cash you need on hand, or arranged, before you place the order. Add a cushion for delays at the factory, at sea or at customs.</li>
+    <li><strong>Break-even month</strong> is when the running total returns to zero. If it falls after you would need to reorder, the next purchase order has to be funded from somewhere else.</li>
+    <li><strong>Net per unit</strong> should be what actually reaches your bank after platform fees, fulfillment and advertising, not the selling price.</li>
+    <li>Run a cautious case (slower sales, longer payout lag) alongside your expected case and plan around the lower line.</li>
+  </ul>
+  <h2>What the planner leaves out</h2>
+  <p>Freight and duty invoices often arrive separately from the supplier balance; if yours do, include them in the landed cost or model them as part of the balance month. Taxes, loan interest, storage that builds up while stock sits, and reserves a platform may hold are not modelled. For the duty and customs fees on the shipment itself, use the <a href="/tools/duty-estimator/">duty and entry fee estimator</a>.</p>
   <script>
     const v = (id: string) => +(document.getElementById(id) as HTMLInputElement).value;
     const money = (n: number) => (n < 0 ? '−$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-US');
     function run() {
       const U = v('units'), C = v('cost'), dep = v('dep') / 100, bal = v('bal'), live = v('live'), R = v('rate'), N = v('net'), lag = v('lag');
-      const total = U * C, months = Math.min(60, live + Math.ceil(U / R) + lag + 1);
-      let cum = 0, min = 0, be = -1; const rows: string[] = []; let left = U;
-      for (let m = 0; m <= months; m++) {
-        let out = 0, inn = 0;
-        if (m === 0) out += total * dep; if (m === bal) out += total * (1 - dep);
-        const sm = m - lag; if (sm >= live) { const sold = Math.min(R, Math.max(0, U - R * (sm - live))); inn = sold * N; }
-        cum += inn - out; if (cum < min) min = cum; if (be < 0 && m > 0 && cum >= 0 && inn > 0) be = m;
-        rows.push(`<tr><td>${m}</td><td>${out ? money(-out) : '—'}</td><td>${inn ? money(inn) : '—'}</td><td>${money(cum)}</td></tr>`);
-      }
-      document.getElementById('o-min')!.textContent = money(min);
-      document.getElementById('o-be')!.textContent = be >= 0 ? `Month ${be}` : 'Not within plan';
-      document.getElementById('o-tot')!.textContent = money(U * N - total);
-      document.querySelector('#o-tab tbody')!.innerHTML = rows.join('');
+      const T = U * C, months = Math.min(48, live + Math.ceil(U / R) + lag + 1); let cum = 0, min = 0, be = -1; const pts: number[] = [];
+      for (let m = 0; m <= months; m++) { let out = 0, inn = 0; if (m === 0) out += T * dep; if (m === bal) out += T * (1 - dep); const sm = m - lag; if (sm >= live) inn = Math.min(R, Math.max(0, U - R * (sm - live))) * N; cum += inn - out; pts.push(cum); if (cum < min) min = cum; if (be < 0 && m > 0 && cum >= 0 && inn > 0) be = m; }
+      document.getElementById('o-min')!.textContent = money(min); document.getElementById('o-be')!.textContent = be >= 0 ? `Month ${be}` : 'Not in plan'; document.getElementById('o-tot')!.textContent = money(U * N - T);
+      const mx = Math.max(...pts, 1), mn = Math.min(...pts, -1), y = (p: number) => 10 + (120 * (mx - p)) / (mx - mn), x = (i: number) => 10 + (380 * i) / Math.max(1, pts.length - 1);
+      document.getElementById('o-chart')!.innerHTML = `<line x1="10" x2="390" y1="${y(0)}" y2="${y(0)}" stroke="rgba(255,255,255,.3)" stroke-dasharray="4 4"/><polyline fill="none" stroke="#ffb27f" stroke-width="3" points="${pts.map((p, i) => `${x(i)},${y(p)}`).join(' ')}"/>`;
     }
-    document.getElementById('cf')!.addEventListener('input', run); run();
+    document.getElementById('cf')!.addEventListener('input', run); document.getElementById('cf')!.addEventListener('submit', run); run();
   </script>
 </Tool>

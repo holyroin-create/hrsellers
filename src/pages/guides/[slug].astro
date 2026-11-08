@@ -1,18 +1,24 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import Article from '../../layouts/Article.astro';
-import { MDX } from '../../lib/mdx-components';
-import { citeOrder } from '../../lib/cite-order';
+import { MDX } from '../../lib/mdx';
+import { citeOrder } from '../../lib/claims';
+import { allEntries } from '../../lib/entries';
+import { PILLARS } from '../../lib/pillars';
 export async function getStaticPaths() {
-  const all = await getCollection('guides', (e) => !e.data.draft);
-  const mk = await getCollection('marketplaces', (e) => !e.data.draft);
-  const index = new Map([...all.map((e) => [e.id, { href: `/guides/${e.id}/`, title: e.data.title, category: e.data.category }]), ...mk.map((e) => [e.id, { href: `/marketplaces/${e.id}/`, title: e.data.title, category: e.data.category }])] as any);
-  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry, related: entry.data.related.map((r) => index.get(r)).filter(Boolean) } }));
+  const all = await allEntries();
+  const idx = new Map(all.map((x) => [x.e.id, { id: x.e.id, href: x.href, title: x.e.data.title, description: x.e.data.description, minutes: x.e.data.minutes, pillar: PILLARS[x.e.data.pillar].short }]));
+  return all.filter((x) => x.kind === 'guides').map((x) => {
+    const rel = x.e.data.related.map((r) => idx.get(r)).filter(Boolean);
+    const fill = all.filter((y) => y.e.data.pillar === x.e.data.pillar && y.e.id !== x.e.id && !x.e.data.related.includes(y.e.id)).map((y) => idx.get(y.e.id));
+    return { params: { slug: x.e.id }, props: { entry: x.e, related: [...rel, ...fill].slice(0, 3) } };
+  });
 }
 const { entry, related } = Astro.props as any;
-(Astro.locals as any).citeOrder = citeOrder(entry.body, entry.data.hero.claim);
+const d = entry.data;
+(Astro.locals as any).citeOrder = citeOrder(entry.body, [...d.keyFacts.map((k: any) => k.claim)]).concat(d.faq.flatMap((f: any) => f.claims)).filter((v: string, i: number, a: string[]) => a.indexOf(v) === i);
 const { Content, headings } = await render(entry);
 ---
-<Article data={entry.data} headings={headings} related={related} crumb={{ label: 'Guides', href: '/guides/' }} og={`/og/guides/${entry.id}.png`}>
+<Article entry={entry} headings={headings} related={related} crumb={{ label: 'Guides', href: '/guides/' }} path={Astro.url.pathname}>
   <Content components={MDX} />
 </Article>

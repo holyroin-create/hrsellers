@@ -1,0 +1,16 @@
+---
+import Page from '../../layouts/Page.astro';
+import Cites from '../../components/Cites.astro';
+import { keyDates } from '../../lib/data';
+import { fmtDate } from '../../lib/claims';
+const all = keyDates(); const today = '2026-11-08';
+const upcoming = all.filter((d: any) => d.date >= today), past = all.filter((d: any) => d.date < today).reverse();
+const cites = [...new Set(all.flatMap((d: any) => d.claim_ids))] as string[];
+const table = (rows: any[]) => rows;
+---
+<Page title="Key dates for importers and marketplace sellers" description="Effective dates, compliance deadlines and comment periods from official US notices that affect importers and marketplace sellers, each with its source." kicker="Reference" photo="hub-policy" lede="Dates set by regulation or official notice. Each row links to the guide that explains it and to the source document." cites={cites} trail={[{ label: 'Reference', href: '/reference/' }]} wide>
+  <h2>Upcoming</h2>
+  <div class="table-wrap"><table><thead><tr><th>Date</th><th>What happens</th><th>Applies to</th></tr></thead><tbody>{upcoming.map((d: any) => <tr><td style="white-space:nowrap"><strong>{fmtDate(d.date)}</strong></td><td><a href={d.href}>{d.title}</a> <Cites ids={d.claim_ids} /><br /><span class="muted" style="font-size:.9rem">{d.detail}</span></td><td>{d.who}</td></tr>)}</tbody></table></div>
+  <h2>Already in effect (2026)</h2>
+  <div class="table-wrap"><table><thead><tr><th>Date</th><th>What happened</th><th>Applies to</th></tr></thead><tbody>{past.map((d: any) => <tr><td style="white-space:nowrap">{fmtDate(d.date)}</td><td><a href={d.href}>{d.title}</a> <Cites ids={d.claim_ids} /><br /><span class="muted" style="font-size:.9rem">{d.detail}</span></td><td>{d.who}</td></tr>)}</tbody></table></div>
+</Page>

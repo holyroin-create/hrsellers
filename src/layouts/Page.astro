@@ -1,20 +1,15 @@
 ---
 import Base from './Base.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
 import Sources from '../components/Sources.astro';
-const { title, description, eyebrow = '', lede = '', crumbs = [], noindex = false, updated = '', og, jsonld = [], cites = [] } = Astro.props as any;
+const { title, description, kicker = '', lede = '', photo, trail = [], noindex = false, noCanonical = false, jsonld = [], cites = [], updated = '', wide = false } = Astro.props as any;
 (Astro.locals as any).citeOrder = cites;
 ---
-<Base title={title} description={description} noindex={noindex} og={og} jsonld={jsonld}>
-  <div class="wrap">
-    <Breadcrumbs trail={[...crumbs, { label: title, href: Astro.url.pathname }]} />
-    <div class="page-narrow">
-      <header class="index-head" style="border:0;padding-bottom:0">
-        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-        <h1>{title}</h1>
-        {lede && <p class="lede">{lede}</p>}
-        {updated && <p class="meta">Last updated {updated}</p>}
-      </header>
+<Base title={title} description={description} noindex={noindex} noCanonical={noCanonical} jsonld={jsonld}>
+  <PageHero title={title} lede={lede} kicker={kicker} photo={photo} trail={trail} />
+  <div class="wrap legal">
+    <div class={wide ? '' : 'narrow'}>
+      {updated && <p class="muted" style="font-size:.9rem">Last updated {updated}</p>}
       <div class="prose"><slot /></div>
       {cites.length > 0 && <Sources />}
     </div>

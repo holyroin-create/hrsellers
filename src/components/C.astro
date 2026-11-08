@@ -1,8 +1,8 @@
 ---
-import { claim , citeNum } from '../lib/claims';
+import { claim, citeNum } from '../lib/claims';
 const { id } = Astro.props as { id: string };
 claim(id);
 const order: string[] = (Astro.locals as any).citeOrder || [];
 const n = citeNum(order, id);
 ---
-<sup class="cite"><a href={`#src-${id}`} aria-label={`Source ${n}`}>[{n}]</a></sup>
+<sup class="cite"><a href={`#src-${id}`} aria-label={`Source ${n}`}>{n}</a></sup>

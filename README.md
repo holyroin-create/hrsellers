@@ -1,71 +1,64 @@
-# fbatactics.com — v2 (GitHub Pages)
+# fbatactics.com (v3)
 
-Static Astro site: marketplace fees and US import rules, every fact tied to a primary source.
-Every page is built from `src/content/**.mdx` + `data/claims/*.json`; the build **refuses to render a page
-that cites an unverified claim**, and CI gates block deployment on any policy, link, image or claims error.
+ABD'ye ithalat yapan ve pazaryerlerinde satan satıcılar için birincil kaynaklı İngilizce rehber sitesi. Astro 7 ile statik üretilir, GitHub Pages'te yayımlanır.
 
+## Hızlı başlangıç
 ```bash
 npm ci
-npm run dev        # http://localhost:4321
-npm run check      # build + all gates (as CI runs them, except external links and Lighthouse)
+npm run dev                 # http://localhost:4321
+npm run check               # build + tüm kapılar (geliştirme modu)
+RELEASE=1 CHECK_EXTERNAL=1 npm run check   # yayın öncesi; sahip bilgisi eksikse kırılır
 ```
+Geliştirme bayrakları: `ALLOW_UNVERIFIED=1` (doğrulanmamış iddia), `ALLOW_PLACEHOLDERS=1` (eksik fotoğraf), `ALLOW_UNVERIFIED_IMAGES=1` (lisans denetimi bekleyen fotoğraf). Yayında hiçbiri kullanılmaz.
 
-## What you (the owner) must do — in this order
+## Klasörler
+| Yol | İçerik |
+|---|---|
+| `src/content/guides`, `src/content/marketplaces` | MDX sayfalar (sözleşme: docs/CONTENT_CONTRACT.md) |
+| `data/claims/*.json` | İddia defteri; her iddia `verified_by ≠ produced_by` |
+| `data/images.json` | Fotoğraf lisans kayıtları (docs/PHOTO_CONTRACT.md) |
+| `data/*.json` | Araç oranları, sözlük, quiz, SSS, policy-log, key-dates, redirects |
+| `tools/` | Kapılar (gate-*.mjs), postbuild (atıf birleştirme + yönlendirme sayfaları), OG görseli, haftalık kontrol |
+| `docs/` | Proje belgeleri (aşağıda) |
 
-### 1. Confirm owner details (deploy is blocked until you do)
-Open `site.config.json`. The values were copied from the old repository (`src/config.ts`); nothing was guessed.
-- Check `publisherName`, `editorName`, `contactEmail` are current and that the mailbox receives mail.
-- Optional: `publisherLegalAddress`, `editorBio` (only true, checkable facts).
-- Set `"ownerConfirmed": true`.
+## Kapılar (CI'da zorunlu)
+- **gate:claims** — izinli kaynak alanları, insan-okur `source_url`, üretici ≠ doğrulayıcı, her iddia sayfada atıflı.
+- **gate:images** — izinli lisanslar (PD, CC0, CC BY, Unsplash License), bağımsız lisans doğrulaması, boyut bütçesi, width/height/alt.
+- **gate:policy** — zorunlu sayfalar, ads.txt, yasaklı ifadeler, reklamsız sayfa listesi, tek H1, canonical, açıklama, ≥1.200 kelime, kaynak listesi; `RELEASE=1` iken sahip alanları ve `reviewedBy`.
+- **gate:links** — iç bağlantılar (+ `CHECK_EXTERNAL=1` ile dış).
+- **gate:html** — html-validate.
+- Lighthouse CI (deploy.yml).
 
-### 2. Create the repository and push
-1. On GitHub create a repository (e.g. `fbatactics`). Public or private both work with Pages on your plan; public is required on GitHub Free.
-2. Upload this folder's contents (not the ZIP itself) to the `main` branch — GitHub Desktop: *File → Add local repository*, commit, *Publish*.
-   The old repository `holyroin-create/hrsellers` can stay as an archive; do not deploy both to the same domain.
+## Yayın (GitHub Pages)
+1. Depoyu GitHub'a gönder; Settings → Pages → Source: **GitHub Actions**.
+2. `public/CNAME` = `fbatactics.com`. DNS: apex için A kayıtları `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `www` için CNAME → `<kullanıcı>.github.io`.
+3. Pages'te "Enforce HTTPS" aç.
+4. `main`'e push → `.github/workflows/deploy.yml` kapıları `RELEASE=1` ile çalıştırır, geçerse yayımlar.
+5. ⚠ GitHub Pages koşulları siteyi ticari işletme için değil diye tanımlar; reklamlı site gri alandır. Çıktı (`dist/`) Cloudflare Pages / Netlify gibi statik barındırıcılara değişiklik yapmadan taşınabilir.
 
-### 3. Turn on Pages
-Repository → **Settings → Pages → Build and deployment → Source: GitHub Actions**. The workflow
-`.github/workflows/deploy.yml` builds, runs all gates, and deploys. Watch it under the **Actions** tab.
+## Yayından önce sahibin yapacakları (SAHİP BİLGİSİ BEKLİYOR)
+1. `site.config.json`: `editorName` (gerçek kişi), `publisherLocation`, `ownerConfirmed: true`.
+2. Her sayfayı kaynaklarına karşı okuyan gerçek bir kişi: frontmatter'a `reviewedBy` ve `reviewedDate`.
+3. contact@fbatactics.com posta kutusunun çalıştığını test et.
 
-### 4. Move the domain from Cloudflare Pages to GitHub Pages
-The live site is currently served by Cloudflare Pages (old repo had `_redirects`/`_headers`).
-1. **Settings → Pages → Custom domain:** enter `fbatactics.com`, Save (do this *before* changing DNS).
-2. At your DNS provider remove the records pointing to Cloudflare Pages for `@` and `www`, then add:
-   - `A @ 185.199.108.153`, `A @ 185.199.109.153`, `A @ 185.199.110.153`, `A @ 185.199.111.153`
-   - optional `AAAA @ 2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
-   - `CNAME www <your-github-username>.github.io` (no repository name)
-   - No wildcard (`*`) records. If DNS is on Cloudflare, set these records to **DNS only** (grey cloud) until the certificate is issued.
-   Source: docs.github.com "Managing a custom domain for your GitHub Pages site" (checked 2026-11-08).
-3. Wait for the DNS check to pass, then tick **Enforce HTTPS**. If the certificate stalls, remove the domain, save, re-add it.
-4. Detach the domain from the Cloudflare Pages project so the two hosts do not compete.
+## Search Console
+Alan adı mülkü ekle (DNS TXT), `https://fbatactics.com/sitemap-index.xml` gönder. Eski URL'lerin durumu: `docs/URL_ENVANTERI.csv` (50 korundu, 14 yönlendirildi, 89 emekli → 404).
 
-### 5. Search Console (same day)
-- Submit `https://fbatactics.com/sitemap-index.xml`.
-- Removed URLs return 404 on purpose (list: `docs/URL_ENVANTERI.csv`, decision `KALDIR`). Do **not** request removal for them; Google drops 404s on recrawl. Use the Removals tool only if an old page must disappear faster.
-- Use URL Inspection → *Request indexing* on the home page and 5–10 guides.
+## AdSense
+1. Reklamlar kapalıyken başvur (`adsEnabled: false`). `google-adsense-account` meta etiketi ve `ads.txt` hazır.
+2. AdSense → Privacy & messaging'de EEA/UK/CH için Google onaylı CMP mesajını yayımla → `googleCmpConfigured: true`.
+3. Onaydan sonra makale sonu reklam birimini oluştur, sayısal kimliği `adSlots.endOfArticle`'a yaz, `adsEnabled: true`.
+4. Reklam yalnızca rehber/ücret sayfalarında render edilir; hub, araç, yasal sayfalar ve 404 reklamsızdır.
+5. Kendi reklamına tıklama, ücretli/teşvikli trafik alma.
 
-### 6. AdSense
-1. Wait until the site has been live and crawled for at least 2–3 weeks with the new content.
-2. AdSense → **Privacy & messaging → European regulations**: create and publish the 3-button consent message. Then set `"googleCmpConfigured": true`.
-3. AdSense → Sites → request review. Verification uses the `google-adsense-account` meta tag already in every page, and `/ads.txt`.
-4. **After approval only:** create two display ad units, put their numeric IDs in `adSlots.inArticle` and `adSlots.endOfArticle`, set `"adsEnabled": true`, update the date on `/privacy/` and `/cookie-policy/`, push. The policy gate refuses `adsEnabled` without the CMP flag and slot IDs.
-No one can guarantee approval; see `docs/90_GUN_PLANI.md` for what to do after a rejection.
+## Bakım
+- `npm run recheck` (haftalık Actions da çalıştırır): kaynak URL'leri kontrol eder, değişiklik raporu üretir.
+- Bir rakam değişirse: iddiayı güncelle → ikinci kişi doğrulasın → `modified`/`lastVerified` → gerekiyorsa `data/corrections.json`.
+- `npm run export:claims` → docs/IDDIA_KAYIT_DEFTERI.csv/.json.
+- Fotoğraf: editör manifestleri `data/images-*.json` → `npm run merge:images` → bağımsız lisans denetimi → `status: verified`.
 
-## Updating content
-- New/changed guide: follow `docs/CONTENT_CONTRACT.md`. Every fact → a claim in `data/claims/<slug>.json`, checked by someone other than the writer (`verified_by` ≠ `produced_by` — CI enforces this).
-- A figure changed: update the claim, the sentence, `modified` + `lastVerified`, and add a line to `data/corrections.json`.
-- Policy log: add an entry to `data/policy-log.json` + a claim in `data/claims/policy-log.json`.
-- Weekly job (`weekly-sources.yml`) reopens every source and opens an issue for dead links or claims older than 120 days.
+## Belgeler (docs/)
+NIS_KARARI · KARAR_GUNLUGU · POLITIKA_KONTROL_LISTESI · ICERIK_PLANI · URL_ENVANTERI.csv · IDDIA_KAYIT_DEFTERI.csv/.json · TASARIM_ANALIZI · TASARIM_SISTEMI · ARAC_PLANI · DENETIM_RAPORU · 90_GUN_PLANI · PROJE_DURUMU · CONTENT_CONTRACT · PHOTO_CONTRACT · verification/ · image-licenses/
 
-## Layout
-```
-src/content/guides/*.mdx         guides           src/content/marketplaces/*.mdx  fee references
-data/claims/*.json               claims register  data/policy-log.json            log entries
-data/fee-presets.json            calculator rates data/tool-rates.json            MPF/HMF for the estimator
-data/images.json                 image manifest   data/redirects.json             old URL → new URL
-site.config.json                 owner settings   tools/gate-*.mjs                CI gates
-legacy/unverified/               old guides, not built     docs/                  all project documents
-```
-
-## Licenses
-Code: MIT (`LICENSE`). Text and graphics: © the publisher, all rights reserved (`LICENSE-CONTENT.md`). Fonts: SIL OFL 1.1 (`public/fonts-licenses/`).
+## Lisans
+Kod: MIT (LICENSE). İçerik (metin, grafikler): tüm hakları saklıdır (LICENSE-CONTENT). Fontlar: OFL (public/licenses). Fotoğraflar: her biri kendi lisansıyla, `/image-credits/` ve `data/images.json`.

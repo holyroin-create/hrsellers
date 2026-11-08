@@ -1,21 +1,22 @@
-# ARAÇ PLANI (oturum envanteri, 2026-11-08)
+# ARAÇ PLANI
 
-| Araç | Durum | Kullanım |
-|---|---|---|
-| Shell (Node 22, npm, Python 3.13, git) | ✔ | Derleme, CI kapıları, envanter betikleri, OG görsel üretimi (sharp) |
-| Shell internet | ✘ (yalnızca npm/PyPI/GitHub git okuma) | npm paketleri; `git ls-remote` ile Actions SHA'ları |
-| WebFetch | ✔ (bazı .gov ve Seller Central engelli/JS) | Tüm birincil kaynak araştırması ve doğrulaması |
-| WebSearch | ✔ | Yalnızca resmi URL bulmak için |
-| Tarayıcı (Claude in Chrome / yerleşik) | ✘ bağlı değil (kullanıcı "tarayıcısız devam" dedi) | — JS sayfaları, Trends, ekran görüntüsü QA yapılamadı |
-| GitHub API (gh) | ✘ bu repo için yetki yok | — |
-| Git klon (holyroin-create/hrsellers) | ✔ okuma | Mevcut site kaynağı, URL envanteri |
-| Alt ajanlar | ✔ | Ekip: politika araştırmacısı (P1), 6 yazar (W1–W6), 7 bağımsız doğrulayıcı (V1–V7) |
-| Görsel arama/indirme | ✘ ikili indirme yok | Fotoğraf kullanılamadı (K-10) |
-| Artifact/Docs araçları | ✔ | Kullanılmadı: teslim ZIP + dosya (talimat) |
-| Bellek | ✔ | Proje bağlamı (repo adı, AdSense geçmişi) |
+Tüm araçlar istemci tarafında çalışır; girilen veri tarayıcıdan çıkmaz. Platform/devlet oranları yalnızca doğrulanmış iddialardan gelir ve sayfada kaynak etiketiyle gösterilir.
 
-Ekip ve kabul kriterleri:
-- P1 Politika: POLITIKA_KONTROL_LISTESI.md — her kural resmi URL + test. ✔
-- W1–W6 Yazarlar: CONTENT_CONTRACT.md; her olgu iddia kaydında, birincil kaynak. Üreten onaylayamaz.
-- V1–V7 Doğrulayıcılar: üretimi görmemiş; her kaynağı yeniden açar; red → metinden çıkar. Raporlar docs/verification/.
-- Ana yürütücü (ben): mimari, tasarım, CI kapıları, envanter, entegrasyon; doğrulayıcıların eklediği iddiaların ikinci imzası.
+| Araç | URL | Veri kaynağı | Durum |
+|---|---|---|---|
+| Profit & margin calculator | /tools/margin-calculator/ | data/fee-presets.json (Amazon/Walmart/eBay kategori oranları, iddia kimlikli) | Yayında |
+| Duty & entry fee estimator | /tools/duty-estimator/ | data/tool-rates.json (MPF %0,3464, min $34,58, maks $670,86, HMF %0,125, informal $2,77; FY2027) | Yayında; eski /tools/tariff-stack-estimator/ buraya yönlenir |
+| Marketplace fee comparison | /tools/fee-comparison/ | data/fee-compare.json (5 platform, eBay $10 kademesi) | Yayında |
+| Dimensional weight | /tools/dimensional-weight/ | Kullanıcı böleni girer (kaynaksız varsayılan yok) | Yayında |
+| Cash-flow planner | /tools/cash-flow-planner/ | Tamamen kullanıcı girdisi, SVG grafik | Yayında |
+| Ad budget & break-even ACoS | /tools/ppc-budget-calculator/ | Kullanıcı girdisi; formül sayfada | Yayında |
+
+## Kurallar
+- Reklam yok (gate-policy no-ads listesi).
+- Her araç WebApplication JSON-LD, "ne dahil / ne hariç" bölümü ve ilgili rehber bağlantısı içerir.
+- Oran değiştiğinde: iddia güncellenir → derleme oranı otomatik alır; doğrulanmamış oran araçta görünmez.
+
+## Sonraki araçlar
+1. Satış vergisi eşik bulucu (eyalet tablosu doğrulanınca).
+2. Boyutsal ağırlık için taşıyıcı bölen ön ayarları (resmi fiyat kılavuzları okununca).
+3. De minimis sonrası entry type seçici (karar ağacı, mevcut iddialarla).

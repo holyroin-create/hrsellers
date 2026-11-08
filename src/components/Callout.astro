@@ -1,8 +1,7 @@
 ---
-const { type = 'note', title = '' } = Astro.props as { type?: 'note' | 'warning' | 'example'; title?: string };
-const fallback = { note: 'Note', warning: 'Watch for this', example: 'Worked example' }[type];
+import Icon from './Icon.astro';
+const { type = 'note', title = '' } = Astro.props as { type?: 'tip' | 'note' | 'warning' | 'example'; title?: string };
+const ic = { tip: 'bulb', note: 'info', warning: 'alert', example: 'calculator' }[type];
+const def = { tip: 'Tip', note: 'Note', warning: 'Watch out', example: 'Worked example' }[type];
 ---
-<div class={`callout callout-${type}`} role="note">
-  <p class="callout-title">{title || fallback}</p>
-  <slot />
-</div>
+<aside class={`callout callout-${type}`}><Icon name={ic} /><div><p class="callout-title">{title || def}</p><slot /></div></aside>

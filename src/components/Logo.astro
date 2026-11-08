@@ -1,0 +1,14 @@
+---
+/* Original mark: a parcel seen at an angle with an upward route line — "goods moving, costs known". */
+const { light = false } = Astro.props as { light?: boolean };
+---
+<a class="logo" href="/" aria-label="FBA Tactics — home">
+  <svg viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1" y="1" width="38" height="38" rx="10" fill={light ? '#12304d' : '#0b1f33'} />
+    <path d="M10 15.5 20 10.5l10 5v10L20 30.5l-10-5z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" />
+    <path d="M10 15.5 20 20.5l10-5M20 20.5v10" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" />
+    <path d="M24.5 8.5h6v6" fill="none" stroke="#f26a21" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M30.5 8.5l-7.5 7.5" stroke="#f26a21" stroke-width="2.4" stroke-linecap="round" />
+  </svg>
+  <span><b>FBA Tactics</b><small>Fees · duties · rules for sellers</small></span>
+</a>

@@ -1,16 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
 ---
-<Base title="Page not found" description="This page does not exist on FBA Tactics. Browse the guides, the marketplace fee reference or the policy log instead." noindex={true} noCanonical={true}>
-  <div class="wrap page-narrow" style="padding-top:3rem">
-    <p class="eyebrow">404</p>
-    <h1>This page isn't here</h1>
-    <p class="lede">The address may be mistyped, or the page was retired. In November 2026 we removed guides whose figures could not be traced to a primary source; where a close replacement exists, the old address now forwards to it.</p>
-    <ul>
-      <li><a href="/guides/">All guides</a></li>
-      <li><a href="/marketplaces/">Fee reference by marketplace</a></li>
-      <li><a href="/policy-log/">Policy log</a></li>
-      <li><a href="/sitemap/">Site map</a></li>
-    </ul>
-  </div>
+<Base title="Page not found" description="This address does not exist on FBA Tactics. Use search, the guides library or the fee tables to find what you need." noindex noCanonical>
+  <section class="section"><div class="wrap narrow" style="text-align:center">
+    <span class="kicker">404</span><h1 style="margin:14px 0">We couldn't find that page</h1>
+    <p class="muted" style="font-size:1.1rem">The address may be mistyped, or the page was retired when the site was rebuilt in November 2026. Pages that had a close replacement forward to it automatically.</p>
+    <form class="hero-search" action="/search/" method="get" role="search" style="margin:28px auto;border:1px solid var(--line)"><Icon name="search" /><label class="vh" for="nq">Search</label><input id="nq" name="q" type="search" placeholder="Search the site" /><button class="btn btn-cta" type="submit">Search</button></form>
+    <p><a href="/guides/">Guides</a> · <a href="/marketplaces/">Fee tables</a> · <a href="/tools/">Calculators</a> · <a href="/policy-log/">Policy log</a></p>
+  </div></section>
 </Base>

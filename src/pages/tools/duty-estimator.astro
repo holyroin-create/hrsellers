@@ -1,0 +1,51 @@
+---
+import Tool from '../../layouts/Tool.astro';
+import fs from 'node:fs';
+import { isVerified } from '../../lib/claims';
+const R = fs.existsSync('data/tool-rates.json') ? JSON.parse(fs.readFileSync('data/tool-rates.json', 'utf8')) : null;
+const ok = R && Object.values(R.claims || {}).every((id: any) => isVerified(id));
+const cites = ok ? [...new Set(Object.values(R.claims))] as string[] : [];
+const r = ok ? R : { mpf_rate_pct: 0, mpf_min: 0, mpf_max: 0, hmf_rate_pct: 0, mpf_informal: 0, period: '' };
+---
+<Tool title="Import duty & entry fee estimator" description="Estimate general duty, additional duties, the Merchandise Processing Fee and the Harbor Maintenance Fee on one formal US entry, with fee rates from federal sources." lede="Customs value in, every ad valorem charge out. You supply the duty rates for your goods; the federal fee rates are filled in from the cited sources." cites={cites}>
+  <form slot="calc" class="calc" id="de" onsubmit="return false" data-mpf={r.mpf_rate_pct} data-min={r.mpf_min} data-max={r.mpf_max} data-hmf={r.hmf_rate_pct}>
+    <div class="calc-in"><h2>Your entry</h2>
+      <div class="field"><label for="val">Customs (entered) value ($)</label><input id="val" type="number" min="0" step="0.01" value="20000" inputmode="decimal" /></div>
+      <div class="field-row">
+        <div class="field"><label for="gen">General duty rate (%) <span class="hint">From the HTSUS line</span></label><input id="gen" type="number" min="0" step="0.1" value="5" inputmode="decimal" /></div>
+        <div class="field"><label for="add">Additional duties (%) <span class="hint">Sum of programs that apply</span></label><input id="add" type="number" min="0" step="0.1" value="0" inputmode="decimal" /></div>
+      </div>
+      <div class="field"><label class="field-check"><input id="ocean" type="checkbox" checked /> Arrived by vessel at a port where HMF applies</label></div>
+      <button class="btn btn-cta" type="submit">Calculate</button>
+    </div>
+    <div class="calc-out" aria-live="polite"><h2>Estimated charges</h2>
+      <div class="out big"><span>Total</span><span class="v" id="o-t">—</span></div>
+      <div class="out"><span>General duty</span><span class="v" id="o-g">—</span></div>
+      <div class="out"><span>Additional duties</span><span class="v" id="o-a">—</span></div>
+      <div class="out"><span>Merchandise Processing Fee</span><span class="v" id="o-m">—</span></div>
+      <div class="out"><span>Harbor Maintenance Fee</span><span class="v" id="o-h">—</span></div>
+      <div class="out"><span>As % of value</span><span class="v" id="o-p">—</span></div>
+      <p class="verdict">{ok ? `Federal fee rates: MPF ${r.mpf_rate_pct}% (min $${r.mpf_min}, max $${r.mpf_max})${r.period ? `, ${r.period}` : ''}; HMF ${r.hmf_rate_pct}%.` : 'Federal fee rates are awaiting verification; MPF and HMF show $0 until confirmed.'}</p>
+    </div>
+  </form>
+  <h2>How it is calculated</h2>
+  <ul>
+    <li><strong>General duty</strong> = value × the HTSUS rate you enter. See <a href="/guides/hts-classification-basics/">how to find your HTS code</a>.</li>
+    <li><strong>Additional duties</strong> = value × the total of additional programs that apply to your goods and origin. See <a href="/guides/tariff-stack-2026/">how duties stack</a>.</li>
+    <li><strong>MPF</strong> = value × the MPF rate, raised to the minimum or capped at the maximum for a formal entry.</li>
+    <li><strong>HMF</strong> = value × the HMF rate for cargo unloaded at ports where it applies.</li>
+  </ul>
+  <h2>What it does not model</h2>
+  <p>Specific or compound duty rates (per kilogram or per item), antidumping and countervailing duty deposits, informal-entry fees and broker charges are outside this estimate. The amount owed is what U.S. Customs and Border Protection assesses at liquidation.</p>
+  <script>
+    const f = document.getElementById('de') as HTMLFormElement; const d = f.dataset; const n = (id: string) => +(document.getElementById(id) as HTMLInputElement).value;
+    const $m = (x: number) => '$' + x.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    function run() {
+      const V = n('val'), g = V * n('gen') / 100, a = V * n('add') / 100; let m = V * +d.mpf! / 100; if (+d.mpf! > 0) m = Math.min(Math.max(m, +d.min!), +d.max!);
+      const h = (document.getElementById('ocean') as HTMLInputElement).checked ? V * +d.hmf! / 100 : 0, t = g + a + m + h;
+      const s = (id: string, x: number) => (document.getElementById(id)!.textContent = $m(x)); s('o-g', g); s('o-a', a); s('o-m', m); s('o-h', h); s('o-t', t);
+      document.getElementById('o-p')!.textContent = V ? (t / V * 100).toFixed(2) + '%' : '—';
+    }
+    f.addEventListener('input', run); f.addEventListener('submit', run); run();
+  </script>
+</Tool>

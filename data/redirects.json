@@ -1,11 +1,16 @@
 {
- "/guides/landed-cost-fee-stack/": "/guides/tariff-stack-2026/",
- "/how-we-test/": "/editorial-standards/",
- "/guides/amazon-fba-fee-changes-2026/": "/marketplaces/amazon/",
  "/affiliate-disclosure/": "/editorial-standards/",
- "/guides/changes-timeline-2026/": "/policy-log/",
+ "/business-models/": "/start-here/",
+ "/costs/": "/marketplaces/",
+ "/guides/annual-operating-calendar/": "/reference/key-dates/",
+ "/guides/changes-timeline-2026/": "/reference/key-dates/",
+ "/guides/landed-cost-fee-stack/": "/guides/tariff-stack-2026/",
+ "/guides/new-asin-referral-incentive/": "/guides/amazon-referral-fees/",
  "/guides/off-amazon-diversification/": "/guides/ebay-etsy-for-amazon-sellers/",
- "/guides/walmart-wfs/": "/marketplaces/walmart/",
+ "/guides/price-tier-repricing-trap/": "/guides/amazon-referral-fees/",
  "/guides/second-marketplace-decision/": "/guides/ebay-etsy-for-amazon-sellers/",
- "/news/": "/policy-log/"
+ "/guides/walmart-new-seller-savings-2026/": "/marketplaces/walmart/",
+ "/how-we-test/": "/editorial-standards/",
+ "/news/": "/policy-log/",
+ "/tools/tariff-stack-estimator/": "/tools/duty-estimator/"
 }

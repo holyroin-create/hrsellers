@@ -1,0 +1,9 @@
+---
+import Icon from './Icon.astro';
+import Cites from './Cites.astro';
+const { title, rows = [] } = Astro.props as { title: string; rows: { if: string; then: string; claim?: string; claims?: string[] }[] };
+---
+<figure class="fig"><figcaption class="fig-title"><Icon name="route" />{title}</figcaption>
+  <div class="decision">{rows.map((r) => <div><p class="if" style="margin:0">{r.if}</p><Icon name="arrow" /><p class="then" style="margin:0">{r.then}<Cites ids={[r.claim, ...(r.claims || [])].filter(Boolean) as string[]} /></p></div>)}</div>
+  <p class="fig-source">Decision table: FBA Tactics, built from the cited rules on this page. It does not replace a ruling on your goods.</p>
+</figure>

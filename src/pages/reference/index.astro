@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
+import { keyNumbers, keyDates } from '../../lib/data';
+import { allClaims, fmtDate } from '../../lib/claims';
+const nums = keyNumbers(); const claims = allClaims(); const dates = keyDates().slice(0, 5);
+const hubs = [['/marketplaces/', 'tag', 'Marketplace fee tables', 'Amazon, Walmart, eBay, Etsy and Shopify fees from their own pages.'], ['/reference/key-dates/', 'calendar', 'Key dates', 'Effective dates and deadlines from official notices.'], ['/glossary/', 'book', 'Glossary', 'Customs and fee terms as the rules define them.'], ['/resources/', 'doc', 'Primary source directory', 'Every regulation, notice and fee page cited on the site.'], ['/policy-log/', 'stamp', 'Policy log', 'Official notices and fee changes, dated.'], ['/faq/', 'info', 'Seller FAQ', 'Questions sellers search for, answered from the source.']];
+---
+<Base title="Reference hub: fee tables, key numbers and dates" description="Quick reference for marketplace sellers: current key numbers, fee tables, effective dates, glossary and the primary sources behind every figure on the site.">
+  <PageHero title="Reference hub" kicker="Reference" photo="hub-reference" lede="The figures, dates and definitions sellers look up most, each with its official source and the date it was checked." />
+  <div class="wrap" style="padding:56px 24px 88px">
+    <div class="tools-grid" style="margin-bottom:56px">{hubs.map(([u, i, t, d]) => <a class="tile" href={u}><span class="ico"><Icon name={i} /></span><b>{t}</b><span>{d}</span><em>Open<Icon name="arrow" /></em></a>)}</div>
+    {nums.length > 0 && <><div class="sec-head"><div><span class="kicker">Key numbers</span><h2>Current values</h2></div></div>
+    <div class="numbers">{nums.map((n) => { const c = claims.get(n.claim_id)!; return <div class="num"><div class="v">{n.value}</div><div class="l"><a href={n.href} style="color:inherit">{n.label}</a></div><div class="s">Source: <a href={c.source_url} rel="noopener">{c.publisher}</a> · checked {fmtDate(c.accessed, true)}</div></div>; })}</div></>}
+    {dates.length > 0 && <div style="margin-top:56px"><div class="sec-head"><div><span class="kicker">Coming up</span><h2>Next effective dates</h2></div><a class="link-arrow" href="/reference/key-dates/">All key dates<Icon name="arrow" /></a></div>
+      <div class="fig"><ol class="tl">{dates.map((d: any) => <li><time datetime={d.date}>{fmtDate(d.date, true)}</time><span class="dot"></span><div><b><a href={d.href} style="color:inherit">{d.title}</a></b><span>{d.detail}</span></div></li>)}</ol></div></div>}
+  </div>
+</Base>

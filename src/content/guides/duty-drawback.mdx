@@ -1,125 +1,135 @@
 ---
-title: "Duty Drawback for Importers: Types, 99% Refund, 5-Year Limits"
-description: "How 19 CFR Part 190 drawback works: manufacturing, unused, rejected and returned retail merchandise, the 99% cap, 5-year deadlines and the export proof needed."
-category: "Import & customs"
-published: "2026-08-23"
+title: "Duty Drawback for Sellers: Returns, Exports and the 99% Rule"
+description: "How 19 CFR 190 duty drawback works for importers who export or destroy goods or handle retail returns: claim types, the 99% cap, 5-year deadlines and records."
+pillar: "importing"
+type: "guide"
+published: "2026-11-08"
 modified: "2026-11-08"
 lastVerified: "2026-11-08"
-minutes: 6
+minutes: 10
+photo:
+  subject: "pallets of boxed consumer goods being loaded into a shipping container at a warehouse dock, no people, no logos"
+  alt: "Boxed goods on pallets being loaded into an export container"
+keyFacts:
+  - { label: "Maximum refund", value: "99% of duties, taxes and fees paid", claim: "duty-drawback-06" }
+  - { label: "Export or destroy within", value: "5 years of importation", claim: "duty-drawback-05" }
+  - { label: "Retail-return import window", value: "1 year before export or destruction", claim: "duty-drawback-16" }
+  - { label: "Keep records", value: "3 years after the claim liquidates", claim: "duty-drawback-25" }
 summary:
-  - "Drawback is a refund of duties, taxes and fees paid on imported goods that are later exported or destroyed; antidumping and countervailing duties are excluded."
-  - "Most drawback types are capped at 99 percent of the duties, taxes and fees paid."
-  - "Goods must generally be exported or destroyed within 5 years of import, and the complete claim must be transmitted within 5 years of the import date."
-  - "A Notice of Intent (CBP Form 7553) is due at least 5 working days before export unless CBP waives prior notice."
-  - "Returned retail merchandise can qualify when the designated entry was imported within 1 year before export and the SKU and 8-digit HTSUS subheading match."
-hero:
-  kind: "stat"
-  figure: "99%"
-  label: "Maximum share of duties, taxes and fees refunded on unused merchandise drawback"
-  claim: "duty-drawback-07"
-related: ["foreign-trade-zones", "prior-disclosure-protests", "hts-classification-basics", "antidumping-duties"]
+  - "Drawback refunds duties, taxes and fees paid on imported goods when those goods, or qualifying substitutes, leave the US or are destroyed."
+  - "Unused merchandise drawback refunds up to 99% of what you paid if the goods were not used in the US and are exported or destroyed within 5 years of import."
+  - "Returned retail goods can qualify if you designate an import entry from within 1 year before export and the 8-digit HTSUS code and SKU match."
+  - "A complete claim must be filed electronically within 5 years of importation, and late claims are treated as abandoned."
+  - "Antidumping and countervailing duties are never refunded through drawback."
+faq:
+  - { q: "What is duty drawback?", a: "It is a refund, in whole or in part, of duties, taxes and fees paid on imported merchandise when that merchandise or a qualifying substitute is exported or destroyed.", claims: ["duty-drawback-01"] }
+  - { q: "How does duty drawback work?", a: "You import and pay duty, then export or destroy the goods (or eligible substitutes) within the time limit and file an electronic drawback claim. Every claim is subject to verification by CBP.", claims: ["duty-drawback-05", "duty-drawback-20", "duty-drawback-34"] }
+  - { q: "When can duty drawback be claimed?", a: "The goods must be exported or destroyed within 5 years of importation, and the complete claim must be transmitted no later than 5 years after the import date.", claims: ["duty-drawback-05", "duty-drawback-21"] }
+  - { q: "How long does duty drawback take?", a: "Accelerated payment means CBP pays estimated drawback before liquidation of the drawback entry. To get it, the claimant must furnish a bond sufficient to cover the estimated drawback.", claims: ["duty-drawback-32", "duty-drawback-33"] }
+  - { q: "What is a duty drawback example?", a: "Under the retail-return rule, a customer returns an imported item, you accept it and export it, and you designate an import entry from within the prior year with the same 8-digit HTSUS code and SKU. The refund is capped at 99% of the duty paid.", claims: ["duty-drawback-15", "duty-drawback-16", "duty-drawback-17", "duty-drawback-18"] }
+related: ["foreign-trade-zones", "prior-disclosure-protests", "hts-classification-basics", "antidumping-duties", "entry-type-11-vs-01", "tariff-stack-2026"]
 ---
 
-Duty drawback is a refund of duties you already paid on imported goods, available when those goods (or goods made from them, or qualifying substitutes) leave the United States or are destroyed under CBP supervision. The regulation defines drawback as the refund, in whole or in part, of duties, taxes and/or fees paid on imported merchandise. <C id="duty-drawback-01" /> For most claim types the refund tops out at 99 percent of what was paid. <C id="duty-drawback-04" /> <C id="duty-drawback-07" /> <C id="duty-drawback-11" /> <C id="duty-drawback-14" />
-
-For a marketplace seller, the realistic routes are three: goods you imported and then export unused (for example, stock moved to a foreign marketplace), goods you reject because they were defective or not to specification, and retail returns you export or destroy. Manufacturing drawback exists too, but it requires that the imported merchandise be used to manufacture or produce articles in the United States. <C id="duty-drawback-04" /> The rules live in 19 CFR Part 190; this page walks through what each type requires, the clocks that run, and the paperwork.
-
-<Callout type="note" title="Scope of this page">
-This page summarizes the drawback regulations. Whether your exports or returns qualify, and for how much, is decided on the claim itself.
-</Callout>
+Yes, you can get most of your import duty back if goods you imported leave the United States or are destroyed. The formal term is drawback. 19 CFR 190.2 defines it as a refund of duties, taxes and fees paid on imported merchandise that were imposed under Federal law at entry <C id="duty-drawback-01"/>. For marketplace sellers, three situations matter most. The first is unsold stock you ship abroad. The second is customer returns you export or destroy. The third is defective or wrong goods you send back to the supplier. Each one has its own rules, notice requirements and deadline. The refund is capped at 99% of what you paid <C id="duty-drawback-06"/>.
 
 ## What drawback refunds, and what it never refunds
 
-Drawback can return ordinary customs duties, marking duties, internal revenue taxes that attach upon importation, merchandise processing fees, and harbor maintenance taxes. <C id="duty-drawback-02" /> Antidumping and countervailing duties are not subject to drawback at all. <C id="duty-drawback-03" /> If a large share of your landed cost is AD/CVD (see [antidumping duties](/guides/antidumping-duties/)), drawback will not recover that part.
+Drawback is not limited to the duty line on your entry summary. The regulation lists merchandise processing fees among the charges that can be refunded <C id="duty-drawback-02"/>. One category is excluded outright: drawback is not allowable on antidumping and countervailing duties <C id="duty-drawback-03"/>. If most of your landed cost comes from an AD/CVD order, drawback will not recover it.
 
-## The four drawback types a seller will meet
+## The drawback types that fit a marketplace business
 
-| Type | What qualifies | Refund cap | Time limit to export or destroy |
-|---|---|---|---|
-| Manufacturing, direct identification | Articles made in the US using the imported merchandise | 99% of duties, taxes and fees paid | Within 5 years after importation |
-| Manufacturing, substitution | Substitute merchandise in the same 8-digit HTSUS subheading | 99% of the lesser of two duty amounts | Within 5 years of importation of designated merchandise |
-| Unused merchandise | Imported goods not used in the US, exported or destroyed under CBP supervision | 99% of duties, taxes and fees paid | Within 5 years of importation and before the claim is filed |
-| Rejected merchandise | Goods not conforming to sample or specifications, shipped without consent, or defective at the time of importation | 99% of duties paid | Statutory 5-year period |
+Part 190 is organized by claim type. The table below covers the four types most relevant to sellers who buy finished goods abroad.
 
-*Source: Office of the Federal Register / National Archives (eCFR), 19 CFR Part 190, checked Nov 8, 2026.* <C id="duty-drawback-04" /> <C id="duty-drawback-05" /> <C id="duty-drawback-06" /> <C id="duty-drawback-07" /> <C id="duty-drawback-08" /> <C id="duty-drawback-11" />
-
-### Manufacturing drawback
-
-Direct identification manufacturing drawback covers articles manufactured or produced in the United States using imported merchandise, capped at 99 percent of duties, taxes and fees paid. <C id="duty-drawback-04" /> The substitution version lets you claim on a different input, provided it is classifiable under the same 8-digit HTSUS subheading as the imported merchandise; the cap is 99 percent of the lesser of the two duty amounts. <C id="duty-drawback-05" /> Either way, the finished articles must be exported or destroyed within 5 years of importing the merchandise designated for the claim. <C id="duty-drawback-06" />
-
-Whether relabeling, bundling or kitting counts has to be measured against the definition: manufacture or production includes processes that make merchandise into a "new and different article" with a distinctive name, character or use. <C id="duty-drawback-24" /> If your classification is borderline, start with [HTS classification basics](/guides/hts-classification-basics/).
+<Compare
+  title="Drawback types compared"
+  columns={["Unused (direct ID)", "Unused (substitution)", "Rejected merchandise", "Retail returns"]}
+  rows={[
+    { label: "Core condition", values: ["Not used in the US", "Substitute meets 8-digit HTSUS standard", "Not to sample/spec, or shipped without consent", "Sold at retail, returned to and accepted by importer"], claim: "duty-drawback-04" },
+    { label: "Deadline to export or destroy", values: ["5 years from import", "5 years from import of the imported goods", "Statutory 5-year period", "Designated import within 1 year before export"], claim: "duty-drawback-05" },
+    { label: "Refund cap", values: ["99% of duties, taxes and fees", "See 19 CFR 190.32", "See 19 CFR 190.41", "99% of duties paid"], claim: "duty-drawback-18" },
+    { label: "Regulation", values: ["19 CFR 190.31", "19 CFR 190.32", "19 CFR 190.41–190.42", "19 CFR 190.45"] }
+  ]}
+/>
 
 ### Unused merchandise drawback
 
-This is the type most relevant to sellers who move inventory abroad. It applies to imported merchandise that is exported or destroyed under CBP supervision and has not been used in the United States, with the refund capped at 99 percent. <C id="duty-drawback-07" /> The merchandise must be exported or destroyed within 5 years of importation, and before the claim is filed. <C id="duty-drawback-08" /> Operations that do not amount to manufacture or production are not treated as a use of the merchandise. <C id="duty-drawback-09" />
+This covers inventory you never sold or used in the US, for example stock sent to a foreign marketplace warehouse. Under direct identification, the merchandise must not have been used within the United States before it is exported or destroyed <C id="duty-drawback-04"/>. It must also leave before the close of the 5-year period that starts on the import date <C id="duty-drawback-05"/>.
 
-There is also a substitution variant: you export goods that are interchangeable with what you imported. The substituted goods must be in your possession before export or destruction and generally meet the 8-digit HTSUS substitution standard. <C id="duty-drawback-10" />
+Operations that do not amount to manufacture or production are not a "use" of the merchandise <C id="duty-drawback-09"/>.
+
+Substitution unused drawback lets you export or destroy substituted merchandise instead of the imported units. The substituted goods must be exported or destroyed within 5 years of the import date of the imported merchandise <C id="duty-drawback-07"/>. Section 190.32 refers to the 8-digit HTSUS substitution standard set out in 19 CFR 190.2 <C id="duty-drawback-08"/>.
 
 ### Rejected merchandise drawback
 
-If an imported shipment turns out defective, off-spec, or was shipped without your consent, rejected merchandise drawback can apply: the grounds are non-conformity to sample or specifications, shipment without the consignee's consent, or a determination that the goods were defective as of the time of importation, and the refund is 99 percent of duties paid. <C id="duty-drawback-11" /> Where substitution is used for rejected goods, the substitute must share both the 8-digit HTSUS subheading and the same specific product identifier, such as a part number, SKU or product code. <C id="duty-drawback-12" /> Rejected goods may alternatively be claimed as unused merchandise to the extent they qualify. <C id="duty-drawback-22" />
+Use this when the supplier got it wrong. It applies to merchandise that did not conform to sample or specification, or that was shipped without the consignee's consent <C id="duty-drawback-12"/>. Drawback is denied if the goods are exported or destroyed after the statutory 5-year period <C id="duty-drawback-13"/>. You file the notice on CBP Form 7553 at least 5 working days before you return the goods to CBP custody <C id="duty-drawback-14"/>.
 
-### Returned retail merchandise
+### Retail returns: the rule written for sellers
 
-Section 190.45 addresses a situation every marketplace seller knows: customer returns. It covers imported, duty-paid goods sold at retail, returned to and accepted by the importer, and then exported or destroyed under CBP supervision; the claimant designates an entry imported within 1 year before the export or destruction date. <C id="duty-drawback-13" /> The claimant must certify that the designated and returned goods share the same 8-digit HTSUS subheading and specific product identifier (such as a SKU), and the refund is capped at 99 percent of duties paid. <C id="duty-drawback-14" />
+19 CFR 190.45 covers merchandise sold at retail by the importer (or by the party who received it from the importer) that is then returned to and accepted by the importer <C id="duty-drawback-15"/>. To claim it with substitution, you designate an import entry for merchandise imported within 1 year before the date of export or destruction <C id="duty-drawback-16"/>. You also certify that the same 8-digit HTSUS subheading and the same specific product identifier, such as a part number, SKU or product code, apply to both the designated and the returned goods <C id="duty-drawback-17"/>. The refund cannot exceed 99% of the duties paid on the imported merchandise <C id="duty-drawback-18"/>.
 
-The 1-year window is much tighter than the 5-year limits elsewhere, so returns batches need to be matched to recent entries.
-
-## Destruction counts, but only real destruction
-
-For drawback purposes, destruction means destroying the goods to the extent they have no commercial value. <C id="duty-drawback-23" />
-
-## The clocks: notice, examination, filing, records
-
-<Flow title="Drawback sequence under 19 CFR Part 190" claim="duty-drawback-15" steps={[
-  {t: "Notice of Intent", d: "CBP Form 7553 at least 5 working days before export, unless waived"},
-  {t: "CBP decision", d: "Examine or waive within 2 working days of the notice"},
-  {t: "Export or destroy", d: "Within the 5-year window (1 year for returned retail designation)"},
-  {t: "File complete claim", d: "Transmitted within 5 years of the designated import date"},
-  {t: "Keep records", d: "3 years after the claim liquidates"}
-]} />
-
-- **Notice of Intent.** CBP Form 7553 must be filed at least 5 working days before the intended exportation, unless CBP approves another period or prior notice is waived. <C id="duty-drawback-15" />
-- **Examination window.** CBP decides whether to examine or waive within 2 working days of receiving the notice; if it gives no timely notice, the goods may be exported without delay. <C id="duty-drawback-16" />
-- **Filing deadline.** A complete claim is timely if successfully transmitted no later than 5 years after the designated merchandise was imported. <C id="duty-drawback-17" />
-- **Record retention.** Drawback records must be kept for 3 years after the claims liquidate, or longer if another law requires it. <C id="duty-drawback-19" />
-
-If CBP later denies or reduces a claim, the refusal to pay a drawback claim is a protestable decision. <C id="duty-drawback-25" /> See [prior disclosure, protests and liquidation](/guides/prior-disclosure-protests/).
-
-## What a complete claim contains
-
-A complete claim includes the electronic drawback entry, any applicable Form 7553 notices, the applicable import entry data, and evidence of exportation or destruction. <C id="duty-drawback-18" /> Accepted export evidence includes carrier records such as ocean bills of lading and air waybills, records from a CBP-approved electronic export system, and official postal records for mail shipments. <C id="duty-drawback-20" /> For mail or parcel post exports, official postal records describing the shipment are sufficient, provided you identify them on the drawback entry and keep them on file. <C id="duty-drawback-21" />
-
-<Checklist title="Documents to assemble per drawback claim" items={[
-  "Import entry numbers and entry data for every designated entry",
-  "8-digit HTSUS subheading for imported and exported (or substituted) goods",
-  "SKU, part number or product code mapping where substitution or retail returns are claimed",
-  "CBP Form 7553 Notice of Intent, filed at least 5 working days before export (or the waiver)",
-  "Export proof: bill of lading, air waybill, electronic export record, or official postal record",
-  "Destruction records showing no remaining commercial value, if destroying",
-  "A retention plan covering 3 years after liquidation of the claim"
-]} />
-
-## What a marketplace seller can realistically use
-
-Reading the conditions against typical seller activity:
-
-- **Cross-border inventory transfers** of goods still in original condition fit unused merchandise drawback, as long as the goods were not used in the US and leave within 5 years. <C id="duty-drawback-08" />
-- **Defective or off-spec inbound shipments** you send back to the supplier fit rejected merchandise drawback. <C id="duty-drawback-11" />
-- **Customer returns** you export or destroy fit returned retail merchandise drawback only if you can match each return to an entry imported within the prior year and to the same SKU and 8-digit subheading. <C id="duty-drawback-13" /> <C id="duty-drawback-14" />
-- **AD/CVD-heavy products** recover only the ordinary duties and fees, never the AD/CVD portion. <C id="duty-drawback-03" />
-
-<Callout type="example" title="Worked example (hypothetical inputs)">
-Suppose an importer paid $4,000 in ordinary duties and $150 in merchandise processing fees on an entry, then exports the full lot unused within the time limit. At the 99 percent cap, the maximum refund is 0.99 x $4,150 = $4,108.50. If $1,000 of the original duty had been countervailing duty, that $1,000 would be excluded first: 0.99 x $3,150 = $3,118.50.
+<Callout type="tip" title="SKU discipline pays here">
+The retail-return certification depends on the same product identifier appearing on both the import and the export side <C id="duty-drawback-17"/>. If your listing SKUs, supplier part numbers and entry line descriptions don't match, you will have trouble certifying the match.
 </Callout>
 
-Small sellers should weigh the per-claim effort, including entry matching, export proof and record retention, against the refund amount.
+### Manufacturing drawback, briefly
 
-## What to check yourself
+If you make products in the US from imported parts and export the finished goods, manufacturing drawback can apply. The substitution version requires merchandise in the same 8-digit HTSUS subheading, used in manufacture within 5 years of importing the original merchandise <C id="duty-drawback-19"/>.
 
-1. Open 19 CFR Part 190 on eCFR and read §§ 190.3, 190.31, 190.41 and 190.45 for the drawback type you plan to use.
-2. Confirm the 8-digit HTSUS subheading on your import entries matches the goods you export, and that SKU-level records exist if you rely on substitution or returns.
-3. Check the import date on each designated entry against the 5-year limit (or the 1-year designation window for returned retail goods).
-4. Read § 190.35 before shipping to confirm the 5-working-day notice timing and whether a waiver applies to you.
-5. Read § 190.72 to confirm your chosen export record (carrier document, electronic export record or postal record) is listed.
-6. Diary the 3-year post-liquidation record retention period in § 190.15.
+## Deadlines and notices in one place
+
+<Decision
+  title="Which notice or deadline applies to you"
+  rows={[
+    { if: "You plan to export unused goods and want them eligible for drawback", then: "File a Notice of Intent to Export at least 5 working days before the planned export, unless CBP approved another period or you hold a waiver", claim: "duty-drawback-10" },
+    { if: "You filed that notice and are waiting", then: "CBP decides within 2 working days of receipt whether to examine the goods", claim: "duty-drawback-11" },
+    { if: "You plan to destroy goods instead of exporting them", then: "File CBP Form 7553 at least 7 working days before destruction", claim: "duty-drawback-30" },
+    { if: "The goods are rejected (wrong or nonconforming) and going back to CBP custody", then: "File CBP Form 7553 at least 5 working days before the return", claim: "duty-drawback-14" },
+    { if: "You are ready to claim", then: "Transmit the complete claim no later than 5 years after the import date", claim: "duty-drawback-21" },
+    { if: "You missed the 5-year window", then: "The claim is treated as abandoned, and no extension is given unless CBP caused the delay", claim: "duty-drawback-23" }
+  ]}
+/>
+
+The 5-year filing limit is strict. Claims not completed within 5 years after the import date of the merchandise designated for the claim are considered abandoned <C id="duty-drawback-22"/>. The only other relief is for a major disaster, which can extend the period by up to 18 months <C id="duty-drawback-24"/>. All drawback entries go through a CBP-authorized electronic system <C id="duty-drawback-20"/>.
+
+## Proving the goods left (or were destroyed)
+
+Proof of export must establish the date and fact of exportation and the identity of the exporter <C id="duty-drawback-27"/>. Carrier records qualify, such as a bill of lading, air waybill, freight waybill or cargo manifest <C id="duty-drawback-28"/>. If you export by mail, the postal record must be identified on the drawback entry <C id="duty-drawback-29"/>. For one-off international orders shipped by post, that means linking each postal record to the claim line.
+
+For drawback, destruction means the goods are destroyed to the point that they have no commercial value <C id="duty-drawback-36"/>. If CBP does not witness it, the evidence must come from a disinterested third party, such as a landfill operator <C id="duty-drawback-31"/>.
+
+## Worked example (hypothetical)
+
+Inputs: you paid $4,000 in duties and $200 in merchandise processing fees on an entry of imported goods. Later you export the entire lot unused, within 5 years and with proper notice. No AD/CVD applies.
+
+- Refundable base: $4,000 + $200 = $4,200, since merchandise processing fees are drawback-eligible <C id="duty-drawback-02"/>.
+- Maximum refund: 99% × $4,200 = $4,158 <C id="duty-drawback-06"/>.
+- If $1,000 of the $4,000 duty had been antidumping duty, the base would fall to $3,200 and the cap to $3,168 <C id="duty-drawback-03"/>.
+
+## Records, transfers and getting paid sooner
+
+Keep drawback records for 3 years after the claim liquidates <C id="duty-drawback-25"/>. Every claim is subject to verification by CBP <C id="duty-drawback-34"/>, so those records are what you will be asked for. If you buy imported goods from another company and export them, check the transfer rules. The regulation allows transfers of drawback-eligible merchandise to another party when the transferring party meets listed conditions <C id="duty-drawback-26"/>.
+
+Accelerated payment means CBP pays estimated drawback before liquidation of the drawback entry <C id="duty-drawback-32"/>. To get it, you must post a bond large enough to cover the estimated drawback <C id="duty-drawback-33"/>.
+
+Sending goods into a foreign-trade zone can also count as an export. Exportation may be deemed to occur when drawback goods are admitted into a zone in zone-restricted status <C id="duty-drawback-35"/>.
+
+<Checklist
+  title="Before you file a drawback claim"
+  items={[
+    "Import entry numbers and duty paid for each line, with AD/CVD separated out",
+    "8-digit HTSUS code and SKU or part number matched across import and export records",
+    "Notice of intent filed on time (5 working days for export, 7 for destruction), or a waiver on file",
+    "Carrier or postal export records showing date, exporter and goods",
+    "Third-party destruction certificates where CBP did not attend",
+    "Claim calendar showing the 5-year limit for every designated entry",
+    "Records retention plan covering 3 years after liquidation"
+  ]}
+/>
+
+<Callout type="note" title="Scope of this page">
+This page explains the drawback regulations. Whether a specific claim is payable is decided when CBP liquidates the drawback entry, and a disputed liquidation goes through the protest process.
+</Callout>
+
+## How to confirm it for your goods
+
+Read 19 CFR Part 190 on the eCFR. Start with Subpart C for unused merchandise, Subpart D for rejected and retail-returned goods, and Subpart E for filing and deadlines. Before you build a returns program around drawback, check the exact certification wording in 19 CFR 190.45 against your own SKU and HTSUS data.

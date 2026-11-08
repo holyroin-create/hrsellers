@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+import SrcLine from './SrcLine.astro';
+import { claim } from '../lib/claims';
+const { title, unit = '', rows = [], kind = 'bar' } = Astro.props as { title: string; unit?: string; kind?: string; rows: { label: string; value: number; claim?: string; display?: string }[] };
+rows.forEach((r) => r.claim && claim(r.claim));
+const fmt = (r: any) => r.display ?? (unit === '$' ? `$${r.value.toLocaleString('en-US')}` : `${r.value.toLocaleString('en-US')}${unit === 'days' ? ' days' : unit}`);
+const max = Math.max(...rows.map((r) => r.value), 0) || 1;
+const colors = ['#1d5fd1', '#f26a21', '#0e9384', '#7a5af8', '#0b1f33', '#d97706'];
+const W = 680, lab = 220, rowH = 44, H = rows.length * rowH + 8;
+---
+<figure class="fig chart"><figcaption class="fig-title"><Icon name="chart" />{title}</figcaption>
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}: ${rows.map((r) => `${r.label} ${fmt(r)}`).join('; ')}`}>
+    {rows.map((r, i) => { const w = Math.max(3, ((W - lab - 110) * r.value) / max); const y = i * rowH + 6;
+      return <g>
+        <text x={lab - 14} y={y + 21} text-anchor="end" font-size="14" fill="#334155">{r.label.length > 28 ? r.label.slice(0, 27) + '…' : r.label}</text>
+        <rect x={lab} y={y + 4} width={W - lab - 110} height="26" rx="6" fill="#eef2f7" />
+        <rect x={lab} y={y + 4} width={w} height="26" rx="6" fill={colors[i % colors.length]} />
+        <text x={lab + w + 10} y={y + 22} font-size="14" font-weight="700" fill="#0f1c2e">{fmt(r)}</text>
+      </g>; })}
+  </svg>
+  <details><summary>View as table</summary><table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody>{rows.map((r) => <tr><td>{r.label}</td><td>{fmt(r)}</td></tr>)}</tbody></table></details>
+  <SrcLine ids={rows.map((r) => r.claim!).filter(Boolean)} />
+</figure>

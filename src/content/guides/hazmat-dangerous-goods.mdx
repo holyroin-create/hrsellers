@@ -1,139 +1,154 @@
 ---
-title: "Shipping Batteries, Aerosols, Flammables: US Hazmat Rules for Sellers"
-description: "How 49 CFR Parts 171-173 classify consumer goods as hazmat, the lithium battery and limited quantity exceptions, and the training rule for shipping staff."
-category: "Operations & accounting"
-published: "2026-08-12"
+title: "When a Consumer Product Is Hazmat for Shipping (49 CFR)"
+description: "How US hazmat rules apply to everyday products: the nine hazard classes, lithium battery limits, limited quantity exceptions, training duties and penalties."
+pillar: "compliance"
+type: "guide"
+published: "2026-11-08"
 modified: "2026-11-08"
 lastVerified: "2026-11-08"
-minutes: 7
+minutes: 9
+photo:
+  subject: "a corrugated shipping box on a packing table with a lithium battery handling mark and a limited quantity diamond mark visible, no brand logos"
+  alt: "Shipping box marked with lithium battery and limited quantity marks on a packing table"
+keyFacts:
+  - { label: "Li-ion small-battery cap", value: "100 Wh per battery", claim: "hazmat-dangerous-goods-23" }
+  - { label: "Li-ion small-cell cap", value: "20 Wh per cell", claim: "hazmat-dangerous-goods-23" }
+  - { label: "Recurrent training", value: "Every 3 years", claim: "hazmat-dangerous-goods-32" }
+  - { label: "Max civil penalty (knowing)", value: "$102,348 per violation", claim: "hazmat-dangerous-goods-33" }
 summary:
-  - "Under 49 CFR 173.185(c), small lithium ion cells may not exceed 20 Wh and lithium ion batteries may not exceed 100 Wh to use the small-battery exception."
-  - "Every lithium cell or battery must be of a type proven to meet UN Manual of Tests and Criteria, Part III, sub-section 38.3."
-  - "Limited quantity flammable liquids in Packing Group II are limited to inner packagings of 1.0 L each, and the package to 30 kg gross."
-  - "Limited quantity aerosols must be in containers of no more than 1 L capacity and pass a hot water bath test."
-  - "Hazmat employees must be trained within 90 days of starting a hazmat job function and retrained at least once every three years."
-hero:
-  kind: "compare"
-  unit: "Wh"
-  rows:
-    - label: "Lithium ion cell (max for 173.185(c))"
-      value: 20
-    - label: "Lithium ion battery (max for 173.185(c))"
-      value: 100
-  claim: "hazmat-dangerous-goods-12"
-related: ["us-product-compliance", "customs-holds-and-exams", "hts-classification-basics"]
+  - "Under 49 CFR, a shipper must class and describe any hazardous material it offers for transport, including products sold at retail."
+  - "Common seller goods fall into Class 2 (aerosol-type gases), Class 3 (flammable liquids), Class 8 (corrosives) and Class 9 (miscellaneous, including lithium batteries)."
+  - "Lithium cells and batteries must pass UN 38.3 testing; small lithium ion batteries up to 100 Wh (cells up to 20 Wh) qualify for a reduced-requirement exception."
+  - "Limited quantity rules relax labeling and placarding for small inner packagings, but only where the Hazardous Materials Table references them."
+  - "Anyone who prepares hazmat shipments needs training within 90 days and again at least every three years; training violations carry a $617 minimum penalty."
+faq:
+  - { q: "Do you need hazmat for lithium batteries?", a: "Yes. Class 9 covers miscellaneous hazardous materials, and lithium cells and batteries must pass UN 38.3 testing. Small ones — up to 100 Wh per lithium ion battery — can ship under an exception with fewer requirements.", claims: ["hazmat-dangerous-goods-08", "hazmat-dangerous-goods-21", "hazmat-dangerous-goods-23"] }
+  - { q: "What are the 9 classes of hazardous materials?", a: "49 CFR 173.2 lists Class 1 explosives, Class 2 gases, Class 3 flammable and combustible liquids, Class 4 flammable solids, Class 5 oxidizers and organic peroxides, Class 6 poisonous and infectious substances, Class 7 radioactive, Class 8 corrosive and Class 9 miscellaneous hazardous material.", claims: ["hazmat-dangerous-goods-03", "hazmat-dangerous-goods-04", "hazmat-dangerous-goods-05", "hazmat-dangerous-goods-36", "hazmat-dangerous-goods-06", "hazmat-dangerous-goods-37", "hazmat-dangerous-goods-38", "hazmat-dangerous-goods-39", "hazmat-dangerous-goods-07", "hazmat-dangerous-goods-08"] }
+  - { q: "How to pack lithium batteries for shipping?", a: "Under the small-battery exception (lithium ion cells up to 20 Wh, batteries up to 100 Wh), each package displays the lithium battery mark, stays at or under 30 kg gross unless the batteries are packed with or contained in equipment, and must survive a 1.2 meter drop test unless the batteries are contained in equipment.", claims: ["hazmat-dangerous-goods-23", "hazmat-dangerous-goods-25", "hazmat-dangerous-goods-26", "hazmat-dangerous-goods-27"] }
+  - { q: "Is lithium ion hazmat when it's inside a device?", a: "Yes, batteries contained in or packed with equipment are still covered; 49 CFR 173.185(b) sets packaging requirements for them.", claims: ["hazmat-dangerous-goods-28"] }
+related: ["shipping-lithium-batteries", "customs-holds-and-exams"]
 ---
 
-A consumer product becomes a hazardous material for US shipping when it falls into one of the hazard classes in 49 CFR 173.2. In a typical marketplace catalog the items that raise the question are lithium batteries, aerosols, and flammable liquids such as perfume or nail polish. Hazmat status does not mean the item cannot ship; it means the person who offers it for transport must classify, package, mark and document it under the Hazardous Materials Regulations, or use an exception the regulations provide.
+A consumer product is hazmat for shipping when it contains a substance the Department of Transportation has determined can pose an unreasonable risk — and the legal duty to identify that sits with you as the shipper. <C id="hazmat-dangerous-goods-01"/> <C id="hazmat-dangerous-goods-02"/> For marketplace sellers, the usual triggers are lithium batteries, aerosols, flammable liquids such as perfume or nail polish, and corrosive cleaners. Being sold in a retail store does not take a product out of the rules: 49 CFR defines a "consumer commodity" as a material packaged and distributed in a form intended or suitable for retail sale for personal care or household use. <C id="hazmat-dangerous-goods-09"/>
 
-For most sellers the working tools are three exceptions: the small lithium battery provisions in 49 CFR 173.185(c), the limited quantity provisions for each hazard class (for example 173.150(b) for flammable liquids and 173.306 for aerosols), and the training requirement in 49 CFR 172.704 that applies to anyone who prepares those packages. Each is summarized below with the paragraph to check.
+## The shipper's job: class and describe
 
-<Callout type="note" title="Scope of this page">
-This page summarizes the Hazardous Materials Regulations for ground shipments within the US. Air transport adds further limits. Carrier and marketplace dangerous goods programs are separate and are not covered here. For a determination on a specific product, a hazmat consultant or the carrier's dangerous goods desk is the route.
-</Callout>
+Before a hazardous material moves, the person offering it must class and describe it in accordance with 49 CFR parts 172 and 173. <C id="hazmat-dangerous-goods-02"/> If you hand inventory to a carrier for delivery to a fulfillment center or third-party warehouse, plan on being treated as the person offering it. Your supplier's safety data sheet is the usual starting point, but the classification decision under these parts is yours.
 
-## When a product is a hazardous material
+## The nine hazard classes, with seller examples
 
-49 CFR 171.8 defines a hazardous material as "a substance or material that the Secretary of Transportation has determined is capable of posing an unreasonable risk" to health, safety and property in commerce. <C id="hazmat-dangerous-goods-01" /> The class of a hazardous material "is indicated by either the class or division number or the class name," set out in the table in 173.2. <C id="hazmat-dangerous-goods-02" />
+Table 1 to 49 CFR 173.2 sets out the classes and divisions. <C id="hazmat-dangerous-goods-03"/> These are the ones most likely to touch a consumer-goods catalog:
 
-| Class | Division | Name |
+| Class / division | Name in 49 CFR 173.2 | Where sellers meet it |
 |---|---|---|
-| 1 | 1.1–1.6 | Explosives (six divisions) |
-| 2 | 2.1 | Flammable gas |
-| 2 | 2.2 | Non-flammable compressed gas |
-| 2 | 2.3 | Poisonous gas |
-| 3 | — | Flammable and combustible liquid |
-| 4 | 4.1 / 4.2 / 4.3 | Flammable solid / Spontaneously combustible / Dangerous when wet |
-| 5 | 5.1 / 5.2 | Oxidizer / Organic peroxide |
-| 6 | 6.1 / 6.2 | Poisonous materials / Infectious substance |
-| 7 | — | Radioactive material |
-| 8 | — | Corrosive material |
-| 9 | — | Miscellaneous hazardous material |
+| 1 | Explosives | Rare outside fireworks and novelty items |
+| 4.1 | Flammable solid | Some fire starters and matches |
+| 2.1 / 2.2 | Flammable gas / non-flammable compressed gas | Aerosol sprays, gas canisters |
+| 3 | Flammable and combustible liquid | Fragrances, nail polish, some adhesives |
+| 5.1 | Oxidizer | Some pool and cleaning chemicals |
+| 8 | Corrosive material | Drain cleaners, some batteries' electrolytes |
+| 9 | Miscellaneous hazardous material | Lithium batteries and other items without a better fit |
 
-*Source: Office of the Federal Register (eCFR), 49 CFR 173.2, Table 1, checked Nov 8, 2026.* <C id="hazmat-dangerous-goods-03" />
+*Source: eCFR, 49 CFR 173.2, checked Nov 8, 2026 (class names; the right-hand column is illustrative).* <C id="hazmat-dangerous-goods-04"/> <C id="hazmat-dangerous-goods-05"/> <C id="hazmat-dangerous-goods-06"/> <C id="hazmat-dangerous-goods-07"/> <C id="hazmat-dangerous-goods-08"/> <C id="hazmat-dangerous-goods-36"/>
 
-Three definitions in 171.8 come up constantly for consumer goods:
+Classes 5.2 (organic peroxide), 6 (poisonous materials and infectious substances) and 7 (radioactive material) complete the table. <C id="hazmat-dangerous-goods-37"/> <C id="hazmat-dangerous-goods-38"/> <C id="hazmat-dangerous-goods-39"/>
 
-- **Aerosol:** "an article consisting of a non-refillable receptacle containing a gas," as further specified in the definition. <C id="hazmat-dangerous-goods-04" />
-- **Limited quantity:** "the maximum amount of a hazardous material for which there is a specific labeling or packaging exception." <C id="hazmat-dangerous-goods-05" />
-- **Consumer commodity:** a material "packaged and distributed in a form intended or suitable for sale through retail sales agencies," as further specified in the definition. <C id="hazmat-dangerous-goods-06" />
+The examples in the right-hand column show where to look, not a classification. A specific product's class depends on its formulation and test data.
 
-## Who is responsible
+## Lithium batteries: the rules that catch most sellers
 
-Under 49 CFR 171.2(b), "each person who offers a hazardous material for transportation in commerce must comply" with the applicable requirements, and each offeror is responsible for the pre-transportation functions it performs. <C id="hazmat-dangerous-goods-07" /> If you print the label and seal the box, you are the offeror for that package, even if a 3PL or carrier moves it afterwards. A business that uses at least one person who performs these functions is a "hazmat employer" under 171.8. <C id="hazmat-dangerous-goods-08" /> A "hazmat employee" under the same section includes a person employed on a full-time, part-time or temporary basis by a hazmat employer, subject to the further conditions in that definition. <C id="hazmat-dangerous-goods-11" />
+Lithium batteries show up in far more listings than people expect: earbuds, phone cases with power banks, LED toys, electric toothbrushes, smart watches. The core rule in 49 CFR 173.185 is that every lithium cell and battery must be of a type proven to meet the criteria in part III, sub-section 38.3 of the UN Manual of Tests and Criteria. <C id="hazmat-dangerous-goods-21"/> For cells and batteries manufactured on or after January 1, 2008, manufacturers and subsequent distributors must make a test summary available (button cells installed in equipment are excepted). <C id="hazmat-dangerous-goods-22"/> If your supplier cannot produce a UN 38.3 test summary for the exact cell or battery, stop and get one before booking freight.
 
-## Lithium batteries: 49 CFR 173.185
+### The small-battery exception
 
-Two requirements apply to every lithium cell or battery, whether shipped alone, packed with equipment, or installed in a device:
+Smaller cells and batteries can ship under paragraph (c) with fewer requirements. The size limits are:
 
-1. **UN 38.3 testing.** Each lithium cell or battery "must be of the type proven to meet the criteria in part III, sub-section 38.3" of the UN Manual of Tests and Criteria. <C id="hazmat-dangerous-goods-09" />
-2. **Test summary.** For cells and batteries manufactured on or after January 1, 2008, the manufacturer and any subsequent distributor must make a test summary available, with an exception for button cells installed in equipment. <C id="hazmat-dangerous-goods-10" /> A reseller is a subsequent distributor, so ask your supplier for the summary before the first order ships.
+<Compare title="Small lithium battery exception limits (49 CFR 173.185(c))" columns={["Cell", "Battery"]} rows={[
+  {label:"Lithium ion (watt-hours)", values:["Up to 20 Wh", "Up to 100 Wh"], claim:"hazmat-dangerous-goods-23"},
+  {label:"Lithium metal (lithium content)", values:["Up to 1 g", "Up to 2 g"], claim:"hazmat-dangerous-goods-24"}
+]} />
 
-The small-battery exception in 173.185(c) relaxes packaging and documentation requirements for batteries under set size limits:
+Qualifying packages still have conditions. Each must display the lithium battery mark, subject to listed exceptions. <C id="hazmat-dangerous-goods-25"/> Unless the batteries are packed with or contained in equipment, each package must not exceed 30 kg (66 pounds) gross weight. <C id="hazmat-dangerous-goods-26"/> Unless they are contained in equipment, the package (or the completed package when packed with equipment) must withstand a 1.2 meter drop test in any orientation. <C id="hazmat-dangerous-goods-27"/>
 
-- The Watt-hour rating "may not exceed 20 Wh for a lithium ion cell or 100 Wh for a lithium ion battery." <C id="hazmat-dangerous-goods-12" />
-- For lithium metal, the lithium content "may not exceed 1 g for a lithium metal cell or 2 g for a lithium metal battery." <C id="hazmat-dangerous-goods-13" />
-- Except where batteries are packed with or contained in equipment, each package "must not exceed 30 kg (66 pounds) gross weight." <C id="hazmat-dangerous-goods-14" />
-- Each package "must display the lithium battery mark," subject to the exceptions listed in the paragraph. <C id="hazmat-dangerous-goods-15" />
+Batteries do not escape the rules by being installed. Paragraph (b) of 173.185 sets requirements for lithium cells or batteries packed with, or contained in, equipment. <C id="hazmat-dangerous-goods-28"/>
 
-<Callout type="example" title="Worked example (hypothetical inputs)">
-A power bank is rated 3.7 V and 20,000 mAh. Watt-hours are volts times amp-hours: 3.7 × 20 = 74 Wh. That is under the 100 Wh battery limit in 173.185(c), so the small-battery provisions can be considered. A 3.7 V, 30,000 mAh unit would be 111 Wh and over the limit.
+<Callout type="example" title="Worked example (hypothetical): is this power bank under 100 Wh?">
+Inputs: a power bank label reads 3.7 V and 20,000 mAh. Watt-hours = volts × amp-hours = 3.7 × 20 = 74 Wh. That is under the 100 Wh battery limit for the lithium ion small-battery exception. <C id="hazmat-dangerous-goods-23"/> A 3.7 V, 30,000 mAh unit works out to 111 Wh and would be over it. The battery still needs its UN 38.3 test summary either way. <C id="hazmat-dangerous-goods-21"/>
 </Callout>
 
-## Limited quantities: flammable liquids and aerosols
+## Limited quantities: smaller containers, fewer requirements
 
-Limited quantity exceptions are material-specific. Under 173.156(a), they are "permitted only if this section is referenced for the specific hazardous material in the § 172.101 Table." <C id="hazmat-dangerous-goods-16" /> Look up the product's UN number in the Hazardous Materials Table first.
+A limited quantity is the maximum amount of a hazardous material for which there is a specific labeling or packaging exception. <C id="hazmat-dangerous-goods-10"/> The exception is not automatic: 49 CFR 173.156 applies only when it is referenced for the specific material in the 172.101 Hazardous Materials Table or a packaging section. <C id="hazmat-dangerous-goods-17"/>
 
-### Flammable liquids (173.150(b))
+Flammable liquids (Class 3) show how it works. Limited quantities are excepted from labeling requirements unless offered for transport, or transported, by aircraft, <C id="hazmat-dangerous-goods-11"/> and are not subject to the placarding requirements of subpart F. <C id="hazmat-dangerous-goods-15"/> The inner packaging limits depend on packing group:
 
-<Bars title="Maximum inner packaging size, limited quantity flammable liquids (49 CFR 173.150(b))" unit="L" rows={[
-  {label: "Packing Group I", value: 0.5, claim: "hazmat-dangerous-goods-18"},
-  {label: "Packing Group II", value: 1.0, claim: "hazmat-dangerous-goods-18"},
-  {label: "Packing Group III", value: 5.0, claim: "hazmat-dangerous-goods-18"}
+<Chart title="Max inner packaging for limited quantity flammable liquids (49 CFR 173.150(b))" kind="bar" unit="L" rows={[
+  {label:"Packing Group I", value:0.5, claim:"hazmat-dangerous-goods-14"},
+  {label:"Packing Group II", value:1, claim:"hazmat-dangerous-goods-12"},
+  {label:"Packing Group III", value:5, claim:"hazmat-dangerous-goods-13"}
 ]} />
 
-Inner packagings go in a strong outer packaging, and each package "may not exceed 30 kg (66 pounds) gross weight." <C id="hazmat-dangerous-goods-18" /> Limited quantities under this paragraph "are excepted from labeling requirements, unless the material is offered for transportation or transported by aircraft," and a conforming package is not subject to the shipping paper requirements of subpart C of part 172, subject to the stated conditions. <C id="hazmat-dangerous-goods-19" />
+A completed limited quantity package of flammable liquids may not exceed 30 kg (66 pounds) gross weight. <C id="hazmat-dangerous-goods-16"/>
 
-A flammable liquid with a flash point at or above 38 °C (100 °F) that meets no other hazard class may be reclassed as a combustible liquid, and a combustible liquid in non-bulk packaging is largely outside the regulations, with exceptions for hazardous substances, hazardous wastes and marine pollutants. <C id="hazmat-dangerous-goods-20" />
+### The limited quantity mark
 
-### Aerosols (173.306)
+The mark is a square-on-point whose top and bottom portions and border are black. <C id="hazmat-dangerous-goods-18"/> Each side must be at least 100 mm, with a reduced size of no less than 50 mm permitted where the package is too small. <C id="hazmat-dangerous-goods-19"/> For air shipments, a black "Y" sits in the center of the mark. <C id="hazmat-dangerous-goods-20"/>
 
-For limited quantity aerosols, "the capacity of the container must not exceed 1 L (61.0 cubic inches)," <C id="hazmat-dangerous-goods-21" /> and each container, after filling, "must be subjected to a test performed in a hot water bath," or an allowed alternative. <C id="hazmat-dangerous-goods-22" /> Limited quantities of compressed gases are "excepted from labeling, except when offered for transportation or transported by air." <C id="hazmat-dangerous-goods-23" />
+## Which path applies to your product?
 
-### Package marking and weight
-
-Under 173.156(b), limited quantity packages carry the marking required by 172.315, and the 30 kg (66 pounds) gross weight limit applies, except for marked packages moved by highway or rail between a manufacturer, distribution center and retail outlet under the stated conditions. <C id="hazmat-dangerous-goods-17" />
-
-## Training: 49 CFR 172.702 and 172.704
-
-"A hazmat employer shall ensure that each of its hazmat employees is trained." <C id="hazmat-dangerous-goods-24" /> The rules in 172.704 set the content, timing and records:
-
-<Flow title="Initial hazmat training under 49 CFR 172.704(c)(1)" claim="hazmat-dangerous-goods-26" steps={[
-  {t: "New hire or changed job function", d: "Hazmat duties start with a new or changed role"},
-  {t: "Supervised work only", d: "Under direct supervision of a properly trained hazmat employee"},
-  {t: "Training completed", d: "Within 90 days after employment or change in job function"}
+<Decision title="Quick triage for a new SKU" rows={[
+  {if:"It contains a lithium ion battery of 100 Wh or less (cells 20 Wh or less)", then:"Small-battery exception may apply: UN 38.3 test summary, lithium battery mark, 30 kg package cap, 1.2 m drop test", claim:"hazmat-dangerous-goods-23"},
+  {if:"It contains a lithium ion battery over 100 Wh", then:"Outside the small-battery exception; full 173.185 requirements apply", claim:"hazmat-dangerous-goods-23"},
+  {if:"It is a flammable liquid in small bottles (for example, Packing Group II in 1 L or less)", then:"Check whether the 172.101 Table references limited quantity; if so, labeling (except by air) and placarding are relaxed", claim:"hazmat-dangerous-goods-17"},
+  {if:"Your team packs or labels hazmat shipments", then:"You are a hazmat employer; train staff within 90 days and every three years", claim:"hazmat-dangerous-goods-29"}
 ]} />
 
-- **Content.** Training covers general awareness/familiarization, function-specific, safety, security awareness, and in-depth security training where a security plan is required. <C id="hazmat-dangerous-goods-25" />
-- **Timing.** Initial training must be completed within 90 days after employment or a change in job function, with work in the meantime only under direct supervision. <C id="hazmat-dangerous-goods-26" /> Recurrent training is required "at least once every three years." <C id="hazmat-dangerous-goods-27" />
-- **Records.** The employer keeps a record of current training for the preceding three years "for as long as that employee is employed by that employer as a hazmat employee and for 90 days thereafter," including the employee's name, completion date, materials, trainer, and a certification. <C id="hazmat-dangerous-goods-28" />
+## Training: who needs it and how often
 
-<Checklist title="Before listing or shipping a battery, aerosol or flammable product" items={[
-  "Get the UN number and hazard class from the supplier's safety data sheet",
-  "For lithium products, get the UN 38.3 test summary and the Wh rating or lithium content",
-  "Check the Hazardous Materials Table (172.101) to confirm a limited quantity exception is referenced",
-  "Confirm inner packaging size and package gross weight against the applicable section",
-  "Apply the lithium battery mark or limited quantity marking required for the package",
-  "Confirm whether any leg moves by air; ground-only exceptions may not apply",
-  "Train every person who packs, marks or prepares these shipments, and file the training record"
+If you employ or use even one hazmat employee, full-time, part-time or temporary, and you transport hazardous materials or cause them to be transported in commerce, you are a hazmat employer. <C id="hazmat-dangerous-goods-29"/> In a small seller operation, that can be the person who packs battery products or prints shipping labels for them.
+
+<Steps title="Hazmat training cycle (49 CFR 172.704)" steps={[
+  {t:"Know the five training categories", d:"172.704 lists general awareness/familiarization, function-specific, safety, security awareness and in-depth security training.", claim:"hazmat-dangerous-goods-30"},
+  {t:"Train new staff within 90 days", d:"Until then they may perform hazmat functions only under supervision of a trained employee.", claim:"hazmat-dangerous-goods-31"},
+  {t:"Repeat at least every three years", d:"Recurrent training is required for every hazmat employee.", claim:"hazmat-dangerous-goods-32"}
 ]} />
 
-For imported batteries and aerosols, hazmat status also affects how goods move through the port; see [customs holds and exams](/guides/customs-holds-and-exams/).
+## What a violation can cost
 
-## What to check yourself
+Civil penalties for knowing violations are set in 49 CFR 107.329:
 
-1. Read 49 CFR 173.2 on eCFR and locate your product's class and division.
-2. Look up the proper shipping name and UN number in the 172.101 Hazardous Materials Table and note which exception sections it references.
-3. Read 49 CFR 173.185 in full for lithium products, including the paragraph on batteries packed with or contained in equipment.
-4. Read the class-specific limited quantity section (173.150 for flammable liquids, 173.306 for aerosols) and 173.156 for marking and weight.
-5. Read 49 CFR 172.704 and compare your training records with paragraph (d).
+| Situation | Amount |
+|---|---|
+| Maximum per knowing violation | $102,348 |
+| Maximum if the violation results in death, serious illness or severe injury | $238,809 |
+| Minimum for violations relating to training | $617 |
+
+*Source: eCFR, 49 CFR 107.329, checked Nov 8, 2026.* <C id="hazmat-dangerous-goods-33"/> <C id="hazmat-dangerous-goods-34"/> <C id="hazmat-dangerous-goods-35"/>
+
+## Common mistakes
+
+| Mistake | What the rule says |
+|---|---|
+| Assuming a battery inside the device is exempt | 173.185(b) covers cells packed with or contained in equipment |
+| Shipping without a UN 38.3 test summary | Cells and batteries must be a tested type, and distributors must make the summary available |
+| Using limited quantity for any small bottle | The exception applies only where the 172.101 Table references it |
+| Letting untrained staff pack battery orders indefinitely | Training must be completed within 90 days |
+
+*Source: eCFR, 49 CFR 172–173, checked Nov 8, 2026.* <C id="hazmat-dangerous-goods-28"/> <C id="hazmat-dangerous-goods-22"/> <C id="hazmat-dangerous-goods-17"/> <C id="hazmat-dangerous-goods-31"/>
+
+<Checklist title="New SKU hazmat screen" items={[
+  "Get the safety data sheet and identify any battery, aerosol, liquid or chemical component",
+  "For batteries: record chemistry, Wh rating (or lithium grams) and whether it is loose, packed with or contained in equipment",
+  "Get the UN 38.3 test summary for the exact cell or battery",
+  "Look up the material in the 172.101 Table and note any limited quantity reference",
+  "Confirm the correct marks: lithium battery mark or limited quantity mark",
+  "Check that anyone packing the item has current hazmat training"
+]} />
+
+<Callout type="note" title="Scope">
+This page summarizes the federal hazardous materials regulations in 49 CFR; it is not a classification of any product. Carriers and marketplaces may set their own acceptance terms on top. For a definitive call on a specific SKU, use the manufacturer's test data and a trained dangerous goods specialist, or ask the Department of Transportation directly.
+</Callout>
+
+## How to confirm it for your product
+
+Read 49 CFR 173.185 for lithium batteries, 173.2 for the hazard classes, 173.150 and 173.156 for limited quantities, and 172.704 for training on eCFR. <C id="hazmat-dangerous-goods-21"/> <C id="hazmat-dangerous-goods-03"/> Then look up your exact material in the 172.101 Hazardous Materials Table, which determines whether an exception is available at all. <C id="hazmat-dangerous-goods-17"/>

@@ -1,46 +1,42 @@
 ---
-import BrandMark from './BrandMark.astro';
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
 import { NAV } from '../lib/nav';
 const path = Astro.url.pathname;
+const active = (g: any) => g.base.some((b: string) => path.startsWith(b)) || g.items.some((i: any) => i.href.split('#')[0] === path);
 ---
 <a class="skip" href="#main">Skip to content</a>
-<div class="utility"><div class="wrap">
-  <span>Marketplace fees and US import rules, read from the primary source</span>
-  <span><a href="/policy-log/">Policy log</a></span>
-</div></div>
-<header class="mast">
-  <div class="wrap">
-    <a class="brand" href="/" aria-label="FBA Tactics home">
-      <BrandMark />
-      <span><span class="brand-name">FBA Tactics</span><span class="brand-sub">fbatactics.com</span></span>
-    </a>
-    <button class="btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="nav" id="site-nav" aria-label="Main">
-      {NAV.map((g) => (
-        <details>
-          <summary class={g.items.some((i) => path.startsWith(i.href.split('#')[0]) && i.href !== '/') ? 'active' : ''}>{g.label}</summary>
-          <div class="panel">
-            {g.items.map((i) => <a href={i.href}>{i.t}{i.d && <small>{i.d}</small>}</a>)}
+<header class="site-header">
+  <div class="wrap hdr">
+    <Logo />
+    <nav class="nav" id="nav" aria-label="Main">
+      {NAV.map((g, n) => (
+        <div class={`nav-item${active(g) ? ' is-active' : ''}`}>
+          <button type="button" aria-expanded="false" aria-controls={`mega-${n}`}>{g.label}<Icon name="chevron" /></button>
+          <div class="mega" id={`mega-${n}`}>
+            {g.items.map((i) => <a href={i.href}><span class="ico"><Icon name={i.i} /></span><span><b>{i.t}</b><span>{i.d}</span></span></a>)}
           </div>
-        </details>
+        </div>
       ))}
-      <a class="btn btn-tag nav-cta" href="/tools/">Free calculators</a>
     </nav>
+    <form class="hdr-search" action="/search/" method="get" role="search">
+      <Icon name="search" /><label class="vh" for="hq">Search</label>
+      <input id="hq" name="q" type="search" placeholder="Search" autocomplete="off" />
+      <button class="vh" type="submit">Search</button>
+    </form>
+    <a class="btn btn-cta btn-sm" href="/tools/">Free calculators</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><Icon name="menu" /></button>
   </div>
 </header>
-<div class="searchbar"><div class="wrap">
-  <form action="/search/" method="get" role="search">
-    <label class="vh" for="q">Search the site</label>
-    <input id="q" name="q" type="search" placeholder="Search guides, fees, regulations" autocomplete="off" />
-    <button class="btn btn-tag" type="submit">Search</button>
-  </form>
-</div></div>
 <script>
-  const t = document.querySelector('.menu-toggle');
-  const n = document.getElementById('site-nav');
-  t?.addEventListener('click', () => { const o = n!.classList.toggle('open'); t.setAttribute('aria-expanded', String(o)); });
-  const ds = document.querySelectorAll('.nav details');
-  ds.forEach((d) => d.addEventListener('toggle', () => { if ((d as HTMLDetailsElement).open) ds.forEach((o) => { if (o !== d) (o as HTMLDetailsElement).open = false; }); }));
-  document.addEventListener('click', (e) => { if (!(e.target as Element).closest('.nav')) ds.forEach((d) => ((d as HTMLDetailsElement).open = false)); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') ds.forEach((d) => ((d as HTMLDetailsElement).open = false)); });
+  const items = [...document.querySelectorAll<HTMLElement>('.nav-item')];
+  const closeAll = (except?: HTMLElement) => items.forEach((it) => { if (it !== except) { it.classList.remove('open'); it.querySelector('button')!.setAttribute('aria-expanded', 'false'); } });
+  items.forEach((it) => {
+    const b = it.querySelector('button')!;
+    b.addEventListener('click', (e) => { e.stopPropagation(); const o = !it.classList.contains('open'); closeAll(it); it.classList.toggle('open', o); b.setAttribute('aria-expanded', String(o)); });
+  });
+  document.addEventListener('click', (e) => { if (!(e.target as Element).closest('.nav-item')) closeAll(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+  const mb = document.querySelector<HTMLButtonElement>('.menu-btn')!; const nav = document.getElementById('nav')!;
+  mb.addEventListener('click', () => { const o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', String(o)); });
 </script>

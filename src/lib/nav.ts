@@ -1,34 +1,42 @@
 export const NAV = [
-  { label: 'Start', items: [
-    { href: '/start-here/', t: 'Start here', d: 'What this site covers and in what order' },
-    { href: '/quiz/', t: 'Knowledge check', d: '12 questions, every answer sourced' },
-    { href: '/glossary/', t: 'Glossary', d: 'Terms as the regulations define them' },
+  { label: 'Get started', base: ['/start-here/', '/quiz/', '/faq/'], items: [
+    { href: '/start-here/', t: 'Start here', d: 'What the site covers and where to begin', i: 'route' },
+    { href: '/quiz/', t: 'Knowledge check', d: 'Test yourself; every answer is sourced', i: 'quiz' },
+    { href: '/faq/', t: 'Seller FAQ', d: 'Real questions sellers search for, answered', i: 'info' },
+    { href: '/glossary/', t: 'Glossary', d: 'Terms as the rules define them', i: 'book' },
   ]},
-  { label: 'Guides', items: [
-    { href: '/guides/#import-customs', t: 'Import & customs', d: 'Entry, bonds, origin, valuation, duties' },
-    { href: '/guides/#marketplace-fees', t: 'Marketplace fees', d: 'What each platform charges, worked through' },
-    { href: '/guides/#product-compliance', t: 'Product compliance', d: 'Certificates, hazmat, review rules' },
-    { href: '/guides/#operations-accounting', t: 'Operations & accounting', d: 'Inventory, COGS, records' },
+  { label: 'Fees', base: ['/marketplaces/'], items: [
+    { href: '/marketplaces/amazon/', t: 'Amazon fees', d: 'Plans and referral fees by category', i: 'tag' },
+    { href: '/marketplaces/walmart/', t: 'Walmart fees', d: 'Referral fees and WFS', i: 'tag' },
+    { href: '/marketplaces/ebay/', t: 'eBay fees', d: 'Final value and per-order fees', i: 'tag' },
+    { href: '/marketplaces/etsy/', t: 'Etsy fees', d: 'Listing, transaction, processing, ads', i: 'tag' },
+    { href: '/marketplaces/shopify/', t: 'Shopify fees', d: 'Plans and card rates', i: 'tag' },
+    { href: '/guides/ebay-etsy-for-amazon-sellers/', t: 'Compare platforms', d: 'One $25 item on five marketplaces', i: 'scale' },
   ]},
-  { label: 'Fees', items: [
-    { href: '/marketplaces/', t: 'Fee reference by marketplace', d: 'Amazon, Walmart, eBay, Etsy, Shopify' },
-    { href: '/costs/', t: 'Cost map', d: 'Every charge between factory and payout' },
+  { label: 'Importing', base: [], items: [
+    { href: '/guides/#importing', t: 'Import guides', d: 'Entry, bonds, classification, origin', i: 'ship' },
+    { href: '/guides/tariff-stack-2026/', t: 'How duties stack', d: 'Duty, additional duties, MPF, HMF', i: 'layers' },
+    { href: '/guides/de-minimis-suspension-2026/', t: 'De minimis status', d: 'Low-value shipments in 2026', i: 'box' },
+    { href: '/policy-log/', t: 'Policy log', d: 'Official notices, dated and linked', i: 'stamp' },
   ]},
-  { label: 'Tools', items: [
-    { href: '/tools/margin-calculator/', t: 'Margin calculator', d: 'Net per unit after fees' },
-    { href: '/tools/tariff-stack-estimator/', t: 'Duty & fee estimator', d: 'Duty, MPF and HMF on one entry' },
-    { href: '/tools/dimensional-weight/', t: 'Dimensional weight', d: 'Billable weight check' },
-    { href: '/tools/cash-flow-planner/', t: 'Cash flow planner', d: 'When the money comes back' },
-    { href: '/tools/ppc-budget-calculator/', t: 'Ad budget calculator', d: 'Spend, ACoS and break-even' },
+  { label: 'Tools', base: ['/tools/'], items: [
+    { href: '/tools/margin-calculator/', t: 'Profit & margin', d: 'Net per unit after platform fees', i: 'calculator' },
+    { href: '/tools/duty-estimator/', t: 'Duty & entry fees', d: 'Duty, MPF and HMF on one entry', i: 'shield' },
+    { href: '/tools/fee-comparison/', t: 'Fee comparison', d: 'Same price, five platforms', i: 'scale' },
+    { href: '/tools/dimensional-weight/', t: 'Dimensional weight', d: 'Billable weight check', i: 'box' },
+    { href: '/tools/cash-flow-planner/', t: 'Cash flow planner', d: 'When stock money comes back', i: 'chart' },
+    { href: '/checklists/', t: 'Printable checklists', d: 'Import and launch checklists', i: 'printer' },
   ]},
-  { label: 'Log', items: [
-    { href: '/policy-log/', t: 'Policy log', d: 'Official notices, linked to the source' },
-    { href: '/resources/', t: 'Primary source directory', d: 'Where the rules are published' },
+  { label: 'Reference', base: ['/reference/', '/glossary/', '/resources/'], items: [
+    { href: '/reference/', t: 'Reference hub', d: 'Fee tables, key dates, sources', i: 'book' },
+    { href: '/reference/key-dates/', t: 'Key dates', d: 'Effective dates and deadlines', i: 'calendar' },
+    { href: '/resources/', t: 'Primary sources', d: 'Where each rule is published', i: 'doc' },
+    { href: '/guides/', t: 'All guides', d: 'Every guide by topic', i: 'list' },
   ]},
-  { label: 'About', items: [
-    { href: '/about/', t: 'About', d: 'Who publishes this site' },
-    { href: '/editorial-standards/', t: 'Editorial & sourcing policy', d: 'How a figure gets on a page' },
-    { href: '/corrections/', t: 'Corrections', d: 'Every change to a published figure' },
-    { href: '/contact/', t: 'Contact', d: '' },
+  { label: 'About', base: ['/about/', '/editorial-standards/', '/contact/', '/corrections/'], items: [
+    { href: '/about/', t: 'About', d: 'Who publishes the site', i: 'user' },
+    { href: '/editorial-standards/', t: 'How we check facts', d: 'Sourcing and review policy', i: 'checkCircle' },
+    { href: '/corrections/', t: 'Corrections', d: 'Every change, logged', i: 'pencil' },
+    { href: '/contact/', t: 'Contact', d: 'Report an error', i: 'mail' },
   ]},
 ];

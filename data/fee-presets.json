@@ -1,835 +1,1487 @@
 [
   {
     "marketplace": "Amazon",
+    "category": "3D Printers",
+    "rate_pct": 12,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $0–$200",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-01",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "3D Printers",
+    "rate_pct": 5,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $200+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-01",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
     "category": "Amazon Device Accessories",
     "rate_pct": 45,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-01"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-02",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Appliances - Compact",
+    "rate_pct": 15,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $0–$300",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-03",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Appliances - Compact",
+    "rate_pct": 8,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $300+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-03",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Appliances - Full-size",
     "rate_pct": 8,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-02"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-04",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Automotive and Powersports",
     "rate_pct": 12,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-03"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-05",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Baby Products",
+    "rate_pct": 8,
+    "min_fee_usd": 0.3,
+    "band": "total price $0–$10",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-06",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Baby Products",
+    "rate_pct": 15,
+    "min_fee_usd": 0.3,
+    "band": "total price $10+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-06",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Backpacks, Handbags, and Luggage",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-04"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-07",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Base Equipment Power Tools",
     "rate_pct": 12,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-05"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-08",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Beauty, Health, and Personal Care",
+    "rate_pct": 8,
+    "min_fee_usd": 0.3,
+    "band": "total price $0–$10",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-09",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Beauty, Health, and Personal Care",
+    "rate_pct": 15,
+    "min_fee_usd": 0.3,
+    "band": "total price $10+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-09",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Business, Industrial, and Scientific Supplies",
     "rate_pct": 12,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-06"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-10",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Clothing and Accessories",
+    "rate_pct": 5,
+    "min_fee_usd": 0.3,
+    "band": "total price $0–$15",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-11",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Clothing and Accessories",
+    "rate_pct": 10,
+    "min_fee_usd": 0.3,
+    "band": "total price $15–$20",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-11",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Clothing and Accessories",
+    "rate_pct": 17,
+    "min_fee_usd": 0.3,
+    "band": "total price $20+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-11",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Computers",
     "rate_pct": 8,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-07"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-12",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Consumer Electronics",
     "rate_pct": 8,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-08"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-13",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Electronics Accessories",
+    "rate_pct": 15,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $0–$100",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-14",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Electronics Accessories",
+    "rate_pct": 8,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $100+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-14",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Eyewear",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-09"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-15",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Fine Art",
+    "rate_pct": 20,
+    "min_fee_usd": 1.0,
+    "band": "portion of price $0–$100",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-16",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Fine Art",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "portion of price $100–$1,000",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-16",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Fine Art",
+    "rate_pct": 10,
+    "min_fee_usd": null,
+    "band": "portion of price $1,000–$5,000",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-16",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Fine Art",
+    "rate_pct": 5,
+    "min_fee_usd": null,
+    "band": "portion of price $5,000+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-16",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Footwear",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-10"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-17",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Furniture",
+    "rate_pct": 15,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $0–$200",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-18",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Furniture",
+    "rate_pct": 10,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $200+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-18",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Gift Cards",
     "rate_pct": 20,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-11"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-19",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Grocery and Gourmet",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": "total price $0–$15",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-20",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Grocery and Gourmet",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "total price $15+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-20",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Home and Kitchen",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-12"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-21",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Jewelry",
+    "rate_pct": 20,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $0–$250",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-22",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Jewelry",
+    "rate_pct": 5,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $250+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-22",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Lawn and Garden",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-13"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-23",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Lawn Mowers and Snow Throwers",
+    "rate_pct": 15,
+    "min_fee_usd": 0.3,
+    "band": "total price $0–$500",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-24",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Lawn Mowers and Snow Throwers",
+    "rate_pct": 8,
+    "min_fee_usd": 0.3,
+    "band": "total price $500+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-24",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Mattresses",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-14"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-25",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
-    "category": "Media - Books, DVD, Music, Software, Video",
+    "category": "Media (Books, DVD, Music, Software, Video)",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-15"
+    "band": null,
+    "fixed_fee_usd": 1.8,
+    "claim_id": "tool-margin-calculator-26",
+    "fixed_fee_claim_id": "tool-margin-calculator-96",
+    "fixed_fee_note": "media closing fee per item"
   },
   {
     "marketplace": "Amazon",
     "category": "Merchant Fulfilled Services",
     "rate_pct": 20,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-16"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-27",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Musical Instruments and AV Production",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-17"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-28",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Office Products",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-18"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-29",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Pet Supplies",
+    "rate_pct": 15,
+    "min_fee_usd": 0.3,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-30",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Pet Supplies - veterinary diets",
+    "rate_pct": 22,
+    "min_fee_usd": 0.3,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-30",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Sports and Outdoors",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-19"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-31",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Tires",
     "rate_pct": 10,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-20"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-32",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Tools and Home Improvement",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-21"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-33",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Toys and Games",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-22"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-34",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Video Game Consoles",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-35",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Video Games and Gaming Accessories",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-23"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-36",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
-    "category": "Video Game Consoles",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-24"
+    "category": "Watches",
+    "rate_pct": 16,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $0–$1,500",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-37",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Amazon",
+    "category": "Watches",
+    "rate_pct": 3,
+    "min_fee_usd": 0.3,
+    "band": "portion of price $1,500+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-37",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Amazon",
     "category": "Everything Else",
     "rate_pct": 15,
     "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-25"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Pet Supplies",
-    "rate_pct": 15,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-26"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Pet Supplies, veterinary diets",
-    "rate_pct": 22,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-26"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Clothing and Accessories, total sales price $15.00 or less",
-    "rate_pct": 5,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-27"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Clothing and Accessories, over $15.00 to $20.00",
-    "rate_pct": 10,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-27"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Clothing and Accessories, over $20.00",
-    "rate_pct": 17,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-27"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Baby Products, total sales price $10.00 or less",
-    "rate_pct": 8,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-28"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Baby Products, over $10.00",
-    "rate_pct": 15,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-28"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Beauty, Health, and Personal Care, total sales price $10.00 or less",
-    "rate_pct": 8,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-29"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Beauty, Health, and Personal Care, over $10.00",
-    "rate_pct": 15,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-29"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Grocery and Gourmet, total sales price $15.00 or less",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-30"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Grocery and Gourmet, over $15.00",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-30"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Lawn Mowers and Snow Throwers, total sales price up to $500.00",
-    "rate_pct": 15,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-31"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Lawn Mowers and Snow Throwers, over $500.00",
-    "rate_pct": 8,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-31"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Appliances - Compact, portion of price up to $300.00",
-    "rate_pct": 15,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-32"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Appliances - Compact, portion of price above $300.00",
-    "rate_pct": 8,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-32"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Electronics Accessories, portion of price up to $100.00",
-    "rate_pct": 15,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-33"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Electronics Accessories, portion of price above $100.00",
-    "rate_pct": 8,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-33"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Furniture, portion of price up to $200.00",
-    "rate_pct": 15,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-34"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Furniture, portion of price above $200.00",
-    "rate_pct": 10,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-34"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Jewelry, portion of price up to $250.00",
-    "rate_pct": 20,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-35"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Jewelry, portion of price above $250.00",
-    "rate_pct": 5,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-35"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Watches, portion of price up to $1,500.00",
-    "rate_pct": 16,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-36"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Watches, portion of price above $1,500.00",
-    "rate_pct": 3,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-36"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "3D Printers, portion of price up to $200.00",
-    "rate_pct": 12,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-37"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "3D Printers, portion of price above $200.00",
-    "rate_pct": 5,
-    "min_fee_usd": 0.3,
-    "claim_id": "tool-margin-calculator-37"
-  },
-  {
-    "marketplace": "Amazon",
-    "category": "Fine Art, portion of sales proceeds up to $100",
-    "rate_pct": 20,
-    "min_fee_usd": 1.0,
-    "claim_id": "tool-margin-calculator-38"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-38",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Appliances - Major",
+    "category": "Apparel & Accessories",
+    "rate_pct": 5,
+    "min_fee_usd": null,
+    "band": "total price $0–$15",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-39",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Apparel & Accessories",
+    "rate_pct": 10,
+    "min_fee_usd": null,
+    "band": "total price $15–$20",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-39",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Apparel & Accessories",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "total price $20+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-39",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Appliances - Compact",
+    "rate_pct": 12,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$300",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-40",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Appliances - Compact",
     "rate_pct": 8,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-39"
+    "band": "portion of price $300+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-40",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Appliances – Major",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-41",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Automotive & Powersports",
     "rate_pct": 12,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-40"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-42",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Baby Products",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": "total price $0–$10",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-43",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Baby Products",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "total price $10+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-43",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Base Power Tools",
     "rate_pct": 12,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-41"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-44",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Beauty, Health and Personal Care",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": "total price $0–$10",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-45",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Beauty, Health and Personal Care",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "total price $10+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-45",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Books",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-42"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-46",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Camera & Photo",
     "rate_pct": 8,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-43"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-47",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Collectibles (for approved sellers)",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-48",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Consumer Electronics",
     "rate_pct": 8,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-44"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-49",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Electronics Accessories",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$100",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-50",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Electronics Accessories",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": "portion of price $100+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-50",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Home, Kitchen, Decor & Garden",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-45"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-51",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Grocery",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": "total price $0–$15",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-52",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Grocery",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "total price $15+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-52",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Indoor & Outdoor Furniture",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$200",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-53",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Indoor & Outdoor Furniture",
+    "rate_pct": 10,
+    "min_fee_usd": null,
+    "band": "portion of price $200+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-53",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Industrial & Scientific Supplies",
     "rate_pct": 12,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-46"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-54",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Jewelry and Precious Metals",
+    "rate_pct": 20,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$250",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-55",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Jewelry and Precious Metals",
+    "rate_pct": 5,
+    "min_fee_usd": null,
+    "band": "portion of price $250+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-55",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Luggage & Travel Accessories",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-47"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-56",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Music",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-57",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Musical Instruments",
     "rate_pct": 12,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-48"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Personal Computers",
-    "rate_pct": 6,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-49"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Pet Supplies",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-50"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Plumbing, Heating, Cooling & Ventilation",
-    "rate_pct": 10,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-51"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Shoes, Handbags, Backpacks & Sunglasses",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-52"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Tires & Wheels",
-    "rate_pct": 10,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-53"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Tools & Home Improvement",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-54"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Toys & Games",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-55"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Video Game Consoles",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-56"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Everything Else",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-57"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-58",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Office Products",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-58"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-59",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Office Products, printer cartridges",
+    "category": "Office Products - printer cartridges",
     "rate_pct": 12,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-58"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-59",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Outdoor Power Tools",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "total price $0–$500",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-60",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Outdoor Power Tools",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": "total price $500+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-60",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
     "category": "Outdoors Products and Sports",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-59"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-61",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Outdoors Products and Sports, hunting trail monitors, binoculars, telescopes, spotting scopes, night vision goggles",
+    "category": "Outdoors Products and Sports - trail monitors, binoculars, telescopes, spotting scopes, night vision goggles",
     "rate_pct": 8,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-59"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-61",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Apparel & Accessories, total sales price $15 or less",
-    "rate_pct": 5,
+    "category": "Personal Computers",
+    "rate_pct": 6,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-60"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-62",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Apparel & Accessories, $15 to $20",
+    "category": "Pet Supplies",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-63",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Plumbing, Heating, Cooling & Ventilation",
     "rate_pct": 10,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-60"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-64",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Apparel & Accessories, over $20",
+    "category": "Shoes, Handbags, Backpacks & Sunglasses",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-60"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-65",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Baby Products, total sales price $10 or less",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-61"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Baby Products, over $10",
+    "category": "Software & Computer Video Games",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-61"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-66",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Beauty, Health and Personal Care, total sales price $10 or less",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-62"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Beauty, Health and Personal Care, over $10",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-62"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Grocery, total sales price $15 or less",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-63"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Grocery, over $15",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-63"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Outdoor Power Tools, total sales price up to $500",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-64"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Outdoor Power Tools, over $500",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-64"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Appliances - Compact, portion of price up to $300",
-    "rate_pct": 12,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-65"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Appliances - Compact, portion of price above $300",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-65"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Electronics Accessories, portion of price up to $100",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-66"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Electronics Accessories, portion of price above $100",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-66"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Indoor & Outdoor Furniture, portion of price up to $200",
-    "rate_pct": 15,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-67"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Indoor & Outdoor Furniture, portion of price above $200",
+    "category": "Tires & Wheels",
     "rate_pct": 10,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-67"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-67",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Jewelry and Precious Metals, portion of price up to $250",
-    "rate_pct": 20,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-68"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Jewelry and Precious Metals, portion of price above $250",
-    "rate_pct": 5,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-68"
-  },
-  {
-    "marketplace": "Walmart",
-    "category": "Watches, portion of price up to $1,500",
+    "category": "Tools & Home Improvement",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-69"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-68",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Walmart",
-    "category": "Watches, portion of price above $1,500",
+    "category": "Toys & Games",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-69",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Video & DVD",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-70",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Video Game Consoles",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-71",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Watches",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$1,500",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-72",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Watches",
     "rate_pct": 3,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-69"
+    "band": "portion of price $1,500+",
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-72",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
+  },
+  {
+    "marketplace": "Walmart",
+    "category": "Everything Else",
+    "rate_pct": 15,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-73",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "eBay",
-    "category": "Most categories, final value fee up to $7,500 (plus per-order fee)",
+    "category": "Most categories (no Store)",
     "rate_pct": 13.6,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-70"
+    "band": "portion of price $0–$7,500",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-74",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "eBay",
-    "category": "Books & Magazines, Movies & TV, Music, up to $7,500",
+    "category": "Most categories (no Store)",
+    "rate_pct": 2.35,
+    "min_fee_usd": null,
+    "band": "portion of price $7,500+",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-75",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Books & Magazines, Movies & TV, Music (no Store)",
     "rate_pct": 15.3,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-71"
+    "band": "portion of price $0–$7,500",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-76",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "eBay",
-    "category": "Coins & Paper Money (excl. Bullion), Comic Books & Memorabilia, Non-Sport and Sports Trading Cards, Collectible Card Games, up to $7,500",
-    "rate_pct": 13.25,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-72"
-  },
-  {
-    "marketplace": "eBay",
-    "category": "Women's Bags & Handbags, sale $2,000 or less",
+    "category": "Women's Bags & Handbags (no Store)",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-73"
+    "band": "total price $0–$2,000",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-77",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "eBay",
-    "category": "Women's Bags & Handbags, sale over $2,000",
+    "category": "Women's Bags & Handbags (no Store)",
     "rate_pct": 9,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-73"
+    "band": "total price $2,000+",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-77",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "eBay",
-    "category": "Jewelry & Watches (excl. Watches, Parts & Accessories), sale $5,000 or less",
+    "category": "Jewelry & Watches, except Watches, Parts & Accessories (no Store)",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-74"
+    "band": "total price $0–$5,000",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-78",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "eBay",
-    "category": "Jewelry & Watches (excl. Watches, Parts & Accessories), sale over $5,000",
+    "category": "Jewelry & Watches, except Watches, Parts & Accessories (no Store)",
     "rate_pct": 9,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-74"
+    "band": "total price $5,000+",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-78",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "eBay",
-    "category": "Watches, Parts & Accessories, up to $1,000",
+    "category": "Watches, Parts & Accessories (no Store)",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-75"
+    "band": "portion of price $0–$1,000",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-79",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "eBay",
-    "category": "Guitars & Basses, up to $7,500",
-    "rate_pct": 6.7,
+    "category": "Watches, Parts & Accessories (no Store)",
+    "rate_pct": 6.5,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-76"
+    "band": "portion of price $1,000–$7,500",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-79",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "eBay",
-    "category": "Athletic Shoes, sale $150 or more (no per-order fee)",
-    "rate_pct": 8,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-77"
-  },
-  {
-    "marketplace": "eBay",
-    "category": "Athletic Shoes, sale under $150",
-    "rate_pct": 13.6,
-    "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-77"
-  },
-  {
-    "marketplace": "eBay",
-    "category": "Heavy Equipment, Commercial Printing Presses, Food Trucks, Trailers & Carts, up to $15,000",
+    "category": "Watches, Parts & Accessories (no Store)",
     "rate_pct": 3,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-78"
+    "band": "portion of price $7,500+",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-79",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Coins & Paper Money, except Bullion (no Store)",
+    "rate_pct": 13.25,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$7,500",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-80",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Trading cards, Collectible Card Games, Comic Books (no Store)",
+    "rate_pct": 13.25,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$7,500",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-81",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Guitars & Basses (no Store)",
+    "rate_pct": 6.7,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$7,500",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-82",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Men's and Women's Athletic Shoes, $150 or more (no Store)",
+    "rate_pct": 8,
+    "min_fee_usd": null,
+    "band": "total price $150+",
+    "fixed_fee_usd": 0,
+    "claim_id": "tool-margin-calculator-83",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "no per-order fee for this category"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Men's and Women's Athletic Shoes, under $150 (no Store)",
+    "rate_pct": 13.6,
+    "min_fee_usd": null,
+    "band": "total price $0–$150",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-83",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Heavy Equipment, Printing Presses, Food Trucks (no Store)",
+    "rate_pct": 3,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$15,000",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-84",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Heavy Equipment, Printing Presses, Food Trucks (no Store)",
+    "rate_pct": 0.5,
+    "min_fee_usd": null,
+    "band": "portion of price $15,000+",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-84",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "NFT categories (no Store)",
+    "rate_pct": 5,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-85",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Most categories (Basic or higher Store)",
+    "rate_pct": 12.7,
+    "min_fee_usd": null,
+    "band": "portion of price $0–$2,500",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-86",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
+  },
+  {
+    "marketplace": "eBay",
+    "category": "Most categories (Basic or higher Store)",
+    "rate_pct": 2.35,
+    "min_fee_usd": null,
+    "band": "portion of price $2,500+",
+    "fixed_fee_usd": 0.4,
+    "claim_id": "tool-margin-calculator-87",
+    "fixed_fee_claim_id": "tool-margin-calculator-95",
+    "fixed_fee_note": "per order; $0.30 if the order total is $10.00 or less"
   },
   {
     "marketplace": "Etsy",
     "category": "Transaction fee",
     "rate_pct": 6.5,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-79"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-88",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Etsy",
-    "category": "Payment processing, US bank account (plus $0.25 per order)",
+    "category": "Payment processing (US bank account)",
     "rate_pct": 3,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-80"
+    "band": null,
+    "fixed_fee_usd": 0.25,
+    "claim_id": "tool-margin-calculator-89",
+    "fixed_fee_claim_id": "tool-margin-calculator-89",
+    "fixed_fee_note": "per order"
   },
   {
     "marketplace": "Etsy",
-    "category": "Offsite Ads, standard (attributed orders, $100 cap)",
+    "category": "Listing fee",
+    "rate_pct": 0,
+    "min_fee_usd": null,
+    "band": null,
+    "fixed_fee_usd": 0.2,
+    "claim_id": "tool-margin-calculator-90",
+    "fixed_fee_claim_id": "tool-margin-calculator-90",
+    "fixed_fee_note": "per listing"
+  },
+  {
+    "marketplace": "Etsy",
+    "category": "Offsite Ads (standard)",
     "rate_pct": 15,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-81"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-91",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Etsy",
-    "category": "Offsite Ads, shops at $10,000+ trailing 365-day sales (attributed orders, $100 cap)",
+    "category": "Offsite Ads (shops with $10,000+ prior-365-day sales)",
     "rate_pct": 12,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-82"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-92",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Shopify",
-    "category": "Basic, online standard card rate (plus 30¢)",
+    "category": "Basic - online card, standard (Shopify Payments)",
     "rate_pct": 2.9,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-83"
+    "band": null,
+    "fixed_fee_usd": 0.3,
+    "claim_id": "tool-margin-calculator-93",
+    "fixed_fee_claim_id": "tool-margin-calculator-93",
+    "fixed_fee_note": "per transaction"
   },
   {
     "marketplace": "Shopify",
-    "category": "Grow, online standard card rate (plus 30¢)",
+    "category": "Grow - online card, standard (Shopify Payments)",
     "rate_pct": 2.7,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-83"
+    "band": null,
+    "fixed_fee_usd": 0.3,
+    "claim_id": "tool-margin-calculator-93",
+    "fixed_fee_claim_id": "tool-margin-calculator-93",
+    "fixed_fee_note": "per transaction"
   },
   {
     "marketplace": "Shopify",
-    "category": "Advanced, online standard card rate (plus 30¢)",
+    "category": "Advanced - online card, standard (Shopify Payments)",
     "rate_pct": 2.5,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-83"
+    "band": null,
+    "fixed_fee_usd": 0.3,
+    "claim_id": "tool-margin-calculator-93",
+    "fixed_fee_claim_id": "tool-margin-calculator-93",
+    "fixed_fee_note": "per transaction"
   },
   {
     "marketplace": "Shopify",
-    "category": "Plus, online standard card rate (plus 30¢)",
+    "category": "Plus - online card, standard (Shopify Payments)",
     "rate_pct": 2.25,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-83"
+    "band": null,
+    "fixed_fee_usd": 0.3,
+    "claim_id": "tool-margin-calculator-93",
+    "fixed_fee_claim_id": "tool-margin-calculator-93",
+    "fixed_fee_note": "per transaction"
   },
   {
     "marketplace": "Shopify",
-    "category": "Basic, third-party transaction fee",
+    "category": "Basic - third-party payment provider transaction fee",
     "rate_pct": 2,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-84"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-94",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Shopify",
-    "category": "Grow, third-party transaction fee",
+    "category": "Grow - third-party payment provider transaction fee",
     "rate_pct": 1,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-84"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-94",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Shopify",
-    "category": "Advanced, third-party transaction fee",
+    "category": "Advanced - third-party payment provider transaction fee",
     "rate_pct": 0.6,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-84"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-94",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   },
   {
     "marketplace": "Shopify",
-    "category": "Plus, third-party transaction fee",
+    "category": "Plus - third-party payment provider transaction fee",
     "rate_pct": 0.2,
     "min_fee_usd": null,
-    "claim_id": "tool-margin-calculator-84"
+    "band": null,
+    "fixed_fee_usd": null,
+    "claim_id": "tool-margin-calculator-94",
+    "fixed_fee_claim_id": null,
+    "fixed_fee_note": null
   }
 ]

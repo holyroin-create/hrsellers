@@ -1,21 +1,36 @@
 ---
-import Page from '../layouts/Page.astro';
-import Flow from '../components/Flow.astro';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import Steps from '../components/Steps.astro';
+const road = [
+  { t: 'Know what each platform takes', d: 'Fee tables for Amazon, Walmart, eBay, Etsy and Shopify; then run your price through the profit calculator.' },
+  { t: 'Decide who imports', d: 'The importer of record owns the duty bill and the compliance duties.' },
+  { t: 'Get the duty base right', d: 'Classification sets the rate; country of origin and valuation decide what it applies to.' },
+  { t: 'Add up the stack', d: 'General duty, additional duties and federal entry fees on one entry.' },
+  { t: 'Check product rules', d: 'Marking, certificates, hazmat shipping and the federal review rule.' },
+  { t: 'Keep the money straight', d: 'Inventory and cost of goods sold, Form 1099-K and sales tax.' },
+];
+const paths = [
+  ['tag', 'I sell on one marketplace and want a second', [['/marketplaces/', 'Fee tables'], ['/tools/fee-comparison/', 'Fee comparison'], ['/guides/ebay-etsy-for-amazon-sellers/', 'One item, five platforms']]],
+  ['ship', 'I am about to import my first shipment', [['/guides/incoterms-who-is-importer/', 'Who is the importer'], ['/guides/entry-type-11-vs-01/', 'Informal vs formal entry'], ['/guides/customs-bonds/', 'Customs bonds'], ['/tools/duty-estimator/', 'Duty estimator']]],
+  ['shield', 'I need to know if my product can be sold as-is', [['/guides/origin-marking-requirements/', 'Origin marking'], ['/guides/us-product-compliance/', 'Product certificates'], ['/guides/hazmat-dangerous-goods/', 'Hazmat shipping']]],
+  ['dollar', 'I need my numbers right for tax time', [['/guides/accrual-accounting-cogs/', 'Inventory & COGS'], ['/guides/form-1099-k-marketplace-sellers/', 'Form 1099-K'], ['/guides/sales-tax-nexus/', 'Sales tax']]],
+] as const;
 ---
-<Page title="Start here" eyebrow="Orientation" description="What FBA Tactics covers, how to read a page, and a suggested reading order for sellers who import products and sell them on US marketplaces." lede="This site answers two questions for sellers who import: what will the marketplace take from each sale, and what does US Customs require before the goods can be sold. Here is the order we suggest reading it in.">
-  <Flow title="Suggested reading order (site diagram)" steps={[{ t: 'Know your fees', d: 'Platform fee pages' }, { t: 'Know your importer role', d: 'Who files, who pays' }, { t: 'Classify and value', d: 'The duty base and rate' }, { t: 'Stack the costs', d: 'Duty plus entry fees' }, { t: 'Stay compliant', d: 'Marking, certificates, hazmat' }]} />
-  <h2>How to read a page here</h2>
-  <p>Each guide opens with a short summary, then explains the rule, works through the arithmetic where there is any, and ends with "What to check yourself" — the steps to confirm the point on the official source for your own goods. Numbers in square brackets link to the source list at the bottom of the page. Every source is the agency or platform that sets the rule, and shows the date it was checked. If you see "Last verified" with an old date, treat the figures as a starting point and check the source.</p>
-  <h2>1. Start with the fees you will pay on every sale</h2>
-  <p>Read the fee reference for the platform you sell on — <a href="/marketplaces/amazon/">Amazon</a>, <a href="/marketplaces/walmart/">Walmart</a>, <a href="/marketplaces/ebay/">eBay</a>, <a href="/marketplaces/etsy/">Etsy</a> or <a href="/marketplaces/shopify/">Shopify</a> — then put your own price and cost into the <a href="/tools/margin-calculator/">margin calculator</a>. If you are weighing a second channel, <a href="/guides/ebay-etsy-for-amazon-sellers/">the same $25 item on five platforms</a> shows the arithmetic side by side.</p>
-  <h2>2. Work out who the importer is</h2>
-  <p>Whoever is the importer of record owns the duty bill and the compliance obligations. <a href="/guides/incoterms-who-is-importer/">Who can be the importer of record</a> explains the rule; <a href="/guides/entry-type-11-vs-01/">informal versus formal entry</a> and <a href="/guides/customs-bonds/">customs bonds</a> explain the paperwork that follows.</p>
-  <h2>3. Get the duty base right</h2>
-  <p>Duty is the value multiplied by a rate. The rate comes from <a href="/guides/hts-classification-basics/">classification</a> and <a href="/guides/country-of-origin-sourcing/">country of origin</a>; the value from <a href="/guides/first-sale-valuation/">transaction value rules</a>. Then see <a href="/guides/tariff-stack-2026/">how additional duties and entry fees stack</a> and estimate yours with the <a href="/tools/tariff-stack-estimator/">duty and fee estimator</a>.</p>
-  <h2>4. Avoid the expensive surprises</h2>
-  <p><a href="/guides/origin-marking-requirements/">Country-of-origin marking</a>, <a href="/guides/customs-holds-and-exams/">exams and detentions</a>, <a href="/guides/antidumping-duties/">antidumping duties</a>, <a href="/guides/us-product-compliance/">product certificates</a> and <a href="/guides/hazmat-dangerous-goods/">hazardous materials rules</a> are where shipments get held or fined.</p>
-  <h2>5. Recover what you can and keep clean books</h2>
-  <p><a href="/guides/duty-drawback/">Drawback</a>, <a href="/guides/foreign-trade-zones/">foreign-trade zones</a> and <a href="/guides/prior-disclosure-protests/">protests</a> are the routes to getting duty back or correcting an entry. <a href="/guides/accrual-accounting-cogs/">Inventory and cost of goods sold</a> covers how those costs reach your tax return.</p>
-  <h2>Check yourself</h2>
-  <p>When you have read a few guides, the <a href="/quiz/">12-question knowledge check</a> tests rules covered in these guides. Each answer cites its source.</p>
-</Page>
+<Base title="Start here: a roadmap for marketplace sellers" description="Where to begin on FBA Tactics: a six-step roadmap from marketplace fees to import duties, product rules and tax, plus shortcuts for common seller situations.">
+  <PageHero title="Start here" kicker="Seller roadmap" photo="hub-guides" lede="The site follows the order money leaves your business: platform fees, then import duties, then compliance and tax. Read in this order, or jump to the situation that matches yours." />
+  <div class="wrap" style="padding:56px 24px 88px">
+    <div class="duo" style="grid-template-columns:1fr 1fr;align-items:start">
+      <div class="prose"><Steps title="The six-step roadmap" steps={road} /></div>
+      <div>
+        <h2 style="margin-bottom:18px">Jump to your situation</h2>
+        <div style="display:grid;gap:14px">{paths.map(([i, t, links]) => <div class="card" style="padding:20px 22px"><h3 style="display:flex;gap:10px;align-items:center;font-size:1.05rem"><span class="chip"><Icon name={i} /></span>{t}</h3><p style="margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px">{links.map(([u, l]) => <a class="chip chip-orange" href={u}>{l}</a>)}</p></div>)}</div>
+      </div>
+    </div>
+    <div class="prose narrow" style="margin-top:56px">
+      <h2>How to read a page here</h2>
+      <p>Every guide opens with key figures and a short list of key points, explains the rule, works it through with numbers where there are any, and ends with how to confirm it for your own goods. Small numbered tags link to the source list at the bottom of the page; each source is the agency or platform that sets the rule, with the date it was checked. When you have read a few guides, the <a href="/quiz/">knowledge check</a> is a quick way to see what stuck.</p>
+    </div>
+  </div>
+</Base>

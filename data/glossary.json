@@ -1,124 +1,18 @@
 [
- {
-  "term": "Country of origin",
-  "definition": "The country where an imported article was manufactured, produced or grown. Work done in a second country changes the origin only if it substantially transforms the article.",
-  "guide": "/guides/country-of-origin-sourcing/",
-  "claim_ids": [
-   "country-of-origin-sourcing-01",
-   "country-of-origin-sourcing-02"
-  ]
- },
- {
-  "term": "Substantial transformation",
-  "definition": "Further work or added material in another country that is significant enough to make that country the new country of origin.",
-  "guide": "/guides/country-of-origin-sourcing/",
-  "claim_ids": [
-   "country-of-origin-sourcing-02"
-  ]
- },
- {
-  "term": "Ultimate purchaser",
-  "definition": "Generally the last person in the United States who receives the article in the form in which it was imported; for goods sold at retail in imported form, the retail buyer.",
-  "guide": "/guides/origin-marking-requirements/",
-  "claim_ids": [
-   "origin-marking-requirements-04",
-   "origin-marking-requirements-05"
-  ]
- },
- {
-  "term": "Marking duty",
-  "definition": "An additional duty of 10 percent of the final appraised value on an article not legally marked with its country of origin at importation, unless it is exported or destroyed under customs supervision.",
-  "guide": "/guides/origin-marking-requirements/",
-  "claim_ids": [
-   "origin-marking-requirements-20"
-  ]
- },
- {
-  "term": "J-List",
-  "definition": "The list in 19 CFR 134.33 of articles excepted from individual country-of-origin marking, such as buttons, eggs, firewood and monuments.",
-  "guide": "/guides/origin-marking-requirements/",
-  "claim_ids": [
-   "origin-marking-requirements-18"
-  ]
- },
- {
-  "term": "Transaction value",
-  "definition": "The price actually paid or payable for merchandise when sold for exportation to the United States, plus specified additions; the first basis US Customs uses to appraise imports.",
-  "guide": "/guides/first-sale-valuation/",
-  "claim_ids": [
-   "first-sale-valuation-02",
-   "first-sale-valuation-01"
-  ]
- },
- {
-  "term": "Price actually paid or payable",
-  "definition": "The total payment for the imported merchandise, whether made directly or indirectly.",
-  "guide": "/guides/first-sale-valuation/",
-  "claim_ids": [
-   "first-sale-valuation-03"
-  ]
- },
- {
-  "term": "Assist",
-  "definition": "An item supplied to the producer directly or indirectly, free of charge or at reduced cost, for use in producing the imported goods — for example tools, dies and molds.",
-  "guide": "/guides/first-sale-valuation/",
-  "claim_ids": [
-   "first-sale-valuation-10",
-   "first-sale-valuation-21"
-  ]
- },
- {
-  "term": "Antidumping (AD) order",
-  "definition": "An order that instructs Customs to assess antidumping duties on the merchandise it covers; importers must make a cash deposit of estimated duties.",
-  "guide": "/guides/antidumping-duties/",
-  "claim_ids": [
-   "antidumping-duties-01",
-   "antidumping-duties-02"
-  ]
- },
- {
-  "term": "Scope ruling",
-  "definition": "A ruling on whether a particular product is covered by an antidumping or countervailing duty order; while a scope inquiry runs, entries already suspended stay suspended.",
-  "guide": "/guides/antidumping-duties/",
-  "claim_ids": [
-   "antidumping-duties-09",
-   "antidumping-duties-11"
-  ]
- },
- {
-  "term": "Anniversary month",
-  "definition": "The calendar month in which the anniversary of the publication of an AD/CVD order or suspension of investigation falls; reviews may be requested during that month.",
-  "guide": "/guides/antidumping-duties/",
-  "claim_ids": [
-   "antidumping-duties-15",
-   "antidumping-duties-06"
-  ]
- },
- {
-  "term": "Referral fee (Amazon)",
-  "definition": "Amazon's fee on each item sold: a percentage of the total price or a per-item minimum, whichever is greater.",
-  "guide": "/marketplaces/amazon/",
-  "claim_ids": [
-   "marketplace-amazon-03"
-  ]
- },
- {
-  "term": "Final value fee (eBay)",
-  "definition": "eBay's percentage fee on the total amount of a sale — in most categories 13.6% up to $7,500 per item — where the total includes item price, handling, shipping and sales tax.",
-  "guide": "/marketplaces/ebay/",
-  "claim_ids": [
-   "marketplace-ebay-05",
-   "marketplace-ebay-01"
-  ]
- },
- {
-  "term": "Attributed order (Etsy Offsite Ads)",
-  "definition": "An order placed from the shop within 30 days of a buyer clicking an Etsy Offsite Ad. Etsy charges the Offsite Ads fee only when its advertising directly results in a sale.",
-  "guide": "/guides/etsy-offsite-ads-economics/",
-  "claim_ids": [
-   "marketplace-etsy-16",
-   "marketplace-etsy-05",
-   "marketplace-etsy-15"
-  ]
- }
+ {"term":"Attributed Order (Etsy)","definition":"An order placed within 30 days of a buyer clicking an Etsy Offsite Ad. Offsite Ads fees are charged only on these orders.","claim_ids":["marketplace-etsy-14","marketplace-etsy-09"],"guide":"/guides/etsy-offsite-ads-economics/"},
+ {"term":"Conspicuous (origin marking)","definition":"Capable of being easily seen with normal handling of the article or its container.","claim_ids":["origin-marking-requirements-10"],"guide":"/guides/origin-marking-requirements/"},
+ {"term":"Country of origin","definition":"The country of manufacture, production, or growth of an article of foreign origin. Work done in another country changes the origin only if it is a substantial transformation.","claim_ids":["origin-marking-requirements-02","origin-marking-requirements-03"],"guide":"/guides/country-of-origin-sourcing/"},
+ {"term":"Drawback","definition":"A refund, in whole or in part, of duties, taxes and/or fees paid on imported merchandise. For unused-merchandise drawback, the goods must be exported or destroyed, without use in the United States, within 5 years of importation. It is not allowed on antidumping and countervailing duties.","claim_ids":["duty-drawback-01","duty-drawback-03","duty-drawback-04","duty-drawback-05"],"guide":"/guides/duty-drawback/"},
+ {"term":"Entry type 01","definition":"CBP's general formal entry type.","claim_ids":["entry-type-11-vs-01-08"],"guide":"/guides/entry-type-11-vs-01/"},
+ {"term":"Entry type 11","definition":"CBP's general informal entry type for merchandise valued at $2,500 or less.","claim_ids":["entry-type-11-vs-01-07"],"guide":"/guides/entry-type-11-vs-01/"},
+ {"term":"Foreign importer of record","definition":"An importer of record that does not meet CBP's criteria for a U.S. importer of record, under the interim final rule effective January 5, 2027.","claim_ids":["incoterms-who-is-importer-17","incoterms-who-is-importer-13"],"guide":"/guides/incoterms-who-is-importer/"},
+ {"term":"General order merchandise","definition":"Merchandise not entered within the time provided by law. It is moved to the public stores or a general order warehouse at the consignee's risk and expense.","claim_ids":["customs-holds-and-exams-29","customs-holds-and-exams-30"],"guide":"/guides/customs-holds-and-exams/"},
+ {"term":"Heading (HTS)","definition":"The 4-digit level of a Harmonized Tariff Schedule code. Tariff rates are assigned at the 8-digit level.","claim_ids":["hts-classification-basics-01","hts-classification-basics-02"],"guide":"/guides/hts-classification-basics/"},
+ {"term":"Importer","definition":"The person primarily liable for paying any duties on the merchandise. That may be the consignee, the importer of record, or the actual owner if an actual owner's declaration and superseding bond are filed.","claim_ids":["incoterms-who-is-importer-01","incoterms-who-is-importer-02"],"guide":"/guides/incoterms-who-is-importer/"},
+ {"term":"Merchandise processing fee (MPF)","definition":"An ad valorem CBP fee of 0.3464% on formally entered or released merchandise, payable by the importer of record, subject to a minimum and maximum per entry ($34.58 and $670.86 for fiscal year 2027).","claim_ids":["entry-type-11-vs-01-12","entry-type-11-vs-01-13"],"guide":"/guides/merchandise-processing-fee/"},
+ {"term":"Privileged foreign status","definition":"A foreign-trade zone status under which the goods are classified at the rate in force on the date the application for that status is filed. Once granted, it cannot be abandoned.","claim_ids":["foreign-trade-zones-16","foreign-trade-zones-15"],"guide":"/guides/foreign-trade-zones/"},
+ {"term":"Subzone","definition":"A foreign-trade zone site, or group of sites, established for a specific use.","claim_ids":["foreign-trade-zones-02"],"guide":"/guides/foreign-trade-zones/"},
+ {"term":"Transaction value","definition":"The price actually paid or payable for merchandise when sold for exportation to the United States, plus specified additions. It is the first valuation method CBP applies.","claim_ids":["first-sale-valuation-01","first-sale-valuation-02"],"guide":"/guides/first-sale-valuation/"},
+ {"term":"Ultimate purchaser","definition":"Generally the last person in the United States who will receive the article in the form in which it was imported. For goods sold at retail in imported form, that is the retail buyer.","claim_ids":["origin-marking-requirements-04","origin-marking-requirements-05"],"guide":"/guides/origin-marking-requirements/"},
+ {"term":"Zone-restricted status","definition":"A foreign-trade zone status for goods taken into a zone only for exportation, destruction or storage. It cannot be abandoned once granted.","claim_ids":["foreign-trade-zones-19","foreign-trade-zones-21"],"guide":"/guides/foreign-trade-zones/"}
 ]

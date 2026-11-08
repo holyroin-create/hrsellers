@@ -1,0 +1,124 @@
+---
+title: "Form 1099-K for Marketplace Sellers: Threshold and Fixes"
+description: "Who sends Form 1099-K, the $20,000 and 200-transaction threshold as the IRS states it now, what the boxes mean, and what to do if your form is wrong."
+pillar: "money"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a printed tax information form lying on a desk beside a laptop showing a sales report spreadsheet and a calculator, no readable personal data, no logos"
+  alt: "A tax form on a desk next to a laptop with a sales spreadsheet and a calculator"
+keyFacts:
+  - { label: "Marketplace threshold", value: "Over $20,000 and more than 200 transactions", claim: "form-1099-k-marketplace-sellers-04" }
+  - { label: "Payment card transactions", value: "No threshold", claim: "form-1099-k-marketplace-sellers-06" }
+  - { label: "Your copy is due", value: "By January 31", claim: "form-1099-k-marketplace-sellers-03" }
+  - { label: "Wrong form?", value: "Ask the issuer, not the IRS", claim: "form-1099-k-marketplace-sellers-18" }
+summary:
+  - "Payment card companies, payment apps and online marketplaces file Form 1099-K with the IRS and must send you a copy by January 31."
+  - "For payment apps and online marketplaces, the IRS says reporting applies when payments for goods or services exceed $20,000 in more than 200 transactions."
+  - "You can still receive a 1099-K below that level — a platform may send one anyway, card transactions have no threshold, and states may set lower thresholds."
+  - "All business income is reportable whether or not a 1099-K arrives; sole proprietors report it on Schedule C."
+  - "If the form is wrong, request a corrected form from the issuer named under FILER; the IRS cannot correct it."
+faq:
+  - { q: "What is the 1099-K threshold?", a: "Payment apps and online marketplaces report when your payments for goods or services exceed $20,000 in more than 200 transactions; the IRS says the One, Big, Beautiful Bill retroactively reinstated the threshold in effect before the American Rescue Plan Act of 2021, without naming a specific tax year. Card payments have no threshold, and your state may set a lower one.", claims: ["form-1099-k-marketplace-sellers-04", "form-1099-k-marketplace-sellers-05", "form-1099-k-marketplace-sellers-06", "form-1099-k-marketplace-sellers-08"] }
+  - { q: "Does Amazon issue 1099 to sellers?", a: "The IRS rule covers online marketplaces generally: they must file Form 1099-K and send you a copy by January 31 when your payments exceed $20,000 in more than 200 transactions, and they may still send one for lower amounts.", claims: ["form-1099-k-marketplace-sellers-02", "form-1099-k-marketplace-sellers-03", "form-1099-k-marketplace-sellers-04", "form-1099-k-marketplace-sellers-07"] }
+  - { q: "Do I have to report 1099-K income from eBay sales?", a: "If the sales are business income, yes — and the IRS says you must report income whether or not you receive a Form 1099-K. A loss on a personal item, however, can't be deducted.", claims: ["form-1099-k-marketplace-sellers-10", "form-1099-k-marketplace-sellers-24"] }
+  - { q: "What is the 1099-K form used for?", a: "It reports payments you received for goods or services during the year from payment card companies, payment apps and online marketplaces, and the filer sends the same information to the IRS.", claims: ["form-1099-k-marketplace-sellers-01", "form-1099-k-marketplace-sellers-02"] }
+related: ["accrual-accounting-cogs", "sales-tax-nexus"]
+---
+
+Form 1099-K is the information return that payment card companies, payment apps and online marketplaces file with the IRS to report payments you received for goods or services, and they must send you a copy by January 31. <C id="form-1099-k-marketplace-sellers-01"/> <C id="form-1099-k-marketplace-sellers-02"/> <C id="form-1099-k-marketplace-sellers-03"/> For marketplaces and payment apps, the IRS currently states the reporting trigger as payments that exceed $20,000 in more than 200 transactions. <C id="form-1099-k-marketplace-sellers-04"/> The form is a report, not a tax bill: your obligation to report sales income exists whether or not one arrives. <C id="form-1099-k-marketplace-sellers-10"/>
+
+<Stat value="$20,000 + 200" label="Payments over $20,000 in more than 200 transactions triggers marketplace and payment-app reporting, as the IRS states it" claim="form-1099-k-marketplace-sellers-04" />
+
+## Where the threshold stands
+
+The current figure comes from legislation: the IRS says the One, Big, Beautiful Bill retroactively reinstated the reporting threshold that was in effect before the American Rescue Plan Act of 2021. <C id="form-1099-k-marketplace-sellers-05"/> The IRS's About Form 1099-K page lists a November 17, 2025 update titled "dollar limit reverts to $20,000." <C id="form-1099-k-marketplace-sellers-11"/> The Understanding your Form 1099-K page gives the test as payments exceeding $20,000 in more than 200 transactions. <C id="form-1099-k-marketplace-sellers-04"/> Neither that page nor the FAQ attaches a specific tax year to the figure; the FAQ describes the reinstatement only as retroactive. <C id="form-1099-k-marketplace-sellers-05"/>
+
+Both conditions have to be met for the federal requirement to kick in for third party settlement organizations (TPSOs): the gross amount must exceed $20,000 and the number of transactions must exceed 200. <C id="form-1099-k-marketplace-sellers-05"/> That is not the same as a promise that you won't get a form below it:
+
+<Compare title="Federal threshold vs. what you might actually receive" columns={["What the federal rule sets","What can still happen"]} rows={[
+  {label:"Marketplaces and payment apps (TPSOs)", values:["Report over $20,000 and more than 200 transactions","A TPSO may still send a 1099-K for lower amounts"], claim:"form-1099-k-marketplace-sellers-07"},
+  {label:"Payment card transactions", values:["No threshold amount","A form can arrive for any card volume"], claim:"form-1099-k-marketplace-sellers-06"},
+  {label:"State rules", values:["Federal test only","Your state may have a lower threshold for TPSOs"], claim:"form-1099-k-marketplace-sellers-08"},
+  {label:"Backup withholding", values:["Not a dollar test","TPSO payments are potentially subject to section 3406 backup withholding"], claim:"form-1099-k-marketplace-sellers-15"}
+]} />
+
+## Reading the boxes
+
+Most marketplace sellers only need four parts of the form to reconcile it against their own sales reports.
+
+| Box | What the IRS instructions say it contains |
+|---|---|
+| 1a | Gross amount of total reportable payment card/third party network transactions for the year |
+| 3 | Number of payment transactions, not including refund transactions |
+| 5a–5l | Gross amount of reportable transactions for each month |
+| State boxes | Payments for up to two states |
+
+*Source: IRS — General Instructions for Form 1099-K, checked Nov 8, 2026.* <C id="form-1099-k-marketplace-sellers-12"/> <C id="form-1099-k-marketplace-sellers-13"/> <C id="form-1099-k-marketplace-sellers-14"/> <C id="form-1099-k-marketplace-sellers-16"/>
+
+The key word in box 1a is *gross*. It is the transaction total, not what reached your bank account after the platform took its cut. The IRS tells recipients to check for expenses they can deduct from the gross amount, listing fees, refunds and shipping among them, and to keep records such as marketplace reports and merchant statements to support the numbers. <C id="form-1099-k-marketplace-sellers-26"/> <C id="form-1099-k-marketplace-sellers-25"/> Sole proprietors report the 1099-K payment information on Schedule C, and the Schedule C instructions tell you to check any Forms 1099 received against line 1. <C id="form-1099-k-marketplace-sellers-23"/> <C id="form-1099-k-marketplace-sellers-27"/> The [inventory and COGS guide](/guides/accrual-accounting-cogs/) covers how refunds and product costs then flow down Schedule C.
+
+<Callout type="example" title="Worked example (hypothetical)">
+Seller A has $26,000 in marketplace payments over 340 orders. Both numbers exceed the federal test ($20,000 and 200 transactions), so a 1099-K is expected; box 1a shows $26,000 even if fees and refunds mean far less was paid out.
+
+Seller B has $24,000 over 150 orders. The dollar amount is above $20,000 but the order count is not above 200, so the federal TPSO threshold is not met. Seller B may still receive a form — the platform may send one, or the state threshold may be lower — and either way the $24,000 of business sales is still reportable income.
+</Callout>
+
+<C id="form-1099-k-marketplace-sellers-04"/> <C id="form-1099-k-marketplace-sellers-07"/> <C id="form-1099-k-marketplace-sellers-09"/>
+
+## Business sales versus clearing out personal items
+
+Many sellers start by listing things from their own closet before they buy stock to resell, and a single 1099-K can mix both. The tax treatment is different. For business sales, the 1099-K figure flows into Schedule C as part of gross receipts. <C id="form-1099-k-marketplace-sellers-23"/> For personal items, the IRS says a loss on the sale can't be deducted, while a gain on a personal item is figured and reported on Form 8949 and Schedule D. <C id="form-1099-k-marketplace-sellers-24"/> <C id="form-1099-k-marketplace-sellers-28"/>
+
+That makes record-keeping the real work. Keep the platform's order reports, your purchase receipts for inventory, and notes on which listings were personal belongings, so you can separate the two piles when the form arrives. <C id="form-1099-k-marketplace-sellers-25"/> And don't treat a missing form as permission to skip income: the IRS says all income, no matter the amount, is taxable unless the law says otherwise. <C id="form-1099-k-marketplace-sellers-09"/>
+
+## Timing: when to expect the form
+
+The filer owes you your copy by January 31. <C id="form-1099-k-marketplace-sellers-03"/> If you sell on several platforms, expect one form from each one that meets its reporting obligation, and possibly from card processors too, since card transactions have no threshold. <C id="form-1099-k-marketplace-sellers-06"/> Watch the month-by-month boxes: if your sales were seasonal, boxes 5a–5l let you check each month against your own reports instead of hunting for a single year-end difference. <C id="form-1099-k-marketplace-sellers-14"/>
+
+## If your Form 1099-K is wrong
+
+The IRS is explicit that it cannot fix a Form 1099-K for you. <C id="form-1099-k-marketplace-sellers-18"/> The fix comes from the company that filed it.
+
+<Steps title="Getting a 1099-K corrected" steps={[
+  {t:"Find the issuer", d:"Look under FILER in the top left corner and request a corrected form.", claim:"form-1099-k-marketplace-sellers-17"},
+  {t:"Don't recognize the filer?", d:"Contact the Payment Settlement Entity (PSE) identified in the bottom left corner.", claim:"form-1099-k-marketplace-sellers-19"},
+  {t:"Form shouldn't exist at all?", d:"Ask for a corrected Form 1099-K that shows a zero amount.", claim:"form-1099-k-marketplace-sellers-20"},
+  {t:"Keep the paper trail", d:"Save the original form and all correspondence with the issuer.", claim:"form-1099-k-marketplace-sellers-21"},
+  {t:"No correction by filing time", d:"If the gross amount is wrong, report the incorrect amount in the entry space at the top of Schedule 1 (Form 1040), following the IRS page's directions.", claim:"form-1099-k-marketplace-sellers-22"}
+]} />
+
+<Decision title="Which situation are you in?" rows={[
+  {if:"Box 1a includes payments that belong to someone else, or duplicates another 1099-K", then:"Ask the issuer for a corrected form showing a zero (or the right) amount and keep the original.", claim:"form-1099-k-marketplace-sellers-20"},
+  {if:"The form covers personal items you sold for less than you paid", then:"A loss on a personal item can't be deducted; follow the IRS page's directions for reporting the amount.", claim:"form-1099-k-marketplace-sellers-24"},
+  {if:"The form covers personal items sold at a gain", then:"Figure and report the gain on Form 8949 and Schedule D (Form 1040).", claim:"form-1099-k-marketplace-sellers-28"},
+  {if:"The form reflects your business sales correctly", then:"Report the payment information on Schedule C and reconcile it to line 1 gross receipts.", claim:"form-1099-k-marketplace-sellers-23"}
+]} />
+
+## Mistakes that cause mismatches
+
+| Mistake | Why it causes trouble |
+|---|---|
+| Reporting only net payouts | Box 1a is a gross figure; fees and refunds are handled separately |
+| Skipping income because no form arrived | Income must be reported whether or not a 1099-K is received |
+| Calling the IRS to fix the form | The IRS says it can't correct a 1099-K; the issuer must |
+| Throwing out the incorrect original | Keep the original and all correspondence with the issuer |
+| Assuming 200 or fewer orders means no form | A TPSO may still send one, and states may set lower thresholds |
+
+*Source: IRS — Understanding your Form 1099-K and What to do with Form 1099-K, checked Nov 8, 2026.* <C id="form-1099-k-marketplace-sellers-12"/> <C id="form-1099-k-marketplace-sellers-10"/> <C id="form-1099-k-marketplace-sellers-18"/> <C id="form-1099-k-marketplace-sellers-21"/> <C id="form-1099-k-marketplace-sellers-07"/>
+
+<Checklist title="Before you file: 1099-K reconciliation" items={[
+  "Download each marketplace's annual tax document and its transaction report",
+  "Compare box 1a and the monthly boxes 5a–5l with your own sales records",
+  "Confirm box 3 counts payment transactions only, not refunds",
+  "Total refunds, platform fees and shipping costs separately from gross sales",
+  "Check the state boxes and whether your state has its own threshold",
+  "Request corrections from the FILER before the return is due, and keep copies"
+]} />
+
+## How to confirm it with the IRS
+
+The IRS pages that govern this are [Understanding your Form 1099-K](https://www.irs.gov/businesses/understanding-your-form-1099-k), [What to do with Form 1099-K](https://www.irs.gov/businesses/what-to-do-with-form-1099-k), the [Form 1099-K FAQs](https://www.irs.gov/newsroom/form-1099-k-faqs-general-information) and the [form instructions](https://www.irs.gov/instructions/i1099k). Thresholds have changed by legislation before, so recheck those pages for the year on your form. A mismatch the issuer won't fix, or an IRS notice about unreported 1099-K income, is the point to bring in a tax professional; this page covers the reporting mechanics, not how your income is taxed.

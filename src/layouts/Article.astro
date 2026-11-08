@@ -1,59 +1,90 @@
 ---
 import Base from './Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Hero from '../components/Hero.astro';
+import Photo from '../components/Photo.astro';
+import Credit from '../components/Credit.astro';
+import Icon from '../components/Icon.astro';
+import Cites from '../components/Cites.astro';
 import Sources from '../components/Sources.astro';
+import Faq from '../components/Faq.astro';
 import AdSlot from '../components/AdSlot.astro';
 import { fmtDate } from '../lib/claims';
+import { img } from '../lib/images';
 import { SITE } from '../lib/site';
-const { data, headings = [], crumb, related = [], og } = Astro.props as any;
-const path = Astro.url.pathname;
+import { PILLARS } from '../lib/pillars';
+const { entry, headings = [], related = [], crumb, path } = Astro.props as any;
+const d = entry.data;
+const pillar = PILLARS[d.pillar as keyof typeof PILLARS];
+const photoId = entry.id;
+const p = img(photoId);
+const og = `/og/${entry.collection}/${entry.id}.png`;
 const ld = [{
-  '@context': 'https://schema.org', '@type': 'Article', headline: data.title, description: data.description,
-  datePublished: data.published, dateModified: data.modified, mainEntityOfPage: new URL(path, SITE.domain).href,
-  image: new URL(og, SITE.domain).href,
+  '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description,
+  datePublished: d.published, dateModified: d.modified, mainEntityOfPage: new URL(path, SITE.domain).href,
+  image: p ? new URL(`/${p.file}-1600.webp`, SITE.domain).href : new URL(og, SITE.domain).href,
+  author: { '@type': 'Organization', name: SITE.publisherName, url: new URL('/about/', SITE.domain).href },
   publisher: { '@type': 'Organization', name: SITE.publisherName, url: SITE.domain },
-  ...(SITE.ownerConfirmed && SITE.editorName ? { author: { '@type': 'Person', name: SITE.editorName, url: new URL('/about/', SITE.domain).href } } : { author: { '@type': 'Organization', name: SITE.publisherName } }),
 }];
 const h2 = headings.filter((h: any) => h.depth === 2);
+const tools: Record<string, [string, string, string][]> = {
+  importing: [['/tools/duty-estimator/', 'Duty & entry fee estimator', 'shield'], ['/reference/key-dates/', 'Key dates', 'calendar'], ['/checklists/', 'Import checklist', 'printer']],
+  fees: [['/tools/margin-calculator/', 'Profit & margin calculator', 'calculator'], ['/tools/fee-comparison/', 'Fee comparison', 'scale'], ['/marketplaces/', 'Fee tables', 'tag']],
+  compliance: [['/checklists/', 'Compliance checklist', 'printer'], ['/resources/', 'Primary sources', 'doc'], ['/quiz/', 'Knowledge check', 'quiz']],
+  money: [['/tools/cash-flow-planner/', 'Cash flow planner', 'chart'], ['/tools/margin-calculator/', 'Profit & margin calculator', 'calculator'], ['/resources/', 'Primary sources', 'doc']],
+};
 ---
-<Base title={data.title} description={data.description} og={og} jsonld={ld} ads={true} type="article">
-  <div class="wrap">
-    <Breadcrumbs trail={[crumb, { label: data.title, href: path }]} />
-    <header class="art-head">
-      <div>
-        <p class="eyebrow">{data.category}</p>
-        <h1>{data.title}</h1>
-        <p class="lede">{data.description}</p>
-        <div class="byline">
-          <span>By <a href="/about/#who"><strong>{SITE.publisherName}</strong> editorial</a></span>
-          {data.reviewedBy && <span>Reviewed by <a href="/about/#who"><strong>{data.reviewedBy}</strong></a>{data.reviewedDate && <> on <time datetime={data.reviewedDate}>{fmtDate(data.reviewedDate)}</time></>}</span>}
-          <span>First published <time datetime={data.published}>{fmtDate(data.published)}</time></span>
-          <span>Rewritten from primary sources <time datetime={data.modified}>{fmtDate(data.modified)}</time></span>
-          <span class="verified">Last verified: {fmtDate(data.lastVerified)}</span>
-          <span>{data.minutes} min read</span>
+<Base title={d.title} description={d.description} og={og} jsonld={ld} ads={true} type="article" preload={p ? `/${p.file}-960.webp` : undefined}>
+  <section class="art-hero">
+    <div class="wrap">
+      <Breadcrumbs trail={[crumb, { label: d.title, href: path }]} />
+      <div class="art-hero-grid">
+        <div>
+          <a class="chip" href={`/guides/#${d.pillar}`}><Icon name={pillar.icon} />{pillar.name}</a>
+          <h1>{d.title}</h1>
+          <p class="lede">{d.description}</p>
+          <div class="art-meta">
+            <span class="chip chip-green"><Icon name="checkCircle" />Verified {fmtDate(d.lastVerified, true)}</span>
+            <span><Icon name="clock" />{d.minutes} min read</span>
+            <span><Icon name="calendar" />Updated {fmtDate(d.modified, true)}</span>
+            <span><Icon name="user" />By <a href="/about/">{SITE.publisherName}</a>{d.reviewedBy && <>, reviewed by {d.reviewedBy}</>}</span>
+          </div>
         </div>
+        <figure class="figure-photo">
+          <div class="frame"><Photo id={photoId} eager sizes="(max-width: 960px) 100vw, 520px" /></div>
+          <figcaption><Credit id={photoId} prefix={p?.caption || 'Illustrative photo'} /></figcaption>
+        </figure>
       </div>
-      <Hero hero={data.hero} title={data.title} />
-    </header>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="keyfacts">{d.keyFacts.map((k: any) => <div class="kf"><div class="v">{k.value}<Cites ids={[k.claim]} /></div><div class="l">{k.label}</div></div>)}</div>
     <div class="art-body">
       <article class="prose">
-        <section class="summary-box" aria-labelledby="sum-h">
-          <h2 id="sum-h">In short</h2>
-          <ul>{data.summary.map((s: string) => <li>{s}</li>)}</ul>
-        </section>
+        <section class="summary" aria-labelledby="sum-h"><h2 id="sum-h">Key points</h2>
+          <ul>{d.summary.map((s: string) => <li><Icon name="check" /><span>{s}</span></li>)}</ul></section>
         <slot />
+        <Faq items={d.faq.map((f: any) => ({ q: f.q, a: f.a, claims: f.claims }))} />
+        <div class="byline-box"><Icon name="checkCircle" /><p>Every figure on this page links to the regulation, notice or platform page it comes from and was checked on {fmtDate(d.lastVerified)}. Read <a href="/editorial-standards/">how we check facts</a>; spotted an error? <a href="/contact/">Tell us</a> — changes are logged on the <a href="/corrections/">corrections page</a>. General information, not legal or tax advice.</p></div>
         <Sources />
-        {related.length > 0 && (
-          <nav class="related" aria-labelledby="rel-h"><h2 id="rel-h">Related</h2>
-            <ul>{related.map((r: any) => <li><a href={r.href}>{r.title}</a> <span class="meta">— {r.category}</span></li>)}</ul></nav>
-        )}
-        <p class="meta" style="margin-top:2rem">Found an error? <a href="/contact/">Tell us</a> — corrections are logged on the <a href="/corrections/">corrections page</a>. This page is general information, not legal, tax or customs advice.</p>
         <AdSlot slot="endOfArticle" />
       </article>
-      <aside class="art-aside"><div class="aside-sticky">
+      <aside class="art-side">
         {h2.length > 2 && <nav class="toc" aria-labelledby="toc-h"><p id="toc-h">On this page</p><ol>{h2.map((h: any) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol></nav>}
-      </div></aside>
+        <div class="side-tools"><p>Use with this guide</p>{tools[d.pillar].map(([u, t, i]) => <a href={u}><Icon name={i} />{t}</a>)}</div>
+      </aside>
     </div>
   </div>
+  {related.length > 0 && <section class="related-wrap"><div class="wrap">
+    <div class="sec-head"><div><span class="kicker">Keep reading</span><h2>Related guides</h2></div></div>
+    <div class="cards">{related.slice(0, 3).map((r: any) => <article class="acard">
+      <div class="acard-photo"><span class="pchip">{r.pillar}</span><Photo id={r.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
+      <div class="acard-body"><h3><a href={r.href}>{r.title}</a></h3><p>{r.description}</p><div class="acard-meta"><span><Icon name="clock" />{r.minutes} min</span></div><span class="go"><Icon name="arrow" /></span></div>
+    </article>)}</div>
+  </div></section>}
+  <script>
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.toc a')];
+    const map = new Map(links.map((a) => [a.getAttribute('href')!.slice(1), a]));
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { links.forEach((l) => l.classList.remove('on')); map.get(e.target.id)?.classList.add('on'); } }), { rootMargin: '-20% 0px -70% 0px' });
+    document.querySelectorAll('.prose h2[id]').forEach((h) => io.observe(h));
+  </script>
 </Base>

@@ -1,0 +1,149 @@
+[
+ {
+  "image_id": "home-hero",
+  "file": "photos/home-hero",
+  "width": 1600,
+  "height": 900,
+  "pages": [
+   "/"
+  ],
+  "library": "Unsplash",
+  "source_url": "https://unsplash.com/photos/cargo-ship-on-calm-sea-1zUMOwxN0V4",
+  "original_url": "https://images.unsplash.com/photo-1792910731137-af6ba0420e06",
+  "author": "Raúl Mermans García",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license",
+  "attribution": "Photo: Raúl Mermans García on Unsplash",
+  "accessed": "2026-11-08",
+  "archive_url": "",
+  "no_faces_or_marks_confirmed": true,
+  "alt": "A long cargo ship sailing on the horizon of a calm blue sea under a clear dusk sky fading from orange to blue",
+  "caption": "Illustrative photo: a cargo ship on the horizon at dusk",
+  "selected_by": "photo-PE6",
+  "license_verified_by": "",
+  "status": "selected",
+  "extra_variants": [
+   "photos/home-hero-1920.webp"
+  ]
+ },
+ {
+  "image_id": "section-301-china-tariffs",
+  "file": "photos/section-301-china-tariffs",
+  "width": 1600,
+  "height": 1067,
+  "pages": [
+   "/guides/section-301-china-tariffs/"
+  ],
+  "library": "Unsplash",
+  "source_url": "https://unsplash.com/photos/stack-of-red-and-yellow-shipping-containers-after-rain-g_oObaHIBWE",
+  "original_url": "https://images.unsplash.com/photo-1768122466289-9fe1b083e868",
+  "author": "mirukser",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license",
+  "attribution": "Photo: mirukser on Unsplash",
+  "accessed": "2026-11-08",
+  "archive_url": "",
+  "no_faces_or_marks_confirmed": true,
+  "alt": "Stacked red, yellow and blue shipping containers in a container yard, with rain puddles on the asphalt in front",
+  "caption": "Illustrative photo: stacked shipping containers in a container yard after rain",
+  "selected_by": "photo-PE6",
+  "license_verified_by": "",
+  "status": "selected"
+ },
+ {
+  "image_id": "hub-about",
+  "file": "photos/hub-about",
+  "width": 1600,
+  "height": 1067,
+  "pages": [
+   "/about/"
+  ],
+  "library": "Unsplash",
+  "source_url": "https://unsplash.com/photos/white-wooden-table-near-brown-chair-nvzvOPQW0gc",
+  "original_url": "https://images.unsplash.com/photo-1449247709967-d4461a6a6103",
+  "author": "Bench Accounting",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license",
+  "attribution": "Photo: Bench Accounting on Unsplash",
+  "accessed": "2026-11-08",
+  "archive_url": "",
+  "no_faces_or_marks_confirmed": true,
+  "alt": "A minimal white desk against a white wall with a beige chair, a small plant, a candle holder and a framed print",
+  "caption": "Illustrative photo: a calm, minimal workspace",
+  "selected_by": "photo-PE6",
+  "license_verified_by": "",
+  "status": "selected"
+ },
+ {
+  "image_id": "prior-disclosure-protests",
+  "file": "photos/prior-disclosure-protests",
+  "width": 1600,
+  "height": 1067,
+  "pages": [
+   "/guides/prior-disclosure-protests/"
+  ],
+  "library": "Unsplash",
+  "source_url": "https://unsplash.com/photos/a-calculator-sitting-on-top-of-a-table-next-to-a-laptop-8wLZi9OhsWU",
+  "original_url": "https://images.unsplash.com/photo-1709880945165-d2208c6ad2ec",
+  "author": "Jakub Żerdzicki",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license",
+  "attribution": "Photo: Jakub Żerdzicki on Unsplash",
+  "accessed": "2026-11-08",
+  "archive_url": "",
+  "no_faces_or_marks_confirmed": true,
+  "alt": "A desk calculator resting on printed report pages with charts, with a notebook, keyboard and laptop blurred in the background",
+  "caption": "Illustrative photo: printed documents and a calculator laid out for review on a desk",
+  "selected_by": "photo-PE6",
+  "license_verified_by": "",
+  "status": "selected"
+ },
+ {
+  "image_id": "entry-type-11-vs-01",
+  "file": "photos/entry-type-11-vs-01",
+  "width": 1600,
+  "height": 1067,
+  "pages": [
+   "/guides/entry-type-11-vs-01/"
+  ],
+  "library": "Unsplash",
+  "source_url": "https://unsplash.com/photos/brown-cardboard-box-on-white-table-5u5IQyQdfkM",
+  "original_url": "https://images.unsplash.com/photo-1618381297523-e6c0ab13a5b2",
+  "author": "Mediamodifier",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license",
+  "attribution": "Photo: Mediamodifier on Unsplash",
+  "accessed": "2026-11-08",
+  "archive_url": "",
+  "no_faces_or_marks_confirmed": true,
+  "alt": "A closed brown cardboard shipping box with a blank white label on its side, on a white surface",
+  "caption": "Illustrative photo: a shipping carton with a blank label",
+  "selected_by": "photo-PE6",
+  "license_verified_by": "",
+  "status": "selected"
+ },
+ {
+  "image_id": "merchandise-processing-fee",
+  "file": "photos/merchandise-processing-fee",
+  "width": 1600,
+  "height": 1067,
+  "pages": [
+   "/guides/merchandise-processing-fee/"
+  ],
+  "library": "Unsplash",
+  "source_url": "https://unsplash.com/photos/black-and-silver-calculator-beside-black-pen-h2aDKwigQeA",
+  "original_url": "https://images.unsplash.com/photo-1611125832047-1d7ad1e8e48f",
+  "author": "Recha Oktaviani",
+  "license": "Unsplash License",
+  "license_url": "https://unsplash.com/license",
+  "attribution": "Photo: Recha Oktaviani on Unsplash",
+  "accessed": "2026-11-08",
+  "archive_url": "",
+  "no_faces_or_marks_confirmed": true,
+  "alt": "A silver pocket calculator and a black pen resting on a red notebook on a white surface",
+  "caption": "Illustrative photo: a calculator and pen for working out fees",
+  "selected_by": "photo-PE6",
+  "license_verified_by": "",
+  "status": "selected"
+ }
+]

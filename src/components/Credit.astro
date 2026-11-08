@@ -1,0 +1,6 @@
+---
+import { img } from '../lib/images';
+const { id, prefix = 'Illustrative photo' } = Astro.props as { id?: string; prefix?: string };
+const i = img(id);
+---
+{i && <span>{prefix === "Photo" ? "" : prefix.replace(/[.\s]+$/, "") + ". "}Photo: {i.author} / <a href={i.source_url} rel="noopener">{i.library}</a>, <a href={i.license_url} rel="noopener license">{i.license}</a></span>}

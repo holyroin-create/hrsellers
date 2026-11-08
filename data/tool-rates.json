@@ -3,13 +3,14 @@
   "mpf_min": 34.58,
   "mpf_max": 670.86,
   "hmf_rate_pct": 0.125,
-  "mpf_period": "FY2027, required as of October 1, 2026 (CBP Dec. 26-14)",
-  "mpf_rate_claim": "tool-tariff-stack-estimator-01",
-  "mpf_min_claim": "tool-tariff-stack-estimator-02",
-  "mpf_max_claim": "tool-tariff-stack-estimator-03",
-  "hmf_rate_claim": "tool-tariff-stack-estimator-04",
-  "extra_claims": [
-    "tool-tariff-stack-estimator-05",
-    "tool-tariff-stack-estimator-06"
-  ]
+  "mpf_informal": 2.77,
+  "period": "FY2027 (adjusted amounts required as of October 1, 2026)",
+  "claims": {
+    "mpf_rate_pct": "tool-duty-estimator-01",
+    "mpf_min": "tool-duty-estimator-02",
+    "mpf_max": "tool-duty-estimator-03",
+    "hmf_rate_pct": "tool-duty-estimator-04",
+    "mpf_informal": "tool-duty-estimator-05",
+    "period": "tool-duty-estimator-06"
+  }
 }

@@ -2,15 +2,13 @@
 import Page from '../layouts/Page.astro';
 import { ADS_ON } from '../lib/site';
 ---
-<Page title="Cookie policy" eyebrow="Legal" description="Which cookies and similar technologies fbatactics.com uses: none of its own, and Google advertising cookies only after ads are enabled and, in the EEA, UK and Switzerland, only with consent." updated="November 8, 2026">
-  <h2>Cookies set by this site</h2>
-  <p>None. The site has no login, analytics, comments, newsletter or preference storage. Calculators and the knowledge check keep what you enter only in the open page and discard it when you leave.</p>
-  <h2>Third-party cookies</h2>
+<Page title="Cookie policy" description="Which cookies fbatactics.com uses: none of its own, and Google advertising cookies only once ads are enabled — with consent in the EEA, UK and Switzerland." kicker="Legal" updated="November 8, 2026">
+  <h2>Cookies set by this site</h2><p>None. There is no login, analytics, comments, newsletter or preference storage. Calculators, search, checklists and the knowledge check keep what you enter only in the open page.</p>
+  <h2>Third parties</h2>
   <table><thead><tr><th>Provider</th><th>Purpose</th><th>Status</th></tr></thead><tbody>
-    <tr><td>Google (AdSense)</td><td>Serving and measuring ads; personalization where you allow it; fraud prevention</td><td>{ADS_ON ? 'Active' : 'Not active — no ad code runs until the AdSense account is approved and ads are switched on'}</td></tr>
-    <tr><td>Google consent message (AdSense Privacy &amp; messaging)</td><td>Records your consent choice for visitors in the EEA, UK and Switzerland</td><td>{ADS_ON ? 'Active for those regions' : 'Not active'}</td></tr>
-    <tr><td>GitHub Pages (hosting)</td><td>Serves the files; does not set cookies on this site</td><td>Active</td></tr>
+    <tr><td>Google AdSense</td><td>Serving and measuring ads; personalization where you allow it; fraud prevention</td><td>{ADS_ON ? 'Active' : 'Not active — no ad code runs until approval and switch-on'}</td></tr>
+    <tr><td>Google consent message</td><td>Records consent choices for the EEA, UK and Switzerland</td><td>{ADS_ON ? 'Active in those regions' : 'Not active'}</td></tr>
+    <tr><td>GitHub Pages</td><td>Hosts the files; sets no cookies on this site</td><td>Active</td></tr>
   </tbody></table>
-  <h2>Your choices</h2>
-  <p>You can block or delete cookies in your browser settings. Once ads are active, visitors in the EEA, UK and Switzerland can change their consent at any time from the privacy settings link shown on the page, and everyone can manage personalized ads at <a href="https://www.google.com/settings/ads" rel="noopener">Google Ads Settings</a>. More detail is in the <a href="/privacy/">privacy policy</a>.</p>
+  <h2>Your choices</h2><p>Block or delete cookies in your browser. Once ads are active, visitors in the EEA, UK and Switzerland can change consent from the privacy settings link on the page, and anyone can manage personalized ads at <a href="https://www.google.com/settings/ads" rel="noopener">Google Ads Settings</a>. Details: <a href="/privacy/">privacy policy</a>.</p>
 </Page>

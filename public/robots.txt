@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /search/
 
 User-agent: Mediapartners-Google
 Allow: /

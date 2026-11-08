@@ -1,15 +1,24 @@
 ---
-import Page from '../../layouts/Page.astro';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
 const tools = [
-  ['/tools/margin-calculator/', 'Margin calculator', 'Net profit and margin per unit after a marketplace referral or transaction fee, with presets taken from each platform’s fee page.'],
-  ['/tools/tariff-stack-estimator/', 'Duty and entry fee estimator', 'Ad valorem duty, additional duties you enter, the Merchandise Processing Fee and the Harbor Maintenance Fee on one formal entry.'],
-  ['/tools/dimensional-weight/', 'Dimensional weight checker', 'Compares actual and dimensional weight using the divisor in your carrier’s rate guide, and shows which one you would be billed on.'],
-  ['/tools/cash-flow-planner/', 'Inventory cash flow planner', 'Month-by-month cash position from a purchase order, transit time, sell-through and payout lag that you enter.'],
-  ['/tools/ppc-budget-calculator/', 'Ad budget and break-even ACoS', 'Daily budget from target clicks and cost per click, and the advertising cost of sale at which a unit stops making money.'],
+  ['/tools/margin-calculator/', 'calculator', 'Profit & margin calculator', 'Net profit, margin and break-even price after a marketplace referral or transaction fee. Presets come from each platform\'s fee page.'],
+  ['/tools/duty-estimator/', 'shield', 'Duty & entry fee estimator', 'General duty, additional duties you enter, the Merchandise Processing Fee and the Harbor Maintenance Fee on one formal entry.'],
+  ['/tools/fee-comparison/', 'scale', 'Marketplace fee comparison', 'Enter one price; see Amazon, Walmart, eBay, Etsy and Shopify fees side by side from their published rates.'],
+  ['/tools/dimensional-weight/', 'box', 'Dimensional weight checker', 'Actual vs dimensional weight with the divisor from your own carrier rate guide.'],
+  ['/tools/cash-flow-planner/', 'chart', 'Inventory cash flow planner', 'Deposit, balance, transit, sell-through and payout lag — month by month.'],
+  ['/tools/ppc-budget-calculator/', 'dollar', 'Ad budget & break-even ACoS', 'Daily budget from clicks and cost per click, and the ACoS where an ad-driven sale stops paying.'],
 ];
 ---
-<Page title="Calculators" eyebrow="Tools" description="Free browser-based calculators for marketplace sellers: margin after fees, import duty and entry fees, dimensional weight, inventory cash flow, and ad break-even." lede="Each calculator shows the formula it uses. Platform and government rates come from cited primary sources; everything else is your input.">
-  <p>The calculators are built for the decisions this site's guides describe: whether a product still makes money after a platform's fees, what an entry will cost in duty and federal fees before the goods arrive, whether a box size is costing you on carrier rates, how long cash stays tied up in a purchase order, and where advertising stops paying. They run in your browser, keep nothing you type, and print cleanly if you want a record.</p>
-  <p>Where a calculator uses a rate published by a platform or an agency — a referral fee, the Merchandise Processing Fee — the rate is listed with its source and the date it was checked, and the calculator page links to it. Where no single published figure applies to everyone, such as a carrier's dimensional divisor, the field is left for you to fill in from your own contract.</p>
-  <ul class="rows">{tools.map(([h, t, d]) => <li><p class="meta">Calculator</p><div><h3><a href={h}>{t}</a></h3><p>{d}</p></div></li>)}</ul>
-</Page>
+<Base title="Free calculators for marketplace sellers" description="Free in-browser calculators for sellers: profit after marketplace fees, import duty and entry fees, fee comparison, dimensional weight, cash flow and ad break-even.">
+  <PageHero title="Free seller calculators" kicker="Tools" photo="hub-tools" lede="Each calculator shows its formula. Platform and government rates come from cited sources with check dates; everything else is your input, and nothing you type leaves your browser." />
+  <div class="wrap" style="padding:56px 24px 88px">
+    <div class="tools-grid">{tools.map(([u, i, t, d]) => <a class="tile" href={u}><span class="ico"><Icon name={i} /></span><b>{t}</b><span>{d}</span><em>Open<Icon name="arrow" /></em></a>)}</div>
+    <div class="prose narrow" style="margin-top:56px">
+      <h2>Which calculator answers which question</h2>
+      <p>Start with the <a href="/tools/margin-calculator/">profit calculator</a> when you are deciding whether a product works at a given price on one platform, and the <a href="/tools/fee-comparison/">fee comparison</a> when you are choosing where to list it. Before you order inventory from overseas, the <a href="/tools/duty-estimator/">duty estimator</a> gives the federal charges on the entry and the <a href="/tools/cash-flow-planner/">cash flow planner</a> shows how long your money is tied up. The <a href="/tools/dimensional-weight/">dimensional weight checker</a> tells you whether packaging, not product weight, is driving shipping cost.</p>
+      <p>Calculators estimate; the fee or duty actually charged is whatever the platform or U.S. Customs and Border Protection assesses on your transaction.</p>
+    </div>
+  </div>
+</Base>

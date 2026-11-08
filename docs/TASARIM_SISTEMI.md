@@ -1,34 +1,29 @@
-# TASARIM SİSTEMİ (kaynak: src/styles/global.css)
+# TASARIM SİSTEMİ (src/styles/site.css)
 
-## Token'lar
-| Token | Değer | Rol |
-|---|---|---|
-| --ink | #15202b | metin, masthead, footer |
-| --ink-2 / --ink-3 | #3d4a57 / #5f6b77 | ikincil / meta metin (kâğıt üzerinde ≥4.5:1) |
-| --paper / --sheet | #fbfaf7 / #ffffff | sayfa / panel |
-| --rule / --rule-2 | #d9d4ca / #ece8e0 | çizgiler |
-| --tag | #b4400f | tek vurgu: CTA, aktif menü, numara, odak halkası |
-| --link | #1c4f86 | bağlantı |
-| --data-1/2/3 | #1c4f86 / #c26a00 / #2f7a6d | grafik serileri (yalnız renge dayanmaz: değer etiketi + tablo) |
-| --serif / --sans / --mono | Source Serif 4 / IBM Plex Sans / IBM Plex Mono | başlık / gövde / tarih-sayı-kaynak |
-| --r | 3px | tek köşe yarıçapı, az kullanılır |
-| boşluk | .25 .5 .75 1 1.5 2 3 4.5 rem | --s1…--s8 |
-| --measure | 68ch | gövde satır uzunluğu |
+## Renk
+| Token | Değer | Kullanım | Kontrast |
+|---|---|---|---|
+| navy | #0b1f33 | Başlık, koyu bantlar, footer | Beyaz üzerinde 16:1 |
+| ink / ink-2 | #0f1b2a / #33475b | Gövde metni | ≥ 9:1 |
+| ink-3 (meta) | #526173 | Tarih, ipucu | 6.1:1 |
+| cta | #cf4c0a | Birincil buton zemini (beyaz metin) | ≥ 4.5:1 |
+| orange | #f26a21 | Yalnız dekoratif çizgi/ikon | metin için kullanılmaz |
+| blue (link) | #1d5fd1 | Bağlantılar | 5.6:1 |
+| teal, green | — | Callout tip/note | — |
 
-Gölge yalnızca açılır menü panelinde. Gradyan, cam efekt, glow, emoji ikon yok.
+## Tipografi
+Plus Jakarta Sans Variable (başlıklar), Inter Variable (gövde), JetBrains Mono (rakam/kod). Hepsi OFL, @fontsource ile kendi sunucumuzdan; Google Fonts isteği yok (gizlilik).
+Ölçek: H1 clamp(2rem, 4vw, 3.25rem) · H2 1.6rem · gövde 1.0625rem / 1.7.
+
+## Yerleşim
+Kapsayıcı 1200px; makale gövdesi 720px + 280px yapışkan kenar. 8px aralık ızgarası. Köşe yarıçapı 14px kart, 999px hap buton.
 
 ## Bileşenler
-- **Header**: utility şeridi, marka işareti, `<details>` tabanlı klavye erişimli açılır menüler (Esc kapatır), turuncu "Free calculators" CTA, mobilde Menü düğmesi; altında arama formu (/search/, istemci tarafı indeks).
-- **Hero (makale)**: ön-madde `hero` alanından SVG — `stat` (büyük rakam + etiket), `flow` (numaralı adımlar), `timeline` (tarih noktaları), `compare` (yatay çubuklar). `role="img"` + tam metin `aria-label`, alt yazıda kaynak ve kontrol tarihi.
-- **Summary box** ("In short"), **TOC** (yapışkan kenar çubuğu, ≥3 H2), **Callout** (note / warning / example), **Flow**, **Timeline**, **Bars** (SVG + "Show the data as a table"), **Checklist** (yazdır düğmesi; kayıt yok), **markdown tablo** (kaydırılabilir, sayısal hücreler tabular-nums).
-- **C** (atıf işareti [n] → #src-id), **Sources** (yayıncı, iddia, alan adı, kaynak türü, kontrol tarihi), **Related**, **Breadcrumbs** (+ BreadcrumbList JSON-LD).
-- **AdSlot**: yalnızca `adsEnabled && googleCmpConfigured && slot id` ise render; "Advertisement" etiketi; min-height 280–300px (CLS); makale içeriği bittikten sonra, kaynaklardan önce.
-- **Tool layout**: iki fieldset (girdi / `aria-live` sonuç), formüller ve sınırlar bölümü, kaynaklar.
-- **Index rows**: tarih kolonlu satır listesi (kart ızgarası yerine).
-- **Boş/hata durumları**: 404 (çekilen rehberleri açıklar), arama "sonuç yok" metni, politika günlüğü boş metni, hesaplayıcıda eksik girdi uyarısı.
+Header (yapışkan, mega menü, 6 menü) · Hero · Features · Duo/Promo/Darklog · Pillar card · Numbers board · Article card (.acard, .pchip) · Tool card · Calculator (giriş beyaz / çıkış lacivert) · Quiz · FAQ akordeon · CTA banner · Footer.
+Makale içi MDX: `C` (atıf), Callout (tip|note|warning|example), Steps, Timeline, Chart (orijinal SVG), Compare, Decision, Checklist, Stat, kaynaklı tablolar.
+
+## Görsel kuralları
+WebP 480/960/1600 (+1920 kahraman), bütçe 60/140/260/300 KB; her `<img>` width/height/alt; "Illustrative photo:" başlıkları; lisans kanıtı data/images.json.
 
 ## Erişilebilirlik
-Skip link, tek H1, landmark'lar, görünür odak (3px pas), form label'ları, grafiklerde metin eşdeğeri, `prefers-reduced-motion`, yazdırma stilleri.
-
-## Kırılma noktaları
-960px (menü ve iki kolonlu düzenler tek kolona), 860px (footer 2 kolon), 720px (flow dikey, satır listesi tek kolon, hesaplayıcı tek kolon).
+Odak halkası 3px; atla bağlantısı; tek H1; menüler klavye ile; renk tek başına anlam taşımaz; `prefers-reduced-motion` desteği; yazdırma stili.

@@ -1,14 +1,12 @@
-import { getCollection } from 'astro:content';
+import { allEntries } from '../lib/entries';
 export async function GET() {
-  const g = await getCollection('guides', (e) => !e.data.draft);
-  const m = await getCollection('marketplaces', (e) => !e.data.draft);
-  const strip = (s: string) => s.replace(/<[^>]+>/g, ' ').replace(/[#*|`{}\[\]]/g, ' ').replace(/\s+/g, ' ').slice(0, 4000);
-  const docs = [
-    ...g.map((e) => ({ u: `/guides/${e.id}/`, t: e.data.title, d: e.data.description, c: e.data.category, b: strip(e.body || '') })),
-    ...m.map((e) => ({ u: `/marketplaces/${e.id}/`, t: e.data.title, d: e.data.description, c: e.data.category, b: strip(e.body || '') })),
-    { u: '/tools/', t: 'Calculators', d: 'Margin, duty and fee, dimensional weight, cash flow and ad budget calculators.', c: 'Tools', b: '' },
-    { u: '/policy-log/', t: 'Policy log', d: 'Official notices affecting importers and sellers.', c: 'Log', b: '' },
-    { u: '/glossary/', t: 'Glossary', d: 'Terms as defined in regulations and platform pages.', c: 'Reference', b: '' },
-  ];
+  const strip = (s: string) => s.replace(/<[^>]+>/g, ' ').replace(/[#*|`{}\[\]]/g, ' ').replace(/\s+/g, ' ').slice(0, 5000);
+  const docs = (await allEntries()).map((x) => ({ u: x.href, t: x.e.data.title, d: x.e.data.description, c: x.e.data.pillar, b: strip(x.e.body || '') + ' ' + x.e.data.faq.map((f) => f.q).join(' ') }));
+  docs.push(
+    { u: '/tools/', t: 'Free seller calculators', d: 'Profit, duty, fee comparison, dimensional weight, cash flow, ad budget.', c: 'tools', b: 'calculator profit margin duty tariff mpf hmf dimensional weight cash flow acos' },
+    { u: '/policy-log/', t: 'Policy log', d: 'Official notices and fee changes.', c: 'reference', b: 'federal register cbp ustr notice change' },
+    { u: '/glossary/', t: 'Glossary', d: 'Terms as the rules define them.', c: 'reference', b: '' },
+    { u: '/faq/', t: 'Seller FAQ', d: 'Questions sellers search for, answered.', c: 'reference', b: '' },
+  );
   return new Response(JSON.stringify(docs), { headers: { 'Content-Type': 'application/json' } });
 }

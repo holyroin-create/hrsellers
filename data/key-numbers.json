@@ -1,0 +1,12 @@
+[
+ {"label":"Merchandise processing fee rate (formal entry)","value":"0.3464%","claim_id":"entry-type-11-vs-01-12","href":"/guides/merchandise-processing-fee/"},
+ {"label":"MPF minimum / maximum, FY2027","value":"$34.58 / $670.86","claim_id":"entry-type-11-vs-01-13","href":"/guides/merchandise-processing-fee/"},
+ {"label":"Harbor maintenance fee (commercial vessel cargo, covered ports)","value":"0.125%","claim_id":"tool-duty-estimator-04","href":"/tools/duty-estimator/"},
+ {"label":"Automated informal entry fee (not prepared by CBP), FY2027","value":"$2.77","claim_id":"tool-duty-estimator-05","href":"/guides/entry-type-11-vs-01/"},
+ {"label":"Statutory end of de minimis","value":"July 1, 2027","claim_id":"section-321-repeal-2027-02","href":"/guides/section-321-repeal-2027/"},
+ {"label":"Form 1099-K reporting threshold","value":"> $20,000 and > 200 transactions","claim_id":"form-1099-k-marketplace-sellers-05","href":"/guides/form-1099-k-marketplace-sellers/"},
+ {"label":"Window to file a customs protest","value":"180 days","claim_id":"prior-disclosure-protests-17","href":"/guides/prior-disclosure-protests/"},
+ {"label":"Minimum amount of any CBP bond","value":"$100","claim_id":"customs-bonds-05","href":"/guides/customs-bonds/"},
+ {"label":"Etsy transaction fee","value":"6.5%","claim_id":"marketplace-etsy-04","href":"/marketplaces/etsy/"},
+ {"label":"Amazon Professional plan","value":"$39.99 / month","claim_id":"marketplace-amazon-02","href":"/marketplaces/amazon/"}
+]

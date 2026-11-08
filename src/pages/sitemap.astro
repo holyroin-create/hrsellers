@@ -1,13 +1,11 @@
 ---
 import Page from '../layouts/Page.astro';
-import { getCollection } from 'astro:content';
-import { CATS } from '../lib/data';
-const g = (await getCollection('guides', (e) => !e.data.draft)).sort((a, b) => a.data.title.localeCompare(b.data.title));
-const m = await getCollection('marketplaces', (e) => !e.data.draft);
-const fixed = [['/', 'Home'], ['/start-here/', 'Start here'], ['/guides/', 'All guides'], ['/marketplaces/', 'Fee reference'], ['/costs/', 'Cost map'], ['/tools/', 'Calculators'], ['/tools/margin-calculator/', 'Margin calculator'], ['/tools/tariff-stack-estimator/', 'Duty and entry fee estimator'], ['/tools/dimensional-weight/', 'Dimensional weight checker'], ['/tools/cash-flow-planner/', 'Inventory cash flow planner'], ['/tools/ppc-budget-calculator/', 'Ad budget and break-even ACoS'], ['/quiz/', 'Knowledge check'], ['/glossary/', 'Glossary'], ['/policy-log/', 'Policy log'], ['/resources/', 'Primary source directory'], ['/about/', 'About'], ['/contact/', 'Contact'], ['/editorial-standards/', 'Editorial and sourcing policy'], ['/corrections/', 'Corrections'], ['/privacy/', 'Privacy policy'], ['/cookie-policy/', 'Cookie policy'], ['/terms/', 'Terms of use'], ['/disclaimer/', 'Disclaimer'], ['/image-credits/', 'Image credits']];
+import { allEntries } from '../lib/entries';
+import { PILLARS } from '../lib/pillars';
+const all = (await allEntries()).sort((a, b) => a.e.data.title.localeCompare(b.e.data.title));
+const fixed = [['/', 'Home'], ['/start-here/', 'Start here'], ['/guides/', 'Guides'], ['/marketplaces/', 'Fee tables'], ['/tools/', 'Calculators'], ['/tools/margin-calculator/', 'Profit & margin calculator'], ['/tools/duty-estimator/', 'Duty & entry fee estimator'], ['/tools/fee-comparison/', 'Fee comparison'], ['/tools/dimensional-weight/', 'Dimensional weight'], ['/tools/cash-flow-planner/', 'Cash flow planner'], ['/tools/ppc-budget-calculator/', 'Ad budget & break-even ACoS'], ['/checklists/', 'Checklists'], ['/quiz/', 'Knowledge check'], ['/faq/', 'Seller FAQ'], ['/reference/', 'Reference hub'], ['/reference/key-dates/', 'Key dates'], ['/glossary/', 'Glossary'], ['/resources/', 'Primary sources'], ['/policy-log/', 'Policy log'], ['/about/', 'About'], ['/editorial-standards/', 'How we check facts'], ['/corrections/', 'Corrections'], ['/contact/', 'Contact'], ['/privacy/', 'Privacy'], ['/cookie-policy/', 'Cookies'], ['/terms/', 'Terms'], ['/disclaimer/', 'Disclaimer'], ['/image-credits/', 'Image credits']];
 ---
-<Page noindex={true} title="Site map" eyebrow="Navigation" description="Every page on FBA Tactics in one list: guides by topic, marketplace fee references, calculators, reference pages and site policies.">
-  <h2>Pages</h2><ul>{fixed.map(([h, t]) => <li><a href={h}>{t}</a></li>)}</ul>
-  <h2>Fee reference</h2><ul>{m.map((x) => <li><a href={`/marketplaces/${x.id}/`}>{x.data.title}</a></li>)}</ul>
-  {CATS.map((c) => { const l = g.filter((x) => x.data.category === c.name); return l.length ? <><h2>{c.name}</h2><ul>{l.map((x) => <li><a href={`/guides/${x.id}/`}>{x.data.title}</a></li>)}</ul></> : null; })}
+<Page title="Site map" description="Every page on FBA Tactics in one list: guides by topic, marketplace fee tables, calculators, reference pages and site policies." kicker="Navigation" noindex>
+  <h2>Pages</h2><ul>{fixed.map(([u, t]) => <li><a href={u}>{t}</a></li>)}</ul>
+  {(Object.keys(PILLARS) as (keyof typeof PILLARS)[]).map((k) => <><h2>{PILLARS[k].name}</h2><ul>{all.filter((x) => x.e.data.pillar === k).map((x) => <li><a href={x.href}>{x.e.data.title}</a></li>)}</ul></>)}
 </Page>

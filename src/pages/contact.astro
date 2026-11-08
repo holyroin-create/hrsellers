@@ -2,12 +2,12 @@
 import Page from '../layouts/Page.astro';
 import { SITE } from '../lib/site';
 ---
-<Page title="Contact" eyebrow="Contact" description="How to contact the publisher of FBA Tactics to report an error, suggest a primary source, or ask about the site." lede="Email is the only contact channel. There is no contact form, so nothing you send passes through a third-party form service.">
-  <p><strong>Email:</strong> <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p>
+<Page title="Contact FBA Tactics" description="How to contact the publisher of FBA Tactics to report an error, suggest an official source, or ask about the site. Email only; no forms or tracking." kicker="Contact" photo="hub-about" lede="Email is the only channel. There is no contact form, so nothing you send passes through a form service.">
+  <p style="font-size:1.2rem"><strong>Email:</strong> <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p>
   <h2>Reporting an error</h2>
-  <p>Include the page address, the sentence or figure you believe is wrong, and — if you have it — the primary source that shows the correct value (a regulation, a Federal Register notice, or the platform's own fee page). Confirmed corrections are made and logged on the <a href="/corrections/">corrections page</a> with the date.</p>
-  <h2>What we cannot help with</h2>
-  <p>We cannot advise on your individual shipment, classification, account or tax position, and we do not sell services. For those, a licensed customs broker, a CBP binding ruling, or a tax professional are the right routes.</p>
-  <h2>Your email and your data</h2>
-  <p>Emails are read by the publisher and used only to answer you or fix the site. How long we keep them and your rights are set out in the <a href="/privacy/">privacy policy</a>.</p>
+  <p>Send the page address, the sentence or number you think is wrong, and if you have it the official source that shows the right value — a regulation, a Federal Register notice or the platform's fee page. Confirmed corrections are made and listed on the <a href="/corrections/">corrections page</a> with the date.</p>
+  <h2>What we can't help with</h2>
+  <p>We can't advise on your shipment, classification, account or tax position, and we don't sell services. A licensed customs broker, a CBP binding ruling or a tax professional is the right route for those.</p>
+  <h2>Your email</h2>
+  <p>Messages are read by the publisher and used only to reply or correct the site. See the <a href="/privacy/">privacy policy</a>.</p>
 </Page>

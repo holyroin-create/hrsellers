@@ -1,140 +1,184 @@
 ---
-title: "Amazon seller fees: plans, referral fees by category, closing fees"
-description: "Amazon's US selling plans, the full referral fee table by category with minimums, the media closing fee, and how FBA costs are structured, from sell.amazon.com."
-category: "Marketplace fees"
-published: "2026-08-15"
+title: "Amazon Seller Fees: Referral Rates by Category and Plan Costs"
+description: "Every Amazon referral fee rate and minimum by category, the $0.99 vs $39.99 plan math, the media closing fee, and worked $25 and $100 sale examples."
+pillar: "fees"
+type: "reference"
+published: "2026-11-08"
 modified: "2026-11-08"
 lastVerified: "2026-11-08"
-minutes: 5
+minutes: 9
+photo:
+  subject: "a seller's packing table with a small cardboard box, a printed packing slip and a calculator, shot from above, no brand logos"
+  alt: "Packing table with a shipping box, packing slip and calculator"
+keyFacts:
+  - { label: "Professional plan", value: "$39.99/month", claim: "marketplace-amazon-02" }
+  - { label: "Individual plan", value: "$0.99 per item sold", claim: "marketplace-amazon-01" }
+  - { label: "Most common rate", value: "15% referral fee", claim: "marketplace-amazon-15" }
+  - { label: "Minimum referral fee", value: "$0.30 in most categories", claim: "marketplace-amazon-06" }
+  - { label: "Media closing fee", value: "$1.80 per item", claim: "marketplace-amazon-04" }
 summary:
-  - "The Professional plan is $39.99 a month plus selling fees; the Individual plan charges $0.99 per item sold instead."
-  - "Every sale pays a referral fee: a category percentage of the total price, or the minimum (usually $0.30), whichever is greater."
-  - "The total price used for the referral fee includes shipping and gift-wrap charges, not just the list price."
-  - "Media items pay a $1.80 closing fee per item on top of the referral fee."
-  - "FBA costs are separate: fulfillment costs depend on price, weight and dimensions, and storage is charged monthly by cubic foot."
-hero:
-  kind: "stat"
-  figure: "$39.99"
-  label: "Professional selling plan, per month, plus selling fees"
-  claim: "marketplace-amazon-01"
-related: ["walmart", "ebay", "ebay-etsy-for-amazon-sellers"]
+  - "Amazon charges a referral fee on every item sold: a percentage of the total price or a per-item minimum, whichever is greater."
+  - "The Everything Else rate, and the rate for many household categories, is 15% with a $0.30 minimum."
+  - "Some categories switch rate at a price threshold for the whole item (Clothing jumps to 17% above $20), while others charge a lower rate only on the portion above a threshold (Furniture, Jewelry, Watches)."
+  - "The Individual plan costs $0.99 per item sold; the Professional plan costs $39.99 per month."
+  - "Books, DVDs, music, software and video add a $1.80 closing fee on top of the 15% referral fee."
+faq:
+  - { q: "How much does Amazon charge sellers?", a: "Amazon charges a referral fee on each item sold, 15% with a $0.30 minimum in Everything Else and many other categories. Individual sellers also pay $0.99 per item sold, and media items add a $1.80 closing fee.", claims: ["marketplace-amazon-15", "marketplace-amazon-01", "marketplace-amazon-04"] }
+  - { q: "How much is Amazon referral fee?", a: "It depends on the category: 8% for Consumer Electronics and Computers, 12% for Automotive and Powersports, 15% for Everything Else and many other categories, and up to 45% for Amazon Device Accessories.", claims: ["marketplace-amazon-11", "marketplace-amazon-22", "marketplace-amazon-15", "marketplace-amazon-19"] }
+  - { q: "How much does Amazon seller charge monthly?", a: "The Professional plan costs $39.99 per month plus selling fees. The Individual plan is priced per sale instead, at $0.99 per item sold.", claims: ["marketplace-amazon-02", "marketplace-amazon-01"] }
+  - { q: "How much does Amazon charge individual sellers?", a: "Individual sellers pay $0.99 per item sold plus the category referral fee. On plan fees alone, Individual is cheaper up to 40 items a month and Professional is cheaper from 41 items, because $39.99 divided by $0.99 is about 40.4 (hypothetical arithmetic). Referral fees are the same table under both plans.", claims: ["marketplace-amazon-01", "marketplace-amazon-02"] }
+  - { q: "What fees does Amazon charge?", a: "The published selling fees are the plan fee ($0.99 per item or $39.99 per month) plus the category referral fee on every sale. Fulfillment by Amazon is priced separately, and Amazon points sellers to its Revenue Calculator for those estimates.", claims: ["marketplace-amazon-01", "marketplace-amazon-02", "marketplace-amazon-43"] }
+related: ["walmart", "ebay", "etsy", "shopify"]
 ---
 
-Selling on Amazon in the US costs a plan fee plus a per-sale referral fee. The Professional plan is $39.99 per month plus selling fees <C id="marketplace-amazon-01" />; the Individual plan costs $0.99 per item sold <C id="marketplace-amazon-02" />. On top of either plan, Amazon takes a referral fee on every item: a percentage of the total price or a minimum amount, whichever is greater <C id="marketplace-amazon-03" />.
+Amazon takes a **referral fee** on every item you sell, a percentage of the total price set by product category, or a per-item minimum if that is larger <C id="marketplace-amazon-03"/>. In Everything Else and many other categories the rate is 15% with a $0.30 minimum <C id="marketplace-amazon-15"/>. On top of that you pay a plan fee: $0.99 per item sold on the Individual plan <C id="marketplace-amazon-01"/>, or $39.99 per month on the Professional plan <C id="marketplace-amazon-02"/>. Media items (books, DVDs, music, software, video) add a $1.80 closing fee per item <C id="marketplace-amazon-04"/>. The full table, two worked examples and the plan break-even are below.
 
-The referral percentage depends on the product's fee category, and most categories land at 8%, 12% or 15% with a $0.30 minimum. Media adds a closing fee. Fulfillment by Amazon (FBA) is a separate set of costs on top of all of this.
+## The fees Amazon publishes for every seller
 
-## Selling plans
+<Compare
+  title="Amazon selling fees at a glance"
+  columns={["Individual plan", "Professional plan"]}
+  rows={[
+    { label: "Plan fee", values: ["$0.99 per item sold", "$39.99 per month"], claim: "marketplace-amazon-02" },
+    { label: "Referral fee", values: ["Category rate or minimum, whichever is greater", "Same category table"], claim: "marketplace-amazon-03" },
+    { label: "Media closing fee", values: ["$1.80 per media item", "$1.80 per media item"], claim: "marketplace-amazon-04" }
+  ]}
+/>
 
-| Plan | Cost | |
+The per-item Individual charge is listed as "$0.99 / item sold" <C id="marketplace-amazon-01"/>. Fulfillment by Amazon is a separate program with its own fees that are not on the referral fee table; Amazon directs sellers to its Revenue Calculator to compare FBA against their own fulfillment <C id="marketplace-amazon-43"/>.
+
+## Amazon referral fees by category
+
+Rates and minimums as listed on Amazon's US pricing page. "Whole price" means the rate is chosen by the item's total sales price and applies to the entire amount. "Portion" means each rate applies only to the slice of the price inside its band.
+
+| Category | Referral fee | Minimum |
 |---|---|---|
-| Individual | $0.99 per item sold | <C id="marketplace-amazon-02" /> |
-| Professional | $39.99 per month plus selling fees | <C id="marketplace-amazon-01" /> |
+| 3D Printers | 12% on the portion up to $200; 5% on the portion above $200 <C id="marketplace-amazon-18"/> | $0.30 |
+| Amazon Device Accessories | 45% <C id="marketplace-amazon-19"/> | $0.30 |
+| Appliances - Compact | 15% on the portion up to $300; 8% on the portion above $300 <C id="marketplace-amazon-20"/> | $0.30 |
+| Appliances - Full-size | 8% <C id="marketplace-amazon-21"/> | $0.30 |
+| Automotive and Powersports | 12% <C id="marketplace-amazon-22"/> | $0.30 |
+| Baby Products | Whole price: 8% at $10.00 or less; 15% above $10.00 <C id="marketplace-amazon-08"/> | $0.30 |
+| Backpacks, Handbags, and Luggage | 15% <C id="marketplace-amazon-24"/> | $0.30 |
+| Base Equipment Power Tools | 12% <C id="marketplace-amazon-23"/> | $0.30 |
+| Beauty, Health, and Personal Care | Whole price: 8% at $10.00 or less; 15% above $10.00 <C id="marketplace-amazon-07"/> | $0.30 |
+| Business, Industrial, and Scientific Supplies | 12% <C id="marketplace-amazon-25"/> | $0.30 |
+| Clothing and Accessories | Whole price: 5% at $15.00 or less; 10% above $15.00 to $20.00; 17% above $20.00 <C id="marketplace-amazon-05"/> | $0.30 |
+| Computers | 8% <C id="marketplace-amazon-26"/> | $0.30 |
+| Consumer Electronics | 8% <C id="marketplace-amazon-11"/> | $0.30 |
+| Electronics Accessories | 15% on the portion up to $100; 8% on the portion above $100 <C id="marketplace-amazon-12"/> | $0.30 |
+| Eyewear | 15% <C id="marketplace-amazon-27"/> | $0.30 |
+| Fine Art | Portion of sales proceeds: 20% up to $100; 15% above $100 to $1,000; 10% above $1,000 to $5,000; 5% above $5,000 <C id="marketplace-amazon-28"/> | $1.00 on the first tier |
+| Footwear | 15% <C id="marketplace-amazon-29"/> | $0.30 |
+| Furniture | 15% on the portion up to $200; 10% on the portion above $200 <C id="marketplace-amazon-14"/> | $0.30 |
+| Gift Cards | 20% <C id="marketplace-amazon-30"/> | none listed |
+| Grocery and Gourmet | Whole price: 8% at $15.00 or less; 15% above $15.00 <C id="marketplace-amazon-16"/> | none listed |
+| Home and Kitchen | 15% <C id="marketplace-amazon-06"/> | $0.30 |
+| Jewelry | 20% on the portion up to $250; 5% on the portion above $250 <C id="marketplace-amazon-13"/> | $0.30 |
+| Lawn and Garden | 15% <C id="marketplace-amazon-31"/> | $0.30 |
+| Lawn Mowers and Snow Throwers | Whole price: 15% up to $500; 8% above $500 <C id="marketplace-amazon-32"/> | $0.30 |
+| Mattresses | 15% <C id="marketplace-amazon-33"/> | $0.30 |
+| Media (Books, DVD, Music, Software, Video) | 15% plus $1.80 closing fee <C id="marketplace-amazon-34"/> | none listed |
+| Merchant Fulfilled Services | 20% <C id="marketplace-amazon-35"/> | $0.30 |
+| Musical Instruments and AV Production | 15% <C id="marketplace-amazon-36"/> | $0.30 |
+| Office Products | 15% <C id="marketplace-amazon-37"/> | $0.30 |
+| Pet Supplies | 15%; 22% for veterinary diets <C id="marketplace-amazon-38"/> | $0.30 |
+| Sports and Outdoors | 15% <C id="marketplace-amazon-10"/> | $0.30 |
+| Tires | 10% <C id="marketplace-amazon-39"/> | $0.30 |
+| Tools and Home Improvement | 15% <C id="marketplace-amazon-40"/> | $0.30 |
+| Toys and Games | 15% <C id="marketplace-amazon-09"/> | $0.30 |
+| Video Game Consoles | 8% <C id="marketplace-amazon-42"/> | none listed |
+| Video Games and Gaming Accessories | 15% <C id="marketplace-amazon-41"/> | none listed |
+| Watches | 16% on the portion up to $1,500; 3% on the portion above $1,500 <C id="marketplace-amazon-17"/> | $0.30 |
+| Everything Else | 15% <C id="marketplace-amazon-15"/> | $0.30 |
 
-*Source: Amazon, Sell on Amazon: Pricing, checked Nov 8, 2026.* <C id="marketplace-amazon-01" />
+*Source: Amazon, Sell on Amazon pricing page, checked Nov 8, 2026.* <C id="marketplace-amazon-03"/>
 
-The break-even between the two is simple arithmetic: $39.99 divided by $0.99 is about 40.4, so above roughly 40 items a month the Professional plan costs less in plan fees. Amazon states you can switch or cancel your selling plan at any time after registration <C id="marketplace-amazon-04" />.
+<Chart
+  title="Amazon headline referral rates (top rate in each category)"
+  kind="bar"
+  unit="%"
+  rows={[
+    { label: "Amazon Device Accessories", value: 45, claim: "marketplace-amazon-19" },
+    { label: "Jewelry (first $250)", value: 20, claim: "marketplace-amazon-13" },
+    { label: "Clothing (over $20)", value: 17, claim: "marketplace-amazon-05" },
+    { label: "Watches (first $1,500)", value: 16, claim: "marketplace-amazon-17" },
+    { label: "Everything Else", value: 15, claim: "marketplace-amazon-15" },
+    { label: "Automotive and Powersports", value: 12, claim: "marketplace-amazon-22" },
+    { label: "Tires", value: 10, claim: "marketplace-amazon-39" },
+    { label: "Consumer Electronics", value: 8, claim: "marketplace-amazon-11" }
+  ]}
+/>
 
-## How the referral fee is calculated
+## Which referral fee applies to your item
 
-Three rules decide the number:
+The table mixes three structures, and reading the wrong one is an easy way to misprice a listing. Amazon's wording separates them: a band phrased "for products with a total sales price of…" sets one rate for the whole item, while a band phrased "for the portion of the total sales price…" splits the price into slices <C id="marketplace-amazon-05"/> <C id="marketplace-amazon-14"/>.
 
-1. **The base is the total price.** Amazon's total price includes the list price plus shipping costs and any gift-wrapping charges <C id="marketplace-amazon-05" />. A $20 item with $5 shipping is charged on $25.
-2. **The greater of percentage or minimum.** If the percentage works out below the category minimum, you pay the minimum <C id="marketplace-amazon-03" />. At 15% with a $0.30 minimum, the minimum only binds on total prices below $2.00.
-3. **Fee category, not storefront category.** Amazon notes that a product's fee category may not match the category customers see in the store <C id="marketplace-amazon-06" />. The Everything Else category is meant for products that do not clearly fit an existing category <C id="marketplace-amazon-07" />.
+<Decision
+  title="Find the rule that sets your referral fee"
+  rows={[
+    { if: "Your category shows a single percentage (Home and Kitchen, Toys and Games, Everything Else)", then: "Multiply the total sales price by that rate; if the result is under $0.30, the $0.30 minimum applies", claim: "marketplace-amazon-03" },
+    { if: "Your category is Clothing, Beauty, Baby, Grocery, or Lawn Mowers", then: "Find the band your total sales price falls in and apply that one rate to the whole price", claim: "marketplace-amazon-05" },
+    { if: "Your category is Furniture, Jewelry, Watches, Electronics Accessories, Compact Appliances, 3D Printers, or Fine Art", then: "Apply the higher rate to the price up to the threshold and the lower rate only to the amount above it", claim: "marketplace-amazon-14" },
+    { if: "You sell books, DVDs, music, software or video", then: "Add the $1.80 closing fee to the 15% referral fee", claim: "marketplace-amazon-04" },
+    { if: "You sell Grocery, Gift Cards, Media, Video Games or Consoles", then: "The table lists no minimum, so very cheap items pay the percentage only", claim: "marketplace-amazon-16" }
+  ]}
+/>
 
-Read the tiered rows carefully, because they use two different structures. Some tiers apply to **the whole price** depending on which band it falls in ("for products with a total sales price of..."), such as Clothing and Accessories, Baby Products and Beauty, Health, and Personal Care. Others apply only to **the portion** of the price inside each band ("for the portion of the total sales price up to..."), such as Jewelry, Furniture, Electronics Accessories and Watches.
+<Callout type="example" title="Worked example (hypothetical): one cent changes the clothing fee">
+A shirt with a total sales price of $20.00 falls in the 10% band, so the referral fee is $2.00. At $20.01 the whole price moves to the 17% band and the fee becomes $3.40 (17% × $20.01 = $3.4017). By contrast, a $300 table in Furniture pays 15% on the first $200 ($30.00) plus 10% on the remaining $100 ($10.00), for $40.00, not 15% of $300 ($45.00). <C id="marketplace-amazon-05"/> <C id="marketplace-amazon-14"/>
+</Callout>
 
-## Referral fee table by category
+## Worked example (hypothetical): a $25 item and a $100 item
 
-| Category | Referral fee (minimum where listed) | |
+Inputs: Professional plan, a single unit, total sales price equal to the item price (no shipping or gift wrap charged), no FBA. Add $0.99 per item if you are on the Individual plan <C id="marketplace-amazon-01"/>.
+
+| Category (rule) | Fee on a $25 sale | Fee on a $100 sale |
 |---|---|---|
-| Amazon Device Accessories | 45%; minimum referral fee $0.30 | <C id="marketplace-amazon-08" /> |
-| Appliances - Compact | 15% of the portion up to $300 and 8% above $300; minimum $0.30 | <C id="marketplace-amazon-09" /> |
-| Appliances - Full-size | 8%; minimum $0.30 | <C id="marketplace-amazon-10" /> |
-| Automotive and Powersports | 12%; minimum $0.30 | <C id="marketplace-amazon-11" /> |
-| Baby Products | 8% for total sales price of $10 or less and 15% above $10; minimum $0.30 | <C id="marketplace-amazon-12" /> |
-| Backpacks, Handbags, and Luggage | 15%; minimum $0.30 | <C id="marketplace-amazon-13" /> |
-| Base Equipment Power Tools | 12%; minimum $0.30 | <C id="marketplace-amazon-14" /> |
-| Beauty, Health, and Personal Care | 8% for total sales price of $10 or less and 15% above $10; minimum $0.30 | <C id="marketplace-amazon-15" /> |
-| Business, Industrial, and Scientific Supplies | 12%; minimum $0.30 | <C id="marketplace-amazon-16" /> |
-| Clothing and Accessories | 5% up to $15, 10% over $15 to $20, and 17% above $20 total sales price; minimum $0.30 | <C id="marketplace-amazon-17" /> |
-| Computers | 8%; minimum $0.30 | <C id="marketplace-amazon-18" /> |
-| Consumer Electronics | 8%; minimum $0.30 | <C id="marketplace-amazon-19" /> |
-| Electronics Accessories | 15% of the portion up to $100 and 8% above $100; minimum $0.30 | <C id="marketplace-amazon-20" /> |
-| Eyewear | 15%; minimum $0.30 | <C id="marketplace-amazon-21" /> |
-| Fine Art | 20% up to $100 (minimum $1.00), 15% from $100 to $1,000, 10% from $1,000 to $5,000, 5% above $5,000 | <C id="marketplace-amazon-22" /> |
-| Footwear | 15%; minimum $0.30 | <C id="marketplace-amazon-23" /> |
-| Furniture | 15% of the portion up to $200 and 10% above $200; minimum $0.30 | <C id="marketplace-amazon-24" /> |
-| Gift Cards | 20%; no minimum listed | <C id="marketplace-amazon-25" /> |
-| Grocery and Gourmet | 8% for total sales price of $15 or less and 15% above $15; no minimum listed | <C id="marketplace-amazon-26" /> |
-| Home and Kitchen | 15%; minimum $0.30 | <C id="marketplace-amazon-27" /> |
-| Jewelry | 20% of the portion up to $250 and 5% above $250; minimum $0.30 | <C id="marketplace-amazon-28" /> |
-| Lawn and Garden | 15%; minimum $0.30 | <C id="marketplace-amazon-29" /> |
-| Lawn Mowers and Snow Throwers | 15% for total sales price up to $500 and 8% above $500; minimum $0.30 | <C id="marketplace-amazon-30" /> |
-| Mattresses | 15%; minimum $0.30 | <C id="marketplace-amazon-31" /> |
-| Media - Books, DVD, Music, Software, Video | 15%; no minimum listed | <C id="marketplace-amazon-32" /> |
-| Merchant Fulfilled Services | 20%; minimum $0.30 | <C id="marketplace-amazon-33" /> |
-| Musical Instruments and AV Production | 15%; minimum $0.30 | <C id="marketplace-amazon-34" /> |
-| Office Products | 15%; minimum $0.30 | <C id="marketplace-amazon-35" /> |
-| Pet Supplies | 15%, except 22% for veterinary diets; minimum $0.30 | <C id="marketplace-amazon-36" /> |
-| Sports and Outdoors | 15%; minimum $0.30 | <C id="marketplace-amazon-37" /> |
-| Tires | 10%; minimum $0.30 | <C id="marketplace-amazon-38" /> |
-| Tools and Home Improvement | 15%; minimum $0.30 | <C id="marketplace-amazon-39" /> |
-| Toys and Games | 15%; minimum $0.30 | <C id="marketplace-amazon-40" /> |
-| Video Games and Gaming Accessories | 15%; no minimum listed | <C id="marketplace-amazon-41" /> |
-| Video Game Consoles | 8%; no minimum listed | <C id="marketplace-amazon-42" /> |
-| Watches | 16% of the portion up to $1,500 and 3% above $1,500; minimum $0.30 | <C id="marketplace-amazon-43" /> |
-| 3D Printers | 12% of the portion up to $200 and 5% above $200; minimum $0.30 | <C id="marketplace-amazon-44" /> |
-| Everything Else | 15%; minimum $0.30 | <C id="marketplace-amazon-45" /> |
+| Home and Kitchen (15%) | $3.75 | $15.00 |
+| Clothing and Accessories (whole price above $20: 17%) | $4.25 | $17.00 |
+| Beauty, Health, and Personal Care (above $10: 15%) | $3.75 | $15.00 |
+| Consumer Electronics (8%) | $2.00 | $8.00 |
+| Electronics Accessories (15% on the portion up to $100) | $3.75 | $15.00 |
+| Jewelry (20% on the portion up to $250) | $5.00 | $20.00 |
+| Media, e.g. a book (15% + $1.80 closing fee) | $5.55 | $16.80 |
 
-*Source: Amazon, Sell on Amazon: Pricing, referral fee table, checked Nov 8, 2026.* <C id="marketplace-amazon-03" />
+*Source: rates from Amazon's Sell on Amazon pricing page, checked Nov 8, 2026; arithmetic is ours.* <C id="marketplace-amazon-06"/> <C id="marketplace-amazon-05"/> <C id="marketplace-amazon-07"/> <C id="marketplace-amazon-11"/> <C id="marketplace-amazon-12"/> <C id="marketplace-amazon-13"/> <C id="marketplace-amazon-34"/>
 
-## Closing fee
+Two patterns stand out. At $25, the same price can cost anywhere from $2.00 to $5.55 in referral and closing fees depending only on the category you list in. At $100, the Electronics Accessories tier has not yet kicked in, because the 8% rate only applies to the portion above $100 <C id="marketplace-amazon-12"/>; a $150 accessory would pay $15.00 on the first $100 plus $4.00 on the next $50, or $19.00.
 
-The only closing fee on the pricing page applies to media: books, DVD, music, software and video. In addition to the referral fee, media items incur a closing fee of $1.80 per item <C id="marketplace-amazon-46" />.
+The minimum matters only for very cheap items. At 15%, an item has to sell for less than $2.00 before the $0.30 floor takes over: a $1.50 item would owe $0.225 at 15%, so the fee rounds up to the $0.30 minimum (hypothetical arithmetic) <C id="marketplace-amazon-15"/>.
 
-## FBA costs: what sell.amazon.com shows
+## Individual or Professional: the break-even
 
-The public FBA page does not publish a per-unit fee schedule; it describes the cost structure and points to Seller Central for rates. What it does state:
+The two plans share the same referral fee table; what differs is how you pay for access. The Individual plan charges $0.99 per item sold <C id="marketplace-amazon-01"/>, and the Professional plan charges a flat $39.99 per month plus selling fees <C id="marketplace-amazon-02"/>.
 
-- FBA costs depend on the products you sell and the services you use; the fulfillment costs are based on the product's price, weight and dimensions <C id="marketplace-amazon-47" />.
-- Storage is charged monthly based on the space your inventory occupies, calculated on daily average volume in cubic feet <C id="marketplace-amazon-48" />.
-- An aged inventory cost is charged monthly for items stored in a fulfillment center for more than 181 days <C id="marketplace-amazon-49" />.
-- A returns processing cost applies on orders where Amazon gives the customer free return shipping <C id="marketplace-amazon-50" />.
-- Removal (return, disposal or liquidation of inventory) is charged per item <C id="marketplace-amazon-51" />.
-- Inbound placement, for standard and large bulky products, covers distributing inventory to fulfillment centers close to customers <C id="marketplace-amazon-52" />.
+<Decision
+  title="Worked example (hypothetical): which plan is cheaper on plan fees"
+  rows={[
+    { if: "You expect to sell 40 or fewer items a month", then: "Individual costs at most $39.60 a month (40 × $0.99), less than $39.99", claim: "marketplace-amazon-01" },
+    { if: "You expect to sell 41 or more items a month", then: "Professional is cheaper: 41 × $0.99 = $40.59, above the $39.99 flat fee", claim: "marketplace-amazon-02" },
+    { if: "Your monthly volume swings around 40 items", then: "The difference is under $1 either way near the break-even; decide on the tools you need rather than the fee", claim: "marketplace-amazon-02" }
+  ]}
+/>
 
-Because the per-unit FBA rates are only published inside Seller Central, this page does not quote them.
+Amazon describes the Professional plan as giving access to "hundreds of tools and programs" for the monthly fee <C id="marketplace-amazon-44"/>, so the break-even above is a floor for the decision, not the whole decision. This page compares only the published fee amounts.
 
-## Worked example: a hypothetical $25 item
+<Callout type="note" title="Scope of this page">
+This is a reading of Amazon's public US pricing page, not tax or accounting advice. Your Seller Central account and the fee terms you accepted govern what you are actually charged; if a deduction looks wrong, the transaction detail in your own account is the record to dispute from.
+</Callout>
 
-Assumptions (hypothetical): one unit sold at a $25.00 list price, $0 shipping charged to the buyer, no gift wrap, seller-fulfilled so no FBA costs.
+## How to confirm it on Amazon's fee page
 
-| Scenario | Referral fee | Other per-item fee | Total Amazon fee | |
-|---|---|---|---|---|
-| Home and Kitchen, Professional plan | 15% × $25.00 = $3.75 | none | $3.75 | <C id="marketplace-amazon-27" /> |
-| Home and Kitchen, Individual plan | $3.75 | $0.99 per item | $4.74 | <C id="marketplace-amazon-02" /> |
-| Clothing and Accessories (over $20 band) | 17% × $25.00 = $4.25 | none | $4.25 | <C id="marketplace-amazon-17" /> |
-| Consumer Electronics | 8% × $25.00 = $2.00 | none | $2.00 | <C id="marketplace-amazon-19" /> |
-| Media (a $25 book) | 15% × $25.00 = $3.75 | $1.80 closing fee | $5.55 | <C id="marketplace-amazon-46" /> |
+<Steps
+  title="Check your category's current rate"
+  steps={[
+    { t: "Open the pricing page", d: "Go to sell.amazon.com/pricing and scroll to the referral fee table.", claim: "marketplace-amazon-03" },
+    { t: "Find your exact category row", d: "Match the category name, not a guess; Consumer Electronics (8%) and Electronics Accessories (15% up to $100) sit next to each other but differ sharply.", claim: "marketplace-amazon-12" },
+    { t: "Read the band wording", d: "\"Total sales price of\" means one rate on the whole price; \"portion of the total sales price\" means a split calculation.", claim: "marketplace-amazon-05" },
+    { t: "Note the minimum column", d: "Most rows show $0.30; Grocery, Gift Cards, Media, Fine Art and video game rows show a dash (Fine Art states a $1.00 minimum inside its first tier).", claim: "marketplace-amazon-16" },
+    { t: "Check footnotes for media", d: "The $1.80 closing fee is in a footnote under the table, not in the rate column.", claim: "marketplace-amazon-04" }
+  ]}
+/>
 
-*Worked example using rates from Amazon, Sell on Amazon: Pricing, checked Nov 8, 2026.* <C id="marketplace-amazon-03" />
-
-In every row the percentage result is above the $0.30 minimum, so the minimum does not apply. On the Professional plan, the $39.99 monthly fee is fixed: spread over 100 units a month it adds about $0.40 per unit; over 1,000 units, about $0.04.
-
-If the same Home and Kitchen item were listed at $20.00 with $5.00 shipping, the referral fee would still be $3.75, because shipping is part of the total price.
-
-## What to check yourself
-
-<Checklist title="Confirm on sell.amazon.com before you price" items={[
-  "Open sell.amazon.com/pricing and find your product's fee category in the referral fee table, not the storefront category.",
-  "Check whether your category's tiers apply to the whole price or only to the portion within each band.",
-  "Add shipping and gift-wrap charges to the list price before applying the percentage.",
-  "Compare the result with the minimum referral fee in your category's row and use the larger number.",
-  "If you sell books, music, video, DVDs or software, add the $1.80 media closing fee.",
-  "For FBA, read the cost categories on sell.amazon.com/fulfillment-by-amazon and get per-unit rates from your Seller Central account.",
-  "Re-check the pricing page before a large buy; Amazon updates its fee tables."
-]} />
-
-For how these numbers compare with other channels on the same $25 item, see [fees on five platforms compared](/guides/ebay-etsy-for-amazon-sellers/).
+For fulfillment costs, use the Revenue Calculator linked from the same page <C id="marketplace-amazon-43"/>. Re-check the table before repricing a catalog; the live page, not this summary, is authoritative.

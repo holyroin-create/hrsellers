@@ -1,0 +1,18 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+import Photo from './Photo.astro';
+import Credit from './Credit.astro';
+import { img } from '../lib/images';
+const { title, lede = '', kicker = '', photo, trail = [] } = Astro.props as { title: string; lede?: string; kicker?: string; photo?: string; trail?: { label: string; href: string }[] };
+---
+<section class="page-hero">
+  {photo && <div class="bg"><Photo id={photo} eager sizes="100vw" alt="" /></div>}
+  <div class="wrap">
+    <Breadcrumbs trail={[...trail, { label: title, href: Astro.url.pathname }]} />
+    {kicker && <p class="kicker" style="margin:26px 0 0">{kicker}</p>}
+    <h1>{title}</h1>
+    {lede && <p class="lede">{lede}</p>}
+    <slot />
+  </div>
+  {photo && img(photo) && <p class="credit"><Credit id={photo} prefix="Photo" /></p>}
+</section>

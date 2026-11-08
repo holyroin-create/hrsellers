@@ -1,17 +1,15 @@
 ---
 import Base from './Base.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
 import Sources from '../components/Sources.astro';
-const { title, description, lede, cites = [] } = Astro.props as any;
+const { title, description, lede, cites = [], photo = 'hub-tools' } = Astro.props as any;
 (Astro.locals as any).citeOrder = cites;
-const ld = [{ '@context': 'https://schema.org', '@type': 'WebApplication', name: title, description, applicationCategory: 'BusinessApplication', operatingSystem: 'Any (runs in the browser)', isAccessibleForFree: true, url: new URL(Astro.url.pathname, 'https://fbatactics.com').href }];
+const ld = [{ '@context': 'https://schema.org', '@type': 'WebApplication', name: title, description, applicationCategory: 'BusinessApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, url: new URL(Astro.url.pathname, 'https://fbatactics.com').href }];
 ---
 <Base title={title} description={description} jsonld={ld}>
-  <div class="wrap">
-    <Breadcrumbs trail={[{ label: 'Tools', href: '/tools/' }, { label: title, href: Astro.url.pathname }]} />
-    <header class="index-head" style="border:0;padding-bottom:0"><p class="eyebrow">Calculator</p><h1>{title}</h1><p class="lede">{lede}</p>
-      <p class="meta">Runs entirely in your browser. Nothing you enter is sent, stored or tracked.</p></header>
+  <PageHero title={title} lede={lede} kicker="Free calculator" photo={photo} trail={[{ label: 'Tools', href: '/tools/' }]} />
+  <div class="wrap" style="padding-bottom:80px">
     <slot name="calc" />
-    <div class="page-narrow"><div class="prose"><slot /></div>{cites.length > 0 && <Sources />}</div>
+    <div class="narrow"><div class="prose"><slot /></div>{cites.length > 0 && <Sources />}</div>
   </div>
 </Base>

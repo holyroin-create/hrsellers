@@ -1,0 +1,5 @@
+---
+import Cites from './Cites.astro';
+const { value, label, claim } = Astro.props as { value: string; label: string; claim?: string };
+---
+<div class="stat"><b>{value}{claim && <Cites ids={[claim]} />}</b><span>{label}</span></div>

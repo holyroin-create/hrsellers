@@ -1,68 +1,156 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { policyLog, rateboard, CATS } from '../lib/data';
-import { fmtDate, allClaims } from '../lib/claims';
+import Icon from '../components/Icon.astro';
+import Photo from '../components/Photo.astro';
+import Credit from '../components/Credit.astro';
+import Faq from '../components/Faq.astro';
+import Sources from '../components/Sources.astro';
+import { allEntries } from '../lib/entries';
+import { PILLARS } from '../lib/pillars';
+import { policyLog, keyNumbers, sitefaq } from '../lib/data';
+import { allClaims, fmtDate, citeOrder } from '../lib/claims';
 import { SITE } from '../lib/site';
-const guides = (await getCollection('guides', (e) => !e.data.draft)).sort((a, b) => b.data.modified.localeCompare(a.data.modified) || a.data.title.localeCompare(b.data.title));
-const markets = await getCollection('marketplaces', (e) => !e.data.draft);
-const log = policyLog().slice(0, 6);
-const rates = rateboard();
+import { img } from '../lib/images';
+
+const entries = (await allEntries()).sort((a, b) => b.e.data.modified.localeCompare(a.e.data.modified) || a.e.data.title.localeCompare(b.e.data.title));
+const log = policyLog().slice(0, 4);
+const nums = keyNumbers().slice(0, 8);
+const faqs = sitefaq().slice(0, 6);
 const claims = allClaims();
-const ld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.siteName, url: SITE.domain }];
-const verifiedCount = [...claims.values()].filter((c) => c.status === 'verified').length;
+(Astro.locals as any).citeOrder = citeOrder('', faqs.flatMap((f: any) => f.claim_ids));
+const verified = [...claims.values()].filter((c) => c.status === 'verified').length;
+const featured = entries.filter((x) => x.kind === 'guides').slice(0, 6);
+const hero = img('home-hero');
+const ld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.siteName, url: SITE.domain }, { '@context': 'https://schema.org', '@type': 'Organization', name: SITE.publisherName, url: SITE.domain, logo: `${SITE.domain}/favicon.svg` }];
+const features = [
+  ['/tools/', 'calculator', 'Profit & fee calculators'],
+  ['/marketplaces/', 'tag', 'Marketplace fee tables'],
+  ['/guides/#importing', 'ship', 'Import & customs guides'],
+  ['/policy-log/', 'shield', 'Rule & policy updates'],
+  ['/guides/', 'book', 'In-depth seller guides'],
+];
 ---
-<Base title="Marketplace fees and US import rules, from the primary source" description="Fee schedules for Amazon, Walmart, eBay, Etsy and Shopify, and the US customs rules importers must follow — each figure linked to the regulation or platform page it comes from." jsonld={ld}>
-  <section class="home-top"><div class="wrap home-grid">
-    <div>
-      <p class="eyebrow">For sellers who import and sell on marketplaces</p>
-      <h1>Know the fee and the rule before the invoice does.</h1>
-      <p class="lede">Platform fee schedules and US import regulations, explained in plain English and worked through with arithmetic. Every figure links to the regulation, Federal Register notice or platform page it comes from, and shows the day it was last checked.</p>
-      <div class="home-actions">
-        <a class="btn btn-tag" href="/start-here/">Start here →</a>
-        <a class="btn" href="/quiz/">Test what you know — 12 questions</a>
+<Base title="Marketplace fees, import duties and seller rules — checked at the source" description="Fee tables for Amazon, Walmart, eBay, Etsy and Shopify, US import duty and customs rules, and free calculators — every figure linked to its official source." jsonld={ld} preload={hero ? `/${hero.file}-1920.webp` : undefined}>
+  <section class="hero">
+    <div class="hero-photo">{hero ? <img src={`/${hero.file}-1920.webp`} srcset={`/${hero.file}-960.webp 960w, /${hero.file}-1600.webp 1600w, /${hero.file}-1920.webp 1920w`} sizes="(max-width: 900px) 100vw, 64vw" width="1920" height={Math.round(1920 * hero.height / hero.width)} alt={hero.alt} fetchpriority="high" decoding="sync" /> : <Photo id="home-hero" eager />}</div>
+    <div class="wrap">
+      <div class="hero-in">
+        <span class="badge"><i></i>For sellers who import and sell on US marketplaces</span>
+        <h1>Know every fee, duty and rule <em>before you ship.</em></h1>
+        <p class="lede">Commission tables for Amazon, Walmart, eBay, Etsy and Shopify, US customs and tariff rules, and calculators that show their working — each figure linked to the regulation or fee page it comes from.</p>
+        <form class="hero-search" action="/search/" method="get" role="search">
+          <Icon name="search" /><label class="vh" for="hero-q">Search the site</label>
+          <input id="hero-q" name="q" type="search" placeholder="Try “customs bond”, “eBay fees” or “de minimis”" autocomplete="off" />
+          <button class="btn btn-cta" type="submit">Search</button>
+        </form>
+        <div class="hero-actions">
+          <a class="btn btn-cta" href="/tools/"><Icon name="calculator" />Open the free calculators</a>
+          <a class="btn btn-light" href="/start-here/">Start here<Icon name="arrow" /></a>
+        </div>
+        <div class="hero-trust"><span><Icon name="checkCircle" />{verified} facts checked against official sources</span><span><Icon name="checkCircle" />Dated and linked</span><span><Icon name="checkCircle" />No sponsored content</span></div>
       </div>
-      <p class="meta">{guides.length + markets.length} reference pages · {verifiedCount} individually sourced facts · no sponsored content</p>
     </div>
-    <section class="ledger" aria-labelledby="log-h">
-      <div class="ledger-head"><h2 id="log-h">Policy log</h2><span class="meta">official notices only</span></div>
-      {log.length ? <ol>{log.map((e) => (
-        <li><time datetime={e.date}>{fmtDate(e.date).replace(/, \d{4}$/, '')}<span class="agency">{e.agency}</span></time>
-          <div><a href={`/policy-log/#${e.id}`}>{e.title}</a></div></li>
-      ))}</ol> : <p style="padding:1rem 1.5rem">The log is being rebuilt from official notices.</p>}
-      <div class="ledger-foot"><a class="btn btn-tag" href="/policy-log/" style="width:100%;justify-content:center">Open the full log →</a></div>
-    </section>
-  </div></section>
+    {hero && <p class="hero-credit"><Credit id="home-hero" prefix="Photo" /></p>}
+  </section>
 
   <div class="wrap">
-    {rates.length > 0 && (
-    <section class="rateboard" aria-labelledby="rb-h">
-      <h2 id="rb-h">Figures sellers ask about most</h2>
-      <table class="data"><thead><tr><th>Figure</th><th>Current value</th><th>Source, checked</th></tr></thead>
-        <tbody>{rates.map((r) => { const c = claims.get(r.claim_id)!; return (
-          <tr><td><a href={r.href}>{r.label}</a></td><td><strong>{r.value}</strong></td><td class="meta"><a href={c.source_url} rel="noopener">{c.publisher}</a>, {fmtDate(c.accessed)}</td></tr>); })}</tbody></table>
-    </section>)}
-
-    <div class="sections">
-      {CATS.map((cat) => { const list = [...guides.filter((g) => g.data.category === cat.name).map((g) => ({ href: `/guides/${g.id}/`, t: g.data.title, d: g.data.description })), ...(cat.name === 'Marketplace fees' ? markets.map((m) => ({ href: `/marketplaces/${m.id}/`, t: m.data.title, d: m.data.description })) : [])];
-        return list.length ? (
-        <section class="section-list" aria-labelledby={`h-${cat.id}`}>
-          <h2 id={`h-${cat.id}`}><a href={`/guides/#${cat.id}`} style="color:inherit;text-decoration:none">{cat.name}</a></h2>
-          <p class="meta">{cat.d}</p>
-          <ol>{list.slice(0, 6).map((g) => <li><div><a href={g.href}>{g.t}</a></div></li>)}</ol>
-        </section>) : null; })}
-    </div>
+    <nav class="features" aria-label="Quick access">{features.map(([u, i, t]) => <a href={u}><span class="ico"><Icon name={i} /></span>{t}</a>)}</nav>
   </div>
 
-  <section class="toolstrip"><div class="wrap">
-    <h2>Calculators that show their working</h2>
-    <p>Run in your browser. Nothing you type is sent or stored.</p>
-    <div class="tools-row">
-      <a href="/tools/margin-calculator/"><b>Margin</b><span>Net per unit after platform fees</span></a>
-      <a href="/tools/tariff-stack-estimator/"><b>Duty &amp; fees</b><span>Duty, MPF and HMF on one entry</span></a>
-      <a href="/tools/dimensional-weight/"><b>Dimensional weight</b><span>Which weight you are billed on</span></a>
-      <a href="/tools/cash-flow-planner/"><b>Cash flow</b><span>When stock money comes back</span></a>
-      <a href="/tools/ppc-budget-calculator/"><b>Ad budget</b><span>Spend, ACoS, break-even</span></a>
+  <section class="section" style="padding-top:64px">
+    <div class="wrap duo">
+      <div class="promo">
+        <div>
+          <span class="kicker">Calculators</span>
+          <h2>Price it right, keep the margin.</h2>
+          <p>Work out net profit after each platform's published fees, the duty and entry fees on a shipment, dimensional weight and cash flow — in your browser, nothing stored.</p>
+          <a class="btn btn-dark" href="/tools/">Explore the calculators<Icon name="arrow" /></a>
+        </div>
+        <div class="pic"><Photo id="tools-calculator" sizes="(max-width: 980px) 90vw, 280px" /></div>
+      </div>
+      <section class="darklog" aria-labelledby="log-h">
+        <div class="darklog-head"><h2 id="log-h"><Icon name="calendar" />Rule &amp; fee changes</h2><a href="/policy-log/">See all →</a></div>
+        {log.length ? <ol>{log.map((e) => <li><time datetime={e.date}>{fmtDate(e.date)}</time><a href={`/policy-log/#${e.id}`}>{e.title}</a><span class="agency">{e.agency}</span></li>)}</ol> : <p>Entries are being verified.</p>}
+        <a class="btn btn-light btn-sm" href="/policy-log/"><Icon name="doc" />Open the log</a>
+      </section>
     </div>
-  </div></section>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="kicker">Start with your question</span><h2>Four areas every seller has to get right</h2><p>Pick the area your question belongs to. Each one opens with the rules that cost sellers most when they are misunderstood.</p></div><a class="link-arrow" href="/guides/">All guides<Icon name="arrow" /></a></div>
+      <div class="pillars">
+        {(Object.keys(PILLARS) as (keyof typeof PILLARS)[]).map((k) => { const P = PILLARS[k]; const list = entries.filter((x) => x.e.data.pillar === k); return (
+          <article class="pillar">
+            <div class="pillar-photo"><Photo id={P.photo} sizes="(max-width: 600px) 100vw, 290px" /><span class="count">{list.length} pages</span></div>
+            <div class="pillar-body"><h3><a href={`/guides/#${k}`}>{P.name}</a></h3><p>{P.blurb}</p>
+              <ul>{list.slice(0, 3).map((x) => <li><a href={x.href}><Icon name="arrow" />{x.e.data.title}</a></li>)}</ul></div>
+          </article>); })}
+      </div>
+    </div>
+  </section>
+
+  {nums.length > 0 && <section class="section">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="kicker">Key numbers</span><h2>The figures sellers look up most</h2><p>Current values from the official source, with the date each one was checked.</p></div><a class="link-arrow" href="/reference/">Reference hub<Icon name="arrow" /></a></div>
+      <div class="numbers">{nums.map((n) => { const c = claims.get(n.claim_id)!; return (
+        <div class="num"><div class="v">{n.value}</div><div class="l"><a href={n.href} style="color:inherit;text-decoration:none">{n.label}</a></div><div class="s">Source: <a href={c.source_url} rel="noopener">{c.publisher}</a> · checked {fmtDate(c.accessed, true)}</div></div>); })}</div>
+    </div>
+  </section>}
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="kicker">Guides</span><h2>Read the rule, then do the math</h2><p>Each guide explains one rule or fee, works it through with numbers, and ends with how to confirm it for your own goods.</p></div><a class="link-arrow" href="/guides/">Browse all guides<Icon name="arrow" /></a></div>
+      <div class="cards">{featured.map((x) => (
+        <article class="acard">
+          <div class="acard-photo"><span class="pchip">{PILLARS[x.e.data.pillar].short}</span><Photo id={x.e.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
+          <div class="acard-body"><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p>
+            <div class="acard-meta"><span><Icon name="checkCircle" />Verified {fmtDate(x.e.data.lastVerified, true)}</span><span><Icon name="clock" />{x.e.data.minutes} min</span></div><span class="go"><Icon name="arrow" /></span></div>
+        </article>))}</div>
+    </div>
+  </section>
+
+  <section class="section section-navy">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="kicker" style="color:#ffb27f">Free tools</span><h2>Calculators that show their working</h2><p>Platform and government rates come from cited sources; everything else is your input. Nothing you type leaves your browser.</p></div><a class="link-arrow" href="/tools/" style="color:#ffb27f">All tools<Icon name="arrow" /></a></div>
+      <div class="tools-grid">
+        <a class="tool-card" href="/tools/margin-calculator/"><span class="ico"><Icon name="calculator" /></span><span><b>Profit &amp; margin</b><span>Net per unit after a platform's referral or transaction fee.</span></span></a>
+        <a class="tool-card" href="/tools/duty-estimator/"><span class="ico"><Icon name="shield" /></span><span><b>Duty &amp; entry fees</b><span>Duty, additional duties, MPF and HMF on one entry.</span></span></a>
+        <a class="tool-card" href="/tools/fee-comparison/"><span class="ico"><Icon name="scale" /></span><span><b>Fee comparison</b><span>One price, five marketplaces, side by side.</span></span></a>
+        <a class="tool-card" href="/tools/dimensional-weight/"><span class="ico"><Icon name="box" /></span><span><b>Dimensional weight</b><span>Which weight your carrier bills you on.</span></span></a>
+        <a class="tool-card" href="/tools/cash-flow-planner/"><span class="ico"><Icon name="chart" /></span><span><b>Cash flow planner</b><span>When the money tied up in stock comes back.</span></span></a>
+        <a class="tool-card" href="/checklists/"><span class="ico"><Icon name="printer" /></span><span><b>Printable checklists</b><span>Before you order, before you ship, before you list.</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  {faqs.length > 0 && <section class="section">
+    <div class="wrap narrow">
+      <span class="kicker">Seller FAQ</span>
+      <Faq heading="What sellers search for" items={faqs.map((f: any) => ({ q: f.q, a: f.a, claims: f.claim_ids, href: f.href, where: f.where }))} />
+      <p style="margin-top:20px"><a class="link-arrow" href="/faq/">More questions<Icon name="arrow" /></a></p>
+      <div class="prose" style="margin-top:40px"><Sources /></div>
+    </div>
+  </section>}
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="kicker">How we check</span><h2>Every number has a source you can open</h2></div><a class="link-arrow" href="/editorial-standards/">Our sourcing policy<Icon name="arrow" /></a></div>
+      <ol class="method">
+        <li><h3>Only the issuing source</h3><p>Regulations, Federal Register notices, IRS publications and each marketplace's own fee pages. No blogs, vendors or forums.</p></li>
+        <li><h3>Checked in a second pass</h3><p>Every fact is reopened against its source in a separate checking pass, independent of the drafting step. Anything the source doesn't say is cut, and a named reviewer signs off before release.</p></li>
+        <li><h3>Dated and corrected in public</h3><p>Pages show when they were last verified, and every change to a published figure is logged.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;padding-bottom:72px;background:var(--bg-soft)">
+    <div class="wrap">
+      <div class="cta-banner">
+        <div class="bg"><Photo id="cta-ship" sizes="100vw" /></div>
+        <div><h2>Not sure where to begin? <em>Start with the seller roadmap.</em></h2><p>Fees first, then who imports, then the duty math — in the order sellers need it.</p></div>
+        <a class="btn btn-cta" href="/start-here/">Start here<Icon name="arrow" /></a>
+      </div>
+    </div>
+  </section>
 </Base>

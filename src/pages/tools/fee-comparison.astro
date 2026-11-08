@@ -1,0 +1,30 @@
+---
+import Tool from '../../layouts/Tool.astro';
+import fs from 'node:fs';
+import { isVerified } from '../../lib/claims';
+const rows = (fs.existsSync('data/fee-compare.json') ? JSON.parse(fs.readFileSync('data/fee-compare.json', 'utf8')) : []).filter((r: any) => r.claim_ids.every(isVerified));
+const cites = [...new Set(rows.flatMap((r: any) => r.claim_ids))] as string[];
+---
+<Tool title="Marketplace fee comparison" description="Enter one selling price and compare the published per-sale fees on Amazon, Walmart, eBay, Etsy and Shopify side by side, with each rate's source and check date." lede="One price, five platforms. Each line uses the platform's published per-sale fees for the case named — no subscriptions, fulfillment or advertising." cites={cites}>
+  <form slot="calc" class="calc" id="fc" onsubmit="return false" data-rows={JSON.stringify(rows)}>
+    <div class="calc-in"><h2>Your sale</h2>
+      <div class="field"><label for="p">Item price ($)</label><input id="p" type="number" min="0" step="0.01" value="25" inputmode="decimal" /></div>
+      <div class="field"><label for="s">Shipping charged to the buyer ($) <span class="hint">Some platforms charge their percentage on shipping too</span></label><input id="s" type="number" min="0" step="0.01" value="0" inputmode="decimal" /></div>
+      <button class="btn btn-cta" type="submit">Compare</button>
+      <p class="hint" style="font-size:.84rem;color:var(--ink-3);margin-top:14px">Cases used: {rows.map((r: any) => `${r.platform} — ${r.label}`).join('; ') || 'awaiting verified rates'}.</p>
+    </div>
+    <div class="calc-out" aria-live="polite"><h2>Fees on this sale</h2><div id="res"></div><p class="verdict">Lowest fee is highlighted. Rates change; check each platform's fee page before you decide.</p></div>
+  </form>
+  <h2>What is and isn't included</h2>
+  <p>Each platform line applies the published percentage and fixed per-order amounts for the case named, to the price plus shipping where that platform says its fee base includes shipping. Plan or subscription fees, fulfillment services, advertising, currency conversion and sales tax are not included; the <a href="/marketplaces/">fee reference pages</a> cover them platform by platform. For a full margin on one platform, use the <a href="/tools/margin-calculator/">profit calculator</a>.</p>
+  <script>
+    const f = document.getElementById('fc') as HTMLFormElement; const rows = JSON.parse(f.dataset.rows!);
+    function run() {
+      const P = +(document.getElementById('p') as HTMLInputElement).value, S = +(document.getElementById('s') as HTMLInputElement).value;
+      const out = rows.map((r: any) => { const base = P + (r.on_shipping ? S : 0); const fx = r.small_max != null && base <= r.small_max ? r.fixed_small : (r.fixed || 0); const fee = Math.max(base * r.pct / 100 + fx, r.min || 0); return { r, fee }; });
+      const min = Math.min(...out.map((o: any) => o.fee));
+      document.getElementById('res')!.innerHTML = out.map((o: any) => `<div class="out"${o.fee === min ? ' style="color:#ffb27f"' : ''}><span>${o.r.platform}<br><small style="color:#8fa3bb">${o.r.label}</small></span><span class="v">$${o.fee.toFixed(2)}</span></div>`).join('') || '<p>Verified rates not yet available.</p>';
+    }
+    f.addEventListener('input', run); f.addEventListener('submit', run); run();
+  </script>
+</Tool>

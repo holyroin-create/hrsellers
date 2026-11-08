@@ -1,13 +1,10 @@
 ---
-import { fmtDate , citeNum } from '../lib/claims';
+import Icon from './Icon.astro';
+import Cites from './Cites.astro';
+import { fmtDate } from '../lib/claims';
 const { title, items = [] } = Astro.props as { title: string; items: { date: string; t: string; d?: string; claim?: string }[] };
-const order: string[] = (Astro.locals as any).citeOrder || [];
-const nice = (d: string) => (/^\d{4}-\d{2}-\d{2}$/.test(d) ? fmtDate(d) : d);
+const nice = (d: string) => (/^\d{4}-\d{2}-\d{2}$/.test(d) ? fmtDate(d, true) : d);
 ---
-<figure class="figure">
-  <figcaption class="figure-title">{title}</figcaption>
-  <ol class="timeline">{items.map((i) => (
-    <li><time datetime={i.date}>{nice(i.date)}</time><b>{i.t}</b>{i.d && <span>{i.d}</span>}
-      {i.claim && <sup class="cite"><a href={`#src-${i.claim}`}>[{citeNum(order, i.claim)}]</a></sup>}</li>
-  ))}</ol>
+<figure class="fig"><figcaption class="fig-title"><Icon name="calendar" />{title}</figcaption>
+  <ol class="tl">{items.map((i) => <li><time datetime={i.date}>{nice(i.date)}</time><span class="dot"></span><div><b>{i.t}{i.claim && <Cites ids={[i.claim]} />}</b>{i.d && <span>{i.d}</span>}</div></li>)}</ol>
 </figure>
