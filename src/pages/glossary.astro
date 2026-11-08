@@ -1,119 +1,17 @@
 ---
-import PageShell from '../components/PageShell.astro';
-const TERMS: { t: string; d: string; g?: string }[] = [
-  { t: 'ASIN', d: 'Amazon Standard Identification Number — the ten-character identifier for a product listing on Amazon. One ASIN can have many sellers.', g: 'listing-optimisation-a10' },
-  { t: 'FNSKU', d: 'Fulfillment Network SKU — the barcode that ties a physical unit in an Amazon warehouse to your specific seller account. Without it, your stock can be commingled with other sellers\' units.', g: 'gs1-barcodes-fnsku' },
-  { t: 'FBA', d: 'Fulfillment by Amazon — you ship inventory to Amazon, and Amazon stores, picks, packs, ships and handles returns in exchange for fulfillment and storage fees.', g: 'fba-vs-fbm-breakeven' },
-  { t: 'FBM', d: 'Fulfilled by Merchant — you hold the stock and ship the orders yourself. No FBA fees, but no Prime badge by default and full responsibility for delivery performance.', g: 'fba-vs-fbm-breakeven' },
-  { t: 'MCF', d: 'Multi-Channel Fulfillment — using Amazon\'s warehouses to fulfil orders that came from somewhere else, such as your own store.', g: 'mcf-off-amazon-orders' },
-  { t: 'WFS', d: 'Walmart Fulfillment Services — Walmart\'s equivalent of FBA for its marketplace.', g: 'walmart-wfs' },
-  { t: 'Referral fee', d: 'The marketplace\'s commission on each sale, taken as a percentage of the sale price and varying by category. Distinct from fulfillment fees, and it did not change in Amazon\'s 2026 US update.', g: 'amazon-fba-fee-changes-2026' },
-  { t: 'Fulfillment fee', d: 'The per-unit charge for picking, packing and shipping an FBA order. From 15 January 2026 in the US, selling price became one of the inputs alongside size tier and weight.', g: 'amazon-fba-fee-changes-2026' },
-  { t: 'Inbound placement fee', d: 'A charge introduced in 2024 relating to how your inbound shipment is distributed across Amazon\'s network. Splitting a shipment across more destinations generally lowers it.', g: 'inbound-placement-split-arithmetic' },
-  { t: 'Size tier', d: 'The bucket Amazon assigns a product based on its packaged dimensions and weight. It is the single biggest driver of fulfillment cost, and crossing a boundary by a fraction of an inch is expensive.', g: 'packaging-design-fba' },
-  { t: 'Dimensional weight', d: 'A billable weight derived from a package\'s volume rather than its mass. Carriers and marketplaces charge on whichever of actual and dimensional weight is greater.', g: 'freight-modes' },
-  { t: 'Reimbursement', d: 'Money a marketplace owes you for inventory it lost, damaged, or mishandled, or for fees it charged in error. Not all of it is credited automatically.', g: 'fba-reimbursement-sourcing-cost' },
-  { t: 'Shipment discrepancy', d: 'A mismatch between what you say you sent to a fulfillment center and what it says it received. Resolving one requires proof of what shipped.', g: 'shipment-discrepancy-claims' },
-  { t: 'Settlement', d: 'The periodic statement reconciling your sales, fees, refunds and adjustments into a single payout. Reconciling settlements is how you find money that has quietly gone missing.', g: 'dd7-payout-reserve' },
-  { t: 'Buy Box', d: 'The purchase panel on a product page. Where several sellers offer the same ASIN, only one holds it at a time, and holding it is what most sales depend on.', g: 'buy-box-featured-offer' },
-  { t: 'COGS', d: 'Cost of goods sold — what a unit cost you before any marketplace fee, freight or advertising. The starting point of every margin calculation.', g: 'accrual-accounting-cogs' },
-  { t: 'Landed cost', d: 'What a unit actually costs you once product cost, freight, duty, customs fees and inbound shipping are included. Since the de minimis suspension this number has changed for most importers.', g: 'landed-cost-fee-stack' },
-  { t: 'De minimis / Section 321', d: 'The US provision that allowed shipments valued at $800 or less to enter duty-free without formal entry. Suspended for China and Hong Kong in May 2025, extended to all countries that August, and codified by regulation in June 2026.', g: 'de-minimis-suspension-2026' },
-  { t: 'HTS code', d: 'The Harmonized Tariff Schedule classification, ten digits for US imports, that determines the duty rate on a product. Required on every commercial import since the de minimis suspension.', g: 'hts-classification-basics' },
-  { t: 'DDP / DAP', d: 'Delivered Duty Paid means the seller covers duty and the buyer pays nothing on arrival. Delivered At Place means the buyer is billed on the doorstep — which since the de minimis change has driven up parcel refusals.', g: 'incoterms-who-is-importer' },
-  { t: 'LTL', d: 'Less than truckload — freight shipping for pallets that do not fill a trailer. Usually how inventory moves from a warehouse to a fulfillment center.', g: 'freight-modes' },
-  { t: '3PL', d: 'Third-party logistics provider — a company that stores and ships your inventory for you, outside the marketplace\'s own network.', g: 'awd-vs-3pl-warehousing' },
-  { t: 'ACOS / TACOS', d: 'Advertising cost of sale measures ad spend against sales attributed to the ads. Total ACOS measures the same spend against total sales, which is the number that tells you whether advertising is actually working.', g: 'amazon-ppc-benchmarks' },
-  { t: 'Private label', d: 'Sourcing a generic product and selling it under your own brand. The only common model that builds a business you could sell.', g: 'brand-registry-trademark' },
-  { t: 'Arbitrage', d: 'Buying discounted stock and reselling it at market price. Retail arbitrage sources from physical stores, online arbitrage from online retailers.', g: 'the-supplier-invoice' },
-  { t: 'Resale certificate', d: 'Documentation allowing a business to buy goods for resale without paying sales tax at purchase. Usually required before a distributor will open a wholesale account.', g: 'sales-tax-nexus' },
-  { t: 'DD+7', d: 'The delivery-date based payout schedule. Funds release seven days after the carrier marks an order delivered rather than on a fixed cycle from the order date. Applied to remaining North American accounts on 12 March 2026, with reported order-to-bank of 14 to 27 days for FBA.', g: 'dd7-payout-reserve' },
-  { t: 'IPI', d: 'Inventory Performance Index — a score from 0 to 1,000 reflecting how efficiently you manage FBA inventory. Below the threshold, Amazon caps how much you may store and can restrict inbound shipments. Calculated from excess inventory, sell-through, stranded inventory and in-stock rate.', g: 'ipi-restock-limits' },
-  { t: 'Capacity limit', d: 'The volume of FBA inventory you are permitted to hold, in cubic feet, set from a quarterly evaluation. ASIN-level restock limits can throttle individual products independently of it.', g: 'ipi-restock-limits' },
-  { t: 'Stranded inventory', d: 'Units sitting in a fulfillment center with no active listing attached. They cannot sell, they still accrue storage, and the percentage counts against your IPI score.', g: 'listing-disappeared' },
-  { t: 'Low-inventory-level fee', d: 'A per-unit charge applied to sales made while your days of cover sit below a reported 28-day threshold. Effectively a fee for selling while thin.', g: 'low-inventory-level-fee' },
-  { t: 'Aged inventory surcharge', d: 'An additional storage charge on units held beyond a threshold — reported as tightening from 271 days to 180 days on 1 July 2026.', g: 'fba-storage-four-layers' },
-  { t: 'Storage utilization surcharge', d: 'A charge applied when your stored volume is high relative to your sell-through, reported as triggering above roughly 22 weeks of cover.', g: 'fba-storage-four-layers' },
-  { t: 'ODR', d: 'Order Defect Rate — negative feedback, A-to-z claims and service chargebacks combined into one percentage over a rolling 60-day window. The published threshold is 1%, and it can suspend an account on its own.', g: 'order-defect-rate' },
-  { t: 'AHR', d: 'Account Health Rating — a consolidated compliance score starting at 200. Reported bands: 200+ healthy, 100 to 199 at risk, below 100 capable of triggering suspension.', g: 'order-defect-rate' },
-  { t: 'A-to-z claim', d: 'A buyer-initiated guarantee claim against a seller. One source reports these count toward ODR whether granted or not, which makes preventing the claim more valuable than winning it.', g: 'order-defect-rate' },
-  { t: 'Featured Offer', d: 'Amazon\'s current name for the Buy Box — the offer that wins the Add to Cart button on a shared listing. Measured as a percentage of sessions rather than as a binary win.', g: 'buy-box-featured-offer' },
-  { t: 'Fair Pricing Policy', d: 'The policy under which Amazon compares your price against other retailers and can suppress the Featured Offer where yours sits significantly higher.', g: 'buy-box-featured-offer' },
-  { t: 'Price parity', d: 'A marketplace requirement that your price there is not higher than on other channels, including your own website. It removes per-channel pricing as an option.', g: 'cross-channel-price-parity' },
-  { t: 'MAP', d: 'Minimum Advertised Price — a brand policy setting the lowest price a reseller may advertise. Relevant because a marketplace that controls retail pricing can break a MAP agreement you signed offline.', g: 'authorised-reseller' },
-  { t: 'Brand Registry', d: 'Amazon\'s brand protection program, requiring a registered or pending trademark. Unlocks A+ Content, Brand Analytics and reporting tools, and since 31 March 2026 determines whether you may use GS1 barcodes instead of FNSKU labels.', g: 'brand-registry-trademark' },
-  { t: 'A+ Content', d: 'Enhanced description modules available to Brand Registry sellers at no charge, replacing the plain product description with images, comparison tables and formatted copy.', g: 'aplus-content-brand-tools' },
-  { t: 'Vine', d: 'Amazon\'s program for supplying products to reviewers in exchange for honest reviews. Enrollment is once per ASIN for its lifetime, so it cannot be repeated on the same product.', g: 'vine-and-early-reviews' },
-  { t: 'Review manipulation', d: 'A policy category covering incentives for reviews, requests for positive reviews, review gating and reviews from connected parties. Enforcement is reported to flag patterns rather than confirmed violations.', g: 'review-manipulation-risk' },
-  { t: 'Review gating', d: 'Directing dissatisfied customers to contact you instead of leaving a negative review. Prohibited, and treated as review diversion even where the intent is customer service.', g: 'product-inserts' },
-  { t: 'Request a Review', d: 'Amazon\'s own button for soliciting feedback, sending a standardized message the seller cannot customize. Reported as the only officially sanctioned proactive review mechanism.', g: 'buyer-seller-messaging' },
-  { t: 'Ungating', d: 'Obtaining approval to sell in a restricted category, brand or ASIN. Typically requires invoices from an authorized distributor covering a minimum quantity within a recent window.', g: 'ungating-restricted-categories' },
-  { t: 'GTIN', d: 'Global Trade Item Number — the umbrella term for product identifiers including UPC and EAN. Amazon verifies these against the GS1 database, and resold third-party codes are reported to fail.', g: 'gs1-barcodes-fnsku' },
-  { t: 'GS1', d: 'The organization that issues legitimate barcode identifiers. Buying directly is the only route Amazon\'s verification reliably accepts.', g: 'gs1-barcodes-fnsku' },
-  { t: 'Commingling', d: 'Storing your units interchangeably with other sellers\' identical units, tracked by manufacturer barcode rather than FNSKU. Reported as eliminated on 31 March 2026.', g: 'gs1-barcodes-fnsku' },
-  { t: 'SIPP', d: 'Ships in Product Packaging — a program for products that ship in their own packaging without an Amazon box, requiring packaging that passes transit testing.', g: 'sipp-packaging-program' },
-  { t: 'Prep', d: 'Preparing units to marketplace standards before they enter a fulfillment center: labeling, poly-bagging, bundling and protective packaging. Amazon ended its US prep and labeling service on 1 January 2026.', g: 'amazon-stopped-prepping' },
-  { t: 'AWD', d: 'Amazon Warehousing and Distribution — upstream bulk storage that replenishes FBA automatically. Reported as sitting outside the FBA capacity limit.', g: 'awd-vs-3pl-warehousing' },
-  { t: 'Substantial transformation', d: 'The test that determines a product\'s country of origin: meaningful manufacturing or processing that changes its character. Repackaging, relabeling and simple final assembly do not qualify.', g: 'country-of-origin-sourcing' },
-  { t: 'Country of origin', d: 'Where a product was manufactured or substantially transformed — not where it shipped from. Goods made in one country and routed through another retain their original origin for tariff purposes.', g: 'country-of-origin-sourcing' },
-  { t: 'Section 301', d: 'Tariffs applied to Chinese-origin goods by HTS code, sitting on top of the base duty rate in the tariff schedule.', g: 'tariff-stack-2026' },
-  { t: 'Section 232', d: 'Tariffs on specific materials such as steel, aluminium and copper. These apply at input level, so a product assembled elsewhere can still carry exposure through its components.', g: 'tariff-stack-2026' },
-  { t: 'First sale valuation', d: 'A recognized customs valuation basis allowing qualifying importers in a multi-tier supply chain to declare duty on the price the intermediary paid the manufacturer, rather than the price they paid the intermediary.', g: 'first-sale-valuation' },
-  { t: 'Duty drawback', d: 'A refund of up to 99% of duties paid on imported goods that are subsequently exported, either unchanged or after manufacturing.', g: 'duty-drawback' },
-  { t: 'Foreign Trade Zone', d: 'A designated area inside the United States treated as outside customs territory for duty purposes. Duty is deferred until goods leave the zone, and eliminated entirely on goods re-exported from it.', g: 'foreign-trade-zones' },
-  { t: 'Tariff engineering', d: 'Designing or specifying a product so it falls under a lower-duty classification. Legal when the product changes; fraud when only the description does.', g: 'tariff-engineering-design' },
-  { t: 'Customs bond', d: 'A financial guarantee to CBP that duties and fees on your entries will be paid. Required for almost all formal entries, and sized as a percentage of annual duties.', g: 'customs-bonds' },
-  { t: 'Importer of record', d: 'The party legally responsible for the customs entry, its accuracy and its duties. The obligation cannot be delegated by contract, whatever the Incoterm says.', g: 'incoterms-who-is-importer' },
-  { t: 'Entry Type 11', d: 'Informal entry, used for lower-value shipments. Entry Type 01 is the formal equivalent, required above the threshold and for goods subject to antidumping or countervailing duties.', g: 'entry-type-11-vs-01' },
-  { t: 'AD/CVD', d: 'Antidumping and countervailing duties — additional duties imposed under individual orders on defined merchandise from named countries, frequently at company level. They are not findable from an HTS code alone.', g: 'antidumping-duties' },
-  { t: 'Country of origin marking', d: 'The requirement under 19 USC 1304 that most imports carry their origin conspicuously, legibly and permanently. Unmarked goods are reported to attract a 10% ad valorem marking duty.', g: 'origin-marking-requirements' },
-  { t: 'Incoterms', d: 'Standard trade terms allocating cost, risk and responsibility between buyer and seller. They govern the commercial arrangement, not the legal identity of the importer of record.', g: 'incoterms-who-is-importer' },
-  { t: 'LCL / FCL', d: 'Less than Container Load and Full Container Load. LCL shares a container with other shippers; FCL is the whole box. Reported guidance puts the crossover around 15 cubic metres.', g: 'freight-modes' },
-  { t: 'Chargeable weight', d: 'The greater of actual and dimensional weight, used to price air freight. It penalizes bulky lightweight goods regardless of what they weigh.', g: 'freight-modes' },
-  { t: 'Pre-shipment inspection', d: 'A third-party check of finished goods before they leave the supplier — the last point at which the supplier still holds the goods and you still hold the balance payment.', g: 'qc-inspections' },
-  { t: 'AQL', d: 'Acceptance Quality Limit — a sampling standard that derives a sample size and acceptance number from lot size and chosen quality level. It assumes a manufacturing process under control.', g: 'qc-inspections' },
-  { t: 'Trade Assurance', d: 'A marketplace escrow mechanism covering payment against quality and delivery failures, and only where the transaction stays entirely within the platform.', g: 'supplier-payment-terms' },
-  { t: 'Marketplace facilitator', d: 'Laws making the marketplace responsible for collecting and remitting sales tax on its sellers\' behalf. They cover sales tax only — income, franchise and gross receipts obligations remain the seller\'s.', g: 'sales-tax-nexus' },
-  { t: 'Economic nexus', d: 'A tax obligation triggered by sales volume or transaction count in a state, independently of physical presence.', g: 'sales-tax-nexus' },
-  { t: 'Physical nexus', d: 'A tax obligation created by having property in a state — including inventory in a fulfillment center, in locations the marketplace chose rather than you.', g: 'sales-tax-nexus' },
-  { t: 'Accrual accounting', d: 'Recognising revenue and costs when they are incurred rather than when cash moves. Required for meaningful margin analysis and expected by buyers and lenders.', g: 'accrual-accounting-cogs' },
-  { t: 'SDE', d: 'Seller Discretionary Earnings — the profit figure ecommerce businesses are typically valued on, and the base to which an acquisition multiple is applied.', g: 'selling-your-fba-business' },
-  { t: 'Brand Referral Bonus', d: 'A credit against referral fees on sales driven through attribution-tagged external links, reported at an average of around 10%.', g: 'brand-referral-bonus' },
-  { t: 'Amazon Attribution', d: 'A free measurement tool for brand-registered sellers that reports clicks, detail page views and purchases from off-Amazon campaigns, with a reported 14-day lookback.', g: 'brand-referral-bonus' },
-  { t: 'Subscribe & Save', d: 'Amazon\'s recurring delivery program. Eligible FBA products are reported to be auto-enrolled at a 0% seller-funded discount, which displays as almost no offer.', g: 'subscribe-and-save-economics' },
-  { t: 'Seller Fulfilled Prime', d: 'A program allowing merchant-fulfilled offers to carry the Prime badge, subject to delivery-speed coverage requirements, weekend fulfillment and weekly performance review.', g: 'seller-fulfilled-prime' },
-  { t: 'Remote Fulfillment', d: 'Listing US FBA inventory on Amazon Canada and Mexico without sending stock across the border. A remote fulfilment fee replaces the FBA fee, and the customer pays import duties.', g: 'narf-canada-mexico' },
-  { t: 'Vendor Central', d: 'The first-party arrangement in which Amazon buys your products wholesale and becomes the retailer, setting the retail price. Invite-only, and distinct from Seller Central third-party selling.', g: 'vendor-central-vs-seller-central' },
-  { t: 'Chargeback (vendor)', d: 'A deduction issued against a supplier for a non-compliant purchase order — wrong labels, late delivery, wrong quantities. Reported as substantial and difficult to dispute.', g: 'vendor-central-vs-seller-central' },
-  { t: 'Peak fulfillment fee', d: 'A holiday surcharge on fulfillment, reported at an average of $0.32 per unit from 15 October 2026 to 14 January 2027, covering FBA, Remote Fulfillment, MCF and Buy with Prime.', g: 'holiday-peak-fulfilment-fee' },
-  { t: 'Returns processing fee', d: 'A charge applied to returns in certain categories above a return-rate threshold, deducted between the 7th and 15th of the third month following shipment.', g: 'returns-cost-and-badge' },
-  { t: 'Frequently Returned Item badge', d: 'A label applied to listings with high return rates, reported to reduce conversion materially.', g: 'returns-cost-and-badge' },
-];
+import Page from '../layouts/Page.astro';
+import fs from 'node:fs';
+import { allClaims } from '../lib/claims';
+import Cites from '../components/Cites.astro';
+const claims = allClaims();
+const terms = (fs.existsSync('data/glossary.json') ? JSON.parse(fs.readFileSync('data/glossary.json', 'utf8')) : [])
+  .filter((t: any) => t.claim_ids.every((id: string) => claims.get(id)?.status === 'verified')).sort((a: any, b: any) => a.term.localeCompare(b.term));
+const cites = [...new Set(terms.flatMap((t: any) => t.claim_ids))] as string[];
+const ld = [{ '@context': 'https://schema.org', '@type': 'DefinedTermSet', name: 'FBA Tactics glossary', hasDefinedTerm: terms.map((t: any) => ({ '@type': 'DefinedTerm', name: t.term, description: t.definition })) }];
 ---
-<PageShell ogImage="/og/p-glossary.png"
-  title="Marketplace seller glossary"
-  description="Plain definitions for the acronyms and terms that appear across Amazon, Walmart and cross-border selling — on one page, not spread across twenty."
-  eyebrow="Reference"
-  h1="Glossary"
-  lede="One page, not one page per word. Everything a seller runs into in their first year, defined without jargon."
-  crumb={{ label: 'Glossary', href: '/glossary/' }}
-  rail={[{href:'/start-here/',label:'Start here'},{href:'/guides/',label:'All guides'},{href:'/business-models/',label:'The five models'}]}
->
-  <div class="prose">
-    <dl class="gloss">
-      {TERMS.sort((a, b) => a.t.localeCompare(b.t)).map(x => (
-        <>
-          <dt id={x.t.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{x.t}</dt>
-          <dd>
-            {x.d}
-            {x.g && <> <a class="gl-more" href={`/guides/${x.g}/`}>Full guide &rarr;</a></>}
-          </dd>
-        </>
-      ))}
-    </dl>
-    <p class="note">
-      Fee names and rules change. Where a definition references a specific date or rule, verify it
-      against the marketplace documentation before acting on it.
-    </p>
-  </div>
-</PageShell>
+<Page title="Glossary" eyebrow="Reference" description="Import, customs and marketplace fee terms explained in plain English, each tied to the regulation or platform page that defines it." lede="Terms as the regulations and platforms use them, in plain English. Each entry links to the source that defines it and to the guide that covers it." cites={cites} jsonld={ld}>
+  <dl>{terms.map((t: any) => (
+    <><dt id={t.term.toLowerCase().replace(/[^a-z0-9]+/g, '-')} style="font-weight:600;margin-top:1.2rem">{t.term}</dt>
+    <dd style="margin:.3rem 0 0">{t.definition} <Cites ids={t.claim_ids} />{t.guide && <> · <a href={t.guide}>Guide</a></>}</dd></>
+  ))}</dl>
+</Page>

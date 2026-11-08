@@ -1,98 +1,46 @@
 ---
-import { SITE } from '../config';
-import { NAV } from '../data/nav';
-import { POLICY, LATEST_IN_FORCE } from '../data/policy';
-import Mark from './Mark.astro';
-
+import BrandMark from './BrandMark.astro';
+import { NAV } from '../lib/nav';
 const path = Astro.url.pathname;
-const active = (g: any) => g.href === path || g.children.some((c: any) => c.href === path);
-
-const MARKETS = [
-  { label: 'Amazon', href: '/marketplaces/amazon/' },
-  { label: 'Walmart', href: '/marketplaces/walmart/' },
-  { label: 'eBay', href: '/marketplaces/ebay/' },
-  { label: 'TikTok Shop', href: '/marketplaces/tiktok-shop/' },
-  { label: 'Etsy', href: '/marketplaces/etsy/' },
-  { label: 'AliExpress', href: '/marketplaces/aliexpress/' },
-  { label: 'Shopify', href: '/marketplaces/shopify/' },
-];
-
-/* Ticker is rendered twice so the marquee loop has no visible seam. */
-const ticker = POLICY.slice(0, 6);
 ---
 <a class="skip" href="#main">Skip to content</a>
-
-<div class="utility">
-  <div class="wrap crow">
-    <div class="marketplaces">
-      <span class="tag"><span class="dot" aria-hidden="true"></span>Independent · {SITE.publisher}</span>
-      {MARKETS.map(m => <a href={m.href}>{m.label}</a>)}
-    </div>
-    <div class="util-right">
-      <a href="/how-we-test/">Scoring rubric</a>
-      <a href="/corrections/">Corrections</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </div>
-</div>
-
-<div class="masthead">
-  <div class="wrap crow">
-    <a class="brand" href="/">
-      <Mark size={30} />
-      <span class="bt"><span class="bn">FBA<i>Tactics</i></span><em>Marketplace seller operations</em></span>
+<div class="utility"><div class="wrap">
+  <span>Marketplace fees and US import rules, read from the primary source</span>
+  <span><a href="/policy-log/">Policy log</a></span>
+</div></div>
+<header class="mast">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="FBA Tactics home">
+      <BrandMark />
+      <span><span class="brand-name">FBA Tactics</span><span class="brand-sub">fbatactics.com</span></span>
     </a>
-
-    <form class="search" action="/guides/" method="get" role="search">
-      <label class="skip" for="q">Search guides</label>
-      <input id="q" name="q" type="search" placeholder="Search fees, shipping, software…" autocomplete="off" />
-      <button type="submit">Search</button>
-    </form>
-
-    <a class="feewatch" href="/policy-log/">
-      <span class="fw-k">Fee watch</span>
-      <span class="fw-t">{LATEST_IN_FORCE.short}</span>
-      <span class="fw-d">In force since {LATEST_IN_FORCE.date}</span>
-    </a>
-  </div>
-</div>
-
-<nav class="navbar" aria-label="Sections">
-  <div class="wrap crow">
-    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">☰ Menu</button>
-    <div class="nav" id="nav">
-      {NAV.map(g => (
-        <div class="navgroup">
-          <a href={g.href} aria-current={active(g) ? 'page' : undefined} aria-haspopup="true">{g.label}<span class="chev" aria-hidden="true">▼</span></a>
-          <div class="dropdown">
-            {g.children.map(c => (
-              <a href={c.href}><strong>{c.label}</strong><em>{c.note}</em></a>
-            ))}
+    <button class="btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      {NAV.map((g) => (
+        <details>
+          <summary class={g.items.some((i) => path.startsWith(i.href.split('#')[0]) && i.href !== '/') ? 'active' : ''}>{g.label}</summary>
+          <div class="panel">
+            {g.items.map((i) => <a href={i.href}>{i.t}{i.d && <small>{i.d}</small>}</a>)}
           </div>
-        </div>
+        </details>
       ))}
-    </div>
-    <a class="nav-cta" href="/tools/">Free calculators</a>
+      <a class="btn btn-tag nav-cta" href="/tools/">Free calculators</a>
+    </nav>
   </div>
-</nav>
-
-<div class="ticker">
-  <div class="wrap crow">
-    <span class="tk-label"><span aria-hidden="true"></span>Policy log</span>
-    <div class="tk-view">
-      <div class="tk-track">
-        {ticker.map(e => <a href="/policy-log/"><b>{e.date}</b>{e.short}</a>)}
-        {ticker.map(e => <a href="/policy-log/" aria-hidden="true" tabindex="-1"><b>{e.date}</b>{e.short}</a>)}
-      </div>
-    </div>
-  </div>
-</div>
-
+</header>
+<div class="searchbar"><div class="wrap">
+  <form action="/search/" method="get" role="search">
+    <label class="vh" for="q">Search the site</label>
+    <input id="q" name="q" type="search" placeholder="Search guides, fees, regulations" autocomplete="off" />
+    <button class="btn btn-tag" type="submit">Search</button>
+  </form>
+</div></div>
 <script>
-  const b = document.getElementById('menu-btn');
-  const n = document.getElementById('nav');
-  b?.addEventListener('click', () => {
-    const open = n?.classList.toggle('open');
-    b.setAttribute('aria-expanded', String(!!open));
-  });
+  const t = document.querySelector('.menu-toggle');
+  const n = document.getElementById('site-nav');
+  t?.addEventListener('click', () => { const o = n!.classList.toggle('open'); t.setAttribute('aria-expanded', String(o)); });
+  const ds = document.querySelectorAll('.nav details');
+  ds.forEach((d) => d.addEventListener('toggle', () => { if ((d as HTMLDetailsElement).open) ds.forEach((o) => { if (o !== d) (o as HTMLDetailsElement).open = false; }); }));
+  document.addEventListener('click', (e) => { if (!(e.target as Element).closest('.nav')) ds.forEach((d) => ((d as HTMLDetailsElement).open = false)); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') ds.forEach((d) => ((d as HTMLDetailsElement).open = false)); });
 </script>

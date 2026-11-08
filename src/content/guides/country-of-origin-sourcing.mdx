@@ -1,161 +1,119 @@
 ---
-title: "Shipping Chinese goods through Vietnam does not make them Vietnamese"
-seoTitle: "Country of Origin: Why Transshipment Through Vietnam Fails"
-description: "Country of origin is where a product was substantially transformed, not where it was shipped from. Repackaging, relabeling and simple final assembly do not qualify — and CBP will be enforcing the distinction more rigorously."
-category: "Shipping & logistics"
+title: "Country of Origin for Imports: Substantial Transformation vs. Part 102"
+description: "How U.S. customs decides where a product comes from: substantial transformation, the 19 CFR Part 102 rules, where each applies, and why origin sets duty."
+category: "Import & customs"
 published: "2026-08-22"
-modified: "2026-09-05"
-minutes: 11
-numbered: true
-ledger: "Substantial transformation, not final packaging"
-ledgerKind: "cost"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 7
+summary:
+  - "Under 19 CFR 134.1(b), origin is the country of manufacture, production or growth, and work done in a second country changes origin only if it is a substantial transformation."
+  - "For goods of a NAFTA or USMCA country, 19 CFR 134.1(b) points to the Part 102 rules, which use a hierarchy ending in a change in tariff classification."
+  - "Textile and apparel products have their own origin rules in 19 CFR 102.21, applied for the customs laws to goods entered on or after July 1, 1996."
+  - "Origin drives duty: the first two Section 301 actions on products of China, which USTR said in October 2026 remain in effect, apply by origin."
+hero:
+  kind: "timeline"
+  items:
+    - {date: "2018-07-06", label: "First Section 301 China action"}
+    - {date: "2018-08-23", label: "Second Section 301 China action"}
+    - {date: "2026-10-07", label: "USTR: both actions remain in effect"}
+  claim: "country-of-origin-sourcing-14"
+related: ["origin-marking-requirements", "hts-classification-basics", "tariff-stack-2026", "antidumping-duties", "first-sale-valuation"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+U.S. customs law does not take the "ship from" country on your invoice as the origin. For most goods, the country of origin is where the article was manufactured, produced or grown, <C id="country-of-origin-sourcing-01" /> and processing in a second country changes that answer only if it is a "substantial transformation." <C id="country-of-origin-sourcing-02" /> For goods of a NAFTA or USMCA country, the regulation instead sends you to a separate rule set in 19 CFR Part 102, <C id="country-of-origin-sourcing-03" /> and textiles and apparel have their own Part 102 rules. <C id="country-of-origin-sourcing-08" />
 
-import Split from '../../components/Split.astro';
-import MiniCalc from '../../components/MiniCalc.astro';
+The answer matters because many duties are tied to origin rather than to the product alone. The Section 301 duties, for example, were imposed on products of China, <C id="country-of-origin-sourcing-12" /> and antidumping orders are listed by product and country. <C id="country-of-origin-sourcing-16" /> Moving final assembly to another country is a sourcing decision that only changes the duty if it also changes origin under the applicable rule.
 
-import StockImage from '../../components/StockImage.astro';
+<Callout type="note" title="Not a ruling">
+This page explains how origin is worked out. It cannot tell you the origin of your product; that turns on your actual production steps, which a CBP ruling or a licensed customs broker can assess.
+</Callout>
 
-<Takeaways items={[
- "Country of origin is where goods were manufactured or substantially transformed. Country of shipment is where they left from. Goods made in China and shipped via Vietnam remain Chinese-origin for tariff purposes.",
- "Reported as not qualifying: repackaging, relabeling, simple final assembly of mostly-complete components, and minor quality checks.",
- "Routing goods through a third country without genuine transformation is fraud inviting seizure and criminal liability. CBP has stepped up scrutiny.",
- "Origin for marking purposes and origin for tariff purposes can differ. One CBP ruling is cited holding a product Mexican for marking while remaining Chinese for Section 301.",
- "One published switching threshold, from a sourcing consultancy: at a 25% Section 301 rate, roughly $500,000 a year of affected imports is needed to justify a full supplier switch within twelve months.",
+## The baseline: substantial transformation (19 CFR 134.1)
+
+The definitions in 19 CFR 134.1 set the general test used for country of origin marking. "Country of origin" means "the country of manufacture, production, or growth of any article of foreign origin." <C id="country-of-origin-sourcing-01" /> If further work or material is added in another country, it "must effect a substantial transformation" for that other country to become the origin. <C id="country-of-origin-sourcing-02" />
+
+The regulation does not turn substantial transformation into a formula. A related marking provision, 19 CFR 134.35(a), describes the kind of change involved: a new article with "a name, character, or use differing" from the imported article. <C id="country-of-origin-sourcing-15" /> That wording is the closest thing in Part 134 to a working description of the change involved.
+
+## When Part 102 applies instead
+
+The same 134.1(b) definition carves out goods of a NAFTA or USMCA country: for those, origin for marking is decided by the rules in Part 102. <C id="country-of-origin-sourcing-03" /> Note that NAFTA does not apply to goods entered for consumption, or withdrawn from warehouse for consumption, on or after July 1, 2020, <C id="country-of-origin-sourcing-04" /> so for current entries the USMCA references are the operative ones.
+
+Part 102's own scope statement says that, except for 102.21 through 102.25, it sets rules for determining origin for the purposes listed in Annex 311 of NAFTA, <C id="country-of-origin-sourcing-05" /> which are country of origin marking and determining the rate of duty and staging category for originating textile and apparel products and for originating goods under Annex 302.2. <C id="country-of-origin-sourcing-06" /> Sections 102.1 through 102.18 and 102.20 also determine origin for marking purposes under the USMCA. <C id="country-of-origin-sourcing-07" />
+
+The core test is in 19 CFR 102.11(a). Origin is the country in which the good is wholly obtained or produced, the good is produced exclusively from domestic materials, or each foreign material in the good undergoes an applicable change in tariff classification. <C id="country-of-origin-sourcing-09" /> Part 102 sets out "Specific rules by tariff classification" in 102.20, <C id="country-of-origin-sourcing-17" /> which is why origin under Part 102 depends on classification; see [HTS classification basics](/guides/hts-classification-basics/).
+
+## Textile and apparel products (19 CFR 102.21)
+
+Textiles follow a separate section. 19 CFR 102.21 governs the country of origin of imported textile and apparel products for "the Customs laws and the administration of quantitative restrictions," for goods entered or withdrawn from warehouse for consumption on or after July 1, 1996. <C id="country-of-origin-sourcing-08" />
+
+Its general rule is applied in sequence, stopping at the first step that gives an answer:
+
+<Flow title="Textile and apparel origin under 19 CFR 102.21(c), applied in order" claim="country-of-origin-sourcing-10" steps={[
+  {t: "Wholly obtained", d: "The single country where the good was wholly obtained or produced."},
+  {t: "Tariff shift", d: "The single country where each foreign material underwent the applicable change in classification."},
+  {t: "Knit or assembled", d: "Where a knit-to-shape good was knit; otherwise, with exceptions, where a wholly assembled good was assembled."},
+  {t: "Most important process", d: "The single country where the most important assembly or manufacturing process occurred."},
+  {t: "Last important process", d: "The last country where an important assembly or manufacturing process occurred."}
 ]} />
 
-Every seller importing from China has had the conversation about moving production. Most of the advice around it skips the only question that decides whether it works.
+## Which rule applies where
 
-## The rule
+| Your goods | Rule set | Where it is written |
+|---|---|---|
+| Most non-textile goods, for marking | Country of manufacture, production or growth; substantial transformation for work in a second country | 19 CFR 134.1(b) |
+| Goods of a NAFTA or USMCA country, for marking | Part 102 rules (wholly obtained, domestic materials, or tariff shift) | 19 CFR 134.1(b); 102.0; 102.11 |
+| Textile and apparel products entered on or after July 1, 1996 | Five-step hierarchy for the customs laws | 19 CFR 102.21 |
 
-<Split source="The substantial-transformation test under 19 CFR Part 134; EAPA enforcement of transshipment"
- left={{ title: 'Changes origin', badge: 'QUALIFIES', tone: 'green', rows: ['Real manufacturing', 'Substantial transformation of inputs'] }}
- right={{ title: 'Does not', badge: 'ROUTING ONLY', tone: 'orange', rows: ['Repackaging & relabeling', 'Simple final assembly', 'Third-country transit'] }} />
+*Source: Office of the Federal Register / National Archives (eCFR), 19 CFR 134.1 and Part 102, checked Nov 8, 2026.* <C id="country-of-origin-sourcing-03" /> <C id="country-of-origin-sourcing-09" /> <C id="country-of-origin-sourcing-08" />
 
-**Country of origin** is where a product was manufactured or **substantially transformed**.
+## Why origin drives the duty rate
 
-**Country of shipment** is where it left from.
+Origin is the switch that turns several duty layers on or off. Two examples you can read in the Federal Register:
 
-**They are frequently different, and only the first matters for tariffs.** Goods manufactured in China and shipped to the US via a warehouse in Vietnam remain Chinese-origin.
+**Section 301 duties on products of China.** USTR's [May 6, 2026 notice opening the second four-year review](https://www.federalregister.gov/documents/2026/05/06/2026-08806/initiation-of-second-four-year-review-process-chinas-acts-policies-and-practices-related-to) recounts that the first action imposed additional duties of 25 percent ad valorem on 818 tariff subheadings with an approximate annual trade value of $34 billion, <C id="country-of-origin-sourcing-11" /> and the second imposed additional duties of 25 percent on 279 tariff subheadings with about $16 billion in trade, <C id="country-of-origin-sourcing-13" /> effective July 6, 2018, and August 23, 2018. <C id="country-of-origin-sourcing-12" /> In its [October 7, 2026 continuation notice](https://www.federalregister.gov/documents/2026/10/07/2026-20510/continuation-of-actions-chinas-acts-policies-and-practices-related-to-technology-transfer), USTR stated that the July 6, 2018 and August 23, 2018 actions, as modified, did not terminate and remain in effect. <C id="country-of-origin-sourcing-14" />
 
-<Figure value="Transformed, not routed" kind="cost" source="substantial transformation test, 2026, checked September 5, 2026">
- The test customs authorities apply. Meaningful manufacturing or processing that changes the product's character — not final packaging or cosmetic assembly of finished components.
-</Figure>
-
-## What counts and what does not
-
-Reported as **not** qualifying:
-
-- Repackaging
-- Relabeling
-- Simple final assembly of mostly-complete components
-- Minor quality checks
-
-Reported as qualifying: **meaningful manufacturing or processing that changes the product's character.**
-
-**One CBP ruling makes the distinction concrete.** Reporting on HQ H300226 describes a motor assembled in Mexico from Chinese subassemblies: under tariff-shift rules the product qualified as Mexican **for marking purposes**, but the production performed in Mexico was held to be "mere simple assembly" with the foreign subassemblies not substantially transformed — so for origin purposes, and therefore for Section 301, the country of origin remained China.
-
-**Two consequences worth absorbing:**
-
-**Marking origin and tariff origin can differ.** A product can legitimately be marked as made in one country while carrying the tariff exposure of another.
-
-**"Assembled in" is not a safe harbour.** The question is whether the assembly transformed the product, and simple assembly is not doing so.
-
-<StockImage slug="country-of-origin-sourcing" theme="logistics" />
-
-## The enforcement position
-
-Reporting is consistent and blunt.
-
-**Transshipment without substantial transformation is fraud**, inviting seizure and criminal liability. Not a gray area, not aggressive planning.
-
-**CBP is having stepped up scrutiny** of goods routed through third countries primarily to avoid Chinese-origin treatment, with substantial transformation rules being enforced more rigorously.
-
-**And suppliers will offer it.** A factory proposing to ship through a third country and re-document the origin is proposing something that exposes you — the importer of record — rather than them. See the [Incoterms guide](/guides/incoterms-who-is-importer/) on where that liability sits.
-
-## The three alternatives, honestly compared
-
-Reported characteristics of the main destinations:
-
-**Mexico**
-- Road freight from northern manufacturing zones at **4 to 8 days** to US distribution centers, against 25 to 35 days by sea from Asia
-- **USMCA zero tariff** on qualifying Mexico-origin goods, with product-specific rules of origin that must be verified — a tariff-shift rule for most manufactured goods
-- IMMEX program allowing temporary import of inputs without Mexican duty or VAT where finished goods are exported
-- Incorrect USMCA origin claims will produce back-duty liability and audit exposure
-
-**Vietnam**
-- Strongest tariff advantage reported in **non-US corridors**: CPTPP markets including Japan, Australia, Canada and the UK, and the EU under the EU-Vietnam FTA
-- 25 to 35 days by sea to the US
-
-**India**
-- The third named destination in the China Plus One discussion, with similar sea transit
-
-**The pattern is not a single switch.** QIMA data cited for Q1 2026 shows the top three supplier country share for North American buyers falling from 61% to 54% in a year — described as broader distribution across more countries rather than a China-to-one-alternative move.
-
-## The switching arithmetic
-
-One published estimate gives the most useful numbers found:
-
-**Cost of a full supplier switch:** 6 to 18 months of lead time, tooling requalification at **$25,000 to $500,000** depending on complexity, engineering resources, and quality-ramp losses.
-
-**The threshold:** at a 25% Section 301 rate, you need at least **$500,000 a year of affected imports** to justify a full switch within twelve months.
-
-**The alternative most take:** partial diversification — a second source in Vietnam, India, Mexico or Thailand — at 30/70 or 50/50 splits, de-risking supply without abandoning the Chinese base.
-
-**Run that against your own numbers before starting.** Annual affected import value multiplied by the rate difference, against tooling and requalification cost. For most sellers below that threshold, a second source is a resilience decision rather than a tariff one — which is still a good reason, just a different one.
-
-## The exposure that does not move
-
-Two cautions from the reporting.
-
-**The alternative-sourcing landscape is in flux.** New Section 301 investigations reported as launched in March 2026 cover Vietnam, Mexico, Taiwan, Japan, the EU and dozens more, with hearings scheduled for May 2026. plainly that importers who shifted to reduce exposure **should not assume that exposure is permanently gone.**
-
-**Chinese inputs travel with the product.** One analysis notes a product made in Vietnam from Chinese inputs is genuinely not the same as a product made in China — for tariff exposure, compliance treatment, inspection oversight and geopolitical risk — but that importers planning multi-year strategies should understand the full content of what they are buying. **[Section 232](/guides/tariff-stack-2026/) applies at input level**, so metal content carries its own exposure regardless of where assembly happened.
-
-## What to do
-
-**Establish your actual origin before doing anything else.** Where is the product substantially transformed? Not where it ships from, and not what the supplier says.
-
-**Ask what the new country's process actually involves.** If the answer is assembly of Chinese components, the CBP ruling above describes the likely outcome.
-
-**Verify rules of origin per product**, not per country. USMCA rules are product-specific, and an incorrect claim produces back-duty liability.
-
-**Run the switching threshold** — affected annual import value against tooling and requalification cost — before committing.
-
-**Consider partial diversification** if you are below it. 30/70 splits are common and they buy resilience even where they do not buy tariff relief.
-
-**Get the marking right separately.** Marking origin and tariff origin can differ, and marking has its own rules — see the [marking guide](/guides/origin-marking-requirements/).
-
-**Refuse transshipment proposals in writing.** The exposure is yours, and the consequence as seizure and criminal liability rather than a penalty.
-
-<MiniCalc variant="stack" />
-
-Write down where your product's essential character is created — not where it is boxed. If that place and your invoice's country of origin are different, the problem is already on file with CBP; it just has not been opened yet.
-
-<Faq items={[
- { q: "Can I ship Chinese goods through Vietnam to avoid tariffs?", a: "No. Country of origin is where goods were substantially transformed, not where they shipped from. routing without genuine transformation as fraud inviting seizure and criminal liability, with CBP enforcement stepped up." },
- { q: "What counts as substantial transformation?", a: "Meaningful manufacturing or processing that changes the product's character. repackaging, relabeling, simple final assembly of mostly-complete components and minor quality checks do not qualify." },
- { q: "Can a product be marked as made in one country but taxed as another?", a: "Yes. One CBP ruling is cited holding a motor assembled in Mexico from Chinese subassemblies to be Mexican for marking purposes while remaining Chinese-origin for Section 301, because the assembly was held to be simple." },
- { q: "When is switching suppliers worth it?", a: "One published estimate puts the threshold at roughly $500,000 a year of affected imports at a 25% Section 301 rate to justify a full switch within twelve months, against 6 to 18 months of lead time and tooling requalification of $25,000 to $500,000." },
- { q: "Is Vietnam or Mexico better?", a: "Mexico wins decisively on transit for US buyers — at 4 to 8 days by road against 25 to 35 by sea — and offers USMCA zero-tariff treatment on qualifying goods. Vietnam's strongest tariff advantage is in non-US corridors under CPTPP and the EU-Vietnam FTA." },
- { q: "Will moving out of China permanently solve my tariff exposure?", a: "not to assume so. Section 301 investigations launched in March 2026 cover Vietnam, Mexico, Taiwan, Japan and dozens more countries, and Section 232 applies at input level regardless of where assembly took place." },
+<Bars title="Tariff subheadings in the first two Section 301 China actions (25% additional duty each)" unit=" subheadings" rows={[
+  {label: "July 6, 2018 action (List 1)", value: 818, claim: "country-of-origin-sourcing-11"},
+  {label: "August 23, 2018 action (List 2)", value: 279, claim: "country-of-origin-sourcing-13"}
 ]} />
 
-<Sources items={[
-  { title: '19 CFR Part 134 (country of origin marking) and substantial transformation rulings; Enforce and Protect Act (EAPA) investigations of transshipment', publisher: 'U.S. Customs and Border Protection', accessed: '2026-09-05' },
- { title: 'Amazon product sourcing outside China in 2026 (substantial transformation test; what does and does not qualify; tariffs reaching 145% on some categories; customs auditing for origin misdeclaration)', publisher: 'SellerSprite', href: 'https://e.sellersprite.com/en/blog/amazon-sourcing-outside-china-2026', accessed: '2026-09-05' },
- { title: 'Country of origin rules: how it is determined (2026) (origin against shipment; goods shipped via a third-country warehouse remaining Chinese-origin; 19 USC 1304 marking requirements and the 10% marking duty)', publisher: 'Drip Capital', href: 'https://www.dripcapital.com/en-us/resources/blog/country-of-origin', accessed: '2026-09-05' },
- { title: 'US tariffs 2026 (full supplier switch at 6–18 months and $25,000–$500,000 tooling requalification; $500,000 annual affected imports to justify a switch at 25%; 30/70 and 50/50 partial diversification; transshipment as fraud)', publisher: 'Suaid Global', href: 'https://suaidglobal.com/insights/us-tariffs-2026-guide/', accessed: '2026-09-05' },
- { title: 'Supply chain diversification away from China 2026 (Mexico road freight of 4–8 days; USMCA zero tariff with product-specific rules and tariff-shift rules; IMMEX program; Vietnam CPTPP and EU-Vietnam FTA advantages; QIMA Q1 2026 data showing top-three supplier share falling from 61% to 54%)', publisher: 'Carra Globe', href: 'https://carraglobe.com/supply-chain-diversification-away-from-china-2026/', accessed: '2026-09-05' },
- { title: 'Mexico, China and Section 301 (CBP ruling HQ H300226 distinguishing origin for marking from origin for tariff purposes; simple assembly not constituting substantial transformation)', publisher: 'JD Supra', href: 'https://www.jdsupra.com/legalnews/mexico-china-and-section-301-35920/', accessed: '2026-09-05' },
- { title: 'What is country of origin? A US importer\u2019s guide to substantial transformation (March 2026 Section 301 investigations with May hearings; sourcing shifts not permanently removing exposure; Section 232 applying at input level)', publisher: 'First Link', href: 'https://firstlinkpartners.com/country-of-origin-imports/', accessed: '2026-09-05' },
- { title: 'The new sourcing map for US importers in 2026 (CBP scrutiny of goods routed through third countries; substantial transformation enforced more rigorously; a product made in Vietnam from Chinese inputs differing from one made in China for compliance and operational purposes)', publisher: 'Euro-American Worldwide Logistics', href: 'https://www.eawlogistics.com/the-new-sourcing-map-for-u-s-importers-in-2026/', accessed: '2026-09-05' },
- { title: '2026 China Plus One strategy: Vietnam vs India vs Mexico (verifying substantial transformation as the first rule; Mexico nearshoring transit advantage; single-source vulnerability)', publisher: 'DocShipper', href: 'https://china.docshipper.com/en/logistics/2026-china-plus-one-vietnam-vs-india-vs-mexico/', accessed: '2026-09-05' },
- { title: 'USMCA rules of origin (applying substantial transformation criteria under US non-preferential rules to prove third-country origin has been removed; increased customs scrutiny)', publisher: 'Prodensa', href: 'https://www.prodensa.com/insights/blog/understanding-rules-of-origin-are-you-paying-more-tariffs-than-you-should', accessed: '2026-09-05' },
+The May 2026 notice also records additional duties on supplemental lists of products, <C id="country-of-origin-sourcing-12" /> so the current rate for a given subheading has to be checked against the current notices and the tariff schedule. The layering of these duties is covered in [The 2026 tariff stack](/guides/tariff-stack-2026/).
+
+**Antidumping duties by country.** Commerce's [September 1, 2026 notice of opportunity to request administrative review](https://www.federalregister.gov/documents/2026/09/01/2026-17810/antidumping-or-countervailing-duty-order-finding-or-suspended-investigation-opportunity-to-request) lists the mattress orders separately for India (A-533-919), Mexico (A-201-859), Spain (A-469-826) and Kosovo (A-803-001). <C id="country-of-origin-sourcing-16" /> The same product carries a different case for each origin country. See [Antidumping and countervailing duties](/guides/antidumping-duties/).
+
+## Sourcing decisions this affects
+
+- **Final assembly in a second country.** Only a substantial transformation (or, for USMCA goods, the Part 102 rules) moves origin; <C id="country-of-origin-sourcing-02" /> work in a second country that falls short of that leaves origin where it was.
+- **Mixed-material products.** Under Part 102, each foreign material is tested for the required classification change, <C id="country-of-origin-sourcing-09" /> so a bill of materials with HTS numbers is the starting document.
+- **Marking follows the same answer.** The country you determine here is the one that has to appear on the product under [19 CFR Part 134](/guides/origin-marking-requirements/).
+- **Valuation is separate.** Origin decides which duties apply; the value they are charged on is a separate question covered in [First-sale valuation](/guides/first-sale-valuation/).
+
+## Worked example (hypothetical): what moving assembly does to the Section 301 layer
+
+This example shows how to frame a relocation decision using only the origin rules and the Section 301 rate on this page. All inputs are hypothetical.
+
+**Inputs.** A seller imports a product of China classified in a subheading covered by the July 6, 2018 action, and the example assumes that action's 25 percent rate applies to it. Products outside the covered subheadings are not subject to this layer. One shipment has a value of $40,000. The supplier offers to move final assembly to a second country for an extra $4,000 per shipment.
+
+| Scenario | Country of origin | Section 301 additional duty on this shipment |
+|---|---|---|
+| A. Keep assembly in China | China | 25% x $40,000 = $10,000 <C id="country-of-origin-sourcing-11" /> |
+| B. Move assembly; the work is a substantial transformation | Second country | Not applicable, since the actions cover products of China <C id="country-of-origin-sourcing-02" /> <C id="country-of-origin-sourcing-12" /> |
+| C. Move assembly; the work falls short of substantial transformation | China | Still $10,000, plus the $4,000 relocation cost <C id="country-of-origin-sourcing-02" /> |
+
+*Source: Office of the Federal Register, USTR notice of May 6, 2026, and eCFR, 19 CFR 134.1, checked Nov 8, 2026.* <C id="country-of-origin-sourcing-11" /> <C id="country-of-origin-sourcing-02" />
+
+**Reading the result.** Scenario B saves $10,000 - $4,000 = $6,000 per shipment, but only if the second-country work changes origin. Scenario C is the worst case: the seller pays for relocation and keeps the duty. The decision therefore turns on the transformation question, not on the supplier's address.
+
+Two further checks belong in the same calculation. First, the 25% figure is the rate set by the first two actions, which remain in effect as modified; supplemental lists also exist, so confirm whether your subheading is covered and its current rate. <C id="country-of-origin-sourcing-11" /> <C id="country-of-origin-sourcing-13" /> <C id="country-of-origin-sourcing-14" /> <C id="country-of-origin-sourcing-12" /> Second, a new origin can bring its own layers: the mattress orders, for example, are listed separately for India, Mexico, Spain and Kosovo. <C id="country-of-origin-sourcing-16" />
+
+## What to check yourself
+
+<Checklist title="Confirm origin on the primary sources" items={[
+  "Read the definitions in 19 CFR 134.1 on eCFR (Title 19, Chapter I, Part 134) and decide whether your goods are goods of a NAFTA or USMCA country.",
+  "If they are, read 19 CFR 102.0, 102.11 and the 102.20 rule for your HTS heading on eCFR.",
+  "If you import textiles or apparel, read 19 CFR 102.21 in full, including the exceptions to step three.",
+  "List each production step and the country where it happens, with the HTS classification of each input.",
+  "Search the Federal Register for current Section 301 and antidumping notices that name your product and its origin country.",
+  "Ask for a CBP binding ruling if the origin of a multi-country product is not clear."
 ]} />

@@ -1,92 +1,13 @@
 ---
-import Base from '../layouts/Base.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Btn from '../components/Btn.astro';
-import { AUTHOR, SITE } from '../config';
+import Page from '../layouts/Page.astro';
+import { SITE } from '../lib/site';
 ---
-<Base title="Contact" description="How to reach the publisher of this site for corrections, questions, permissions and press, and what to expect back.">
-<div class="wrap"><Breadcrumbs trail={[{ label: 'Contact', href: '/contact/' }]} /></div>
-<section class="wrap" style="padding:1.5rem 1.25rem 0">
-  <p class="eyebrow">Contact</p>
-  <h1 style="max-width:20ch">Contact</h1>
-  <p style="max-width:46ch;font-size:1.12rem;color:var(--ink-soft);margin:1.2rem 0 1.8rem">
-    One address, read by a person. There is no ticket system, no contact form that goes nowhere, and no
-    autoresponder.
-  </p>
-
-  <div class="prose">
-    <h2>Email</h2>
-    <p style="font-size:1.15rem">
-      <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>
-    </p>
-    <p>
-      Every message is read by {AUTHOR.name}, who writes and edits this site. Replies normally go out
-      within two working days.
-    </p>
-
-    <h2>What to send, and what happens to it</h2>
-    <table>
-      <thead><tr><th>If you are writing about</th><th>Include</th><th>What happens</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>A wrong figure</td>
-          <td>The page, the figure, what you believe is correct, and the source</td>
-          <td>Corrected in place with a dated note and logged publicly on the <a href="/corrections/">corrections page</a>, normally within 48 hours</td>
-        </tr>
-        <tr>
-          <td>A fee or policy change we have missed</td>
-          <td>The platform announcement or regulation, with a link</td>
-          <td>Added to the <a href="/policy-log/">fee and policy log</a> with its date, and any affected guide is revisited</td>
-        </tr>
-        <tr>
-          <td>An operational question</td>
-          <td>Enough context to answer usefully</td>
-          <td>Answered where we can. Where the answer is genuinely useful to other sellers, it may become a guide — you will be asked first</td>
-        </tr>
-        <tr>
-          <td>Permission to republish</td>
-          <td>What you want to use and where</td>
-          <td>Short quotes with attribution and a link need no permission. Anything more, ask</td>
-        </tr>
-        <tr>
-          <td>Press or a speaking request</td>
-          <td>Outlet, topic, deadline</td>
-          <td>Answered directly</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>Vendors and agencies</h2>
-    <p>
-      We do not accept sponsored posts, paid placement, link insertions, guest posts, or pre-publication
-      review of anything. Offers of free product access are declined; when software reviews begin, tools
-      will be bought at list price on the plan being reviewed. These are not negotiating positions and a
-      follow-up email will not change them.
-    </p>
-    <p>
-      What is welcome: a correction to something we have published about your product, with the
-      documentation behind it. That gets the same treatment as any other correction.
-    </p>
-
-    <h2>What we cannot help with</h2>
-    <ul>
-      <li>Account suspensions, appeals and plan-of-action letters. That needs someone with sight of your account.</li>
-      <li>Tax, legal, customs classification and accounting questions. Nothing here is professional advice, and a 10-digit tariff code is not something to take from a website.</li>
-      <li>Anything requiring access to your seller account or your data. We will not ask for credentials and you should not send them.</li>
-    </ul>
-
-    <h2>Publisher</h2>
-    <p>
-      {SITE.name} is published by <strong>{SITE.publisher}</strong>, an independent business with no
-      ownership relationship to any marketplace or software vendor covered here. Editorial responsibility
-      sits with <a href="/about/">{AUTHOR.name}</a>. Funding, independence and disclosure rules are set out
-      on the <a href="/editorial-standards/">editorial standards page</a>.
-    </p>
-
-    <div class="btn-row" style="margin-top:2rem">
-      <Btn href="/corrections/">Report a correction</Btn>
-      <Btn href="/about/" quiet={true}>Who writes this</Btn>
-    </div>
-  </div>
-</section>
-</Base>
+<Page title="Contact" eyebrow="Contact" description="How to contact the publisher of FBA Tactics to report an error, suggest a primary source, or ask about the site." lede="Email is the only contact channel. There is no contact form, so nothing you send passes through a third-party form service.">
+  <p><strong>Email:</strong> <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p>
+  <h2>Reporting an error</h2>
+  <p>Include the page address, the sentence or figure you believe is wrong, and — if you have it — the primary source that shows the correct value (a regulation, a Federal Register notice, or the platform's own fee page). Confirmed corrections are made and logged on the <a href="/corrections/">corrections page</a> with the date.</p>
+  <h2>What we cannot help with</h2>
+  <p>We cannot advise on your individual shipment, classification, account or tax position, and we do not sell services. For those, a licensed customs broker, a CBP binding ruling, or a tax professional are the right routes.</p>
+  <h2>Your email and your data</h2>
+  <p>Emails are read by the publisher and used only to answer you or fix the site. How long we keep them and your rights are set out in the <a href="/privacy/">privacy policy</a>.</p>
+</Page>

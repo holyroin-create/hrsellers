@@ -1,162 +1,139 @@
 ---
-title: "Anything with a lithium battery is a dangerous good. That includes most of what you sell."
-seoTitle: "Amazon Hazmat: Lithium, Aerosols, Magnets — Classification and PCP"
-description: "The hazmat net catches far more than chemicals: anything containing a lithium cell, pressurised, flammable, chemically reactive or strongly magnetic can enter review. While it is in the queue you cannot send inventory, and stock already at a center can be held."
-category: "Shipping & logistics"
+title: "Shipping Batteries, Aerosols, Flammables: US Hazmat Rules for Sellers"
+description: "How 49 CFR Parts 171-173 classify consumer goods as hazmat, the lithium battery and limited quantity exceptions, and the training rule for shipping staff."
+category: "Operations & accounting"
 published: "2026-08-12"
-modified: "2026-09-05"
-minutes: 11
-numbered: true
-ledger: "Review: 2–5 business days, inbound blocked"
-ledgerKind: "cost"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 7
+summary:
+  - "Under 49 CFR 173.185(c), small lithium ion cells may not exceed 20 Wh and lithium ion batteries may not exceed 100 Wh to use the small-battery exception."
+  - "Every lithium cell or battery must be of a type proven to meet UN Manual of Tests and Criteria, Part III, sub-section 38.3."
+  - "Limited quantity flammable liquids in Packing Group II are limited to inner packagings of 1.0 L each, and the package to 30 kg gross."
+  - "Limited quantity aerosols must be in containers of no more than 1 L capacity and pass a hot water bath test."
+  - "Hazmat employees must be trained within 90 days of starting a hazmat job function and retrained at least once every three years."
+hero:
+  kind: "compare"
+  unit: "Wh"
+  rows:
+    - label: "Lithium ion cell (max for 173.185(c))"
+      value: 20
+    - label: "Lithium ion battery (max for 173.185(c))"
+      value: 100
+  claim: "hazmat-dangerous-goods-12"
+related: ["us-product-compliance", "customs-holds-and-exams", "hts-classification-basics"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+A consumer product becomes a hazardous material for US shipping when it falls into one of the hazard classes in 49 CFR 173.2. In a typical marketplace catalog the items that raise the question are lithium batteries, aerosols, and flammable liquids such as perfume or nail polish. Hazmat status does not mean the item cannot ship; it means the person who offers it for transport must classify, package, mark and document it under the Hazardous Materials Regulations, or use an exception the regulations provide.
 
-import MiniCalc from '../../components/MiniCalc.astro';
+For most sellers the working tools are three exceptions: the small lithium battery provisions in 49 CFR 173.185(c), the limited quantity provisions for each hazard class (for example 173.150(b) for flammable liquids and 173.306 for aerosols), and the training requirement in 49 CFR 172.704 that applies to anyone who prepares those packages. Each is summarized below with the paragraph to check.
 
-import StockImage from '../../components/StockImage.astro';
+<Callout type="note" title="Scope of this page">
+This page summarizes the Hazardous Materials Regulations for ground shipments within the US. Air transport adds further limits. Carrier and marketplace dangerous goods programs are separate and are not covered here. For a determination on a specific product, a hazmat consultant or the carrier's dangerous goods desk is the route.
+</Callout>
 
-<Takeaways items={[
- "The category is wider than sellers assume. anything containing a lithium cell, pressurised, flammable, chemically reactive or strongly magnetic as capable of entering a dangerous goods review.",
- "While an ASIN is in review you cannot send new inventory of it to FBA, and stock already at a fulfillment center may be placed on hold.",
- "Reported review times are 2 to 5 business days with complete documentation, and 3 to 5 in another account. Incomplete or badly formatted safety data sheets are named as the leading cause of rejection.",
- "Exemption sheets are only accepted for two categories: battery and battery-powered products, and products confirmed to contain no harmful chemicals. Submitting one outside those will be rejected automatically.",
- "One seller-education site reports that from April 30, 2026 all FBA-eligible dangerous goods can ship through Amazon's Partnered Carrier program. We have not seen the Amazon announcement itself; confirm in Send to Amazon before dropping your hazmat carrier.",
+## When a product is a hazardous material
+
+49 CFR 171.8 defines a hazardous material as "a substance or material that the Secretary of Transportation has determined is capable of posing an unreasonable risk" to health, safety and property in commerce. <C id="hazmat-dangerous-goods-01" /> The class of a hazardous material "is indicated by either the class or division number or the class name," set out in the table in 173.2. <C id="hazmat-dangerous-goods-02" />
+
+| Class | Division | Name |
+|---|---|---|
+| 1 | 1.1–1.6 | Explosives (six divisions) |
+| 2 | 2.1 | Flammable gas |
+| 2 | 2.2 | Non-flammable compressed gas |
+| 2 | 2.3 | Poisonous gas |
+| 3 | — | Flammable and combustible liquid |
+| 4 | 4.1 / 4.2 / 4.3 | Flammable solid / Spontaneously combustible / Dangerous when wet |
+| 5 | 5.1 / 5.2 | Oxidizer / Organic peroxide |
+| 6 | 6.1 / 6.2 | Poisonous materials / Infectious substance |
+| 7 | — | Radioactive material |
+| 8 | — | Corrosive material |
+| 9 | — | Miscellaneous hazardous material |
+
+*Source: Office of the Federal Register (eCFR), 49 CFR 173.2, Table 1, checked Nov 8, 2026.* <C id="hazmat-dangerous-goods-03" />
+
+Three definitions in 171.8 come up constantly for consumer goods:
+
+- **Aerosol:** "an article consisting of a non-refillable receptacle containing a gas," as further specified in the definition. <C id="hazmat-dangerous-goods-04" />
+- **Limited quantity:** "the maximum amount of a hazardous material for which there is a specific labeling or packaging exception." <C id="hazmat-dangerous-goods-05" />
+- **Consumer commodity:** a material "packaged and distributed in a form intended or suitable for sale through retail sales agencies," as further specified in the definition. <C id="hazmat-dangerous-goods-06" />
+
+## Who is responsible
+
+Under 49 CFR 171.2(b), "each person who offers a hazardous material for transportation in commerce must comply" with the applicable requirements, and each offeror is responsible for the pre-transportation functions it performs. <C id="hazmat-dangerous-goods-07" /> If you print the label and seal the box, you are the offeror for that package, even if a 3PL or carrier moves it afterwards. A business that uses at least one person who performs these functions is a "hazmat employer" under 171.8. <C id="hazmat-dangerous-goods-08" /> A "hazmat employee" under the same section includes a person employed on a full-time, part-time or temporary basis by a hazmat employer, subject to the further conditions in that definition. <C id="hazmat-dangerous-goods-11" />
+
+## Lithium batteries: 49 CFR 173.185
+
+Two requirements apply to every lithium cell or battery, whether shipped alone, packed with equipment, or installed in a device:
+
+1. **UN 38.3 testing.** Each lithium cell or battery "must be of the type proven to meet the criteria in part III, sub-section 38.3" of the UN Manual of Tests and Criteria. <C id="hazmat-dangerous-goods-09" />
+2. **Test summary.** For cells and batteries manufactured on or after January 1, 2008, the manufacturer and any subsequent distributor must make a test summary available, with an exception for button cells installed in equipment. <C id="hazmat-dangerous-goods-10" /> A reseller is a subsequent distributor, so ask your supplier for the summary before the first order ships.
+
+The small-battery exception in 173.185(c) relaxes packaging and documentation requirements for batteries under set size limits:
+
+- The Watt-hour rating "may not exceed 20 Wh for a lithium ion cell or 100 Wh for a lithium ion battery." <C id="hazmat-dangerous-goods-12" />
+- For lithium metal, the lithium content "may not exceed 1 g for a lithium metal cell or 2 g for a lithium metal battery." <C id="hazmat-dangerous-goods-13" />
+- Except where batteries are packed with or contained in equipment, each package "must not exceed 30 kg (66 pounds) gross weight." <C id="hazmat-dangerous-goods-14" />
+- Each package "must display the lithium battery mark," subject to the exceptions listed in the paragraph. <C id="hazmat-dangerous-goods-15" />
+
+<Callout type="example" title="Worked example (hypothetical inputs)">
+A power bank is rated 3.7 V and 20,000 mAh. Watt-hours are volts times amp-hours: 3.7 × 20 = 74 Wh. That is under the 100 Wh battery limit in 173.185(c), so the small-battery provisions can be considered. A 3.7 V, 30,000 mAh unit would be 111 Wh and over the limit.
+</Callout>
+
+## Limited quantities: flammable liquids and aerosols
+
+Limited quantity exceptions are material-specific. Under 173.156(a), they are "permitted only if this section is referenced for the specific hazardous material in the § 172.101 Table." <C id="hazmat-dangerous-goods-16" /> Look up the product's UN number in the Hazardous Materials Table first.
+
+### Flammable liquids (173.150(b))
+
+<Bars title="Maximum inner packaging size, limited quantity flammable liquids (49 CFR 173.150(b))" unit="L" rows={[
+  {label: "Packing Group I", value: 0.5, claim: "hazmat-dangerous-goods-18"},
+  {label: "Packing Group II", value: 1.0, claim: "hazmat-dangerous-goods-18"},
+  {label: "Packing Group III", value: 5.0, claim: "hazmat-dangerous-goods-18"}
 ]} />
 
-Most sellers first meet this subject when a listing they thought was ordinary gets flagged. Headphones. A cordless tool. A toy with a light in it. The classification is not about how dangerous the product feels; it is about what is inside it and how it behaves in a warehouse or an aircraft hold.
+Inner packagings go in a strong outer packaging, and each package "may not exceed 30 kg (66 pounds) gross weight." <C id="hazmat-dangerous-goods-18" /> Limited quantities under this paragraph "are excepted from labeling requirements, unless the material is offered for transportation or transported by aircraft," and a conforming package is not subject to the shipping paper requirements of subpart C of part 172, subject to the stated conditions. <C id="hazmat-dangerous-goods-19" />
 
-## What actually triggers it
+A flammable liquid with a flash point at or above 38 °C (100 °F) that meets no other hazard class may be reclassed as a combustible liquid, and a combustible liquid in non-bulk packaging is largely outside the regulations, with exceptions for hazardous substances, hazardous wastes and marine pollutants. <C id="hazmat-dangerous-goods-20" />
 
-the net as much wider than most sellers assume: **anything containing a lithium-ion or lithium-metal cell, anything pressurised, anything flammable, anything chemically reactive, and anything strongly magnetic** — even when the product itself feels mundane.
+### Aerosols (173.306)
 
-Named examples across sources:
+For limited quantity aerosols, "the capacity of the container must not exceed 1 L (61.0 cubic inches)," <C id="hazmat-dangerous-goods-21" /> and each container, after filling, "must be subjected to a test performed in a hot water bath," or an allowed alternative. <C id="hazmat-dangerous-goods-22" /> Limited quantities of compressed gases are "excepted from labeling, except when offered for transportation or transported by air." <C id="hazmat-dangerous-goods-23" />
 
-| Group | Examples |
-| --- | --- |
-| Lithium battery products | Laptops, cameras, phones, tablets, chargers, power banks, cordless tools, smart-home devices, e-readers, drones, smartwatches, battery-powered toys |
-| Magnetised materials | Speakers, headphones, light meters, some children's toys |
-| Non-harmful chemicals | Glue and adhesives, spray deodorants, hairspray, hair dye, pest control products |
-| Aerosols and pressurised | Sprays of most kinds |
-| Reactive or flammable | Cleaning chemicals, perfumes, hand sanitiser |
+### Package marking and weight
 
-**Lithium batteries are the largest single group**, and the reason catches people: anything containing a lithium cell falls into Class 9 dangerous goods, and that captures most modern consumer electronics — including products where the battery is integrated and non-removable.
+Under 173.156(b), limited quantity packages carry the marking required by 172.315, and the 30 kg (66 pounds) gross weight limit applies, except for marked packages moved by highway or rail between a manufacturer, distribution center and retail outlet under the stated conditions. <C id="hazmat-dangerous-goods-17" />
 
-<Figure value="Class 9" kind="cost" source="UN hazard classification of lithium batteries, 2026, checked September 5, 2026">
- The hazard class that captures most consumer electronics. Amazon classifies dangerous goods into nine UN classes; reporting names lithium batteries as the group affecting the most FBA sellers.
-</Figure>
+## Training: 49 CFR 172.702 and 172.704
 
-## What a review costs you
+"A hazmat employer shall ensure that each of its hazmat employees is trained." <C id="hazmat-dangerous-goods-24" /> The rules in 172.704 set the content, timing and records:
 
-This is the part that makes it urgent rather than administrative.
-
-Once an ASIN enters the review queue:
-
-- **You cannot send new inventory** of that product to FBA
-- **Stock already at a fulfillment center may be placed on hold**
-- Reported review times: **2 to 5 business days** with complete documentation in one account, **3 to 5** in another
-- Incomplete safety data sheets, lithium battery verification problems or high queue volumes are extending it significantly
-
-Think about that against a fast-moving SKU. A week of blocked inbound plus held stock is a stockout, which means lost rank — see the [listing guide](/guides/listing-optimisation-a10/) on how ranking decays before the stockout even happens — plus the [low-inventory-level fee](/guides/low-inventory-level-fee/) on whatever does sell.
-
-**The review is not the cost. The block is.**
-
-<StockImage slug="hazmat-dangerous-goods" theme="ecommerce" />
-
-## The three outcomes
-
-three possible results:
-
-**Not a dangerous good.** Cleared for standard FBA, no special handling. Described as where most flagged products end up once an exemption sheet or SDS confirms there is no real hazard.
-
-**Restricted dangerous.** It is hazmat, and Amazon will accept it through FBA provided you are enrolled in the FBA Dangerous Goods program and the product meets storage and shipping requirements.
-
-**Not accepted.** Some classes are sellable through FBA only in limited quantities, and some not at all.
-
-## The two documents
-
-**Safety Data Sheet (SDS).** A 16-section document prepared by the manufacturer describing chemical properties, hazards and handling requirements. Reported requirements: GHS-compliant, dated within five years, in the language of the target marketplace.
-
-**Exemption sheet.** A simpler declaration, and the rule about it is strict. it is accepted for **only two categories**:
-
-1. **Battery and battery-powered products**
-2. **Products confirmed to contain no harmful chemicals**
-
-Submitting an exemption sheet for anything outside those two will be rejected. That is a wasted cycle of several business days on a blocked ASIN.
-
-**Why documents get rejected.** Reporting is specific that many delays occur not because a document is missing but because it **does not match Amazon's formatting or hazard disclosure standards.** The frustration sellers describe is rejected documentation rather than absent documentation.
-
-## The lithium battery specifics
-
-Reported requirements for battery products, and the level of detail matters:
-
-- **Watt-hours (Wh)** are required for all lithium battery products. The calculation is `Wh = Voltage (V) × Capacity (Ah)`
-- **Lithium content disclosure**
-- **Alignment with UN 38.3 transport testing** — the test summary is commonly requested
-- **Battery weight** — the total weight of all batteries included, not the weight of the device. the current exemption sheet may not include a weight field, but the data remains useful documentation
-- **Integrated, non-removable batteries must still be correctly declared**
-
-battery products frequently entering review because the battery information was incomplete at listing creation — which is an avoidable cause.
-
-## The April 2026 change
-
-One seller-education site reports that **from April 30, 2026, all FBA-eligible dangerous goods qualify for Amazon's Partnered Carrier program** — a claim we have not found in an Amazon announcement — removing the need to arrange separate hazmat carriers.
-
-That is a meaningful operational simplification for anyone who has been booking specialist carriers. It also interacts with the [inbound placement arithmetic](/guides/inbound-placement-split-arithmetic/), since partnered carrier changes both your freight rate and your placement treatment.
-
-## Importing dangerous goods
-
-Documentation applies at two levels — Amazon's internal requirements, and international transport and customs regulations. Reported requirements for the second:
-
-- GHS-compliant SDS
-- UN-certified packaging certification
-- IMO or IATA dangerous goods declarations, with air declarations completed by a certified person
-- Labels showing hazard class, UN number and packing group
-- An accurate commercial invoice with correct HTS codes — see the [classification guide](/guides/hts-classification-basics/)
-- Quantity limits under IATA rules for air freight
-
-## What to do
-
-**Check classification before sourcing.** Seller Central shows ASIN classifications, and the Manage Dangerous Goods Classification dashboard is where documents are uploaded and templates downloaded.
-
-**Build SDS requirements into supplier negotiations.** Reporting recommends this specifically for private label: costing documentation in from the start is more efficient than scrambling after a flag. A supplier who cannot produce a GHS-compliant SDS is a supplier who will eventually block your ASIN.
-
-**Get battery specifications at listing creation.** Watt-hours, voltage, capacity, lithium content, UN 38.3 summary. Reporting names incomplete battery information at listing creation as a common cause of review.
-
-**Use the right document.** Exemption sheet only for the two permitted categories. Anything else needs an SDS.
-
-**Complete it fully and check the formatting.** Rejections are more often about format and hazard disclosure than about absence.
-
-**Remember it is marketplace-specific.** Dangerous goods approval in one marketplace does not carry to others.
-
-**Keep classification stable.** Temporary clearance followed by re-flagging weeks later is what happens when the underlying classification signal was never addressed.
-
-<MiniCalc variant="margin" />
-
-Search your catalog for the word "battery" and the word "spray". Every hit is a classification review you either passed or have not filed — and the second kind is a shipment that will be refused.
-
-<Faq items={[
- { q: "What makes a product hazmat on Amazon?", a: "anything containing a lithium cell, pressurised, flammable, chemically reactive or strongly magnetic as capable of entering review — which is far wider than chemicals and captures most consumer electronics." },
- { q: "Can I keep selling while under review?", a: "You cannot send new inventory of that ASIN to FBA, and stock already at a fulfillment center may be placed on hold. Reported review times are 2 to 5 business days with complete documentation." },
- { q: "When can I use an exemption sheet instead of an SDS?", a: "only two categories: battery and battery-powered products, and products confirmed to contain no harmful chemicals. Submitting one outside those is rejected." },
- { q: "Why was my SDS rejected?", a: "Reporting is specific that many rejections are about formatting and hazard disclosure standards rather than the document being missing. A GHS-compliant SDS dated within five years, in the marketplace language, is the standard described." },
- { q: "What battery information does Amazon need?", a: "Watt-hours (voltage multiplied by capacity in amp-hours), lithium content, alignment with UN 38.3 transport testing, and correct declaration even for integrated non-removable batteries." },
- { q: "Do I still need a separate hazmat carrier?", a: "One seller-education site reports that from April 30, 2026 all FBA-eligible dangerous goods qualify for Amazon's Partnered Carrier program (not yet verified against an Amazon announcement), removing the need to arrange separate hazmat carriers." },
+<Flow title="Initial hazmat training under 49 CFR 172.704(c)(1)" claim="hazmat-dangerous-goods-26" steps={[
+  {t: "New hire or changed job function", d: "Hazmat duties start with a new or changed role"},
+  {t: "Supervised work only", d: "Under direct supervision of a properly trained hazmat employee"},
+  {t: "Training completed", d: "Within 90 days after employment or change in job function"}
 ]} />
 
-<Sources items={[
-  { title: 'FBA Dangerous Goods (Hazmat) program: classification review, Safety Data Sheet and exemption sheet requirements, dangerous goods storage fees', publisher: 'Amazon Seller Central Help', accessed: '2026-09-05' },
-  { title: 'Amazon FBA hazmat and dangerous goods: Partnered Carrier now available (single-source report of April 30, 2026 eligibility)', publisher: 'SellerEssentials', href: 'https://selleressentials.com/amazon-hazmat-review/', accessed: '2026-09-05' },
- { title: 'Selling hazmat on Amazon FBA: 2026 dangerous goods guide (breadth of the hazmat net; three review outcomes; lithium batteries as the largest group; building SDS costs into supplier negotiations)', publisher: 'Seller Essentials', href: 'https://selleressentials.com/amazon-fba-hazmat-guide/', accessed: '2026-09-05' },
- { title: 'Amazon FBA hazmat and dangerous goods: Partnered Carrier now available (all FBA-eligible dangerous goods qualifying from April 30, 2026; SDS as a 16-section document; watt-hour calculation; battery weight guidance)', publisher: 'Seller Essentials', href: 'https://selleressentials.com/amazon-hazmat-review/', accessed: '2026-09-05' },
- { title: 'Amazon dangerous goods classification for FBA sellers (inbound blocked and inventory held during review; documents requested; approvals being marketplace-specific)', publisher: 'AMZ Dudes', href: 'https://amzdudes.com/amazon-dangerous-goods-classification-a-complete-guide-for-fba-sellers/', accessed: '2026-09-05' },
- { title: 'Amazon dangerous goods review explained (2 to 5 business day reviews with complete documentation; rejections driven by formatting and hazard disclosure rather than absence; lithium battery enforcement; re-flagging after temporary clearance)', publisher: 'Seller Candy', href: 'https://sellercandy.com/amazon-dangerous-goods-hazmat-review-process', accessed: '2026-09-05' },
- { title: 'Amazon FBA dangerous goods: complete hazmat guide 2026 (nine UN hazard classes; 3–5 business day reviews; incomplete SDS as the leading cause of rejection; GHS compliance and five-year dating; UN-certified packaging, IMO/IATA declarations and labeling; IATA air quantity limits)', publisher: 'FBA Freight', href: 'https://freightfba.com/amazon-fba-dangerous-goods/', accessed: '2026-09-05' },
- { title: 'Hazmat clearance on Amazon (exemption sheets accepted for only two categories and rejected otherwise; Manage Dangerous Goods Classification dashboard and templates; consequences of incomplete or conflicting information)', publisher: 'My Amazon Guy', href: 'https://myamazonguy.com/hazmat-clearance-amazon/', accessed: '2026-09-05' },
- { title: 'The ultimate Amazon hazmat policy guide for sellers (product groups triggering classification; four business day document review; identifying hazmat via ASIN classifications and the SDS)', publisher: 'SellerApp', href: 'https://www.sellerapp.com/blog/amazon-hazmat-policy/', accessed: '2026-09-05' },
+- **Content.** Training covers general awareness/familiarization, function-specific, safety, security awareness, and in-depth security training where a security plan is required. <C id="hazmat-dangerous-goods-25" />
+- **Timing.** Initial training must be completed within 90 days after employment or a change in job function, with work in the meantime only under direct supervision. <C id="hazmat-dangerous-goods-26" /> Recurrent training is required "at least once every three years." <C id="hazmat-dangerous-goods-27" />
+- **Records.** The employer keeps a record of current training for the preceding three years "for as long as that employee is employed by that employer as a hazmat employee and for 90 days thereafter," including the employee's name, completion date, materials, trainer, and a certification. <C id="hazmat-dangerous-goods-28" />
+
+<Checklist title="Before listing or shipping a battery, aerosol or flammable product" items={[
+  "Get the UN number and hazard class from the supplier's safety data sheet",
+  "For lithium products, get the UN 38.3 test summary and the Wh rating or lithium content",
+  "Check the Hazardous Materials Table (172.101) to confirm a limited quantity exception is referenced",
+  "Confirm inner packaging size and package gross weight against the applicable section",
+  "Apply the lithium battery mark or limited quantity marking required for the package",
+  "Confirm whether any leg moves by air; ground-only exceptions may not apply",
+  "Train every person who packs, marks or prepares these shipments, and file the training record"
 ]} />
+
+For imported batteries and aerosols, hazmat status also affects how goods move through the port; see [customs holds and exams](/guides/customs-holds-and-exams/).
+
+## What to check yourself
+
+1. Read 49 CFR 173.2 on eCFR and locate your product's class and division.
+2. Look up the proper shipping name and UN number in the 172.101 Hazardous Materials Table and note which exception sections it references.
+3. Read 49 CFR 173.185 in full for lithium products, including the paragraph on batteries packed with or contained in equipment.
+4. Read the class-specific limited quantity section (173.150 for flammable liquids, 173.306 for aerosols) and 173.156 for marking and weight.
+5. Read 49 CFR 172.704 and compare your training records with paragraph (d).

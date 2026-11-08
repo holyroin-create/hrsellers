@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Search" description="Search FBA Tactics guides, fee references and tools." noindex={true}>
+  <div class="wrap page-narrow" style="padding-top:2rem">
+    <h1>Search</h1>
+    <p class="meta" id="status" aria-live="polite">Type in the search box above.</p>
+    <ol class="rows" id="results" style="list-style:none;padding:0"></ol>
+  </div>
+  <script>
+    const q = new URLSearchParams(location.search).get('q')?.trim() || '';
+    const input = document.getElementById('q') as HTMLInputElement | null;
+    if (input) input.value = q;
+    const status = document.getElementById('status')!;
+    const out = document.getElementById('results')!;
+    if (q) {
+      fetch('/search-index.json').then((r) => r.json()).then((docs: any[]) => {
+        const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+        const scored = docs.map((d) => { const t = d.t.toLowerCase(), de = d.d.toLowerCase(), b = d.b.toLowerCase(); let s = 0;
+          for (const w of terms) { if (t.includes(w)) s += 5; if (de.includes(w)) s += 3; if (b.includes(w)) s += 1; else if (!t.includes(w) && !de.includes(w)) s -= 4; } return { d, s }; })
+          .filter((x) => x.s > 0).sort((a, b) => b.s - a.s).slice(0, 20);
+        status.textContent = scored.length ? `${scored.length} result${scored.length > 1 ? 's' : ''} for “${q}”` : `No results for “${q}”. Try a shorter term, or browse the guides.`;
+        for (const { d } of scored) { const li = document.createElement('li'); const p = document.createElement('p'); p.className = 'meta'; p.textContent = d.c;
+          const div = document.createElement('div'); const h = document.createElement('h3'); const a = document.createElement('a'); a.href = d.u; a.textContent = d.t; h.append(a);
+          const pd = document.createElement('p'); pd.textContent = d.d; div.append(h, pd); li.append(p, div); out.append(li); }
+      });
+    }
+  </script>
+</Base>

@@ -1,140 +1,108 @@
 ---
-title: "A Foreign Trade Zone is legally outside US customs territory while sitting inside the country"
-seoTitle: "Foreign Trade Zones for Sellers: Duty Deferral, Inversion, Costs"
-description: "Goods enter without duty until they leave the zone. Re-export and no duty is owed at all. And where you assemble inside the zone, you may pay whichever rate is lower — the components' or the finished product's."
-category: "Shipping & logistics"
+title: "Foreign-Trade Zones: Zone Status, Duty Deferral and Weekly Entry"
+description: "What a foreign-trade zone is under 15 CFR Part 400 and 19 CFR Part 146: privileged vs nonprivileged foreign status, the duty rate choice, and weekly entry."
+category: "Import & customs"
 published: "2026-08-22"
-modified: "2026-09-05"
-minutes: 9
-numbered: true
-ledger: "Deferral · elimination on re-export · inverted tariff"
-ledgerKind: "recovered"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 5
+summary:
+  - "Activated foreign-trade zones are treated as outside US customs territory for tariff and entry purposes, so duty generally applies only when goods enter for domestic consumption."
+  - "Privileged foreign merchandise is classified at the duty rate in force on the date its status application is filed; nonprivileged foreign merchandise is classified in its condition when entered."
+  - "Goods subject to antidumping or countervailing duty orders must be placed in privileged foreign status on admission."
+  - "Production activity in a zone needs prior authorization from the Foreign-Trade Zones Board."
+  - "Zones can use an estimated entry covering a calendar week for goods changed in the zone within 24 hours before removal."
+hero:
+  kind: "flow"
+  steps: ["Admit to zone", "Choose zone status", "Store or process", "Enter, export or destroy"]
+  claim: "foreign-trade-zones-02"
+related: ["duty-drawback", "customs-bonds", "antidumping-duties", "entry-type-11-vs-01", "hts-classification-basics"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+A foreign-trade zone (FTZ) is a designated site where foreign goods can be stored or processed without first being entered into US customs territory. <C id="foreign-trade-zones-02" /> Activated zones are treated as outside the customs territory of the United States for the tariff and entry purposes specified in the Foreign-Trade Zones Act. <C id="foreign-trade-zones-01" /> Duty on foreign goods generally applies only when they enter customs territory for domestic consumption, which is what makes zones a duty-deferral tool. <C id="foreign-trade-zones-02" />
 
-import Steps from '../../components/Steps.astro';
-import MiniCalc from '../../components/MiniCalc.astro';
+The two rulebooks are 15 CFR Part 400 (the Foreign-Trade Zones Board: who gets a zone and what activity is authorized) and 19 CFR Part 146 (CBP: how merchandise is admitted, given a status, and transferred out). For a marketplace seller, the practical questions are what status your goods carry inside the zone, which duty rate applies when they leave, and how often you have to file entries.
 
-import StockImage from '../../components/StockImage.astro';
+<Callout type="note" title="Scope of this page">
+This page explains the zone regulations. Using a zone means working with a zone operator under its own approvals, which this page does not cover.
+</Callout>
 
-<Takeaways items={[
- "An FTZ is a designated area within the United States treated as outside customs territory for duty purposes. Goods enter without duty being paid until they leave the zone for US commerce.",
- "Three mechanisms: duty deferral improving cash flow, duty elimination on goods re-exported from the zone, and inverted tariff treatment where you assemble inside it.",
- "Inverted tariff is the powerful one: assemble imported components into a finished product and choose whichever duty rate is lower — the components' or the finished good's.",
- "It is a volume decision. Reporting consistently frames FTZ status as making sense where import volumes justify the administrative and setup cost.",
- "For most marketplace sellers the relevant version is not operating a zone but using a third-party FTZ warehouse — which turns it from an infrastructure project into a service question.",
+## Who runs a zone
+
+The Foreign-Trade Zones Board consists of the Secretary of Commerce, as chairman, and the Secretary of the Treasury. <C id="foreign-trade-zones-05" /> A zone can include a subzone, defined as a site or group of sites established for a specific use. <C id="foreign-trade-zones-23" /> Under the alternative site framework, a magnet site is meant to serve multiple operators or users, while a usage-driven site is set up for a single operator or user. <C id="foreign-trade-zones-22" />
+
+Day to day, an operator runs the zone or subzone under an agreement with the zone grantee, and a user is the person or firm storing, handling or processing merchandise there. <C id="foreign-trade-zones-10" /> A seller using a zone through a third-party warehouse would normally be a user, not the operator. Before merchandise can be handled in zone status, the site must be activated, which means approval by the grantee and the CBP port director. <C id="foreign-trade-zones-11" />
+
+## Zone status: the decision that sets your duty
+
+Every foreign item in a zone carries a status, and that status determines how it is classified and valued when it leaves.
+
+| Status | Who it covers | Key consequence |
+|---|---|---|
+| Privileged foreign | Foreign merchandise not yet manipulated or manufactured so as to change its tariff classification; applied for on Customs Form 214 | Classified at the rate in force on the date the application is filed; cannot be abandoned |
+| Nonprivileged foreign | Foreign merchandise that is neither privileged foreign nor zone-restricted | Classified according to its character, condition and quantity when entered |
+| Domestic | US goods with internal revenue taxes paid, duty-paid imports, previously entered duty-free goods | Granted under 19 CFR 146.43 |
+| Zone-restricted | Goods taken in solely for exportation, destruction or storage | Cannot be abandoned once granted |
+
+*Source: Office of the Federal Register / National Archives (eCFR), 19 CFR Part 146 subparts D and F, checked Nov 8, 2026.* <C id="foreign-trade-zones-12" /> <C id="foreign-trade-zones-13" /> <C id="foreign-trade-zones-14" /> <C id="foreign-trade-zones-15" /> <C id="foreign-trade-zones-16" /> <C id="foreign-trade-zones-17" />
+
+### Privileged foreign status
+
+Privileged foreign status is granted on application to the port director, using Customs Form 214, for foreign merchandise that has not been manipulated or manufactured so as to change its tariff classification; once granted, it cannot be abandoned. <C id="foreign-trade-zones-12" /> Its effect is to freeze the duty rate: privileged foreign merchandise is classified at the rate of duty and tax in force on the date the application is filed. <C id="foreign-trade-zones-13" />
+
+Status is not always optional. Items subject to antidumping or countervailing duty orders must be placed in privileged foreign status when admitted to a zone or subzone. <C id="foreign-trade-zones-08" /> See [antidumping duties](/guides/antidumping-duties/) for how those orders work.
+
+### Nonprivileged foreign status
+
+Nonprivileged foreign status is the default for foreign merchandise that is neither privileged foreign nor zone-restricted. <C id="foreign-trade-zones-15" /> Nonprivileged goods are classified according to their character, condition and quantity at the point they are constructively transferred to customs territory. <C id="foreign-trade-zones-14" />
+
+### Domestic and zone-restricted status
+
+Domestic status covers US goods with applicable internal revenue taxes paid, previously imported goods on which duty and tax were paid, and previously entered duty-free goods. <C id="foreign-trade-zones-16" /> Zone-restricted status applies to merchandise taken in solely for exportation, destruction or storage, and it cannot be abandoned once granted. <C id="foreign-trade-zones-17" />
+
+## The duty rate choice
+
+When goods leave a zone for domestic consumption, the importer ordinarily has a choice: pay duty at the rate applicable to the foreign material as admitted, or, if the material was used in production activity, at the rate applicable to the emerging product. <C id="foreign-trade-zones-03" /> Production is defined as activity involving the substantial transformation of a foreign article resulting in a new and different article, or a change in the article's condition that changes its customs classification or its eligibility for entry for consumption. <C id="foreign-trade-zones-06" /> Production cannot start without prior authorization from the Board. <C id="foreign-trade-zones-04" />
+
+Privileged foreign status locks in the component rate on the application date. <C id="foreign-trade-zones-13" /> Nonprivileged foreign status lets the finished product's classification apply at entry. <C id="foreign-trade-zones-14" /> That is the mechanism behind the rate choice.
+
+<Callout type="example" title="Worked example (hypothetical inputs)">
+An importer admits $50,000 of a component dutiable at a hypothetical 8% and assembles it in the zone, with Board authorization, into a product dutiable at a hypothetical 2%. Entered under nonprivileged foreign status, duty is based on the finished product: 2% x $50,000 = $1,000 (valuation of the finished product can differ in practice). Had the component been put in privileged foreign status, duty would be 8% x $50,000 = $4,000. The rates here are illustrative only; your HTSUS rates decide which status helps.
+</Callout>
+
+## Leaving the zone: entry, warehouse, weekly entry, export
+
+An accepted entry constructively transfers merchandise to customs territory even while it is still physically inside the zone. <C id="foreign-trade-zones-20" /> Privileged foreign merchandise may not be entered for warehouse from a zone. <C id="foreign-trade-zones-19" />
+
+For zones that change goods continuously, the port director may allow a single entry on Customs Form 3461 covering estimated removals during a calendar week. This applies to merchandise manufactured or otherwise changed in the zone, excluding packing alone, within 24 hours before physical transfer. <C id="foreign-trade-zones-18" /> The regulation ties this weekly procedure to goods changed in the zone. Storage-only inventory pulled for marketplace fulfillment should not assume it qualifies.
+
+Goods do not have to enter US commerce at all. Merchandise moved into a zone for export in zone-restricted status may be considered exported for purposes including customs drawback and federal excise tax rebates. <C id="foreign-trade-zones-07" /> Compare the refund route in [duty drawback](/guides/duty-drawback/).
+
+<Flow title="How merchandise moves through a zone (19 CFR Part 146)" claim="foreign-trade-zones-20" steps={[
+  {t: "Admission", d: "Foreign goods admitted to an activated zone"},
+  {t: "Status", d: "Privileged foreign, nonprivileged foreign, domestic or zone-restricted"},
+  {t: "Activity", d: "Storage, handling, or Board-authorized production"},
+  {t: "Exit", d: "Entry for consumption, transfer for export, or destruction"}
 ]} />
 
-Of the four duty-reduction tools this site covers, this is the one with the highest barrier and the widest ceiling. It is also the one most often described in terms that make it sound like a manufacturer's program, which understates where it reaches.
+## CBP supervision and records
 
-## What an FTZ is
+Zone operations are supervised by CBP: the port director may direct officers to supervise transactions through methods such as periodic audits, inventory counts or spot checks. <C id="foreign-trade-zones-21" /> Customs territory itself is defined as the territory of the US in which the general tariff laws apply. <C id="foreign-trade-zones-09" />
 
-<Steps title="Three levers, one address" accent={1} source="A zone is inside the country, outside customs territory"
- steps={[
-  { t: 'Defer', d: 'duty waits' },
-  { t: 'Re-export', d: 'no duty at all' },
-  { t: 'Inverted tariff', d: 'lower rate' },
- ]} />
-
-A designated area within the United States that is **legally considered outside US customs territory for duty purposes.**
-
-Goods can be brought into the zone without paying duty. Duty becomes payable only when — and if — they leave the zone and enter US commerce.
-
-<Figure value="Outside, inside" kind="recovered" source="definition of Foreign Trade Zone treatment, 2026, checked September 5, 2026">
- The legal position of an FTZ: physically inside the United States, outside customs territory for duty purposes. Everything the mechanism does follows from that one fact.
-</Figure>
-
-## The three mechanisms
-
-**1. Duty deferral.** You pay duty when goods leave the zone, not when they arrive in the country. That is a cash-flow benefit rather than a cost reduction — and for a seller holding several months of inventory under [DD+7](/guides/dd7-payout-reserve/), deferring duty until the stock actually moves changes the working capital picture materially.
-
-**2. Duty elimination on re-exports.** If goods are exported from the zone, **no US duty is owed at all.** Note how this differs from [drawback](/guides/duty-drawback/): drawback refunds duty you paid; the FTZ route means you never paid it. Same outcome, no claims process, no waiting.
-
-**3. Inverted tariff treatment.** If you manufacture or assemble inside the zone using imported components, you may pay duty at **either the component rate or the finished-product rate, whichever is lower.**
-
-That third one is the mechanism with the largest ceiling. combining it with product modification: import high-duty components into a zone, manufacture them into a finished product classified under a lower-duty heading, and pay the finished-product rate. **This is perfectly legal and exactly what FTZs were designed to facilitate.**
-
-<StockImage slug="foreign-trade-zones" theme="ecommerce" />
-
-## The version that applies to a seller
-
-Most FTZ material assumes you are applying to operate a zone. That is an infrastructure project with an application, a setup cost and ongoing administration, and reporting is consistent that it makes sense where import volumes justify it.
-
-**The accessible version is a third-party FTZ warehouse.** A number of 3PLs and bonded facilities operate within designated zones and offer storage as a service. That turns the question from "should we establish a zone" into "does this warehouse cost more than the duty deferral is worth."
-
-**Which makes it comparable to the [AWD and 3PL decision](/guides/awd-vs-3pl-warehousing/)** — a storage-cost comparison with a duty-timing benefit on one side.
-
-**The arithmetic:**
-
-```
-deferral benefit
- = duty payable × months held × your cost of capital ÷ 12
-
-re-export benefit
- = duty per unit × units re-exported
-
-premium to compare against
- = FTZ warehouse cost − ordinary warehouse cost
-```
-
-For a seller holding four months of inventory at a 25% duty rate with capital costing 15% a year, the deferral alone is roughly 1.25% of the goods' value. Real, and not usually decisive on its own. **The re-export case is where it gets interesting**, and it applies to anyone fulfilling [Canada and Mexico](/guides/narf-canada-mexico/) or Europe from US stock.
-
-## What it does not do
-
-**It does not change your classification.** The [HTS code](/guides/hts-classification-basics/) is still the HTS code, and the importer of record still carries the reasonable-care obligation.
-
-**It does not remove compliance.** Partner government agency requirements still apply — see the [product compliance guide](/guides/us-product-compliance/) — and CPSC certificate filing since July 8, 2026 is not avoided by zone treatment.
-
-**It does not suit small volumes.** Every source frames it as a volume decision, and the administrative overhead is real whether you operate the zone or rent space in one.
-
-## Where it sits among the alternatives
-
-these as complementary rather than competing: **tariff engineering on the product side, first sale on the transaction side, FTZ or drawback on the operations side.**
-
-| Tool | What it changes | Best when |
-| --- | --- | --- |
-| [Classification review](/guides/hts-classification-basics/) | The rate | Always — it is the input to everything else |
-| [First sale](/guides/first-sale-valuation/) | The value | An intermediary sits in the chain |
-| [Drawback](/guides/duty-drawback/) | Refunds duty paid | You already export and already paid |
-| **FTZ** | **Timing, and duty on re-exports** | **High volume, or meaningful re-export** |
-
-**Reporting's own conclusion** is that the most effective programs combine several strategies, and that all of them begin with an accurate HTS code. That ordering is right: classification first, everything else after.
-
-## What to do
-
-**Quantify the re-export volume first.** If you fulfil cross-border orders from US inventory, that is the number that makes this worth investigating. If you sell only to US customers, the deferral benefit alone rarely justifies the overhead.
-
-**Price a third-party FTZ warehouse** before considering anything more ambitious. It is the version of this that a seller can actually buy.
-
-**Compare against drawback.** If you already export, drawback recovers duty you have paid without changing your warehousing. FTZ prevents you paying it but requires you to move inventory into a zone. The right answer depends on whether the change is worth avoiding the claims process.
-
-**Do the classification review first.** Every duty tool is applied to a rate, and a wrong rate makes all of them wrong.
-
-**Get professional advice at the point it becomes real.** FTZ operation and inverted tariff treatment are specialist areas, and reporting places them in the same expert market as first sale and drawback.
-
-<MiniCalc variant="margin" />
-
-Add up the duty you paid last year. If it is under six figures, close this tab; an FTZ will not pay for its own paperwork. If it is over, the zone operator nearest your port has a quote you should hear.
-
-<Faq items={[
- { q: "What is a Foreign Trade Zone?", a: "A designated area within the United States legally considered outside customs territory for duty purposes. Goods enter without duty being paid; duty becomes payable only when they leave the zone and enter US commerce." },
- { q: "What are the benefits?", a: "Three: duty deferral until goods leave the zone, duty elimination entirely on goods re-exported from it, and inverted tariff treatment allowing you to pay the lower of the component or finished-product rate where you assemble inside the zone." },
- { q: "What is inverted tariff treatment?", a: "Where you manufacture or assemble in the zone using imported components, you may pay duty at either the component rate or the finished-product rate, whichever is lower. it as legal and as exactly what FTZs were designed to facilitate." },
- { q: "Do I need to set up my own zone?", a: "No, and most sellers should not. Third-party FTZ warehouses offer storage as a service, which turns this from an infrastructure project into a warehouse cost comparison." },
- { q: "Is it worth it for a small seller?", a: "Usually not. Every source frames FTZ status as making sense where import volumes justify the administrative and setup cost. The deferral benefit alone is typically around 1% of goods value on a four-month holding period." },
- { q: "How does it compare to duty drawback?", a: "Drawback refunds duty you already paid on goods later exported. An FTZ means you never pay it on goods re-exported from the zone. Same outcome without a claims process — but it requires moving your inventory into a zone." },
+<Checklist title="Questions to settle before using an FTZ" items={[
+  "Is the site an activated zone or subzone, and who is the operator?",
+  "Which zone status will each SKU carry, and is any SKU under an AD/CVD order (privileged foreign required)?",
+  "Will any activity amount to production, and has the Board authorized it?",
+  "Compare the component rate and the finished-product rate in the HTSUS for each item",
+  "Does your activity qualify for a weekly estimated entry, or will you file per removal?",
+  "What share of inventory will be exported rather than entered for consumption?"
 ]} />
 
-<Sources items={[
-  { title: '19 CFR Part 146 (foreign trade zones); Foreign-Trade Zones Board; weekly entry and inverted tariff benefits', publisher: 'U.S. Customs and Border Protection; U.S. Department of Commerce', accessed: '2026-09-05' },
- { title: '7 legal strategies to reduce import duties for US importers (FTZs as areas legally outside customs territory; duty deferral, elimination on re-exports and inverted tariff treatment; combining strategies with classification as the starting point)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/blog/tariff-reduction-strategies-us-importers', accessed: '2026-09-05' },
- { title: 'Tariff engineering: legal strategies to reduce import duties 2026 (combining FTZ inverted tariff benefits with product modification; importing high-duty components and paying the lower finished-product rate)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/tariff-engineering-strategies-guide', accessed: '2026-09-05' },
- { title: 'Reduce import duty US 2026 (applying for FTZ status where volumes justify it, alongside first sale and drawback)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-09-05' },
- { title: 'How to reduce import duties: the complete guide (FTZs among the recognized legal strategies; layering multiple complementary approaches)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/how-to-reduce-import-duties-complete-guide/', accessed: '2026-09-05' },
- { title: 'Import duty reduction strategies: 10 legal ways to cut customs costs (reviewing import operations to identify which strategies return most for a given product mix and supply chain)', publisher: 'EP Logistics', href: 'https://eplogistics.com/blog/strategies-to-reduce-import-duties/', accessed: '2026-09-05' },
-]} />
+## What to check yourself
+
+1. Read 15 CFR 400.1(c) and 400.14 on eCFR to confirm the duty rate choice and the Board authorization rule for production.
+2. Read 19 CFR 146.41 to 146.44 to confirm which status your goods can take and what cannot be abandoned.
+3. Read 19 CFR 146.65 for how privileged and nonprivileged merchandise is classified and valued at entry.
+4. Look up the HTSUS rate for both the input and the finished product before choosing a status (see [HTS classification basics](/guides/hts-classification-basics/)).
+5. Read 19 CFR 146.63(c) with the zone operator to confirm whether weekly entry is available for your activity.
+6. Check bond requirements for your entries (see [customs bonds](/guides/customs-bonds/)).

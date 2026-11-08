@@ -1,140 +1,127 @@
 ---
-title: "You discover you have been importing under the wrong code. There are two doors, and one closes in 180 days."
-seoTitle: "Wrong HTS Code: Prior Disclosure vs Protest, and the 180-Day Door"
-description: "If you underpaid, a prior disclosure filed before CBP finds it changes the exposure. If you overpaid, a protest recovers it — but only within 180 days of liquidation, per entry, and the window runs quietly."
-category: "Shipping & logistics"
+title: "Prior Disclosure, Protests and Liquidation: Deadlines for Importers"
+description: "How to correct customs errors and challenge CBP decisions: prior disclosure under 19 CFR 162.74, the 180-day protest deadline, and liquidation timing rules."
+category: "Import & customs"
 published: "2026-08-22"
-modified: "2026-09-05"
-minutes: 9
-numbered: true
-ledger: "Protest window: 180 days from liquidation, per entry"
-ledgerKind: "cost"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 6
+summary:
+  - "A prior disclosure tells CBP about a violation before a formal investigation starts and limits negligence penalties to interest."
+  - "An entry not liquidated within one year of entry is deemed liquidated at the importer's own declared rate, value and duty."
+  - "For entries made on or after December 18, 2004, a protest is due within 180 days of the liquidation or other decision."
+  - "CBP generally has 2 years to act on a protest; a denied protest can go to the Court of International Trade within 180 days."
+hero:
+  kind: "stat"
+  figure: "180 days"
+  label: "to file a protest after liquidation or another protestable CBP decision"
+  claim: "prior-disclosure-protests-17"
+related: ["duty-drawback", "customs-holds-and-exams", "hts-classification-basics", "customs-bonds", "entry-type-11-vs-01"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+US customs law gives importers two separate correction tools, and which one you use depends on who is wrong. If you made the error, for example an undervalued invoice or a wrong classification that underpaid duty, the tool is a **prior disclosure** under 19 CFR 162.74. It means disclosing the circumstances of the violation before, or without knowledge of, a formal investigation and tendering the lost duties. <C id="prior-disclosure-protests-01" /> If CBP made a decision you disagree with, such as a reclassification or a refused drawback claim, the tool is a **protest** under 19 CFR Part 174. <C id="prior-disclosure-protests-15" /> For entries made on or after December 18, 2004, it is due within 180 days of the decision. <C id="prior-disclosure-protests-17" />
 
-import MiniCalc from '../../components/MiniCalc.astro';
+Both run against the same backdrop: **liquidation**, CBP's final computation of the duties on an entry. This page covers the timing of each.
 
-import StockImage from '../../components/StockImage.astro';
+<Callout type="note" title="Scope of this page">
+This page summarizes how prior disclosures and protests work. Deadlines run from dates on your own entries, so check them on your entry records or with your broker.
+</Callout>
 
-<Takeaways items={[
- "Two situations, two mechanisms. Underpayment is a prior disclosure question; overpayment is a protest or post summary correction question.",
- "the protest window at 180 days from the liquidation date, running per entry rather than per account — so entries expire individually and quietly.",
- "Prior disclosure is described across the trade compliance market as a standard service. Filing before CBP identifies an issue is the entire point of the mechanism.",
- "Where a tariff has been reversed or reduced retrospectively, unliquidated entries being re-liquidated automatically while already-liquidated entries require a formal protest.",
- "Neither is a do-it-yourself exercise. Both are sitting in the specialist market between routine brokerage and trade litigation.",
+## Liquidation: when an entry becomes final
+
+The regulation defines liquidation as the final computation or ascertainment of duties on entries for consumption or drawback entries. <C id="prior-disclosure-protests-11" /> For formal entries, notice of liquidation is provided on CBP's public website, and that posting is deemed the legal evidence of liquidation. <C id="prior-disclosure-protests-12" /> The posting date matters because the protest clock runs from the date of notice of liquidation. <C id="prior-disclosure-protests-17" />
+
+If CBP does nothing, the entry still becomes final. An entry not liquidated within one year from the date of entry is deemed liquidated at the rate, value, quantity and amount of duties asserted by the importer of record. <C id="prior-disclosure-protests-13" /> CBP can extend the one-year period by up to one year at a time, with total extensions capped at three years. An entry not liquidated within four years is deemed liquidated unless liquidation is suspended by statute or court order. <C id="prior-disclosure-protests-14" />
+
+| Liquidation event | Rule in 19 CFR Part 159 |
+|---|---|
+| Normal liquidation | Notice posted on CBP's public website; posting is legal evidence of liquidation |
+| No action within 1 year of entry | Deemed liquidated at the importer's asserted rate, value, quantity and duty |
+| Extension | Up to 1 additional year at a time; total extensions not more than 3 years |
+| Outer limit | Deemed liquidated after 4 years unless liquidation is suspended |
+
+*Source: Office of the Federal Register / National Archives (eCFR), 19 CFR Part 159, checked Nov 8, 2026.* <C id="prior-disclosure-protests-12" /> <C id="prior-disclosure-protests-13" /> <C id="prior-disclosure-protests-14" />
+
+## Prior disclosure: correcting your own error
+
+### What the disclosure must say
+
+The disclosure must identify the merchandise and the entries or drawback claims involved. It must specify the material false statements, omissions or acts, explaining how and when they occurred. <C id="prior-disclosure-protests-03" /> Facts you do not yet have can follow: the disclosing party may provide information unknown at the time of disclosure within 30 days, and extensions of that 30-day period may be requested from the Fines, Penalties, and Forfeitures Officer. <C id="prior-disclosure-protests-04" />
+
+A written disclosure should be addressed to the Commissioner of Customs and presented to a Customs officer at the port of entry where the violation occurred. <C id="prior-disclosure-protests-07" /> An oral disclosure counts only if it is confirmed in writing within 10 days. <C id="prior-disclosure-protests-02" /> A disclosure sent by registered or certified mail, return receipt requested, is deemed made at the time of mailing; one sent any other way, including in-person delivery, is deemed made when Customs receives it. <C id="prior-disclosure-protests-06" />
+
+### Paying the lost duty
+
+The duties owed can be tendered with the disclosure or within 30 days after CBP notifies you in writing of its calculation. <C id="prior-disclosure-protests-05" />
+
+### The timing trap: formal investigations
+
+Prior disclosure only works if you were unaware of a formal investigation. A formal investigation is considered commenced on the date Customs recorded in writing that facts caused it to believe a violation might exist. <C id="prior-disclosure-protests-08" /> That date can come before you hear anything. The disclosing party carries the burden of proving it did not know of the investigation. Knowledge is presumed if the merchandise was seized or Customs issued a prepenalty or penalty notice. <C id="prior-disclosure-protests-09" />
+
+### What it is worth
+
+With a valid prior disclosure, a fraud penalty is one times the loss of duties, taxes and fees, or 10 percent of dutiable value if there was no loss. For negligence or gross negligence, the penalty is limited to interest. <C id="prior-disclosure-protests-10" />
+
+<Flow title="Prior disclosure steps under 19 CFR 162.74" claim="prior-disclosure-protests-03" steps={[
+  {t: "Identify", d: "Merchandise, entries or drawback claims affected"},
+  {t: "Explain", d: "False statements, omissions or acts, and how and when"},
+  {t: "Submit", d: "Addressed to the Commissioner, presented at the port of entry"},
+  {t: "Supplement", d: "Missing data within 30 days, or request an extension"},
+  {t: "Tender", d: "Lost duties now, or within 30 days of CBP's written calculation"}
 ]} />
 
-Every classification review produces the same uncomfortable moment. You look at three years of entries and realize something was wrong.
+<Callout type="example" title="Worked example (hypothetical inputs)">
+An importer finds that negligent undervaluation on several entries caused $6,000 in lost duty. With a valid prior disclosure, the importer tenders the $6,000 and the negligence penalty is limited to interest on that amount. If the error had been fraud with prior disclosure, the penalty would be one times the loss: $6,000, on top of the tender.
+</Callout>
 
-**Which direction it was wrong in determines everything that follows**, and both directions have a clock.
+## Protests: challenging a CBP decision
 
-**This is not legal advice.** Both mechanisms are described consistently as specialist work, and this guide exists so you know which conversation to have.
+### What you can protest
 
-## If you underpaid
+Protestable decisions include the appraised value of merchandise; the classification and rate and amount of duties; the liquidation or reliquidation of an entry; and the refusal to pay a drawback claim. <C id="prior-disclosure-protests-15" /> For classification disputes, background is in [HTS classification basics](/guides/hts-classification-basics/). Drawback refusals link back to [duty drawback](/guides/duty-drawback/).
 
-The exposure is the penalty regime in 19 U.S.C. § 1592, covered in the [classification guide](/guides/hts-classification-basics/): negligence, gross negligence and fraud, with penalties reaching multiples of the duty lost or the merchandise's domestic value.
+### Who can file
 
-**Prior disclosure** is the mechanism for coming forward before CBP finds it. Reporting names prior-disclosure filings among the standard services of the trade compliance market that grew around the 2026 tariff environment.
+Protests may be filed by the importer or consignee shown on the entry papers or their sureties, by any person filing a drawback claim, and by authorized agents, among others. <C id="prior-disclosure-protests-16" /> Paper protests use CBP Form 19, and electronic filing through CBP-authorized systems is accepted. <C id="prior-disclosure-protests-23" />
 
-**The logic of it** is straightforward: the penalty regime distinguishes between an importer who disclosed an error and one who was caught. Filing changes which of those you are.
+### Deadline and contents
 
-**The timing point is the whole point.** A disclosure has value while CBP has not yet identified the issue. Once an audit or an inquiry has started, the option narrows.
+For entries made on or after December 18, 2004, the protest is due within 180 days of the decision. The clock starts on the date of notice of liquidation or reliquidation, the date of liquidation itself, or the date of a decision that involves neither. <C id="prior-disclosure-protests-17" /> The protest must state the protestant's name and address, importer number, entry number and date, liquidation date, a specific description of the merchandise, and the grounds for each objection. <C id="prior-disclosure-protests-18" />
 
-**Which makes the discovery moment decisive.** A seller who finds a classification error and decides to fix it going forward without addressing the past has made a choice about the past — see the [customs holds guide](/guides/customs-holds-and-exams/) on how algorithmic targeting uses importer history.
+### What happens next
 
-<Figure value="180 days" kind="cost" source="protest window from liquidation date, 2026, checked September 5, 2026">
- The window to file a formal protest on an already-liquidated entry. It runs per entry from that entry's liquidation date, which is why it expires without an obvious trigger.
-</Figure>
+CBP generally must act on a protest within 2 years from filing. <C id="prior-disclosure-protests-19" /> If you need an answer sooner, you can request accelerated disposition. If CBP does not act within 30 days after that request is mailed, the protest is deemed denied at the close of the 30th day. <C id="prior-disclosure-protests-20" /> You may request further review where the decision conflicts with a prior ruling on similar merchandise, raises unresolved questions of law or fact, or rests on new facts or arguments. <C id="prior-disclosure-protests-21" /> After a denial, the protestant may file a civil action in the US Court of International Trade within 180 days. <C id="prior-disclosure-protests-22" />
 
-## If you overpaid
+| Step | Time limit | Rule |
+|---|---|---|
+| File protest | 180 days from the decision (entries on or after Dec 18, 2004) | 19 CFR 174.12 |
+| CBP decides | Generally within 2 years of filing | 19 CFR 174.21 |
+| Accelerated disposition | Deemed denied if no action 30 days after the request is mailed | 19 CFR 174.22 |
+| Court of International Trade | Within 180 days after denial | 19 CFR 174.31 |
 
-More common, and more often ignored, because nobody sends a letter about it.
+*Source: Office of the Federal Register / National Archives (eCFR), 19 CFR Part 174, checked Nov 8, 2026.* <C id="prior-disclosure-protests-17" /> <C id="prior-disclosure-protests-19" /> <C id="prior-disclosure-protests-20" /> <C id="prior-disclosure-protests-22" />
 
-**Two routes**, depending on where the entry is in its lifecycle:
+## Which tool fits which problem
 
-**Post Summary Correction** — for entries not yet liquidated. Reporting on classification describes overpayment as recoverable through a post summary correction or protest within a limited window after liquidation.
+- **You underdeclared value or duty:** prior disclosure, before any formal investigation and before a seizure or penalty notice. <C id="prior-disclosure-protests-09" />
+- **CBP reclassified your goods or raised the value at liquidation:** protest within 180 days. <C id="prior-disclosure-protests-17" />
+- **CBP refused a drawback claim:** protest. <C id="prior-disclosure-protests-15" />
+- **Nobody acted for a year:** the entry is deemed liquidated as you declared it. <C id="prior-disclosure-protests-13" />
 
-**Protest** — for entries already liquidated. the window at **180 days from the liquidation date.**
-
-**The detail that costs money:** the window runs **per entry**, from that entry's liquidation date. There is no account-level deadline and no notification you would notice. Reporting on retrospective tariff changes states the position plainly — check every liquidated entry individually and file before its specific deadline expires.
-
-<StockImage slug="prior-disclosure-protests" theme="ecommerce" />
-
-## The retrospective tariff case
-
-This is where it stopped being theoretical for a lot of importers.
-
-Where a tariff measure is reversed, reduced or struck down, two treatments:
-
-**Unliquidated entries** — re-liquidated automatically where the system supports it.
-
-**Already-liquidated entries** — requiring a formal protest within 180 days of liquidation.
-
-**So a refund you are owed can expire because nobody filed.** Given how many measures moved across 2025 and 2026 — see the [tariff stack guide](/guides/tariff-stack-2026/) — that is not a hypothetical for anyone importing at volume.
-
-## When to look
-
-Four triggers worth acting on:
-
-**After any classification review.** If the review found a better code, it also found that the old one was wrong. That is a two-sided finding.
-
-**After a tariff measure changes retrospectively.** Check whether your entries are affected and where each one sits in liquidation.
-
-**When a supplier changes something.** Material, construction, origin. A change that moves the classification means the entries after it may be wrong even though the entries before it were right.
-
-**Before a sale of the business.** Buyers reconcile [COGS against supplier invoices](/guides/selling-your-fba-business/), and an unresolved customs exposure is a diligence finding rather than a surprise.
-
-## What this requires from you
-
-Both mechanisms run on records:
-
-**Entry summaries** — CBP Form 7501 for every entry. If you have never obtained one, the [landed cost guide](/guides/landed-cost-fee-stack/) explains why you want them regardless.
-
-**Liquidation dates**, per entry. This is the field that starts the protest clock.
-
-**Classification reasoning**, dated. The file described in the classification guide — what code, when, why, and what was rejected.
-
-**Supplier documentation** connecting the goods to the entries — the same [supplier invoice](/guides/the-supplier-invoice/) discipline that six other systems require.
-
-**If you cannot produce those, the first step is not a filing.** It is getting the records, which usually means asking your broker or forwarder for a complete entry history.
-
-## What to do
-
-**Ask your broker for a full entry history**, with liquidation dates. Most sellers have never seen one and it is the input to everything here.
-
-**Review classifications against the current schedule** — four revisions in the first two months of 2026, per the [tariff engineering guide](/guides/tariff-engineering-design/).
-
-**Check liquidated entries for protest deadlines** if any measure affecting you has changed. Per entry, 180 days, and nobody will remind you.
-
-**If you find an underpayment, take it to a customs attorney before doing anything else** — including before filing anything or requesting a ruling that describes the product.
-
-**If you find an overpayment, act on the oldest entries first.** They are the ones closest to expiring.
-
-**Do not fix it going forward and leave the past alone.** That is a decision, and it is one made without advice.
-
-<MiniCalc variant="margin" />
-
-Check the liquidation dates on your last twelve months of entries in ACE. Count how many are within 180 days. That number is how many protests you can still file — and it gets smaller every day.
-
-<Faq items={[
- { q: "I have been using the wrong HTS code. What do I do?", a: "It depends on the direction. Underpayment is a prior disclosure question and should go to a customs attorney before anything else is filed. Overpayment is recoverable through a post summary correction on unliquidated entries or a protest within 180 days of liquidation." },
- { q: "How long do I have to claim back overpaid duty?", a: "the protest window at 180 days from the liquidation date, running per entry. There is no account-level deadline and no notification you would ordinarily notice." },
- { q: "What is a prior disclosure?", a: "The mechanism for coming forward to CBP about an error before it identifies the issue. Reporting names prior-disclosure filings among the standard services of the trade compliance market, and the value depends on filing before an inquiry begins." },
- { q: "A tariff I paid was reversed. Do I get it back automatically?", a: "It depends on entry status. unliquidated entries being re-liquidated automatically where the system supports it, while already-liquidated entries require a formal protest within 180 days of liquidation." },
- { q: "What records do I need?", a: "Entry summaries with liquidation dates per entry, dated classification reasoning, and supplier documentation connecting the goods to the entries. If you do not have them, ask your broker for a complete entry history first." },
- { q: "Can I just fix it going forward?", a: "You can, and it is a decision about the past rather than an avoidance of one. Given that importer history feeds algorithmic targeting and that penalties distinguish disclosed errors from discovered ones, it is worth making that decision with advice." },
+<Checklist title="Records to pull before acting" items={[
+  "Entry numbers, entry dates and importer number for every affected entry",
+  "Liquidation posting date for each entry (starts the 180-day protest clock)",
+  "Original commercial invoices and classification used at entry",
+  "A written explanation of what went wrong, how and when (for a prior disclosure)",
+  "Any CBP notices received, including prepenalty or penalty notices or seizure notices",
+  "A calendar entry for the 180-day protest deadline and the 30-day tender window"
 ]} />
 
-<Sources items={[
-  { title: '19 U.S.C. § 1592(c)(4) (prior disclosure) and 19 CFR 162.74; 19 U.S.C. § 1514 (protests within 180 days of liquidation); 19 CFR 174', publisher: 'United States Code, Title 19; U.S. Customs and Border Protection', accessed: '2026-09-05' },
- { title: 'Reduce import duty US 2026 (unliquidated entries re-liquidated automatically against already-liquidated entries requiring a formal protest within 180 days of liquidation; checking every liquidated entry individually)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-09-05' },
- { title: 'How American importers are cutting their 2026 duty bills (prior-disclosure filings among the services of the tariff mitigation market, alongside classification reviews, first sale valuation and drawback recovery)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-09-05' },
- { title: 'What is an HTS code? The 2026 importer\u2019s guide (overpayment recoverable through a Post Summary Correction or protest within a limited window after liquidation; underpayment exposure under 19 U.S.C. § 1592 including duty, interest and civil penalties)', publisher: 'Peacock Tariff Consulting', href: 'https://www.peacocktariffconsulting.com/what-is-hts-code/', accessed: '2026-09-05' },
- { title: 'Complete guide to HTS classification 2026 (penalty tiers under 19 U.S.C. § 1592 for negligence, gross negligence and fraud)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/guia/hts-classification-complete-guide-2026', accessed: '2026-09-05' },
- { title: 'Navigating US customs holds and exams: a 2026 guide (algorithmic targeting drawing on importer history)', publisher: 'FreightAmigo', href: 'https://www.freightamigo.com/en/blog/logistics/navigating-us-customs-holds-and-exams-a-comprehensive-guide/', accessed: '2026-09-05' },
-]} />
+## What to check yourself
+
+1. Read 19 CFR 162.74 on eCFR, especially paragraphs (a), (b), (c) and (i), before preparing a disclosure.
+2. Read 19 CFR 162.73(b) to confirm the penalty levels that apply with a prior disclosure.
+3. Check the liquidation posting date for each entry and calculate 180 days from it, per 19 CFR 174.12(e).
+4. Confirm the decision you want to challenge is listed in 19 CFR 174.11.
+5. Confirm your protest contains every element listed in 19 CFR 174.13.
+6. Read 19 CFR 159.11 and 159.12 to see whether any entry has been extended or has passed the one-year deemed liquidation date.

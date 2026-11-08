@@ -1,143 +1,22 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import AdSlot from '../../components/AdSlot.astro';
-import Btn from '../../components/Btn.astro';
-import { MARKETPLACES } from '../../data/marketplaces';
-
-/* Deliberately not a ranking. The comparable line across five platforms with
-   different fee architectures is "what share of the sale price does the
-   platform take", so that is what the table shows — with the worked example
-   each figure came from named underneath. */
-const compare = MARKETPLACES.map(m => ({
-  slug: m.slug,
-  name: m.name,
-  subscription: m.headline.find(h => h.k === 'Account')?.v ?? '—',
-  commission: m.headline.find(h => h.k.includes('Referral') || h.k.includes('Final value') || h.k.includes('Transaction'))?.v ?? '—',
-  fulfilment: m.headline.find(h => h.k.includes('Fulfil') || h.k.includes('WFS') || h.k.includes('Fulfilled'))?.v ?? 'You fulfil it',
-  take: m.example.rate.split(/[,—]/)[0].trim(),
-  example: m.example.label,
-}));
+import { fmtDate } from '../../lib/claims';
+const list = (await getCollection('marketplaces', (e) => !e.data.draft)).sort((a, b) => a.id.localeCompare(b.id));
 ---
-<Base
-  title="Marketplaces"
-  description="Fee structures, fulfillment options and operational quirks for Amazon, Walmart, eBay, TikTok Shop and Etsy — each rate dated, each disagreement between sources recorded."
->
-<div class="wrap">
-  <Breadcrumbs trail={[{ label: 'Marketplaces', href: '/marketplaces/' }]} />
-
-  <div class="pagehead"><h1>Marketplaces</h1></div>
-  <p class="resultline" style="max-width:62ch">
-    Five US selling channels, five different fee architectures. Each page below lists what the platform
-    charges, what the published sources disagree about, and a worked example on a real price point.
-  </p>
-
-  <div class="portal">
-    <div>
-      <div class="sechead green"><h2>Side by side</h2></div>
-
-      <div class="prose" style="max-width:none">
-        <table>
-          <thead>
-            <tr>
-              <th>Marketplace</th>
-              <th>Account</th>
-              <th>Commission</th>
-              <th>Fulfillment</th>
-              <th>Take</th>
-            </tr>
-          </thead>
-          <tbody>
-            {compare.map(c => (
-              <tr>
-                <td><strong><a href={`/marketplaces/${c.slug}/`}>{c.name}</a></strong></td>
-                <td>{c.subscription}</td>
-                <td>{c.commission}</td>
-                <td>{c.fulfilment}</td>
-                <td>{c.take}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p class="note">
-          The take column is not comparable across rows on its own — each comes from a different worked
-          example at a different price point, listed on the marketplace page. It is there to show the order
-          of magnitude, not to rank the platforms. Rates checked 8 August 2026.
-        </p>
-      </div>
-
-      <div class="sechead" style="margin-top:2.4rem"><h2>The pages</h2></div>
-      <div class="grid">
-        {MARKETPLACES.map(m => (
-          <a class="card hubcard" href={`/marketplaces/${m.slug}/`}>
-            <div class="body">
-              <span class="meta">Fee reference</span>
-              <h3>{m.name}</h3>
-              <p>{m.short}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <AdSlot inline={true} label="marketplaces — below the grid" />
-
-      <div class="prose">
-        <h2>How to read any marketplace fee table, including this one</h2>
-        <p>
-          Three habits stop most fee mistakes, and none of them require a tool.
-        </p>
-        <h3>Check what the percentage is charged on</h3>
-        <p>
-          This is the single most common error. eBay applies its final value fee to the item price plus
-          handling plus buyer-paid shipping plus sales tax. Etsy applies its transaction fee to the item
-          plus shipping, but applies payment processing to the tax as well. Amazon applies the referral
-          fee to the sale price. Three platforms, three different bases, one percentage sign.
-        </p>
-        <h3>Check the date on the rate</h3>
-        <p>
-          eBay raised its standard rate in February 2025 and guides written before that are still in
-          circulation. Amazon changed its fulfillment fee structure in January 2026. Etsy moved its
-          transaction fee from 5% to 6.5%. A rate card without a date on it is not a rate card.
-        </p>
-        <h3>Check who is publishing the number</h3>
-        <p>
-          A large share of marketplace fee content is published by companies selling calculators,
-          repricers or recovery services. That does not make the figures wrong, but it does explain why
-          the same fee appears at three different values across three articles from the same quarter. Where
-          that happened during research for these pages, the disagreement is recorded on the marketplace
-          page rather than quietly resolved.
-        </p>
-      </div>
-
-      <div class="btn-row" style="margin:2rem 0 0">
-        <Btn href="/tools/margin-calculator/">Run your own numbers</Btn>
-        <Btn href="/policy-log/" quiet={true}>See what changed and when</Btn>
-      </div>
+<Base title="Fee reference by marketplace" description="Selling fees for Amazon, Walmart, eBay, Etsy and Shopify, taken from each platform's own fee pages, with the date each figure was checked.">
+  <div class="wrap">
+    <Breadcrumbs trail={[{ label: 'Fee reference', href: '/marketplaces/' }]} />
+    <header class="index-head"><p class="eyebrow">Reference</p><h1>Fee reference by marketplace</h1>
+      <p class="lede">One page per platform, built only from that platform's public fee pages. Where a platform publishes a fee only inside its seller dashboard, this site does not repeat it.</p></header>
+    <div class="prose" style="padding:1.5rem 0 0">
+      <p>Each page sets out the platform's selling fees as the platform publishes them — plan or subscription charges, the percentage taken on each sale, per-order and listing fees — and works them through on the same hypothetical $25 item so the totals can be compared. Fees that depend on size, weight or program enrollment are linked to the platform's own calculator or schedule rather than restated.</p>
+      <p>Platforms change fees with little notice. Every row carries the date it was checked, and the <a href="/policy-log/">policy log</a> records changes when the platform publishes them.</p>
     </div>
-
-    <aside class="rail">
-      <div class="rail-box">
-        <h4>Jump to a marketplace</h4>
-        <div class="rail-links">
-          {MARKETPLACES.map(m => <a href={`/marketplaces/${m.slug}/`}>{m.name}</a>)}
-        </div>
-      </div>
-      <div class="rail-box orange">
-        <h4>Free calculators</h4>
-        <p>Margin and break-even, cash flow timing and billable dimensional weight. They run in your browser and store nothing.</p>
-        <Btn href="/tools/" variant="cta" wide={true} arrow={false}>Open the tools</Btn>
-      </div>
-      <div class="rail-box">
-        <h4>Reference</h4>
-        <div class="rail-links">
-          <a href="/policy-log/">Fee and policy change log</a>
-          <a href="/glossary/">Glossary</a>
-          <a href="/business-models/">The five selling models</a>
-          <a href="/costs/">What it costs to start</a>
-        </div>
-      </div>
-      <AdSlot label="marketplaces — sidebar" />
-    </aside>
+    <ul class="rows">{list.map((m) => (
+      <li><p class="meta">Verified<br />{fmtDate(m.data.lastVerified)}</p>
+        <div><h3><a href={`/marketplaces/${m.id}/`}>{m.data.title}</a></h3><p>{m.data.description}</p></div></li>))}</ul>
+    <p class="meta" style="margin-top:2rem">Comparing platforms? See <a href="/guides/ebay-etsy-for-amazon-sellers/">fees on five marketplaces for one $25 item</a>.</p>
   </div>
-</div>
 </Base>

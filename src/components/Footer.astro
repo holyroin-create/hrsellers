@@ -1,71 +1,30 @@
 ---
-import { SITE, AUTHOR } from '../config';
-
-const TAGS = [
-  { label: 'FBA fees', href: '/guides/' },
-  { label: 'De minimis', href: '/guides/' },
-  { label: 'Reimbursements', href: '/guides/' },
-  { label: 'Dimensional weight', href: '/tools/dimensional-weight/' },
-  { label: 'Break-even ACOS', href: '/tools/margin-calculator/' },
-  { label: 'Cash flow', href: '/tools/cash-flow-planner/' },
-  { label: 'Walmart WFS', href: '/marketplaces/' },
-  { label: 'Startup costs', href: '/costs/' },
-];
+import { SITE } from '../lib/site';
 ---
-<footer class="site-foot">
+<footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-brand">
-        <p class="bn">FBA<i>Tactics</i></p>
-        <p class="org">
-          Published by <strong>{SITE.publisher}</strong><br />
-          Editor: <strong>{AUTHOR.name}</strong><br />
-          <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>
-        </p>
-      </div>
       <div>
-        <h4>Learn</h4>
-        <a href="/start-here/">Start here</a>
-        <a href="/guides/">Guides</a>
-        <a href="/business-models/">Business models</a>
-        <a href="/costs/">What it costs</a>
-        <a href="/reality-check/">Reality check</a>
+        <h2>FBA Tactics</h2>
+        <p>Fee schedules and US import rules for marketplace sellers. Every figure links to the regulation, notice or platform page it comes from, with the date it was checked.</p>
+        <p>Published by {SITE.publisherName}. <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p>
       </div>
-      <div>
-        <h4>Reference</h4>
-        <a href="/quiz/">Model fit check</a>
-        <a href="/resources/">Free templates</a>
-        <a href="/glossary/">Glossary</a>
-        <a href="/policy-log/">Fee and policy log</a>
-        <a href="/marketplaces/">Marketplaces</a>
-        <a href="/reviews/">Tool reviews</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="/about/">About</a>
-        <a href="/how-we-test/">How we test</a>
-        <a href="/editorial-standards/">Editorial standards</a>
-        <a href="/corrections/">Corrections</a>
-        <a href="/contact/">Contact</a>
-        <a href="/privacy/">Privacy policy</a>
-        <a href="/cookie-policy/">Cookie policy</a>
-        <a href="/terms/">Terms of use</a>
-        <a href="/affiliate-disclosure/">How this site is funded</a>
-      </div>
+      <div><h2>Read</h2><ul>
+        <li><a href="/guides/">All guides</a></li><li><a href="/marketplaces/">Fee reference</a></li>
+        <li><a href="/policy-log/">Policy log</a></li><li><a href="/glossary/">Glossary</a></li><li><a href="/resources/">Primary sources</a></li>
+      </ul></div>
+      <div><h2>Use</h2><ul>
+        <li><a href="/tools/">Calculators</a></li><li><a href="/quiz/">Knowledge check</a></li><li><a href="/start-here/">Start here</a></li><li><a href="/sitemap/">Site map</a></li>
+      </ul></div>
+      <div><h2>Site</h2><ul>
+        <li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/editorial-standards/">Editorial &amp; sourcing</a></li>
+        <li><a href="/corrections/">Corrections</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/cookie-policy/">Cookies</a></li>
+        <li><a href="/terms/">Terms</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/image-credits/">Image credits</a></li>
+      </ul></div>
     </div>
-
-    <div class="tagstrip">
-      <span class="tl">Popular topics</span>
-      {TAGS.map(t => <a href={t.href}>{t.label}</a>)}
+    <div class="foot-legal">
+      <p>Not affiliated with, endorsed by, or sponsored by Amazon, Walmart, eBay, Etsy, Shopify, or any government agency. Platform and agency names are used only to identify the source of a fee or rule. Information, not legal or tax advice.</p>
+      <p>© {new Date().getFullYear()} {SITE.publisherName}</p>
     </div>
-
-    <p class="legal">
-      Every figure published here carries the date it was checked and a link to its source. Rates change
-      on the platforms' own timetable — verify anything material against the marketplace's own
-      documentation before acting on it. Nothing here is tax, legal or financial advice. This site is
-      independent and is not affiliated with, endorsed by, or sponsored by Amazon, Walmart, eBay, Shopify,
-      Etsy or TikTok. Funded by display advertising; advertisers have no influence on editorial.
-      &copy; {new Date().getFullYear()} {SITE.publisher}.
-    </p>
   </div>
 </footer>

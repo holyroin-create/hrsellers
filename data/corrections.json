@@ -1,0 +1,4 @@
+[
+  {"date": "2026-11-08", "page": "Whole site", "change": "Site rebuilt. Guides whose figures relied on secondary sources (blogs, vendor and agency sites) or on pages that cannot be opened without logging in were withdrawn. Pages that remain were rewritten from primary sources and each fact was rechecked. Withdrawn addresses forward to a verified page on the same question where one exists, otherwise they return not found.", "why": "Editorial policy changed to primary sources only."},
+  {"date": "2026-11-08", "page": "/tools/dimensional-weight/", "change": "Removed the pre-filled dimensional divisor (139). The divisor is now an input you copy from your carrier's rate guide.", "why": "No primary source was cited for a single default value; divisors vary by carrier, service and contract."}
+]

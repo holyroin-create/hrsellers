@@ -1,0 +1,54 @@
+---
+/* Original data graphic generated from page frontmatter. No photos, no third-party marks. */
+import { claim as getClaim, fmtDate } from '../lib/claims';
+const { hero, title } = Astro.props as { hero: any; title: string };
+const c = hero.claim ? getClaim(hero.claim) : null;
+const W = 380, H = 250;
+const esc = (s: string) => s;
+const wrap = (s: string, n: number) => { const out: string[] = []; let line = ''; for (const w of s.split(' ')) { if ((line + ' ' + w).trim().length > n) { out.push(line.trim()); line = w; } else line += ' ' + w; } if (line.trim()) out.push(line.trim()); return out; };
+let desc = '';
+if (hero.kind === 'stat') desc = `${hero.figure}: ${hero.label}`;
+if (hero.kind === 'flow') desc = hero.steps.join(', then ');
+if (hero.kind === 'timeline') desc = hero.items.map((i: any) => `${i.date}: ${i.label}`).join('; ');
+if (hero.kind === 'compare') desc = hero.rows.map((r: any) => `${r.label}: ${r.value}${hero.unit}`).join('; ');
+const max = hero.kind === 'compare' ? Math.max(...hero.rows.map((r: any) => r.value)) || 1 : 1;
+const nice = (d: string) => (/^\d{4}-\d{2}-\d{2}$/.test(d) ? fmtDate(d) : d);
+---
+<figure class="hero-fig">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title} — ${desc}`}>
+    <rect width={W} height={H} fill="#fbfaf7" />
+    <g stroke="#ece8e0">{Array.from({ length: 9 }, (_, i) => <line x1="0" x2={W} y1={i * 30 + 10} y2={i * 30 + 10} />)}</g>
+    <rect x="0" y="0" width="6" height={H} fill="#b4400f" />
+    {hero.kind === 'stat' && (<g>
+      <text x="30" y="128" font-family="Source Serif 4, Georgia, serif" font-weight="700" font-size={hero.figure.length > 7 ? 54 : 76} fill="#15202b">{esc(hero.figure)}</text>
+      {wrap(hero.label, 34).slice(0, 3).map((l, i) => <text x="32" y={165 + i * 22} font-family="IBM Plex Sans, sans-serif" font-size="16" fill="#3d4a57">{l}</text>)}
+    </g>)}
+    {hero.kind === 'flow' && (<g>
+      {hero.steps.map((s: string, i: number) => { const n = hero.steps.length; const h = Math.min(34, (H - 40 - (n - 1) * 10) / n); const y = 20 + i * (h + 10);
+        return (<g>
+          <rect x="30" y={y} width="320" height={h} fill="#ffffff" stroke="#15202b" stroke-width="1.5" />
+          <rect x="30" y={y} width={h} height={h} fill={i === n - 1 ? '#b4400f' : '#15202b'} />
+          <text x={30 + h / 2} y={y + h / 2 + 5} text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#fff">{i + 1}</text>
+          <text x={30 + h + 12} y={y + h / 2 + 5} font-family="IBM Plex Sans, sans-serif" font-size="14" fill="#15202b">{s.length > 36 ? s.slice(0, 35) + '…' : s}</text>
+        </g>); })}
+    </g>)}
+    {hero.kind === 'timeline' && (<g>
+      <line x1="30" x2="350" y1="120" y2="120" stroke="#15202b" stroke-width="2" />
+      {hero.items.map((it: any, i: number) => { const n = hero.items.length; const x = 40 + (i * 300) / Math.max(1, n - 1); const up = i % 2 === 0;
+        return (<g>
+          <circle cx={x} cy="120" r="7" fill={i === n - 1 ? '#b4400f' : '#fbfaf7'} stroke="#b4400f" stroke-width="2.5" />
+          <text x={x} y={up ? 92 : 156} text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#b4400f">{nice(it.date)}</text>
+          {wrap(it.label, 16).slice(0, 2).map((l, k) => <text x={x} y={(up ? 58 : 176) + k * 15} text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#15202b">{l}</text>)}
+        </g>); })}
+    </g>)}
+    {hero.kind === 'compare' && (<g>
+      {hero.rows.map((r: any, i: number) => { const n = hero.rows.length; const bh = Math.min(26, (H - 50) / n - 12); const y = 24 + i * (bh + 14); const w = (200 * r.value) / max;
+        return (<g>
+          <text x="30" y={y + bh / 2 + 5} font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#3d4a57">{r.label.length > 14 ? r.label.slice(0, 13) + '…' : r.label}</text>
+          <rect x="130" y={y} width={Math.max(2, w)} height={bh} fill={['#1c4f86', '#c26a00', '#2f7a6d'][i % 3]} />
+          <text x={136 + w} y={y + bh / 2 + 5} font-family="IBM Plex Mono, monospace" font-size="13" fill="#15202b">{hero.unit === '$' ? `$${r.value}` : `${r.value}${hero.unit}`}</text>
+        </g>); })}
+    </g>)}
+  </svg>
+  <figcaption>{c ? <>Data: {c.publisher}, checked {nice(c.accessed)}. <a href={`#src-${hero.claim}`}>Source</a></> : 'Diagram: FBA Tactics, summarizing this page.'}</figcaption>
+</figure>

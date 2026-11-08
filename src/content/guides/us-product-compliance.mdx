@@ -1,138 +1,137 @@
 ---
-title: "From July 8, 2026, CPSC certificates are filed electronically at the border. That changes who finds out first."
-seoTitle: "CPSC eFiling From July 8, 2026: Certificates at the Border"
-description: "Importers of most regulated consumer products now eFile certificates of compliance with CBP through a Partner Government Agency message set. A missing certificate stops being a Seller Central problem and becomes a customs problem."
-category: "Shipping & logistics"
+title: "CPSC Certificates and eFiling: GCC, CPC and Children's Product Testing"
+description: "Who must issue a GCC or CPC under 16 CFR 1110, what the certificate must contain, how eFiling works from July 8, 2026, and when third-party testing applies."
+category: "Product compliance"
 published: "2026-08-12"
-modified: "2026-09-05"
-minutes: 11
-numbered: true
-ledger: "CPSC eFile at the border from July 8, 2026"
-ledgerKind: "cost"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 7
+summary:
+  - "For imported consumer products, the importer is the finished product certifier that must issue the certificate under 16 CFR 1110.7."
+  - "The CPSC final rule on Certificates of Compliance requires eFiling of certificate data with CBP, applicable from July 8, 2026 for most products and January 8, 2027 for goods entered from a foreign trade zone."
+  - "An eFiled certificate must be in English, and certificates and supporting records must be kept for at least five years."
+  - "Children's products need testing by a CPSC-accepted third party lab, with periodic testing at least once a year unless a longer interval applies."
+hero:
+  kind: "timeline"
+  items:
+    - date: "2026-07-08"
+      label: "eFiling applies to most regulated imports"
+    - date: "2027-01-08"
+      label: "eFiling applies to goods entered from an FTZ"
+  claim: "us-product-compliance-03"
+related: ["hazmat-dangerous-goods", "origin-marking-requirements", "customs-holds-and-exams", "hts-classification-basics"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+If you import a consumer product that is subject to a Consumer Product Safety Commission (CPSC) rule, ban, standard or regulation, you, as importer, issue the certificate of compliance, and since July 8, 2026 the certificate data has to be filed electronically with the customs entry for most such products. <C id="us-product-compliance-06" /> <C id="us-product-compliance-03" /> The certificate is a General Certificate of Conformity (GCC) for general-use products or a Children's Product Certificate (CPC) for children's products, and a CPC must rest on testing by a CPSC-accepted third-party laboratory. <C id="us-product-compliance-18" />
 
-import MiniCalc from '../../components/MiniCalc.astro';
+This page covers the certificate rule in 16 CFR Part 1110 as revised by the CPSC's January 2025 final rule, and the children's product testing rule in 16 CFR Part 1107. Which product safety rules apply to your item is a separate question; the certificate is where you list them.
 
-import StockImage from '../../components/StockImage.astro';
+<Callout type="note" title="Scope of this page">
+This page summarizes CPSC certificate and testing rules. Whether a specific rule applies to your product is a determination for you and, where needed, a testing lab or compliance attorney.
+</Callout>
 
-<Takeaways items={[
- "CPSC states that from July 8, 2026, importers of most regulated consumer products must electronically file certificates of compliance with CBP via a Partner Government Agency message set.",
- "That moves the certificate from a document you produce when Amazon asks to a document required at import. The failure mode changes from a listing suppression to a shipment that does not clear.",
- "Children's products subject to a CPSC safety rule require third-party testing and a Children's Product Certificate. You do not get to decide whether your product is a children's product — CPSC guidance does.",
- "Amazon will request certificates at any time with a window of around 72 hours, and failure to produce them within it as resulting in ASIN suspension.",
- "In July 2024 the CPSC found Amazon responsible for hazardous products sold by third-party sellers through FBA — which is context for why platform enforcement has tightened since.",
+## The 2025 final rule and its dates
+
+In January 2025 the CPSC, in consultation with US Customs and Border Protection, issued a final rule revising its Certificates of Compliance regulation, aligning it with other CPSC testing and certification rules and implementing "electronic filing of certificates (eFiling) with CBP." <C id="us-product-compliance-01" /> A September 2025 correction states that the effective date of the rule published at 90 FR 1800 "is July 8, 2026." <C id="us-product-compliance-02" />
+
+<Timeline title="Certificates of Compliance rule: key dates" items={[
+  {date: "2025-01-08", t: "Final rule published", d: "Revises certificate rule and implements eFiling", claim: "us-product-compliance-01"},
+  {date: "2026-07-08", t: "Effective and applicable", d: "Most CPSC-regulated products and substances", claim: "us-product-compliance-03"},
+  {date: "2027-01-08", t: "Applicable to FTZ goods", d: "Products entered from a foreign trade zone for consumption or warehousing", claim: "us-product-compliance-03"}
 ]} />
 
-Product compliance is the part of selling that most sellers treat as paperwork until it stops a container or suppresses a listing. A change that took effect this summer moved where the failure happens, and it is worth understanding before your next inbound shipment.
+The rule applies on July 8, 2026 to regulated products and substances, except those imported into a foreign trade zone and later entered for consumption or warehousing, for which it applies on January 8, 2027. <C id="us-product-compliance-03" />
 
-## What changed on July 8, 2026
+## GCC or CPC
 
-CPSC states that beginning July 8, 2026, **importers of most regulated consumer products are required to electronically file certificates of compliance with U.S. Customs and Border Protection**, via a Partner Government Agency message set.
+16 CFR 1110 defines a General Certificate of Conformity as "a certificate of compliance for a finished product issued pursuant to section 14(a)(1) of the CPSA." <C id="us-product-compliance-04" /> A Children's Product Certificate is "a certificate of compliance for a finished product issued pursuant to section 14(a)(2) of the CPSA." <C id="us-product-compliance-05" /> The practical difference is the testing basis: a CPC relies on third-party testing under Part 1107, described below.
 
-Amazon has published its own guidance to sellers on filing CPSC certificates electronically from the same date.
+## Who issues the certificate
 
-The practical shift is where the check happens. Previously the operative moment was Amazon asking for a certificate. Now the certificate is data filed at import — which means an incomplete or missing certificate is a customs problem before it is a marketplace problem.
+- **Imported products.** Under 1110.7(a), the importer "is the finished product certifier that must issue a finished product certificate." <C id="us-product-compliance-06" />
+- **Products made in the US.** Under 1110.7(b), the manufacturer certifies; for a privately labeled product, the private labeler certifies unless the manufacturer issues the certificate. <C id="us-product-compliance-07" />
 
-Our [customs holds guide](/guides/customs-holds-and-exams/) covers what a PGA hold does to a shipment: a hold placed by a partner agency runs on that agency's timeline, not CBP's, and can follow a completed customs exam. **CPSC is a PGA.**
+A seller who imports under its own importer of record number is therefore the certifier, even if the factory provides test reports. The final rule preamble states that certifiers may rely on others' test reports, but the finished product certifier still issues its own certificate. <C id="us-product-compliance-14" />
 
-<Figure value="July 8, 2026" kind="cost" source="CPSC, Children's Product Certificate business guidance, checked September 5, 2026">
- The date electronic filing of certificates of compliance with CBP begins for importers of most regulated consumer products. CPSC's own guidance notes that its business education pages may not yet reflect the eFiling requirement.
-</Figure>
+## What the certificate must contain
 
-## The certificates
+| Element (16 CFR 1110.11) | Practical note |
+|---|---|
+| The covered product, with at least one listed unique identifier and a description sufficient to match it to the certificate | Model, SKU or GTIN plus a plain description |
+| Each applicable rule, ban, standard or regulation, listed separately | One line per rule |
+| The certifier's name and contact information | Importer or domestic manufacturer |
+| The individual maintaining records, with contact information | Name a person, not only a company |
+| Date and place of manufacture | Factory city and country, month and year |
+| Date and place of the most recent testing | Lab and test date |
+| The certifier's attestation | Set wording for paper and electronic certificates; for eFiled certificates the attestation is in the Product Registry |
 
-**Children's Product Certificate (CPC).** Required for children's products — defined by CPSC as consumer products designed or intended primarily for children aged 12 or younger — that are subject to a consumer product safety rule or similar ban, standard or regulation. Those products require **third-party testing** at a CPSC-accepted laboratory.
+*Source: Office of the Federal Register (eCFR), 16 CFR 1110.11 Certificate content, checked Nov 8, 2026. Right-hand column is explanatory.* <C id="us-product-compliance-08" />
 
-**General Certificate of Conformity (GCC).** The equivalent for non-children's products subject to a CPSC rule.
+## eFiling with the entry
 
-Reported requirements for both: produced by the manufacturer or importer, referencing the applicable standards, naming the certifying party, and giving the contact details of the testing laboratory.
+For finished products manufactured outside the United States and offered for importation for consumption or warehousing, the certifier "must eFile the finished product certificate data elements required in § 1110.11" in CBP's Automated Commercial Environment (ACE) at the time of filing the entry. <C id="us-product-compliance-09" /> An eFiled certificate "must be in the English language." <C id="us-product-compliance-10" />
 
-**The definition is not yours to make.** Reporting is explicit that you cannot arbitrarily determine whether a product is a children's product; Amazon takes CPSC guidance into account when deciding. A product marketed to adults that CPSC guidance treats as intended primarily for children is a children's product.
+The final rule describes two routes. With the Full PGA Message Set, "the importer submits all certificate data elements via ACE." With the Reference PGA Message Set, the importer enters all certificate data elements into CPSC's Product Registry "prior to filing entry with CBP" and "submits a unique reference identifier (ID) via ACE as part of their entry filing." <C id="us-product-compliance-11" /> For mail shipments, the importer "must enter certificate data into the Product Registry before arrival of the shipment in the United States." <C id="us-product-compliance-12" /> The preamble also states: "The CPSA does not provide a *de minimis* exemption for certificates." <C id="us-product-compliance-13" />
 
-<StockImage slug="us-product-compliance" theme="ecommerce" />
-
-## The rest of the US stack
-
-Beyond CPSC, reported requirements that catch marketplace sellers:
-
-**Country of origin marking.** 19 CFR Part 134 requires products sold in the United States to be marked with their country of origin. This applies to products sold on Amazon like any others, and it is a physical marking requirement on the goods, not a data field.
-
-**California Proposition 65.** Reported as covering more than 900 substances, requiring warning labeling where a product contains them above safe harbour thresholds. cases of Amazon preventing non-compliant products from shipping to California — which, given California's share of US volume, is a material restriction rather than an edge case.
-
-**FDA.** Registration or clearance for applicable food, supplement, cosmetic and device products.
-
-**Packaging.** Reported requirements including poly bags meeting a 1.5 mil minimum with suffocation warnings where required.
-
-**Other state rules.** states set additional requirements — California on substances in most consumer products, and others with their own regimes.
-
-## The 72-hour problem
-
-Amazon can request certificates **at any time**, and that failure to produce them within the required window — described as typically 72 hours — can result in ASIN suspension.
-
-Seventy-two hours is not enough time to commission third-party testing. It is barely enough time to reach a supplier in another time zone and have them locate a document. **Which means the certificate has to exist before the request, and you have to know where it is.**
-
-This is the same structural point the [supplier invoice guide](/guides/the-supplier-invoice/) makes about a different document, and the same answer applies: collect it at purchase, file it per SKU, and treat the request as a retrieval task rather than a research project.
-
-## Why enforcement tightened
-
-Context worth knowing, because it explains the direction of travel.
-
-In July 2024 the US Consumer Product Safety Commission **found Amazon responsible for hazardous products sold by third-party sellers** through the Fulfilled by Amazon program. Legal commentary describes growing regulatory focus on e-commerce platforms' role in consumer product safety.
-
-A platform found responsible for third-party products has an obvious incentive to push documentation requirements onto the sellers of those products. That is what the 72-hour requests, the certificate uploads and the compliance dashboards are.
-
-## The launch checklist
-
-Reported as a standard operating procedure for any new product launch or inbound shipment:
-
-- Current third-party test report from an accredited laboratory against the latest applicable standard
-- CPC or GCC produced, referencing the standards, the certifying party and the testing lab
-- CPSC eFile data ready for the customs entry
-- Prop 65 compliance reviewed for US distribution
-- FDA registration or clearance confirmed where applicable
-- Country of origin marking on the goods
-- Poly bag thickness and suffocation warnings where required
-- Compliance evidence stored per ASIN or SKU
-
-**Run it before the purchase order**, not before the launch. Testing takes weeks and a supplier who cannot produce a compliant certificate is a supplier you have chosen — see the [verification guide](/guides/supplier-verification/).
-
-## Where this sits against everything else
-
-Compliance documents now sit at the intersection of four systems this site covers separately:
-
-| Document | Wanted by | Consequence of not having it |
-| --- | --- | --- |
-| CPC / GCC | CPSC at import, Amazon on request | Shipment held; ASIN suspended |
-| Test report | CPSC, Amazon | Certificate cannot be produced |
-| Supplier invoice | Amazon reimbursements, appeals, [ungating](/guides/ungating-restricted-categories/) | Covered separately |
-| SDS or exemption sheet | [Dangerous goods review](/guides/hazmat-dangerous-goods/) | Inventory blocked from FBA |
-
-Four documents, four systems, one filing habit.
-
-<MiniCalc variant="margin" />
-
-Ask your broker one question before your next entry: are you filing my CPSC certificate data in the PGA message set, and from which document? If they cannot name the document, the shipment is the one that finds out.
-
-<Faq items={[
- { q: "What changed on July 8, 2026?", a: "CPSC states that importers of most regulated consumer products must electronically file certificates of compliance with CBP via a Partner Government Agency message set from that date. Amazon published parallel guidance for sellers." },
- { q: "Do I need a Children's Product Certificate?", a: "If your product is designed or intended primarily for children aged 12 or younger and is subject to a CPSC safety rule, yes — with third-party testing at a CPSC-accepted lab. You do not decide whether it is a children's product; CPSC guidance does." },
- { q: "How long does Amazon give me to produce a certificate?", a: "a window of around 72 hours, with ASIN suspension as the consequence of missing it. That is retrieval time, not testing time." },
- { q: "Does Proposition 65 apply to me if I am not in California?", a: "It applies to products sold or shipped into California. Amazon preventing non-compliant products from shipping there, which given California's share of US volume is a material restriction." },
- { q: "What happens at the border without the eFile data?", a: "CPSC is a partner government agency, so a missing or incomplete filing can produce a PGA hold. Those run on the agency's timeline and can follow a completed CBP exam." },
- { q: "Is this legal advice?", a: "No. Product compliance is jurisdiction-specific and product-specific. This guide maps the requirements so you know what to take to a compliance specialist or testing laboratory." },
+<Flow title="Certificate path for an imported regulated product" claim="us-product-compliance-11" steps={[
+  {t: "Identify applicable CPSC rules", d: "List each one for the certificate"},
+  {t: "Test", d: "Third-party lab for children's products"},
+  {t: "Enter data", d: "Full PGA Message Set in ACE, or Product Registry first"},
+  {t: "File entry", d: "Data or reference ID submitted with the entry"}
 ]} />
 
-<Sources items={[
-  { title: 'eFiling of certificates of compliance: final rule requiring importers to electronically file certificate data with CBP through the Partner Government Agency message set for most regulated consumer products (compliance date July 8, 2026)', publisher: 'U.S. Consumer Product Safety Commission', accessed: '2026-09-05' },
- { title: 'Children\u2019s Product Certificate (eFiling of certificates of compliance with CBP via a PGA message set beginning July 8, 2026; definition of a children\u2019s product; third-party testing requirement)', publisher: 'CPSC', href: 'https://www.cpsc.gov/Business--Manufacturing/Testing-Certification/Childrens-Product-Certificate', accessed: '2026-09-05' },
- { title: 'File CPSC certificates electronically starting July 8, 2026', publisher: 'Amazon Seller Central', href: 'https://sellercentral.amazon.com/help/hub/reference/external/GWCJUJ9WUZNRYVGN', accessed: '2026-09-05' },
- { title: 'Amazon compliance requirements 2026: full checklist (CPC and GCC contents; roughly 72-hour production window and ASIN suspension; Prop 65 covering 900+ substances; poly bag 1.5 mil minimum; launch checklist)', publisher: '365 Prep Center', href: 'https://365prepcenter.com/blog/amazon-compliance-requirements-2026-full-checklist-every-seller-needs-6/', accessed: '2026-09-05' },
- { title: 'Amazon product compliance requirements in the United States (CPC and test report from a CPSC-accepted lab; 19 CFR Part 134 country of origin marking; Amazon preventing Prop 65 non-compliant products shipping to California; sellers not determining children\u2019s product status)', publisher: 'Compliance Gate', href: 'https://www.compliancegate.com/amazon-united-states-product-compliance/', accessed: '2026-09-05' },
- { title: 'CPSC finds Amazon responsible for hazardous products sold by third-party sellers (July 2024 determination regarding the Fulfilled by Amazon program; regulatory focus on platform responsibility)', publisher: 'Holland & Knight, via JD Supra', href: 'https://www.jdsupra.com/topics/product-recalls/online-marketplace/', accessed: '2026-09-05' },
+Once issued, the certifier "must furnish the required finished product certificate to each distributor or retailer" of the product. <C id="us-product-compliance-15" /> Certificates and supporting records must be kept "for at least five years from the certificate creation date." <C id="us-product-compliance-16" />
+
+## Children's products: third-party testing under 16 CFR Part 1107
+
+Part 1107 "establishes the protocols and standards for ensuring continued testing of children's products." <C id="us-product-compliance-17" /> Manufacturers must submit samples to a third party conformity assessment body, defined as "a testing laboratory whose accreditation has been accepted by the CPSC." <C id="us-product-compliance-18" />
+
+After the initial certification, periodic testing continues at intervals that depend on the controls in place:
+
+| Situation (16 CFR 1107.21) | Minimum periodic testing |
+|---|---|
+| Default | At least once a year |
+| Production testing plan in place | At least once every two years |
+| Testing by an ISO/IEC 17025-accredited lab | At least once every three years |
+
+*Source: Office of the Federal Register (eCFR), 16 CFR 1107.21 Periodic testing, checked Nov 8, 2026.* <C id="us-product-compliance-19" />
+
+A material change triggers new testing. Section 1107.23 covers changes in "product design or manufacturing process, including the sourcing of component parts," which require testing of new samples and a new CPC. <C id="us-product-compliance-20" /> Testing records must be kept for five years under 1107.26. <C id="us-product-compliance-21" /> A switch of fabric supplier or paint vendor on a children's product is a sourcing change to evaluate under that section.
+
+<Checklist title="Certificate readiness per SKU" items={[
+  "List every CPSC rule, ban, standard or regulation that applies to the product",
+  "Decide GCC or CPC; for a CPC, use a CPSC-accepted third-party lab",
+  "Fill each 1110.11 data element, including a named records custodian",
+  "Choose Full PGA Message Set or Product Registry reference ID and agree it with your customs broker",
+  "Send the certificate to each distributor or retailer that sells the product",
+  "Calendar periodic testing for children's products and retest after any material change",
+  "Keep certificates and test records for the required retention periods"
 ]} />
+
+Certificates sit alongside the other import-side checks: [origin marking](/guides/origin-marking-requirements/), [HTS classification](/guides/hts-classification-basics/), and what happens when a shipment is [held for exam](/guides/customs-holds-and-exams/).
+
+## Decision table: what the certificate rule requires for your setup
+
+The sections above follow the regulation's order. The table below reorders the same rules by seller situation.
+
+| If your situation is… | What applies | Rule |
+|---|---|---|
+| You import a finished product for consumption or warehousing | You are the certifier, and you eFile the 1110.11 data elements in ACE when the entry is filed | 16 CFR 1110.7(a), 1110.13(a)(1) <C id="us-product-compliance-06" /> <C id="us-product-compliance-09" /> |
+| Your goods go into a foreign trade zone before entry | The rule applies January 8, 2027 rather than July 8, 2026 | Final rule <C id="us-product-compliance-03" /> |
+| You ship individual units by mail | No de minimis exemption for certificates; certificate data in the Product Registry before arrival | Final rule <C id="us-product-compliance-13" /> <C id="us-product-compliance-12" /> |
+| The product is a children's product | Children's Product Certificate, with samples sent to a CPSC-accepted third-party lab | 16 CFR 1110, Part 1107 <C id="us-product-compliance-05" /> <C id="us-product-compliance-18" /> |
+| You switch a component supplier on a children's product | New testing and a new CPC | 16 CFR 1107.23 <C id="us-product-compliance-20" /> |
+| Your factory sends its own test reports | You may rely on them, but you still issue your own certificate | Final rule <C id="us-product-compliance-14" /> |
+| You private-label a product made in the U.S. | The private labeler certifies unless the manufacturer does | 16 CFR 1110.7(b) <C id="us-product-compliance-07" /> |
+| You sell through distributors or retailers | Furnish the certificate to each one | 16 CFR 1110.13(b) <C id="us-product-compliance-15" /> |
+
+*Source: Office of the Federal Register / National Archives (eCFR), 16 CFR Parts 1107 and 1110, and CPSC correction notice (Federal Register, Sept. 2025), checked Nov 8, 2026.* <C id="us-product-compliance-03" /> <C id="us-product-compliance-06" /> <C id="us-product-compliance-09" /> <C id="us-product-compliance-20" />
+
+Two rows change a sourcing decision rather than a filing step. Switching a component supplier on a children's product is a design or manufacturing change that triggers new testing and a new CPC, <C id="us-product-compliance-20" /> so a cheaper component carries a test cost. Routing goods through a foreign trade zone moves the start date for those goods to January 8, 2027. <C id="us-product-compliance-03" />
+
+## What to check yourself
+
+1. Read 16 CFR Part 1110 on eCFR, especially 1110.7, 1110.11, 1110.13 and 1110.17.
+2. Open the Federal Register final rule "Certificates of Compliance" (90 FR 1800, January 8, 2025) and the September 24, 2025 correction for the dates.
+3. For children's products, read 16 CFR Part 1107, subpart C, on periodic testing and material change.
+4. Confirm with your customs broker which PGA Message Set route they will use for your entries.

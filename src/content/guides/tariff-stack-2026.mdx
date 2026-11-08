@@ -1,145 +1,119 @@
 ---
-title: "Your duty rate is not one number. It is four layers, and only one of them is in the tariff schedule."
-seoTitle: "US Import Duty Stack 2026: MFN, 301, 232 and IEEPA Layers"
-description: "Base MFN duty, Section 301, Section 232 and IEEPA measures stack on the same entry. Sources report effective rates commonly at 20% to 30% on ordinary consumer categories and far higher on some — and the structure keeps changing."
-category: "Shipping & logistics"
+title: "The 2026 Tariff Stack: How Duties and Fees Add Up on One US Entry"
+description: "General HTS duty, Section 301, Section 232 and other additional duties, plus the MPF and Harbor Maintenance Fee: current rates, dates, and a worked example."
+category: "Import & customs"
 published: "2026-08-22"
-modified: "2026-09-04"
-minutes: 10
-numbered: true
-ledger: "Four layers · one HTS code"
-ledgerKind: "cost"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+summary:
+  - "The Merchandise Processing Fee on formal entries is 0.3464 percent of value, with a minimum of $34.58 and a maximum of $670.86 required as of October 1, 2026."
+  - "The Harbor Maintenance Fee is 0.125 percent of the value of commercial cargo unloaded from a commercial vessel at a covered port, and is not assessed on cargo entitled to informal entry."
+  - "Executive Order 14389 ended the IEEPA additional duties, including the reciprocal tariffs, while leaving Section 232 and Section 301 duties in place."
+  - "New Section 301 duties of 10 or 12.5 percent on products of 60 investigated economies apply to entries from 12:01 a.m. ET on July 24, 2026, in addition to general duty rates."
+  - "USTR stated on October 7, 2026 that the July 6, 2018 China Section 301 action, as modified, did not terminate on July 6, 2026 and remains in effect."
+hero:
+  kind: "stat"
+  figure: "0.3464%"
+  label: "Merchandise Processing Fee on formal entries, before the minimum and maximum"
+  claim: "tariff-stack-2026-01"
+related: ["hts-classification-basics", "entry-type-11-vs-01", "de-minimis-suspension-2026", "antidumping-duties", "country-of-origin-sourcing", "foreign-trade-zones", "customs-bonds"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+On a single US entry in late 2026, the amount you pay at customs is the sum of up to four layers: the general (Column 1) duty for the HTS code; any additional duties for the product and its origin, such as Section 301 or Section 232; antidumping or countervailing duties where an order applies; and the user fees, which on a formal ocean entry means the Merchandise Processing Fee (MPF) and the Harbor Maintenance Fee (HMF). The MPF on formal entries is an ad valorem fee of 0.3464 percent, <C id="tariff-stack-2026-01" /> bounded since October 1, 2026 by a $34.58 minimum and a $670.86 maximum. <C id="tariff-stack-2026-02" /> The HMF is 0.125 percent of the cargo's value. <C id="tariff-stack-2026-07" />
 
-import Steps from '../../components/Steps.astro';
-import MiniCalc from '../../components/MiniCalc.astro';
+What changed most in 2026 is the "additional duties" layer. The duties imposed under the International Emergency Economic Powers Act (IEEPA), including the reciprocal tariffs, were terminated in February; <C id="tariff-stack-2026-10" /> a 150-day surcharge under section 122 of the Trade Act followed; <C id="tariff-stack-2026-11" /> and from July 24, 2026, new Section 301 duties apply to products of 60 economies. <C id="tariff-stack-2026-14" /> The order ending the IEEPA duties states that it does not affect Section 232 or Section 301 duties, <C id="tariff-stack-2026-10" /> and USTR stated on October 7, 2026 that the 2018 China Section 301 action remains in effect. <C id="tariff-stack-2026-16" />
 
-import StockImage from '../../components/StockImage.astro';
+<Callout type="note" title="Scope of this page">
+This page adds up the layers as the notices describe them. The duties owed on a given entry are those assessed by CBP on that entry.
+</Callout>
 
-<Takeaways items={[
-  "The 2026 duty stack is layered: base MFN duty from the tariff schedule, Section 301 on Chinese-origin goods, Section 232 on specific materials, and IEEPA-based measures.",
-  "Trade-press estimates put combined effective rates on common Amazon categories in the 20% to 30% range, with far higher figures on specific HTS codes. Those are estimates; the only rate that matters is the one printed against your 10-digit code and origin in the current HTS, including Chapter 99.",
-  "Section 232 operates at input level, not finished-good level. A product containing steel, aluminum or copper can carry exposure the finished-good classification does not show.",
-  "In March 2026 USTR opened new Section 301 investigations covering China, Vietnam, Taiwan, Mexico, Japan, the EU and dozens more economies, with hearings in May 2026. Sourcing moved out of China to escape 301 is not automatically safe.",
-  "Sources disagree on specific rates and several report figures that were correct on the day written. Treat every published rate as a prompt to check the current schedule for your own HTS code.",
+<Flow title="Suggested order of checks for one entry (site method)" steps={[
+  {t: "Classify", d: "Find the 10-digit HTS code and its general rate."},
+  {t: "Origin", d: "Confirm country of origin; it drives the additional duties."},
+  {t: "Section 232", d: "Check whether the article falls under a 232 action; it changes what else applies."},
+  {t: "Section 301 and others", d: "Add each additional duty in force on the entry date."},
+  {t: "AD/CVD", d: "Check for an antidumping or countervailing duty order."},
+  {t: "User fees", d: "Add MPF (with min/max) and, for vessel cargo, HMF."}
 ]} />
 
-Sellers ask what the tariff rate is on their product as if there were one. There isn't. Since 2025 there have been several, they come from different legal instruments, and they add.
+## Layer 1: the general HTS duty
 
-**This guide is a map of the structure, not a rate table.** Rates in this area changed repeatedly across 2025 and 2026 and several published figures conflict. The structure is what stays useful.
+Every entry starts with the general rate in the Harmonized Tariff Schedule for the article's classification. This page does not cite any individual rate because rates are product-specific; [HTS classification basics](/guides/hts-classification-basics/) covers how to land on the right code. Two of the additional-duty programs below define their rates relative to this "MFN" general rate, which is why classification comes first.
 
-## The four layers
+## Layer 2: additional duties in force in 2026
 
-<Steps title="Four layers on one entry" accent={3} source="Only layer 1 is printed in the tariff schedule - the rest attach by product and origin"
-  steps={[
-    { t: 'Base MFN', d: 'in the schedule' },
-    { t: 'Section 301', d: 'by origin/scope' },
-    { t: 'Section 232', d: 'by product' },
-    { t: 'IEEPA-era', d: 'by measure' },
-  ]} />
+### IEEPA duties: ended
 
-| Layer | What it is | Applies to |
-| --- | --- | --- |
-| **Base MFN duty** | The HTS-specific rate in the tariff schedule, column 1 general rate, typically 0% to 25%; free under most FTAs | All imports, by classification |
-| **Section 301** | Tariffs on Chinese-origin goods, 7.5% to 25% on Lists 1–4A, with specific products raised to 50% or 100% in the 2024 four-year review, entered under Chapter 99 | Chinese origin, by HTS code |
-| **Section 232** | Tariffs on specific materials — steel, aluminum, copper | Products containing those inputs |
-| **IEEPA-based measures** | Executive-order duties, including those affecting Mexican and Canadian freight | Varies by order |
+Executive Order 14389, signed February 20, 2026, terminated the IEEPA additional ad valorem duties imposed by a list of orders, including the reciprocal tariff order (EO 14257) and the orders on the northern border, the southern border and the China synthetic opioid supply chain (EOs 14193, 14194 and 14195), stating that they are no longer in effect and should stop being collected as soon as practicable. The same order says it does not affect any other duties, naming Section 232 and Section 301. <C id="tariff-stack-2026-10" />
 
-**Only the first comes from the tariff schedule.** The others are separate legal instruments applied on top, which is why looking up an HTS code and reading the duty rate gives an answer that is right and incomplete.
+CBP's October 2026 information-collection notice states that the Supreme Court ruled in *Learning Resources, Inc. v. Trump* on February 20, 2026 regarding tariffs imposed under IEEPA, and describes a refund process in which importers of record submit refund requests through the ACE Portal or through a licensed customs broker. <C id="tariff-stack-2026-09" /> If you paid IEEPA duties in 2025, that notice is the starting point for refund mechanics.
 
-<Figure value="20–30%" kind="cost" source="Trade-press estimates of combined effective rates, 2026; verify against the current HTS and Chapter 99 for your code">
-  Estimated combined duty rates for electronics, textiles, toys and household goods when the layers are combined. Specific products and HTS codes run considerably higher.
-</Figure>
+### Section 122 surcharge: February 24 to July 24, 2026
 
-## The rates, and why the sources conflict
+Proclamation 11012 imposed a 10 percent ad valorem temporary import surcharge under section 122 of the Trade Act of 1974, effective February 24, 2026, for 150 days, running through 12:01 a.m. EDT on July 24, 2026 unless suspended, modified or terminated earlier, or extended by an Act of Congress. <C id="tariff-stack-2026-11" /> It applied in addition to other duties, but not on top of Section 232 tariffs: where a 232 tariff covered part of an import, the surcharge applied only to the uncovered portion. <C id="tariff-stack-2026-12" /> Goods of Canada or Mexico entered duty-free under the USMCA were among the exceptions. <C id="tariff-stack-2026-13" />
 
-Published 2026 figures found for this guide:
+### Section 301: the 2026 actions on 60 economies
 
-- **145%** on some categories combining base rates with Section 301
-- **100%+** on some categories
-- **20–30%** commonly, for electronics, textiles, toys and household goods
-- **25–145%** depending on HTS code, for Section 301 specifically
-- **7.5–25%** on Lists 1–4A with elevated items at 50–100%
+The US Trade Representative's notice of July 28, 2026 imposes additional Section 301 duties on products of investigated economies entered on or after 12:01 a.m. eastern time on July 24, 2026. Rates are 10 percent or 12.5 percent; for some economies (including the European Union, Taiwan, Japan, South Korea and Switzerland) the rate is set net of the MFN rate, so MFN plus Section 301 reaches the target rate. Products of China and Vietnam are at 12.5 percent. <C id="tariff-stack-2026-14" />
 
-**These are not all describing the same thing.** Some quote Section 301 alone, some the combined stack, some a category ceiling, some a typical case. Several were correct on the day written and have since been overtaken.
+These duties stack on the general rate: the notice provides that covered products are also subject to the general rates of duty in HTSUS chapters 1 to 97. Articles of aluminum, steel or copper and certain derivative aluminum or steel articles in listed Chapter 99 headings are exempt, as are products of Canada or Mexico entered free of duty under the USMCA. <C id="tariff-stack-2026-15" /> Product-level exemptions sit in the notice's annexes, so check them against your HTS code.
 
-**The working position:** there is no substitute for checking the current rate against your specific HTS code and origin. Every source that gives a number says this, and they are right to.
-
-<StockImage slug="tariff-stack-2026" theme="logistics" />
-
-## Section 232, which catches people sideways
-
-One point worth isolating because it does not follow the usual logic.
-
-For products subject to Section 232 on steel, aluminum or copper, **country of origin matters at the input level, not just the finished-good level.**
-
-A product assembled in a country with no Section 301 exposure, using steel from somewhere that has Section 232 exposure, carries that exposure. The finished-good classification does not show it.
-
-**Which means a sourcing shift that solves your Section 301 problem may not touch your Section 232 problem.** If your product contains meaningful metal content, that is a separate question to ask.
-
-## What is moving
-
-Two 2026 developments that change planning rather than rates.
-
-**New Section 301 investigations.** USTR launched investigations in March 2026 targeting imports from China, Vietnam, Taiwan, Mexico, Japan, the EU and dozens more countries, with hearings scheduled for May 2026 and orders potentially following. One customs broker notes no orders had been issued as of its publication date.
-
-**The practical implication is stated well by one source:** importers who shifted sourcing from China to Vietnam or elsewhere in Southeast Asia to reduce tariff exposure **should not assume that exposure is permanently gone.** The alternative-sourcing tariff picture is in flux.
-
-**And a note on refunds.** Under CBP practice, unliquidated entries are re-liquidated automatically where a system change applies, while already-liquidated entries require a formal protest within 180 days of liquidation. See the [prior disclosure and protests guide](/guides/prior-disclosure-protests/) — that window runs on individual entries and expires quietly.
-
-## What this means operationally
-
-**Landed cost is not a constant.** The [landed cost guide](/guides/landed-cost-fee-stack/) builds the calculation; this is why it has to be rebuilt rather than reused. A margin model with a duty rate from last year is describing a different business.
-
-**A DDP quote contains a duty estimate.** As the [Incoterms guide](/guides/incoterms-who-is-importer/) covers, a supplier pricing DDP against an outdated rate has priced a cost that no longer exists — and one reported recommendation is to require explicit duty-rate change provisions in the contract so a mid-year change does not produce unplanned exposure.
-
-**Classification carries more weight than it used to.** When rates were single digits, a classification error cost single digits. At 25% or more, the same error is a different order of magnitude — see the [classification guide](/guides/hts-classification-basics/).
-
-**And the duty reduction tools are worth more.** [First sale](/guides/first-sale-valuation/) reduces a base the rate is applied to; the higher the rate, the more that is worth. Same for [FTZ](/guides/foreign-trade-zones/) and [drawback](/guides/duty-drawback/).
-
-## What to do
-
-**Get your actual rate, per SKU, from a current source.** Your customs broker or a CBP Form 7501 from a recent entry — not an article.
-
-**Check whether Section 232 reaches your inputs**, separately from your finished-good classification.
-
-**Re-run landed cost quarterly**, not annually.
-
-**Put duty-rate change provisions into supplier contracts** on any DDP arrangement.
-
-**Watch the Section 301 investigation outcomes** if you have shifted or plan to shift sourcing to any of the named countries.
-
-**Check your liquidated entries for protest deadlines** if any rate has been reversed or reduced retrospectively. The window is 180 days from liquidation, per entry.
-
-**Work with a broker who monitors this.** The useful version of this advice is to work with someone who tracks tariff developments and adjusts classification strategy proactively, and at these rates that is a real service rather than an upsell.
-
-<MiniCalc variant="stack" />
-
-Look up your 10-digit code in the current HTS, then open Chapter 99. If you've never done the second step, you have never seen your real rate.
-
-<Faq items={[
-  { q: "What is my actual duty rate?", a: "It depends on your HTS code and country of origin, and it is the sum of up to four layers: base MFN duty, Section 301 where the origin is China, Section 232 where the product contains covered materials, and any IEEPA-based measure. Check it per SKU against a current source." },
-  { q: "Why do published tariff rates disagree so much?", a: "Because they describe different things — Section 301 alone, the combined stack, a category ceiling or a typical case — and because rates changed repeatedly across 2025 and 2026. Several published figures were correct on the day written." },
-  { q: "Does moving production out of China solve it?", a: "For Section 301, potentially. Not necessarily for Section 232, which applies at input level rather than finished-good level, and not permanently — new Section 301 investigations covering Vietnam, Mexico and dozens of other countries were launched in March 2026." },
-  { q: "What are typical rates on Amazon categories?", a: "Trade-press estimates put effective rates for electronics, textiles, toys and household goods commonly at 20% to 30%, with specific products and HTS codes running considerably higher." },
-  { q: "Can I get a refund on tariffs already paid?", a: "It depends on entry status. Unliquidated entries are re-liquidated automatically where a system change applies, while already-liquidated entries require a formal protest within 180 days of the liquidation date." },
-  { q: "How does this change my duty strategy?", a: "It raises the value of everything that reduces the base or the exposure. At single-digit rates, first sale, FTZ and drawback were marginal. At 25% or more they are material, and a classification error is a different order of magnitude." },
+<Bars title="Additional ad valorem rates cited on this page" unit="%" rows={[
+  {label: "Section 232 steel/aluminum base rate (Proc. 11032)", value: 25, claim: "tariff-stack-2026-17"},
+  {label: "Section 301 2026 action, China or Vietnam", value: 12.5, claim: "tariff-stack-2026-14"},
+  {label: "Section 122 surcharge (Feb 24 to Jul 24, 2026)", value: 10, claim: "tariff-stack-2026-11"}
 ]} />
 
-<Sources items={[
-  { title: 'Harmonized Tariff Schedule of the United States (current revision) — base MFN column 1 rates and Chapter 99 additional duties by HTS code', publisher: 'U.S. International Trade Commission', href: 'https://hts.usitc.gov/', accessed: '2026-09-04' },
-  { title: 'Section 301 — China: tariff actions and product lists (Lists 1–4A; 2024 four-year review increases)', publisher: 'Office of the U.S. Trade Representative', accessed: '2026-09-04' },
-  { title: 'Section 232 tariffs on steel, aluminum and copper articles and derivative products — CBP CSMS guidance on content-based assessment', publisher: 'U.S. Customs and Border Protection', accessed: '2026-09-04' },
-  { title: 'US tariffs 2026: Section 301, IEEPA, 232 (the layered stack: base MFN 0–25%, Section 301 at 7.5–25% on Lists 1–4A with items elevated to 50–100%; March 2026 Section 301 investigations covering China, Vietnam, Taiwan, Mexico, Japan and the EU; transshipment as fraud; supplier switching economics)', publisher: 'Suaid Global', href: 'https://suaidglobal.com/insights/us-tariffs-2026-guide/', accessed: '2026-09-04' },
-  { title: 'Amazon product sourcing outside China in 2026 (tariffs reaching 145% on some categories; effective rates commonly 20–30% for electronics, textiles, toys and household goods; advice to check current rates for the specific HS code)', publisher: 'SellerSprite', href: 'https://e.sellersprite.com/en/blog/amazon-sourcing-outside-china-2026', accessed: '2026-09-04' },
-  { title: 'What is country of origin? A US importer\u2019s guide to substantial transformation (Section 232 applying at input level rather than finished-good level; May 2026 hearings; sourcing shifts not guaranteeing permanent removal of exposure)', publisher: 'First Link', href: 'https://firstlinkpartners.com/country-of-origin-imports/', accessed: '2026-09-04' },
-  { title: 'Reduce import duty US 2026 (unliquidated entries re-liquidated automatically against liquidated entries requiring protest within 180 days; DDP contracts with explicit duty-rate change provisions; IEEPA-based duties)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-09-04' },
-  { title: 'How American importers are cutting their 2026 duty bills (the 2026 tariff schedule covering revised Section 301 rates, IEEPA duties on Mexican and Canadian freight, restructured de minimis treatment and an expanding antidumping docket)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-09-04' },
-  { title: 'Country of origin rules: how it is determined (2026) (Section 301 tariffs on Chinese-origin goods reported at 25–145% depending on HTS code; identical products from different origins facing different duty burdens)', publisher: 'Drip Capital', href: 'https://www.dripcapital.com/en-us/resources/blog/country-of-origin', accessed: '2026-09-04' },
-]} />
+### Section 301: China (2018 actions)
+
+The China Section 301 actions on technology transfer, intellectual property and innovation did not end at their second four-year review date. USTR's October 7, 2026 notice states that the July 6, 2018 action, as modified, did not terminate on July 6, 2026 and remains in effect, subject to possible further modification. <C id="tariff-stack-2026-16" /> That action is separate from the 2026 action on 60 economies, so check both for a Chinese-origin product.
+
+### Section 232
+
+Section 232 duties are product-based. Proclamation 11032, signed June 1, 2026, sets a 25 percent rate for steel and aluminum articles in its Annex I-C unless a lower rate applies, for goods entered on or after 12:01 a.m. EDT on June 8, 2026, with the modified schedule running until 11:59 p.m. EST on December 31, 2027. <C id="tariff-stack-2026-17" /> For listed jurisdictions including Japan, Korea, Switzerland, the United Kingdom, EU members and Taiwan, the Column 1 rate and the 232 rate together total 15 percent where the Column 1 rate is below 15 percent. <C id="tariff-stack-2026-18" /> Other product groups can have their own section 232 proclamation. For example, Proclamation 11052 of August 6, 2026 imposes an additional 15 percent ad valorem duty on polysilicon ingots and derivatives listed in its Annexes I and II, for goods entered on or after 12:01 a.m. eastern time on December 4, 2026. <C id="tariff-stack-2026-20" />
+
+### Antidumping and countervailing duties
+
+If your product and producer fall under an order, AD/CVD deposits are added per entry. See [antidumping duties](/guides/antidumping-duties/).
+
+## Layer 3: user fees
+
+| Fee | Rate or amount | Applies to |
+|---|---|---|
+| MPF, formal entry | 0.3464% of value | Formally entered merchandise |
+| MPF minimum (FY2027) | $34.58 | Per formal entry |
+| MPF maximum (FY2027) | $670.86 | Per formal entry |
+| MPF, informal entry, automated, not prepared by CBP (FY2027) | $2.77 | Per informal entry |
+| HMF | 0.125% of value | Commercial cargo loaded on or unloaded from a commercial vessel at a covered port |
+
+*Source: CBP Dec. 26-14 (Federal Register, July 31, 2026) and eCFR 19 CFR 24.23 and 24.24, checked Nov 8, 2026.* <C id="tariff-stack-2026-01" /> <C id="tariff-stack-2026-02" /> <C id="tariff-stack-2026-03" /> <C id="tariff-stack-2026-07" />
+
+The MPF is based on the value of the merchandise as determined under 19 U.S.C. 1401a and is due from the importer of record when the entry summary is filed. <C id="tariff-stack-2026-04" /> It does not apply to originating goods under the USMCA or to products of least-developed beneficiary developing countries. <C id="tariff-stack-2026-05" /> The minimum and maximum are base amounts adjusted for inflation; CBP publishes the adjusted figures in the Federal Register each year at least 60 days before they take effect. <C id="tariff-stack-2026-06" /> CBP's fiscal year 2027 notice left the 0.3464 percent rate unchanged and raised the limits, effective October 1, 2026. <C id="tariff-stack-2026-02" />
+
+The HMF is not assessed on imported cargo that would be entitled to entry under informal entry procedures. <C id="tariff-stack-2026-08" /> Because the fee is tied to cargo moving on a commercial vessel at a covered port, check whether your routing involves one before adding it. Goods unloaded and admitted to a [foreign-trade zone](/guides/foreign-trade-zones/) still pay HMF, filed quarterly. <C id="tariff-stack-2026-19" />
+
+## Worked example (hypothetical)
+
+All inputs here are hypothetical. A formal entry of a consumer product of Vietnam arrives by ocean. Entered value: $10,000. Assumed general HTS rate: 4 percent. Assume the product is not a Section 232 article, is not in an exemption annex of the 2026 Section 301 notice, is not under an AD/CVD order, and is entered after the section 122 surcharge's scheduled end on July 24, 2026 with no extension in force.
+
+| Layer | Basis | Amount |
+|---|---|---|
+| General duty | 4% × $10,000 (assumed rate) | $400.00 |
+| Section 301 (2026 action, Vietnam) | 12.5% × $10,000 | $1,250.00 |
+| MPF | 0.3464% × $10,000 = $34.64 (above the $34.58 minimum) | $34.64 |
+| HMF | 0.125% × $10,000 | $12.50 |
+| **Total** | | **$1,697.14** |
+
+*Source: rates from USTR notice of July 28, 2026, CBP Dec. 26-14 and eCFR 19 CFR 24.24; the 4% rate and all inputs are hypothetical, checked Nov 8, 2026.* <C id="tariff-stack-2026-14" /> <C id="tariff-stack-2026-02" /> <C id="tariff-stack-2026-07" />
+
+Two edge cases change the result. At an entered value of $5,000, the MPF works out to $17.32, below the minimum, so the fee charged is $34.58. If the product were instead an article of steel, which the 2026 Section 301 notice exempts, <C id="tariff-stack-2026-15" /> that Section 301 line would drop out and you would check the Section 232 rate for that article instead.
+
+## What to check yourself
+
+1. Confirm your 10-digit HTS code and its general rate in the current HTSUS before anything else.
+2. Search the Federal Register API for "section 301" and "section 232" with your product or origin; open the notice's annexes and match your HTS code against exemptions.
+3. Check whether any action after July 24, 2026 extended or replaced the section 122 surcharge before assuming it no longer applies.
+4. Read CBP Dec. 26-14 (July 31, 2026) for the MPF limits that apply to entries from October 1, 2026, and watch for the fiscal year 2028 notice in mid-2027.
+5. Open 19 CFR 24.23 and 24.24 on eCFR for MPF exemptions and HMF scope on your routing.
+6. If you paid IEEPA duties in 2025 or early 2026, read CBP's October 5, 2026 notice on court-ordered refunds.

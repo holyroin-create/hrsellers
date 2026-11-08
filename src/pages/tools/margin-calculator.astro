@@ -1,200 +1,59 @@
 ---
-import PageShell from '../../components/PageShell.astro';
-import Faq from '../../components/Faq.astro';
+import Tool from '../../layouts/Tool.astro';
+import fs from 'node:fs';
+import { allClaims } from '../../lib/claims';
+const claims = allClaims();
+const presets = (fs.existsSync('data/fee-presets.json') ? JSON.parse(fs.readFileSync('data/fee-presets.json', 'utf8')) : [])
+  .filter((p: any) => claims.get(p.claim_id)?.status === 'verified');
+const cites = [...new Set(presets.map((p: any) => p.claim_id))] as string[];
 ---
-<PageShell
-  ogImage="/og/t-margin-calculator.png"
-  title="Margin and break-even calculator for marketplace sellers"
-  description="Enter your own price, cost of goods, inbound, referral rate, fulfillment fee, returns and ad spend. Returns net profit per unit, net margin, break-even price and the maximum ACOS you can afford."
-  eyebrow="Calculator"
-  h1="Margin & break-even calculator"
-  lede="Your numbers, not ours. Nothing is stored and nothing leaves your browser — this page has no server side at all."
-  crumb={{ label: 'Tools', href: '/tools/' }}
-  rail={[{href:'/tools/cash-flow-planner/',label:'Cash flow planner'},{href:'/tools/dimensional-weight/',label:'Dimensional weight'},{href:'/costs/',label:'What it costs to start'}]}
->
-  <div class="calc">
-    <div class="calcbox">
-      <h2>Your numbers</h2>
-      <div class="field"><label for="price">Selling price</label>
-        <div class="inputwrap"><span>$</span><input id="price" type="number" inputmode="decimal" step="0.01" value="29.99" /></div></div>
-      <div class="field"><label for="cogs">Cost of goods per unit</label>
-        <div class="inputwrap"><span>$</span><input id="cogs" type="number" inputmode="decimal" step="0.01" value="7.50" /></div></div>
-      <div class="field"><label for="inbound">Inbound freight &amp; duty per unit<span class="hint">Since the de minimis suspension this is rarely zero for imports.</span></label>
-        <div class="inputwrap"><span>$</span><input id="inbound" type="number" inputmode="decimal" step="0.01" value="1.20" /></div></div>
-      <div class="field"><label for="referral">Referral fee rate<span class="hint">Category dependent. Check your category in Seller Central.</span></label>
-        <div class="inputwrap"><input id="referral" type="number" inputmode="decimal" step="0.1" value="15" /><span class="suf">%</span></div></div>
-      <div class="field"><label for="fulfil">Fulfillment fee per unit<span class="hint">From your Fee &amp; Economics Preview report, not an estimate.</span></label>
-        <div class="inputwrap"><span>$</span><input id="fulfil" type="number" inputmode="decimal" step="0.01" value="4.75" /></div></div>
-      <div class="field"><label for="storage">Storage &amp; other fees per unit</label>
-        <div class="inputwrap"><span>$</span><input id="storage" type="number" inputmode="decimal" step="0.01" value="0.35" /></div></div>
-      <div class="field"><label for="returns">Return rate</label>
-        <div class="inputwrap"><input id="returns" type="number" inputmode="decimal" step="0.1" value="5" /><span class="suf">%</span></div></div>
-      <div class="field"><label for="acos">Current ad spend as % of sales (TACOS)</label>
-        <div class="inputwrap"><input id="acos" type="number" inputmode="decimal" step="0.1" value="10" /><span class="suf">%</span></div></div>
-    </div>
-
-    <div class="calcbox">
-      <h2>Result</h2>
-      <div class="out hero"><span class="k">Net profit per unit</span><span class="v" id="o-profit">—</span></div>
-      <div class="bar"><i id="o-bar" style="width:0%"></i></div>
-      <div class="out"><span class="k">Net margin</span><span class="v" id="o-margin">—</span></div>
-      <div class="out"><span class="k">Return on cost (ROI)</span><span class="v" id="o-roi">—</span></div>
-      <div class="out"><span class="k">Total cost per unit</span><span class="v" id="o-cost">—</span></div>
-      <div class="out"><span class="k">Break-even price</span><span class="v" id="o-be">—</span></div>
-      <div class="out"><span class="k">Max ACOS before zero profit</span><span class="v" id="o-maxacos">—</span></div>
-      <div class="out"><span class="k">Fee load (fees ÷ price)</span><span class="v" id="o-feeload">—</span></div>
-      <div id="o-verdict" class="verdict"></div>
-    </div>
-  </div>
-
-  <div class="prose">
-    <h2>How each line is calculated</h2>
-    <table>
-      <thead><tr><th>Output</th><th>Formula</th></tr></thead>
-      <tbody>
-        <tr><td>Referral fee</td><td>price × referral rate</td></tr>
-        <tr><td>Return cost</td><td>(fulfillment + COGS + inbound) × return rate — a returned unit costs you the fulfillment and often the unit</td></tr>
-        <tr><td>Ad cost</td><td>price × TACOS</td></tr>
-        <tr><td>Total cost</td><td>COGS + inbound + referral + fulfillment + storage + returns + ads</td></tr>
-        <tr><td>Net profit</td><td>price − total cost</td></tr>
-        <tr><td>Net margin</td><td>net profit ÷ price</td></tr>
-        <tr><td>ROI</td><td>net profit ÷ (COGS + inbound)</td></tr>
-        <tr><td>Break-even price</td><td>fixed costs ÷ (1 − referral rate − TACOS)</td></tr>
-        <tr><td>Max ACOS</td><td>profit before ads ÷ price</td></tr>
-      </tbody>
-    </table>
-    <p class="note">
-      The return-cost line is the one most calculators leave out. A returned unit is not simply a
-      reversed sale: you generally lose the outbound fulfillment, and depending on condition you may
-      lose the unit. Treating returns as free is how a 20% margin turns out to be 12%.
-    </p>
-
-    <h2>A worked example</h2>
-    <p>
-      A standard-size product selling at $29.99, sourced at $6.20 a unit landed, with a 15% referral
-      rate. Substitute your own figures — the point is the shape of the result, not these numbers.
-    </p>
-    <table>
-      <thead><tr><th>Line</th><th>Amount</th><th>Where the figure comes from</th></tr></thead>
-      <tbody>
-        <tr><td>Selling price</td><td>$29.99</td><td>Your listing</td></tr>
-        <tr><td>Cost of goods, landed</td><td>−$6.20</td><td>Supplier invoice plus freight, duty and prep per unit</td></tr>
-        <tr><td>Inbound to the fulfillment center</td><td>−$0.55</td><td>Your carrier invoice divided by units in the shipment</td></tr>
-        <tr><td>Referral fee at 15%</td><td>−$4.50</td><td>Category referral rate</td></tr>
-        <tr><td>Fulfillment fee</td><td>−$5.60</td><td>Fee Preview report, at your size tier and price band</td></tr>
-        <tr><td>Storage, allocated per unit</td><td>−$0.18</td><td>Monthly storage bill divided by units sold that month</td></tr>
-        <tr><td>Returns at a 6% rate</td><td>−$0.74</td><td>Return rate from your own returns report</td></tr>
-        <tr><td>Advertising at 9% TACOS</td><td>−$2.70</td><td>Ad spend divided by total sales, not ad-attributed sales</td></tr>
-        <tr><td><strong>Net profit per unit</strong></td><td><strong>$9.52</strong></td><td></td></tr>
-        <tr><td><strong>Net margin</strong></td><td><strong>31.7%</strong></td><td></td></tr>
-        <tr><td><strong>Maximum ACOS before this stops paying</strong></td><td><strong>~40.7%</strong></td><td></td></tr>
-      </tbody>
-    </table>
-    <p class="note">
-      Two lines in that table are the ones sellers most often get wrong. <strong>Storage</strong> is
-      allocated per unit sold rather than per unit held, which understates it badly on slow movers.
-      And <strong>TACOS rather than ACOS</strong> is the correct input, because advertising is paid
-      out of total revenue and not only out of the sales it is credited with.
-    </p>
-
-    <h2>What this calculator assumes</h2>
-    <p>
-      Every calculator carries assumptions. Stating them is the difference between a tool and a
-      guess with a rounded corner.
-    </p>
-    <ul>
-      <li><strong>One unit, one sale.</strong> Multipacks and bundles change the fulfillment fee and the size tier — enter the packed configuration you actually ship.</li>
-      <li><strong>A returned unit costs you the outbound fulfillment and, depending on condition, the unit itself.</strong> That is the default here. Where returns are resold as new, your real return cost is lower.</li>
-      <li><strong>Storage is a per-unit allocation.</strong> It is not a per-unit charge in reality; it is a monthly bill on volume held. Allocating it per unit sold is the practical approximation.</li>
-      <li><strong>Enter the fulfillment fee with the surcharge included.</strong> Since April 17, 2026 every US and Canada FBA fulfillment fee carries a 3.5% fuel and logistics surcharge; the Fee Preview report already includes it. If you type a rate-card figure instead, multiply it by 1.035 first.</li>
-      <li><strong>No peak-season adjustment.</strong> Q4 storage and holiday fulfillment surcharges are not modelled — run peak separately with the higher figures.</li>
-      <li><strong>Referral fee is applied to the selling price alone.</strong> Some marketplaces charge on price plus shipping; on those, enter an effective rate rather than the headline one.</li>
-      <li><strong>No currency conversion.</strong> If you bank in a different currency from the marketplace, your real proceeds are lower by the conversion cost.</li>
-    </ul>
-
-    <h2>Reading the result honestly</h2>
-    <ul>
-      <li><strong>Below 10% net</strong> — one fee change or one bad month of advertising erases it. Since selling price became an input to the US fulfillment fee in January 2026, even a repricing decision can move your costs.</li>
-      <li><strong>10–20% net</strong> — workable, but there is no room for error in sourcing or ad efficiency.</li>
-      <li><strong>Above 20% net</strong> — enough buffer to absorb a fee increase, a return spike, or a competitor undercutting you for a quarter.</li>
-    </ul>
-    <p>
-      The max ACOS number is the more useful one for most people. It tells you the point at which
-      advertising stops being growth and starts being a subsidy. If your current TACOS is close to it,
-      you are running a business that exists to feed the ad platform.
-    </p>
-  </div>
-
-  <div class="prose">
-    <h2>The figures this calculator needs, explained</h2>
-    <p>
-      Three of the inputs above are the ones people estimate rather than measure, and each has a
-      guide behind it.
-    </p>
-    <ul>
-      <li><a href="/guides/landed-cost-fee-stack/">Landed cost</a> — what a unit really costs by the time it is sellable, which is the figure the cost-of-goods box wants.</li>
-      <li><a href="/guides/amazon-fba-fee-changes-2026/">The 2026 fee changes</a> — why the fulfilment fee has to come from your own Fee Preview report rather than a published average.</li>
-      <li><a href="/guides/price-tier-repricing-trap/">Price bands</a> — since January 2026 the selling price is an input to the fulfilment fee, so changing the price in this calculator changes a cost too.</li>
-      <li><a href="/guides/returns-cost-and-badge/">Returns</a> — where the return rate comes from and what a return actually costs beyond the lost sale.</li>
-      <li><a href="/guides/fba-storage-four-layers/">Storage</a> — the four separate charges the storage box is standing in for.</li>
-    </ul>
-  </div>
-
-  <Faq items={[
-    { q: 'Where do I get the fulfillment fee number?', a: 'Your Fee and Economics Preview report in Seller Central, or the Revenue Calculator for a specific ASIN. Do not estimate it — since January 2026 the US fulfillment fee depends on selling price as well as size and weight.' },
-    { q: 'Is my data sent anywhere?', a: 'No. This page is a static file with no server side. The calculation runs in your browser and nothing is stored or transmitted.' },
-    { q: 'Why is my margin lower here than in other calculators?', a: 'Most likely the return cost and ad spend lines. Many calculators omit both, which produces a flattering number that does not match your settlement report.' },
-    { q: 'What return rate should I use?', a: 'Your own, from your returns report. Category averages vary enormously — apparel behaves nothing like consumables — so a generic figure will mislead you.' },
-  ]} />
-
-  <script is:inline>
-    (function () {
-      const ids = ['price','cogs','inbound','referral','fulfil','storage','returns','acos'];
-      const get = id => parseFloat(document.getElementById(id).value) || 0;
-      const money = v => (v < 0 ? '-$' : '$') + Math.abs(v).toFixed(2);
-      const pct = v => v.toFixed(1) + '%';
-      function calc() {
-        const price = get('price'), cogs = get('cogs'), inbound = get('inbound');
-        const refRate = get('referral') / 100, fulfil = get('fulfil'), storage = get('storage');
-        const retRate = get('returns') / 100, adRate = get('acos') / 100;
-        const referral = price * refRate;
-        const returnCost = (fulfil + cogs + inbound) * retRate;
-        const adCost = price * adRate;
-        const totalCost = cogs + inbound + referral + fulfil + storage + returnCost + adCost;
-        const profit = price - totalCost;
-        const margin = price > 0 ? (profit / price) * 100 : 0;
-        const roi = (cogs + inbound) > 0 ? (profit / (cogs + inbound)) * 100 : 0;
-        const fixed = cogs + inbound + fulfil + storage + (fulfil + cogs + inbound) * retRate;
-        const denom = 1 - refRate - adRate;
-        const be = denom > 0 ? fixed / denom : NaN;
-        const profitBeforeAds = profit + adCost;
-        const maxAcos = price > 0 ? (profitBeforeAds / price) * 100 : 0;
-        const feeLoad = price > 0 ? ((referral + fulfil + storage) / price) * 100 : 0;
-
-        document.getElementById('o-profit').textContent = money(profit);
-        document.getElementById('o-profit').className = 'v ' + (profit >= 0 ? 'pos' : 'neg');
-        document.getElementById('o-margin').textContent = pct(margin);
-        document.getElementById('o-roi').textContent = pct(roi);
-        document.getElementById('o-cost').textContent = money(totalCost);
-        document.getElementById('o-be').textContent = isFinite(be) ? money(be) : 'n/a';
-        document.getElementById('o-maxacos').textContent = pct(Math.max(maxAcos, 0));
-        document.getElementById('o-feeload').textContent = pct(feeLoad);
-
-        const bar = document.getElementById('o-bar');
-        bar.style.width = Math.min(Math.max(margin, 0), 40) / 40 * 100 + '%';
-        bar.className = profit >= 0 ? '' : 'neg';
-
-        const v = document.getElementById('o-verdict');
-        let msg, warn = false;
-        if (profit <= 0) { warn = true; msg = 'This unit loses money at these inputs. Before adjusting the price, check whether raising it pushes you into a higher fulfillment fee tier — since January 2026 selling price is an input to the US fee.'; }
-        else if (margin < 10) { warn = true; msg = 'Under 10% net leaves almost no buffer. A single fee change, a return spike, or two weeks of inefficient advertising takes this to zero.'; }
-        else if (margin < 20) { msg = 'Workable, but tight. Your maximum ACOS is ' + pct(Math.max(maxAcos, 0)) + ' — treat that as a hard ceiling rather than a target.'; }
-        else { msg = 'Enough margin to absorb a fee increase or a bad quarter. Verify the fulfillment figure against your Fee and Economics Preview report before committing to inventory.'; }
-        v.textContent = msg;
-        v.className = 'verdict' + (warn ? ' warn' : '');
-      }
-      ids.forEach(id => document.getElementById(id).addEventListener('input', calc));
-      calc();
-    })();
+<Tool title="Margin calculator" description="Net profit, margin and return per unit after a marketplace referral or transaction fee, with fee presets taken from each platform's published fee page." lede="Price in, fees out, and what is left per unit. Pick a fee preset from a platform's published schedule or type your own rate." cites={cites}>
+  <form slot="calc" class="calc" id="mc" onsubmit="this.dispatchEvent(new Event('input'));return false">
+    <fieldset><legend>Inputs</legend>
+      <div class="field"><label for="preset">Fee preset</label><select id="preset">
+        <option value="" data-rate="15" data-min="0">Custom — type a rate below</option>
+        {presets.map((p: any, i: number) => <option value={String(i)} data-rate={p.rate_pct} data-min={p.min_fee_usd ?? 0}>{p.marketplace} — {p.category} ({p.rate_pct}%{p.min_fee_usd ? `, min $${p.min_fee_usd}` : ''})</option>)}
+      </select><span class="hint">Presets cover the simple flat-rate cases. Tiered categories are described on the <a href="/marketplaces/">fee reference pages</a>.</span></div>
+      <div class="field"><label for="price">Selling price ($)</label><input id="price" type="number" min="0" step="0.01" value="25" /></div>
+      <div class="field"><label for="rate">Referral / transaction fee (%)</label><input id="rate" type="number" min="0" step="0.1" value="15" /></div>
+      <div class="field"><label for="minfee">Minimum fee per unit ($)</label><input id="minfee" type="number" min="0" step="0.01" value="0" /></div>
+      <div class="field"><label for="fixed">Other per-unit platform fees ($) <span class="hint">Fulfillment, per-order or listing fees from the platform's fee page</span></label><input id="fixed" type="number" min="0" step="0.01" value="4" /></div>
+      <div class="field"><label for="cogs">Landed cost per unit ($)</label><input id="cogs" type="number" min="0" step="0.01" value="7" /></div>
+      <div class="field"><label for="ads">Advertising per unit ($)</label><input id="ads" type="number" min="0" step="0.01" value="2" /></div>
+      <button class="btn btn-tag" type="submit">Calculate</button>
+    </fieldset>
+    <fieldset aria-live="polite"><legend>Result</legend>
+      <div class="out"><span>Percentage fee</span><span class="v" id="o-fee">—</span></div>
+      <div class="out"><span>Total platform fees</span><span class="v" id="o-tf">—</span></div>
+      <div class="out big"><span>Net profit per unit</span><span class="v" id="o-net">—</span></div>
+      <div class="out"><span>Net margin</span><span class="v" id="o-mar">—</span></div>
+      <div class="out"><span>Return on landed cost</span><span class="v" id="o-roi">—</span></div>
+      <div class="out"><span>Break-even price</span><span class="v" id="o-be">—</span></div>
+      <p class="verdict" id="o-v"></p>
+    </fieldset>
+  </form>
+  <h2>Formulas</h2>
+  <ul>
+    <li>Percentage fee = the greater of (price × rate) and the minimum fee.</li>
+    <li>Net profit = price − percentage fee − other platform fees − landed cost − advertising.</li>
+    <li>Net margin = net profit ÷ price. Return on landed cost = net profit ÷ landed cost.</li>
+    <li>Break-even price = (other fees + landed cost + advertising) ÷ (1 − rate), checked against the minimum fee.</li>
+  </ul>
+  <h2>What the presets are, and are not</h2>
+  <p>Each preset is a single category rate copied from the platform's public fee page on the date shown in the sources list. Platforms charge some fees on the total including shipping and gift wrap, use tiered rates in some categories, and add fees that depend on size, weight or program. Enter those yourself in "other per-unit platform fees" from the platform's current schedule. Sales tax collected by the marketplace is not your revenue and is excluded.</p>
+  <script>
+    const el = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const $m = (n: number) => (n < 0 ? '−$' : '$') + Math.abs(n).toFixed(2);
+    el('preset').addEventListener('change', () => { const o = (el('preset') as unknown as HTMLSelectElement).selectedOptions[0]; if (o.value !== '') { el('rate').value = o.dataset.rate!; el('minfee').value = o.dataset.min!; } run(); });
+    function run() {
+      const P = +el('price').value, r = +el('rate').value / 100, mn = +el('minfee').value, F = +el('fixed').value, C = +el('cogs').value, A = +el('ads').value;
+      const fee = Math.max(P * r, mn), net = P - fee - F - C - A;
+      let be = r < 1 ? (F + C + A) / (1 - r) : Infinity; if (be * r < mn) be = F + C + A + mn;
+      el('o-fee').textContent = $m(fee); el('o-tf').textContent = $m(fee + F); el('o-net').textContent = $m(net);
+      el('o-mar').textContent = P ? ((net / P) * 100).toFixed(1) + '%' : '—'; el('o-roi').textContent = C ? ((net / C) * 100).toFixed(1) + '%' : '—';
+      el('o-be').textContent = isFinite(be) ? $m(be) : '—';
+      el('o-v').textContent = net < 0 ? 'This unit loses money at these inputs.' : `Each unit keeps ${$m(net)} after every cost entered.`;
+    }
+    document.getElementById('mc')!.addEventListener('input', run); run();
   </script>
-</PageShell>
+</Tool>

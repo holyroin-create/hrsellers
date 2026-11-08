@@ -1,72 +1,21 @@
 ---
-import PageShell from '../components/PageShell.astro';
-import Faq from '../components/Faq.astro';
+import Page from '../layouts/Page.astro';
+import Flow from '../components/Flow.astro';
 ---
-<PageShell
-  title="Start here: how to read this site"
-  description="A short orientation for anyone new to marketplace selling — the order to read things in, and the four decisions that come before spending money."
-  eyebrow="Orientation"
-  h1="Start here"
-  lede="If you are new to this, the order matters. These four decisions come before you spend anything, and most people make them in the wrong sequence."
-  crumb={{ label: 'Start here', href: '/start-here/' }}
-  rail={[{href:'/quiz/',label:'15-question fit check'},{href:'/costs/',label:'What it costs to start'},{href:'/reality-check/',label:'What nobody tells you'}]}
->
-  <div class="prose">
-    <h2>Decide what you can lose, before what you want to sell</h2>
-    <p>
-      Almost everyone starts with product research. That is the fourth decision, not the first. The
-      amount you can put in and not need back for three months rules out most of the models before
-      product selection becomes relevant. Do that arithmetic first and the field narrows on its own.
-    </p>
-    <p><a href="/costs/">What it actually costs to start</a> sets out the published ranges by model.</p>
-
-    <h2>Pick the model your situation allows, not the one that appeals</h2>
-    <p>
-      Capital, supplier access, time, and payout-timing tolerance decide this. Enthusiasm does not.
-      Our <a href="/quiz/">fifteen-question check</a> weights the factors that usually decide it, and
-      <a href="/business-models/">the five models compared</a> covers what each one requires and who it
-      is wrong for.
-    </p>
-
-    <h2>Understand what has changed since the advice you are reading</h2>
-    <p>
-      Two things moved in the last eighteen months that make a lot of existing material wrong. US FBA
-      fulfillment fees rose on 15 January 2026, and selling price became an input to the fee for the
-      first time. And the $800 de minimis exemption was suspended, first for China and Hong Kong in
-      May 2025 and then for all countries that August, before being written into regulation in June 2026.
-    </p>
-    <p>
-      Any guide that assumes duty-free parcels under $800, or a fulfillment fee that does not depend on
-      price, was written for conditions that no longer exist. Check the date on everything.
-    </p>
-
-    <h2>Set up the boring infrastructure before the exciting part</h2>
-    <p>
-      A registered business and resale certificate open wholesale accounts. A reserve fund keeps you
-      trading when the first order sells. A reconciliation habit catches the money that quietly goes
-      missing. None of this is interesting and all of it decides the outcome.
-    </p>
-    <p>Our <a href="/resources/">free reimbursement tracker</a> is where the reconciliation habit usually starts.</p>
-
-    <h2>Then, and only then, choose a product</h2>
-    <p>
-      By this point the decision is much narrower, which is the entire benefit of taking the steps in
-      this order.
-    </p>
-
-    <h2>Where to go next</h2>
-    <ul>
-      <li><a href="/quiz/">Which model fits you</a> — fifteen questions, no email</li>
-      <li><a href="/reality-check/">What nobody sells you</a> — the hard parts and the course trap</li>
-      <li><a href="/costs/">What it costs to start</a> — published ranges by model</li>
-      <li><a href="/glossary/">Glossary</a> — the acronyms, in one page</li>
-      <li><a href="/guides/">Guides</a> — the operational detail</li>
-    </ul>
-  </div>
-
-  <Faq items={[
-    { q: 'I have no capital at all. Should I start anyway?', a: 'Learn the mechanics first — Seller Central documentation and a demo account cost nothing. Every model on this site requires money you can afford to lose, and borrowing to start is not supported by anything on this page.' },
-    { q: 'How long before this replaces an income?', a: 'Nobody can answer that honestly for your situation, and anyone who offers a timeline without seeing your numbers is selling something. What is knowable is that arbitrage produces a first sale in days and private label in months.' },
-    { q: 'Do I need a company before I start?', a: 'Not to sell as an individual, but a registered business and resale certificate are usually prerequisites for wholesale distributor accounts. If wholesale interests you, sort this out early.' },
-  ]} />
-</PageShell>
+<Page title="Start here" eyebrow="Orientation" description="What FBA Tactics covers, how to read a page, and a suggested reading order for sellers who import products and sell them on US marketplaces." lede="This site answers two questions for sellers who import: what will the marketplace take from each sale, and what does US Customs require before the goods can be sold. Here is the order we suggest reading it in.">
+  <Flow title="Suggested reading order (site diagram)" steps={[{ t: 'Know your fees', d: 'Platform fee pages' }, { t: 'Know your importer role', d: 'Who files, who pays' }, { t: 'Classify and value', d: 'The duty base and rate' }, { t: 'Stack the costs', d: 'Duty plus entry fees' }, { t: 'Stay compliant', d: 'Marking, certificates, hazmat' }]} />
+  <h2>How to read a page here</h2>
+  <p>Each guide opens with a short summary, then explains the rule, works through the arithmetic where there is any, and ends with "What to check yourself" — the steps to confirm the point on the official source for your own goods. Numbers in square brackets link to the source list at the bottom of the page. Every source is the agency or platform that sets the rule, and shows the date it was checked. If you see "Last verified" with an old date, treat the figures as a starting point and check the source.</p>
+  <h2>1. Start with the fees you will pay on every sale</h2>
+  <p>Read the fee reference for the platform you sell on — <a href="/marketplaces/amazon/">Amazon</a>, <a href="/marketplaces/walmart/">Walmart</a>, <a href="/marketplaces/ebay/">eBay</a>, <a href="/marketplaces/etsy/">Etsy</a> or <a href="/marketplaces/shopify/">Shopify</a> — then put your own price and cost into the <a href="/tools/margin-calculator/">margin calculator</a>. If you are weighing a second channel, <a href="/guides/ebay-etsy-for-amazon-sellers/">the same $25 item on five platforms</a> shows the arithmetic side by side.</p>
+  <h2>2. Work out who the importer is</h2>
+  <p>Whoever is the importer of record owns the duty bill and the compliance obligations. <a href="/guides/incoterms-who-is-importer/">Who can be the importer of record</a> explains the rule; <a href="/guides/entry-type-11-vs-01/">informal versus formal entry</a> and <a href="/guides/customs-bonds/">customs bonds</a> explain the paperwork that follows.</p>
+  <h2>3. Get the duty base right</h2>
+  <p>Duty is the value multiplied by a rate. The rate comes from <a href="/guides/hts-classification-basics/">classification</a> and <a href="/guides/country-of-origin-sourcing/">country of origin</a>; the value from <a href="/guides/first-sale-valuation/">transaction value rules</a>. Then see <a href="/guides/tariff-stack-2026/">how additional duties and entry fees stack</a> and estimate yours with the <a href="/tools/tariff-stack-estimator/">duty and fee estimator</a>.</p>
+  <h2>4. Avoid the expensive surprises</h2>
+  <p><a href="/guides/origin-marking-requirements/">Country-of-origin marking</a>, <a href="/guides/customs-holds-and-exams/">exams and detentions</a>, <a href="/guides/antidumping-duties/">antidumping duties</a>, <a href="/guides/us-product-compliance/">product certificates</a> and <a href="/guides/hazmat-dangerous-goods/">hazardous materials rules</a> are where shipments get held or fined.</p>
+  <h2>5. Recover what you can and keep clean books</h2>
+  <p><a href="/guides/duty-drawback/">Drawback</a>, <a href="/guides/foreign-trade-zones/">foreign-trade zones</a> and <a href="/guides/prior-disclosure-protests/">protests</a> are the routes to getting duty back or correcting an entry. <a href="/guides/accrual-accounting-cogs/">Inventory and cost of goods sold</a> covers how those costs reach your tax return.</p>
+  <h2>Check yourself</h2>
+  <p>When you have read a few guides, the <a href="/quiz/">12-question knowledge check</a> tests rules covered in these guides. Each answer cites its source.</p>
+</Page>

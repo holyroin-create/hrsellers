@@ -1,54 +1,16 @@
 ---
-import Btn from '../components/Btn.astro';
 import Base from '../layouts/Base.astro';
 ---
-<Base
-  title="Page not found"
-  noindex={true}
-  description="That page does not exist on FBA Tactics. Links to the guides index, the free calculators, the fee and policy log and the marketplace fee references."
->
-<section class="wrap" style="padding:4rem 1.25rem 2rem">
-  <p class="eyebrow">404</p>
-  <h1 style="max-width:16ch">That page does not exist.</h1>
-  <p style="max-width:44ch;font-size:1.12rem;color:var(--ink-soft);margin:1.2rem 0 1.8rem">
-    It may have been renamed, or the link that brought you here may be out of date. Nothing on this site
-    is deleted quietly — if a page moved, one of the routes below will lead to it.
-  </p>
-
-  <div class="grid" style="max-width:60rem">
-    <a class="card hubcard" href="/guides/">
-      <div class="body">
-        <span class="meta">Start here</span>
-        <h3>All guides</h3>
-        <p>Fees, reimbursements, shipping and imports. Every figure dated and linked to its source.</p>
-      </div>
-    </a>
-    <a class="card hubcard" href="/marketplaces/">
-      <div class="body">
-        <span class="meta">Reference</span>
-        <h3>Marketplace fees</h3>
-        <p>Amazon, Walmart, eBay, TikTok Shop and Etsy, with a worked example on each.</p>
-      </div>
-    </a>
-    <a class="card hubcard" href="/tools/">
-      <div class="body">
-        <span class="meta">Free tools</span>
-        <h3>Calculators</h3>
-        <p>Margin and break-even, cash flow timing, billable dimensional weight. Nothing is stored.</p>
-      </div>
-    </a>
-    <a class="card hubcard" href="/policy-log/">
-      <div class="body">
-        <span class="meta">Change log</span>
-        <h3>Fee and policy log</h3>
-        <p>What changed on the platforms, when it took effect, and who it hits.</p>
-      </div>
-    </a>
+<Base title="Page not found" description="This page does not exist on FBA Tactics. Browse the guides, the marketplace fee reference or the policy log instead." noindex={true} noCanonical={true}>
+  <div class="wrap page-narrow" style="padding-top:3rem">
+    <p class="eyebrow">404</p>
+    <h1>This page isn't here</h1>
+    <p class="lede">The address may be mistyped, or the page was retired. In November 2026 we removed guides whose figures could not be traced to a primary source; where a close replacement exists, the old address now forwards to it.</p>
+    <ul>
+      <li><a href="/guides/">All guides</a></li>
+      <li><a href="/marketplaces/">Fee reference by marketplace</a></li>
+      <li><a href="/policy-log/">Policy log</a></li>
+      <li><a href="/sitemap/">Site map</a></li>
+    </ul>
   </div>
-
-  <div class="btn-row" style="margin-top:2rem">
-    <Btn href="/">Back to the front page</Btn>
-    <Btn href="/contact/" quiet={true}>Report a broken link</Btn>
-  </div>
-</section>
 </Base>

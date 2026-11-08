@@ -1,124 +1,22 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Btn from '../../components/Btn.astro';
-import AdSlot from '../../components/AdSlot.astro';
-import PortalCard from '../../components/PortalCard.astro';
 import { getCollection } from 'astro:content';
-
-const guides = (await getCollection('guides', ({ data }) => !data.draft))
-  .sort((a, b) => +new Date(b.data.published) - +new Date(a.data.published));
-const cats = [...new Set(guides.map(g => g.data.category))];
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CATS } from '../../lib/data';
+import { fmtDate } from '../../lib/claims';
+const guides = (await getCollection('guides', (e) => !e.data.draft)).sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
-<Base
-  title="Guides"
-  description="Operational guides for marketplace sellers — fees, reimbursements, shipping and software, with the arithmetic shown."
->
-<div class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a><span aria-hidden="true">›</span><span aria-current="page">Guides</span>
-  </nav>
-
-  <div class="portal">
-    <div>
-      <div class="pagehead"><h1>Guides</h1></div>
-
-      <p class="resultline" id="resultline">
-        <b>{guides.length}</b> {guides.length === 1 ? 'guide' : 'guides'} published. Each one answers a single
-        operational question and shows the arithmetic behind the answer.
-      </p>
-
-      <p style="margin:.2rem 0 1rem"><input id="livefilter" type="search" placeholder="Filter guides — try walmart, storage, returns…" style="width:100%;max-width:34rem;padding:.6rem .8rem;border:1px solid var(--rule, #d2d6dc);border-radius:8px;font:500 1rem 'Barlow', system-ui" /></p>
-
-      <div class="tabs">
-        <a href="/guides/" aria-current="page">All</a>
-        {cats.map(c => <a href={`/guides/?q=${encodeURIComponent(c)}`}>{c}</a>)}
-        <a href="/reviews/">Tool reviews</a>
-        <a href="/marketplaces/">By marketplace</a>
-      </div>
-
-      <div class="plist" id="plist">
-        {guides.map(g => (
-          <PortalCard
-            href={`/guides/${g.id}/`}
-            slug={g.id}
-            category={g.data.category}
-            title={g.data.title}
-            summary={g.data.description}
-            minutes={g.data.minutes}
-            published={g.data.published}
-            modified={g.data.modified}
-            ledger={g.data.ledger}
-            ledgerKind={g.data.ledgerKind}
-          />
-        ))}
-      </div>
-
-      <p id="noresults" class="resultline" hidden>
-        Nothing matches that search yet. Clear the box to see every guide, or try a broader word such as
-        <b>fees</b> or <b>shipping</b>.
-      </p>
-
-      <AdSlot inline={true} label="guides index — below the list" />
-    </div>
-
-    <aside class="rail">
-      <div class="rail-box orange">
-        <h4>Free calculators</h4>
-        <p>Work out the number yourself instead of reading someone else's example: margin and break-even, cash flow timing, dimensional weight.</p>
-        <Btn href="/tools/" variant="cta" wide={true} arrow={false}>Open the tools</Btn>
-      </div>
-
-      <div class="rail-box">
-        <h4>Reference</h4>
-        <div class="rail-links">
-          <a href="/policy-log/">Fee and policy change log</a>
-          <a href="/glossary/">Glossary</a>
-          <a href="/costs/">What it costs to start</a>
-          <a href="/marketplaces/">Marketplace comparison</a>
-          <a href="/resources/">Free spreadsheets</a>
-        </div>
-      </div>
-
-      <AdSlot label="guides rail" />
-    </aside>
+<Base title="Guides" description="Every guide on FBA Tactics, grouped by topic: US import and customs rules, marketplace fees, product compliance, and operations and accounting.">
+  <div class="wrap">
+    <Breadcrumbs trail={[{ label: 'Guides', href: '/guides/' }]} />
+    <header class="index-head"><p class="eyebrow">Library</p><h1>Guides</h1>
+      <p class="lede">{guides.length} guides. Each one is built from the regulation, notice or platform page that sets the rule, and lists those sources at the end.</p></header>
+    {CATS.map((cat) => { const list = guides.filter((g) => g.data.category === cat.name); return list.length ? (
+      <section id={cat.id} aria-labelledby={`g-${cat.id}`} style="scroll-margin-top:1rem">
+        <h2 id={`g-${cat.id}`}>{cat.name}</h2><p class="meta">{cat.d}</p>
+        <ul class="rows">{list.map((g) => (
+          <li><p class="meta">Verified<br />{fmtDate(g.data.lastVerified)}</p>
+            <div><h3><a href={`/guides/${g.id}/`}>{g.data.title}</a></h3><p>{g.data.description}</p></div></li>))}</ul>
+      </section>) : null; })}
   </div>
-</div>
-
-<script is:inline>
-  (function () {
-    var live = document.getElementById('livefilter');
-    if (live) live.addEventListener('input', function () {
-      var q = live.value.trim().toLowerCase();
-      var rows = document.querySelectorAll('#plist .pcard');
-      var shown = 0;
-      rows.forEach(function (row) {
-        var hit = !q || row.textContent.toLowerCase().indexOf(q) !== -1;
-        row.hidden = !hit; if (hit) shown++;
-      });
-      var none = document.getElementById('noresults');
-      if (none) none.hidden = shown !== 0;
-    });
-    var params = new URLSearchParams(window.location.search);
-    var q = (params.get('q') || '').trim().toLowerCase();
-    if (!q) return;
-
-    var box = document.getElementById('q');
-    if (box) box.value = params.get('q');
-
-    var rows = document.querySelectorAll('#plist .pcard');
-    var shown = 0;
-    rows.forEach(function (row) {
-      var hit = row.textContent.toLowerCase().indexOf(q) !== -1;
-      row.hidden = !hit;
-      if (hit) shown++;
-    });
-
-    var line = document.getElementById('resultline');
-    if (line) line.innerHTML = '<b>' + shown + '</b> result' + (shown === 1 ? '' : 's') +
-      ' for &ldquo;' + params.get('q').replace(/[<>&]/g, '') + '&rdquo;. <a href="/guides/">Clear search</a>';
-
-    var none = document.getElementById('noresults');
-    if (none && shown === 0) none.hidden = false;
-  })();
-</script>
 </Base>

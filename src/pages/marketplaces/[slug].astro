@@ -1,140 +1,18 @@
 ---
-import Base from '../../layouts/Base.astro';
-import StockImage from '../../components/StockImage.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import AdSlot from '../../components/AdSlot.astro';
-import AuthorBox from '../../components/AuthorBox.astro';
-import Sources from '../../components/Sources.astro';
-import Btn from '../../components/Btn.astro';
-import { MARKETPLACES } from '../../data/marketplaces';
-
+import { getCollection, render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import { MDX } from '../../lib/mdx-components';
+import { citeOrder } from '../../lib/cite-order';
 export async function getStaticPaths() {
-  return MARKETPLACES.map(m => ({ params: { slug: m.slug }, props: { m } }));
+  const all = await getCollection('marketplaces', (e) => !e.data.draft);
+  const gd = await getCollection('guides', (e) => !e.data.draft);
+  const index = new Map([...gd.map((e) => [e.id, { href: `/guides/${e.id}/`, title: e.data.title, category: e.data.category }]), ...all.map((e) => [e.id, { href: `/marketplaces/${e.id}/`, title: e.data.title, category: e.data.category }])] as any);
+  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry, related: entry.data.related.map((r) => index.get(r)).filter(Boolean) } }));
 }
-const { m } = Astro.props;
-const others = MARKETPLACES.filter(x => x.slug !== m.slug);
+const { entry, related } = Astro.props as any;
+(Astro.locals as any).citeOrder = citeOrder(entry.body, entry.data.hero.claim);
+const { Content, headings } = await render(entry);
 ---
-<Base title={`Selling on ${m.name}`} description={m.lede.slice(0, 180)} ogImage={`/og/mp-${m.slug}.png`}>
-<div class="wrap">
-  <Breadcrumbs trail={[{ label: 'Marketplaces', href: '/marketplaces/' }, { label: m.name, href: `/marketplaces/${m.slug}/` }]} />
-
-  <div class="article-grid">
-    <div>
-      <p class="eyebrow">{m.eyebrow}</p>
-      <h1 style="max-width:22ch">{m.h1}</h1>
-      <p style="max-width:46ch;font-size:1.15rem;color:var(--ink-soft);margin:1.2rem 0 1.4rem">{m.lede}</p>
-      <StockImage slug={m.slug} theme="ecommerce" caption={"Selling on " + m.name} />
-      <p class="note" style="margin:0 0 2rem">Rates checked {m.checked}. Marketplaces revise fee schedules on their own timetable — confirm anything you are about to price against before you use it.</p>
-
-      <div class="prose">
-        <h2>What it costs</h2>
-        <table>
-          <thead><tr><th>Charge</th><th>Rate</th></tr></thead>
-          <tbody>
-            {m.headline.map(r => (
-              <tr>
-                <td><strong>{r.k}</strong>{r.note && <><br /><span class="note">{r.note}</span></>}</td>
-                <td>{r.v}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-
-        <h2>{m.fulfilment.title}</h2>
-        <p>{m.fulfilment.intro}</p>
-        <table>
-          <thead><tr><th>Item</th><th>Effect</th></tr></thead>
-          <tbody>
-            {m.fulfilment.rows.map(r => (
-              <tr>
-                <td><strong>{r.k}</strong>{r.note && <><br /><span class="note">{r.note}</span></>}</td>
-                <td>{r.v}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <AdSlot inline={true} label={`${m.name} — mid page`} />
-
-      <div class="prose">
-        <h2>A worked example</h2>
-        <p>{m.example.label}. Fulfillment and storage figures are illustrative; substitute your own before making a decision.</p>
-        <table>
-          <thead><tr><th>Line</th><th>Amount</th></tr></thead>
-          <tbody>
-            {m.example.rows.map(r => (
-              <tr><td>{r.k}</td><td>{r.v}</td></tr>
-            ))}
-            <tr><td><strong>Left to you</strong></td><td><strong>{m.example.net}</strong></td></tr>
-          </tbody>
-        </table>
-        <p class="note">Platform take: {m.example.rate}.</p>
-
-        <h2>What catches sellers out</h2>
-        {m.gotchas.map(g => (
-          <>
-            <h3>{g.title}</h3>
-            <p>{g.body}</p>
-          </>
-        ))}
-
-        {m.contested && m.contested.length > 0 && (
-          <>
-            <h2>Figures the sources disagree on</h2>
-            <p>These are recorded rather than resolved. Where published rate cards conflict, the honest position is to name the conflict and send you to the primary source.</p>
-            <table>
-              <thead><tr><th>Figure</th><th>The disagreement</th></tr></thead>
-              <tbody>
-                {m.contested.map(c => (
-                  <tr><td><strong>{c.claim}</strong></td><td>{c.detail}</td></tr>
-                ))}
-              </tbody>
-            </table>
-          </>
-        )}
-
-        <h2>Where it fits, and where it does not</h2>
-        <h3>Worth considering for</h3>
-        <ul>{m.fits.map(f => <li>{f}</li>)}</ul>
-        <h3>Works against you if</h3>
-        <ul>{m.againstIt.map(f => <li>{f}</li>)}</ul>
-      </div>
-
-      <div class="btn-row" style="margin:2rem 0 0">
-        <Btn href="/tools/margin-calculator/">Run your own numbers</Btn>
-        <Btn href="/marketplaces/" quiet={true}>Compare all seven</Btn>
-      </div>
-
-      <AdSlot label={`${m.name} — end of page`} />
-      <AuthorBox />
-
-      <Sources items={m.sources} />
-    </div>
-
-    <aside class="rail">
-      <div class="rail-box">
-        <h4>Other marketplaces</h4>
-        <div class="rail-links">
-          {others.map(o => <a href={`/marketplaces/${o.slug}/`}>{o.name}</a>)}
-          <a href="/marketplaces/">Side-by-side comparison</a>
-        </div>
-      </div>
-      <div class="rail-box orange">
-        <h4>Check it yourself</h4>
-        <p>Fee tables age. The calculators take your price, cost and fee rate and give you the margin and break-even directly.</p>
-        <Btn href="/tools/" variant="cta" wide={true} arrow={false}>Open the tools</Btn>
-      </div>
-      <div class="rail-box">
-        <h4>Reference</h4>
-        <div class="rail-links">
-          <a href="/policy-log/">Fee and policy change log</a>
-          <a href="/glossary/">Glossary</a>
-          <a href="/costs/">What it costs to start</a>
-        </div>
-      </div>
-      <AdSlot label={`${m.name} — sidebar`} />
-    </aside>
-  </div>
-</div>
-</Base>
+<Article data={entry.data} headings={headings} related={related} crumb={{ label: 'Fee reference', href: '/marketplaces/' }} og={`/og/marketplaces/${entry.id}.png`}>
+  <Content components={MDX} />
+</Article>

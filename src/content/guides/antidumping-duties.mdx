@@ -1,149 +1,128 @@
 ---
-title: "Some products carry a duty that has nothing to do with your tariff code, your origin, or anything you can plan for"
-seoTitle: "Antidumping and Countervailing Duties: The Charge Nobody Plans For"
-description: "Antidumping and countervailing duties are imposed on specific products from specific countries, at rates set case by case, and an expanding docket. They also force formal entry regardless of shipment value."
-category: "Shipping & logistics"
+title: "Antidumping and Countervailing Duties: A Guide for Small Importers"
+description: "How AD/CVD orders reach importers under 19 CFR Part 351: cash deposits, annual reviews, scope rulings, reimbursement certificates, with 2026 notices."
+category: "Import & customs"
 published: "2026-08-23"
-modified: "2026-09-05"
-minutes: 9
-numbered: true
-ledger: "Case-by-case rates · formal entry regardless of value"
-ledgerKind: "cost"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 7
+summary:
+  - "An antidumping or countervailing duty order instructs CBP to assess duties on covered merchandise and to collect cash deposits of estimated duties at entry."
+  - "The final duty is set later: if no administrative review is requested in the anniversary month, duties are assessed at the cash deposit rate."
+  - "Importers may themselves request a review of the exporter or producer that supplied their goods."
+  - "When a scope inquiry starts, entries already suspended stay suspended at the deposit rate; if the product is found not covered, deposits are refunded."
+  - "Importers must file a certificate on reimbursement of duties before liquidation, or Commerce may presume reimbursement occurred."
+hero:
+  kind: "stat"
+  figure: "15.67%"
+  label: "all-others cash deposit rate, circular welded pipe from Thailand (Sept. 2026 notice)"
+  claim: "antidumping-duties-19"
+related: ["country-of-origin-sourcing", "hts-classification-basics", "customs-bonds", "tariff-stack-2026", "prior-disclosure-protests"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+Antidumping (AD) and countervailing (CVD) duties are extra duties that apply only to a specific product from a specific country, under an order issued by the Department of Commerce. When an order is in place, Commerce instructs CBP to assess AD or CVD duties on the subject merchandise <C id="antidumping-duties-01" /> and to require cash deposits of estimated duties. <C id="antidumping-duties-02" /> The deposit is an estimate: the final amount is determined later in a review covering a set period, <C id="antidumping-duties-03" /> or, if no one asks for a review, at the deposit rate. <C id="antidumping-duties-05" />
 
-import Steps from '../../components/Steps.astro';
-import MiniCalc from '../../components/MiniCalc.astro';
+For a small importer, the practical risks are a product you did not realize was covered, a deposit rate far above the regular duty, and a final bill that can arrive long after you sold the goods. The rest of this page follows an order from entry to liquidation using the regulations in 19 CFR Part 351 and two 2026 Federal Register notices.
 
-import StockImage from '../../components/StockImage.astro';
+<Callout type="note" title="Not a ruling">
+This page explains how antidumping orders and reviews work. Whether your product is inside an order's scope is a question for a Commerce scope ruling, not for this page.
+</Callout>
 
-<Takeaways items={[
- "Antidumping and countervailing duties are separate from the tariff stack. They apply to specific products from specific countries under individual orders, at rates set case by case.",
- "formal entry as required for goods subject to antidumping or countervailing duties regardless of shipment value — so the informal entry route is unavailable.",
- "Country of origin for AD/CVD purposes is determined by substantial transformation, per CBP guidance — the same test as Section 301, and the same reason routing does not solve it.",
- "an expanding docket of antidumping cases as part of the 2026 trade environment.",
- "This is a check to run before sourcing, not a risk to manage afterwards. Rates in these cases can exceed the value of the goods, and liability runs to the importer of record.",
+## Orders are product-by-country
+
+An order covers a described product from a named country, which is why [country of origin](/guides/country-of-origin-sourcing/) matters as much as classification. Commerce's September 1, 2026 notice of opportunity to request reviews lists, for example, separate mattress orders for India (A-533-919), Mexico (A-201-859), Spain (A-469-826) and Kosovo (A-803-001), each with a review period of 9/1/25 to 8/31/26. <C id="antidumping-duties-17" /> The same list includes consumer-adjacent products such as kitchen appliance shelving and racks from China (A-570-941). <C id="antidumping-duties-17" />
+
+## Step 1: cash deposits at entry
+
+Under 19 CFR 351.211(b), an order instructs CBP to assess duties and to require a cash deposit of estimated duties at the rates in Commerce's determination. <C id="antidumping-duties-01" /> <C id="antidumping-duties-02" /> Part 351 provides for cash deposit rates and producer/exporter combination rates, and for calculating an all-others rate. <C id="antidumping-duties-24" />
+
+The September 1, 2026 final results for circular welded carbon steel pipes and tubes from Thailand show how this works. Commerce found 0.00 percent weighted-average dumping margins for Saha Thai Steel Pipe and Thai Premium Pipe for the period March 1, 2024 through February 28, 2025, <C id="antidumping-duties-18" /> while the cash deposit rate for all other producers or exporters "will continue to be 15.67 percent." <C id="antidumping-duties-19" /> The cash deposit rates for the two reviewed companies equal their 0.00 percent margins, and the new deposit rates apply to all shipments entered, or withdrawn from warehouse, for consumption on or after the publication date of the final results. <C id="antidumping-duties-20" /> A 0.00 percent rate means no antidumping cash deposit on those two companies' entries, and for the reviewed entries Commerce said it will instruct CBP to liquidate without regard to antidumping duties. <C id="antidumping-duties-21" />
+
+| Producer/exporter (circular welded pipe, Thailand) | Cash deposit rate for entries on or after Sept. 1, 2026 |
+|---|---|
+| Saha Thai Steel Pipe Public Co., Ltd. | 0.00% |
+| Thai Premium Pipe Co. Ltd | 0.00% |
+| All other producers or exporters | 15.67% |
+
+*Source: Office of the Federal Register, Commerce/ITA notice 2026-17771, checked Nov 8, 2026.* <C id="antidumping-duties-20" /> <C id="antidumping-duties-19" />
+
+The difference matters to a reseller: the same pipe from a producer without its own rate would carry the all-others deposit. Knowing which producer made your goods, not only which company invoiced them, decides the rate.
+
+## Step 2: the anniversary month and administrative reviews
+
+Each order has an anniversary month, defined as the calendar month in which the anniversary of the order's publication date falls. <C id="antidumping-duties-15" /> Each year during that month, a domestic interested party or certain other interested parties may request an administrative review of specified exporters or producers, <C id="antidumping-duties-06" /> and an importer of the merchandise may request in writing a review of an exporter or producer that supplied it. <C id="antidumping-duties-07" />
+
+A review normally covers the 12 months immediately preceding the most recent anniversary month for antidumping orders, and the most recently completed calendar year for countervailing duty orders. <C id="antidumping-duties-08" /> After a review, Commerce normally calculates an assessment rate for each importer. <C id="antidumping-duties-04" />
+
+For orders with September anniversary dates in 2026, the Commerce notice set the request deadline as "not later than the last day of September 2026." <C id="antidumping-duties-16" />
+
+## Step 3: automatic assessment when no review is requested
+
+If no review is requested, CBP assesses duties at rates equal to the cash deposit of, or bond for, estimated duties, and continues to collect cash deposits. <C id="antidumping-duties-05" /> In that case the deposit effectively becomes the final duty.
+
+## Step 4: liquidation instructions
+
+After final results, Commerce issues instructions to CBP. In the Thailand pipe notice, Commerce said that because the margins were zero it will instruct CBP to liquidate the entries without regard to antidumping duties, and that it intends to issue assessment instructions no earlier than 35 days after publication. <C id="antidumping-duties-21" />
+
+<Timeline title="Circular welded pipe from Thailand: one review cycle" items={[
+  {date: "2024-03-01", t: "Period of review begins", d: "Entries from this date are covered by the review.", claim: "antidumping-duties-18"},
+  {date: "2025-02-28", t: "Period of review ends", d: "Last day of entries covered.", claim: "antidumping-duties-18"},
+  {date: "2026-09-01", t: "Final results published", d: "New cash deposit rates apply to entries from this date.", claim: "antidumping-duties-20"}
 ]} />
 
-Every other duty on this site is predictable once you know the code and the origin. This one is not, and it is the reason a product can look viable on every calculation and still be uneconomic.
+## Scope: is your product covered?
 
-**This is not legal advice**, and AD/CVD is an area where the consequences of getting it wrong are severe enough that specialist input is not optional.
+A scope ruling decides whether a particular product is covered by the scope of an AD or CVD order, and an interested party may submit a scope ruling application asking Commerce to conduct the inquiry. <C id="antidumping-duties-09" /> Commerce reads the order's language using primary interpretive sources, which include the descriptions of the merchandise in the petition. <C id="antidumping-duties-10" />
 
-## What they are
+When Commerce initiates a scope inquiry, it tells CBP to continue suspension of liquidation for entries of the products at issue that were already suspended, and to apply the cash deposit rate that would apply if the product were covered. <C id="antidumping-duties-11" /> If the final ruling finds the product is not covered and no other segment suspends the entries, Commerce orders CBP to end the suspension and refund the cash deposits. <C id="antidumping-duties-12" />
 
-<Steps title="Check scope before the PO" accent={0} source="AD/CVD attaches case by case, with no rate ceiling, and forces formal entry"
- steps={[
-  { t: 'Your HTS code', d: 'confirm it' },
-  { t: 'True origin', d: 'not ship-from' },
-  { t: 'Scope language', d: 'read the text' },
-  { t: 'Pending cases', d: 'early warning' },
- ]} />
+## The reimbursement certificate
 
-**Antidumping duties (AD)** are imposed where goods are found to be sold into the United States below fair value.
+Before liquidation, the importer must file a certificate with CBP stating whether it has or has not been reimbursed for the duties or entered into an agreement for reimbursement. <C id="antidumping-duties-13" /> If the importer does not file it, Commerce may presume the exporter or producer paid or reimbursed the duties. <C id="antidumping-duties-14" /> The Thailand pipe notice repeats this warning to importers and states that failure to comply could lead to the assessment of double antidumping duties. <C id="antidumping-duties-22" />
 
-**Countervailing duties (CVD)** are imposed where foreign producers are found to be subsidized.
+## When orders end: sunset reviews
 
-**Both are product-and-country specific.** An order covers a defined class of merchandise from a named country, and rates are set through investigations — often at company level, so two suppliers in the same country can carry very different rates for the same product.
+Orders do not last indefinitely without review. The U.S. International Trade Commission's September 1, 2026 notice instituting the sixth five-year review of the order on petroleum wax candles from China (Investigation No. 731-TA-282) explains that the review will determine whether revoking the order, first issued on August 28, 1986, would be likely to lead to continuation or recurrence of material injury. <C id="antidumping-duties-23" /> Candles are a common marketplace product, and that order dates from 1986, so an old order can still be in force.
 
-<Figure value="Case by case" kind="cost" source="nature of AD/CVD orders, 2026, checked September 5, 2026">
- How AD and CVD rates are set. Not by tariff schedule and not by a general country measure — by individual orders covering defined merchandise from named countries, often at company level.
-</Figure>
+## Sources used on this page
 
-## Why they behave differently from tariffs
+- [Circular Welded Carbon Steel Pipes and Tubes From Thailand: Final Results of Antidumping Duty Administrative Review; 2024-2025](https://www.federalregister.gov/documents/2026/09/01/2026-17771/circular-welded-carbon-steel-pipes-and-tubes-from-thailand-final-results-of-antidumping-duty) (Commerce, Sept. 1, 2026)
+- [Opportunity To Request Administrative Review](https://www.federalregister.gov/documents/2026/09/01/2026-17810/antidumping-or-countervailing-duty-order-finding-or-suspended-investigation-opportunity-to-request) (Commerce, Sept. 1, 2026)
+- [Petroleum Wax Candles From China; Institution of a Five-Year Review](https://www.federalregister.gov/documents/2026/09/01/2026-17862/petroleum-wax-candles-from-china-institution-of-a-five-year-review) (USITC, Sept. 1, 2026)
 
-**They are not in the tariff schedule.** You cannot look up your HTS code and see them. Determining whether an order covers your product requires checking the scope of active orders — a separate exercise from classification.
-
-**Scope is written in words, not codes.** An order describes the merchandise it covers, and whether your product falls inside that description is an interpretive question. Products that seem outside an order sometimes are not.
-
-**Rates can be extreme.** Because they are calculated to offset a margin of dumping or a subsidy rather than to raise revenue, they are not bounded the way ordinary duty rates are.
-
-**And they are retroactive in effect.** Entries can be subject to review after the fact, with the final rate determined later than the entry.
-
-<StockImage slug="antidumping-duties" theme="ecommerce" />
-
-## The entry consequence
-
-**formal entry is required for goods subject to antidumping or countervailing duties**, regardless of shipment value.
-
-That removes an option the [entry types guide](/guides/entry-type-11-vs-01/) describes: no informal Type 11 route, no matter how small the shipment. Formal entry means the full Merchandise Processing Fee basis, a [customs bond](/guides/customs-bonds/), and broker involvement on every shipment.
-
-**Which changes the arithmetic on low-value imports of a covered product entirely.**
-
-## Origin, and why routing does not help
-
-Reporting on CBP guidance is direct: when considering a product that may be subject to antidumping, countervailing or other safeguard measures, **the substantial transformation analysis is applied to determine the country of origin.**
-
-Same test as Section 301, same answer as the [country of origin guide](/guides/country-of-origin-sourcing/): assembling in a third country from covered components does not remove the exposure unless the transformation is genuine.
-
-**And the enforcement posture is harder here.** Evading an AD/CVD order is a distinct and seriously treated offense, and CBP scrutiny of third-country routing as having increased.
-
-## What is changing
-
-the 2026 trade environment as including **an expanding docket of antidumping cases**, alongside revised Section 301 rates and restructured de minimis treatment.
-
-**The practical implication:** a product not covered by any order when you sourced it can become covered. New orders apply going forward, and a supplier relationship built around a product that becomes covered is a business problem rather than a paperwork one.
-
-One source's framing is the right one: country of origin rules, Section 301 exposure and AD/CVD orders **interact in ways that are genuinely complex and have real financial consequences.**
-
-## How to check
-
-**Before sourcing, not after.** This is the single most important thing in this guide.
-
-**The check involves:**
-
-**Identifying whether an active order covers your product class from your sourcing country.** Order scopes are published, and a customs broker or trade attorney can run this.
-
-**Checking company-specific rates** where an order exists. Rates frequently differ by producer, and the rate that applies depends on which company made your goods — which means your [supplier verification](/guides/supplier-verification/) work feeds directly into this.
-
-**Confirming the origin analysis** where components come from a covered country but assembly happens elsewhere.
-
-**Asking your broker as a standing question** on any new product from a new country. It costs one email and it is the cheapest check in this guide.
-
-## Where this sits
-
-For most marketplace sellers, most of the time, AD/CVD does not apply. The categories most often affected are industrial and commodity goods rather than consumer products.
-
-**But "most" is doing work in that sentence.** Orders cover a wide range of merchandise, and the categories that catch consumer sellers are not always obvious. The check is cheap; the consequence of skipping it is a duty rate you cannot pass on and did not model.
-
-**And it belongs in the product research stage**, alongside the [classification](/guides/hts-classification-basics/) and [landed cost](/guides/landed-cost-fee-stack/) work — see the [product research guide](/guides/product-research-cost-errors/) on validating cost before demand.
-
-## What to do
-
-**Ask your customs broker whether any active AD/CVD order covers your product class from your sourcing country.** Before the purchase order, on every new product and every new country.
-
-**Get the company-specific rate** if an order exists. Which factory made the goods can change the answer.
-
-**Do not assume a sourcing shift removes exposure.** The origin test is substantial transformation, and CBP applies it specifically for these measures.
-
-**Budget for formal entry** on any covered product — the informal route is not available regardless of value.
-
-**Re-check periodically.** The docket is expanding, and a product outside every order today may not be next year.
-
-**Take any suggestion of routing around an order seriously as a warning sign.** A supplier proposing it is proposing something with consequences that land on the importer of record.
-
-<MiniCalc variant="margin" />
-
-Search your product's HTS heading in the ITA's AD/CVD orders list before you place the next order. Ten minutes, and it is the only way to find out whether a duty that has nothing to do with your tariff code is waiting at the port.
-
-<Faq items={[
- { q: "What are antidumping and countervailing duties?", a: "Additional duties imposed under individual orders — antidumping where goods are sold below fair value, countervailing where producers are subsidized. They cover defined merchandise from named countries at rates set case by case, often at company level." },
- { q: "How do I know if my product is covered?", a: "Not from your HTS code. Order scopes are written descriptions of covered merchandise and must be checked separately. Ask a customs broker or trade attorney before sourcing, on every new product and country." },
- { q: "Can I avoid AD/CVD by sourcing from another country?", a: "Only through genuine substantial transformation. Reporting on CBP guidance states the substantial transformation analysis is applied specifically to determine origin for antidumping, countervailing and other safeguard measures." },
- { q: "Does it affect how I enter the goods?", a: "Yes. formal entry is required for goods subject to antidumping or countervailing duties regardless of shipment value, which removes the informal entry route and requires a bond and broker involvement on every shipment." },
- { q: "Are rates capped?", a: "No. They are calculated to offset a dumping margin or a subsidy rather than to raise revenue, so they are not bounded the way ordinary duty rates are, and they can exceed the value of the goods." },
- { q: "Does this affect most Amazon sellers?", a: "Most of the time, no — the categories most often covered are industrial and commodity goods. But orders cover a wide range of merchandise, the docket is expanding, and the check costs one email against a rate you could not pass on." },
+<Flow title="Suggested order of checks before importing a possibly covered product (site-authored method)" steps={[
+  {t: "Classify and confirm origin", d: "Settle the HTS number and the country of origin."},
+  {t: "Search for orders", d: "Search the Federal Register for AD/CVD notices naming the product and country."},
+  {t: "Read the scope", d: "Compare your product with the order's written scope description."},
+  {t: "Identify the producer", d: "Get the manufacturer's name to know which deposit rate applies."},
+  {t: "Budget the deposit", d: "Plan cash for the deposit and for a possible later rate change."},
+  {t: "Track the anniversary month", d: "Decide each year whether to request a review."}
 ]} />
 
-<Sources items={[
-  { title: 'Antidumping and countervailing duty orders: scope, cash deposit rates and administrative reviews (19 U.S.C. 1671, 1673); AD/CVD case search', publisher: 'U.S. Department of Commerce, International Trade Administration; U.S. Customs and Border Protection', accessed: '2026-09-05' },
- { title: 'The end of de minimis: new US entry processes (formal entry required for shipments exceeding $2,500 and for items subject to antidumping or countervailing duties)', publisher: 'Avalara', href: 'https://www.avalara.com/blog/en/north-america/2024/11/de-minimis-exemption-changes-coming.html', accessed: '2026-09-05' },
- { title: 'Mexico, China and Section 301 (CBP applying the substantial transformation analysis to determine country of origin where a product may be subject to antidumping, countervailing or other safeguard measures)', publisher: 'JD Supra', href: 'https://www.jdsupra.com/legalnews/mexico-china-and-section-301-35920/', accessed: '2026-09-05' },
- { title: 'How American importers are cutting their 2026 duty bills (the 2026 environment including an expanding docket of antidumping cases alongside revised Section 301 rates and restructured de minimis treatment)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-09-05' },
- { title: 'What is country of origin? A US importer\u2019s guide to substantial transformation (country of origin rules, Section 301 exposure and AD/CVD orders interacting in complex ways with real financial consequences)', publisher: 'First Link', href: 'https://firstlinkpartners.com/country-of-origin-imports/', accessed: '2026-09-05' },
- { title: 'The new sourcing map for US importers in 2026 (CBP scrutiny of third-country routing and more rigorous enforcement of substantial transformation rules)', publisher: 'Euro-American Worldwide Logistics', href: 'https://www.eawlogistics.com/the-new-sourcing-map-for-u-s-importers-in-2026/', accessed: '2026-09-05' },
+## Decision table: which rate and which step apply to your entry
+
+The same order produces different bills depending on who made the goods and what you do in the anniversary month. The table maps common importer situations to the rule that governs each one, using the Thailand pipe order as the rate example.
+
+| If your situation is… | What applies | Rule |
+|---|---|---|
+| Pipe made by Saha Thai or Thai Premium Pipe, entered on or after Sept. 1, 2026 | Cash deposit at 0.00% | Company rate equals its margin <C id="antidumping-duties-20" /> |
+| Pipe from any other Thai producer or exporter | Cash deposit at 15.67% | All-others rate <C id="antidumping-duties-19" /> |
+| No review is requested for the period | The deposit rate becomes the assessed duty | 19 CFR 351.212(c) <C id="antidumping-duties-05" /> |
+| You want the duty on your supplier's entries determined in a review rather than at the deposit rate | You may request in writing a review of that exporter or producer | 19 CFR 351.212(a), 351.213(b)(3) <C id="antidumping-duties-03" /> <C id="antidumping-duties-07" /> |
+| You are unsure the product is covered at all | Scope ruling application; already-suspended entries keep the deposit rate during the inquiry, with a refund if found not covered and no other segment suspends them | 19 CFR 351.225 <C id="antidumping-duties-09" /> <C id="antidumping-duties-11" /> <C id="antidumping-duties-12" /> |
+| Your entries are approaching liquidation | File the reimbursement certificate | 19 CFR 351.402(f) <C id="antidumping-duties-13" /> |
+
+*Source: Office of the Federal Register / National Archives (eCFR), 19 CFR Part 351, and Commerce/ITA notice 2026-17771, checked Nov 8, 2026.* <C id="antidumping-duties-19" /> <C id="antidumping-duties-20" />
+
+Two rows are actions only you control. The first is the review request: if no one asks, the deposit is what you pay, so the importer's written request is one route to having the duty on a supplier's entries determined in a review. <C id="antidumping-duties-05" /> <C id="antidumping-duties-07" /> The second is the certificate: if it is missing, Commerce may presume the duties were reimbursed, <C id="antidumping-duties-14" /> and the Thailand notice says that could lead to double antidumping duties. <C id="antidumping-duties-22" /> The rate rows, by contrast, are settled by the producer's identity, which is why the producer's name belongs in the purchase order file before the goods ship.
+
+## What to check yourself
+
+<Checklist title="Confirm on the primary sources" items={[
+  "Search federalregister.gov for 'antidumping' plus your product name and origin country, and read the most recent order, final results and scope notices.",
+  "Read 19 CFR 351.211, 351.212 and 351.213 on eCFR (Title 19, Chapter III, Part 351) to see how deposits, assessment and reviews apply.",
+  "Note the anniversary month of any order covering your goods and put the review-request deadline on your calendar.",
+  "Ask your supplier for the producer's name and check it against the company-specific rates in the latest final results.",
+  "Make sure your broker files the reimbursement certificate under 19 CFR 351.402(f) before liquidation.",
+  "If coverage is unclear, read 19 CFR 351.225 and consider a scope ruling application before you import in volume."
 ]} />

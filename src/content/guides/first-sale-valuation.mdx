@@ -1,148 +1,103 @@
 ---
-title: "If a trading company sits between you and the factory, you may be paying duty on their margin"
-seoTitle: "First Sale Valuation: Duty on the Factory Price, Not the Middleman's"
-description: "First sale valuation lets qualifying importers declare duty on the manufacturer's price rather than the intermediary's. Reported savings of 15% to 25% of the dutiable base — and a bill introduced in February 2026 would end it."
-category: "Shipping & logistics"
+title: "First-Sale Valuation: Transaction Value Under 19 CFR 152.103"
+description: "How customs value works under 19 CFR 152.103, what is added and excluded, what first sale means in a series of sales, and what became of its declaration."
+category: "Import & customs"
 published: "2026-08-23"
-modified: "2026-09-05"
-minutes: 10
-numbered: true
-ledger: "Reported: 15–25% off the dutiable base"
-ledgerKind: "recovered"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 6
+summary:
+  - "Imported goods are appraised first on transaction value, the price actually paid or payable when sold for exportation to the United States, before any fallback method."
+  - "Packing costs, selling commissions, assists, certain royalties and resale proceeds are added to the price; post-importation transport and U.S. duties and taxes are excluded when identified separately."
+  - "In a series of sales, CBP described its interpretation in 2008 as basing transaction value on the first or earlier sale, if arm's length and clearly destined for the United States."
+  - "The importer declaration of first-sale use applied only from August 20, 2008 to August 19, 2009, and the paragraph was removed from 19 CFR 141.61 effective December 30, 2010."
+hero:
+  kind: "flow"
+  steps: ["Transaction value", "Identical merchandise", "Similar merchandise", "Deductive value", "Computed value", "152.107 value"]
+  claim: "first-sale-valuation-01"
+related: ["country-of-origin-sourcing", "tariff-stack-2026", "customs-bonds", "prior-disclosure-protests", "duty-drawback"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+Customs duty on most imports is charged on transaction value: the price actually paid or payable for the merchandise when sold for exportation to the United States, plus specific additions. <C id="first-sale-valuation-02" /> "First sale" is the idea that, when goods pass through a middleman before reaching you, the value can be based on the earlier sale from the factory to the middleman instead of the middleman's price to you. CBP described its interpretation in 2008 as basing transaction value on "the first or earlier sale," <C id="first-sale-valuation-12" /> provided that sale is at arm's length and the goods are clearly destined for the United States. <C id="first-sale-valuation-13" />
 
-import Steps from '../../components/Steps.astro';
-import MiniCalc from '../../components/MiniCalc.astro';
+Because ad valorem duties, including the Section 301 and other additional duties discussed in [The 2026 tariff stack](/guides/tariff-stack-2026/), are percentages of value, a lower appraised value lowers every layer at once. The rest of this page sets out what the regulations and Federal Register documents actually say.
 
-import StockImage from '../../components/StockImage.astro';
+<Callout type="note" title="Not a ruling">
+This page explains the valuation rules and the history of the first-sale position. Whether a particular supply chain qualifies depends on its documents, which a customs broker or trade attorney can review.
+</Callout>
 
-<Takeaways items={[
- "In a multi-tier supply chain, duty is normally assessed on the price you paid the intermediary. First sale valuation uses the earlier price the intermediary paid the manufacturer.",
- "Reported saving: 15% to 25% of the dutiable base on eligible transactions. It applies to the value, not the rate — so it stacks with everything else in the duty calculation.",
- "It is most valuable where the intermediary's margin is widest and the duty rate is highest, which is exactly the Section 301 situation many sellers are in.",
- "The Last Sale Valuation Act, introduced February 11, 2026, would eliminate it. It is not law, a similar attempt was abandoned in 2008, and the legislative risk is real enough to be worth acting on now.",
- "This requires documented evidence of the first sale and legal review. It is not a box to tick on an entry form, and getting it wrong is a valuation misstatement.",
+## The order of valuation methods
+
+19 CFR 152.101(b) says imported merchandise will be appraised on the basis, and in the order, of: transaction value (152.103), transaction value of identical merchandise, transaction value of similar merchandise (both 152.104), deductive value (152.105), computed value (152.106), and the value provided for in 152.107. <C id="first-sale-valuation-01" /> Transaction value comes first; the other methods are used only when it cannot be.
+
+## Transaction value: the price plus additions
+
+Under 152.103(b)(1), transaction value is the price actually paid or payable for the merchandise when sold for exportation to the United States, plus the listed additions. <C id="first-sale-valuation-02" /> The definition in 152.102(f) makes the price "the total payment (whether direct or indirect," <C id="first-sale-valuation-03" /> and 152.103(a)(1) says the price is considered "without regard to its method of derivation." <C id="first-sale-valuation-04" />
+
+| Added to the price (152.103(b)(1)) | Not part of transaction value if identified separately from the price (examples in 152.103) |
+|---|---|
+| (i) Packing costs incurred by the buyer | Transportation of the merchandise after importation (152.103(i)) |
+| (ii) Selling commissions incurred by the buyer | Customs duties and other Federal taxes currently payable (152.103(i)(2)) |
+| (iii) The apportioned value of any assist | C.I.F. charges, per Example 4 in 152.103(a)(1) |
+| (iv) Royalties or license fees related to the merchandise that the buyer is required to pay | |
+| (v) Proceeds of any subsequent resale, disposal or use that accrue | |
+
+*Source: Office of the Federal Register / National Archives (eCFR), 19 CFR 152.103, checked Nov 8, 2026.* <C id="first-sale-valuation-05" /> <C id="first-sale-valuation-06" /> <C id="first-sale-valuation-07" />
+
+Two of those additions trip up private-label sellers:
+
+- **Assists.** An "assist" is something supplied directly or indirectly, free of charge or at reduced cost, <C id="first-sale-valuation-10" /> and the definition covers "tools, dies, molds, and similar items" used in production. <C id="first-sale-valuation-21" /> Molds or tooling you pay for and send to the factory fall here. Their value is added to the price even if it never appears on the invoice.
+- **Packing.** "Packing costs" means the cost of all containers (exclusive of instruments of international traffic) and related packing, <C id="first-sale-valuation-11" /> so retail boxes you pay for separately belong in the value.
+
+### When transaction value cannot be used
+
+Transaction value is the appraised value only if, among other conditions, there are no restrictions on the buyer's disposition or use of the merchandise, and the buyer and seller are not related, or are related but the transaction value is acceptable. <C id="first-sale-valuation-08" /> The regulation also says the Center director shall not disregard a transaction value solely because the buyer and seller are related. <C id="first-sale-valuation-09" /> Related persons include, for example, members of the same family, such as brothers and sisters. <C id="first-sale-valuation-14" />
+
+## What "first sale" means in the Federal Register record
+
+The first-sale concept is explained in CBP's Federal Register documents on the phrase "sold for exportation to the United States."
+
+- **Series of sales.** CBP's January 24, 2008 notice defines it plainly: "A series of sales consists of two or more successive contracts for sales of goods." <C id="first-sale-valuation-15" />
+- **CBP's interpretation at that time.** The same notice states CBP's then-current interpretation was to base transaction value on the price paid by the buyer in the first or earlier sale. <C id="first-sale-valuation-12" />
+- **Conditions.** The importer had to establish by sufficient evidence that the first sale was an arm's length sale and that the merchandise was clearly destined for exportation to the United States. <C id="first-sale-valuation-13" />
+- **Case law.** The notice describes *Nissho Iwai* (Fed. Cir. 1992) as basing value on the sale between the intermediary and the manufacturer "so long as that sale constitutes a viable transaction value." <C id="first-sale-valuation-16" />
+
+The 2008 notice proposed to use instead "the price paid in the last sale" before the goods were introduced into the United States. <C id="first-sale-valuation-22" /> CBP withdrew the proposal on September 29, 2010, citing the Food, Conservation, and Energy Act of 2008, which stated that CBP should not implement any change to its existing interpretation before January 1, 2011. <C id="first-sale-valuation-17" />
+
+## The first-sale declaration requirement
+
+Congress also required CBP to collect information on first-sale use for a limited time. The December 30, 2010 technical correction records that the collection ran for a one-year period beginning August 20, 2008 and ending August 19, 2009, <C id="first-sale-valuation-18" /> implemented by an interim rule published on August 25, 2008 as CBP Dec. 08-31. <C id="first-sale-valuation-19" /> Because the statutory authority expired on August 19, 2009, CBP removed paragraph (g) from 19 CFR 141.61, effective December 30, 2010. <C id="first-sale-valuation-20" />
+
+<Timeline title="First-sale in the Federal Register" items={[
+  {date: "2008-01-24", t: "Proposed reinterpretation", d: "CBP proposes basing value on the last sale in a series.", claim: "first-sale-valuation-22"},
+  {date: "2008-08-20", t: "Declaration period begins", d: "One-year collection of first-sale information starts.", claim: "first-sale-valuation-18"},
+  {date: "2009-08-19", t: "Declaration period ends", d: "Statutory authority for the declaration expires.", claim: "first-sale-valuation-18"},
+  {date: "2010-09-29", t: "Proposal withdrawn", d: "CBP withdraws the January 2008 proposal.", claim: "first-sale-valuation-17"},
+  {date: "2010-12-30", t: "Paragraph removed", d: "19 CFR 141.61(g) removed from the regulations.", claim: "first-sale-valuation-20"}
 ]} />
 
-Most duty guidance is about the rate. This is about the number the rate is applied to, and for anyone buying through a trading company or sourcing agent it is frequently the larger opportunity.
+## Worked example
 
-**This is not legal or customs advice.** Every source on this subject recommends qualified review, and that recommendation is correct.
+<Callout type="example" title="Worked example (hypothetical figures)">
+A factory sells 1,000 units to a trading company at $6.00 each ($6,000). The trading company resells to a U.S. importer at $8.00 each ($8,000). The importer paid $500 for a mold sent to the factory, used only for this order. Assume a combined ad valorem duty of 30%.
 
-## The mechanism
+- Middleman-price basis: ($8,000 + $500 assist) x 30% = $2,550.
+- First-sale basis, if the factory sale qualifies: ($6,000 + $500 assist) x 30% = $1,950.
 
-<Steps title="Two prices, one duty base" accent={0} source="savings of 15-25% off the dutiable base for qualifying importers"
- steps={[
-  { t: 'Factory price', d: 'first sale' },
-  { t: 'Middleman margin', d: 'marked up' },
-  { t: 'Your invoice', d: 'last sale' },
-  { t: 'Duty base', d: 'which one?' },
- ]} />
+The difference is $600. The assist is added in both cases because it is an addition under 152.103(b)(1)(iii). Whether the factory sale qualifies depends on the arm's-length and destined-for-the-U.S. conditions, and on documents showing that sale.
+</Callout>
 
-Picture a typical arrangement: a factory sells to a trading company at $6 a unit; the trading company sells to you at $9.
+## Records a first-sale claim depends on
 
-**Normally**, duty is assessed on $9 — the price you paid.
+The conditions described in the 2008 notice put the burden on the importer to show the earlier sale with "sufficient evidence." <C id="first-sale-valuation-13" /> In practice that means having access to documents from a transaction you were not a party to: the factory's invoice to the middleman, proof of payment, and evidence that the goods were made for and shipped to the United States. A middleman unwilling to share its purchase price makes the approach unavailable.
 
-**Under first sale valuation**, qualifying importers may declare duty on the **$6** — the price the intermediary paid the manufacturer.
+## What to check yourself
 
-At a combined duty rate of 30%, that is $2.70 against $1.80 per unit. Illustrative, and the shape is the point: **the saving scales with both the intermediary's margin and the duty rate.**
-
-<Figure value="15–25%" kind="recovered" source="reduction in dutiable base from first sale valuation, 2026, checked September 5, 2026">
- Reported reduction in the dutiable base on eligible transactions. It reduces the value the rate applies to rather than the rate itself, so it compounds with every other layer of the duty stack.
-</Figure>
-
-## Why it matters more now
-
-Reporting is direct: reliance on the first sale principle surged after Section 301 tariffs were introduced and has grown faster since 2025.
-
-The reason is arithmetic. **The higher the duty rate, the more a reduction in the dutiable base is worth.** One analysis notes that US companies importing Chinese-origin goods subject to Section 301 duties through multi-tier procurement can effectively reduce that burden by declaring the first sale value, where the qualifying conditions are met.
-
-Against a [tariff stack](/guides/tariff-stack-2026/) where sources report effective rates commonly at 20% to 30% and higher in some categories, a 15% to 25% reduction in the base is a material line.
-
-<StockImage slug="first-sale-valuation" theme="logistics" />
-
-## Who qualifies
-
-The conditions are the whole subject, and they are why this needs professional review rather than a decision.
-
-Broadly, and consistently described across sources, you need:
-
-**A genuine multi-tier transaction.** A real sale from manufacturer to intermediary, and a separate sale from intermediary to you. Not one transaction with an invoice re-issued.
-
-**Goods clearly destined for the United States** at the time of the first sale.
-
-**An arm's-length first sale** at a price unaffected by any relationship between the parties.
-
-**Documentation of that first sale** — the manufacturer's invoice, payment evidence, and the commercial terms.
-
-**That last requirement is where most sellers stop.** It means your trading company has to show you what they paid the factory. Many will not, and asking changes the relationship.
-
-**Which is the honest limitation:** first sale is available to importers whose intermediaries will co-operate, and that is a commercial negotiation before it is a customs question.
-
-## What it is not
-
-**It is not a way to lower your declared value.** It is a legally defined alternative valuation basis with specific conditions. Declaring a lower value without meeting them is a valuation misstatement, exposed under the penalty tiers covered in the [classification guide](/guides/hts-classification-basics/).
-
-**It does not change your HTS code.** Reporting is explicit that first sale reduces the value on which duty is calculated and pairs well with a classification review, but the two are separate exercises.
-
-**It is not the same as an FTA preferential rate.** these are two separate and independent tools: a free trade agreement reduces the applicable percentage; first sale reduces the value the percentage is applied to. Where both are available, both apply.
-
-## The legislative risk
-
-Worth stating plainly because it changes the timing calculation.
-
-**The Last Sale Valuation Act**, introduced on February 11, 2026 by Senators Cassidy and Whitehouse (per trade-press coverage; check its status on congress.gov before relying on it), would eliminate first sale for export by requiring duties to be calculated on the last sale price before importation.
-
-**It is not law.** a similar proposal was attempted in 2008 and abandoned.
-
-**But the practical advice in the source material is sound:** if you have a qualifying supply chain, the savings available now become permanently unavailable if the bill passes. That argues for evaluating and documenting eligible claims promptly rather than treating it as a project for next year.
-
-## How to work out whether it applies to you
-
-**Four questions, in order:**
-
-1. **Is there an intermediary between you and the factory?** No intermediary, no first sale. This eliminates most sellers buying direct.
-2. **How wide is their margin?** The saving is a percentage of the gap. A 5% intermediary margin is not worth the compliance work; a 40% one is.
-3. **What is your duty rate?** At 3% the saving is trivial. At 30% it is not.
-4. **Will the intermediary provide the manufacturer's invoice and payment evidence?** If not, the answer is no regardless of the first three.
-
-**Then take it to a customs attorney or a trade compliance specialist**, with the documents. this work as sitting between what a standard customs broker handles and what trade counsel produces for litigation — which is a fair description of where the expertise lives.
-
-## What to do
-
-**Establish whether your supply chain is multi-tier.** Many sellers do not know whether their "factory" is a factory — see the [supplier verification guide](/guides/supplier-verification/), where reading the business license scope tells you whether you are dealing with 制造 (manufacturing) or 贸易 (trade).
-
-**Calculate the prize before doing the work.** Intermediary margin multiplied by duty rate multiplied by annual volume. If that number does not justify professional fees, stop here.
-
-**Ask the intermediary early.** Their willingness to document the first sale decides everything, and it is better discovered before you have paid for advice.
-
-**Do not attempt it without review.** Every source recommends qualified legal or customs review, and the downside of an unsupported valuation claim is the penalty regime rather than a rejected form.
-
-**If it applies, act on it this year** rather than next, given the pending bill.
-
-<MiniCalc variant="stack" />
-
-Ask your trading company one question: will you give me the factory's invoice to you? Their answer tells you whether first sale is available — and whether the margin you have been paying duty on was worth hiding.
-
-<Faq items={[
- { q: "What is first sale valuation?", a: "A legally defined alternative customs valuation basis. In a multi-tier supply chain, duty is normally assessed on the price you paid the intermediary; first sale allows qualifying importers to declare duty on the earlier price the intermediary paid the manufacturer." },
- { q: "How much can it save?", a: "At 15% to 25% of the dutiable base on eligible transactions. Because it reduces the value rather than the rate, the saving scales with both the intermediary's margin and your duty rate." },
- { q: "Do I qualify?", a: "Broadly you need a genuine multi-tier transaction, goods clearly destined for the US at the time of the first sale, an arm's-length price, and documentation of that first sale. The last one is where most sellers stop, because the intermediary must disclose what they paid the factory." },
- { q: "Is it legal?", a: "Yes. It is a recognized valuation methodology with specific conditions. Declaring a lower value without meeting those conditions is a valuation misstatement and is treated as such." },
- { q: "Is it going away?", a: "Possibly. The Last Sale Valuation Act, introduced February 11, 2026, would eliminate it. It is not law and a similar 2008 attempt was abandoned — but the risk argues for acting now rather than later if you qualify." },
- { q: "Can I combine it with a free trade agreement rate?", a: "Yes. them as separate and independent tools — an FTA reduces the percentage, first sale reduces the value the percentage applies to." },
-]} />
-
-<Sources items={[
-  { title: '19 U.S.C. § 1401a (transaction value) and the first-sale rule under Nissho Iwai American Corp. v. United States (Fed. Cir. 1992); CBP informed compliance publication on first sale', publisher: 'United States Code, Title 19; U.S. Customs and Border Protection', accessed: '2026-09-05' },
- { title: 'First sale for export: the complete guide to reducing US import duty through customs valuation (Last Sale Valuation Act introduced 11 February 2026 and the abandoned 2008 attempt; surge in first sale reliance since Section 301; PwC and Perkins Coie analysis; separateness from FTA preferential rates)', publisher: 'Carra Globe', href: 'https://carraglobe.com/first-sale-for-export/', accessed: '2026-09-05' },
- { title: 'Using tariff engineering to lower your 2026 import costs (first sale using the earlier price paid by the intermediary to the manufacturer; pairing with a classification review; savings widest where the intermediary margin is wide)', publisher: 'Dedola', href: 'https://dedola.com/blog/using-tariff-engineering-to-lower-your-2026-import-costs/', accessed: '2026-09-05' },
- { title: 'How American importers are cutting their 2026 duty bills (first sale cutting the dutiable base by 15–25% on eligible transactions; the tariff mitigation market sitting between broker work and trade counsel)', publisher: 'Big News Network', href: 'https://www.bignewsnetwork.com/news/279014263/how-american-importers-are-cutting-their-2026-duty-bills-inside-the-tariff-mitigation-industry', accessed: '2026-09-05' },
- { title: '7 legal strategies to reduce import duties for US importers (first sale on the transaction side combined with tariff engineering and FTZ or drawback on the operations side)', publisher: 'Camtom', href: 'https://www.camtomx.com/en/blog/tariff-reduction-strategies-us-importers', accessed: '2026-09-05' },
- { title: 'Reduce import duty US 2026 (exploring first sale valuation where a middleman sits in the supply chain)', publisher: 'Carra Globe', href: 'https://carraglobe.com/reduce-import-duty-us-2026/', accessed: '2026-09-05' },
+<Checklist title="Confirm on the primary sources" items={[
+  "Read 19 CFR 152.101, 152.102 and 152.103 on eCFR (Title 19, Chapter I, Part 152, Subpart E), including the examples under 152.103(a)(1).",
+  "List every payment you make to the seller or for its benefit, plus tooling, molds and packing you supply, and test each against 152.103(b)(1).",
+  "Read CBP's January 24, 2008 notice and its September 29, 2010 withdrawal on federalregister.gov to see how the series-of-sales interpretation is described.",
+  "Check whether the buyer and seller are related under 152.102(g) before relying on transaction value.",
+  "Before declaring a first-sale value, confirm you can obtain the factory-to-middleman invoice and payment proof for each entry.",
+  "Ask your customs broker or CBP for a ruling on a specific supply chain before changing the declared value."
 ]} />

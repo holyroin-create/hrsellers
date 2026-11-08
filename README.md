@@ -1,153 +1,71 @@
-# FBA Tactics — fbatactics.com
+# fbatactics.com — v2 (GitHub Pages)
 
-Astro static site. Published by HR Express. Funded by display advertising.
-
-- **Stack:** Astro 7, MDX content collections, no client framework
-- **Deploy:** Cloudflare Pages — build `npm run build`, output `dist`
-- **Node:** 22.12 or later
+Static Astro site: marketplace fees and US import rules, every fact tied to a primary source.
+Every page is built from `src/content/**.mdx` + `data/claims/*.json`; the build **refuses to render a page
+that cites an unverified claim**, and CI gates block deployment on any policy, link, image or claims error.
 
 ```bash
 npm ci
-npm run dev            # http://localhost:4321
-npm run build          # → dist/
-npm run check          # build, then run the pre-deploy audit
-npm run local-preview  # build a file:// viewable copy in local-preview/
+npm run dev        # http://localhost:4321
+npm run check      # build + all gates (as CI runs them, except external links and Lighthouse)
 ```
 
-## Run the audit before every push
+## What you (the owner) must do — in this order
 
-```bash
-npm run check
+### 1. Confirm owner details (deploy is blocked until you do)
+Open `site.config.json`. The values were copied from the old repository (`src/config.ts`); nothing was guessed.
+- Check `publisherName`, `editorName`, `contactEmail` are current and that the mailbox receives mail.
+- Optional: `publisherLegalAddress`, `editorBio` (only true, checkable facts).
+- Set `"ownerConfirmed": true`.
+
+### 2. Create the repository and push
+1. On GitHub create a repository (e.g. `fbatactics`). Public or private both work with Pages on your plan; public is required on GitHub Free.
+2. Upload this folder's contents (not the ZIP itself) to the `main` branch — GitHub Desktop: *File → Add local repository*, commit, *Publish*.
+   The old repository `holyroin-create/hrsellers` can stay as an archive; do not deploy both to the same domain.
+
+### 3. Turn on Pages
+Repository → **Settings → Pages → Build and deployment → Source: GitHub Actions**. The workflow
+`.github/workflows/deploy.yml` builds, runs all gates, and deploys. Watch it under the **Actions** tab.
+
+### 4. Move the domain from Cloudflare Pages to GitHub Pages
+The live site is currently served by Cloudflare Pages (old repo had `_redirects`/`_headers`).
+1. **Settings → Pages → Custom domain:** enter `fbatactics.com`, Save (do this *before* changing DNS).
+2. At your DNS provider remove the records pointing to Cloudflare Pages for `@` and `www`, then add:
+   - `A @ 185.199.108.153`, `A @ 185.199.109.153`, `A @ 185.199.110.153`, `A @ 185.199.111.153`
+   - optional `AAAA @ 2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+   - `CNAME www <your-github-username>.github.io` (no repository name)
+   - No wildcard (`*`) records. If DNS is on Cloudflare, set these records to **DNS only** (grey cloud) until the certificate is issued.
+   Source: docs.github.com "Managing a custom domain for your GitHub Pages site" (checked 2026-11-08).
+3. Wait for the DNS check to pass, then tick **Enforce HTTPS**. If the certificate stalls, remove the domain, save, re-add it.
+4. Detach the domain from the Cloudflare Pages project so the two hosts do not compete.
+
+### 5. Search Console (same day)
+- Submit `https://fbatactics.com/sitemap-index.xml`.
+- Removed URLs return 404 on purpose (list: `docs/URL_ENVANTERI.csv`, decision `KALDIR`). Do **not** request removal for them; Google drops 404s on recrawl. Use the Removals tool only if an old page must disappear faster.
+- Use URL Inspection → *Request indexing* on the home page and 5–10 guides.
+
+### 6. AdSense
+1. Wait until the site has been live and crawled for at least 2–3 weeks with the new content.
+2. AdSense → **Privacy & messaging → European regulations**: create and publish the 3-button consent message. Then set `"googleCmpConfigured": true`.
+3. AdSense → Sites → request review. Verification uses the `google-adsense-account` meta tag already in every page, and `/ads.txt`.
+4. **After approval only:** create two display ad units, put their numeric IDs in `adSlots.inArticle` and `adSlots.endOfArticle`, set `"adsEnabled": true`, update the date on `/privacy/` and `/cookie-policy/`, push. The policy gate refuses `adsEnabled` without the CMP flag and slot IDs.
+No one can guarantee approval; see `docs/90_GUN_PLANI.md` for what to do after a rejection.
+
+## Updating content
+- New/changed guide: follow `docs/CONTENT_CONTRACT.md`. Every fact → a claim in `data/claims/<slug>.json`, checked by someone other than the writer (`verified_by` ≠ `produced_by` — CI enforces this).
+- A figure changed: update the claim, the sentence, `modified` + `lastVerified`, and add a line to `data/corrections.json`.
+- Policy log: add an entry to `data/policy-log.json` + a claim in `data/claims/policy-log.json`.
+- Weekly job (`weekly-sources.yml`) reopens every source and opens an issue for dead links or claims older than 120 days.
+
+## Layout
+```
+src/content/guides/*.mdx         guides           src/content/marketplaces/*.mdx  fee references
+data/claims/*.json               claims register  data/policy-log.json            log entries
+data/fee-presets.json            calculator rates data/tool-rates.json            MPF/HMF for the estimator
+data/images.json                 image manifest   data/redirects.json             old URL → new URL
+site.config.json                 owner settings   tools/gate-*.mjs                CI gates
+legacy/unverified/               old guides, not built     docs/                  all project documents
 ```
 
-`tools/verify.mjs` runs the checks that the August 2026 AdSense review turned up by
-hand, so a regression fails a build instead of failing an application. It exits non-zero
-on any of:
-
-- placeholder text reaching production (`REPLACE THIS PAGE`, `FILL_ME_IN`, `Lorem ipsum`)
-- an indexed page under 350 words of body copy
-- a missing canonical, a missing or very short meta description, or anything other than
-  exactly one `<h1>`
-- more than three ad containers on a page, an ad on a thin page, an ad inside the
-  navigation or ticker, or ad containers rendering while AdSense is switched off
-- a broken internal link anywhere in the build
-- a guide with no sources block, or sources without retrieval dates
-- a missing `robots.txt`, `ads.txt`, sitemap or `404.html`
-- a `_redirects` catch-all that would return the homepage with 200 for every URL
-- a missing trust page (privacy, terms, contact, about, editorial standards, corrections)
-
-It warns, without failing, when fewer than 12 guides are published and when a
-call-to-action button sits close to an ad container.
-
-The same audit runs in CI on every push and pull request (`.github/workflows/ci.yml`).
-
----
-
-## Repository layout
-
-```
-src/
-  config.ts                 site name, author, AdSense settings
-  data/
-    nav.ts                  navigation tree
-    policy.ts               fee & policy log — feeds the ticker, the Fee Watch
-                            module in the masthead, and /policy-log/
-    marketplaces.ts          per-marketplace fee reference — feeds /marketplaces/
-    covers.ts               data covers: the headline figure each guide plots
-  content/guides/           published guides (.mdx)
-  components/               Cover, PortalCard, AdSlot, Sources, Faq, …
-  pages/                    routes
-  styles/global.css         the whole design system
-tools/
-  make-local-preview.mjs    rewrites dist/ for file:// viewing (local only)
-public/
-  ads.txt  robots.txt  downloads/
-```
-
-**Single source of truth matters here.** `policy.ts` feeds three surfaces at once and
-`marketplaces.ts` feeds six pages. Edit the data file, not the page.
-
----
-
-## Editorial rules (these are not style preferences)
-
-The site's `/editorial-standards/` page makes public commitments. Breaking them in a
-commit breaks the site's claim about itself, which is what the previous AdSense
-rejection came down to.
-
-1. **Every rate carries the date it was checked and a link to its source.** The
-   `Sources` component takes an `accessed` date per item. No date, no publish.
-2. **Name the publisher of secondary sources**, especially where that publisher sells
-   the software that solves the problem the figure describes.
-3. **Record disagreements, do not resolve them.** Where two sources give different
-   values, publish both and send the reader to the primary source. Several pages carry
-   a contested-figures table for this reason.
-4. **Label illustrative figures** in the sentence that introduces them. Never present a
-   demonstration of arithmetic as a quoted rate.
-5. **First-party operational figures** get labelled as first-party with the period they
-   cover. Client, employer and partner data is never published in any form.
-6. **Corrections are logged**, dated, in `src/pages/corrections.astro`. Never edit a
-   figure silently.
-
----
-
-## Adding a guide
-
-1. Create `src/content/guides/<slug>.mdx`. Frontmatter schema is in
-   `src/content.config.ts` — `category` must match the enum.
-2. Add a cover in `src/data/covers.ts` keyed on the same slug. Four kinds are
-   available: `range`, `cliff`, `timeline`, `ledger`. Without an entry the guide falls
-   back to a generic category cover.
-3. Fill the `Sources` block with real links and access dates.
-4. `draft: true` keeps it out of the build.
-
-## Adding a marketplace
-
-Append a record to `MARKETPLACES` in `src/data/marketplaces.ts`. The page, the
-comparison row, the nav entry and the utility-strip link all follow from it.
-
----
-
-## Advertising
-
-Ads are off until **both** of these are true in `src/config.ts` and the `AdSlot` calls:
-
-- `adsenseEnabled: true`
-- a real `slot` ID passed to each `<AdSlot slot="…" />`
-
-While either is missing, `AdSlot` renders **nothing at all** — not a placeholder. This is
-deliberate: a labelled "Advertisement" frame with an empty box inside it looks like a
-broken ad unit to a reviewer and like dead space to a reader.
-
-Placement rules the pages honour, and which should survive any redesign:
-
-- No ad above the fold on any page.
-- No ad inside navigation, the ticker, or any sticky or overlay layer.
-- No call-to-action button in or adjacent to an ad container.
-- Maximum three ad slots per page.
-- No ads on pages without substantial content.
-
-## Consent
-
-Google's certified CMP must be live in the AdSense dashboard (Privacy & messaging →
-European regulations) before any EEA, UK or Swiss traffic arrives. `/privacy/` states
-that a consent platform is shown to those visitors — if it is not actually live, the site
-is making a claim it does not meet.
-
----
-
-## Before re-applying to AdSense
-
-- [ ] Google CMP live and verified
-- [ ] `/privacy/` and `/terms/` load with no placeholder banner
-- [ ] `https://fbatactics.com/does-not-exist` returns a real 404, not the homepage
-- [ ] No `_redirects` catch-all (`/* /index.html 200`) anywhere in the repo
-- [ ] `/ads.txt` returns plain text with the publisher ID
-- [ ] `/robots.txt` allows crawling and disallows `/style-guide/`
-- [ ] Sitemap submitted in Search Console and pages indexed
-- [ ] 12–15 guides published with `draft: false`
-- [ ] A visible publishing history — regular posts over several weeks, not one bulk upload
-- [ ] Every `Sources` link in every guide opened and verified
-
-The last two are the ones that decide it. The rejection reason was low-value content;
-the fix is published volume and a real publishing cadence, not markup.
+## Licenses
+Code: MIT (`LICENSE`). Text and graphics: © the publisher, all rights reserved (`LICENSE-CONTENT.md`). Fonts: SIL OFL 1.1 (`public/fonts-licenses/`).

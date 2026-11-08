@@ -2,128 +2,43 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE, AUTHOR } from '../config';
-
-const {
-  title,
-  /* Short search title (55–60 chars). Falls back to the editorial headline. */
-  seoTitle,
-  description = SITE.description,
-  published,
-  modified,
-  type = 'WebPage',
-  noindex = false,
-  /* Path to a page-specific social image (1200×630). Falls back to the
-     site-wide default so no share ever renders without an image. */
-  ogImage = '/og-default.png',
-} = Astro.props;
-
+import { SITE, ADS_ON } from '../lib/site';
+interface Props { title: string; description: string; og?: string; noindex?: boolean; jsonld?: object[]; ads?: boolean; type?: string; noCanonical?: boolean; bareTitle?: boolean }
+const { title, description, og = '/og/default.png', noindex = false, jsonld = [], ads = false, type = 'website', noCanonical = false, bareTitle = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.domain).href;
-const ogImageAbs = new URL(ogImage, SITE.domain).href;
-const baseTitle = seoTitle ?? title;
-const fullTitle = baseTitle === SITE.name ? baseTitle : `${baseTitle} — ${SITE.name}`;
-
-const person = {
-  '@type': 'Person',
-  name: AUTHOR.name,
-  jobTitle: AUTHOR.role,
-  worksFor: { '@type': 'Organization', name: AUTHOR.company },
-  alumniOf: { '@type': 'CollegeOrUniversity', name: 'Ostim Technical University' },
-  knowsAbout: [
-    'Amazon FBA', 'Walmart Marketplace', 'eBay selling',
-    'marketplace listing operations', 'third-party fulfillment', 'e-commerce logistics',
-  ],
-  url: `${SITE.domain}/about/`,
-  ...(AUTHOR.social?.length ? { sameAs: AUTHOR.social.map((x: any) => x.href) } : {}),
-};
-
-const schema = type === 'Article'
-  ? {
-      '@context': 'https://schema.org',
-      '@type': 'TechArticle',
-      headline: title,
-      alternativeHeadline: seoTitle,
-      description,
-      author: person,
-      publisher: { '@type': 'Organization', name: SITE.publisher, url: SITE.domain, email: AUTHOR.email },
-      datePublished: published,
-      dateModified: modified ?? published,
-      mainEntityOfPage: canonical,
-    }
-  : {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: SITE.name,
-      url: SITE.domain,
-      description,
-      publisher: { '@type': 'Organization', name: SITE.publisher, url: SITE.domain, email: AUTHOR.email, founder: person },
-    };
+const fullTitle = Astro.url.pathname === '/' ? `${SITE.siteName} — ${title}` : bareTitle || title.length > 56 ? title : `${title} | ${SITE.siteName}`;
+const ogUrl = new URL(og, SITE.domain).href;
+const loadAds = ADS_ON && ads;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
-<meta charset="utf-8" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Archivo:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>{fullTitle}</title>
-<meta name="description" content={description} />
-<link rel="alternate" type="application/rss+xml" title="FBA Tactics" href="/rss.xml" />
-<link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex,follow" />}
-<meta name="author" content={AUTHOR.name} />
-{/* Site ownership verification for AdSense. Must stay in place whether or not
-    ads are switched on — removing it can un-verify the site. */}
-<meta name="google-adsense-account" content={SITE.adsensePublisherId} />
-<meta property="og:type" content={type === 'Article' ? 'article' : 'website'} />
-<meta property="og:title" content={fullTitle} />
-<meta property="og:description" content={description} />
-<meta property="og:url" content={canonical} />
-<meta property="og:site_name" content={SITE.name} />
-<meta property="og:image" content={ogImageAbs} />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content={ogImageAbs} />
-<link rel="sitemap" href="/sitemap-index.xml" />
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
-{/* Google Analytics 4 — measurement ID for fbatactics.com */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RJ7LGSCFE"></script>
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4RJ7LGSCFE');
-</script>
-{SITE.adsenseEnabled && (
-  <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`} crossorigin="anonymous"></script>
-)}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  {!noCanonical && <link rel="canonical" href={canonical} />}
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  <meta name="google-adsense-account" content={SITE.adsensePublisherId} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="FBA Tactics policy log" href="/rss.xml" />
+  <meta property="og:site_name" content={SITE.siteName} />
+  <meta property="og:type" content={type} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#15202b" />
+  <noscript><style>.nav{display:flex;position:static}.menu-toggle{display:none}</style></noscript>
+  {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+  {loadAds && <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`} crossorigin="anonymous"></script>}
 </head>
 <body>
-<Header />
-<main id="main">
-  <slot />
-</main>
-<Footer />
-<script is:inline>
-  (function () {
-    var covers = document.querySelectorAll('.cover');
-    if (!covers.length) return;
-    if (!('IntersectionObserver' in window) ||
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      covers.forEach(function (el) { el.classList.add('is-in'); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        e.target.classList.add('is-in');
-        io.unobserve(e.target);
-      });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.25 });
-    covers.forEach(function (el) { io.observe(el); });
-  })();
-</script>
+  <Header />
+  <main id="main"><slot /></main>
+  <Footer />
 </body>
 </html>

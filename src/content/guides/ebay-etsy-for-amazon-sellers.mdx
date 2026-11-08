@@ -1,153 +1,141 @@
 ---
-title: "Six sources give eBay's fee as 12.9%, 13.25%, 13.35%, 13.6%, 14.0% and 15.3%"
-seoTitle: "eBay and Etsy Fees for Amazon Sellers: 13.6% + $0.40, and Etsy's Stack"
-description: "They are mostly describing the same fee at different levels of completeness — before or after the per-order charge, on the item or on item plus shipping, in one category or another. Etsy's headline is lower and its stack has four parts."
-category: "Scaling"
+title: "Amazon, Walmart, eBay, Etsy and Shopify fees on one $25 item"
+description: "One hypothetical $25 sale run through each platform's published rates: referral, final value, transaction, processing and plan fees, with the arithmetic shown."
+category: "Marketplace fees"
 published: "2026-08-21"
-modified: "2026-09-05"
-minutes: 10
-numbered: true
-ledger: "eBay 13.6% + $0.30/$0.40 (eBay) · Etsy 6.5% + processing + $0.20 + Offsite Ads"
-ledgerKind: "cost"
-draft: false
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 5
+summary:
+  - "On a $25 home goods item with free shipping, Amazon and Walmart referral fees are both 15%, or $3.75."
+  - "eBay's 13.6% final value fee plus a $0.40 per-order fee comes to $3.80 on the same sale."
+  - "Etsy's listing, 6.5% transaction and US processing fees total about $2.83, or $6.58 if the order is attributed to Offsite Ads at 15%."
+  - "Shopify Basic charges 2.9% + 30¢ per online card payment, about $1.03, plus a monthly plan fee."
+  - "Amazon, Walmart, eBay and Etsy include shipping charged in their fee bases; eBay's base and Etsy's processing fee also include sales tax."
+hero:
+  kind: "flow"
+  steps: ["$25 sale", "Percentage fee", "Fixed per-order fee", "Share of monthly plan"]
+related: ["amazon", "walmart", "ebay", "etsy", "shopify", "etsy-offsite-ads-economics"]
 ---
 
-import Takeaways from '../../components/Takeaways.astro';
-import Figure from '../../components/Figure.astro';
-import Faq from '../../components/Faq.astro';
-import Sources from '../../components/Sources.astro';
+Run one hypothetical $25.00 item through each platform's published rates and the per-sale fees come out as: Amazon $3.75 on the Professional plan, Walmart $3.75, eBay $3.80, Etsy about $2.83 (or $6.58 when Etsy attributes the order to Offsite Ads), and Shopify Basic about $1.03 in card fees. Amazon's Professional plan and Shopify's plans add a monthly fee on top; Walmart states it has no monthly fee.
 
-import MiniCalc from '../../components/MiniCalc.astro';
+These are arithmetic results from each platform's own fee pages, under the assumptions stated below. They do not include fulfillment, shipping labels, advertising other than Etsy's Offsite Ads, or the cost of bringing buyers to a standalone store. Each platform's full fee reference is linked at the end.
 
-import StockImage from '../../components/StockImage.astro';
+## Assumptions for the worked example
 
-<Takeaways items={[
- "eBay's 2026 final value fee for most categories is 13.6% of the total sale (item, shipping and sales tax) up to $7,500, plus $0.30 per order under $10 and $0.40 above. The 12.9% to 15.3% spread across published guides is mostly definitional: whether the per-order fee is included, whether shipping is in the base, and which category.",
- "eBay charges on item plus shipping. A $20 item with $8 shipping is charged on $28 — a structural difference from Amazon and Walmart worth understanding before pricing.",
- "Etsy's stack has four parts: a 6.5% transaction fee, payment processing, a $0.20 listing fee renewed every four months, and offsite ads. A fee-comparison site puts the total effective rate at roughly 9.5% to 11.3%.",
- "Etsy's offsite ads fee is at 15% and is mandatory above a revenue threshold. It is the line that decides which platform is cheaper on a given sale.",
- "Neither is a general second marketplace for an FBA seller. eBay suits used, refurbished, parts and high-ticket goods; Etsy suits handmade, custom and vintage under a policy that excludes most private label.",
+Worked example (hypothetical):
+
+- One unit sold at a $25.00 item price, $0 shipping charged, no gift wrap, no sales tax collected.
+- A home goods item: Amazon Home and Kitchen, Walmart Home, Kitchen, Decor & Garden, and eBay's most-categories rate.
+- Seller-fulfilled everywhere; no FBA or WFS fees.
+- eBay listing within the monthly zero insertion fee allowance; Above Standard account.
+- Etsy: US seller with a US bank account; one listing fee per sale.
+- Shopify: Basic plan, Shopify Payments, standard online card.
+
+## The comparison
+
+| Platform and setup | Rate applied | Per-sale fee on $25.00 | Fixed cost outside the sale | |
+|---|---|---|---|---|
+| Amazon, Professional plan | 15% referral (minimum $0.30) | $3.75 | $39.99 per month | <C id="ebay-etsy-for-amazon-sellers-01" /> <C id="ebay-etsy-for-amazon-sellers-02" /> |
+| Amazon, Individual plan | 15% referral + $0.99 per item | $4.74 | — | <C id="ebay-etsy-for-amazon-sellers-03" /> |
+| Walmart Marketplace | 15% referral | $3.75 | no setup or monthly fee | <C id="ebay-etsy-for-amazon-sellers-04" /> <C id="ebay-etsy-for-amazon-sellers-05" /> |
+| eBay | 13.6% final value fee + $0.40 per order | $3.80 | $0.35 per listing after 250 free a month | <C id="ebay-etsy-for-amazon-sellers-06" /> <C id="ebay-etsy-for-amazon-sellers-07" /> <C id="ebay-etsy-for-amazon-sellers-08" /> |
+| Etsy, not attributed to Offsite Ads | $0.20 listing + 6.5% transaction + 3% + $0.25 processing | $2.83 | — | <C id="ebay-etsy-for-amazon-sellers-09" /> <C id="ebay-etsy-for-amazon-sellers-10" /> <C id="ebay-etsy-for-amazon-sellers-11" /> |
+| Etsy, attributed at 15% | the above + 15% Offsite Ads | $6.58 | — | <C id="ebay-etsy-for-amazon-sellers-12" /> |
+| Shopify Basic | 2.9% + 30¢ card rate | $1.03 | $29 per month billed yearly, $39 monthly | <C id="ebay-etsy-for-amazon-sellers-13" /> <C id="ebay-etsy-for-amazon-sellers-14" /> |
+
+*Worked example using rates from Amazon (sell.amazon.com/pricing), Walmart Marketplace (referral fees), eBay Help (selling fees), Etsy (fees and payments policies) and Shopify (pricing), checked Nov 8, 2026.* <C id="ebay-etsy-for-amazon-sellers-15" />
+
+Working, row by row:
+
+- **Amazon Professional:** 15% × $25.00 = $3.75, above the $0.30 minimum <C id="ebay-etsy-for-amazon-sellers-15" />.
+- **Amazon Individual:** $3.75 + $0.99 = $4.74.
+- **Walmart:** 15% × $25.00 = $3.75.
+- **eBay:** 13.6% × $25.00 = $3.40, plus $0.40 because the order is over $10.00 = $3.80.
+- **Etsy:** $0.20 + (6.5% × $25.00 = $1.625) + (3% × $25.00 + $0.25 = $1.00) = $2.825, shown as $2.83. With Offsite Ads at 15%, add $3.75 for $6.575, shown as $6.58.
+- **Shopify Basic:** 2.9% × $25.00 = $0.725, plus $0.30 = $1.025, shown as $1.03.
+
+A dash in the fixed-cost column means no fixed cost was used in this example. Etsy's $0.20 is charged per listing whether or not it sells <C id="ebay-etsy-for-amazon-sellers-09" />, and is counted in the per-sale fee here on the assumption of one listing per sale.
+
+## What is left of the $25.00
+
+The same worked example expressed as the amount remaining after the per-sale platform fee, before product cost, shipping labels, fulfillment and any monthly plan fee.
+
+| Platform and setup | Per-sale fee | Remaining from $25.00 | Fee as % of $25.00 |
+|---|---|---|---|
+| Amazon, Professional plan | $3.75 | $21.25 | 15.0% |
+| Amazon, Individual plan | $4.74 | $20.26 | 19.0% |
+| Walmart Marketplace | $3.75 | $21.25 | 15.0% |
+| eBay | $3.80 | $21.20 | 15.2% |
+| Etsy, not attributed | $2.83 | $22.18 | 11.3% |
+| Etsy, attributed at 15% | $6.58 | $18.43 | 26.3% |
+| Shopify Basic | $1.03 | $23.98 | 4.1% |
+
+*Worked example using the rates cited in the comparison table above, checked Nov 8, 2026.* <C id="ebay-etsy-for-amazon-sellers-15" />
+
+Etsy and Shopify amounts are computed from unrounded fees ($2.825, $6.575 and $1.025) and then rounded, so they differ by a cent from subtracting the rounded fee. The Individual-plan percentage is 19.0% because the $0.99 per-item fee alone is about 4% of a $25.00 price.
+
+## The percentage rates side by side
+
+<Bars title="Headline percentage rates used in the $25 example" unit="%" rows={[
+  {label: "Amazon, Home and Kitchen referral", value: 15, claim: "ebay-etsy-for-amazon-sellers-01"},
+  {label: "Walmart, Home, Kitchen, Decor & Garden referral", value: 15, claim: "ebay-etsy-for-amazon-sellers-04"},
+  {label: "eBay, most categories final value fee", value: 13.6, claim: "ebay-etsy-for-amazon-sellers-06"},
+  {label: "Etsy, transaction fee", value: 6.5, claim: "ebay-etsy-for-amazon-sellers-10"},
+  {label: "Etsy, US payment processing (plus $0.25)", value: 3, claim: "ebay-etsy-for-amazon-sellers-11"},
+  {label: "Shopify Basic, online standard card (plus 30¢)", value: 2.9, claim: "ebay-etsy-for-amazon-sellers-13"}
 ]} />
 
-eBay charges 13.6% on the item, the shipping and the sales tax, plus $0.40 an order. Every other number you have read for eBay's fee is that one with a piece missing. The [second marketplace guide](/guides/second-marketplace-decision/) puts Walmart first for a US physical-goods seller. These two are the answer when your product does not fit that pattern — and both are frequently misread from their headline rates.
+The percentages alone understate eBay and Etsy on small orders, because of eBay's per-order fee and Etsy's $0.20 listing and $0.25 processing amounts. They also leave out Amazon's and Shopify's monthly plan fees.
 
-## eBay, and why the number moves
+## What changes the result
 
-| Source | Reported final value fee |
-| --- | --- |
-| SPX Commerce | 12.9% + $0.30 (including payment processing) |
-| ProfitCalcu | 13.25% + $0.30, capped at $750 per item |
-| Platform Fee Calculator | 13.35% + $0.40 on item plus shipping, processing included |
-| Taxomate | 13.6% + $0.40 |
-| EcomCalcTools | 14.0% effective on a $100 sale, most categories, no store |
-| Webgility | 12%–15% plus a small per-order charge |
-| eBay's own stated range (per one source) | 2.5%–15.3% by category |
+### Shipping charged to the buyer
 
-**These are largely the same fee described differently.** Whether the per-order charge is folded in, whether the base includes shipping, and which category — those three choices produce the spread.
+Each marketplace fee base shown here includes shipping. Amazon's total price includes shipping costs <C id="ebay-etsy-for-amazon-sellers-16" />; Walmart's total sales price includes shipping and handling <C id="ebay-etsy-for-amazon-sellers-17" />; eBay's total amount of the sale includes shipping collected from the buyer <C id="ebay-etsy-for-amazon-sellers-18" />; Etsy's transaction fee applies to shipping <C id="ebay-etsy-for-amazon-sellers-19" /> and its processing fee to the gross order amount <C id="ebay-etsy-for-amazon-sellers-20" />.
 
-**Two things every source agrees on:**
+Worked example (hypothetical): the same item at $25.00 plus $5.00 shipping, $30.00 total, with the Shopify card charged for the full $30.00.
 
-**Payment processing is included.** No separate charge, unlike Etsy.
+| Platform | Per-sale fee on $30.00 |
+|---|---|
+| Amazon Professional (15%) | $4.50 |
+| Walmart (15%) | $4.50 |
+| eBay (13.6% + $0.40) | $4.48 |
+| Etsy, no Offsite Ad | $3.30 |
+| Shopify Basic (2.9% + 30¢) | $1.17 |
 
-**The fee is charged on item plus shipping.** One source's example: a $20 item with $8 shipping is charged on $28. **That inverts the usual instinct to move cost into shipping** — on eBay it changes nothing except your fee base.
+*Worked example using the same sourced rates, checked Nov 8, 2026.* <C id="ebay-etsy-for-amazon-sellers-18" />
 
-One 2026 change: clothing and accessories rose from 15% to 15.3%, with the per-order charge unchanged.
+### Sales tax
 
-<Figure value="12.9%–15.3%" kind="cost" source="Six published eBay final value fee figures, checked September 5, 2026">
- Published eBay fee rates across six sources. Mostly the same fee at different levels of completeness — which is why "what does eBay charge" has no single answer.
-</Figure>
+eBay's total amount of the sale includes sales tax <C id="ebay-etsy-for-amazon-sellers-18" />, and Etsy's processing fee is assessed on the gross order including tax <C id="ebay-etsy-for-amazon-sellers-20" />. For US sellers, Etsy's transaction fee does not apply to sales tax <C id="ebay-etsy-for-amazon-sellers-21" />. With $2.00 of tax on the $25.00 sale, eBay's fee rises to $4.07 and Etsy's to $2.89.
 
-**Listing fees:** at up to 250 free fixed-price listings a month, then $0.35 each. Store subscribers get more — one source says up to 10,000 depending on plan.
+### Category
 
-**The store subscription** will reduce final value fees, with one source citing as little as 4.6% on qualifying categories. Reported break-even logic: worth it if you regularly exceed the free listing allowance, or if the reduced rates on your volume exceed the subscription cost.
+The 15% Amazon and Walmart figures are for home goods. Other categories differ: Consumer Electronics is 8% on both Amazon <C id="ebay-etsy-for-amazon-sellers-22" /> and Walmart <C id="ebay-etsy-for-amazon-sellers-23" />, or $2.00 on $25.00. For apparel at $25.00, Amazon's Clothing and Accessories rate is 17% <C id="ebay-etsy-for-amazon-sellers-24" />, or $4.25, and Walmart's Apparel & Accessories rate is 15% <C id="ebay-etsy-for-amazon-sellers-25" />, or $3.75.
 
-## Etsy, and the fee nobody models
+### Volume and the monthly fees
 
-**The four-part stack:**
+Amazon's $39.99 Professional fee and Shopify's plan fee are fixed per month, so their cost per order depends on how many orders you have. Worked example (hypothetical): at 50 orders a month, $39.99 is $0.80 per order and Shopify Basic billed yearly ($29) is $0.58 per order; at 500 orders, $0.08 and $0.06. Amazon's Individual plan replaces the monthly fee with $0.99 per item <C id="ebay-etsy-for-amazon-sellers-03" />; above about 40 items a month, Professional costs less in plan fees.
 
-| Component | Reported |
-| --- | --- |
-| Transaction fee | 6.5% of item price including shipping |
-| Payment processing | ~3% + $0.25 |
-| Listing fee | $0.20, renewed every four months |
-| Offsite ads | 15%, mandatory above a revenue threshold |
+## What the table does not include
 
-**Total effective rate without offsite ads:** at roughly 9.5% to 11.3%.
+- **Fulfillment.** FBA costs are based on price, weight and dimensions <C id="ebay-etsy-for-amazon-sellers-26" />; WFS fulfillment starts at $3.45 for items of 1 lb. or less <C id="ebay-etsy-for-amazon-sellers-27" />. Neither is in the comparison.
+- **Etsy's Offsite Ads frequency.** Only attributed orders pay it <C id="ebay-etsy-for-amazon-sellers-28" />; see [Etsy Offsite Ads economics](/guides/etsy-offsite-ads-economics/).
+- **Shopify third-party providers.** Using a provider other than Shopify Payments adds a 2% Shopify fee on Basic <C id="ebay-etsy-for-amazon-sellers-29" /> plus that provider's own charges.
+- **eBay surcharges.** Below Standard accounts pay an additional 6% on final value fees <C id="ebay-etsy-for-amazon-sellers-30" />.
 
-**The offsite ads program is the decision point.** One source reports it as mandatory for sellers above $10,000 in annual revenue and as significantly increasing costs. Another frames the comparison directly: for items priced $20 to $200 **without** offsite ads, Etsy is typically cheaper than eBay by about 3.5 to 4 percentage points — and **if 40% or more of your Etsy sales trigger the 15% fee, eBay's flat rate may be predictably cheaper.**
+## What to check yourself
 
-That is the sharpest published framing of the choice, and it turns on a number you can only measure after selling there for a while.
-
-<StockImage slug="ebay-etsy-for-amazon-sellers" theme="ecommerce" />
-
-## Which fits which product
-
-Reported guidance, and it is consistent:
-
-**eBay wins on:**
-- **Used, refurbished and non-handmade goods** — no category restrictions
-- **High-value items above $500** with a store subscription
-- **Parts, accessories and collectibles** where search demand is specific
-- **International buyers**, via the global shipping program
-- Cases where Etsy's offsite ads attribution is heavy
-
-**Etsy wins on:**
-- **Handmade, craft, custom and vintage** items — its buyer base actively searches for these
-- **Items $20 to $200** where offsite ads do not trigger
-- Products where the audience justifies a premium
-
-**Etsy's handmade and vintage policy** is the hard constraint: some items simply do not belong there. **For a standard private-label FBA product, that usually settles it.**
-
-## What this means for an FBA seller
-
-**Neither is a general-purpose second marketplace.** Walmart is, for the reasons in the [Walmart guide](/guides/walmart-wfs/) — same logistics, same customer expectation, comparable fulfillment program.
-
-**eBay is worth considering** if you have returned, open-box or refurbished inventory that Amazon will not let you list as new, or if you sell parts and accessories where eBay's search behavior differs. It is also a route for [removal-order inventory](/guides/removal-vs-hold-decision/) that would otherwise be liquidated at a fraction of value.
-
-**Etsy is worth considering** only if your product genuinely fits the handmade, custom or vintage policy. Listing a mass-produced private-label item there is a policy problem waiting to happen.
-
-**Both add the same overheads as any channel:** sales tax on direct-adjacent sales — see the [sales tax guide](/guides/sales-tax-nexus/) — pricing constraints from [parity policies](/guides/cross-channel-price-parity/), and multi-channel inventory and accounting.
-
-**And on fulfillment:** [MCF](/guides/mcf-off-amazon-orders/) can ship eBay orders from your FBA inventory, with the caveat that alternative last-mile providers being required on eBay because Amazon's in-house delivery cannot be used there.
-
-## What to do
-
-**Compare on your own category and price point**, not on headline rates. Every source's number is correct for some configuration.
-
-**Remember eBay charges on item plus shipping.** Free shipping is not free; it moves cost into the fee base.
-
-**Measure Etsy's offsite ads attribution before judging.** It is the line that decides the comparison and you cannot know it in advance.
-
-**Check the store subscription break-even** if you list more than 250 items a month or sell high-ticket goods.
-
-**Treat these as product-fit decisions, not diversification.** The diversification argument is in the [second marketplace guide](/guides/second-marketplace-decision/); these two are answers to "where does this specific product belong."
-
-**Run it on your own figures.** The [margin and break-even calculator](/tools/margin-calculator/) takes your price, cost of goods, referral rate, fulfillment fee, returns and ad spend and returns net profit per unit, net margin and the maximum ACOS the product can carry. Nothing is stored and nothing leaves your browser.
-
-<MiniCalc variant="margin" />
-
-Take one SKU you already sell and price it on both platforms at the same net margin you get on Amazon. If the eBay price comes out above the market for that item, the fee question is answered before you list.
-
-<Faq items={[
- { q: "What does eBay actually charge?", a: "Reported between 12.9% and 15.3% across six sources plus a per-order fee of $0.30 to $0.40. The spread is mostly definitional — whether the per-order fee is included, whether shipping is in the base, and which category. Payment processing is included." },
- { q: "Does eBay charge fees on shipping?", a: "Yes. The final value fee applies to the total the buyer pays, item plus shipping. A $20 item with $8 shipping is charged on $28." },
- { q: "Is Etsy cheaper than eBay?", a: "For items $20 to $200 without offsite ads, reported as typically cheaper by about 3.5 to 4 percentage points. eBay becomes more competitive above $500 with a store subscription, or where Etsy's 15% offsite ads fee applies heavily." },
- { q: "What is Etsy's offsite ads fee?", a: "15% of the attributed order, dropping to 12% once the shop has made $10,000 in a trailing twelve months — at which point participation becomes mandatory for the life of the shop, per Etsy's Fees & Payments Policy. It is the line that decides which platform is cheaper, and you cannot measure your attribution rate until you have sold there." },
- { q: "Can I sell private-label products on Etsy?", a: "Generally no. Etsy's handmade and vintage policy means some items do not belong there, and a mass-produced private-label item usually falls outside it." },
- { q: "Should an FBA seller add eBay?", a: "As a product-fit decision rather than diversification. It suits used, refurbished, open-box, parts and high-ticket goods — including inventory Amazon will not let you list as new, which would otherwise be liquidated." },
+<Checklist title="Rebuild this comparison with your own item" items={[
+  "Find your product's fee category on sell.amazon.com/pricing and marketplace.walmart.com/referral-fees.",
+  "Check whether your eBay category has its own final value fee rate on eBay Help, Selling fees.",
+  "Use your real price plus the shipping you charge as the fee base on every platform.",
+  "Add eBay's per-order fee and Etsy's $0.20 listing and $0.25 processing amounts; they matter most on low prices.",
+  "Divide monthly plan fees by your expected monthly orders.",
+  "Add fulfillment, labels and advertising costs, which this comparison leaves out.",
+  "Re-check each fee page on the day you decide."
 ]} />
 
-<Sources items={[
-  { title: 'eBay selling fees, US (final value fee 13.6% of the total amount of the sale up to $7,500 in most categories, 2.35% above; per-order fee $0.30 on orders of $10 or less and $0.40 above; 250 free insertions per month)', publisher: 'eBay Seller Center', accessed: '2026-09-05' },
-  { title: 'Fees & Payments Policy (6.5% transaction fee on item price plus shipping; $0.20 listing fee; Offsite Ads 15% or 12% above $10,000; $100 cap per order)', publisher: 'Etsy', accessed: '2026-09-05' },
-  { title: 'eBay final value fees explained, 2026 (13.6% on item plus shipping plus tax; $0.30 / $0.40 per-order fee since March 15, 2024)', publisher: 'FlowLister', href: 'https://flowlister.com/blog/ebay-final-value-fees-explained/', accessed: '2026-09-05' },
- { title: 'eBay vs Etsy fees 2026: which keeps more money? (eBay 13.35% + $0.40 on item plus shipping with processing included; Etsy 6.5% transaction fee; Etsy typically cheaper by 3.5–4 points for $20–$200 items without offsite ads; store subscribers as low as 4.6%; product-fit guidance)', publisher: 'Platform Fee Calculator', href: 'https://platformfeecalculator.com/blog/ebay-vs-etsy-fees', accessed: '2026-09-05' },
- { title: 'eBay vs Etsy — which is cheaper for sellers in 2026? (eBay 13.25% + $0.30 capped at $750 per item; Etsy 6.5% + 3% + $0.25 processing giving roughly 9.5–10%; 250 free listings then $0.35; store subscription listing allowances)', publisher: 'ProfitCalcu', href: 'https://profitcalcu.com/blog/ebay-vs-etsy-cheaper-for-sellers/', accessed: '2026-09-05' },
- { title: 'eBay selling fees 2026 (13.6% final value fee and $0.35 insertion fees; Etsy offsite ads significantly increasing costs above $10,000 annual revenue; promoted listings adding 2–10%)', publisher: 'Voolist', href: 'https://www.voolist.com/blog/ebay-selling-fees-explained', accessed: '2026-09-05' },
- { title: 'eBay seller fees 2026: final value fee and payout (14.0% effective on a $100 sale in most categories without a store; final value fee applying to the total including shipping; store break-even logic)', publisher: 'EcomCalcTools', href: 'https://ecomcalctools.com/blog/ebay-seller-fees-2026/', accessed: '2026-09-05' },
- { title: 'eBay seller fees 2026: 13.6% + $0.40 per sale (worked examples by category; fees deducted from payout at sale)', publisher: 'Taxomate', href: 'https://taxomate.com/blog/ebay-seller-fees', accessed: '2026-09-05' },
- { title: 'Marketplace seller fees comparison (eBay final value fee including payment processing at roughly 12.9% + $0.30; promoted spend adding 15–20%; audience roughly 50% smaller)', publisher: 'SPX Commerce', href: 'https://www.spxcommerce.com/blog/marketplace-seller-fees-comparison/', accessed: '2026-09-05' },
- { title: 'Marketplace fees 2026: Amazon, eBay, Etsy and Walmart compared (Etsy at 6.5% regardless of product type; eBay per-order charge plus category percentage)', publisher: 'Webgility', href: 'https://www.webgility.com/blog/marketplace-fees-amazon-ebay-etsy-walmart', accessed: '2026-09-05' },
- { title: 'eBay seller fees 2026: complete breakdown (2026 clothing and accessories increase from 15% to 15.3%; per-order charge unchanged)', publisher: 'FeeCalculator', href: 'https://feecalculator.pro/ebay-seller-fees-2026/', accessed: '2026-09-05' },
- { title: 'eBay vs Etsy vs Amazon vs Shopify fees (eBay final value fees ranging 2.5% to 15.3% by category plus a per-order fee; judging platforms on total selling cost rather than one visible percentage)', publisher: 'DPL', href: 'https://dpl.company/ebay-vs-etsy-vs-amazon-vs-shopify-fees/', accessed: '2026-09-05' },
-]} />
+Full fee references: [Amazon](/marketplaces/amazon/), [Walmart](/marketplaces/walmart/), [eBay](/marketplaces/ebay/), [Etsy](/marketplaces/etsy/), [Shopify](/marketplaces/shopify/).

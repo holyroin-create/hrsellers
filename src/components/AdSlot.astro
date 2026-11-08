@@ -1,34 +1,15 @@
 ---
-import { SITE } from '../config';
-
-/**
- * Ad container.
- *
- * When AdSense is off, this renders NOTHING. A visible "Advertisement" frame
- * with an empty box inside it is worse than no frame at all: a reviewer sees
- * a labeled slot with no ad in it, and a reader sees dead space. Placeholders
- * appear only when explicitly requested with preview={true}.
- *
- * Placement rules this component assumes and the pages honor:
- *  - a labeled container, never styled to look like a content card
- *  - never inside navigation, the ticker, or any sticky/overlay layer
- *  - never adjacent to a call-to-action button
- *  - a maximum of three slots on any one page
- */
-const { slot = '', inline = false, label = 'Advertisement', preview = false } = Astro.props;
-const live = SITE.adsenseEnabled && slot;
-const show = live || preview;
+/* Renders NOTHING unless adsEnabled AND googleCmpConfigured are true in site.config.json
+   AND a slot id exists. Pages that may host ads are limited to guides and marketplace references. */
+import { SITE, ADS_ON } from '../lib/site';
+interface Props { slot: 'inArticle' | 'endOfArticle' }
+const id = (SITE.adSlots as Record<string, string>)[Astro.props.slot];
+const show = ADS_ON && /^\d{6,}$/.test(id || '');
 ---
 {show && (
-  <div class={inline ? 'adslot adslot--inline' : 'adslot'} role="complementary" aria-label="Advertisement">
-    {live ? (
-      <ins class="adsbygoogle" style="display:block;width:100%"
-        data-ad-client={SITE.adsensePublisherId}
-        data-ad-slot={slot}
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    ) : (
-      <span class="ph">{label}</span>
-    )}
-  </div>
+  <aside class="ad" aria-label="Advertisements">
+    <p class="ad-label">Advertisements</p>
+    <ins class="adsbygoogle" style="display:block;min-height:280px" data-ad-client={SITE.adsensePublisherId} data-ad-slot={id} data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </aside>
 )}
