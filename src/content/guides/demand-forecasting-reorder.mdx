@@ -1,0 +1,90 @@
+---
+title: "Demand Forecasting and Reorder Points for FBA Sellers"
+description: "Set an FBA reorder point from sales velocity, total lead time and backup stock, then check it against Amazon's restock report, IPI and excess-inventory rules."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "warehouse shelving with partly emptied bays next to fully stocked bays, a clipboard with a stock count sheet on a cart, no people, no logos"
+  alt: "Warehouse aisle with tall pallet racking holding shrink-wrapped cartons under ceiling lights"
+  image: "hub-guides"
+keyFacts:
+  - { label: "Amazon's suggested cover", value: "About two months of supply", claim: "demand-forecasting-reorder-04" }
+  - { label: "Excess inventory signal", value: "Over 90 days of supply", claim: "demand-forecasting-reorder-02" }
+  - { label: "Aged inventory charge starts", value: "After 181 days in storage", claim: "demand-forecasting-reorder-24" }
+  - { label: "Sell-through rate", value: "Units sold ÷ units received", claim: "demand-forecasting-reorder-01" }
+summary:
+  - "A reorder point is daily demand multiplied by total lead time, plus the backup units Amazon advises keeping against supply chain mishaps."
+  - "Amazon recommends about two months of supply and treats over 90 days of supply, or any unit aged over 90 days, as excess."
+  - "Amazon's Restock Inventory report gives suggested order quantities and reorder dates; the Inventory Health report adds 7- to 90-day sales and days of supply."
+  - "The Inventory Performance Index rewards replenishing popular products and keeping optimal levels, and Amazon ties a high score to lower storage costs."
+  - "Items stored more than 181 days draw a monthly aged-inventory charge, which caps how far ahead you should buy."
+faq:
+  - { q: "How to calculate reorder point with safety stock?", a: "Multiply average daily sales by your total lead time in days, then add safety stock — the backup units Amazon advises holding against supply chain mishaps. The worked example on this page shows the arithmetic.", claims: ["demand-forecasting-reorder-06", "demand-forecasting-reorder-05"] }
+  - { q: "What is sell through rate?", a: "Amazon defines it as units sold divided by units received, a measure of how well you balance inventory and sales.", claims: ["demand-forecasting-reorder-01"] }
+  - { q: "How do you forecast demand for Amazon inventory?", a: "Amazon says it uses machine learning models to make recommendations through the FBA Restock tool, the Inventory Performance Index and the inventory age report. Its Restock Inventory report supplies suggested order quantities and reorder dates you can compare with your own forecast.", claims: ["demand-forecasting-reorder-07", "demand-forecasting-reorder-16"] }
+related: ["q4-freight-booking-window", "freight-modes", "accrual-accounting-cogs", "walmart-wfs"]
+---
+
+Your reorder point is the stock level at which you must place the next purchase order so that new units arrive before you sell out: average daily sales times the full lead time from order to sellable at Amazon, plus a cushion of backup units. Amazon's own guidance supplies the guardrails around that number — keep about two months of supply, treat more than 90 days of supply as excess, and keep backup units against supply chain mishaps. <C id="demand-forecasting-reorder-04"/> <C id="demand-forecasting-reorder-02"/> <C id="demand-forecasting-reorder-06"/> This page shows how to compute the point, which Amazon reports to feed it, and where Amazon's published thresholds should override your instinct to buy more.
+
+## The three inputs
+
+Amazon frames ordering decisions around the same variables: it notes that economic order quantity considers lead time, carrying costs and demand variability. <C id="demand-forecasting-reorder-05"/> For a reorder point you need three of them in units you can measure.
+
+<Steps title="Build a reorder point" steps={[
+  {t:"Daily demand", d:"Average units sold per day over a recent window; Amazon's Inventory Health report gives 7-, 30-, 60- and 90-day sales.", claim:"demand-forecasting-reorder-18"},
+  {t:"Total lead time", d:"Days from purchase order to sellable at Amazon: production, freight, customs, inbound, receiving.", claim:"demand-forecasting-reorder-05"},
+  {t:"Backup units", d:"A cushion so a delay does not empty the shelf, as Amazon advises.", claim:"demand-forecasting-reorder-06"},
+  {t:"Check against limits", d:"Restock limits govern how much you can send into Amazon's network.", claim:"demand-forecasting-reorder-23"}
+]} />
+
+A recent stockout drags a simple sales average down. Amazon's planning data separates the views you need: its Inventory Health report includes short-term and long-term historical days of supply as well as current days of supply. <C id="demand-forecasting-reorder-19"/> <C id="demand-forecasting-reorder-20"/> Seasonality is the other trap — Amazon notes that when the holidays roll around, demand can increase, so a summer average can understate the run into Q4. <C id="demand-forecasting-reorder-12"/> Booking that peak is covered in [Q4 freight booking window](/guides/q4-freight-booking-window/).
+
+Count inbound units when you compare stock to the trigger. Amazon's Restock Inventory report does this in its Total Days of Supply figure, which includes units from open shipments; if your own spreadsheet counts only sellable units, it will fire the reorder too early and stack purchase orders on top of shipments already on the water. <C id="demand-forecasting-reorder-27"/> The reverse error — counting a shipment as inbound before the supplier has actually handed it to the carrier — fires the order too late.
+
+Lead time must include every leg, not just the factory. The freight portion depends on mode; the deadlines and options per mode are in [Freight modes](/guides/freight-modes/).
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs (assumed): 600 units sold in the last 30 days, so 20 units per day; total lead time 60 days (25 production, 30 freight and customs, 5 receiving); 14 days of backup stock.
+
+Reorder point = 20 × (60 + 14) = 1,480 units. When sellable plus inbound units fall to 1,480, place the order.
+
+Guardrails: about two months of supply at this pace is 20 × 60 = 1,200 units; more than 90 days of supply — over 1,800 units — would put you in Amazon's excess range. By the time the order lands, about 280 units remain (1,480 − 20 × 60). If it brings 1,600 more, you hold 1,880 units, or 94 days — over the line. An order of 1,500 leaves 1,780 units, or 89 days.
+</Callout>
+
+## What Amazon's reports give you
+
+Amazon says it uses machine learning models to offer recommendations through the FBA Restock tool, the Inventory Performance Index and the inventory age report. <C id="demand-forecasting-reorder-07"/> The data behind those tools is also available as reports:
+
+<Compare title="Amazon reports for planning" columns={["Restock Inventory report","FBA Manage Inventory Health report","Inventory Ledger report"]} rows={[
+  {label:"What it is for", values:["Restock recommendations, suggested order quantities and reorder dates","Sales, shipments, fees, aged and excess units in one view","Like a bank statement of your inventory"], claims:["demand-forecasting-reorder-16","demand-forecasting-reorder-18","demand-forecasting-reorder-22"]},
+  {label:"Fields to watch", values:["Total Days of Supply, Recommended replenishment qty, Recommended ship date, Alert","Days of supply; short- and long-term historical days of supply","—"], claims:["demand-forecasting-reorder-17","demand-forecasting-reorder-19","demand-forecasting-reorder-20"]},
+  {label:"Fee signal", values:["—","Whether the Low-Inventory-Level fee applied this week","—"], claim:"demand-forecasting-reorder-21"}
+]} />
+
+Treat the Restock report's suggested quantity as a second opinion, not an order. The Ledger report, which Amazon likens to a bank statement of your inventory, is where to check the "units received" in your sell-through math. <C id="demand-forecasting-reorder-22"/> Amazon defines sell-through as units sold divided by units received. <C id="demand-forecasting-reorder-01"/>
+
+## The fees that punish both mistakes
+
+Running too lean and too heavy both cost money at Amazon. On the lean side, the Inventory Health report flags whether the Low-Inventory-Level fee applied in the current week. <C id="demand-forecasting-reorder-21"/> The thresholds for that fee are published inside Seller Central, so check them there rather than relying on a summary. On the heavy side, excess inventory can tie up resources and run up storage costs, and items stored more than 181 days draw a monthly aged-inventory charge. <C id="demand-forecasting-reorder-11"/> <C id="demand-forecasting-reorder-24"/> Amazon also links the Inventory Performance Index to cost: the score measures how efficiently you manage FBA inventory, is based on how well you replenish popular products, keep optimal inventory levels and fix listing problems, and Amazon advises keeping it high to lower storage costs. <C id="demand-forecasting-reorder-08"/> <C id="demand-forecasting-reorder-09"/> <C id="demand-forecasting-reorder-10"/>
+
+If the lean-side risk is the one you keep hitting, Amazon says AWD automated replenishment periodically monitors inventory levels in Prime-ready fulfillment centers and triggers replenishments; with auto-replenishment enabled it manages replenishments so you don't have to worry about FBA capacity limits, and leaving it defaulted gets a waiver for FBA storage-utilization surcharges and low-inventory-level costs. <C id="demand-forecasting-reorder-26"/> <C id="demand-forecasting-reorder-25"/>
+
+<Decision title="Reading the signals" rows={[
+  {if:"Days of supply falling below your reorder point in days", then:"Place the order now; check the Restock report's recommended ship date.", claim:"demand-forecasting-reorder-17"},
+  {if:"Over 90 days of supply, or any unit aged over 90 days", then:"Pause reorders; Amazon treats this as excess.", claims:["demand-forecasting-reorder-02","demand-forecasting-reorder-03"]},
+  {if:"Units approaching 181 days in storage", then:"Promote, liquidate or remove before the aged charge.", claim:"demand-forecasting-reorder-24"},
+  {if:"Low-Inventory-Level fee flagged this week", then:"Raise backup stock or shorten lead time on that SKU.", claims:["demand-forecasting-reorder-21","demand-forecasting-reorder-06"]}
+]} />
+
+## Choosing a method per SKU
+
+Amazon describes ABC analysis as a way to categorize inventory based on importance, which lets you forecast top sellers carefully and run simple rules on the tail. <C id="demand-forecasting-reorder-14"/> Just-in-Time, which Amazon describes as ordering products just before you need them, sits in tension with its advice to keep backup units against supply chain mishaps. <C id="demand-forecasting-reorder-13"/> <C id="demand-forecasting-reorder-06"/> Whatever the method, Amazon suggests auditing inventory at least one to two times a year so the counts feeding the forecast are right. <C id="demand-forecasting-reorder-15"/> How inventory values flow into cost of goods sold is covered in [Accrual accounting and COGS](/guides/accrual-accounting-cogs/).
+
+## How to confirm the current thresholds
+
+Re-read Amazon's inventory-management guide on sell.amazon.com for the excess-inventory definition and the FBA page for the aged-inventory rule, and pull the Restock and Inventory Health reports from your own account. <C id="demand-forecasting-reorder-02"/> <C id="demand-forecasting-reorder-24"/> <C id="demand-forecasting-reorder-16"/> Restock limits and the Low-Inventory-Level fee thresholds are set inside Seller Central and can change; the arithmetic here is a planning method, and your own sales history is the input that decides it.

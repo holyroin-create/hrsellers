@@ -1,0 +1,109 @@
+---
+title: "Amazon DD+7 and Payout Reserves: How Deferred Funds Work"
+description: "What Amazon's DD7 delivery date policy, deferred balance and account level reserve mean in its own API documentation, and how to trace held funds to payouts."
+pillar: "money"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a seller's desk with a printed payment statement, a calendar page with a date circled and a calculator, no readable figures, no logos"
+  alt: "A desk calculator resting on printed report pages with charts, with a notebook, keyboard and laptop blurred in the background"
+  image: "prior-disclosure-protests"
+keyFacts:
+  - { label: "DD7 in Amazon's docs", value: "Delivery date policy (a deferral reason)", claim: "dd7-payout-reserve-01" }
+  - { label: "Reserved balance", value: "Deferred + account level reserve", claim: "dd7-payout-reserve-05" }
+  - { label: "Release marker", value: "Status changes to DEFERRED_RELEASED", claim: "dd7-payout-reserve-07" }
+  - { label: "Settlement reports", value: "Scheduled by Amazon, can't be requested", claim: "dd7-payout-reserve-14" }
+summary:
+  - "Amazon's Finances API names DD7 as the delivery date policy, one of the deferral policies that can apply to a transaction; B2B invoiced orders are another."
+  - "Deferred sales sit in a deferred balance until they move to the available balance; each deferred transaction carries a maturity date, its release date."
+  - "The reserved balance is the deferred balance plus the account level reserve, which covers refunds, chargebacks and other claims."
+  - "When a deferred transaction is released its status changes to DEFERRED_RELEASED."
+  - "The detailed DD+7 rules, including how long funds are held and which orders are covered, are published inside Seller Central."
+faq:
+  - { q: "What is Amazon DD 7?", a: "In Amazon's own API documentation, DD7 is the 'delivery date policy', listed as an example of a deferral policy applied to a transaction. Deferred sales are held in a deferred balance until their release date.", claims: ["dd7-payout-reserve-01", "dd7-payout-reserve-02", "dd7-payout-reserve-03"] }
+  - { q: "What are deferred transactions on Amazon?", a: "A deferred transaction is a sale whose proceeds are temporarily withheld before moving to your available balance. Its status is DEFERRED while held and becomes DEFERRED_RELEASED once released.", claims: ["dd7-payout-reserve-03", "dd7-payout-reserve-07"] }
+  - { q: "What is an account-level reserve on Amazon?", a: "Amazon defines it as a balance reserved as a safety measure to cover refunds, chargebacks or other claims, based on sales volume, product category and account history. It is separate from the deferred balance, and the two together make up the reserved balance.", claims: ["dd7-payout-reserve-04", "dd7-payout-reserve-05"] }
+related: ["seller-financing", "currency-conversion-payouts", "accrual-accounting-cogs", "form-1099-k-marketplace-sellers"]
+---
+
+If your Amazon payout is smaller than the sales you see, part of the money may be sitting in one of two holding buckets that Amazon's own developer documentation names: a **deferred balance**, where sales wait for a release date under policies such as **DD7 (delivery date policy)**, and an **account level reserve** held against refunds, chargebacks and claims. <C id="dd7-payout-reserve-01"/> <C id="dd7-payout-reserve-03"/> <C id="dd7-payout-reserve-04"/> The decision this page helps with is practical: which bucket is holding your cash, when it should come back, and how to plan inventory and bills around it.
+
+Amazon publishes the detailed DD+7 rules, including the holding period and which orders are covered, inside Seller Central, which this site cannot cite; check the current version there. This page sticks to what Amazon documents publicly in its Selling Partner API (SP-API) references.
+
+## What "DD7" means in Amazon's own documentation
+
+Amazon's Finances API attaches a "deferred context" to transactions that are held. It has two fields. The first, the deferral reason, is "the deferral policy applied to the transaction", and Amazon gives two examples: `B2B` for invoiced orders and `DD7` for the delivery date policy. <C id="dd7-payout-reserve-01"/> The second, the maturity date, is defined as the release date of the transaction. <C id="dd7-payout-reserve-02"/>
+
+So DD+7 is not a fee. It is a deferral policy tied to delivery, and each held sale has a date when it is scheduled to be released. Amazon's description of the deferred balance says the same thing: a portion of sales revenue that is temporarily withheld before being transferred to the available balance after a specified period. <C id="dd7-payout-reserve-03"/>
+
+## The five balances and how they add up
+
+Amazon's balance model breaks your money into named parts. Knowing the arithmetic between them is the fastest way to explain a short payout.
+
+<Compare title="Amazon's balance types, as the Finances API defines them" columns={["What it is","How it relates"]} rows={[
+  {label:"Available", values:["The total currently available in the account","Part of the total"], claim:"dd7-payout-reserve-06"},
+  {label:"Deferred", values:["Sales revenue temporarily withheld for a specified period","Moves to available when released"], claim:"dd7-payout-reserve-03"},
+  {label:"Account level reserve", values:["Held for refunds, chargebacks or other claims","Sized on sales volume, category and account history"], claim:"dd7-payout-reserve-04"},
+  {label:"Reserved", values:["Deferred + account level reserve","The part you can't withdraw yet"], claim:"dd7-payout-reserve-05"},
+  {label:"Total", values:["Available + reserved","Everything Amazon is holding for you"], claim:"dd7-payout-reserve-06"}
+]} />
+
+The two holds behave differently. A deferred sale has its own release date, so it clears on a schedule. <C id="dd7-payout-reserve-02"/> The account level reserve is described as a safety measure sized on sales volume, product category and account history, so it reflects risk rather than a fixed calendar. <C id="dd7-payout-reserve-04"/>
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: a balance view shows **available $6,000**, **deferred $3,500** and **account level reserve $1,000**.
+
+Reserved = $3,500 + $1,000 = **$4,500**. Total = $6,000 + $4,500 = **$10,500**.
+
+Only the $6,000 is available now. The $3,500 should move to available as each deferred sale reaches its maturity date; the $1,000 reserve depends on Amazon's risk sizing, not on a release date. If you planned a $9,000 inventory order on the assumption that the full $10,500 was payable, you are $3,000 short until the deferred sales clear.
+</Callout>
+
+<C id="dd7-payout-reserve-02"/> <C id="dd7-payout-reserve-05"/> <C id="dd7-payout-reserve-06"/>
+
+## Following a sale from deferred to paid
+
+Each transaction carries a status. Amazon lists three values: `DEFERRED` (currently deferred), `RELEASED` (currently released) and `DEFERRED_RELEASED` (deferred in the past, now released). A deferred transaction is updated to `DEFERRED_RELEASED` when it is released. <C id="dd7-payout-reserve-07"/> Amazon announced that status on April 30, 2025 for the Finances API v2024-06-19, across all marketplaces. <C id="dd7-payout-reserve-08"/>
+
+The older Finances API (v0) organizes money into financial event groups, each tied to a settlement period. A group is `Open` or `Closed`, and that status tells you whether its balance is settled. <C id="dd7-payout-reserve-11"/> For a closed group the total is the disbursement or charge amount; for an open group it is the current balance. <C id="dd7-payout-reserve-12"/> The fund transfer date, when the disbursement or charge was initiated, appears only for closed settlements. <C id="dd7-payout-reserve-13"/> Each group also records a beginning balance, the balance at the start of the settlement period. <C id="dd7-payout-reserve-17"/>
+
+Reserves show up there too. Amazon's adjustment list includes a reserve event that is generated when a settlement period closes, occurring when some money from a seller's account is held back. <C id="dd7-payout-reserve-10"/>
+
+<Steps title="Tracing a short payout" steps={[
+  {t:"Pull the balance breakdown", d:"Check available, deferred and account level reserve; a past date or the current balance can be requested, split by account type and marketplace.", claim:"dd7-payout-reserve-15"},
+  {t:"List deferred transactions", d:"Filter for DEFERRED status and read each one's deferral reason (DD7, B2B) and maturity date.", claim:"dd7-payout-reserve-01"},
+  {t:"Match releases to the payout", d:"Transactions released after a hold show DEFERRED_RELEASED.", claim:"dd7-payout-reserve-07"},
+  {t:"Check the settlement close", d:"Look for a reserve event at the close of the settlement period; that is money held back from the payout.", claim:"dd7-payout-reserve-10"},
+  {t:"Reconcile to the settlement report", d:"Settlement reports are produced on Amazon's own schedule; you can't request one on demand.", claim:"dd7-payout-reserve-14"}
+]} />
+
+## Reading the hold in your reports
+
+<Decision title="What is holding your money?" rows={[
+  {if:"Sales show as DEFERRED with reason DD7 and a future maturity date", then:"Delivery date deferral: the maturity date is the scheduled release date; plan cash around it.", claim:"dd7-payout-reserve-02"},
+  {if:"Sales show as DEFERRED with reason B2B", then:"Invoiced-order deferral, a separate policy from DD7.", claim:"dd7-payout-reserve-01"},
+  {if:"The reserved balance is larger than the deferred balance", then:"The difference is the account level reserve, sized on volume, category and account history.", claim:"dd7-payout-reserve-05"},
+  {if:"Payout is lower than the closed settlement suggested", then:"Look for a reserve event generated when the settlement period closed.", claim:"dd7-payout-reserve-10"},
+  {if:"Yesterday's orders are missing from the transaction list", then:"Normal: financial events might not include orders from the last 48 hours.", claim:"dd7-payout-reserve-09"}
+]} />
+
+Two data limits are worth knowing if you or your bookkeeper pull this data through software. Recent orders lag: Amazon notes that financial events might not include orders from the last 48 hours. <C id="dd7-payout-reserve-09"/> And a transaction query that spans more than 180 days between its start and end dates returns nothing, so pull long periods in pieces. <C id="dd7-payout-reserve-16"/>
+
+## Planning cash around deferrals
+
+The deferred balance is revenue that is withheld and then moves to available after a specified period, so deferral affects when cash arrives. <C id="dd7-payout-reserve-03"/> The practical effects are on cash planning:
+
+<Checklist title="Cash planning with deferred payouts" items={[
+  "Forecast payouts from released sales, not from order dates",
+  "Keep a running figure for deferred balance and account level reserve separately",
+  "Time supplier payments and inventory orders to expected release dates",
+  "Record deferred sales consistently in your books so revenue and cash reconcile"
+]} />
+
+If the gap between sales and payouts is squeezing inventory purchases, the [seller financing guide](/guides/seller-financing/) covers Amazon's own lending program and SBA loan options. For how timing differences interact with revenue recognition, see the [accrual accounting and COGS guide](/guides/accrual-accounting-cogs/). Sellers paid in another currency should also read the [currency conversion guide](/guides/currency-conversion-payouts/).
+
+## How to confirm the current DD+7 rules
+
+The binding rules are in Seller Central: the delivery date policy and account level reserve help pages and your Payments dashboard. For the definitions used on this page, re-check Amazon's [Finances API 2024-06-19 model](https://github.com/amzn/selling-partner-api-models/blob/main/models/finances-api-model/finances_2024-06-19.json), the [listTransactions reference](https://developer-docs.amazon/sp-api/reference/listtransactions) and the [settlement report documentation](https://developer-docs.amazon/sp-api/docs/report-type-values-settlement). If a hold looks wrong for your account, raise it with Amazon through Seller Central with the transaction IDs and maturity dates to hand; this page explains the mechanics and is not accounting advice.

@@ -1,0 +1,85 @@
+---
+title: "Amazon Order Defect Rate: What Counts and How to Track It"
+description: "What goes into Amazon's Order Defect Rate — negative feedback, A-to-z claims, chargebacks — how FBA and seller-fulfilled orders are split, and which reports show it."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a packed cardboard order box on a packing table next to a printed packing slip and a roll of tape, no brand names or logos"
+  alt: "Empty corrugated carton with its flaps opened, standing on a pale table in raking light"
+  image: "customs-holds-and-exams"
+keyFacts:
+  - { label: "Three defect types", value: "Negative feedback, A-to-z claims, chargebacks", claim: "order-defect-rate-02" }
+  - { label: "Reported separately for", value: "FBA (afn) and seller-fulfilled (mfn) orders", claim: "order-defect-rate-01" }
+  - { label: "Feedback report covers", value: "1- to 3-star feedback", claim: "order-defect-rate-05" }
+  - { label: "Where it sits", value: "Account Health dashboard", claim: "order-defect-rate-04" }
+summary:
+  - "Amazon's Seller Performance Report breaks the Order Defect Rate into claims, chargebacks and negative feedback, alongside the order count and the number of orders with defects."
+  - "The metric is reported separately for Amazon-fulfilled (afn) and seller-fulfilled (mfn) orders, each with its own reporting date range, target value and target condition."
+  - "The Flat File Feedback Report lists every one- to three-star feedback with its order ID, which is the starting point for working down negative feedback."
+  - "Amazon publishes the exact ODR target and measurement window inside Seller Central; the report fields show them for your own account."
+faq:
+  - { q: "What is order defect rate on Amazon?", a: "It is an Account Health metric that Amazon reports as a rate alongside the order count and the orders with defects — counting negative feedback, A-to-z Guarantee claims and chargebacks — for a reporting date range. Amazon reports it separately for FBA and seller-fulfilled orders, with a target for each.", claims: ["order-defect-rate-02", "order-defect-rate-01"] }
+  - { q: "What is meant by order defect rate?", a: "In Amazon's reporting, each ODR entry shows the order count, the orders with defects, the counts of claims, chargebacks and negative feedback, the resulting rate, and a target value and condition for comparison.", claims: ["order-defect-rate-02"] }
+related: ["account-suspension-appeal", "buyer-seller-messaging", "seller-central-reports", "review-manipulation-risk"]
+---
+
+Amazon's Order Defect Rate (ODR) is an Account Health metric built from three kinds of customer problem: negative feedback, A-to-z Guarantee claims and chargebacks. Amazon's own reporting documentation lists those three components next to the order count, the number of orders with defects and the rate, and gives a target value for comparison. <C id="order-defect-rate-02"/> To decide where to spend effort, find which component is driving the rate, for which fulfillment channel, and work on the cause at the order level. This page shows what Amazon publishes about the metric and how to pull the data; the exact target and measurement window are published inside Seller Central and should be read there.
+
+## What the metric is made of
+
+The Seller Performance Report, which "contains the individual performance metrics data from the Seller Central Account Health dashboard," is the clearest public description of ODR. <C id="order-defect-rate-04"/> For each fulfillment channel it reports a reporting date range, the order count, the orders with defects, and separate counts for claims, chargebacks and negative feedback, followed by a status, the rate, a target value and a target condition. <C id="order-defect-rate-02"/> The XML Customer Metrics Report (GET_V1_SELLER_PERFORMANCE_REPORT) lists similar fields, naming the components negativeFeedbacks, a_z_claims and chargebacks. <C id="order-defect-rate-03"/>
+
+<Compare title="The three ODR components" columns={["What it is","Where you see the detail"]} rows={[
+  {label:"Negative feedback", values:["Buyer feedback on your seller performance; Amazon's feedback report covers one to three stars","Flat File Feedback Report (GET_SELLER_FEEDBACK_DATA)"], claim:"order-defect-rate-05"},
+  {label:"A-to-z Guarantee claims", values:["Claims under the guarantee Amazon says ensures a consistent buying experience across its store","claims count in the Seller Performance Report"], claim:"order-defect-rate-08"},
+  {label:"Chargebacks", values:["Funds returned to an account due to a disputed charge","chargebacks count in the Seller Performance Report"], claim:"order-defect-rate-07"}
+]} />
+
+Because the report gives both the component counts and a separate orderWithDefects figure, you can compare them: if claims plus chargebacks plus negative feedback add up to more than the orders with defects, that suggests some orders carry more than one defect. <C id="order-defect-rate-02"/>
+
+## FBA and seller-fulfilled orders are measured apart
+
+The orderDefectRate object is split into afn (Amazon-fulfilled) and mfn (merchant-fulfilled) parts, each with its own counts, rate and target. <C id="order-defect-rate-01"/> That split matters for diagnosis. With FBA, Amazon says it will "pick, pack, and ship orders, as well as handle customer service and returns." <C id="order-defect-rate-09"/> Reading the afn and mfn lines separately shows whether defects sit with orders Amazon fulfilled or with orders you shipped yourself.
+
+ODR sits alongside other order metrics in the same report: late shipment rate, on-time delivery rate, valid tracking rate and pre-fulfillment cancellation rate, each with a status, target value and target condition. <C id="order-defect-rate-12"/> Programs can add their own requirements on top: Seller Fulfilled Prime, for example, requires meeting performance requirements for late-shipment, valid-tracking and cancellation rates to prequalify. <C id="order-defect-rate-13"/>
+
+## Why it matters
+
+ODR is one of the metrics in the Seller Performance Report, which carries the Account Health dashboard data <C id="order-defect-rate-04"/>; Amazon describes that dashboard as the place to "monitor your customer service, shipping performance, and policy compliance." <C id="order-defect-rate-10"/> Amazon has said its Account Health Rating "will be the determining factor for account suspension based on accumulated policy violations," so order problems and policy problems are watched in the same place. <C id="order-defect-rate-11"/> The Amazon Seller app also shows "banner alerts related to your account health." <C id="order-defect-rate-14"/> If your account is already at risk, the [account suspension appeal guide](/guides/account-suspension-appeal/) covers the wider account health picture.
+
+## Worked example: reading your own numbers
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: in one reporting date range, an mfn line shows 2,000 orders and 14 orders with defects; the component counts are 8 negative feedback, 5 claims and 3 chargebacks. Components total 8 + 5 + 3 = 16, which is 2 more than the 14 orders with defects, suggesting some orders carry more than one defect. For orientation only, 14 ÷ 2,000 = 0.7%; the rate Amazon calculates is the rate field on the same line, and Amazon's exact formula and window are published in Seller Central. Compare that rate with the targetValue and targetCondition shown on the same line rather than with a figure from elsewhere. Negative feedback is the largest component here (8 of 16), so the feedback report is the first file to open.
+</Callout>
+
+The same reading works for each line of the report: identify the channel (afn or mfn), the largest component, and how far the rate sits from its target. <C id="order-defect-rate-02"/>
+
+## Where to act on each component
+
+<Decision title="Which component is driving your ODR, and where to start" rows={[
+  {if:"Negative feedback is the largest component", then:"Export the feedback report: each entry has the date, rating, comments, your response and the order ID", claim:"order-defect-rate-06"},
+  {if:"A-to-z claims are the largest component", then:"Trace the claimed orders; claims are counted per channel in the Seller Performance Report", claim:"order-defect-rate-02"},
+  {if:"Chargebacks appear", then:"Treat them as disputed charges and gather the order's delivery evidence", claim:"order-defect-rate-07"},
+  {if:"The problem is concentrated in afn (FBA) orders", then:"Amazon picks, packs, ships and handles customer service and returns for those orders, so start with the product and listing", claim:"order-defect-rate-09"},
+  {if:"You want claim costs alongside sales", then:"The Sales and Traffic Business Report includes claim amount next to ordered product sales", claim:"order-defect-rate-17"}
+]} />
+
+For product-related complaints, brands in Brand Registry with a Professional plan can use Amazon's Customer Reviews tool, which can "contact customers with automated messages offering either a courtesy refund or customer support to clarify any product issues." <C id="order-defect-rate-18"/> <C id="order-defect-rate-15"/> Amazon also tells sellers: "do not attempt to influence customer ratings, feedback, and reviews." <C id="order-defect-rate-16"/> The [fake review rule guide](/guides/review-manipulation-risk/) covers the federal rules on incentives, and the [buyer-seller messaging guide](/guides/buyer-seller-messaging/) covers the message types Amazon allows.
+
+<Checklist title="Weekly ODR check" items={[
+  "Open the Account Health dashboard and note the ODR status for FBA and seller-fulfilled orders",
+  "Compare each rate with the target value and condition shown beside it",
+  "Export the feedback report and match one- to three-star entries to order IDs",
+  "List open A-to-z claims and chargebacks by order and by product",
+  "Look for one product, carrier or region behind several defects",
+  "Save each export with its date so you can compare periods"
+]} />
+
+## How to confirm the target and window
+
+Amazon's ODR target, the length of the measurement window and the rules on which feedback or claims can be removed are published in Seller Central Help and on your Account Health dashboard; read them there, and use the targetValue, targetCondition and reportingDateRange fields in your own Seller Performance Report as the account-specific version. <C id="order-defect-rate-02"/> The report fields themselves are documented on the Performance Reports page of the Selling Partner API documentation at developer-docs.amazon.com. <C id="order-defect-rate-04"/>

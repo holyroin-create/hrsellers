@@ -1,0 +1,114 @@
+---
+title: "Amazon Business for Sellers: B2B Pricing, Quotes and Setup"
+description: "How a US seller reaches business buyers on Amazon: business prices, quantity discounts, quotes, case packs, certifications, tax exemption and FBA."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "office supply cartons and a pallet of case-packed goods staged at a business loading area, no people, no logos"
+  alt: "Warehouse aisle between tall metal racks stocked with cardboard cartons and wrapped pallets"
+  image: "accrual-accounting-cogs"
+keyFacts:
+  - { label: "Account needed", value: "Professional ($39.99/month + selling fees)", claim: "amazon-business-b2b-22" }
+  - { label: "Annualized sales via Amazon Business", value: "$35 billion", claim: "amazon-business-b2b-23" }
+  - { label: "Organizations served", value: "8 million (excl. emerging markets)", claim: "amazon-business-b2b-24" }
+  - { label: "FBA stock for B2B orders", value: "Same pool as retail orders", claim: "amazon-business-b2b-18" }
+summary:
+  - "Amazon Business selling tools require signing up for a Professional selling account and are reached through B2B Central in Seller Central."
+  - "You create B2B offers by adding a business price and quantity discounts to existing listings, by hand, with Automate Pricing rules or through the Selling Partner API."
+  - "Amazon lists lower referral fees on larger purchases, quote requests, case-pack and pallet listings, and seller certifications among the program's features."
+  - "FBA fills business orders from the same inventory pool as retail orders, minus any stock you reserve with business-only offers."
+  - "Amazon says it is not a certifying body; sellers must hold and document their own diversity or quality credentials."
+faq:
+  - { q: "How to sell on Amazon B2B?", a: "Use a Professional selling account, open B2B Central from the B2B menu in Seller Central, then add business prices and quantity discounts to the products you want business buyers to see.", claims: ["amazon-business-b2b-20", "amazon-business-b2b-02"] }
+  - { q: "What is Amazon Business price?", a: "It is a price you set for Amazon Business customers, separate from your retail price. Amazon says business prices and quantity discounts create offers that appear to those customers and can raise your chances of becoming the Featured Offer.", claims: ["amazon-business-b2b-02", "amazon-business-b2b-03"] }
+  - { q: "What is Amazon Business account used for?", a: "On the buying side, Amazon Business is a free account for organizations that offers quantity discounts and case packs, plus centralized approval processes for purchasing.", claims: ["amazon-business-b2b-29", "amazon-business-b2b-30", "amazon-business-b2b-31"] }
+related: ["amazon-referral-fees", "vendor-central-vs-seller-central", "brand-registry-trademark", "gs1-barcodes-fnsku"]
+---
+
+If you already sell on Amazon with a Professional account, reaching business buyers is mostly a pricing decision, not a new channel: you open B2B Central, add a business price and optional quantity discounts to listings you already have, and decide whether to list case packs or pallets. <C id="amazon-business-b2b-20"/> <C id="amazon-business-b2b-02"/> <C id="amazon-business-b2b-08"/> Amazon's pitch is that "Business customers often buy in larger quantities and return items less." <C id="amazon-business-b2b-01"/> The questions that matter are which products justify a separate business price, how deep your tiers can go before margin disappears, and whether you hold the certifications that procurement teams filter for.
+
+## What Amazon Business is, from each side
+
+For buyers, Amazon Business is an account type for organizations. Its buyer site invites them to "Create a free account" and promises "instant savings on millions of products with quantity discounts and case packs." <C id="amazon-business-b2b-29"/> <C id="amazon-business-b2b-30"/> It also offers purchasing controls, described as "transparent guardrails and centralized approval processes." <C id="amazon-business-b2b-31"/>
+
+For sellers, Amazon describes the program as tools and features inside your existing account. Its own figures for the buyer base are $35 billion in annualized sales driven by Amazon Business, 8 million organizations served globally (excluding emerging markets), and 97 of the Fortune 100 shopping on it. <C id="amazon-business-b2b-23"/> <C id="amazon-business-b2b-24"/> <C id="amazon-business-b2b-25"/> These are Amazon's marketing figures for the whole program, not a forecast for any single listing.
+
+## Who can use the B2B tools
+
+<Steps title="Getting into B2B Central" steps={[
+  {t:"Have a Professional selling account", d:"A Professional selling account is $39.99 per month plus selling fees.", claim:"amazon-business-b2b-22"},
+  {t:"Upgrade if you are on the Individual plan", d:"In Seller Central settings, select Account Info, then Manage under Your Services.", claim:"amazon-business-b2b-21"},
+  {t:"Open B2B Central", d:"From the main menu, click B2B, then B2B Central.", claim:"amazon-business-b2b-20"},
+  {t:"Add business prices and discounts", d:"Set them on your listings so your offers appear to Amazon Business customers.", claim:"amazon-business-b2b-02"},
+  {t:"Add certifications or a business profile", d:"Diversity and quality certifications are shown on your seller profile.", claim:"amazon-business-b2b-11"}
+]} />
+
+## Business prices and quantity discounts
+
+A business price is a second price on the same offer, visible to Amazon Business customers. Amazon says setting business prices and quantity discounts "can increase your visibility and your chances of becoming the Featured Offer." <C id="amazon-business-b2b-03"/> There are three ways to set them:
+
+<Compare title="Three ways to set B2B prices" columns={["Method", "What Amazon says it does"]} rows={[
+  {label:"Manage Inventory", values:["Business Price column", "Set static business prices and discounts"], claim:"amazon-business-b2b-04"},
+  {label:"Automate Pricing", values:["Rules-based", "Create business pricing rules"], claim:"amazon-business-b2b-05"},
+  {label:"Amazon Business APIs", values:["API", "Automate business prices and quantity discounts"], claim:"amazon-business-b2b-06"}
+]} />
+
+If you manage listings through the Selling Partner API, Amazon's developer changelog says the Listings Items API and the JSON listings feed support Amazon Business pricing: you set the `audience` attribute to `B2B` to create a business offer and use `quantity_discount_plan` for quantity-based pricing. <C id="amazon-business-b2b-26"/> <C id="amazon-business-b2b-27"/>
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: a toner cartridge with a retail price of $40.00. You set a business price of $38.00, then a quantity discount of 5% at 10 units and 8% at 25 units, applied to the business price. A buyer ordering 30 units pays 30 × ($38.00 × 0.92) = 30 × $34.96 = $1,048.80, against 30 × $40.00 = $1,200.00 at retail. The $151.20 gap is what you give up for the larger order; set it against your own landed cost, fees and the lower return rate you expect before choosing tiers. The tier levels here are invented for the arithmetic and are not Amazon recommendations.
+</Callout>
+
+## Referral fees on larger orders
+
+Among the program's benefits, Amazon lists: "Enjoy lower referral fees on larger purchases." <C id="amazon-business-b2b-17"/> The public program page does not publish the discount schedule. Sellers can see what they actually received in a Selling Partner API report called the Referral Fee Discounts Report (`FEE_DISCOUNTS_REPORT`), which "Contains a summary of the seller's fee discounts" and is available to Amazon Business sellers. <C id="amazon-business-b2b-28"/> The detailed discount rules are published inside Seller Central, so check them there before building a tier on an assumed fee. For standard category referral rates, see the [referral fee guide](/guides/amazon-referral-fees/).
+
+## Bulk listings, quotes and B2B tools
+
+Amazon suggests you "encourage bulk sales by creating package hierarchies and listing products as case packs and pallets." <C id="amazon-business-b2b-08"/> For product identifiers, see [barcodes and FNSKU](/guides/gs1-barcodes-fnsku/).
+
+The other B2B Central tools Amazon names:
+
+- **Manage quotes** — "Review and respond to quote requests using Manage quotes." <C id="amazon-business-b2b-07"/>
+- **B2B Product Opportunities** — recommendations for B2B products to add. <C id="amazon-business-b2b-09"/>
+- **Case Pack Product Opportunities and Business Discounts Insights** — which products suit bulk sale, and suggested B2B prices and discounts. <C id="amazon-business-b2b-10"/>
+
+## Certifications and the business profile
+
+Many business buyers are asked to meet sourcing targets. Amazon says certifications "can help attract Amazon Business customers, many of whom are tasked with meeting quality sourcing objectives." <C id="amazon-business-b2b-32"/> You choose from a list of accepted certifications and "upload a digital copy of the certificate or provide a business identifier number (such as DUNS)." <C id="amazon-business-b2b-13"/> Certifications "appear to Amazon Business customers throughout the shopping experience" and are listed on your profile page. <C id="amazon-business-b2b-14"/>
+
+<Callout type="warning" title="Amazon does not issue or vet your eligibility">
+"Amazon is not a certifying body, nor does Amazon provide assistance to obtain credentials." <C id="amazon-business-b2b-12"/> Sellers are expected to determine their own eligibility, so only add a certificate you actually hold and can produce.
+</Callout>
+
+## Tax-exempt buyers
+
+For tax-exempt buyers, Amazon points to the Amazon Tax-Exemption program: "Automate tax exemptions on qualified purchases by participating in the Amazon Tax-Exemption program." <C id="amazon-business-b2b-16"/> Enrollment terms are set out in Seller Central. How marketplace facilitator rules shift sales tax collection is covered in the [sales tax nexus guide](/guides/sales-tax-nexus/).
+
+## Fulfillment: FBA, your own warehouse, or both
+
+"You can fulfill orders directly, use Fulfillment by Amazon (FBA), or use both methods on a per-product basis." <C id="amazon-business-b2b-19"/> With FBA, B2B orders draw on "the same inventory pool used to fulfill orders from retail customers," minus anything you reserved by creating business-only offers. <C id="amazon-business-b2b-18"/> If you ship yourself, plan for receiving hours: Amazon notes that "Business customers expect deliveries during regular business hours." <C id="amazon-business-b2b-15"/>
+
+<Decision title="Is a separate business price worth setting?" rows={[
+  {if:"Your product is bought by offices, schools or facilities in repeat quantities", then:"Add a business price and at least one quantity tier; this is what creates the B2B offer.", claim:"amazon-business-b2b-02"},
+  {if:"You can ship cartons or pallets efficiently", then:"List case packs or pallets through a package hierarchy.", claim:"amazon-business-b2b-08"},
+  {if:"You hold a recognized diversity or quality certificate", then:"Add it with the certificate file or a DUNS-type identifier.", claim:"amazon-business-b2b-13"},
+  {if:"You must protect stock for a contract buyer", then:"Use a business-only offer; FBA otherwise shares one inventory pool.", claim:"amazon-business-b2b-18"},
+  {if:"You are on the Individual plan", then:"Upgrade to Professional first; the B2B tools sit there.", claim:"amazon-business-b2b-21"}
+]} />
+
+<Checklist title="Before you publish B2B offers" items={[
+  "Professional plan active and B2B Central visible in the menu",
+  "Business price and tiers checked against landed cost and fees",
+  "Certificates on file before they are added to the profile",
+  "Tax-exemption enrollment reviewed in Seller Central",
+  "Business-only offers set up if stock must be reserved"
+]} />
+
+## How to confirm the current rules
+
+Re-check Amazon's [Amazon Business seller program page](https://sell.amazon.com/programs/amazon-business) for features and steps, and the [selling plans page](https://sell.amazon.com/pricing) for the Professional plan price. Fee discount schedules and tax-exemption terms are published in Seller Central, and the `FEE_DISCOUNTS_REPORT` in the Selling Partner API shows the discounts actually applied to your account. This page explains how the program is described publicly; your agreement with Amazon and the terms inside Seller Central govern what applies to your account.

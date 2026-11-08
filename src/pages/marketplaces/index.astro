@@ -7,11 +7,11 @@ import { allEntries } from '../../lib/entries';
 import { fmtDate } from '../../lib/claims';
 const list = (await allEntries()).filter((x) => x.kind === 'marketplaces').sort((a, b) => a.e.id.localeCompare(b.e.id));
 ---
-<Base title="Marketplace fee tables: Amazon, Walmart, eBay, Etsy, Shopify" description="Selling fees for Amazon, Walmart, eBay, Etsy and Shopify from each platform's own fee pages, worked through on the same example items, with check dates.">
-  <PageHero title="Marketplace fee tables" kicker="Fees" photo="hub-marketplaces" lede="One reference page per platform, built only from that platform's public fee pages and worked through on the same example items so the totals compare. Each row carries the date it was checked." />
+<Base title="Marketplace fee references: Amazon, Walmart, eBay, Etsy and more" description="Selling fees and seller terms for Amazon, Walmart, eBay, Etsy, Shopify, TikTok Shop and AliExpress, taken from each platform's own pages, with check dates.">
+  <PageHero title="Marketplace fee references" kicker="Fees" photo="hub-marketplaces" lede="One reference page per platform, built only from that platform's public fee and policy pages. Where a platform publishes its rates only inside the seller account, the page says so instead of guessing. Each row carries the date it was checked." />
   <div class="wrap" style="padding:56px 24px 88px">
     <div class="cards">{list.map((x) => (
-      <article class="acard"><div class="acard-photo"><Photo id={x.e.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
+      <article class="acard"><div class="acard-photo"><Photo id={x.e.data.photo?.image || x.e.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
         <div class="acard-body"><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p><div class="acard-meta"><span><Icon name="checkCircle" />Verified {fmtDate(x.e.data.lastVerified, true)}</span></div><span class="go"><Icon name="arrow" /></span></div></article>))}
       <article class="acard" style="background:var(--navy-900);border-color:var(--navy-900)"><div class="acard-body" style="justify-content:center;gap:14px;padding:28px">
         <span class="kicker" style="color:#ffb27f">Compare</span><h3 style="color:#fff"><a href="/tools/fee-comparison/" style="color:#fff">Same price on five platforms</a></h3><p style="color:#c3d1e3">Enter one price and see each marketplace's published fees side by side.</p><span class="go"><Icon name="arrow" /></span></div></article>

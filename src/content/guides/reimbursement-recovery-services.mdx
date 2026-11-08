@@ -1,0 +1,109 @@
+---
+title: "FBA Reimbursement Recovery Services: What Amazon's Rules Say"
+description: "Before giving a reimbursement service account access: the data it needs, the API roles and data rules Amazon sets, and how app authorization is renewed."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "printed inventory reconciliation report with highlighted rows next to a laptop showing a spreadsheet, no readable names, no logos"
+  alt: "A desk calculator resting on printed report pages with charts, with a notebook, keyboard and laptop blurred in the background"
+  image: "prior-disclosure-protests"
+keyFacts:
+  - { label: "Reimbursements report roles", value: "Pricing + Amazon Fulfillment", claim: "reimbursement-recovery-services-01" }
+  - { label: "App reauthorization", value: "Annually", claim: "reimbursement-recovery-services-10" }
+  - { label: "Non-PII data retention cap", value: "18 months", claim: "reimbursement-recovery-services-16" }
+  - { label: "Amount dispute window", value: "60 days", claim: "reimbursement-recovery-services-26" }
+summary:
+  - "A reimbursement review rests on Amazon data you can pull yourself, such as the daily FBA Reimbursements Report and 18 months of Inventory Ledger history."
+  - "An outside application needs Amazon-approved API roles; the Reimbursements Report requires the Pricing and Amazon Fulfillment roles."
+  - "Since November 25, 2025, Amazon's Data Protection Policy caps non-PII data storage at 18 months and requires TLS 1.2+ and 12-month log retention."
+  - "Public applications must be reauthorized annually, and reauthorization starts at the Manage Your Apps page in Seller Central."
+  - "Amazon may decline claims that miss requested information, and may decline cost submissions with forged, tampered or illegible documents."
+faq:
+  - { q: "What does an Amazon FBA reimbursement service do?", a: "It is an outside provider that reviews your FBA data for lost or damaged inventory that may be eligible for reimbursement. If it uses the Selling Partner API, it must be approved for the roles it uses, and Amazon's Data Protection and Acceptable Use Policies apply to it.", claims: ["reimbursement-recovery-services-06", "reimbursement-recovery-services-12"] }
+  - { q: "Where is the Amazon FBA reimbursements report?", a: "It is Amazon's itemized list of inventory reimbursements, including the reason for each, updated daily. Through the API it is requested on demand and needs the Pricing and Amazon Fulfillment roles.", claims: ["reimbursement-recovery-services-02", "reimbursement-recovery-services-03", "reimbursement-recovery-services-01"] }
+related: ["fba-reimbursement-sourcing-cost", "shipment-discrepancy-claims", "ipi-restock-limits"]
+---
+
+Whether you hire an outside reimbursement service or do the work in-house, the decision turns on two things Amazon controls: what data the job needs, and the conditions Amazon places on anyone who accesses that data for you. This page covers both from Amazon's own documentation. It does not name, review or rank any provider; it gives you the questions Amazon's rules let you ask of all of them.
+
+## The work is built on data you already have
+
+Every reimbursement review starts from Amazon's own records. The FBA Reimbursements Report lists your inventory reimbursements item by item, including the reason, and is updated daily. <C id="reimbursement-recovery-services-02"/> The Inventory Ledger Detailed View holds 18 months of inventory movements, including units lost, damaged and found. <C id="reimbursement-recovery-services-04"/> In financial data, these payments appear with the adjustment type FBAInventoryReimbursement. <C id="reimbursement-recovery-services-28"/>
+
+Through the Selling Partner API, the Reimbursements Report can only be requested on demand, not scheduled. <C id="reimbursement-recovery-services-03"/> And a financial-events request whose date range is longer than 180 days returns an empty response, so longer histories must be pulled in slices. <C id="reimbursement-recovery-services-27"/> Neither limit stops you from doing the comparison yourself: the inputs are the same whether a person or a program reads them.
+
+## What any API-connected provider must have from Amazon
+
+A service that connects through the Selling Partner API does not get blanket access. Amazon says a developer must request and qualify for each role that gives access to the operations it needs. <C id="reimbursement-recovery-services-06"/> The Reimbursements Report requires two of them, Pricing and Amazon Fulfillment; the Amazon Fulfillment role is the one generally used for FBA reports and fulfillment operations. <C id="reimbursement-recovery-services-01"/> <C id="reimbursement-recovery-services-05"/>
+
+Some roles are restricted, meaning they involve sensitive information that may include personally identifiable information (PII). For those, the developer must give Amazon additional information about its data use and security controls. <C id="reimbursement-recovery-services-07"/> <C id="reimbursement-recovery-services-08"/> Reimbursement work centers on inventory and financial records, so a request for restricted roles is worth a direct question.
+
+## The data-protection rules that bind the provider
+
+Amazon's SP-API compliance policies include the Data Protection Policy (DPP) and the Acceptable Use Policy (AUP); where translations differ, the English text prevails. <C id="reimbursement-recovery-services-12"/> <C id="reimbursement-recovery-services-13"/> This page relies on the change notices Amazon publishes in its developer documentation. A notice effective November 25, 2025 updated both policies and renamed "Developer" to "Solution Provider" in them. <C id="reimbursement-recovery-services-14"/> <C id="reimbursement-recovery-services-15"/>
+
+| Requirement (DPP, effective Nov 25, 2025) | What it means for your data |
+|---|---|
+| Non-PII data not stored beyond 18 months unless the law requires longer | Your inventory and reimbursement data should not be kept indefinitely |
+| Minimum log retention of 12 months | Access to your data should be traceable |
+| Account lockout after ten failed logins | Basic access control is mandatory |
+| TLS 1.2 or higher | Data in transit must be encrypted |
+| Critical vulnerabilities fixed within 7 days, high-risk within 30 | Known security holes have deadlines |
+| Third-party risk assessments of vendors and subcontractors | The provider's own subcontractors are in scope |
+
+*Source: Amazon Selling Partner API changelog, "Updates to the Data Protection Policy and Acceptable Use Policy," checked Nov 8, 2026.* <C id="reimbursement-recovery-services-16"/> <C id="reimbursement-recovery-services-17"/> <C id="reimbursement-recovery-services-18"/> <C id="reimbursement-recovery-services-19"/> <C id="reimbursement-recovery-services-20"/> <C id="reimbursement-recovery-services-21"/>
+
+An earlier AUP update clarified when developers must disclose affiliated entities involved in their application or service. <C id="reimbursement-recovery-services-22"/> Amazon also publishes a voluntary security self-assessment, but says it does not replace its formal security assessment requirements. <C id="reimbursement-recovery-services-29"/>
+
+<Checklist title="Questions to put to any provider, grounded in Amazon's rules" items={[
+  "Which SP-API roles does your application request, and why does each one apply to reimbursement work?",
+  "Do you request any restricted role? If so, what PII do you receive and why?",
+  "How long do you keep my non-PII data, given the DPP's 18-month cap?",
+  "Which subcontractors touch my data, and have they had third-party risk assessments?",
+  "Will you disclose any affiliated entities involved in your service?",
+  "Who files the claim in my Seller Central account, and who answers Amazon's follow-up requests?"
+]} />
+
+## Authorization: how access starts and renews
+
+You authorize an application starting from its website or from the Selling Partner Appstore. <C id="reimbursement-recovery-services-09"/> For public applications, reauthorization is required annually, which gives you a yearly review point. <C id="reimbursement-recovery-services-10"/> Reauthorization starts at the Manage Your Apps page in Seller Central. <C id="reimbursement-recovery-services-11"/> The steps for removing an app's access are not described on that developer page; check them in Seller Central.
+
+<Steps title="Lifecycle of a provider's access" steps={[
+  {t:"Authorize", d:"From the provider's website or the Selling Partner Appstore.", claim:"reimbursement-recovery-services-09"},
+  {t:"Check the roles", d:"Compare what is requested with what reimbursement reports need.", claim:"reimbursement-recovery-services-01"},
+  {t:"Review yearly", d:"Reauthorization is required annually; decide then whether to continue.", claim:"reimbursement-recovery-services-10"},
+  {t:"Reauthorize from Seller Central", d:"Reauthorization starts at the Manage Your Apps page.", claim:"reimbursement-recovery-services-11"}
+]} />
+
+## Claims are still yours
+
+A provider can find discrepancies, but the claim outcome follows Amazon's FBA inventory reimbursement policy. The version cited here is a PDF Amazon hosts whose file is marked as a redline ("Redlined_FBA_Reimbursement_policy_US"), so it can carry old and new wording; only plainly stated rules are used, and the live policy in Seller Central is the one to check. You can file only for eligible items Amazon has not already reimbursed, and Amazon may decline a claim that does not follow the applicable process or omits requested information. <C id="reimbursement-recovery-services-23"/> <C id="reimbursement-recovery-services-24"/> Amazon may decline a sourcing cost submission if documentation is forged, tampered with or illegible. <C id="reimbursement-recovery-services-25"/> If you don't agree with Amazon's valuation of a unit, the policy text says you can file a claim through Contact Us in Seller Central within 60 days after the reimbursement is issued. <C id="reimbursement-recovery-services-26"/>
+
+<Decision title="In-house or outside provider?" rows={[
+  {if:"You can pull the Reimbursements Report and ledger monthly", then:"In-house review is feasible; the data is the same either way.", claim:"reimbursement-recovery-services-02"},
+  {if:"A provider asks for restricted roles without a reason tied to reimbursements", then:"Ask what PII it receives and why; restricted roles require Amazon review of data use.", claim:"reimbursement-recovery-services-08"},
+  {if:"A provider cannot state how long it keeps your data", then:"Compare with the DPP's 18-month cap on non-PII storage.", claim:"reimbursement-recovery-services-16"}
+]} />
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: in one quarter, a review finds $1,800 of eligible reimbursements. An outside provider charges a stated 20% of amounts recovered; doing it in-house takes you an estimated 6 hours per quarter.
+
+- Provider cost: $1,800 × 20% = $360 for the quarter.
+- In-house cost: 6 hours of your time — equal to $60 per hour at the same $360.
+- If your time is worth less than $60 per hour, or the recoveries are small, in-house wins on cost; if it is worth more, the fee may be the cheaper route — before weighing the data-access questions above.
+
+Fee structures, percentages and hours are illustrative inputs, not market figures.
+</Callout>
+
+For how inbound gaps are proven and how payouts are valued, see [shipment discrepancy claims](/guides/shipment-discrepancy-claims/) and [FBA reimbursement and sourcing cost](/guides/fba-reimbursement-sourcing-cost/).
+
+## How to confirm
+
+This is a summary of Amazon's published rules, not legal advice on a service contract; the contract you sign and Amazon's full policy texts govern. Re-check:
+
+- developer-docs.amazon: "Policies and Agreements" (links to the DPP and AUP), the November 2025 DPP/AUP changelog, "Roles in the Selling Partner API," "Authorizing Selling Partner API applications," and "Report type values – FBA."
+- The full DPP and AUP texts linked from "Policies and Agreements"; in Seller Central, Manage Your Apps and the live FBA inventory reimbursement policy (the m.media-amazon.com PDF is a redline).

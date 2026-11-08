@@ -21,7 +21,7 @@ const claims = allClaims();
 const verified = [...claims.values()].filter((c) => c.status === 'verified').length;
 const featured = entries.filter((x) => x.kind === 'guides').slice(0, 6);
 const hero = img('home-hero');
-const ld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.siteName, url: SITE.domain }, { '@context': 'https://schema.org', '@type': 'Organization', name: SITE.publisherName, url: SITE.domain, logo: `${SITE.domain}/favicon.svg` }];
+const ld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.siteName, url: SITE.domain }, { '@context': 'https://schema.org', '@type': 'Organization', '@id': SITE.domain + '/#org', name: SITE.siteName, url: SITE.domain, logo: `${SITE.domain}/favicon.svg`, email: SITE.contactEmail, founder: { '@type': 'Person', name: SITE.editorName, url: `${SITE.domain}/author/muhammet-ali-turk/` } }];
 const features = [
   ['/tools/', 'calculator', 'Profit & fee calculators'],
   ['/marketplaces/', 'tag', 'Marketplace fee tables'],
@@ -78,7 +78,7 @@ const features = [
 
   <section class="section section-soft">
     <div class="wrap">
-      <div class="sec-head"><div><span class="kicker">Start with your question</span><h2>Four areas every seller has to get right</h2><p>Pick the area your question belongs to. Each one opens with the rules that cost sellers most when they are misunderstood.</p></div><a class="link-arrow" href="/guides/">All guides<Icon name="arrow" /></a></div>
+      <div class="sec-head"><div><span class="kicker">Start with your question</span><h2>Five areas every seller has to get right</h2><p>Pick the area your question belongs to. Each one opens with the rules that cost sellers most when they are misunderstood.</p></div><a class="link-arrow" href="/guides/">All guides<Icon name="arrow" /></a></div>
       <div class="pillars">
         {(Object.keys(PILLARS) as (keyof typeof PILLARS)[]).map((k) => { const P = PILLARS[k]; const list = entries.filter((x) => x.e.data.pillar === k); return (
           <article class="pillar">
@@ -103,7 +103,7 @@ const features = [
       <div class="sec-head"><div><span class="kicker">Guides</span><h2>Read the rule, then do the math</h2><p>Each guide explains one rule or fee, works it through with numbers, and ends with how to confirm it for your own goods.</p></div><a class="link-arrow" href="/guides/">Browse all guides<Icon name="arrow" /></a></div>
       <div class="cards">{featured.map((x) => (
         <article class="acard">
-          <div class="acard-photo"><span class="pchip">{PILLARS[x.e.data.pillar].short}</span><Photo id={x.e.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
+          <div class="acard-photo"><span class="pchip">{PILLARS[x.e.data.pillar].short}</span><Photo id={x.e.data.photo?.image || x.e.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
           <div class="acard-body"><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p>
             <div class="acard-meta"><span><Icon name="checkCircle" />Verified {fmtDate(x.e.data.lastVerified, true)}</span><span><Icon name="clock" />{x.e.data.minutes} min</span></div><span class="go"><Icon name="arrow" /></span></div>
         </article>))}</div>
@@ -127,7 +127,7 @@ const features = [
   {faqs.length > 0 && <section class="section">
     <div class="wrap narrow">
       <span class="kicker">Seller FAQ</span>
-      <Faq heading="What sellers search for" items={faqs.map((f: any) => ({ q: f.q, a: f.a, claims: f.claim_ids, href: f.href, where: f.where }))} />
+      <Faq schema={false} heading="What sellers search for" items={faqs.map((f: any) => ({ q: f.q, a: f.a, claims: f.claim_ids, href: f.href, where: f.where }))} />
       <p style="margin-top:20px"><a class="link-arrow" href="/faq/">More questions<Icon name="arrow" /></a></p>
       <div class="prose" style="margin-top:40px"><Sources /></div>
     </div>

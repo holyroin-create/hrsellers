@@ -11,6 +11,8 @@ export const NAV = [
     { href: '/marketplaces/ebay/', t: 'eBay fees', d: 'Final value and per-order fees', i: 'tag' },
     { href: '/marketplaces/etsy/', t: 'Etsy fees', d: 'Listing, transaction, processing, ads', i: 'tag' },
     { href: '/marketplaces/shopify/', t: 'Shopify fees', d: 'Plans and card rates', i: 'tag' },
+    { href: '/marketplaces/tiktok-shop/', t: 'TikTok Shop', d: 'Referral fee, payouts, reserves', i: 'tag' },
+    { href: '/marketplaces/aliexpress/', t: 'AliExpress (US sellers)', d: 'What the US seller agreement says', i: 'tag' },
     { href: '/guides/ebay-etsy-for-amazon-sellers/', t: 'Compare platforms', d: 'One $25 item on five marketplaces', i: 'scale' },
   ]},
   { label: 'Importing', base: [], items: [
@@ -18,6 +20,12 @@ export const NAV = [
     { href: '/guides/tariff-stack-2026/', t: 'How duties stack', d: 'Duty, additional duties, MPF, HMF', i: 'layers' },
     { href: '/guides/de-minimis-suspension-2026/', t: 'De minimis status', d: 'Low-value shipments in 2026', i: 'box' },
     { href: '/policy-log/', t: 'Policy log', d: 'Official notices, dated and linked', i: 'stamp' },
+  ]},
+  { label: 'Operations', base: ['/reviews/'], items: [
+    { href: '/guides/#operations', t: 'Selling operations', d: 'Listings, inventory, FBA programs, account health', i: 'box' },
+    { href: '/guides/fba-storage-four-layers/', t: 'FBA storage costs', d: 'Monthly, aged and capacity charges', i: 'layers' },
+    { href: '/guides/account-suspension-appeal/', t: 'Account health', d: 'Suspensions, appeals and metrics', i: 'shield' },
+    { href: '/reviews/', t: 'Seller software', d: 'What each tool officially offers', i: 'list' },
   ]},
   { label: 'Tools', base: ['/tools/'], items: [
     { href: '/tools/margin-calculator/', t: 'Profit & margin', d: 'Net per unit after platform fees', i: 'calculator' },
@@ -33,8 +41,9 @@ export const NAV = [
     { href: '/resources/', t: 'Primary sources', d: 'Where each rule is published', i: 'doc' },
     { href: '/guides/', t: 'All guides', d: 'Every guide by topic', i: 'list' },
   ]},
-  { label: 'About', base: ['/about/', '/editorial-standards/', '/contact/', '/corrections/'], items: [
+  { label: 'About', base: ['/about/', '/author/', '/editorial-standards/', '/contact/', '/corrections/', '/affiliate-disclosure/'], items: [
     { href: '/about/', t: 'About', d: 'Who publishes the site', i: 'user' },
+    { href: '/author/muhammet-ali-turk/', t: 'Editor', d: 'Muhammet Ali TÜRK', i: 'user' },
     { href: '/editorial-standards/', t: 'How we check facts', d: 'Sourcing and review policy', i: 'checkCircle' },
     { href: '/corrections/', t: 'Corrections', d: 'Every change, logged', i: 'pencil' },
     { href: '/contact/', t: 'Contact', d: 'Report an error', i: 'mail' },

@@ -36,13 +36,12 @@ Geliştirme bayrakları: `ALLOW_UNVERIFIED=1` (doğrulanmamış iddia), `ALLOW_P
 4. `main`'e push → `.github/workflows/deploy.yml` kapıları `RELEASE=1` ile çalıştırır, geçerse yayımlar.
 5. ⚠ GitHub Pages koşulları siteyi ticari işletme için değil diye tanımlar; reklamlı site gri alandır. Çıktı (`dist/`) Cloudflare Pages / Netlify gibi statik barındırıcılara değişiklik yapmadan taşınabilir.
 
-## Yayından önce sahibin yapacakları (SAHİP BİLGİSİ BEKLİYOR)
-1. `site.config.json`: `editorName` (gerçek kişi), `publisherLocation`, `ownerConfirmed: true`.
-2. Her sayfayı kaynaklarına karşı okuyan gerçek bir kişi: frontmatter'a `reviewedBy` ve `reviewedDate`.
-3. contact@fbatactics.com posta kutusunun çalıştığını test et.
+## Sahip bilgileri (girildi)
+Editör/yayıncı: Muhammet Ali TÜRK (Ankara, Türkiye) · iletişim: hrishesabi@outlook.com · `ownerConfirmed: true`. Yazar sayfası: /author/muhammet-ali-turk/ (yalnız CV bilgisi).
+İsteğe bağlı ama önerilir: editör sayfaları okudukça frontmatter'a `reviewedBy` ve `reviewedDate` ekleyin; makalede "reviewed by … on …" olarak görünür.
 
 ## Search Console
-Alan adı mülkü ekle (DNS TXT), `https://fbatactics.com/sitemap-index.xml` gönder. Eski URL'lerin durumu: `docs/URL_ENVANTERI.csv` (50 korundu, 14 yönlendirildi, 89 emekli → 404).
+Alan adı mülkü ekle (DNS TXT), `https://fbatactics.com/sitemap-index.xml` gönder. Eski URL'lerin durumu: `docs/URL_ENVANTERI.csv` (50 korundu, 84 aynı URL'de yeniden yazıldı, 19 yönlendirme, 0 adet 404).
 
 ## AdSense
 1. Reklamlar kapalıyken başvur (`adsEnabled: false`). `google-adsense-account` meta etiketi ve `ads.txt` hazır.

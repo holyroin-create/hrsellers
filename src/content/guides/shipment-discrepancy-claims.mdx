@@ -1,0 +1,117 @@
+---
+title: "FBA Shipment Discrepancies: Reconcile Before You Claim"
+description: "When Amazon receives fewer units than you shipped: how to prove the gap with shipment data and ledger reports, and the eligibility rules that decide a claim."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "open shipping carton on a packing table with a printed packing list and a handheld barcode scanner beside it, no people, no logos"
+  alt: "Empty corrugated carton with its flaps opened, standing on a pale table in raking light"
+  image: "customs-holds-and-exams"
+keyFacts:
+  - { label: "Core eligibility test", value: "Exact items and quantities in the shipping plan", claim: "shipment-discrepancy-claims-01" }
+  - { label: "Ledger history", value: "18 months", claim: "shipment-discrepancy-claims-11" }
+  - { label: "Manual box-content processing", value: "Incurs charges", claim: "shipment-discrepancy-claims-14" }
+  - { label: "Reimbursements report", value: "Updated daily", claim: "shipment-discrepancy-claims-19" }
+summary:
+  - "Amazon's reimbursement policy (published as a redlined PDF; confirm the live version in Seller Central) only covers inbound items if you sent the exact items and quantities stated in your shipping plan."
+  - "Shipments in canceled or deleted status are not eligible, and your account must be in normal status while a claim is filed and reviewed."
+  - "Per-item QuantityShipped and QuantityReceived, the Inventory Ledger (18 months of movements) and the Inbound Performance Report are documented SP-API data you can use to measure a gap."
+  - "Box contents left to manual processing are handled during receiving, and Amazon says that service incurs charges."
+  - "Amazon may decline a claim that does not follow the documented process or omits requested information."
+faq:
+  - { q: "What is an Amazon shipment discrepancy?", a: "It is the gap between what your shipping plan says you sent and what Amazon records as received. Amazon's reimbursement policy treats shipment-to-Amazon claims as their own claim type, and only covers items where you sent the exact items and quantities in the plan.", claims: ["shipment-discrepancy-claims-03", "shipment-discrepancy-claims-01"] }
+related: ["fba-reimbursement-sourcing-cost", "reimbursement-recovery-services", "ipi-restock-limits", "gs1-barcodes-fnsku"]
+---
+
+If Amazon recorded fewer units than you shipped, the first question is not "how do I file?" but "can I prove the plan was right?" Amazon's FBA inventory reimbursement policy makes an item eligible only if you sent the exact items and quantities stated in your shipping plan. <C id="shipment-discrepancy-claims-01"/> This page shows how to line up the plan, the cartons and Amazon's receiving records using data Amazon documents publicly, and which eligibility rules decide the outcome.
+
+The policy text used here comes from a PDF Amazon hosts on m.media-amazon.com whose file is marked as a redline ("Redlined_FBA_Reimbursement_policy_US"), so it can carry both old and new wording. This page uses only conditions the document states plainly; confirm the live policy in Seller Central before you rely on it. The step-by-step claim screen, its time windows and the exact evidence fields are published inside Seller Central and should be checked there; they are not repeated here.
+
+## The eligibility rules that apply to inbound gaps
+
+The policy document lists eligibility conditions. These bear directly on inbound shipments:
+
+<Checklist title="Before you open a shipment-to-Amazon claim" items={[
+  "The units and SKUs you shipped match the shipping plan exactly",
+  "The shipment is not in canceled or deleted status",
+  "The items comply with FBA product restrictions and FBA inventory requirements",
+  "Your account is in normal status, and will stay so through review and any appeal",
+  "Amazon has not already reimbursed the same units"
+]} />
+
+*Source: Amazon, FBA inventory reimbursement policy, redlined PDF on m.media-amazon.com, checked Nov 8, 2026 — confirm the live version in Seller Central.* <C id="shipment-discrepancy-claims-01"/> <C id="shipment-discrepancy-claims-02"/> <C id="shipment-discrepancy-claims-20"/> <C id="shipment-discrepancy-claims-21"/> <C id="shipment-discrepancy-claims-22"/>
+
+The policy splits claims by where in the process the loss happened: shipment to Amazon, fulfillment center operations, customer returns and removals. <C id="shipment-discrepancy-claims-03"/> A receiving shortfall belongs in the first group. Amazon says you must follow the process for that claim type and provide all requested information, and that it may decline the claim if you do not. <C id="shipment-discrepancy-claims-04"/>
+
+## Where the numbers come from
+
+Three record sets, all documented in Amazon's Selling Partner API (SP-API), give you the inputs.
+
+| Record | What it tells you | Why it matters for a discrepancy |
+|---|---|---|
+| Shipment items (v0 getShipmentItems) | Per-item QuantityShipped and QuantityReceived for a shipment | The raw gap, SKU by SKU |
+| Inventory Ledger – Detailed View | Movements to and from fulfillment centers, incl. lost and found, for 18 months | Whether "missing" units were later found or adjusted |
+| FBA Inbound Performance Report | Inbound shipment problems by product and shipment, updated daily | Whether Amazon logged a problem on your side |
+
+*Source: Amazon Selling Partner API documentation, checked Nov 8, 2026.* <C id="shipment-discrepancy-claims-08"/> <C id="shipment-discrepancy-claims-10"/> <C id="shipment-discrepancy-claims-11"/> <C id="shipment-discrepancy-claims-09"/>
+
+The ledger detail report can be filtered by event type — Adjustments, CustomerReturns, Receipts, Shipments, VendorReturns and WhseTransfers — so pulling only Receipts and Adjustments for the affected SKUs keeps the check short. <C id="shipment-discrepancy-claims-12"/> The summary view is described as a bank statement for inventory, running from starting balance through received inventory and adjustments to the ending balance. <C id="shipment-discrepancy-claims-13"/>
+
+## Know where the shipment is before you count
+
+The SP-API lists shipment statuses including IN_TRANSIT, DELIVERED, CHECKED_IN, RECEIVING and CLOSED, so check the status before you compare counts. <C id="shipment-discrepancy-claims-05"/> The same documentation says a shipment typically starts as UNCONFIRMED, becomes WORKING after a placement option is confirmed, and READY_TO_SHIP once labels are generated. <C id="shipment-discrepancy-claims-06"/>
+
+<Compare title="Status and what to do" columns={["Status","Sensible action"]} rows={[
+  {label:"Early", values:["UNCONFIRMED / WORKING / READY_TO_SHIP","Fix quantities in the plan before labels are generated and cartons ship"], claim:"shipment-discrepancy-claims-06"},
+  {label:"Moving", values:["SHIPPED / IN_TRANSIT / DELIVERED","Confirm tracking is attached; the FBA Dashboard flags missing tracking IDs"], claim:"shipment-discrepancy-claims-17"},
+  {label:"At the building", values:["CHECKED_IN / RECEIVING","Wait until receiving finishes before comparing counts"], claim:"shipment-discrepancy-claims-05"},
+  {label:"Done", values:["CLOSED","Compare shipped vs received and check the ledger before claiming"], claim:"shipment-discrepancy-claims-05"}
+]} />
+
+The FBA Dashboard also shows statuses such as "at fulfillment center" and "in transit" alongside those tracking alerts. <C id="shipment-discrepancy-claims-17"/> Tracking details in the API cover both Less-Than-Truckload (LTL) and Small Parcel Delivery (SPD) shipments. <C id="shipment-discrepancy-claims-18"/> Keep the shipment confirmation ID — the ID that appears on your labels (Amazon's example: FBA1234ABCD) — on every document you save. <C id="shipment-discrepancy-claims-07"/>
+
+## Prevent the gap at packing time
+
+When you send packing information, box contents can be provided by you, by a 2D barcode on the shipment, or left to Amazon. <C id="shipment-discrepancy-claims-15"/> If they are set to manual processing, Amazon processes them during receiving and that service incurs charges. <C id="shipment-discrepancy-claims-14"/> The API also states that the same MSKU with different expiration dates cannot go into the same box. <C id="shipment-discrepancy-claims-16"/> Labels matter too; see [GS1 barcodes and FNSKU](/guides/gs1-barcodes-fnsku/) for the identifier side, and [Amazon stopped prepping](/guides/amazon-stopped-prepping/) for who must now label units in the US.
+
+<Steps title="Reconciliation sequence for one shipment" steps={[
+  {t:"Wait for CLOSED", d:"Do not count a shortfall while the shipment is still checked in or receiving.", claim:"shipment-discrepancy-claims-05"},
+  {t:"Pull shipped vs received", d:"Compare QuantityShipped with QuantityReceived for every SKU in the shipment.", claim:"shipment-discrepancy-claims-08"},
+  {t:"Check the ledger", d:"Filter Receipts and Adjustments for those SKUs to see units received late, found or adjusted.", claim:"shipment-discrepancy-claims-12"},
+  {t:"Check inbound problems", d:"Look for the shipment in the Inbound Performance Report before filing.", claim:"shipment-discrepancy-claims-09"},
+  {t:"Check reimbursements", d:"Confirm the units are not already in the Reimbursements Report.", claim:"shipment-discrepancy-claims-19"},
+  {t:"File with full evidence", d:"Follow the shipment-to-Amazon claim process and supply everything requested.", claim:"shipment-discrepancy-claims-04"}
+]} />
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: one SKU shipped as 10 cartons of 24 units, plan quantity 240. After the shipment closes, QuantityReceived shows 216.
+
+- Gap = 240 − 216 = 24 units, equal to one carton of 24.
+- Next, filter the ledger for Receipts and Adjustments on this SKU. If a later Receipts or "found" entry covers the 24 units, the gap has closed.
+- If it has not closed, the 24 units are the quantity to run through the eligibility checklist above before any shipment-to-Amazon claim.
+</Callout>
+
+## Common mistakes that sink an inbound claim
+
+| Mistake | Why it fails under Amazon's published rules |
+|---|---|
+| Counting the gap while the shipment is still RECEIVING | RECEIVING and CLOSED are separate status values; check which one applies before counting |
+| Claiming on a shipment you canceled or deleted and re-created | Canceled or deleted shipments are not eligible |
+| Shipping more or fewer units than the plan "to fix it later" | Eligibility requires the exact items and quantities in the plan |
+| Claiming units already paid | Claims are only for items Amazon has not already reimbursed |
+| Mixing expiration dates of one MSKU in one carton | The API states the same MSKU with different expiration dates cannot go into the same box |
+
+*Source: Amazon's redlined reimbursement policy PDF and SP-API documentation, checked Nov 8, 2026.* <C id="shipment-discrepancy-claims-05"/> <C id="shipment-discrepancy-claims-02"/> <C id="shipment-discrepancy-claims-01"/> <C id="shipment-discrepancy-claims-22"/> <C id="shipment-discrepancy-claims-16"/>
+
+For how a valid claim is valued, see [FBA reimbursement and sourcing cost](/guides/fba-reimbursement-sourcing-cost/). For what to look for if you hand this work to an outside provider, see [reimbursement recovery services](/guides/reimbursement-recovery-services/).
+
+## How to confirm
+
+This page explains the public record; a decision on a claim is Amazon's, made through the case process in Seller Central. Re-check:
+
+- Amazon's redlined FBA inventory reimbursement policy PDF on m.media-amazon.com for eligibility and claim types, and the live policy and shipment-to-Amazon claim page in Seller Central for current deadlines.
+- SP-API docs on developer-docs.amazon: "Report type values – FBA" (Inventory Ledger, Inbound Performance, Reimbursements) and the getShipment, getShipmentItems and setPackingInformation references.

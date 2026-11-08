@@ -1,5 +1,4 @@
 {
- "/affiliate-disclosure/": "/editorial-standards/",
  "/business-models/": "/start-here/",
  "/costs/": "/marketplaces/",
  "/guides/annual-operating-calendar/": "/reference/key-dates/",
@@ -12,5 +11,11 @@
  "/guides/walmart-new-seller-savings-2026/": "/marketplaces/walmart/",
  "/how-we-test/": "/editorial-standards/",
  "/news/": "/policy-log/",
- "/tools/tariff-stack-estimator/": "/tools/duty-estimator/"
+ "/tools/tariff-stack-estimator/": "/tools/duty-estimator/",
+ "/reality-check/": "/start-here/",
+ "/guides/tiktok-shop-fee-increase-2026/": "/guides/tiktok-shop-fees/",
+ "/guides/tiktok-shop-plus-membership/": "/guides/tiktok-shop-fees/",
+ "/guides/bsa-collateral-change-2026/": "/guides/seller-financing/",
+ "/guides/peak-season-cost-stack/": "/guides/holiday-peak-fulfilment-fee/",
+ "/guides/peak-surcharge-2026-schedule/": "/guides/holiday-peak-fulfilment-fee/"
 }

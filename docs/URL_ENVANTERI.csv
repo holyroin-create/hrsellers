@@ -1,154 +1,154 @@
 old_url,decision,http_behaviour,target,reason
-/,kept,200,/,Same URL rebuilt in v3
-/about/,kept,200,/about/,Same URL rebuilt in v3
-/affiliate-disclosure/,redirect,meta-refresh 0 + canonical,/editorial-standards/,Topical equivalent
-/business-models/,redirect,meta-refresh 0 + canonical,/start-here/,Topical equivalent
-/contact/,kept,200,/contact/,Same URL rebuilt in v3
-/cookie-policy/,kept,200,/cookie-policy/,Same URL rebuilt in v3
-/corrections/,kept,200,/corrections/,Same URL rebuilt in v3
-/costs/,redirect,meta-refresh 0 + canonical,/marketplaces/,Topical equivalent
-/editorial-standards/,kept,200,/editorial-standards/,Same URL rebuilt in v3
-/glossary/,kept,200,/glossary/,Same URL rebuilt in v3
-/guides/,kept,200,/guides/,Same URL rebuilt in v3
-/guides/account-suspension-appeal/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/accrual-accounting-cogs/,kept,200,/guides/accrual-accounting-cogs/,Same URL rebuilt in v3
-/guides/aged-inventory-15-month-tier/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/ai-image-tagging-rule/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/amazon-200-billion-quarter/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/amazon-business-b2b/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/amazon-fba-fee-changes-2026/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/amazon-ppc-benchmarks/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/amazon-renewed/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/amazon-stopped-prepping/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/annual-operating-calendar/,redirect,meta-refresh 0 + canonical,/reference/key-dates/,Topical equivalent
-/guides/antidumping-duties/,kept,200,/guides/antidumping-duties/,Same URL rebuilt in v3
-/guides/aplus-content-brand-tools/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/authorised-reseller/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/awd-vs-3pl-warehousing/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/brand-referral-bonus/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/brand-registry-trademark/,kept,200,/guides/brand-registry-trademark/,Same URL rebuilt in v3
-/guides/bsa-collateral-change-2026/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/bundles-and-multipacks/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/buy-box-featured-offer/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/buyer-seller-messaging/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/changes-timeline-2026/,redirect,meta-refresh 0 + canonical,/reference/key-dates/,Topical equivalent
-/guides/choosing-a-freight-forwarder/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/country-of-origin-sourcing/,kept,200,/guides/country-of-origin-sourcing/,Same URL rebuilt in v3
-/guides/cross-channel-price-parity/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/currency-conversion-payouts/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/customs-bonds/,kept,200,/guides/customs-bonds/,Same URL rebuilt in v3
-/guides/customs-holds-and-exams/,kept,200,/guides/customs-holds-and-exams/,Same URL rebuilt in v3
-/guides/dd7-payout-reserve/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/de-minimis-suspension-2026/,kept,200,/guides/de-minimis-suspension-2026/,Same URL rebuilt in v3
-/guides/deal-and-coupon-fees/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/demand-forecasting-reorder/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/duty-drawback/,kept,200,/guides/duty-drawback/,Same URL rebuilt in v3
-/guides/ebay-etsy-for-amazon-sellers/,kept,200,/guides/ebay-etsy-for-amazon-sellers/,Same URL rebuilt in v3
-/guides/entry-type-11-vs-01/,kept,200,/guides/entry-type-11-vs-01/,Same URL rebuilt in v3
-/guides/etsy-offsite-ads-economics/,kept,200,/guides/etsy-offsite-ads-economics/,Same URL rebuilt in v3
-/guides/expanding-eu-uk-compliance/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/fba-fuel-logistics-surcharge-2026/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/fba-reimbursement-sourcing-cost/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/fba-storage-four-layers/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/fba-vs-fbm-breakeven/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/fbt-fixed-dollar-problem/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/first-sale-valuation/,kept,200,/guides/first-sale-valuation/,Same URL rebuilt in v3
-/guides/foreign-trade-zones/,kept,200,/guides/foreign-trade-zones/,Same URL rebuilt in v3
-/guides/freight-modes/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/gs1-barcodes-fnsku/,kept,200,/guides/gs1-barcodes-fnsku/,Same URL rebuilt in v3
-/guides/hazmat-dangerous-goods/,kept,200,/guides/hazmat-dangerous-goods/,Same URL rebuilt in v3
-/guides/holiday-peak-fulfilment-fee/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/hts-classification-basics/,kept,200,/guides/hts-classification-basics/,Same URL rebuilt in v3
-/guides/inbound-placement-split-arithmetic/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/incoterms-who-is-importer/,kept,200,/guides/incoterms-who-is-importer/,Same URL rebuilt in v3
-/guides/ip-complaints-retractions/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/ipi-restock-limits/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/landed-cost-fee-stack/,redirect,meta-refresh 0 + canonical,/guides/tariff-stack-2026/,Topical equivalent
-/guides/launch-sequence/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/listing-disappeared/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/listing-optimisation-a10/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/low-inventory-level-fee/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/main-image-compliance/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/mcf-off-amazon-orders/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/narf-canada-mexico/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/new-asin-referral-incentive/,redirect,meta-refresh 0 + canonical,/guides/amazon-referral-fees/,Topical equivalent
-/guides/off-amazon-diversification/,redirect,meta-refresh 0 + canonical,/guides/ebay-etsy-for-amazon-sellers/,Topical equivalent
-/guides/order-defect-rate/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/origin-marking-requirements/,kept,200,/guides/origin-marking-requirements/,Same URL rebuilt in v3
-/guides/packaging-design-fba/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/peak-season-cost-stack/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/peak-surcharge-2026-schedule/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/ppc-campaign-structure-launch/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/price-tier-repricing-trap/,redirect,meta-refresh 0 + canonical,/guides/amazon-referral-fees/,Topical equivalent
-/guides/prior-disclosure-protests/,kept,200,/guides/prior-disclosure-protests/,Same URL rebuilt in v3
-/guides/product-inserts/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/product-research-cost-errors/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/q4-deal-deadlines-2026/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/q4-freight-booking-window/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/qc-inspections/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/reimbursement-recovery-services/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/removal-vs-hold-decision/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/returns-cost-and-badge/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/review-manipulation-risk/,kept,200,/guides/review-manipulation-risk/,Same URL rebuilt in v3
-/guides/rufus-listing-optimization/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/sales-tax-nexus/,kept,200,/guides/sales-tax-nexus/,Same URL rebuilt in v3
-/guides/second-marketplace-decision/,redirect,meta-refresh 0 + canonical,/guides/ebay-etsy-for-amazon-sellers/,Topical equivalent
-/guides/section-321-repeal-2027/,kept,200,/guides/section-321-repeal-2027/,Same URL rebuilt in v3
-/guides/seller-central-reports/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/seller-financing/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/seller-fulfilled-prime/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/seller-insurance-coi/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/selling-your-fba-business/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/shipment-discrepancy-claims/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/sipp-packaging-program/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/sourcing-agents/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/subscribe-and-save-economics/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/supplier-payment-terms/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/supplier-verification/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/tariff-engineering-design/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/tariff-stack-2026/,kept,200,/guides/tariff-stack-2026/,Same URL rebuilt in v3
-/guides/the-supplier-invoice/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/tiktok-shop-fee-increase-2026/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/tiktok-shop-fees/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/tiktok-shop-plus-membership/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/title-limit-984-million/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/ungating-restricted-categories/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/us-product-compliance/,kept,200,/guides/us-product-compliance/,Same URL rebuilt in v3
-/guides/variations-review-pooling/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/vendor-central-vs-seller-central/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/vine-and-early-reviews/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/guides/walmart-new-seller-savings-2026/,redirect,meta-refresh 0 + canonical,/marketplaces/walmart/,Topical equivalent
-/guides/walmart-wfs/,kept,200,/guides/walmart-wfs/,Same URL rebuilt in v3
-/how-we-test/,redirect,meta-refresh 0 + canonical,/editorial-standards/,Topical equivalent
-/marketplaces/,kept,200,/marketplaces/,Same URL rebuilt in v3
-/marketplaces/aliexpress/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/marketplaces/amazon/,kept,200,/marketplaces/amazon/,Same URL rebuilt in v3
-/marketplaces/ebay/,kept,200,/marketplaces/ebay/,Same URL rebuilt in v3
-/marketplaces/etsy/,kept,200,/marketplaces/etsy/,Same URL rebuilt in v3
-/marketplaces/shopify/,kept,200,/marketplaces/shopify/,Same URL rebuilt in v3
-/marketplaces/tiktok-shop/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/marketplaces/walmart/,kept,200,/marketplaces/walmart/,Same URL rebuilt in v3
-/news/,redirect,meta-refresh 0 + canonical,/policy-log/,Topical equivalent
-/policy-log/,kept,200,/policy-log/,Same URL rebuilt in v3
-/privacy/,kept,200,/privacy/,Same URL rebuilt in v3
-/quiz/,kept,200,/quiz/,Same URL rebuilt in v3
-/reality-check/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/resources/,kept,200,/resources/,Same URL rebuilt in v3
-/reviews/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/a2x/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/amzscout/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/aura/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/getida/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/helium-10/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/jungle-scout/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/keepa/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/sellerboard/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/reviews/zonguru/,retired,404,,No primary-sourced equivalent; not redirected to avoid soft-404
-/start-here/,kept,200,/start-here/,Same URL rebuilt in v3
-/terms/,kept,200,/terms/,Same URL rebuilt in v3
-/tools/,kept,200,/tools/,Same URL rebuilt in v3
-/tools/cash-flow-planner/,kept,200,/tools/cash-flow-planner/,Same URL rebuilt in v3
-/tools/dimensional-weight/,kept,200,/tools/dimensional-weight/,Same URL rebuilt in v3
-/tools/margin-calculator/,kept,200,/tools/margin-calculator/,Same URL rebuilt in v3
-/tools/ppc-budget-calculator/,kept,200,/tools/ppc-budget-calculator/,Same URL rebuilt in v3
-/tools/tariff-stack-estimator/,redirect,meta-refresh 0 + canonical,/tools/duty-estimator/,Topical equivalent
+/,kept,200,/,"v3 içeriği, aynı URL"
+/about/,kept,200,/about/,"v3 içeriği, aynı URL"
+/affiliate-disclosure/,rewritten,200,/affiliate-disclosure/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/business-models/,redirect,meta-refresh 0 + canonical,/start-here/,Konu karşılığı olan sayfaya yönlendirme
+/contact/,kept,200,/contact/,"v3 içeriği, aynı URL"
+/cookie-policy/,kept,200,/cookie-policy/,"v3 içeriği, aynı URL"
+/corrections/,kept,200,/corrections/,"v3 içeriği, aynı URL"
+/costs/,redirect,meta-refresh 0 + canonical,/marketplaces/,Konu karşılığı olan sayfaya yönlendirme
+/editorial-standards/,kept,200,/editorial-standards/,"v3 içeriği, aynı URL"
+/glossary/,kept,200,/glossary/,"v3 içeriği, aynı URL"
+/guides/,kept,200,/guides/,"v3 içeriği, aynı URL"
+/guides/account-suspension-appeal/,rewritten,200,/guides/account-suspension-appeal/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/accrual-accounting-cogs/,kept,200,/guides/accrual-accounting-cogs/,"v3 içeriği, aynı URL"
+/guides/aged-inventory-15-month-tier/,rewritten,200,/guides/aged-inventory-15-month-tier/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/ai-image-tagging-rule/,rewritten,200,/guides/ai-image-tagging-rule/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/amazon-200-billion-quarter/,rewritten,200,/guides/amazon-200-billion-quarter/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/amazon-business-b2b/,rewritten,200,/guides/amazon-business-b2b/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/amazon-fba-fee-changes-2026/,rewritten,200,/guides/amazon-fba-fee-changes-2026/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/amazon-ppc-benchmarks/,rewritten,200,/guides/amazon-ppc-benchmarks/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/amazon-renewed/,rewritten,200,/guides/amazon-renewed/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/amazon-stopped-prepping/,rewritten,200,/guides/amazon-stopped-prepping/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/annual-operating-calendar/,redirect,meta-refresh 0 + canonical,/reference/key-dates/,Konu karşılığı olan sayfaya yönlendirme
+/guides/antidumping-duties/,kept,200,/guides/antidumping-duties/,"v3 içeriği, aynı URL"
+/guides/aplus-content-brand-tools/,rewritten,200,/guides/aplus-content-brand-tools/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/authorised-reseller/,rewritten,200,/guides/authorised-reseller/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/awd-vs-3pl-warehousing/,rewritten,200,/guides/awd-vs-3pl-warehousing/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/brand-referral-bonus/,rewritten,200,/guides/brand-referral-bonus/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/brand-registry-trademark/,kept,200,/guides/brand-registry-trademark/,"v3 içeriği, aynı URL"
+/guides/bsa-collateral-change-2026/,redirect,meta-refresh 0 + canonical,/guides/seller-financing/,Konu karşılığı olan sayfaya yönlendirme
+/guides/bundles-and-multipacks/,rewritten,200,/guides/bundles-and-multipacks/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/buy-box-featured-offer/,rewritten,200,/guides/buy-box-featured-offer/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/buyer-seller-messaging/,rewritten,200,/guides/buyer-seller-messaging/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/changes-timeline-2026/,redirect,meta-refresh 0 + canonical,/reference/key-dates/,Konu karşılığı olan sayfaya yönlendirme
+/guides/choosing-a-freight-forwarder/,rewritten,200,/guides/choosing-a-freight-forwarder/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/country-of-origin-sourcing/,kept,200,/guides/country-of-origin-sourcing/,"v3 içeriği, aynı URL"
+/guides/cross-channel-price-parity/,rewritten,200,/guides/cross-channel-price-parity/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/currency-conversion-payouts/,rewritten,200,/guides/currency-conversion-payouts/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/customs-bonds/,kept,200,/guides/customs-bonds/,"v3 içeriği, aynı URL"
+/guides/customs-holds-and-exams/,kept,200,/guides/customs-holds-and-exams/,"v3 içeriği, aynı URL"
+/guides/dd7-payout-reserve/,rewritten,200,/guides/dd7-payout-reserve/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/de-minimis-suspension-2026/,kept,200,/guides/de-minimis-suspension-2026/,"v3 içeriği, aynı URL"
+/guides/deal-and-coupon-fees/,rewritten,200,/guides/deal-and-coupon-fees/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/demand-forecasting-reorder/,rewritten,200,/guides/demand-forecasting-reorder/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/duty-drawback/,kept,200,/guides/duty-drawback/,"v3 içeriği, aynı URL"
+/guides/ebay-etsy-for-amazon-sellers/,kept,200,/guides/ebay-etsy-for-amazon-sellers/,"v3 içeriği, aynı URL"
+/guides/entry-type-11-vs-01/,kept,200,/guides/entry-type-11-vs-01/,"v3 içeriği, aynı URL"
+/guides/etsy-offsite-ads-economics/,kept,200,/guides/etsy-offsite-ads-economics/,"v3 içeriği, aynı URL"
+/guides/expanding-eu-uk-compliance/,rewritten,200,/guides/expanding-eu-uk-compliance/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/fba-fuel-logistics-surcharge-2026/,rewritten,200,/guides/fba-fuel-logistics-surcharge-2026/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/fba-reimbursement-sourcing-cost/,rewritten,200,/guides/fba-reimbursement-sourcing-cost/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/fba-storage-four-layers/,rewritten,200,/guides/fba-storage-four-layers/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/fba-vs-fbm-breakeven/,rewritten,200,/guides/fba-vs-fbm-breakeven/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/fbt-fixed-dollar-problem/,rewritten,200,/guides/fbt-fixed-dollar-problem/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/first-sale-valuation/,kept,200,/guides/first-sale-valuation/,"v3 içeriği, aynı URL"
+/guides/foreign-trade-zones/,kept,200,/guides/foreign-trade-zones/,"v3 içeriği, aynı URL"
+/guides/freight-modes/,rewritten,200,/guides/freight-modes/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/gs1-barcodes-fnsku/,kept,200,/guides/gs1-barcodes-fnsku/,"v3 içeriği, aynı URL"
+/guides/hazmat-dangerous-goods/,kept,200,/guides/hazmat-dangerous-goods/,"v3 içeriği, aynı URL"
+/guides/holiday-peak-fulfilment-fee/,rewritten,200,/guides/holiday-peak-fulfilment-fee/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/hts-classification-basics/,kept,200,/guides/hts-classification-basics/,"v3 içeriği, aynı URL"
+/guides/inbound-placement-split-arithmetic/,rewritten,200,/guides/inbound-placement-split-arithmetic/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/incoterms-who-is-importer/,kept,200,/guides/incoterms-who-is-importer/,"v3 içeriği, aynı URL"
+/guides/ip-complaints-retractions/,rewritten,200,/guides/ip-complaints-retractions/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/ipi-restock-limits/,rewritten,200,/guides/ipi-restock-limits/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/landed-cost-fee-stack/,redirect,meta-refresh 0 + canonical,/guides/tariff-stack-2026/,Konu karşılığı olan sayfaya yönlendirme
+/guides/launch-sequence/,rewritten,200,/guides/launch-sequence/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/listing-disappeared/,rewritten,200,/guides/listing-disappeared/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/listing-optimisation-a10/,rewritten,200,/guides/listing-optimisation-a10/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/low-inventory-level-fee/,rewritten,200,/guides/low-inventory-level-fee/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/main-image-compliance/,rewritten,200,/guides/main-image-compliance/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/mcf-off-amazon-orders/,rewritten,200,/guides/mcf-off-amazon-orders/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/narf-canada-mexico/,rewritten,200,/guides/narf-canada-mexico/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/new-asin-referral-incentive/,redirect,meta-refresh 0 + canonical,/guides/amazon-referral-fees/,Konu karşılığı olan sayfaya yönlendirme
+/guides/off-amazon-diversification/,redirect,meta-refresh 0 + canonical,/guides/ebay-etsy-for-amazon-sellers/,Konu karşılığı olan sayfaya yönlendirme
+/guides/order-defect-rate/,rewritten,200,/guides/order-defect-rate/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/origin-marking-requirements/,kept,200,/guides/origin-marking-requirements/,"v3 içeriği, aynı URL"
+/guides/packaging-design-fba/,rewritten,200,/guides/packaging-design-fba/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/peak-season-cost-stack/,redirect,meta-refresh 0 + canonical,/guides/holiday-peak-fulfilment-fee/,Konu karşılığı olan sayfaya yönlendirme
+/guides/peak-surcharge-2026-schedule/,redirect,meta-refresh 0 + canonical,/guides/holiday-peak-fulfilment-fee/,Konu karşılığı olan sayfaya yönlendirme
+/guides/ppc-campaign-structure-launch/,rewritten,200,/guides/ppc-campaign-structure-launch/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/price-tier-repricing-trap/,redirect,meta-refresh 0 + canonical,/guides/amazon-referral-fees/,Konu karşılığı olan sayfaya yönlendirme
+/guides/prior-disclosure-protests/,kept,200,/guides/prior-disclosure-protests/,"v3 içeriği, aynı URL"
+/guides/product-inserts/,rewritten,200,/guides/product-inserts/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/product-research-cost-errors/,rewritten,200,/guides/product-research-cost-errors/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/q4-deal-deadlines-2026/,rewritten,200,/guides/q4-deal-deadlines-2026/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/q4-freight-booking-window/,rewritten,200,/guides/q4-freight-booking-window/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/qc-inspections/,rewritten,200,/guides/qc-inspections/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/reimbursement-recovery-services/,rewritten,200,/guides/reimbursement-recovery-services/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/removal-vs-hold-decision/,rewritten,200,/guides/removal-vs-hold-decision/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/returns-cost-and-badge/,rewritten,200,/guides/returns-cost-and-badge/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/review-manipulation-risk/,kept,200,/guides/review-manipulation-risk/,"v3 içeriği, aynı URL"
+/guides/rufus-listing-optimization/,rewritten,200,/guides/rufus-listing-optimization/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/sales-tax-nexus/,kept,200,/guides/sales-tax-nexus/,"v3 içeriği, aynı URL"
+/guides/second-marketplace-decision/,redirect,meta-refresh 0 + canonical,/guides/ebay-etsy-for-amazon-sellers/,Konu karşılığı olan sayfaya yönlendirme
+/guides/section-321-repeal-2027/,kept,200,/guides/section-321-repeal-2027/,"v3 içeriği, aynı URL"
+/guides/seller-central-reports/,rewritten,200,/guides/seller-central-reports/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/seller-financing/,rewritten,200,/guides/seller-financing/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/seller-fulfilled-prime/,rewritten,200,/guides/seller-fulfilled-prime/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/seller-insurance-coi/,rewritten,200,/guides/seller-insurance-coi/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/selling-your-fba-business/,rewritten,200,/guides/selling-your-fba-business/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/shipment-discrepancy-claims/,rewritten,200,/guides/shipment-discrepancy-claims/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/sipp-packaging-program/,rewritten,200,/guides/sipp-packaging-program/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/sourcing-agents/,rewritten,200,/guides/sourcing-agents/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/subscribe-and-save-economics/,rewritten,200,/guides/subscribe-and-save-economics/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/supplier-payment-terms/,rewritten,200,/guides/supplier-payment-terms/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/supplier-verification/,rewritten,200,/guides/supplier-verification/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/tariff-engineering-design/,rewritten,200,/guides/tariff-engineering-design/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/tariff-stack-2026/,kept,200,/guides/tariff-stack-2026/,"v3 içeriği, aynı URL"
+/guides/the-supplier-invoice/,rewritten,200,/guides/the-supplier-invoice/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/tiktok-shop-fee-increase-2026/,redirect,meta-refresh 0 + canonical,/guides/tiktok-shop-fees/,Konu karşılığı olan sayfaya yönlendirme
+/guides/tiktok-shop-fees/,rewritten,200,/guides/tiktok-shop-fees/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/tiktok-shop-plus-membership/,redirect,meta-refresh 0 + canonical,/guides/tiktok-shop-fees/,Konu karşılığı olan sayfaya yönlendirme
+/guides/title-limit-984-million/,rewritten,200,/guides/title-limit-984-million/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/ungating-restricted-categories/,rewritten,200,/guides/ungating-restricted-categories/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/us-product-compliance/,kept,200,/guides/us-product-compliance/,"v3 içeriği, aynı URL"
+/guides/variations-review-pooling/,rewritten,200,/guides/variations-review-pooling/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/vendor-central-vs-seller-central/,rewritten,200,/guides/vendor-central-vs-seller-central/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/vine-and-early-reviews/,rewritten,200,/guides/vine-and-early-reviews/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/guides/walmart-new-seller-savings-2026/,redirect,meta-refresh 0 + canonical,/marketplaces/walmart/,Konu karşılığı olan sayfaya yönlendirme
+/guides/walmart-wfs/,kept,200,/guides/walmart-wfs/,"v3 içeriği, aynı URL"
+/how-we-test/,redirect,meta-refresh 0 + canonical,/editorial-standards/,Konu karşılığı olan sayfaya yönlendirme
+/marketplaces/,kept,200,/marketplaces/,"v3 içeriği, aynı URL"
+/marketplaces/aliexpress/,rewritten,200,/marketplaces/aliexpress/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/marketplaces/amazon/,kept,200,/marketplaces/amazon/,"v3 içeriği, aynı URL"
+/marketplaces/ebay/,kept,200,/marketplaces/ebay/,"v3 içeriği, aynı URL"
+/marketplaces/etsy/,kept,200,/marketplaces/etsy/,"v3 içeriği, aynı URL"
+/marketplaces/shopify/,kept,200,/marketplaces/shopify/,"v3 içeriği, aynı URL"
+/marketplaces/tiktok-shop/,rewritten,200,/marketplaces/tiktok-shop/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/marketplaces/walmart/,kept,200,/marketplaces/walmart/,"v3 içeriği, aynı URL"
+/news/,redirect,meta-refresh 0 + canonical,/policy-log/,Konu karşılığı olan sayfaya yönlendirme
+/policy-log/,kept,200,/policy-log/,"v3 içeriği, aynı URL"
+/privacy/,kept,200,/privacy/,"v3 içeriği, aynı URL"
+/quiz/,kept,200,/quiz/,"v3 içeriği, aynı URL"
+/reality-check/,redirect,meta-refresh 0 + canonical,/start-here/,Konu karşılığı olan sayfaya yönlendirme
+/resources/,kept,200,/resources/,"v3 içeriği, aynı URL"
+/reviews/,rewritten,200,/reviews/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/a2x/,rewritten,200,/reviews/a2x/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/amzscout/,rewritten,200,/reviews/amzscout/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/aura/,rewritten,200,/reviews/aura/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/getida/,rewritten,200,/reviews/getida/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/helium-10/,rewritten,200,/reviews/helium-10/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/jungle-scout/,rewritten,200,/reviews/jungle-scout/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/keepa/,rewritten,200,/reviews/keepa/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/sellerboard/,rewritten,200,/reviews/sellerboard/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/reviews/zonguru/,rewritten,200,/reviews/zonguru/,"Aynı URL, birincil kaynaklardan sıfırdan yeniden yazıldı"
+/start-here/,kept,200,/start-here/,"v3 içeriği, aynı URL"
+/terms/,kept,200,/terms/,"v3 içeriği, aynı URL"
+/tools/,kept,200,/tools/,"v3 içeriği, aynı URL"
+/tools/cash-flow-planner/,kept,200,/tools/cash-flow-planner/,"v3 içeriği, aynı URL"
+/tools/dimensional-weight/,kept,200,/tools/dimensional-weight/,"v3 içeriği, aynı URL"
+/tools/margin-calculator/,kept,200,/tools/margin-calculator/,"v3 içeriği, aynı URL"
+/tools/ppc-budget-calculator/,kept,200,/tools/ppc-budget-calculator/,"v3 içeriği, aynı URL"
+/tools/tariff-stack-estimator/,redirect,meta-refresh 0 + canonical,/tools/duty-estimator/,Konu karşılığı olan sayfaya yönlendirme

@@ -1,0 +1,114 @@
+---
+title: "Amazon Main Image Compliance: What's Public and Where to Check"
+description: "How Amazon's main image slot works, what Amazon publishes about product photos, how non-compliant listings get suppressed, and where the full rules live."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a single plain product, such as a ceramic mug, photographed straight on against a seamless pure white background in soft even light, no logos or text"
+  alt: "Plain cardboard product box with a blank white label area on its side, on a white table"
+  image: "gs1-barcodes-fnsku"
+keyFacts:
+  - { label: "Main image slot", value: "MAIN (main_product_image_locator)", claim: "main-image-compliance-01" }
+  - { label: "Photos per listing", value: "Up to nine", claim: "main-image-compliance-15" }
+  - { label: "Rules vary by", value: "Product type and marketplace", claim: "main-image-compliance-05" }
+  - { label: "Possible enforcement", value: "Search suppression", claim: "main-image-compliance-12" }
+summary:
+  - "The main image is the MAIN slot, stored in the main_product_image_locator attribute and shown as the primary image on the detail page."
+  - "Amazon requires every image to comply with its product image requirements; the full requirements are published in Seller Central."
+  - "Supported image slots and their requirements differ by product type and marketplace, and the product type schema lists the constraints."
+  - "Listing issues can lead to search suppression, and a search-suppressed listing is no longer discoverable."
+  - "Amazon's public seller site advises sharp, high-resolution photos on a simple, well-lit backdrop, with up to nine photos per listing."
+faq:
+  - { q: "What are Amazon's main image requirements?", a: "Amazon requires every listing image to comply with its product image requirements, which are published in Seller Central. Supported image slots and their constraints differ by product type and marketplace.", claims: ["main-image-compliance-04", "main-image-compliance-05"] }
+related: ["ai-image-tagging-rule", "title-limit-984-million", "listing-optimisation-a10", "us-product-compliance"]
+---
+
+If your main image breaks Amazon's rules, the risk is not a warning label but a listing customers cannot find: listing issues can cause search suppression, and a search-suppressed listing is no longer discoverable. <C id="main-image-compliance-11"/> <C id="main-image-compliance-13"/> Amazon requires all listing images to comply with its product image requirements. <C id="main-image-compliance-04"/> The detailed main image rules are published inside Seller Central, so read and apply them there; this page covers what Amazon documents publicly about the main image and how to catch problems early.
+
+## What "main image" means in Amazon's catalog
+
+Every listing stores its photos in named image slots. The main image is one specific attribute, separate from the gallery and the swatch.
+
+| Slot | Attribute | What it is |
+|---|---|---|
+| MAIN | `main_product_image_locator` | Primary product image displayed on the detail page |
+| PT01–PT08 | `other_product_image_locator_1` to `_8` | Additional images in the image gallery |
+| SWCH | `swatch_product_image_locator` | Swatch image displayed on variation selectors |
+
+*Source: Amazon Selling Partner API, "Submit media attributes," checked Nov 8, 2026.* <C id="main-image-compliance-01"/> <C id="main-image-compliance-02"/> <C id="main-image-compliance-03"/>
+
+Amazon's seller site puts the overall count simply: you can upload up to nine photos. <C id="main-image-compliance-15"/> The product detail page is the part of a listing where the product's information appears, including the title and images, <C id="main-image-compliance-14"/> so the MAIN slot is the photo that represents the product there.
+
+Two details matter for compliance. First, supported image slots and their requirements differ by product type and marketplace. <C id="main-image-compliance-05"/> Second, the product type definition returns every supported image attribute along with its constraints, <C id="main-image-compliance-06"/> so the authoritative list for your product is in the schema, not in a generic checklist.
+
+## What Amazon says publicly about good product photos
+
+Amazon's public guide to listings gives quality guidance rather than the full compliance rulebook:
+
+- Images should be sharp and clear, ideally in high resolution. <C id="main-image-compliance-16"/>
+- The product should be shown against a simple backdrop and well lit. <C id="main-image-compliance-17"/>
+
+Amazon's developer guide lists compliance with its product image requirements, which are published in Seller Central, as a prerequisite for every image. <C id="main-image-compliance-04"/> Check that page for your category before you shoot, because requirements vary by product type. <C id="main-image-compliance-05"/>
+
+## How images reach the listing
+
+How you host and replace an image affects whether a corrected photo actually goes live.
+
+<Compare title="Ways Amazon accepts image files through the API" columns={["Source", "What to know"]} rows={[
+  {label:"Public S3 or CloudFront", values:["Downloaded over HTTP or HTTPS", "Publicly accessible content"], claim:"main-image-compliance-07"},
+  {label:"Private S3 bucket", values:["Downloaded through an S3 URL", "Treated as immutable: new content needs a new object key"], claim:"main-image-compliance-08"},
+  {label:"Third-party server", values:["Downloaded from your server", "Must be publicly available to Amazon"], claim:"main-image-compliance-25"}
+]} />
+
+Amazon recommends hosting media on AWS for optimal processing performance. <C id="main-image-compliance-26"/>
+
+The immutability rule matters when you fix a non-compliant photo: if you overwrite a file in a private S3 bucket under the same key, Amazon treats that content as unchanged. Upload the corrected image under a new key. <C id="main-image-compliance-08"/> If you are updating many SKUs at once, the JSON_LISTINGS_FEED accepts images for multiple SKUs in one feed document. <C id="main-image-compliance-10"/> Some image variants exist only in Seller Central's Image Manager and are not available through the Listings Items API. <C id="main-image-compliance-09"/>
+
+## What happens when a listing has an image problem
+
+Amazon reports problems with a listing as "issues." Issues point out problems that cause listings to go inactive, search suppression, or other quality problems. <C id="main-image-compliance-11"/> Amazon's documented enforcement actions include search suppression, listing suppression, attribute suppression and catalog item removal. <C id="main-image-compliance-12"/>
+
+<Decision title="Reading the enforcement on a listing issue" rows={[
+  {if:"The listing shows as search suppressed", then:"It is no longer discoverable. Fix the cited issue and resubmit.", claim:"main-image-compliance-13"},
+  {if:"You manage listings through the API", then:"Subscribe to LISTINGS_ITEM_ISSUES_CHANGE to be told when a listing's issues change.", claim:"main-image-compliance-18"},
+  {if:"The issue message names a specific attribute", then:"Patch that attribute; Amazon's example lifts a suppression by adding required attributes.", claim:"main-image-compliance-19"}
+]} />
+
+The issue message is the specific reason; Amazon's status guide notes that buyability and discoverability can be affected by suppression, blocking, missing offers, depleted inventory and other reasons. <C id="main-image-compliance-20"/> Do not assume an image is the cause until the issue says so.
+
+<Steps title="Fix a main image issue" steps={[
+  {t:"Read the issue", d:"Check the enforcement action and the attribute it names.", claim:"main-image-compliance-12"},
+  {t:"Check the rules for your product type", d:"Pull the product type schema for the image constraints, then compare the photo with the Seller Central image requirements.", claim:"main-image-compliance-06"},
+  {t:"Upload the corrected file under a new key", d:"Private S3 content is immutable, so a replaced file needs a new object key.", claim:"main-image-compliance-08"},
+  {t:"Resubmit and watch the issue", d:"Wait for the issues notification to confirm the change.", claim:"main-image-compliance-18"}
+]} />
+
+## Main image versus ad creative
+
+Ad images follow a different rulebook from the main image, so do not reuse ad rules as listing rules or the reverse. Amazon Ads says display ads' default creative uses product imagery from the advertised ASIN's detail page and supports a white background, <C id="main-image-compliance-21"/> but custom ad creative has its own moderation policy.
+
+| Amazon Ads moderation rule | Applies to |
+|---|---|
+| Low-quality images will be rejected | Sponsored Brands and display ad creative |
+| Images should be the highest image resolution possible of 72 ppi | Sponsored Brands and display ad creative |
+| Ads without borders cannot have a white or off-white background color | Ad creative without borders (each ad product's specs give details) |
+
+*Source: Amazon Ads, Sponsored Brands and Sponsored Display moderation guide, checked Nov 8, 2026.* <C id="main-image-compliance-22"/> <C id="main-image-compliance-23"/> <C id="main-image-compliance-24"/>
+
+Because ad creative is moderated under its own guide, check ad images against the Amazon Ads rules and listing images against the product image requirements, not one against the other. If AI-generated people appear in any of your images, see [AI-generated people in Amazon images](/guides/ai-image-tagging-rule/).
+
+<Checklist title="Before you upload a new main image" items={[
+  "Requirements for your product type and marketplace pulled from the product type schema",
+  "Photo compared against the product image requirements page in Seller Central",
+  "Sharp, high-resolution, well-lit, simple backdrop",
+  "Corrected files uploaded under a new object key if you host on private S3",
+  "Listing issues monitored after submission"
+]} />
+
+## How to confirm
+
+The binding main image rules are on the product image requirements page in Seller Central; read it for your category before each reshoot. For how the MAIN slot, hosting and image constraints work through the API, re-check Amazon's "Submit media attributes" guide (developer-docs.amazon.com/sp-api/docs/submit-media) and the listing status guide on the same site. If a listing is suppressed, the issue code and message Amazon returns for that listing decide what must change.

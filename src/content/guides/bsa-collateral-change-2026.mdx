@@ -1,0 +1,70 @@
+---
+title: "Amazon BSA and Sales-Backed Financing: What to Check in 2026"
+description: "What sellers can verify publicly about financing against Amazon sales: Amazon Lending terms, how payouts reach you, and where the agreement text must be read."
+pillar: "money"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 7
+draft: true
+photo:
+  subject: "a hand signing a printed loan agreement on a desk beside a closed shipping carton, no readable text, no brand names or logos"
+  alt: "Hand holding a fountain pen over the signature line of a printed approval form on a wooden desk"
+  image: "customs-bonds"
+keyFacts:
+  - { label: "Amazon Lending cash advance", value: "No personal collateral required", claim: "bsa-collateral-change-2026-03" }
+  - { label: "Cash advance repayment", value: "Share of future sales, fixed capital fee", claim: "bsa-collateral-change-2026-02" }
+  - { label: "Payout destination", value: "A valid bank account", claim: "bsa-collateral-change-2026-13" }
+  - { label: "Payout timing", value: "Up to 5 business days after initiation", claim: "bsa-collateral-change-2026-14" }
+summary:
+  - "Amazon's Business Solutions Agreement and any changes to it are read inside Seller Central; this page does not describe its wording on financing or pledging Amazon proceeds."
+  - "Amazon's own financing program, Amazon Lending, works through third-party providers; its merchant cash advance requires no personal collateral and is repaid from a share of future sales."
+  - "Amazon pays sellers only to a valid bank account, and a payout can take up to five business days to arrive after Amazon initiates it."
+  - "Before signing any financing that relies on Amazon sales, compare its terms with the current agreement and with Amazon Lending's published terms."
+related: ["seller-central-reports", "account-suspension-appeal", "accrual-accounting-cogs"]
+---
+
+If you finance inventory against your Amazon sales — with a lender that takes a claim on your Amazon payouts, or a revenue-based funder that is repaid from them — the current version of Amazon's Business Solutions Agreement (BSA) is the document to read before you sign or renew. The BSA and any change notices are read inside Seller Central, so this page cannot quote them and does not describe or confirm any 2026 change. Read the current text and any change notice there, then use the publicly documented facts below to compare the financing routes open to you.
+
+## What is publicly documented about financing against Amazon sales
+
+Amazon has its own financing program. Amazon Lending, "through its third-party financing providers, offers business financing," and the first step is to "check for financing invitations" in Seller Central. <C id="bsa-collateral-change-2026-01"/> <C id="bsa-collateral-change-2026-07"/> Amazon says "providers take multiple factors into consideration when determining financing eligibility" and that applying "will not impact your personal credit." <C id="bsa-collateral-change-2026-18"/> <C id="bsa-collateral-change-2026-06"/>
+
+<Compare title="Amazon Lending products as Amazon describes them" columns={["How repayment works","Collateral or cost terms Amazon states"]} rows={[
+  {label:"Merchant cash advance", values:["Payment tied to a portion of future sales","No personal collateral; fixed capital fee"], claim:"bsa-collateral-change-2026-02"},
+  {label:"Line of credit", values:["Revolving; repayment term chosen for each draw","Interest at a fixed rate on the drawn balance"], claim:"bsa-collateral-change-2026-04"},
+  {label:"Term loan", values:["Equal monthly payments of principal and interest","Principal plus interest"], claim:"bsa-collateral-change-2026-08"}
+]} />
+
+The line of credit, in Amazon's words, is "a revolving credit line," and "interest accrues at a fixed rate on the drawn balance." <C id="bsa-collateral-change-2026-04"/> <C id="bsa-collateral-change-2026-05"/>
+
+Of these, the merchant cash advance is the one Amazon ties to future sales, and Amazon's description is specific: it requires "no personal collateral." <C id="bsa-collateral-change-2026-03"/> When Amazon launched the Parafin-provided advance on November 1, 2022, it said there was "no collateral required—unlike a traditional loan," and that "payments are only required during periods that a seller has made sales." <C id="bsa-collateral-change-2026-11"/> <C id="bsa-collateral-change-2026-12"/> In Amazon's October 31, 2025 financing guide, the mechanism is that "Parafin debits a set percentage of gross sales from your linked bank account." <C id="bsa-collateral-change-2026-09"/> Repayment, in that description, is collected from your linked bank account. Amazon also says it gets "explicit consent before sharing any data" with providers. <C id="bsa-collateral-change-2026-10"/>
+
+## How your Amazon money reaches you
+
+Any financing secured on Amazon sales depends on how Amazon pays out. Amazon's seller FAQ says "you must provide a valid bank account as the deposit method for your selling account," that "it can take up to five business days for the money to appear in your bank account after Amazon initiates a payment," and that Amazon "cannot make payments to a credit card or online payment system." <C id="bsa-collateral-change-2026-13"/> <C id="bsa-collateral-change-2026-14"/> <C id="bsa-collateral-change-2026-15"/>
+
+Not all sales are paid out at once. The Deferred Transaction Report, a "point-in-time report that contains a list of deferred transactions," lists deferred transactions and can cover up to 10 years of data. <C id="bsa-collateral-change-2026-16"/> A lender sizing a facility on your Amazon revenue may ask to see both settlements and deferred amounts; the [Seller Central reports guide](/guides/seller-central-reports/) explains where each sits.
+
+<Callout type="example" title="Worked example (hypothetical): what a sales-linked repayment does to cash">
+Inputs: a seller has $40,000 of monthly gross sales and takes a cash advance repaid at 10% of gross sales. Each month 0.10 × $40,000 = $4,000 is debited from the linked bank account. If sales fall to $25,000, the debit falls to $2,500; in a month with no sales, Amazon's description of the Parafin advance says no payment is required. <C id="bsa-collateral-change-2026-12"/> A fixed-payment loan of $4,000 a month would not adjust. The rate and fee here are invented; real offers set their own.
+</Callout>
+
+## Decide what to check before signing
+
+<Decision title="Before you sign or renew financing tied to Amazon sales" rows={[
+  {if:"The lender wants rights over your Amazon payouts or your selling account", then:"Read the current BSA and any change notice in Seller Central first; this page does not describe that wording"},
+  {if:"You want financing without pledging personal assets", then:"Compare Amazon Lending's cash advance, which Amazon says needs no personal collateral", claim:"bsa-collateral-change-2026-03"},
+  {if:"Your sales are seasonal", then:"A sales-linked repayment falls with sales; a term loan's equal monthly payments do not", claim:"bsa-collateral-change-2026-08"},
+  {if:"Your payouts are slow or partly held", then:"Pull the Deferred Transaction Report before agreeing a facility size", claim:"bsa-collateral-change-2026-16"},
+  {if:"Your account health is weak", then:"Check program eligibility: Amazon's Seller Wallet, for one, asks for good account health to enroll", claim:"bsa-collateral-change-2026-17"}
+]} />
+
+<Callout type="note" title="Not legal advice">
+Whether an existing loan, security interest or revenue-share contract conflicts with Amazon's agreement turns on the wording of both documents and the law that governs them. That is a question for a lawyer who has read your financing contract and the current BSA, not for this page.
+</Callout>
+
+## How to confirm the agreement wording
+
+Open the Business Solutions Agreement and any change notice in Seller Central and save a dated copy of the version in force when you sign financing. For Amazon's own financing terms, check the Amazon Lending page at sell.amazon.com/programs/amazon-lending, and for payout timing, the Selling with Amazon FAQ at sell.amazon.com/learn/faq. <C id="bsa-collateral-change-2026-01"/> <C id="bsa-collateral-change-2026-14"/>

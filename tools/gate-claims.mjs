@@ -2,11 +2,16 @@
 // the checker is never the producer.
 import { read, walk, claims, citedIds, Report } from './lib.mjs';
 const r = new Report('claims');
-const ALLOWED = ['ecfr.gov', 'federalregister.gov', 'govinfo.gov', 'irs.gov', 'usitc.gov', 'sell.amazon.com', 'marketplace.walmart.com', 'ebay.com', 'etsy.com', 'shopify.com', 'uspto.gov', 'gs1us.org', 'cdtfa.ca.gov', 'comptroller.texas.gov', 'floridarevenue.com', 'tax.illinois.gov', 'dor.wa.gov', 'pe.usps.com', 'usps.com', 'congress.gov', 'phmsa.dot.gov', 'trade.gov', 'ustr.gov', 'cbp.gov', 'ftc.gov', 'cpsc.gov'];
+const ALLOWED = ['ecfr.gov', 'federalregister.gov', 'govinfo.gov', 'irs.gov', 'usitc.gov', 'sell.amazon.com', 'marketplace.walmart.com', 'ebay.com', 'etsy.com', 'shopify.com', 'uspto.gov', 'gs1us.org', 'cdtfa.ca.gov', 'comptroller.texas.gov', 'floridarevenue.com', 'tax.illinois.gov', 'dor.wa.gov', 'pe.usps.com', 'usps.com', 'congress.gov', 'phmsa.dot.gov', 'trade.gov', 'ustr.gov', 'cbp.gov', 'ftc.gov', 'cpsc.gov',
+  'aboutamazon.com', 'aboutamazon.com.au', 'developer-docs.amazon', 'developer-docs.amazon.com', 'supplychain.amazon.com', 'advertising.amazon.com', 'buywithprime.amazon.com', 'business.amazon.com', 'amazon-packaging.com', 'm.media-amazon.com', 'github.com',
+  'seller-us.tiktok.com', 'seller.tiktok.com', 'cdn.contract.alibaba.com', 'terms.alicdn.com', 'developer.walmart.com', 'marketplacelearn.walmart.com',
+  'sba.gov', 'sec.gov', 'gov.uk', 'eur-lex.europa.eu', 'canada.ca', 'nysenate.gov', 'governor.ny.gov', 'ofac.treasury.gov', 'ic3.gov', 'dhs.gov', 'fmc.gov', 'wto.org', 'gs1.org'];
+// Vendor sites: allowed only as the source for that vendor's own /reviews/ page.
+const VENDOR = ['zonguru.com', 'helium10.com', 'amzscout.net', 'junglescout.com', 'goaura.com', 'a2xaccounting.com', 'sellerboard.com', 'keepa.com', 'getida.com'];
 const REQ = ['claim_id', 'claim', 'page', 'source_url', 'publisher', 'source_type', 'accessed', 'status'];
 const reg = claims(); const used = new Map();
 const use = (page, ids) => ids.forEach((id) => { if (!used.has(id)) used.set(id, new Set()); used.get(id).add(page); });
-for (const f of [...walk('src/content/guides', '.mdx'), ...walk('src/content/marketplaces', '.mdx')]) {
+for (const f of [...walk('src/content/guides', '.mdx'), ...walk('src/content/marketplaces', '.mdx'), ...walk('src/content/reviews', '.mdx')]) {
   const t = read(f); if (/^draft:\s*true/m.test(t.split('---')[1] || '')) continue;
   use(f, citedIds(t));
 }
@@ -20,8 +25,10 @@ for (const [id, c] of reg) {
   if (c.status === 'verified' && !c.verified_by) r.err(`${id}: verified without verified_by`);
   if (c.status === 'verified' && c.verified_by === c.produced_by) r.err(`${id}: checked by its own producer`);
   let host = ''; try { host = new URL(c.source_url).hostname.replace(/^www\./, ''); } catch { r.err(`${id}: bad source_url`); }
-  if (host && !ALLOWED.some((d) => host === d || host.endsWith('.' + d))) r.err(`${id}: ${host} is not an allowed primary source`);
-  if (/\/api\/|full_text|\.json($|\?)/.test(c.source_url)) r.err(`${id}: source_url must be the human-readable page (use fetched_via for API URLs)`);
+  const m = (d) => host === d || host.endsWith('.' + d);
+  if (host && !ALLOWED.some(m) && !(VENDOR.some(m) && String(c.page).startsWith('/reviews/'))) r.err(`${id}: ${host} is not an allowed primary source`);
+  if (host === 'github.com' && !/^https:\/\/github\.com\/amzn\//.test(c.source_url)) r.err(`${id}: only github.com/amzn (Amazon) is allowed`);
+  if (/\/api\/|full_text|\.json($|\?)/.test(c.source_url) && !/^https:\/\/github\.com\/amzn\//.test(c.source_url)) r.err(`${id}: source_url must be the human-readable page (use fetched_via for API URLs)`);
   if (c.status === 'verified' && !used.has(id)) r.warn(`${id}: verified but not cited anywhere`);
 }
 console.log(`  ${reg.size} claims, ${[...reg.values()].filter((c) => c.status === 'verified').length} verified`);

@@ -1,0 +1,138 @@
+---
+title: "Amazon PPC Benchmarks: Build Your Own From ACOS, CPC and CVR"
+description: "Amazon Ads publishes no 'good ACOS' figure. Its definitions of ACOS, ROAS, CPC, CTR and conversion rate, and how to set a benchmark from your own margin."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a printed advertising performance report with a column chart and a calculator on a desk, no screens with logos, no people"
+  alt: "A desk calculator resting on printed report pages with charts, with a notebook, keyboard and laptop blurred in the background"
+  image: "prior-disclosure-protests"
+keyFacts:
+  - { label: "ACOS formula", value: "Ad spend ÷ ad revenue × 100", claim: "amazon-ppc-benchmarks-02" }
+  - { label: "ROAS", value: "Ad revenue ÷ ad spend (inverse of ACOS)", claim: "amazon-ppc-benchmarks-04" }
+  - { label: "A 'good' ACOS", value: "No definitive number, per Amazon Ads", claim: "amazon-ppc-benchmarks-06" }
+  - { label: "Profit test", value: "ACOS below your profit margin", claim: "amazon-ppc-benchmarks-09" }
+summary:
+  - "Amazon Ads says there is no definitive number for a good ACOS; it depends on industry, company size and campaign frequency, among other variables."
+  - "ACOS is ad spend divided by ad revenue, times 100; ROAS is the inverse, ad revenue divided by ad spend."
+  - "To stay profitable, Amazon Ads says ACOS has to be lower than your profit margin, which makes break-even ACOS the first benchmark to calculate."
+  - "Amazon Ads recommends setting benchmarks from your own goals and the historical performance of your campaigns rather than from an outside average."
+  - "Average CPC, click-through rate and conversion rate explain why ACOS moves, so a useful benchmark tracks all of them together."
+faq:
+  - { q: "What is a good ACOS on Amazon?", a: "Amazon Ads says there isn't a definitive number; it depends on your industry, company size and campaign frequency. The firm line it does give is that ACOS has to be lower than your profit margin for the advertising to stay profitable.", claims: ["amazon-ppc-benchmarks-06", "amazon-ppc-benchmarks-07", "amazon-ppc-benchmarks-09"] }
+  - { q: "What is a good target ACOS?", a: "Amazon Ads says each brand will have a different target ACOS and that the first step is achieving break-even ACOS and comparing it to your profit margin. Set the target below that break-even line.", claims: ["amazon-ppc-benchmarks-10", "amazon-ppc-benchmarks-08"] }
+  - { q: "How much does Amazon PPC cost?", a: "Sponsored Products has no monthly or upfront fees; you pay per click. The final cost per click is usually set in an auction based on your adjusted bid plus other factors; the most you can be charged for a click is the maximum cost per click, which includes your base bid plus any adjustments from settings such as dynamic bidding or cost controls.", claims: ["amazon-ppc-benchmarks-20", "amazon-ppc-benchmarks-12", "amazon-ppc-benchmarks-13"] }
+related: ["ppc-campaign-structure-launch", "amazon-referral-fees", "deal-and-coupon-fees"]
+---
+
+Amazon Ads does not publish a benchmark ACOS, CPC or conversion rate for sellers to aim at; its own guide says plainly that "there isn't a definitive number for a good Amazon ACOS." <C id="amazon-ppc-benchmarks-06"/> What it does publish are the definitions of each metric and one hard rule: to keep a profit, your ACOS has to be lower than your profit margin. <C id="amazon-ppc-benchmarks-09"/> So the benchmark that matters is the one you calculate from your own margin and your own reports. This page sets out the Amazon Ads definitions, shows how they connect, and walks through building that benchmark for one product.
+
+## Why there is no official "good ACOS"
+
+Amazon Ads says a good ACOS "is dependent on your industry, company size, and campaign frequency, among other variables." <C id="amazon-ppc-benchmarks-07"/> It also says each brand will have a different target ACOS. <C id="amazon-ppc-benchmarks-10"/> Its targeting guide gives the same advice in general form: establish benchmarks "based on your goals and the historical performance of your campaigns." <C id="amazon-ppc-benchmarks-18"/>
+
+That leaves two kinds of benchmark worth having:
+
+- **A ceiling** — the break-even ACOS set by your margin. Above it, each ad-attributed sale loses money.
+- **A baseline** — your own trailing CPC, click-through rate and conversion rate, so you can see which one moved when ACOS changes.
+
+The performance figure on Amazon's seller advertising page is an outcome comparison, not a target: Amazon says sellers who used Sponsored Products saw, on average, 34% more sales growth four weeks after adoption than those who did not, citing its own internal data for 20 marketplaces including the US, September 1, 2023 to August 31, 2024, for advertisers who spent at least $1. <C id="amazon-ppc-benchmarks-19"/> It says nothing about what ACOS or CPC those sellers ran at, so it cannot serve as a benchmark for your campaigns.
+
+## The five metrics, as Amazon Ads defines them
+
+| Metric | Amazon Ads definition or formula | What it tells you |
+|---|---|---|
+| ACOS | A metric for Amazon pay-per-click campaigns: (ad spend ÷ ad revenue) × 100 | Share of ad-attributed revenue spent on ads |
+| ROAS | Ad revenue ÷ ad spend; the inverse of ACOS | Revenue per $1 of ad spend |
+| CPC | What you pay per click; final CPC set by auction from your adjusted bid plus other factors | Price of traffic |
+| CTR | Rate of clicks the ad sends to another page | How often shoppers who see the ad click it |
+| Conversion rate | (conversions ÷ total audience) × 100 | How often that traffic buys |
+
+*Source: Amazon Ads guides to ACOS, cost per click and conversion rate, checked Nov 8, 2026.* <C id="amazon-ppc-benchmarks-01"/> <C id="amazon-ppc-benchmarks-02"/> <C id="amazon-ppc-benchmarks-04"/> <C id="amazon-ppc-benchmarks-11"/> <C id="amazon-ppc-benchmarks-12"/> <C id="amazon-ppc-benchmarks-16"/> <C id="amazon-ppc-benchmarks-17"/>
+
+A few details from those guides matter when you read your reports:
+
+- **ACOS and ROAS are the same information.** Amazon Ads' example: $50 of spend that earns $100 is an ACOS of 50% and a ROAS of 2. <C id="amazon-ppc-benchmarks-03"/> <C id="amazon-ppc-benchmarks-05"/> Convert with ROAS = 100 ÷ ACOS%, so a 25% ACOS is a ROAS of 4.
+- **Your base bid is not the price.** The maximum cost per click is the most you could be charged for a click; it includes your base bid plus any adjustments from settings such as dynamic bidding or cost controls, and the final CPC usually comes out of the auction. <C id="amazon-ppc-benchmarks-13"/> <C id="amazon-ppc-benchmarks-12"/> Average CPC is simply the average amount spent on each click. <C id="amazon-ppc-benchmarks-15"/>
+- **Competition moves CPC.** Amazon Ads says that, generally, the more in-demand a keyword or the more visible the placement, the higher the cost. <C id="amazon-ppc-benchmarks-14"/> A CPC benchmark is only comparable across keywords of similar demand.
+- **Conversion rate needs a denominator.** Amazon Ads' formula divides conversions by "total audience." <C id="amazon-ppc-benchmarks-17"/> This page uses clicks as the audience for a Sponsored Products campaign, so the figure tracked below is orders ÷ clicks.
+
+## How ACOS breaks down
+
+ACOS is not an independent number. Using the definitions above, the ad cost of one order is CPC ÷ conversion rate, and ACOS is that cost divided by the price of the order:
+
+**ACOS = CPC ÷ (conversion rate × average order value)**
+
+That identity is arithmetic on Amazon's definitions, and it is why a benchmark built only on ACOS is hard to act on. If ACOS rises, the cause is one of three things: clicks got more expensive, fewer clicks turned into orders, or the order value fell (for example, because of a coupon or price cut). Tracking all three tells you which lever to pull.
+
+## Your ceiling: break-even ACOS
+
+Amazon Ads says break-even ACOS is directly linked to profit margin, and that the first step is achieving break-even ACOS and comparing it with your margin. <C id="amazon-ppc-benchmarks-08"/> <C id="amazon-ppc-benchmarks-10"/> In practice:
+
+**Break-even ACOS = profit per unit before advertising ÷ selling price**
+
+Profit before advertising means price minus product cost, inbound freight, duties, Amazon's referral fee and fulfillment costs. Referral fees are covered in [Amazon referral fees](/guides/amazon-referral-fees/); the [ad budget and break-even ACoS calculator](/tools/ppc-budget-calculator/) does the division for you.
+
+<Decision title="Reading your ACOS against your own ceiling" rows={[
+  {if:"ACOS is below your break-even ACOS", then:"Each ad-attributed sale still earns a profit; Amazon Ads' profit test is met", claim:"amazon-ppc-benchmarks-09"},
+  {if:"ACOS equals break-even ACOS", then:"Ad sales add revenue but no profit; set a target below this line", claim:"amazon-ppc-benchmarks-10"},
+  {if:"ACOS is above break-even ACOS", then:"Each ad-attributed sale loses money unless you are deliberately paying for something else, such as launch visibility", claim:"amazon-ppc-benchmarks-09"},
+  {if:"You want a 'normal' ACOS for your category", then:"Amazon Ads publishes none; benchmark against your own history and goals", claim:"amazon-ppc-benchmarks-18"}
+]} />
+
+## Worked example: building a benchmark for one product
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: selling price $30.00; profit per unit before advertising $9.00. Last 30 days for one Sponsored Products campaign: 150,000 impressions, 600 clicks, $420.00 spend, 36 orders, ad-attributed sales $1,080.00 (36 × $30).
+</Callout>
+
+| Metric | Calculation | Result |
+|---|---|---|
+| Break-even ACOS | $9.00 ÷ $30.00 | 30.0% |
+| CTR | 600 ÷ 150,000 | 0.40% |
+| Average CPC | $420 ÷ 600 | $0.70 |
+| Conversion rate (orders ÷ clicks) | 36 ÷ 600 | 6.0% |
+| ACOS | $420 ÷ $1,080 × 100 | 38.9% |
+| ROAS | $1,080 ÷ $420 | 2.57 |
+| Ad cost per order | $420 ÷ 36 | $11.67 |
+
+*Formulas: Amazon Ads guides, checked Nov 8, 2026; inputs and arithmetic are hypothetical.* <C id="amazon-ppc-benchmarks-02"/> <C id="amazon-ppc-benchmarks-04"/> <C id="amazon-ppc-benchmarks-15"/>
+
+The campaign runs at 38.9% against a 30.0% ceiling, so each ad-attributed order costs $11.67 in clicks against $9.00 of profit — a loss of $2.67 per order. Two ways back to break-even, holding everything else equal:
+
+- **Lower CPC.** At 6% conversion, break-even CPC is $9.00 × 0.06 = $0.54, so the average click has to fall from $0.70 to $0.54.
+- **Higher conversion.** At $0.70 per click, break-even conversion is $0.70 ÷ $9.00 = 7.8%, up from 6.0%.
+
+These seven numbers, refreshed each month, are the product's benchmark. Next month's ACOS can then be read against them: if CPC held at $0.70 but conversion fell, the change points to the listing or the traffic rather than the bid.
+
+## How much data a benchmark needs
+
+Small samples make every rate noisy. Amazon Ads' own guidance gives two useful minimums: test match types for at least 1–2 weeks before pausing keywords, and evaluate a keyword after it has received at least 20 clicks before deciding to make it a negative. <C id="amazon-ppc-benchmarks-22"/> <C id="amazon-ppc-benchmarks-21"/> Apply the same discipline to benchmarks: compare like periods, and do not reset a baseline on a few days of data.
+
+<Steps title="Set up your own PPC benchmark" steps={[
+  {t:"Calculate break-even ACOS per product", d:"Profit before ads ÷ price. This is the ceiling; Amazon Ads says ACOS must stay below your margin to keep a profit.", claim:"amazon-ppc-benchmarks-09"},
+  {t:"Pull a trailing period from your campaign reports", d:"Impressions, clicks, spend, orders and ad sales for at least the 1–2 weeks Amazon Ads suggests for match-type tests.", claim:"amazon-ppc-benchmarks-22"},
+  {t:"Compute CTR, average CPC, conversion rate, ACOS and ROAS", d:"Use the Amazon Ads formulas: ACOS = spend ÷ ad revenue × 100; ROAS is the inverse.", claim:"amazon-ppc-benchmarks-02"},
+  {t:"Set a target below break-even", d:"Amazon Ads says each brand's target ACOS differs; pick one that leaves the profit you need per unit.", claim:"amazon-ppc-benchmarks-10"},
+  {t:"Compare each new period against your own baseline", d:"Amazon Ads recommends benchmarks based on your goals and historical performance.", claim:"amazon-ppc-benchmarks-18"}
+]} />
+
+## Common mistakes with PPC benchmarks
+
+| Mistake | Why it misleads |
+|---|---|
+| Copying an "average ACOS" from elsewhere | Amazon Ads says there is no definitive good ACOS; your margin sets the limit. <C id="amazon-ppc-benchmarks-06"/> |
+| Treating bid as cost | Final CPC is usually set by the auction; the ceiling is the maximum cost per click, base bid plus any dynamic-bidding or cost-control adjustments. <C id="amazon-ppc-benchmarks-13"/> |
+| Comparing CPC across very different keywords | More in-demand keywords and more visible placements generally cost more. <C id="amazon-ppc-benchmarks-14"/> |
+| Mixing ACOS and ROAS targets | They are inverses; a 25% ACOS target is a ROAS target of 4. <C id="amazon-ppc-benchmarks-04"/> |
+| Judging a keyword on a handful of clicks | Amazon Ads suggests at least 20 clicks before deciding on a negative. <C id="amazon-ppc-benchmarks-21"/> |
+
+The scope of this page is the metrics and how to set your own targets; how campaigns should be organized to produce clean data is covered in [Sponsored Products campaign structure for a launch](/guides/ppc-campaign-structure-launch/). Your profit margin, not a published average, decides whether a campaign earns money; for tax treatment of ad spend, ask your accountant.
+
+## How to confirm the definitions
+
+Re-check the formulas and the "no definitive number" statement on the Amazon Ads guide [What is ACOS?](https://advertising.amazon.com/library/guides/acos-advertising-cost-of-sales), the [cost per click guide](https://advertising.amazon.com/library/guides/cost-per-click) and the [conversion rate guide](https://advertising.amazon.com/library/guides/conversion-rate). Sponsored Products pricing terms are on the [Sponsored Products product page](https://advertising.amazon.com/solutions/products/sponsored-products), which says campaigns have no monthly or upfront fees. <C id="amazon-ppc-benchmarks-20"/> Your own CPC, CTR and conversion figures come from the campaign reports in your Amazon Ads console.

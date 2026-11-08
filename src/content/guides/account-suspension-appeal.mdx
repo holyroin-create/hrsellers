@@ -1,0 +1,96 @@
+---
+title: "Amazon Account Suspension Appeals: What Amazon Publishes"
+description: "How Amazon's Account Health Rating drives suspension, which status signals and reports to pull before an appeal, and where the appeal rules actually live."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a seller's desk with a printed account report, a highlighter and a laptop showing a generic dashboard with a red status bar, no brand names or logos"
+  alt: "Tall stacks of paper files and folders with yellow tabs on an office desk"
+  image: "section-321-repeal-2027"
+keyFacts:
+  - { label: "Rating bands", value: "Healthy, At-Risk, Unhealthy", claim: "account-suspension-appeal-01" }
+  - { label: "What drives suspension", value: "Accumulated policy violations in the rating", claim: "account-suspension-appeal-02" }
+  - { label: "API account statuses", value: "NORMAL, AT_RISK, DEACTIVATED", claim: "account-suspension-appeal-07" }
+  - { label: "Account Health Assurance", value: "No deactivation while you work with Amazon on issues", claim: "account-suspension-appeal-19" }
+  - { label: "Human help", value: "Account Health Specialists, phone or email", claim: "account-suspension-appeal-04" }
+summary:
+  - "Amazon says its Account Health Rating is the determining factor for account suspension based on accumulated policy violations."
+  - "The rating marks an account Healthy, At-Risk or Unhealthy, and each violation shows a severity level."
+  - "The Seller Performance Report in the Selling Partner API carries the same Account Health dashboard metrics, including the rating, policy categories and document requests."
+  - "Amazon publishes its step-by-step appeal instructions inside Seller Central Help, so the appeal format itself has to be read there."
+faq:
+  - { q: "Why is my Amazon account suspended?", a: "Amazon says the Account Health Rating is the determining factor for suspension based on accumulated policy violations, and that sellers can see the severity of each violation. The Account Health dashboard is where Amazon says to monitor policy compliance.", claims: ["account-suspension-appeal-02", "account-suspension-appeal-03", "account-suspension-appeal-06"] }
+  - { q: "What is Amazon account health?", a: "It is Amazon's measure of how an account performs on customer service, shipping performance and policy compliance, shown in the Account Health dashboard and summarized by a rating of Healthy, At-Risk or Unhealthy.", claims: ["account-suspension-appeal-06", "account-suspension-appeal-01"] }
+  - { q: "What is a good Amazon account health rating?", a: "Amazon's public announcement names three bands — Healthy, At-Risk and Unhealthy — and says the numerical value places an account in one of them. The score itself appears in your Account Health dashboard and in the Seller Performance Report as ahrScore.", claims: ["account-suspension-appeal-01", "account-suspension-appeal-09"] }
+related: ["order-defect-rate", "seller-central-reports", "buyer-seller-messaging", "review-manipulation-risk"]
+---
+
+If your Amazon selling account has been suspended, the first decision is not how to word the appeal but what Amazon is actually counting against you. Amazon has said publicly that its Account Health Rating "will be the determining factor for account suspension based on accumulated policy violations." <C id="account-suspension-appeal-02"/> That rating, the violations behind it and their severity are all visible to you before you write anything. This page covers what Amazon publishes outside Seller Central about that system, and how to assemble the facts. The appeal steps and the format Amazon expects are published inside Seller Central Help, which is the only place to read them; this page does not reproduce or guess at them.
+
+## How Amazon decides an account is at risk
+
+Amazon introduced the current Account Health Rating in a July 2022 announcement and began rolling it out in August to sellers in its U.S. and Canada stores. <C id="account-suspension-appeal-05"/> The rating is a numerical value, and that value places the account in one of three bands: "Healthy," "At-Risk" or "Unhealthy." <C id="account-suspension-appeal-01"/> The same article says a seller can "see the level of severity for each violation." <C id="account-suspension-appeal-03"/>
+
+Two practical points follow. First, Amazon ties suspension to accumulated violations, so review every violation listed, not only the most recent notice. <C id="account-suspension-appeal-02"/> Second, the severity shown for each violation is a reasonable way to order your review.
+
+The Account Health dashboard is where this lives. Amazon describes it as the place to "monitor your customer service, shipping performance, and policy compliance." <C id="account-suspension-appeal-06"/> Those three headings are also a useful way to sort the problem before an appeal: is this about orders (defects, late shipments, cancellations), about a listing or product policy, or about something Amazon has asked you to document?
+
+## Account Health Assurance
+
+Some sellers have an extra layer of protection. On November 16, 2022, Amazon announced Account Health Assurance, a free benefit "which formalizes our commitment to not deactivate a seller's account as long as they work with us to resolve any issues." <C id="account-suspension-appeal-19"/> Under it, "a member of the Amazon team will proactively reach out and work one-on-one" with sellers whose account may be at risk. <C id="account-suspension-appeal-20"/> Amazon says enrolled sellers see a badge at the top of their account page. <C id="account-suspension-appeal-21"/> Amazon's announcement ties the commitment to the seller working with Amazon on the issue, so if you have the badge and are contacted about an at-risk account, respond to that outreach. <C id="account-suspension-appeal-19"/>
+
+## The status signals Amazon exposes
+
+Sellers who use software connected through the Selling Partner API (SP-API) can see the account's state change without logging in. Amazon's ACCOUNT_STATUS_CHANGED notification "is published whenever the selling partner's account status changes between NORMAL, AT_RISK, and DEACTIVATED." <C id="account-suspension-appeal-07"/> On a phone, the Amazon Seller app shows "banner alerts related to your account health." <C id="account-suspension-appeal-14"/>
+
+<Compare title="Where Amazon shows account-health status" columns={["What you see","Where"]} rows={[
+  {label:"Account Health Rating band", values:["Healthy, At-Risk or Unhealthy, with violation severity","Account Health dashboard in Seller Central"], claim:"account-suspension-appeal-01"},
+  {label:"Account status", values:["NORMAL, AT_RISK or DEACTIVATED","SP-API ACCOUNT_STATUS_CHANGED notification"], claim:"account-suspension-appeal-07"},
+  {label:"Full metric set", values:["Rating, order metrics, policy categories, document requests","SP-API Seller Performance Report"], claim:"account-suspension-appeal-08"},
+  {label:"Alerts on mobile", values:["Banner alerts related to account health","Amazon Seller app"], claim:"account-suspension-appeal-14"}
+]} />
+
+## What the Seller Performance Report contains
+
+The most complete public description of what Amazon tracks is the documentation for the Seller Performance Report (report type GET_V2_SELLER_PERFORMANCE_REPORT), which "contains the individual performance metrics data from the Seller Central Account Health dashboard." <C id="account-suspension-appeal-08"/> It includes an accountHealthRating object with a status and a score (ahrStatus and ahrScore) for a stated reporting date range. <C id="account-suspension-appeal-09"/>
+
+It also names the policy categories Amazon tracks: listing policy violations, product authenticity complaints, product condition complaints, product safety complaints, received intellectual property complaints, restricted product policy violations and customer product review policy violations. <C id="account-suspension-appeal-10"/> Two further fields matter for appeals: documentRequests, and policyViolationWarnings with a warning count. <C id="account-suspension-appeal-12"/> Each metric carries a reporting date range, a status, and a target value and target condition next to the actual count or rate, so the report shows which window Amazon measured and where you stood against its target. <C id="account-suspension-appeal-11"/>
+
+If a reviewer from your side, or an advisor, needs to see the numbers, this report is the version to export, because it is the same data as the dashboard. <C id="account-suspension-appeal-08"/> Where no retention period is set for a report type, Amazon keeps a generated report for 90 days, so download a copy at the time of the deactivation rather than relying on regenerating it later. <C id="account-suspension-appeal-18"/>
+
+## Decide what kind of problem you have
+
+<Decision title="Match the problem to the evidence you need" rows={[
+  {if:"The rating shows a policy violation with a severity level", then:"Note each violation and its severity; Amazon ties suspension to accumulated violations, not the latest one alone", claim:"account-suspension-appeal-03"},
+  {if:"The violation is about customer complaints on authenticity, condition or safety", then:"Collect the documents behind those products; these are named categories in the Seller Performance Report", claim:"account-suspension-appeal-10"},
+  {if:"The report shows open document requests", then:"Treat the request as the task: Amazon tracks documentRequests as a separate field", claim:"account-suspension-appeal-12"},
+  {if:"The problem is order performance (feedback, claims, shipping)", then:"Pull the negative and neutral feedback report and the order metrics for the same date range", claim:"account-suspension-appeal-13"},
+  {if:"You see the Account Health Assurance badge and an at-risk warning", then:"Work with the Amazon team member who reaches out; the commitment depends on working with Amazon to resolve the issue", claim:"account-suspension-appeal-20"},
+  {if:"You cannot tell what the violation means", then:"Ask an Account Health Specialist by phone or email, or contact Seller Support", claim:"account-suspension-appeal-04"}
+]} />
+
+For order-performance cases, the Flat File Feedback Report "contains negative and neutral feedback (one to three stars)" with the order ID and your response, which lets you tie each complaint to an order. <C id="account-suspension-appeal-13"/> The [order defect rate guide](/guides/order-defect-rate/) explains the order metrics in more detail, and the [Seller Central reports guide](/guides/seller-central-reports/) lists the order and FBA reports that hold shipment and return evidence.
+
+<Steps title="Assemble the facts before you open the appeal form" steps={[
+  {t:"Record the status", d:"Note the rating band and every open violation with its severity from the Account Health dashboard.", claim:"account-suspension-appeal-03"},
+  {t:"Export the Seller Performance Report", d:"It holds the same dashboard metrics, with reporting date ranges and targets.", claim:"account-suspension-appeal-11"},
+  {t:"Pull supporting reports", d:"For order issues, the feedback report; for product issues, your invoices and product documents.", claim:"account-suspension-appeal-13"},
+  {t:"Read Amazon's appeal instructions in Seller Central Help", d:"The required format and steps are published there, not on Amazon's public sites."},
+  {t:"Use Amazon's support channels", d:"Account Health Specialists by phone or email, or a Seller Support case.", claim:"account-suspension-appeal-15"}
+]} />
+
+## Why account health matters beyond the appeal
+
+A weak rating can affect more than the account's status. Amazon's Seller Wallet, for example, says that to be eligible to enroll "you should have a seller account in the US store that is in good account health." <C id="account-suspension-appeal-16"/> Programs can also be withdrawn on their own terms: in Seller Fulfilled Prime, "ongoing failure to meet requirements may lead to Prime offers being disabled and disenrollment from the program." <C id="account-suspension-appeal-17"/> When you plan the fix, check which programs and tools you rely on and whether their own requirements are also affected.
+
+<Callout type="note" title="Scope of this page">
+This page reports what Amazon publishes on its public seller, developer and corporate sites. Whether a specific deactivation was correct, and what you are entitled to under your agreement with Amazon, is decided through Amazon's appeal process and, beyond it, the dispute terms in that agreement — read them in Seller Central or take advice from a lawyer who has read them.
+</Callout>
+
+## How to confirm before you appeal
+
+Re-read the current Account Health dashboard and the appeal instructions in Seller Central Help on the day you submit, because both are maintained only inside Seller Central. For the metric definitions Amazon exposes to software, check the Performance Reports page in the Selling Partner API documentation at developer-docs.amazon.com; for the rating's purpose and bands, Amazon's July 21, 2022 announcement on aboutamazon.com is the public reference, and Amazon's November 16, 2022 post on sell.amazon.com describes Account Health Assurance. <C id="account-suspension-appeal-08"/> <C id="account-suspension-appeal-01"/>

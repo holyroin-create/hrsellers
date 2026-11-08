@@ -1,0 +1,118 @@
+---
+title: "IPI and FBA Restock Limits: What Amazon Actually Publishes"
+description: "How Amazon's Inventory Performance Index relates to FBA capacity and restock limits, how monthly limits are set and announced, and which reports to track."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "warehouse aisle with tall racks of cartons and a half-empty bay, a tape measure resting on one carton, no people, no logos"
+  alt: "Warehouse aisle between tall metal racks stocked with cardboard cartons and wrapped pallets"
+  image: "accrual-accounting-cogs"
+keyFacts:
+  - { label: "Limit period", value: "One monthly limit", claim: "ipi-restock-limits-06" }
+  - { label: "Unit of measure", value: "Cubic feet", claim: "ipi-restock-limits-09" }
+  - { label: "Next month's limit", value: "Third full week", claim: "ipi-restock-limits-11" }
+  - { label: "Performance credits", value: "Up to 100% of reservation fee", claim: "ipi-restock-limits-17" }
+summary:
+  - "Amazon's FBA capacity system sets a single monthly limit for how much inventory a seller can send to and store at Amazon, measured in cubic feet."
+  - "Amazon says capacity limits are influenced by the IPI score plus sales forecasts, shipment lead time and fulfillment center capacity."
+  - "Next month's limit is announced in the third full week of each month, with estimates for the two months after it."
+  - "Sellers can bid for extra space with a reservation fee; performance credits can offset up to 100% of that fee."
+  - "Amazon's public pages describe what the IPI rewards but not its formula; the score and its components are shown inside Seller Central."
+faq:
+  - { q: "What is a good IPI score on Amazon?", a: "Amazon's public pages do not publish a target score. They say the IPI reflects how well you replenish popular products, keep optimal inventory levels and fix listing problems, and that a high score helps lower storage costs; your score and its drivers are shown in Seller Central.", claims: ["ipi-restock-limits-02", "ipi-restock-limits-03"] }
+  - { q: "Can you request an Amazon capacity limit increase?", a: "Amazon lets sellers request additional capacity by specifying a reservation fee. Requests are granted starting with the highest fee per cubic foot, and performance credits can offset up to 100% of the fee.", claims: ["ipi-restock-limits-15", "ipi-restock-limits-16", "ipi-restock-limits-17"] }
+related: ["shipment-discrepancy-claims", "amazon-stopped-prepping", "accrual-accounting-cogs", "amazon-fba-fee-changes-2026"]
+---
+
+Your restock limit decides how much you can send to FBA next month, and your Inventory Performance Index (IPI) is one input into it — but not the only one. Amazon says FBA capacity limits are influenced by your IPI score plus sales forecasts, shipment lead time and fulfillment center capacity. <C id="ipi-restock-limits-08"/> So the practical decision each month is: does the limit cover the reorder you are about to place, and if not, do you cut the order, clear space, or pay to reserve more? This page sets out what Amazon publishes on each of those levers.
+
+## Restock limits and capacity limits are the same system now
+
+Amazon's public FBA page still uses the phrase "restock limits," which it says help you determine how much inventory you can ship into its fulfillment network. <C id="ipi-restock-limits-04"/> Amazon's capacity announcement explains why it moved to one system: navigating two sets of limits measured differently — storage limits and restock limits — was confusing. <C id="ipi-restock-limits-07"/> The replacement offers a single monthly limit covering how much inventory you can send to and store at Amazon, and the announcement says the new capacity management system goes into effect March 1, 2023. <C id="ipi-restock-limits-06"/> <C id="ipi-restock-limits-18"/>
+
+Two details matter when you plan purchase orders:
+
+- **The unit is volume, not units.** Amazon sets limits and measures usage in cubic feet, while still showing usage in units for reference. <C id="ipi-restock-limits-09"/> <C id="ipi-restock-limits-10"/> A bulky SKU can therefore consume your limit far faster than its unit count suggests.
+- **Going over has a cost.** Amazon says that if you exceed your restock limit, you may see an increase in your storage costs, and that storage costs are tied to your usage of space in its network. <C id="ipi-restock-limits-05"/> <C id="ipi-restock-limits-28"/>
+
+## When the number arrives
+
+<Timeline title="Monthly capacity cycle, as Amazon describes it" items={[
+  {date:"2023-03-01", t:"Monthly capacity limits start", d:"Effective date given in Amazon's announcement of the single monthly limit.", claim:"ipi-restock-limits-18"}
+]} />
+
+<Steps title="How a month's limit reaches you" steps={[
+  {t:"Third full week of the month", d:"Amazon announces the capacity limit for the upcoming month.", claim:"ipi-restock-limits-11"},
+  {t:"Capacity Monitor and email", d:"The limit is shown in the Capacity Monitor in Seller Central and sent by email.", claim:"ipi-restock-limits-12"},
+  {t:"Two-month outlook", d:"Amazon also gives estimated limits for the following two months.", claim:"ipi-restock-limits-13"},
+  {t:"Estimates can move", d:"Estimates may go up or down depending on how efficiently you use your capacity.", claim:"ipi-restock-limits-14"}
+]} />
+
+The practical consequence: an order with a long production and freight lead time has to be sized against the estimate, not the confirmed number, and the estimate depends on how you manage the inventory already in Amazon's buildings.
+
+## What the IPI measures, according to Amazon
+
+Amazon describes the IPI as a metric that measures how efficiently you manage FBA inventory. <C id="ipi-restock-limits-01"/> Its public seller site says the score is based on how well you replenish popular products, maintain optimal inventory levels and fix listing problems, and that you should keep it high to lower storage costs. <C id="ipi-restock-limits-02"/> <C id="ipi-restock-limits-03"/> The FBA Dashboard in Seller Central shows the factors contributing to your IPI and your storage utilization ratio, along with recommendations such as restocking or creating outlet deals. <C id="ipi-restock-limits-19"/> <C id="ipi-restock-limits-20"/>
+
+Amazon's public pages do not publish the IPI formula, score range or any threshold. Those details, and your current score, are published inside Seller Central and should be checked there.
+
+The public page does define the inventory conditions the three drivers point at:
+
+| Condition | How Amazon defines it |
+|---|---|
+| Excess inventory | Over 90 days of supply, or at least one unit aged over 90 days (among other criteria) |
+| Stranded inventory | Leads to lost sales, storage costs and lost storage capacity |
+| Sell-through rate | Units sold divided by units received |
+| Aged inventory charge | Charged monthly for items stored more than 181 days |
+
+*Source: Amazon, sell.amazon.com inventory-management and FBA pages, checked Nov 8, 2026.* <C id="ipi-restock-limits-21"/> <C id="ipi-restock-limits-22"/> <C id="ipi-restock-limits-23"/> <C id="ipi-restock-limits-26"/>
+
+Amazon's general guidance is to keep about two months of supply available. <C id="ipi-restock-limits-27"/> About two months (roughly 60 days) of supply sits below the over-90-days-of-supply line in Amazon's excess-inventory definition.
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: in the last period you received 600 units of a SKU and sold 450; you now hold 600 units and sell about 5 per day; each unit occupies 0.25 cubic feet.
+
+- Sell-through rate = 450 ÷ 600 = 0.75.
+- Days of supply = 600 ÷ 5 = 120 days — above the 90-days-of-supply line Amazon uses for excess inventory.
+- Two months of supply at 5 per day is about 300 units, or 75 cubic feet (300 × 0.25). Holding 600 units uses 150 cubic feet of your limit.
+
+Holding 300 units instead of 600 would free about 75 cubic feet (150 − 75) for other SKUs. The arithmetic is illustrative only; your forecast and Amazon's recommendations will differ.
+</Callout>
+
+## Your options when the limit is too low
+
+<Decision title="Limit below the reorder you need" rows={[
+  {if:"Units sit unsellable or unlisted while still taking space", then:"Fix stranded inventory first; Amazon says it costs sales, storage fees and storage capacity.", claim:"ipi-restock-limits-22"},
+  {if:"A SKU has more than 90 days of supply", then:"Treat it as excess under Amazon's definition and cut the reorder or act on the Dashboard's outlet-deal or restock recommendations.", claim:"ipi-restock-limits-20"},
+  {if:"Demand is real and you need space this month", then:"Request extra capacity with a reservation fee you specify; requests are filled from the highest fee per cubic foot.", claim:"ipi-restock-limits-16"},
+  {if:"You expect the extra space to produce sales", then:"Performance credits from those sales can offset up to 100% of the reservation fee.", claim:"ipi-restock-limits-17"},
+  {if:"You plan to ship over the limit anyway", then:"Expect possible higher storage costs, per Amazon's FBA page.", claim:"ipi-restock-limits-05"}
+]} />
+
+The reservation route is a bid: you name the fee, and Amazon grants requests starting with the highest fee per cubic foot. <C id="ipi-restock-limits-15"/> <C id="ipi-restock-limits-16"/> Before bidding, compare the fee per cubic foot with the margin the extra cubic feet would actually earn in the month.
+
+## Reports that feed the decision
+
+If you or your developer pull data through Amazon's Selling Partner API, two documented report types map directly onto this decision. The Restock Inventory Report provides restock recommendations, suggested order quantities and reorder dates, updated in near real time. <C id="ipi-restock-limits-24"/> The FBA Manage Inventory Health Report (report type GET_FBA_INVENTORY_PLANNING_DATA) gives a consolidated view of sales over 7, 30, 60 and 90 days and of shipment statuses (working, received and shipped). <C id="ipi-restock-limits-25"/> Exporting both each month, just before the third-week announcement, gives you the sell-through and days-of-supply inputs used in the example above.
+
+<Checklist title="Monthly capacity routine" items={[
+  "In the third full week, record next month's limit and the two estimates from the Capacity Monitor",
+  "Convert each planned reorder to cubic feet",
+  "List SKUs above 90 days of supply or with units aged over 90 days",
+  "Clear stranded listings",
+  "Decide whether a reservation fee is worth paying for the gap"
+]} />
+
+For how inbound errors distort received quantities (and therefore sell-through), see [shipment discrepancy claims](/guides/shipment-discrepancy-claims/). Prep lead time also feeds into your plan — see [Amazon stopped prepping](/guides/amazon-stopped-prepping/).
+
+## How to confirm
+
+The scope here is Amazon's public material; your account's own limit and score are the authority. Re-check:
+
+- Amazon's capacity announcement on the Sell on Amazon blog (sell.amazon.com/blog/announcements/fba-capacity) for how limits and reservation fees work.
+- The FBA page on sell.amazon.com (FAQ: "How do restock limits and storage costs work?") and the inventory-management page under sell.amazon.com/learn.
+- Inside Seller Central: the Capacity Monitor, the FBA Dashboard and the IPI page for your current numbers.

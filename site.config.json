@@ -1,16 +1,26 @@
 {
-  "_comment": "Owner facts. Only values found in the owner's previous repository were entered; nothing was guessed. Release gate fails while ownerConfirmed is false or a required field is empty.",
-  "ownerConfirmed": false,
+  "_comment": "Owner facts confirmed by the site owner on 2026-11-08 (editor, contact). Release gate fails while ownerConfirmed is false or a required field is empty.",
+  "ownerConfirmed": true,
   "siteName": "FBA Tactics",
   "domain": "https://fbatactics.com",
-  "publisherName": "HR Express",
-  "publisherLocation": "",
-  "contactEmail": "contact@fbatactics.com",
-  "editorName": "",
+  "publisherName": "Muhammet Ali TÜRK",
+  "publisherLocation": "Ankara, Türkiye",
+  "contactEmail": "hrishesabi@outlook.com",
+  "editorName": "Muhammet Ali TÜRK",
   "editorBio": "",
   "adsensePublisherId": "ca-pub-9985150163567506",
   "adsEnabled": false,
   "googleCmpConfigured": false,
-  "adSlots": { "endOfArticle": "" },
-  "required": ["siteName", "domain", "publisherName", "contactEmail", "editorName", "adsensePublisherId"]
+  "adSlots": {
+    "endOfArticle": ""
+  },
+  "required": [
+    "siteName",
+    "domain",
+    "publisherName",
+    "contactEmail",
+    "editorName",
+    "adsensePublisherId"
+  ],
+  "editorSlug": "muhammet-ali-turk"
 }

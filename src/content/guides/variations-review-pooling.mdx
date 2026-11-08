@@ -1,0 +1,107 @@
+---
+title: "Amazon Variations and Shared Reviews: Where the Line Is"
+description: "How Amazon variation families work, why reviews carry across sizes and colors, and where Amazon and the FTC draw the line on reusing reviews."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "the same product shown in several colors lined up in a row on a plain surface, no brand names or logos"
+  alt: "Five yellow star shapes in a diagonal row on a pink and blue surface"
+  image: "review-manipulation-risk"
+keyFacts:
+  - { label: "Parent product", value: "Non-buyable, groups the children", claim: "variations-review-pooling-02" }
+  - { label: "Family rule", value: "Same type, brand and style", claim: "variations-review-pooling-04" }
+  - { label: "Vine cost basis", value: "Per parent; children free", claim: "variations-review-pooling-19" }
+  - { label: "FTC review-reuse rule", value: "Proposed, not finalized", claim: "variations-review-pooling-25" }
+summary:
+  - "Amazon variations are families of products related by color, size or other attributes, built from a non-buyable parent and buyable children."
+  - "Amazon says parent and child products should share type, brand and style, and that a new version of an older product needs its own listing."
+  - "Amazon says a good review for one color can help sell the other colors, because all versions of the product are grouped together."
+  - "Amazon Vine charges enrollment per parent product with no extra cost for child products."
+  - "The FTC proposed a rule against reusing reviews for substantially different products, defined by attributes other than color, size, count or flavor, but did not finalize it."
+faq:
+  - { q: "Do Amazon variations share reviews?", a: "Amazon groups all versions of a product together, so reviews of popular variations can help shoppers decide on others; its own example is a review of one jacket color helping sell other colors. Amazon's detailed display rules are published inside Seller Central.", claims: ["variations-review-pooling-11", "variations-review-pooling-10"] }
+  - { q: "What is Amazon's variation policy?", a: "Amazon says parent and child products should be the same type, brand and style, should share a standard design and function, and that a new version of an older product should get a new listing rather than become a variation.", claims: ["variations-review-pooling-04", "variations-review-pooling-09", "variations-review-pooling-12"] }
+  - { q: "What are Amazon variation themes?", a: "A variation theme is the set of attributes that define the family, such as size or color. Each category has different themes, and color and size values should contain only the color and size.", claims: ["variations-review-pooling-13", "variations-review-pooling-05", "variations-review-pooling-06"] }
+related: ["review-manipulation-risk", "listing-disappeared", "buy-box-featured-offer", "gs1-barcodes-fnsku"]
+---
+
+Grouping products into an Amazon variation family puts their reviews in front of shoppers together. Amazon's guidance limits a family to the same product in different sizes, colors or other attributes, and the FTC has looked at the separate practice of making a review written for one product appear to be about a substantially different one. Decide which side of that line each product is on before you build or merge a family.
+
+Amazon's specific variation policy and review-display rules are published inside Seller Central; this page uses Amazon's public seller guidance and catalog documentation, and the FTC's published rulemaking record, so check the Seller Central policy for your category before you change a family.
+
+## How a variation family is built
+
+Amazon describes variations as sets of products related to each other by color, size, or other attributes. <C id="variations-review-pooling-01"/> A family has three parts:
+
+<Steps title="The three parts of a variation family" steps={[
+  {t:"Parent", d:"The non-buyable product that appears in search results and relates the child products.", claim:"variations-review-pooling-02"},
+  {t:"Children", d:"The buyable products related to the parent.", claim:"variations-review-pooling-03"},
+  {t:"Variation theme", d:"The attributes that define the family, such as size or color.", claim:"variations-review-pooling-13"}
+]} />
+
+In clothing, for example, Amazon describes sharing color, print and size options for a single product by attaching multiple child ASINs to a parent ASIN. <C id="variations-review-pooling-29"/> The same structure exists at the listing level: a listing can be marked as a variation parent or child of other listings by SKU, <C id="variations-review-pooling-14"/> and Amazon's product type schemas for variation family listings are requested by parentage level. <C id="variations-review-pooling-15"/> To audit a family, you can pull every listing that is a child of a given parent SKU. <C id="variations-review-pooling-16"/>
+
+### Themes are set by category
+
+Each category has different variation themes, <C id="variations-review-pooling-05"/> and not every category allows variations; some allow only select ones. <C id="variations-review-pooling-08"/> Amazon names Pet Supplies, Toys & Games, Sports & Outdoors, Grocery, Health & Beauty, and Clothing, Accessories & Shoes among the categories that allow them. <C id="variations-review-pooling-07"/> Theme values must stay clean: color and size variations shouldn't include any information other than the color and size. <C id="variations-review-pooling-06"/>
+
+## What belongs in one family
+
+Amazon gives three tests. Parent and child products should be the same type, brand, and style. <C id="variations-review-pooling-04"/> To count as a variation, the product should have a standard design and function but come in different sizes, colors, or other attributes. <C id="variations-review-pooling-09"/> And a new version of an older product should get a new listing rather than be added as a variation of the old one, because that could mislead customers. <C id="variations-review-pooling-12"/>
+
+<Decision title="Should this product join the family?" rows={[
+  {if:"Same product, new color or size, same brand and style", then:"Yes: a standard variation under the category's theme", claim:"variations-review-pooling-09"},
+  {if:"Improved second-generation model of the same product", then:"No: create a new listing, not a variation of the older product", claim:"variations-review-pooling-12"},
+  {if:"Related accessory or a different product type", then:"No: parent and children should be the same type, brand and style", claim:"variations-review-pooling-04"},
+  {if:"Category does not offer a theme for the difference", then:"No: not every category allows variations, and some allow only select ones", claim:"variations-review-pooling-08"}
+]} />
+
+Duplicate detail pages are a separate matter: Amazon's DUPLICATE listing issue means the ASIN may be a duplicate of another ASIN. <C id="variations-review-pooling-17"/> Listing-level issues are covered in [why an Amazon listing disappears](/guides/listing-disappeared/).
+
+## Why reviews pool, and why that matters
+
+Amazon is open about the benefit. Because all versions of a product are grouped together, reviews for more popular variations can encourage a purchase, <C id="variations-review-pooling-11"/> and a good review for one color of a jacket could help sell the other colors. <C id="variations-review-pooling-10"/>
+
+### The FTC's review-reuse proposal
+
+When the FTC began its consumer-reviews rulemaking, its advance notice described review hijacking as a seller stealing or repurposing reviews of another product. <C id="variations-review-pooling-27"/> In its proposed rule, the FTC concluded that unfair or deceptive reuse or repurposing of consumer reviews is prevalent. <C id="variations-review-pooling-26"/> Proposed Sec. 465.3 sought to address using a review written for one product so it appears written for a substantially different product. <C id="variations-review-pooling-23"/>
+
+The proposed rule defined a substantially different product as one that differs in one or more material attributes other than color, size, count, or flavor. <C id="variations-review-pooling-24"/>
+
+The FTC did not finalize that section. Commenters raised concerns about the definition, the Commission said it would need to address them first, <C id="variations-review-pooling-30"/> and because it could not resolve them on the record, it decided not to finalize the provision. <C id="variations-review-pooling-25"/> The provisions the FTC did adopt are covered in [the FTC fake review rule](/guides/review-manipulation-risk/).
+
+<Compare title="Same family or different product?" columns={["Variation of the same product", "Substantially different product (FTC proposal)"]} rows={[
+  {label:"Difference", values:["Color, size, count or flavor", "A material attribute other than those"], claim:"variations-review-pooling-24"},
+  {label:"Amazon's structure", values:["Child of the same parent", "Not one family: parent and children should be the same type, brand and style"], claim:"variations-review-pooling-04"}
+]} />
+
+## Reviews and Vine at the parent level
+
+The parent is also the unit for Amazon Vine. Enrollment is charged per parent product, <C id="variations-review-pooling-18"/> with no additional cost for child products. <C id="variations-review-pooling-19"/> In the US, the cost is $0 for up to 2 units, $75 for 3–10 units, and $200 for 11–30 units per parent product, <C id="variations-review-pooling-20"/> and you can offer up to 30 units. <C id="variations-review-pooling-22"/> Eligible products must have fewer than 30 reviews on their detail page. <C id="variations-review-pooling-21"/>
+
+<Callout type="example" title="Worked example (hypothetical): Vine cost per variation">
+Inputs: a new shirt family has 5 colors, and you enroll 25 units across the family. At the 11–30 unit tier the parent pays $200, with no charge for the children. <C id="variations-review-pooling-20"/> <C id="variations-review-pooling-19"/> Spread over 5 colors that is $40 per color ($200 ÷ 5), or $8 per unit ($200 ÷ 25).
+</Callout>
+
+Amazon's review rules apply to every family: Amazon tells sellers not to attempt to influence customer ratings, feedback, and reviews. <C id="variations-review-pooling-28"/>
+
+<Checklist title="Before you create or merge a variation family" items={[
+  "Confirm your category allows the theme you need",
+  "Check every child is the same type, brand and style",
+  "Keep size and color values free of other text",
+  "Give new or improved versions their own listing",
+  "Pull all children of the parent SKU and review them as a set",
+  "Read the current variation policy in Seller Central"
+]} />
+
+<Callout type="note" title="Scope">
+The FTC's review-reuse provision was proposed but not adopted, so it describes the agency's thinking rather than a binding rule. Amazon's own variation policy for your category, published inside Seller Central, is what governs a specific family.
+</Callout>
+
+## How to confirm it for your catalog
+
+Read Amazon's guidance in [How to create Amazon product variations](https://sell.amazon.com/blog/amazon-variation-listing) and the variation policy for your category in Seller Central. <C id="variations-review-pooling-04"/> For the FTC's discussion of review reuse, see the [August 22, 2024 Federal Register notice](https://www.federalregister.gov/documents/2024/08/22/2024-18519/trade-regulation-rule-on-the-use-of-consumer-reviews-and-testimonials), section IV.C. <C id="variations-review-pooling-23"/> Vine costs are listed on Amazon's [Vine program page](https://sell.amazon.com/programs/vine). <C id="variations-review-pooling-18"/>

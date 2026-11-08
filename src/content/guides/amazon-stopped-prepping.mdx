@@ -1,0 +1,121 @@
+---
+title: "Amazon Stopped Prepping in the US: What Sellers Must Do Now"
+description: "Since January 1, 2026, Amazon no longer preps or labels FBA units in the US. What changed, the prep categories Amazon defines, and how to plan prep yourself."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "packing bench with poly bags, bubble wrap, a roll of barcode labels and a product box being prepared for shipment, no people, no logos"
+  alt: "A closed brown cardboard shipping box with a blank white label on its side, on a white surface"
+  image: "entry-type-11-vs-01"
+keyFacts:
+  - { label: "Service ended (US)", value: "January 1, 2026", claim: "amazon-stopped-prepping-01" }
+  - { label: "API value retired", value: "AMAZON as prepOwner / labelOwner", claim: "amazon-stopped-prepping-03" }
+  - { label: "Also affected", value: "AWD, AGL, Amazon SEND, Supply Chain Portal", claim: "amazon-stopped-prepping-02" }
+  - { label: "Small item threshold", value: "Longest side < 2 1/8 in", claim: "amazon-stopped-prepping-14" }
+summary:
+  - "Starting January 1, 2026, Amazon's prep and item labeling services for FBA shipments are no longer available in the US marketplace."
+  - "The change covers inventory reaching FBA through AWD, Amazon Global Logistics, Amazon SEND and Supply Chain Portal as well as direct shipments."
+  - "In the Fulfillment Inbound API, AMAZON is no longer accepted as prepOwner or labelOwner in the US; the remaining options are SELLER or NONE."
+  - "Amazon's API defines prep categories such as FRAGILE, LIQUID, SMALL, SHARP and BABY, and a NONE category for items that need no prep."
+  - "The detailed prep instructions for each category are published inside Seller Central and should be checked there."
+faq:
+  - { q: "Is Amazon ending FBA prep services?", a: "Yes, in the US. Starting January 1, 2026, Amazon's prep and item labeling services for FBA shipments are no longer available in the US marketplace, including for inventory routed through AWD, AGL, Amazon SEND and Supply Chain Portal.", claims: ["amazon-stopped-prepping-01", "amazon-stopped-prepping-02"] }
+  - { q: "What are the FBA prep and labeling requirements now?", a: "Amazon's API classifies items into prep categories such as FRAGILE, LIQUID, GRANULAR, SHARP, SMALL, TEXTILE and BABY, plus NONE for items that need no prep. The specific packaging and label instructions are published in Seller Central.", claims: ["amazon-stopped-prepping-10", "amazon-stopped-prepping-11", "amazon-stopped-prepping-21"] }
+related: ["gs1-barcodes-fnsku", "shipment-discrepancy-claims", "ipi-restock-limits", "sipp-packaging-program"]
+---
+
+If you sell through FBA in the US, Amazon will no longer prep or label your units for you: starting January 1, 2026, its prep and item labeling services for FBA shipments are no longer available in the US marketplace. <C id="amazon-stopped-prepping-01"/> Any prep or labeling a unit needs now has to be done before it reaches Amazon — by you, your factory or a prep provider you hire. The decisions are who does that work for each SKU, how it changes your lead time and landed cost, and what your inbound software sends to Amazon.
+
+## What changed, exactly
+
+Amazon announced the change in its Selling Partner API changelog. The scope is wider than direct shipments: it also covers inventory that reaches FBA through Amazon Warehousing and Distribution (AWD), Amazon Global Logistics (AGL), Amazon SEND and Supply Chain Portal. <C id="amazon-stopped-prepping-02"/> If you relied on AWD to forward stock that Amazon then prepped, that route now needs prepped stock too.
+
+On the technical side, AMAZON is no longer an accepted value for prepOwner or labelOwner in Fulfillment Inbound API operations in the US, and Amazon told developers to remove code that hard-codes it. <C id="amazon-stopped-prepping-03"/> <C id="amazon-stopped-prepping-04"/>
+
+<Timeline title="US FBA prep and labeling" items={[
+  {date:"2026-01-01", t:"Amazon prep and item labeling end in the US", d:"Applies to direct FBA shipments and to stock routed through AWD, AGL, Amazon SEND and Supply Chain Portal.", claim:"amazon-stopped-prepping-01"}
+]} />
+
+## The fields your shipment plan now carries
+
+<Compare title="Owner values in an inbound plan (US)" columns={["labelOwner","prepOwner"]} rows={[
+  {label:"AMAZON", values:["No longer accepted in the US","No longer accepted in the US"], claim:"amazon-stopped-prepping-03"},
+  {label:"SELLER", values:["You are the labeling owner","You are the prep owner"], claim:"amazon-stopped-prepping-05"},
+  {label:"NONE", values:["No owner required for labeling","No owner required for prep"], claim:"amazon-stopped-prepping-07"}
+]} />
+
+The labelOwner field specifies who labels the items, and AMAZON is not accepted in the US marketplace; NONE means no owner is required for labeling, and NONE for prepOwner means no owner is required for the preparations. <C id="amazon-stopped-prepping-05"/> <C id="amazon-stopped-prepping-06"/> <C id="amazon-stopped-prepping-07"/> For identifiers and barcode choices, see [GS1 barcodes and FNSKU](/guides/gs1-barcodes-fnsku/).
+
+Prep details are handled per SKU: the API lets software set and read preparation details for a list of MSKUs in a marketplace. <C id="amazon-stopped-prepping-08"/> <C id="amazon-stopped-prepping-09"/> If you create shipments in Seller Central instead, the Send to Amazon workflow guides you through preparing, packing and labeling. <C id="amazon-stopped-prepping-23"/>
+
+## Amazon's prep categories
+
+Whichever tool you use, each SKU falls into a prep category. Amazon's API defines them as follows:
+
+| Category | Amazon's definition |
+|---|---|
+| FRAGILE | Glass or otherwise fragile, or a liquid in a glass container |
+| LIQUID | Liquid or viscous without a double seal |
+| GRANULAR | Made of powder, pellets or granular material |
+| SHARP | Sharp and easily exposed, not already in protective packaging |
+| SMALL | Longest side less than 2 1/8 inches (width of a credit card) |
+| TEXTILE | Cloth or fabric that could be damaged by dirt, dust, moisture or liquid |
+| BABY | Made for a child aged three or younger, or packaging with cutouts over one square inch |
+| ADULT | Displays potentially offensive material |
+| SET | Multiple items sold as one unit |
+| PERFORATED | Packaging with a perforated opening |
+| HANGER | Cloth or fabric intended to be put on a hanger |
+| NONE | Does not require prep |
+
+*Source: Amazon Selling Partner API reference, setPrepDetails, checked Nov 8, 2026.* <C id="amazon-stopped-prepping-10"/> <C id="amazon-stopped-prepping-11"/> <C id="amazon-stopped-prepping-12"/> <C id="amazon-stopped-prepping-13"/> <C id="amazon-stopped-prepping-14"/> <C id="amazon-stopped-prepping-15"/> <C id="amazon-stopped-prepping-16"/> <C id="amazon-stopped-prepping-17"/> <C id="amazon-stopped-prepping-18"/> <C id="amazon-stopped-prepping-19"/> <C id="amazon-stopped-prepping-20"/> <C id="amazon-stopped-prepping-21"/>
+
+Two further values are provided by Amazon and cannot be used as inputs: FC_PROVIDED (a prep type defined by the fulfillment center) and UNKNOWN (an unknown prep category that needs to be updated). <C id="amazon-stopped-prepping-22"/> The category tells you which kind of prep applies; the specific instructions for each one (bag type, warning labels, bubble wrap and so on) are published inside Seller Central and should be checked there.
+
+## Moving your workflow off Amazon prep
+
+Start by reading back what Amazon currently holds for each SKU — the API's prep-details lookup returns the stored preparation details for a list of MSKUs. <C id="amazon-stopped-prepping-09"/> Sort the results into three groups: SKUs with NONE, SKUs with a real category, and SKUs Amazon has marked UNKNOWN or FC_PROVIDED. The first group needs only a label decision; the second needs a named person or company to do the prep; the third needs checking first — UNKNOWN is described as needing to be updated, and neither value can be sent back as an input. <C id="amazon-stopped-prepping-22"/>
+
+Then write the category back where it is wrong, using the operation that sets prep details per MSKU. <C id="amazon-stopped-prepping-08"/> Finally, check every template, spreadsheet upload or integration that builds inbound plans. Amazon's instruction to developers was specific: remove any place where AMAZON is statically identified as the prep or label owner. <C id="amazon-stopped-prepping-04"/>
+
+## Choosing who preps each SKU
+
+<Decision title="Who should prep this SKU?" rows={[
+  {if:"Category is NONE", then:"No prep step; label ownership still has to be set in the plan.", claim:"amazon-stopped-prepping-21"},
+  {if:"Category such as SMALL, TEXTILE or LIQUID, and your factory packs to order", then:"Write the prep into the purchase order so units leave the factory ready.", claim:"amazon-stopped-prepping-14"},
+  {if:"You consolidate several suppliers or need relabeling after arrival in the US", then:"Use a domestic prep provider before the stock moves into FBA or AWD.", claim:"amazon-stopped-prepping-02"},
+  {if:"Your software still sends AMAZON as owner", then:"Change it to SELLER (or NONE where no prep or label is needed).", claim:"amazon-stopped-prepping-04"}
+]} />
+
+Amazon's FBA inventory reimbursement policy also lists compliance with FBA product restrictions and FBA inventory requirements among its eligibility conditions for lost or damaged stock. The version cited is a PDF Amazon hosts whose file is marked as a redline, so confirm the live policy in Seller Central. <C id="amazon-stopped-prepping-24"/> Box rules still apply as well: the same MSKU with different expiration dates cannot share a box. <C id="amazon-stopped-prepping-25"/> For how inbound mismatches are reconciled, see [shipment discrepancy claims](/guides/shipment-discrepancy-claims/).
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: a 1,200-unit order of one SKU in category SMALL. Option A: the factory bags and labels units for an extra $0.08 each. Option B: a US prep provider does it on arrival for an assumed $0.35 per unit, and adds 5 working days before the stock can go to FBA.
+
+- Option A cost: 1,200 × $0.08 = $96.
+- Option B cost: 1,200 × $0.35 = $420.
+- Difference: $324 per order, plus 5 extra days of lead time in Option B, which also means ordering earlier against your monthly capacity limit.
+
+All rates and days are assumptions for illustration, not quoted prices.
+</Callout>
+
+Longer lead time feeds straight into capacity planning; see [IPI and FBA restock limits](/guides/ipi-restock-limits/).
+
+<Checklist title="Prep readiness check" items={[
+  "Every active SKU has a prep category set (none left as UNKNOWN)",
+  "Purchase orders state the prep and label work the factory must do",
+  "Inbound software no longer sends AMAZON as prepOwner or labelOwner",
+  "Stock routed via AWD, AGL, Amazon SEND or Supply Chain Portal arrives prepped",
+  "Prep instructions per category checked in Seller Central"
+]} />
+
+## How to confirm
+
+Amazon's own notices are the authority here, and the per-category instructions live in your account. Re-check:
+
+- The SP-API changelog entry "US FBA prep and labeling services to end January 1, 2026" on developer-docs.amazon.
+- The createInboundPlan and setPrepDetails references on developer-docs.amazon for the current owner values and prep categories.
+- In Seller Central: the FBA prep and packaging requirements help pages for the exact instructions per category.

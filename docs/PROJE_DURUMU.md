@@ -1,30 +1,20 @@
-# PROJE DURUMU — 2026-11-08
-
-## Özet
-v3 sıfırdan kuruldu. Kod, içerik, görseller ve belgeler hazır; **yayın yalnızca sahip bilgileri girilince açılır** (RELEASE kapısı).
+# PROJE DURUMU — 2026-11-08 (v4)
 
 | Alan | Durum |
 |---|---|
-| Sayfalar | 66 HTML: 30 rehber, 5 pazaryeri ücret sayfası, 6 araç, referans/hub, 9 güven-yasal sayfa, 404 + 14 yönlendirme sayfası |
-| İddia defteri | 1.186 iddia, 1.186 `verified`, 0 reddedilen; üretici ≠ doğrulayıcı (13 doğrulayıcı geçişi) — docs/IDDIA_KAYIT_DEFTERI.csv/.json |
-| Fotoğraflar | 49 gerçek fotoğraf (Unsplash License), 49 bağımsız lisans denetiminden geçti; 6'sı ilk denetimde reddedilip değiştirildi — data/images.json, docs/image-licenses/ |
-| Kapılar (geliştirme modu) | claims 0 hata · images 0 hata · policy 0 hata · links 0 hata · html-validate 0 hata |
-| Kapılar (RELEASE=1) | 37 hata — hepsi sahip bilgisi (aşağıda) |
-| Eski URL'ler (153) | 50 aynı adreste, 14 konu eşdeğerine yönlendirme, 89 emekli (404) — docs/URL_ENVANTERI.csv |
-| Reklam | Kapalı; CMP + onay + sayısal slot olmadan render edilmez |
+| İçerik | 101 rehber + 7 pazaryeri + 9 yazılım sayfası (yayında, toplam 117); 5 sayfa taslak (kaynaksız/çakışan → yönlendirme) |
+| İddia defteri | 3.475 iddia, tamamı `verified`; yazar ≠ doğrulayıcı (yeni sayfalar 18 yazar + 18 doğrulayıcı geçişi); docs/IDDIA_KAYIT_DEFTERI.* |
+| Eski URL'ler (153) | 50 korundu · 84 aynı URL'de sıfırdan yeniden yazıldı · 19 meta-refresh+canonical yönlendirme · 404: 0 |
+| Editör | Muhammet Ali TÜRK — /author/muhammet-ali-turk/ (yalnız CV), ProfilePage+Person şeması; Article: editor Person, publisher/author Organization |
+| Zorunlu sayfalar | About, Editör, Contact, Privacy (AdSense maddeleri + yerel depolama), Cookie policy, Terms (Türkiye hukuku), Disclaimer, Affiliate disclosure, Editorial standards, Corrections, Image credits, Sitemap |
+| Çerez onayı | Banner (Accept all / Essential only, localStorage `fbt-consent`, footer "Cookie settings"); reklam açılınca NPA bayrağı; EEA/UK/CH'de Google CMP |
+| Kapılar | claims 0 · images 0 · policy 0 (RELEASE=1 dahil) · links 0 · html-validate 0 |
+| Lighthouse (mobil, yerel) | Ana sayfa P88 A96→düzeltildi BP100 SEO100; rehber P97; araç P96; CLS ≈ 0 |
+| Reklam | Kapalı; onay + CMP + sayısal slot olmadan render edilmez |
 
-## SAHİP BİLGİSİ BEKLİYOR (yayını engelleyen)
-1. `site.config.json` → `editorName` (gerçek kişi), `publisherLocation`, `ownerConfirmed: true`; yayıncı adı AdSense hesap sahibiyle tutarlı olmalı.
-2. Her sayfayı kaynaklarına karşı okuyan gerçek kişi → 35 dosyaya `reviewedBy` + `reviewedDate`.
-3. contact@fbatactics.com posta kutusu testi.
-4. GitHub deposu, Pages (Actions), DNS, HTTPS — README.
-
-## Riskler
-- ⚠ 178 Section 301 muafiyeti 9 Kasım 2026 23:59 EDT'de bitiyor; uzatma/sona erme 10 Kasım'da kontrol edilip 3 sayfa güncellenmeli.
-- ⚠ 89 eski URL 404 olacak; bu sayfalardan gelen trafik kaybolur (alakasız yönlendirme soft-404 ve "sneaky redirect" riski taşıdığı için bilinçli tercih).
-- ⚠ GitHub Pages koşulları ticari/reklamlı siteler için gri alan; dist/ başka statik barındırıcıya taşınabilir.
-- ⚠ 35 sayfanın hepsi aynı gün yayımlanıyor; yeni sitede doğal, ancak sonraki içerik düzenli aralıklarla eklenmeli (90_GUN_PLANI).
-- Seller Central, cbp.gov, ftc.gov, cpsc.gov bu ortamda okunamadı; bu kaynaklara dayanan konular (FBA lojistik ücretleri vb.) yazılmadı.
-
-## Belgeler
-NIS_KARARI · KARAR_GUNLUGU · POLITIKA_KONTROL_LISTESI · ICERIK_PLANI · URL_ENVANTERI.csv · IDDIA_KAYIT_DEFTERI · TASARIM_ANALIZI · TASARIM_SISTEMI · ARAC_PLANI · DENETIM_RAPORU · 90_GUN_PLANI · PROJE_DURUMU · README · verification/ (doğrulayıcı raporları) · image-licenses/ (49 lisans kanıtı)
+## Açık noktalar
+- ⚠ Sayfaların tamamı AI ile taslaklandı ve otomatik geçişle doğrulandı; insan incelemesi yok (site bunu açıkça yazıyor). Editörün çekirdek sayfaları okuyup `reviewedBy` girmesi onay şansını artırır.
+- ⚠ 117 yayın sayfası 45 farklı fotoğraf kullanıyor (yeni sayfalar katalogdaki lisanslı fotoğrafları yeniden kullanıyor).
+- ⚠ 9 Kasım (Section 301 muafiyetleri) ve 14 Kasım (A2X fiyatları) sonrası ilgili sayfalar güncellenmeli.
+- ⚠ GitHub Pages ticari/reklamlı site için gri alan.
+- Dış bağlantılar kabuktan kontrol edilemedi (ağ izni yok); tüm kaynak URL'leri doğrulayıcılar tarafından WebFetch ile açıldı.

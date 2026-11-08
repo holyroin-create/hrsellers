@@ -1,0 +1,125 @@
+---
+title: "FBA vs FBM: How to Find Your Breakeven per Unit and per Month"
+description: "Which costs Amazon's FBA fees replace, which FBM costs you carry yourself, and a step-by-step breakeven method you can run with Amazon's Revenue Calculator."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "seller's packing station with a parcel scale, tape dispenser and stacked mailers next to a calculator, no people, no logos"
+  alt: "A calculator and a mechanical pencil resting on a sheet of handwritten calculations on a desk"
+  image: "hub-tools"
+keyFacts:
+  - { label: "FBA storage, standard-size, Jan–Sep", value: "$0.78 per cu ft per month", claim: "fba-vs-fbm-breakeven-08" }
+  - { label: "Same, Oct–Dec", value: "$2.40 per cu ft per month", claim: "fba-vs-fbm-breakeven-08" }
+  - { label: "FBA aged inventory charge starts", value: "After 181 days", claim: "fba-vs-fbm-breakeven-04" }
+  - { label: "FBM return requests", value: "Answer within 24 hours", claim: "fba-vs-fbm-breakeven-12" }
+summary:
+  - "FBA's fulfillment fee covers picking, packing, shipping, customer service and returns, and is based on price, weight and dimensions."
+  - "On top of that fee, FBA adds monthly storage, an aged-inventory charge after 181 days, returns processing and inbound placement for standard and large bulky items."
+  - "With FBM you store, pack and ship yourself, pay your own labels, and must answer return requests within 24 hours."
+  - "The breakeven is the point where FBM's lower variable cost per unit covers the fixed cost of running your own fulfillment."
+  - "Amazon's Revenue Calculator compares 'Amazon fulfillment' and 'Your fulfillment' for the same product."
+faq:
+  - { q: "Is FBA better than FBM?", a: "It depends on the product and volume. FBA bundles storage, shipping, service and returns into Amazon's fees; FBM suits items such as heavy, bulky, slow-moving or temperature-sensitive goods, and the two can be mixed product by product.", claims: ["fba-vs-fbm-breakeven-01", "fba-vs-fbm-breakeven-15", "fba-vs-fbm-breakeven-16"] }
+  - { q: "How do FBA and FBM fees compare?", a: "FBA charges fulfillment and storage fees plus aged inventory, returns processing and inbound placement where they apply. FBM has no Amazon fulfillment fee, but fulfillment costs vary with your products and the weight and dimensions of orders.", claims: ["fba-vs-fbm-breakeven-02", "fba-vs-fbm-breakeven-03", "fba-vs-fbm-breakeven-17"] }
+  - { q: "What is the difference between FBA and FBM?", a: "Under FBA, Amazon stores your inventory and picks, packs and ships orders. Under FBM you store, pack and ship items yourself and handle buyer messages and returns.", claims: ["fba-vs-fbm-breakeven-01", "fba-vs-fbm-breakeven-10"] }
+related: ["amazon-referral-fees", "seller-fulfilled-prime", "mcf-off-amazon-orders", "removal-vs-hold-decision"]
+---
+
+To decide between Fulfillment by Amazon (FBA) and Fulfilled by Merchant (FBM) for a product, compare a full cost per unit for each, then ask whether your monthly volume is high enough to cover the fixed cost of doing it yourself. Amazon's Revenue Calculator lets you enter one product and review "Amazon fulfillment" and "Your fulfillment" side by side, so the method below has you pull the FBA fee for your item from the calculator. <C id="fba-vs-fbm-breakeven-18"/>
+
+## What the FBA fees replace
+
+Amazon describes the FBA fulfillment fee as covering "picking, packing, and shipping orders, as well as handling customer service and returns," and says the cost is based on the product's price, weight and dimensions. <C id="fba-vs-fbm-breakeven-01"/> <C id="fba-vs-fbm-breakeven-02"/> Several other FBA costs sit around that fee:
+
+| FBA cost | When it applies |
+|---|---|
+| Storage | Monthly, based on the space your inventory occupies |
+| Aged inventory | Monthly, for items in a fulfillment center more than 181 days |
+| Returns processing | On orders where Amazon gives the customer free return shipping |
+| Inbound placement | For standard and large bulky sized products |
+| Higher storage costs | Possible if you exceed your restock limit |
+
+*Source: Amazon, Fulfillment by Amazon page on sell.amazon.com, checked Nov 8, 2026.* <C id="fba-vs-fbm-breakeven-03"/> <C id="fba-vs-fbm-breakeven-04"/> <C id="fba-vs-fbm-breakeven-05"/> <C id="fba-vs-fbm-breakeven-06"/> <C id="fba-vs-fbm-breakeven-07"/>
+
+Storage is seasonal. Amazon quotes FBA standard-size storage at $0.78 per cubic foot per month from January to September and $2.40 from October to December. <C id="fba-vs-fbm-breakeven-08"/> In exchange, FBA products are eligible for free two-day shipping through Prime. <C id="fba-vs-fbm-breakeven-09"/> Eligible new-to-FBA products can also receive free monthly storage, referral discounts and fee waivers through FBA New Selection. <C id="fba-vs-fbm-breakeven-24"/>
+
+## What FBM puts on your side of the ledger
+
+With FBM you "store, pack, and ship" the items yourself. <C id="fba-vs-fbm-breakeven-10"/> Amazon's FBM page adds two service obligations: US sellers are automatically enrolled in the prepaid returns label program, and you must respond to all return requests within 24 hours using Manage Returns. <C id="fba-vs-fbm-breakeven-11"/> <C id="fba-vs-fbm-breakeven-12"/> Amazon says FBM fulfillment costs vary with the products you sell and the weight and dimensions of orders. <C id="fba-vs-fbm-breakeven-17"/>
+
+For labels, Amazon says Buy Shipping offers pre-negotiated rates "over 31% lower on average compared to retail ground rates." <C id="fba-vs-fbm-breakeven-13"/> Shipping settings and templates let you set handling time, transit time and a capacity limit that match your operations. <C id="fba-vs-fbm-breakeven-14"/>
+
+One cost is the same on both sides: the referral fee. It is a percentage of the total price or a minimum amount, whichever is greater, and the total price includes shipping costs and gift wrap charges. <C id="fba-vs-fbm-breakeven-22"/> <C id="fba-vs-fbm-breakeven-23"/> So if you charge buyers for FBM shipping, the referral percentage applies to that shipping charge too. For category rates, see [Amazon referral fees](/guides/amazon-referral-fees/).
+
+<Compare title="Cost lines to price for each method" columns={["FBA","FBM"]} rows={[
+  {label:"Pick, pack, ship", values:["Amazon fulfillment fee (Revenue Calculator)","Your labor, packaging and labels"], claim:"fba-vs-fbm-breakeven-01"},
+  {label:"Storage", values:["Monthly per cu ft; $0.78 or $2.40 standard-size","Your warehouse or rented space"], claim:"fba-vs-fbm-breakeven-08"},
+  {label:"Customer returns", values:["Returns processing fee where Amazon gives free return shipping","Prepaid returns labels; answer requests within 24 hours"], claim:"fba-vs-fbm-breakeven-12"},
+  {label:"Getting stock in place", values:["Inbound shipping plus inbound placement (standard and large bulky)","Freight to your own location"], claim:"fba-vs-fbm-breakeven-06"},
+  {label:"Referral fee", values:["Same rate","Same rate, also applied to shipping you charge"], claim:"fba-vs-fbm-breakeven-23"}
+]} />
+
+## The breakeven method
+
+<Steps title="Find the breakeven for one product" steps={[
+  {t:"Open the Revenue Calculator", d:"Search the catalog or define the product by dimensions, weight, category, price and shipping charges.", claim:"fba-vs-fbm-breakeven-18"},
+  {t:"Fill both columns", d:"Review the 'Amazon fulfillment' and 'Your fulfillment' entries; put your real label, packaging and labor cost in the second.", claim:"fba-vs-fbm-breakeven-18"},
+  {t:"Add FBA storage for your sell-through time", d:"Unit cubic feet × monthly rate × months on hand, using the October–December rate where it applies.", claim:"fba-vs-fbm-breakeven-08"},
+  {t:"Add per-unit inbound cost for FBA", d:"Freight to Amazon plus any inbound placement charge, divided by units shipped.", claim:"fba-vs-fbm-breakeven-06"},
+  {t:"Subtract to get the per-unit gap", d:"FBA total per unit minus FBM variable cost per unit."},
+  {t:"Divide fixed FBM costs by the gap", d:"Monthly space, equipment and software for self-fulfillment ÷ per-unit gap = breakeven units per month."}
+]} />
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs (all invented for illustration): a $25 kitchen item offered with free shipping under both methods, 0.1 cu ft packed, sells within 2 months during January–September. Revenue Calculator FBA fulfillment fee: $6.00. Inbound freight and placement: $0.40 per unit. FBM: label $4.30, packaging $0.35, labor $0.75. Fixed cost of running your own fulfillment: $580 per month.
+
+- FBA per unit: $6.00 + (0.1 × $0.78 × 2 = $0.16) + $0.40 = $6.56
+- FBM variable per unit: $4.30 + $0.35 + $0.75 = $5.40
+- Gap: $6.56 − $5.40 = $1.16 per unit in FBM's favor
+- Breakeven: $580 ÷ $1.16 = 500 units per month
+
+Below 500 units a month, FBA is cheaper overall in this example; above it, FBM is. The referral fee is identical either way because both offers have free shipping. If the same item sat in FBA from October to December, storage would be 0.1 × $2.40 × 2 = $0.48 instead of $0.16, widening the gap to $1.48 and lowering breakeven to about 392 units.
+</Callout>
+
+<Chart title="FBA standard-size storage rate by season" kind="column" unit="$" rows={[
+  {label:"Jan–Sep, per cu ft/month", value:0.78, claim:"fba-vs-fbm-breakeven-08"},
+  {label:"Oct–Dec, per cu ft/month", value:2.40, claim:"fba-vs-fbm-breakeven-08"}
+]} />
+
+## Common mistakes in the comparison
+
+| Mistake | Correct approach |
+|---|---|
+| Comparing the FBA fulfillment fee with a label price alone | FBM also costs packaging, labor, space and return handling; the FBA fee already includes customer service and returns. <C id="fba-vs-fbm-breakeven-01"/> |
+| Using the January–September storage rate for holiday stock | Standard-size storage is $2.40 per cubic foot per month from October to December. <C id="fba-vs-fbm-breakeven-08"/> |
+| Ignoring units that age | Items in a fulfillment center more than 181 days pick up a monthly aged inventory charge. <C id="fba-vs-fbm-breakeven-04"/> |
+| Leaving out inbound placement | It applies to standard and large bulky sized products sent to FBA. <C id="fba-vs-fbm-breakeven-06"/> |
+| Charging FBM shipping without adjusting the referral math | The referral fee is calculated on a total price that includes shipping charges. <C id="fba-vs-fbm-breakeven-23"/> |
+| Treating the decision as all-or-nothing | FBM can cover select products while others stay in FBA. <C id="fba-vs-fbm-breakeven-16"/> |
+
+*Source: Amazon, sell.amazon.com FBA, FBM, pricing and supply chain pages, checked Nov 8, 2026.*
+
+## The selling-plan breakeven is a different number
+
+Do not confuse fulfillment breakeven with plan breakeven. The Individual plan costs $0.99 per item sold and the Professional plan $39.99 per month plus selling fees. <C id="fba-vs-fbm-breakeven-20"/> <C id="fba-vs-fbm-breakeven-19"/> On those numbers the plans cost the same at about 40 items a month ($39.99 ÷ $0.99 ≈ 40.4), and Amazon's FBA FAQ uses the same 40-item figure: FBA "might be a more cost-effective choice if you sell 40 items or more per month with a Professional plan." <C id="fba-vs-fbm-breakeven-21"/>
+
+## When the answer is not about cost
+
+<Decision title="Signals that override the breakeven" rows={[
+  {if:"The product is heavy, bulky, slow-moving or temperature-sensitive", then:"Amazon positions FBM for these product types", claim:"fba-vs-fbm-breakeven-15"},
+  {if:"Some products clear the breakeven and others do not", then:"Mix methods: FBM can be used for every product or only select products alongside FBA", claim:"fba-vs-fbm-breakeven-16"},
+  {if:"You want the Prime badge on self-fulfilled offers", then:"After meeting performance requirements you may qualify for Seller Fulfilled Prime", claim:"fba-vs-fbm-breakeven-25"},
+  {if:"Units will sit more than 181 days", then:"Add the aged inventory charge to the FBA side", claim:"fba-vs-fbm-breakeven-04"}
+]} />
+
+For the Prime option on self-fulfilled orders, see [Seller Fulfilled Prime](/guides/seller-fulfilled-prime/). If you also sell off Amazon, FBA stock can ship those orders through [MCF](/guides/mcf-off-amazon-orders/), which changes the volume that FBA's storage serves.
+
+This method estimates costs; it does not replace your own accounts. What Amazon actually bills is what counts, and how fixed costs are allocated is a question for your bookkeeping.
+
+## How to confirm the numbers
+
+Run each product through the Revenue Calculator linked from sell.amazon.com/pricing/estimate, which shows Amazon's current fulfillment fee for that item. Re-check the fee descriptions and size-tier fee tables at sell.amazon.com/fulfillment-by-amazon, storage rates at sell.amazon.com/programs/supply-chain, FBM obligations at sell.amazon.com/programs/fulfilled-by-merchant and plan prices at sell.amazon.com/pricing. Check the current aged inventory and inbound placement rates in Seller Central before relying on an estimate.

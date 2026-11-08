@@ -2,10 +2,10 @@
 import Logo from './Logo.astro';
 import { SITE } from '../lib/site';
 const cols = [
-  ['Fees', [['/marketplaces/amazon/', 'Amazon'], ['/marketplaces/walmart/', 'Walmart'], ['/marketplaces/ebay/', 'eBay'], ['/marketplaces/etsy/', 'Etsy'], ['/marketplaces/shopify/', 'Shopify']]],
+  ['Fees', [['/marketplaces/amazon/', 'Amazon'], ['/marketplaces/walmart/', 'Walmart'], ['/marketplaces/ebay/', 'eBay'], ['/marketplaces/etsy/', 'Etsy'], ['/marketplaces/shopify/', 'Shopify'], ['/marketplaces/tiktok-shop/', 'TikTok Shop'], ['/marketplaces/aliexpress/', 'AliExpress']]],
   ['Importing', [['/guides/#importing', 'Import guides'], ['/guides/tariff-stack-2026/', 'How duties stack'], ['/policy-log/', 'Policy log'], ['/reference/key-dates/', 'Key dates'], ['/resources/', 'Primary sources']]],
   ['Use', [['/tools/', 'Calculators'], ['/checklists/', 'Checklists'], ['/quiz/', 'Knowledge check'], ['/faq/', 'Seller FAQ'], ['/glossary/', 'Glossary']]],
-  ['Site', [['/about/', 'About'], ['/editorial-standards/', 'How we check facts'], ['/corrections/', 'Corrections'], ['/contact/', 'Contact'], ['/privacy/', 'Privacy'], ['/cookie-policy/', 'Cookies'], ['/terms/', 'Terms'], ['/disclaimer/', 'Disclaimer'], ['/image-credits/', 'Image credits'], ['/sitemap/', 'Site map']]],
+  ['Site', [['/about/', 'About'], ['/author/muhammet-ali-turk/', 'Editor'], ['/editorial-standards/', 'How we check facts'], ['/corrections/', 'Corrections'], ['/contact/', 'Contact'], ['/privacy/', 'Privacy'], ['/cookie-policy/', 'Cookies'], ['/terms/', 'Terms'], ['/disclaimer/', 'Disclaimer'], ['/affiliate-disclosure/', 'Affiliate disclosure'], ['/image-credits/', 'Image credits'], ['/sitemap/', 'Site map']]],
 ] as const;
 ---
 <footer class="site-footer">
@@ -20,7 +20,7 @@ const cols = [
     </div>
     <div class="foot-legal">
       <p>FBA Tactics is independent. It is not affiliated with or endorsed by Amazon, Walmart, eBay, Etsy, Shopify or any government agency; their names identify whose fees or rules are described. General information, not legal or tax advice.</p>
-      <p>© {new Date().getFullYear()} {SITE.publisherName}</p>
+      <p>© {new Date().getFullYear()} {SITE.siteName} · Editor: <a href="/author/muhammet-ali-turk/">{SITE.editorName}</a> · <button type="button" class="linklike" data-consent-open>Cookie settings</button></p>
     </div>
   </div>
 </footer>

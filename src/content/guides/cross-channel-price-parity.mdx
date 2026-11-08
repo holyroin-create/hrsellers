@@ -1,0 +1,114 @@
+---
+title: "Cross-Channel Price Parity: How Amazon and Walmart Compare"
+description: "How Amazon and Walmart check your price against other retailers, what happens when you are higher, and FTC guides on 'lower than elsewhere' claims."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "a card payment terminal printing a receipt next to a laptop and a shipping box, suggesting sales across several channels, no logos"
+  alt: "Card payment terminal printing a long paper receipt on an orange background"
+  image: "shopify"
+keyFacts:
+  - { label: "Amazon external benchmark", value: "Competitive External Price", claim: "cross-channel-price-parity-03" }
+  - { label: "Amazon consequence", value: "Featured Offer eligibility lost", claim: "cross-channel-price-parity-06" }
+  - { label: "Walmart consequence", value: "Listing unpublished", claim: "cross-channel-price-parity-15" }
+  - { label: "Walmart recovery", value: "Automatic republish", claim: "cross-channel-price-parity-16" }
+summary:
+  - "Amazon compares an offer's price plus shipping with a Competitive External Price, the lowest recent price at a reputable retailer outside Amazon, and with recent prices."
+  - "An Amazon offer priced above those benchmarks can lose Featured Offer eligibility; Amazon says setting the price to a reference price in the Pricing Health notice restores it."
+  - "Walmart unpublishes items when customers would save drastically by buying on a competing website, and republishes them automatically when the price returns to an acceptable range."
+  - "Amazon does not disclose which retailers it uses, and reviews that list regularly by country and product group."
+  - "If you advertise prices lower than other sellers in your trade area, the FTC's Guides Against Deceptive Pricing (16 CFR Part 233) say the advertised higher price must be based on fact."
+faq:
+  - { q: "Does Amazon have a price parity policy?", a: "Amazon's public seller documentation describes the effect rather than a parity rule: an offer whose price plus shipping is above the Competitive External Price or recent prices can lose Featured Offer eligibility. Amazon's marketplace pricing policy itself is published inside Seller Central.", claims: ["cross-channel-price-parity-06"] }
+  - { q: "What is Amazon's Marketplace Fair Pricing Policy?", a: "The policy text is published inside Seller Central, not on Amazon's public pages, so this page does not describe it. Separately, Amazon's developer documentation defines a Competitive Price Threshold based on prices from other retailers, excluding other Amazon sellers.", claims: ["cross-channel-price-parity-01"] }
+related: ["buy-box-featured-offer", "walmart-wfs", "ebay-etsy-for-amazon-sellers", "amazon-referral-fees"]
+---
+
+If you sell the same product on Amazon, Walmart and your own website, both marketplaces compare your price with prices outside their store. If your marketplace price is higher than those benchmarks, Amazon can stop featuring your offer and Walmart can unpublish the item. The decision to make is where to set your floor on each channel so the highest-fee channel is not the one that looks expensive.
+
+Amazon's detailed pricing policy is published inside Seller Central, and Walmart refers sellers to its Pricing Rules and Automatic Unpublishing policy; this page uses only what both publish openly in their seller pages and developer documentation.
+
+## How Amazon benchmarks your price
+
+Amazon publishes two related reference points.
+
+The **Competitive External Price** is the lowest price for an item, or items customers might consider equivalent, recently found at another reputable retailer outside the Amazon store. <C id="cross-channel-price-parity-03"/> Retailer names are not disclosed, <C id="cross-channel-price-parity-04"/> and Amazon reviews the list regularly for each country and product group. <C id="cross-channel-price-parity-05"/>
+
+The **Competitive Price Threshold** is based on competitive prices from other retailers, excluding other Amazon sellers. <C id="cross-channel-price-parity-01"/> In Amazon's notifications it is described as the threshold from external competitors of Amazon. <C id="cross-channel-price-parity-25"/> Your offer might be ineligible for the Featured Offer if your total price, price plus shipping, is greater than it. <C id="cross-channel-price-parity-02"/>
+
+Put together: an offer becomes ineligible for the Featured Offer when its total price is higher than the Competitive External Price, if one is available, or higher than recent prices. <C id="cross-channel-price-parity-06"/> Because retailer names are not disclosed, you cannot confirm from Amazon's public pages whether a specific store, including your own website, is among them.
+
+### Amazon's other reference prices
+
+Amazon's pricing documentation defines further reference prices:
+
+| Reference price | Amazon's definition |
+|---|---|
+| Average Selling Price | Sum of the prices at which customers bought the product in the Amazon store in the last 60 days, divided by units sold |
+| Price by Amazon | Highest price in the last 14 days for the product shipped and sold by Amazon |
+| List price | May be used to decide whether to feature an offer |
+| Reference price types in pricing data | CompetitivePriceThreshold, WasPrice, CompetitivePrice |
+
+*Source: Amazon Selling Partner API documentation, checked Nov 8, 2026.* <C id="cross-channel-price-parity-08"/> <C id="cross-channel-price-parity-09"/> <C id="cross-channel-price-parity-10"/> <C id="cross-channel-price-parity-24"/>
+
+The practical consequence of losing eligibility is covered in [the Featured Offer guide](/guides/buy-box-featured-offer/). Amazon says sellers can restore eligibility by adjusting the offer's total price, <C id="cross-channel-price-parity-11"/> and that setting the price to one of the reference prices listed in the Pricing Health notification regains eligibility. <C id="cross-channel-price-parity-07"/>
+
+## How Walmart benchmarks your price
+
+Walmart acts on the listing itself rather than on a featured placement. Its developer documentation describes an unpublish reason, REASONABLE_PRICE_NOT_SATISFIED, meaning customers would save drastically by buying the item on a competing website. <C id="cross-channel-price-parity-15"/> Walmart says that if pricing falls into the unacceptable range under its Pricing Rules and Automatic Unpublishing policy, it will automatically unpublish the listing. <C id="cross-channel-price-parity-18"/>
+
+For this reason, Walmart's offer-unpublished event includes the reference price used to unpublish the offer and a URL that documents it. <C id="cross-channel-price-parity-17"/> Recovery is automatic — when the price is back within an acceptable range, Walmart republishes the item. <C id="cross-channel-price-parity-16"/> For Walmart fulfillment costs that feed into the floor, see [Walmart Fulfillment Services](/guides/walmart-wfs/).
+
+<Compare title="Amazon vs Walmart: what happens when you are priced above other retailers" columns={["Amazon", "Walmart"]} rows={[
+  {label:"Benchmark", values:["Competitive External Price and recent prices", "Price on a competing website"], claim:"cross-channel-price-parity-06"},
+  {label:"Effect", values:["Offer loses Featured Offer eligibility", "Item is unpublished"], claim:"cross-channel-price-parity-15"},
+  {label:"Benchmark source disclosed?", values:["No, retailer names are not disclosed", "Reference price and documenting URL are included in the event"], claim:"cross-channel-price-parity-17"},
+  {label:"Recovery", values:["Adjust total price to a reference price", "Automatic republish when back in range"], claim:"cross-channel-price-parity-16"}
+]} />
+
+## Repricing tools that look outside the marketplace
+
+Both marketplaces build external prices into their own repricers. Amazon's Automate Pricing can compare against the Featured Offer, the lowest price, or the lowest external price, <C id="cross-channel-price-parity-12"/> with settings to compare prices in and beyond the Amazon store. <C id="cross-channel-price-parity-13"/> It can also keep offers competitive while never going significantly higher than recent prices. <C id="cross-channel-price-parity-14"/> Walmart's repricer has an External Price strategy for beating or meeting prices on other eCommerce platforms. <C id="cross-channel-price-parity-19"/>
+
+## Setting floors by channel
+
+Where fees differ by channel, a marketplace that charges more per order needs a higher price to earn the same margin, while the benchmarks above look at prices outside that marketplace.
+
+<Callout type="example" title="Worked example (hypothetical): one product, three channels">
+Inputs: product cost $12.00. Your website sells it at $24.00 with free shipping and $1.00 payment cost. Marketplace A takes 15% plus $4.00 fulfillment; marketplace B takes 15% plus $5.00 fulfillment (all fee rates assumed for this example).
+Website margin: $24.00 − $12.00 − $1.00 = $11.00.
+To earn the same $11.00 on marketplace A: price P with P − 0.15P − $4.00 − $12.00 = $11.00, so P = $27.00 ÷ 0.85 = $31.76.
+On marketplace B: P = $28.00 ÷ 0.85 = $32.94.
+If either marketplace treats your $24.00 website price as the benchmark, a $31.76 or $32.94 price sits well above it. <C id="cross-channel-price-parity-02"/> <C id="cross-channel-price-parity-15"/>
+</Callout>
+
+<Decision title="Choosing a pricing approach across channels" rows={[
+  {if:"Your own site is the cheapest place to buy and margins differ by channel", then:"Amazon compares total price with the Competitive External Price, if available, and recent prices; decide whether to raise the site price or accept a thinner marketplace margin", claim:"cross-channel-price-parity-06"},
+  {if:"An Amazon offer lost Featured Offer eligibility after a price change elsewhere", then:"Compare total price to the reference prices in the Pricing Health notice", claim:"cross-channel-price-parity-07"},
+  {if:"A Walmart item was unpublished for price", then:"Check the reference price and URL in the unpublish event, then reprice", claim:"cross-channel-price-parity-17"},
+  {if:"You want automated tracking of outside prices", then:"Use the marketplace's own external-price repricing rule with a minimum price", claim:"cross-channel-price-parity-12"}
+]} />
+
+## Advertising "lower than elsewhere"
+
+Promoting a price gap is a separate legal question. Under the FTC's Guides Against Deceptive Pricing, when you offer goods at prices lower than others charge for the same merchandise in your trade area, the advertised higher price must be based on fact and not be fictitious or misleading. <C id="cross-channel-price-parity-20"/> An advertiser claiming to sell below the prices charged in its area should be reasonably certain the higher price does not appreciably exceed the price at which substantial sales of the article are being made in the area. <C id="cross-channel-price-parity-21"/> A "was" price from your own store is a legitimate comparison only if it was the actual, bona fide price offered on a regular basis for a reasonably substantial period. <C id="cross-channel-price-parity-22"/> The guides also note that many members of the purchasing public believe a manufacturer's list price is the price at which an article is generally sold. <C id="cross-channel-price-parity-23"/>
+
+<Checklist title="Cross-channel pricing check" items={[
+  "List every channel's price plus shipping for each SKU side by side",
+  "Calculate the price each marketplace needs to match your target margin",
+  "Find the lowest public price for the item, including your own site",
+  "Review Amazon Pricing Health and Walmart unpublished items regularly",
+  "Keep records supporting any 'was' or 'compare at' price you show"
+]} />
+
+<Callout type="note" title="Scope">
+This page explains how the marketplaces describe their price checks; it does not interpret contracts between you and a brand or distributor, which may contain their own pricing terms. For advertising claims, Part 233 is the FTC's guidance text; a lawyer can assess a specific comparison.
+</Callout>
+
+## How to confirm it for your channels
+
+For Amazon, read the reference-price definitions in Amazon's [Product Pricing API FAQ](https://developer-docs.amazon/sp-api/docs/pricing-faq) and the pricing policy in Seller Central. <C id="cross-channel-price-parity-03"/> For Walmart, check unpublished items against the reasons in [Walmart's unpublished item insights documentation](https://developer.walmart.com/us-marketplace/docs/get-unpublished-item-insights). <C id="cross-channel-price-parity-15"/> For comparison-price advertising, read [16 CFR Part 233 on eCFR](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233). <C id="cross-channel-price-parity-20"/>

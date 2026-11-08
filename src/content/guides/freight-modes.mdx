@@ -1,0 +1,104 @@
+---
+title: "Freight Modes for Importers: Ocean, Air, Truck and Rail"
+description: "How ocean (FCL/LCL), air, truck and rail differ for an importer selling on Amazon: CBP advance-data deadlines per mode, ISF duties and FBA inbound options."
+pillar: "importing"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "aerial view of a container ship at sea next to a cargo aircraft parked at an airport apron, shown as a split frame, no logos"
+  alt: "Aerial view of a container ship loaded with multicoloured containers on deep blue water"
+  image: "cta-ship"
+keyFacts:
+  - { label: "Ocean ISF due", value: "24 hours before loading abroad", claim: "freight-modes-03" }
+  - { label: "Air cargo data (most origins)", value: "4 hours before arrival", claim: "freight-modes-07" }
+  - { label: "Rail cargo data", value: "2 hours before first U.S. port", claim: "freight-modes-09" }
+  - { label: "Truck cargo data", value: "30 minutes or 1 hour", claim: "freight-modes-10" }
+summary:
+  - "Ocean is the only mode with an Importer Security Filing, due 24 hours before the cargo is loaded at the foreign port, and the ISF Importer needs a bond."
+  - "Air cargo data is due 4 hours before arrival from most origins, or at departure from North America, Central America, northern South America, the Caribbean and Bermuda."
+  - "Rail and truck cargo data are due 2 hours and 30 minutes or 1 hour before the first U.S. port, respectively."
+  - "Amazon's own freight program offers FCL, consolidated LCL, Standard and Fast Ocean, and air delivered into its network within 7–10 days."
+  - "Domestic legs into FBA move as small parcel or LTL/FTL pallets through the Send to Amazon workflow."
+faq:
+  - { q: "Is air shipping faster than sea?", a: "Amazon's freight program, for example, states that its air service delivers into the fulfillment network within 7–10 days, and offers a Fast Ocean option as a quicker alternative to Standard Ocean. The paperwork clock also differs: air data is due 4 hours before arrival, while the ocean ISF is due before the ship is even loaded.", claims: ["freight-modes-16", "freight-modes-15", "freight-modes-07", "freight-modes-03"] }
+  - { q: "What is importer security filing?", a: "It is the advance data filing required for cargo arriving by vessel. The ISF Importer is the party causing the goods to arrive by vessel, and most elements are due 24 hours before loading at the foreign port.", claims: ["freight-modes-02", "freight-modes-01", "freight-modes-03"] }
+  - { q: "What is the difference between air freight and sea freight?", a: "Beyond speed, sea freight can be booked as full containers or consolidated LCL and requires an ISF before loading; air freight has no ISF but a 4-hour pre-arrival data deadline from most origins.", claims: ["freight-modes-12", "freight-modes-13", "freight-modes-03", "freight-modes-07"] }
+related: ["choosing-a-freight-forwarder", "q4-freight-booking-window", "shipping-lithium-batteries", "customs-bonds"]
+---
+
+The right freight mode is the one whose cost, speed and paperwork clock fit the shipment: ocean is the mode with the earliest data deadline — the Importer Security Filing is due 24 hours before the cargo is even loaded abroad — while air, rail and truck data are due hours before arrival. <C id="freight-modes-03"/> <C id="freight-modes-07"/> <C id="freight-modes-09"/> <C id="freight-modes-10"/> Published sources give firm deadlines but not market freight rates, so this page compares the modes on what is fixed by regulation and by Amazon's published program terms, and leaves price to your quotes.
+
+## The four modes at a glance
+
+<Compare title="CBP advance cargo data by mode" columns={["Ocean","Air","Rail","Truck"]} rows={[
+  {label:"Rule", values:["19 CFR Part 149 (ISF)","19 CFR 122.48a","19 CFR 123.91","19 CFR 123.92"], claims:["freight-modes-02","freight-modes-07","freight-modes-09","freight-modes-10"]},
+  {label:"Deadline", values:["24 hours before lading at the foreign port","4 hours before arrival (most origins)","2 hours before first U.S. port","30 minutes or 1 hour before first U.S. port (or less if authorized)"], claims:["freight-modes-03","freight-modes-07","freight-modes-09","freight-modes-10"]},
+  {label:"Exception noted", values:["Bulk cargo excluded","Nearby origins: by departure","—","Lesser time if authorized for the CBP-approved system used"], claims:["freight-modes-02","freight-modes-08","freight-modes-10"]}
+]} />
+
+All four can be arranged through an intermediary: trade.gov notes that freight forwarders may reserve space on a vessel, aircraft, train or truck. <C id="freight-modes-11"/> How to vet that intermediary is in [Choosing a freight forwarder](/guides/choosing-a-freight-forwarder/).
+
+## Ocean: FCL, LCL and the ISF
+
+Amazon's freight program books ocean freight as a full container load (FCL), which it pitches as a way to maximize space and optimize costs, or as less-than-container load (LCL). <C id="freight-modes-12"/> For LCL, Amazon consolidates your LCL shipments with inventory from other Amazon sellers. <C id="freight-modes-13"/> Amazon also offers floor loading, which places inventory directly in the container without pallets or other packaging. <C id="freight-modes-17"/>
+
+The ocean mode carries a filing no other mode has. The Importer Security Filing applies to cargo arriving by vessel, excluding bulk cargo, and the responsible "ISF Importer" is the party causing goods to arrive within the limits of a U.S. port by vessel. <C id="freight-modes-02"/> <C id="freight-modes-01"/> Timing is front-loaded:
+
+<Steps title="Ocean data clock under 19 CFR Part 149" steps={[
+  {t:"Before loading abroad", d:"Most ISF elements are due no later than 24 hours before the cargo is laden aboard the vessel at the foreign port.", claim:"freight-modes-03"},
+  {t:"Before U.S. arrival", d:"Container stuffing location and consolidator are due as early as possible, in no event later than 24 hours before arrival in a U.S. port.", claim:"freight-modes-04"},
+  {t:"Whenever data changes", d:"The party that submitted the ISF must update it if information changes or better information becomes available.", claim:"freight-modes-06"},
+  {t:"Bond in place", d:"The ISF Importer must hold a basic importation and entry bond or another qualifying bond.", claim:"freight-modes-05"}
+]} />
+
+The practical consequence: your supplier's shipping data must reach the filer at least 24 hours before the cargo is loaded, not when it arrives. The bond side is covered in [Customs bonds](/guides/customs-bonds/).
+
+Within Amazon's program, two ocean service levels exist. Amazon positions Standard Ocean as its most cost-effective mode from China or Vietnam, and says Fast Ocean offers faster transit times than Standard Ocean when shipping to the US. <C id="freight-modes-14"/> <C id="freight-modes-15"/> Amazon does not publish ocean transit days on that page, so get a written transit estimate in any quote.
+
+## Air: speed with a later data deadline
+
+For flights from most foreign areas, advance air cargo data must reach CBP no later than 4 hours before the aircraft arrives in the United States. <C id="freight-modes-07"/> From North America — including Mexico, Central America, South America north of the Equator, the Caribbean and Bermuda — the deadline is the aircraft's departure for the United States. <C id="freight-modes-08"/> There is no ISF for air cargo, because Part 149 covers vessel cargo. <C id="freight-modes-02"/>
+
+As one published benchmark for speed, Amazon says its air freight service provides transportation directly into its fulfillment network within 7–10 days. <C id="freight-modes-16"/> Air restrictions on batteries and other dangerous goods are separate rules: see [Shipping lithium batteries](/guides/shipping-lithium-batteries/) and [Hazmat and dangerous goods](/guides/hazmat-dangerous-goods/).
+
+## Rail and truck: cross-border land freight
+
+For rail, advance electronic cargo information is due no later than 2 hours before the cargo reaches the first U.S. port of arrival. <C id="freight-modes-09"/> For trucks it is due 30 minutes or 1 hour before the carrier reaches the first port of arrival, or such lesser time as authorized based on the CBP-approved system used. <C id="freight-modes-10"/> Confirm in writing who files the cargo data for your shipment.
+
+## The domestic leg into Amazon
+
+Once cleared, goods still have to reach a fulfillment center. Amazon's inbound tools support small parcel deliveries (SPD) or pallets moving as LTL or FTL, using either an Amazon-partnered or a non-partnered carrier. <C id="freight-modes-22"/> Amazon's own guide names UPS, FedEx and USPS as carriers that handle many small parcel deliveries, and LTL and FTL as the freight options. <C id="freight-modes-20"/> <C id="freight-modes-21"/> Shipments are created in the Send to Amazon workflow, and every product must be prepped and labeled before it is sent. <C id="freight-modes-23"/> <C id="freight-modes-24"/>
+
+If you use Amazon's program for the international leg, its Managed Placement option caps a 40-foot container at 2,000 cartons, and direct shipping to Amazon Warehousing and Distribution is currently available only from China to the US. <C id="freight-modes-18"/> <C id="freight-modes-19"/>
+
+## Choosing a mode
+
+<Decision title="Which mode fits the shipment" rows={[
+  {if:"Your supplier's shipping data can be complete before loading", then:"Ocean is workable; the ISF is due 24 hours before lading.", claim:"freight-modes-03"},
+  {if:"You fill a container on your own", then:"FCL; otherwise consider consolidated LCL.", claims:["freight-modes-12","freight-modes-13"]},
+  {if:"You are about to stock out and the goods are allowed on aircraft", then:"Air; Amazon's service quotes 7–10 days into its network.", claim:"freight-modes-16"},
+  {if:"Goods originate in Canada or Mexico", then:"Truck or rail, with cargo data due 30 minutes to 2 hours before the first U.S. port of arrival.", claims:["freight-modes-09","freight-modes-10"]},
+  {if:"You want faster ocean without air prices", then:"Ask about a faster ocean service level, such as Amazon's Fast Ocean.", claim:"freight-modes-15"}
+]} />
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs (assumed, not published figures): a SKU sells 20 units a day; door-to-door time is 10 days by air and 35 days by ocean. Units in transit at any moment equal daily sales × transit days: 20 × 10 = 200 units by air versus 20 × 35 = 700 units by ocean. Ocean ties up 500 more units of cash in the pipeline, and a stockout takes 25 more days to fix. Put your own forwarder's quoted days and your landed cost per unit into the same formula before deciding.
+</Callout>
+
+## Mistakes that cost time
+
+| Mistake | What the rules say |
+|---|---|
+| Collecting supplier data after the ship sails | ISF elements are due 24 hours before lading abroad. |
+| Assuming air cargo needs an ISF | Part 149 applies to cargo arriving by vessel. |
+| Leaving the ISF stale after a change | The filer must update it when information changes. |
+| Shipping unprepped cartons to Amazon | Products must be prepped and labeled before sending. |
+
+*Source: eCFR — 19 CFR Part 149; Amazon Selling Partner API documentation, checked Nov 8, 2026.* <C id="freight-modes-03"/> <C id="freight-modes-02"/> <C id="freight-modes-06"/> <C id="freight-modes-24"/>
+
+## How to confirm the deadline for your mode
+
+Read 19 CFR Part 149 for ocean, 19 CFR 122.48a for air and 19 CFR 123.91–123.92 for rail and truck on eCFR, and check Amazon's program page for current service levels before booking. <C id="freight-modes-02"/> <C id="freight-modes-07"/> <C id="freight-modes-09"/> <C id="freight-modes-14"/> This page compares the regulatory clocks; your carrier, forwarder or customs broker confirms who files what for a given booking.

@@ -1,0 +1,108 @@
+---
+title: "Inbound Placement Fee: The Arithmetic of Shipment Splits"
+description: "How to compare Amazon's inbound placement options: per-unit placement fee vs the freight cost of shipping to more destinations, with a worked break-even example."
+pillar: "fees"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "three pallets of identical cartons staged at separate dock doors, each with a different blank destination label, no logos, no people"
+  alt: "Two closed loading-dock doors with dark dock shelters above a yellow-edged dock wall at a warehouse"
+  image: "duty-drawback"
+keyFacts:
+  - { label: "What it covers", value: "Distributing inventory to centers near customers", claim: "inbound-placement-split-arithmetic-01" }
+  - { label: "How it's priced", value: "By algorithm per option, not set rates", claim: "inbound-placement-split-arithmetic-03" }
+  - { label: "Standard-size partial splits", value: "Not offered since Feb 20, 2025", claim: "inbound-placement-split-arithmetic-09" }
+  - { label: "New seller credit", value: "$400 for inbound placement", claim: "inbound-placement-split-arithmetic-14" }
+summary:
+  - "Amazon's inbound placement service fee covers distributing standard and large bulky inventory to fulfillment centers close to customers."
+  - "Each placement option can carry fees or discounts set by an algorithm at shipment creation, using factors such as expected volume, carrier appointment availability and fulfillment speed."
+  - "The comparison this page works through is each option's placement fee or discount against the freight cost of the shipments that option requires."
+  - "Since February 20, 2025, partial shipment splits are not available in Send to Amazon for standard-size products; they remain for large products."
+  - "AWD pricing covers FBA inbound placement, and new Professional sellers can get a $400 credit for inbound placement costs."
+faq:
+  - { q: "What is Amazon inbound placement fee?", a: "It is the FBA charge for distributing your inventory across fulfillment centers close to customers, for standard and large bulky products. The fee or discount on each placement option is set by Amazon's algorithm when you create the shipment.", claims: ["inbound-placement-split-arithmetic-01", "inbound-placement-split-arithmetic-03"] }
+  - { q: "How to avoid inbound placement fee?", a: "Compare the fee or discount on each placement option Amazon offers against your freight cost, send through AWD (whose pricing covers inbound placement), or, as a new Professional seller, use the $400 inbound placement credit.", claims: ["inbound-placement-split-arithmetic-03", "inbound-placement-split-arithmetic-15", "inbound-placement-split-arithmetic-14"] }
+  - { q: "What is inbound at Amazon?", a: "For a seller, inbound is the process of sending inventory into Amazon's fulfillment network: creating an inbound plan, choosing a placement option and a transportation option, and shipping.", claims: ["inbound-placement-split-arithmetic-05", "inbound-placement-split-arithmetic-08", "inbound-placement-split-arithmetic-21"] }
+related: ["amazon-fba-fee-changes-2026", "fba-storage-four-layers", "gs1-barcodes-fnsku", "low-inventory-level-fee"]
+---
+
+When you send inventory to FBA, Amazon offers placement options; some include multiple destinations, and each can carry a fee or discount set by an algorithm during shipment creation. <C id="inbound-placement-split-arithmetic-03"/> The choice is arithmetic: compare each option's placement fee or discount with the freight cost of the shipments that option requires. Amazon's inbound placement service fee page is in Seller Central; this page shows how to compare the options Amazon actually offers you.
+
+## What the fee pays for
+
+Amazon describes the service this way: "For standard and large bulky sized products, the cost for this service covers distributing inventory to fulfillment centers close to customers." <C id="inbound-placement-split-arithmetic-01"/> Its rationale is that "Placing inventory closer to customers in multiple fulfillment centers across the country is critical to delivering products faster and at a lower cost." <C id="inbound-placement-split-arithmetic-02"/>
+
+## How placement options are priced
+
+The Selling Partner API guide for creating inbound shipments describes the mechanics:
+
+- **Options can have several destinations.** "Some of your placements options can include multiple destinations." <C id="inbound-placement-split-arithmetic-03"/>
+- **Prices are set per option, by algorithm.** "Each option can include fees or discounts determined by an algorithm during shipment creation, not calculated using set rates." <C id="inbound-placement-split-arithmetic-03"/>
+- **The algorithm's inputs** include "expected volume, the availability of carrier appointments, and fulfillment speed." <C id="inbound-placement-split-arithmetic-04"/>
+- **Each option lists** its ID, status, "any fees/discounts associated with this option," an expiration date, and the shipment IDs. <C id="inbound-placement-split-arithmetic-05"/>
+- **Options expire** and must be regenerated. <C id="inbound-placement-split-arithmetic-06"/>
+- **Box contents matter.** Options generated before you give box content information are optimized for unit-level data and "can differ" from those generated after. <C id="inbound-placement-split-arithmetic-07"/>
+- **The choice is final.** Once you confirm a placement option, "This option cannot be reversed after it is selected." <C id="inbound-placement-split-arithmetic-08"/>
+
+In the API's data model an incentive on an option has type `FEE` or `DISCOUNT`, and its target can be "Placement Services" or "Fulfillment Fee Discount." <C id="inbound-placement-split-arithmetic-10"/> In other words, check each incentive's type and target to see whether it is a charge or a discount and whether it relates to placement services or to fulfillment fees.
+
+## What splits you can get
+
+On option count, one rule narrows the choice for standard-size goods: as of February 20, 2025, "partial shipment splits are not available on the Send to Amazon workflow for standard-sized products. Partial shipment splits remain available for large products." <C id="inbound-placement-split-arithmetic-09"/> For a standard-size SKU, the comparison is therefore between the full options Amazon shows you, each with its own fee or discount.
+
+For large bulky products, Amazon cut the fee for 2025: "We are lowering inbound placement service fees for large bulky-size products an average of $0.58 per unit for minimal shipment splits," effective January 15, 2025. <C id="inbound-placement-split-arithmetic-11"/> <C id="inbound-placement-split-arithmetic-12"/>
+
+## Worked example (hypothetical): fee vs freight
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs (all invented for illustration): 600 standard-size units in 30 cartons. Seller Central shows two placement options.
+
+- **Option A — one destination:** placement fee $0.30 per unit; freight for one shipment $450.
+- **Option B — three destinations:** no placement fee; freight for three shipments of 10 cartons each, $250 apiece.
+
+Totals:
+- Option A: 600 × $0.30 = $180 placement + $450 freight = **$630**.
+- Option B: $0 placement + 3 × $250 freight = **$750**.
+
+Option A is $120 cheaper. The break-even placement fee is the freight difference divided by units: ($750 − $450) ÷ 600 = **$0.50 per unit**. Below $0.50, concentrate; above it, split.
+</Callout>
+
+Two things move the answer. First, **volume**: a per-unit placement fee scales with units, while freight is quoted per shipment. Repeat the calculation with hypothetical inputs of 2,400 units, $0.30 per unit, $1,200 freight for one shipment and $700 for each of three: Option A is $720 + $1,200 = $1,920; Option B is $2,100; the break-even falls to ($2,100 − $1,200) ÷ 2,400 = $0.375 per unit. Second, **the offer itself**: fees and discounts are set by an algorithm that uses expected volume, carrier appointment availability and fulfillment speed, and expired options have to be regenerated, so redo the comparison on the options in front of you. <C id="inbound-placement-split-arithmetic-04"/> <C id="inbound-placement-split-arithmetic-06"/>
+
+<Checklist title="Before you confirm a placement option" items={[
+  "Enter box contents first; options can change once Amazon has box data",
+  "Write down every option's fee or discount and its expiration date",
+  "Get a freight quote for each shipment in each option",
+  "Compute total = placement fee × units + freight per shipment, for each option",
+  "Check whether a discount targets fulfillment fees rather than placement",
+  "Confirm only when sure: the selection cannot be reversed"
+]} />
+
+## Transportation choices after placement
+
+Placement comes before transportation: you must confirm a placement option before confirming transportation options. <C id="inbound-placement-split-arithmetic-21"/> Amazon also says that if a partnered carrier option is offered "at a lower price for a placement option that has identical shipment splits," it filters out the more expensive one. <C id="inbound-placement-split-arithmetic-19"/> Watch the cancellation window: to avoid cancellation charges on SPD shipments with Amazon Partnered Carriers, you must cancel the inbound plan within 24 hours after shipment creation. <C id="inbound-placement-split-arithmetic-18"/>
+
+## Other ways to reduce or remove the fee
+
+<Decision title="Which route fits your shipment" rows={[
+  {if:"Freight to extra destinations costs less than the fee on fewer destinations", then:"Pick the split option", claim:"inbound-placement-split-arithmetic-03"},
+  {if:"You already store bulk stock in Amazon Warehousing and Distribution", then:"AWD pricing covers FBA inbound placement, with no separate charge", claim:"inbound-placement-split-arithmetic-15"},
+  {if:"You are a new Professional seller", then:"Use the $400 credit for inbound placement costs", claim:"inbound-placement-split-arithmetic-14"},
+  {if:"You sell large bulky products", then:"Partial splits remain available, and 2025 rates were cut for minimal splits", claim:"inbound-placement-split-arithmetic-11"},
+  {if:"You sell standard-size products", then:"Partial splits are not offered in Send to Amazon; compare the full options only", claim:"inbound-placement-split-arithmetic-09"}
+]} />
+
+AWD has its own published charges; for example, inbound processing is listed at $1.40 per box in all regions except West Coast palletizable shipments. <C id="inbound-placement-split-arithmetic-16"/> Compare those, plus AWD storage, with the placement fee you would otherwise pay; AWD storage rates are covered in [FBA storage fees: the four layers](/guides/fba-storage-four-layers/).
+
+Amazon has also used placement waivers for new products: in 2025 it exempted up to the first 100 inbounded units per new parent ASIN qualifying for the FBA New Selection Program, for shipments created between December 1, 2024 and March 31, 2025. <C id="inbound-placement-split-arithmetic-13"/> <C id="inbound-placement-split-arithmetic-20"/> That window has closed; check Seller Central for any current offer. For 2026, Amazon's fee announcement again named "selecting lower cost inbound shipment options" as a way to lower fees. <C id="inbound-placement-split-arithmetic-17"/> Labels and barcodes for the cartons are covered in [GS1 barcodes and FNSKU](/guides/gs1-barcodes-fnsku/), and the wider 2026–2027 fee calendar in [Amazon FBA fee changes 2026](/guides/amazon-fba-fee-changes-2026/).
+
+## How to confirm the placement fee on your shipment
+
+- Amazon's FBA cost overview at sell.amazon.com/fulfillment-by-amazon, for what the service covers and the new-seller credit. <C id="inbound-placement-split-arithmetic-01"/>
+- The Selling Partner API guide "Create an inbound shipment" on developer-docs.amazon, for how options, fees and expiry work. <C id="inbound-placement-split-arithmetic-03"/>
+- In Seller Central: the inbound placement service fee page for the current rate table, and the placement options shown in Send to Amazon for your actual shipment.
+
+This page explains how to compare published options; it cannot tell you what fee your next shipment will be offered. A charged placement fee that differs from the option you confirmed has to be raised with Amazon through your seller account.

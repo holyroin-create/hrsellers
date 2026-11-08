@@ -7,7 +7,7 @@ import { allEntries } from '../../lib/entries';
 import { PILLARS } from '../../lib/pillars';
 export async function getStaticPaths() {
   const all = await allEntries();
-  const idx = new Map(all.map((x) => [x.e.id, { id: x.e.id, href: x.href, title: x.e.data.title, description: x.e.data.description, minutes: x.e.data.minutes, pillar: PILLARS[x.e.data.pillar].short }]));
+  const idx = new Map(all.map((x) => [x.e.id, { id: x.e.data.photo?.image || x.e.id, href: x.href, title: x.e.data.title, description: x.e.data.description, minutes: x.e.data.minutes, pillar: PILLARS[x.e.data.pillar].short }]));
   return all.filter((x) => x.kind === 'marketplaces').map((x) => {
     const rel = x.e.data.related.map((r) => idx.get(r)).filter(Boolean);
     const fill = all.filter((y) => y.e.data.pillar === x.e.data.pillar && y.e.id !== x.e.id && !x.e.data.related.includes(y.e.id)).map((y) => idx.get(y.e.id));

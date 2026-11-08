@@ -1,0 +1,89 @@
+---
+title: "Tariff Engineering: Product Design Choices and HTS Rules"
+description: "How design choices — assembly state, materials, sets, use and parts — move a product between HTS headings, and how a CBP ruling locks in the result before you ship."
+pillar: "importing"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "a product designer's workbench with an unassembled product kit, separate components laid out and a technical drawing, no people's faces, no logos"
+  alt: "Close-up of two hands measuring a machined metal part with a digital caliper on a workbench"
+  image: "pillar-compliance"
+keyFacts:
+  - { label: "Rulings cover", value: "Prospective transactions", claim: "tariff-engineering-design-13" }
+  - { label: "Hypothetical designs", value: "No ruling issued", claim: "tariff-engineering-design-14" }
+  - { label: "Items per port-office ruling request", value: "Up to 5, same class or kind", claim: "tariff-engineering-design-19" }
+  - { label: "Ruling applies to", value: "Identical articles only", claim: "tariff-engineering-design-23" }
+summary:
+  - "Classification follows the goods as entered: an unfinished or unassembled article is classified as the finished one if it already has its essential character."
+  - "Changing the material mix moves a product through GRI 2(b) and 3(b), where the material or component giving essential character decides."
+  - "A design can be ruled on before production only if it is a real prospective transaction; CBP will not rule on essentially hypothetical questions."
+  - "A classification ruling applies only to articles identical to the sample or description, so every later design change reopens the question."
+  - "Under an antidumping or countervailing duty order, Commerce can sweep in articles altered in form or appearance in minor respects."
+faq:
+  - { q: "What are examples of tariff engineering?", a: "Typical levers in the rules themselves are assembly state (GRI 2(a)), the material mix (GRI 2(b) and 3(b)), how items are put up in retail sets (GRI 3(b)), and whether a part is covered by a specific provision rather than a parts provision (Additional U.S. Rule 1(c)).", claims: ["tariff-engineering-design-02", "tariff-engineering-design-04", "tariff-engineering-design-07", "tariff-engineering-design-11"] }
+  - { q: "How do you request a CBP binding ruling?", a: "Send a complete statement of the relevant facts, the article's chief use in the United States and, for goods of several materials, the relative quantity and value of each, whenever germane, plus a sample whenever possible. Individual requests to service port offices are limited to five items of the same class or kind.", claims: ["tariff-engineering-design-15", "tariff-engineering-design-16", "tariff-engineering-design-17", "tariff-engineering-design-18", "tariff-engineering-design-19"] }
+  - { q: "How do you search customs binding rulings?", a: "USITC points importers to CBP's Customs Rulings Online Search System (CROSS). A ruling issued to someone else is for reference only: no other person should rely on it.", claims: ["tariff-engineering-design-34", "tariff-engineering-design-25"] }
+related: ["hts-classification-basics", "antidumping-duties", "section-301-china-tariffs", "country-of-origin-sourcing"]
+---
+
+Tariff engineering — designing or presenting a product so that, as imported, it falls under a provision with a lower duty — works only through the classification rules, and only if the goods you enter genuinely are what the lower provision describes. The rules give you real levers: the General Rules of Interpretation classify an unfinished article as the finished one only when, as entered, it already has the finished article's essential character, and they send multi-material goods to the material or component that gives that character. <C id="tariff-engineering-design-01"/> <C id="tariff-engineering-design-06"/> The safe sequence is to settle the design, ask CBP for a binding ruling on that exact product, and ship only goods identical to it. <C id="tariff-engineering-design-13"/> <C id="tariff-engineering-design-23"/> How the HTS and the GRIs work in general is in [HTS classification basics](/guides/hts-classification-basics/); this page covers the design decisions that interact with them.
+
+## The design levers in the rules
+
+<Compare title="Where a design choice meets a classification rule" columns={["Design choice","Rule that decides","What the rule says"]} rows={[
+  {label:"Ship unfinished", values:["Leave a step for after import","GRI 2(a)","Classified as finished if, as entered, it has the essential character of the finished article"], claim:"tariff-engineering-design-01"},
+  {label:"Ship unassembled", values:["Kit of parts, assembled later","GRI 2(a)","A heading for an article covers it entered unassembled or disassembled"], claim:"tariff-engineering-design-02"},
+  {label:"Change materials", values:["Swap or blend materials","GRI 2(b) and 3","Goods of more than one material go to the principles of GRI 3"], claims:["tariff-engineering-design-03","tariff-engineering-design-04"]},
+  {label:"Bundle as a set", values:["Retail set in one box","GRI 3(b), then 3(c)","Essential-character component decides; failing that, last heading in numerical order"], claims:["tariff-engineering-design-07","tariff-engineering-design-08"]},
+  {label:"Design for a use", values:["Product built for one purpose","Additional U.S. Rule 1(a)","Principal use in the U.S. at or just before importation controls"], claim:"tariff-engineering-design-09"},
+  {label:"Sell as a part", values:["Component of another article","Additional U.S. Rule 1(c)","A parts provision does not prevail over a specific provision for that part"], claims:["tariff-engineering-design-10","tariff-engineering-design-11"]}
+]} />
+
+Two of these levers do less than they appear to. Shipping a product unassembled does not, by itself, change anything: GRI 2(a) expressly extends a heading for an article to that article entered unassembled or disassembled. <C id="tariff-engineering-design-02"/> Leaving a finishing step until after import changes the classification only if the article as entered lacks the essential character of the finished one. <C id="tariff-engineering-design-01"/> The test is the goods as entered, not your plans for them.
+
+A reference to goods of a material covers goods consisting wholly or partly of it, and once a product combines materials, GRI 3 takes over: the most specific heading is preferred, and composite goods are classified by the material or component that gives them their essential character. <C id="tariff-engineering-design-03"/> <C id="tariff-engineering-design-05"/> <C id="tariff-engineering-design-06"/> A design that shifts which component dominates can shift the heading — but only if the shift is real in the product, not just in the invoice. Remember also that subheadings are compared only with subheadings at the same level, so a change that works at the heading level must be re-checked at each subheading step. <C id="tariff-engineering-design-12"/>
+
+A parts provision covers products solely or principally used as a part of the articles named, but it does not prevail over a provision that names the part or accessory specifically. <C id="tariff-engineering-design-10"/> <C id="tariff-engineering-design-11"/>
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs (assumed, not real HTS rates): annual entered value $200,000; the current design classifies under a heading at 6.0%; a redesign that changes the dominant material would classify under a heading at 3.5%; the redesign adds $1.10 per unit in production cost on 20,000 units a year.
+
+Duty saving: $200,000 × (6.0% − 3.5%) = $5,000 a year. Added production cost: 20,000 × $1.10 = $22,000 a year. The redesign loses $17,000 a year on duty grounds alone. Run this test before paying for samples or a ruling — and check any other duties that may apply, such as [Section 301](/guides/section-301-china-tariffs/).
+</Callout>
+
+## Lock it in with a binding ruling
+
+A design decision is only as good as the classification CBP will accept, and Part 177 lets you get that answer before you commit — within limits.
+
+<Steps title="From design to ruling to shipment" steps={[
+  {t:"Freeze the design", d:"Rulings are for prospective transactions; CBP will not rule on questions that are essentially hypothetical.", claims:["tariff-engineering-design-13","tariff-engineering-design-14"]},
+  {t:"Write a complete statement of facts", d:"Whenever germane, include the article's chief use in the U.S. and, for multi-material goods, each material's relative quantity by weight and by volume and its value.", claims:["tariff-engineering-design-15","tariff-engineering-design-16","tariff-engineering-design-17"]},
+  {t:"Send a sample", d:"A sample article should accompany the request whenever possible; individual requests to service port offices are limited to five items of the same class or kind.", claims:["tariff-engineering-design-18","tariff-engineering-design-19"]},
+  {t:"Answer any deficiency notice", d:"You have 30 days from a notice of nonconformity to supply what is missing.", claim:"tariff-engineering-design-20"},
+  {t:"Ship only identical goods", d:"The ruling applies only to articles identical to the sample or the merchandise described.", claim:"tariff-engineering-design-23"}
+]} />
+
+The material-composition data the rule asks for, whenever germane — quantity by weight and by volume, and value, for each material — is exactly the data a material-based redesign turns on, so assemble it from your bill of materials before you file. <C id="tariff-engineering-design-17"/> Each ruling letter is issued on the assumption that the information furnished is accurate and complete, and its principles apply only if the transaction described and the actual transaction are the same. <C id="tariff-engineering-design-21"/> <C id="tariff-engineering-design-22"/> A ruling binds all CBP personnel until modified or revoked; if CBP proposes to modify one that has been in effect 60 days or more, you get 30 calendar days to comment, and the final change generally takes effect 60 calendar days after the final notice is published. <C id="tariff-engineering-design-24"/> <C id="tariff-engineering-design-26"/> <C id="tariff-engineering-design-27"/>
+
+USITC points importers to CBP's CROSS database of rulings and offers informal help, but says that help is not binding advice. <C id="tariff-engineering-design-34"/> <C id="tariff-engineering-design-33"/> A ruling found in CROSS for a competitor's design is a guide, not protection: no other person should rely on a ruling letter issued to someone else. <C id="tariff-engineering-design-25"/>
+
+## The limit: antidumping and countervailing orders
+
+If your product is subject to an antidumping or countervailing duty order, a design change faces a second test that the HTS does not control. Commerce may include in an order articles altered in form or appearance in minor respects. <C id="tariff-engineering-design-28"/> In deciding, it may weigh criteria including, but not limited to, the overall physical characteristics, the expectations of ultimate users, the use of the merchandise, the channels of marketing, and the cost of the modification relative to the total value of the imported products — and it may also consider the timing and quantity of entries. <C id="tariff-engineering-design-29"/> An interested party may request a circumvention inquiry, and after an affirmative preliminary determination, cash deposits can be required on unliquidated entries made on or after the date the initiation notice was published, and in some cases on earlier entries. <C id="tariff-engineering-design-30"/> <C id="tariff-engineering-design-31"/> In a scope ruling, a finding that a product is covered means it has always been covered. <C id="tariff-engineering-design-32"/> The order mechanics are in [Antidumping duties](/guides/antidumping-duties/).
+
+<Decision title="Should you pursue a design change?" rows={[
+  {if:"The change only alters assembly state", then:"Expect the same heading; GRI 2(a) covers unassembled articles.", claim:"tariff-engineering-design-02"},
+  {if:"The change shifts which material or component dominates", then:"Worth modelling; GRI 3(b) classifies by essential character.", claim:"tariff-engineering-design-06"},
+  {if:"The product is under an AD/CVD order and the change is minor", then:"Commerce may include articles altered in minor respects within the order.", claims:["tariff-engineering-design-28","tariff-engineering-design-29"]},
+  {if:"The design is final and the volume justifies it", then:"Request a ruling with a sample before the first shipment.", claims:["tariff-engineering-design-13","tariff-engineering-design-18"]},
+  {if:"The design is still a sketch", then:"Wait; CBP will not rule on hypothetical questions.", claim:"tariff-engineering-design-14"}
+]} />
+
+Country-of-origin questions are covered in [Country of origin and sourcing](/guides/country-of-origin-sourcing/).
+
+## How to confirm a design's classification
+
+The General Rules of Interpretation and Additional U.S. Rules quoted on this page are taken from the Harmonized Tariff Schedule of the United States (2004) General Notes in USITC's HTS archive; read them in the current HTS edition on usitc.gov before relying on them, and read the ruling procedure in 19 CFR Part 177 on eCFR; for products under an AD/CVD order, read 19 CFR 351.225–351.226. <C id="tariff-engineering-design-06"/> <C id="tariff-engineering-design-13"/> <C id="tariff-engineering-design-28"/> The only answer CBP is bound by is a ruling letter on your exact product, so treat the analysis on this page as preparation for that request, with a licensed customs broker or trade attorney reviewing high-value redesigns.

@@ -1,0 +1,99 @@
+---
+title: "Amazon A10 Algorithm: What Amazon Actually Says About Search"
+description: "We found no Amazon page that uses \"A10.\" Here is what Amazon itself says shapes search results and the listing levers it documents for sellers."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "a laptop on a plain desk showing a generic, unbranded grid of product search results, shot at an angle so no text is legible"
+  alt: "Two closed corrugated shipping boxes stacked on a white surface, each with a blank white address label"
+  image: "hub-marketplaces"
+keyFacts:
+  - { label: "Amazon's stated goal", value: "Show products customers will be most satisfied with", claim: "listing-optimisation-a10-01" }
+  - { label: "Signals Amazon names", value: "Purchases, price, delivery speed, return rates", claim: "listing-optimisation-a10-03" }
+  - { label: "Search terms field", value: "500 bytes", claim: "listing-optimisation-a10-13" }
+  - { label: "Suppressed listing", value: "Not discoverable", claim: "listing-optimisation-a10-11" }
+summary:
+  - "Amazon says it shows searchers the products it thinks they will be most satisfied with, and refines that using customer actions."
+  - "Signals Amazon names publicly include how often an item is bought, price, delivery speed, newness and return rates."
+  - "Amazon's Australian store also names item information such as title, price and description as inputs."
+  - "A search-suppressed listing is no longer discoverable, so clear listing issues before working on content."
+  - "Documented levers include keywords in listing copy, a 500-byte search terms field, Brand Analytics search reports, A+ Content and Sponsored Products."
+faq:
+  - { q: "What is Amazon A10 algorithm?", a: "We found no Amazon page that uses the term A10. Amazon's own pages describe the goal instead: showing customers products it thinks they will be most satisfied with, refined by signals such as purchases, price, delivery speed and return rates.", claims: ["listing-optimisation-a10-01", "listing-optimisation-a10-02", "listing-optimisation-a10-03", "listing-optimisation-a10-04"] }
+  - { q: "How does Amazon search work?", a: "Amazon says it predicts which products a searcher will be most satisfied with and, when customers signal dissatisfaction, ranks products customers are more likely to love higher in search results. It also says its systems now try to understand the intent behind a search, not just match keywords.", claims: ["listing-optimisation-a10-01", "listing-optimisation-a10-05", "listing-optimisation-a10-08"] }
+related: ["title-limit-984-million", "rufus-listing-optimization", "main-image-compliance", "review-manipulation-risk"]
+---
+
+We found no Amazon page that uses the term "A10": none of the Amazon seller pages, Amazon news posts or Selling Partner API documents we read for this page mentions it, and none of them publishes a ranking formula. What Amazon does publish is its goal: when customers search, it shows them the products it thinks they will be most satisfied with. <C id="listing-optimisation-a10-01"/> The useful decision for a seller is which of the signals Amazon names you can actually influence, and in what order to work on them.
+
+## What Amazon says shapes search results
+
+Amazon's own explanation of its store lists the signals it uses to refine results:
+
+| Signal Amazon names | Amazon's wording |
+|---|---|
+| Customer actions | "how frequently an item was purchased by other customers" |
+| Price and delivery speed | "the product's price, delivery speed" |
+| What's hot and new | "what's hot and new" |
+| Post-purchase satisfaction | "measures of post-purchase satisfaction like return rates" |
+
+*Source: Amazon, "How customers get to pick the winners in Amazon's store" (Sept. 29, 2020), checked Nov 8, 2026.* <C id="listing-optimisation-a10-02"/> <C id="listing-optimisation-a10-03"/> <C id="listing-optimisation-a10-04"/>
+
+When customers signal dissatisfaction, Amazon says it ranks other products that customers are more likely to love higher in search results. <C id="listing-optimisation-a10-05"/> Amazon's Australian store describes the same approach and adds that predictions use information about the item, such as the title, price and description. <C id="listing-optimisation-a10-06"/>
+
+Amazon's more recent description adds intent. It says its systems now better understand the intent behind a customer's search, <C id="listing-optimisation-a10-07"/> and that it is no longer only about matching keywords but about understanding what customers are looking to buy. <C id="listing-optimisation-a10-08"/>
+
+None of the Amazon statements we read gives weights or an order for these signals, so treat any published "ranking factor" percentages from outside Amazon with caution.
+
+## Step one: make sure the listing can be found at all
+
+Amazon's API documentation defines a "discoverable" item as one customers can find in search results, whether or not it is on sale, <C id="listing-optimisation-a10-10"/> and states that a search-suppressed listing is no longer discoverable. <C id="listing-optimisation-a10-11"/> Amazon says listing issues point out problems that cause listings to go inactive, search suppression or other quality problems. <C id="listing-optimisation-a10-12"/> Clear issues first; image-related problems are covered in [main image compliance](/guides/main-image-compliance/).
+
+## The listing levers Amazon documents
+
+<Compare title="Where Amazon says keywords and content can help" columns={["Lever", "What Amazon says"]} rows={[
+  {label:"Listing copy", values:["Titles, descriptions, bullet points", "Keywords can be used in titles, descriptions, bullet points and more"], claim:"listing-optimisation-a10-21"},
+  {label:"Search terms", values:["generic_keyword attribute", "500-byte maximum"], claim:"listing-optimisation-a10-13"},
+  {label:"Item Highlights", values:["Part of modular titles", "Fully searchable"], claim:"listing-optimisation-a10-14"},
+  {label:"A+ Content", values:["Detail page images and text", "Free for eligible sellers"], claim:"listing-optimisation-a10-19"}
+]} />
+
+Amazon's seller guide says that adding high-ranking search terms or keywords can help customers find a listing through search results. <C id="listing-optimisation-a10-22"/> Its marketing guide gives the same advice in general form: do keyword research and work the critical words and phrases into product listing copy. <C id="listing-optimisation-a10-23"/> Title length rules, including the 75-character item name and searchable Item Highlights, are in [Amazon title limits](/guides/title-limit-984-million/).
+
+For A+ Content on the detail page, Amazon says Basic A+ Content can increase sales by up to 8% and well-implemented Premium A+ Content by up to 20%, citing its internal data. <C id="listing-optimisation-a10-20"/> Those are Amazon's upper-bound figures, not a forecast for any listing.
+
+Amazon also says that, compared with non-AI content, its AI-generated listing content showed improvements in clarity, accuracy and detail, which can increase a product's discoverability when customers search in its store. <C id="listing-optimisation-a10-24"/>
+
+## Use Amazon's own search data instead of guessing
+
+Brand Analytics is the official source for search behavior on your own products. It requires a Professional selling account and a Brand Representative role for a brand enrolled in Brand Registry. <C id="listing-optimisation-a10-16"/>
+
+<Steps title="A keyword review cycle using Amazon's reports" steps={[
+  {t:"Find the queries", d:"The Search Query Performance dashboard lists the keywords customers use to find your brand.", claim:"listing-optimisation-a10-15"},
+  {t:"Find the drop-off", d:"Search Catalog Performance helps identify drop-off points in discoverability and conversion.", claim:"listing-optimisation-a10-18"},
+  {t:"Track the funnel", d:"Monitor impressions, clicks, cart adds and purchases.", claim:"listing-optimisation-a10-17"},
+  {t:"Update the listing", d:"Work relevant terms into title, bullets, description or search terms within the documented limits.", claim:"listing-optimisation-a10-13"}
+]} />
+
+## Paid placement is separate
+
+Sponsored Products are cost-per-click ads for individual listings, and they may appear at the top of, alongside or within shopping results and on product pages. <C id="listing-optimisation-a10-25"/> Products must be eligible for the Featured Offer to advertise. <C id="listing-optimisation-a10-26"/> We found no statement on Amazon's Sponsored Products page that ads change organic ranking, so do not budget ads on that assumption.
+
+The Featured Offer is a different contest from search. Amazon says it features the offer customers are most likely to choose, based on criteria such as low price including delivery and fast delivery, and that customer preference determines which offer is featured. <C id="listing-optimisation-a10-09"/>
+
+<Decision title="Where to spend effort first" rows={[
+  {if:"The listing has open issues or shows as suppressed", then:"Fix the issues; a search-suppressed listing is not discoverable.", claim:"listing-optimisation-a10-11"},
+  {if:"Returns or complaints are high", then:"Address the product or the description; Amazon names return rates as a signal.", claim:"listing-optimisation-a10-04"},
+  {if:"Price or delivery speed lags competitors", then:"Review price and delivery, not only copy; Amazon names both as signals.", claim:"listing-optimisation-a10-03"},
+  {if:"You own the brand", then:"Use Search Query Performance to choose keywords before rewriting copy.", claim:"listing-optimisation-a10-15"}
+]} />
+
+How Amazon's shopping assistant reads listings is covered separately in [Rufus and your listings](/guides/rufus-listing-optimization/). Inflating sales or reviews to game these signals carries its own risk; see [review manipulation risk](/guides/review-manipulation-risk/).
+
+## How to confirm
+
+Amazon's own statements are the only reliable baseline: re-read "How customers get to pick the winners in Amazon's store" on aboutamazon.com for the signals it names, the Brand Analytics page on sell.amazon.com for report eligibility, and the Selling Partner API listing status guide for what "discoverable" and "suppressed" mean. For a specific listing, the issues shown in Seller Central or returned by the API show whether it is search suppressed; we found no Amazon page that publishes ranking weights.

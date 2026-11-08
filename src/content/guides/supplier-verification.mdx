@@ -1,0 +1,118 @@
+---
+title: "Supplier Verification: Sanctions, UFLPA and Payment Checks"
+description: "How to check an overseas supplier before paying: OFAC and Consolidated Screening List searches, the UFLPA Entity List, invoice identity and bank-detail fraud."
+pillar: "importing"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "a buyer's hands comparing a printed supplier registration document with a printed commercial invoice on a desk, laptop open to a blank search page, no faces, no readable names or logos"
+  alt: "Hands of three people around a table reviewing printed documents"
+  image: "incoterms-who-is-importer"
+keyFacts:
+  - { label: "Who must comply with OFAC", value: "All U.S. persons", claim: "supplier-verification-01" }
+  - { label: "OFAC ownership rule", value: "50% or more owned by blocked persons", claim: "supplier-verification-03" }
+  - { label: "UFLPA Entity List size", value: "187 entities (Aug 3, 2026)", claim: "supplier-verification-20" }
+  - { label: "Aug 3, 2026 update", value: "43 entities added", claim: "supplier-verification-19" }
+summary:
+  - "U.S. persons are generally prohibited from dealing with anyone on OFAC's SDN List, and blocked persons include entities owned 50 percent or more by blocked persons."
+  - "The Consolidated Screening List searches export screening lists of Commerce, State and the Treasury at once, with a fuzzy-name option, but a possible match must be checked against the official publication."
+  - "Under the UFLPA, goods made wholly or in part in Xinjiang, or by an entity on the UFLPA Entity List, are presumed not entitled to entry."
+  - "DHS's August 3, 2026 notice added 43 entities and states that 187 entities are specified on the list."
+  - "The FBI's IC3 recommends using secondary channels or two-factor authentication to verify requests to change account information."
+faq:
+  - { q: "How to verify a supplier in China?", a: "Search the supplier, its parent and its bank-account holder on OFAC's Sanctions List Search and the Consolidated Screening List, check the UFLPA Entity List on the DHS website, and confirm that the company on the invoice is the one you contracted with.", claims: ["supplier-verification-05", "supplier-verification-06", "supplier-verification-23", "supplier-verification-26"] }
+  - { q: "How to verify a supplier bank details?", a: "Treat any change of payment instructions as unverified until confirmed through a separate channel. The FBI's IC3 recommends secondary channels and/or two-factor authentication to verify requests for changes in account information.", claims: ["supplier-verification-30"] }
+  - { q: "What is the OFAC SDN list?", a: "OFAC's List of Specially Designated Nationals and Blocked Persons. U.S. persons are generally prohibited from dealing with the individuals and entities on it.", claims: ["supplier-verification-02", "supplier-verification-34"] }
+  - { q: "What is the UFLPA Entity List?", a: "It is the DHS list of entities whose products are subject to the UFLPA's rebuttable presumption that they are made with forced labor, wholly or in part. DHS's August 3, 2026 notice states that 187 entities are specified on it.", claims: ["supplier-verification-21", "supplier-verification-20"] }
+related: ["supplier-payment-terms", "sourcing-agents", "country-of-origin-sourcing", "incoterms-who-is-importer"]
+---
+
+Before you send a deposit to a new overseas factory, you need to answer three questions: is it legal to pay this company, can its goods legally enter the United States, and is the bank account really the supplier's? The first is an OFAC sanctions question, because U.S. persons are generally prohibited from dealing with the individuals and entities on the SDN List. <C id="supplier-verification-02"/> The second, for anything with a China supply chain, is a Uyghur Forced Labor Prevention Act (UFLPA) question. <C id="supplier-verification-12"/> The third is a fraud question. Factory audits and product quality are separate topics; see [QC inspections](/guides/qc-inspections/).
+
+## Check 1: sanctions screening (OFAC)
+
+All U.S. persons must comply with OFAC sanctions, including U.S. citizens and permanent residents. <C id="supplier-verification-01"/> Blocked persons include those on OFAC's List of Specially Designated Nationals and Blocked Persons (the SDN List). <C id="supplier-verification-34"/> Violations may result in civil and, in some cases, criminal penalties. <C id="supplier-verification-04"/>
+
+Searching the supplier's trading name is not enough. OFAC treats as blocked any entity owned individually or in the aggregate, directly or indirectly, 50 percent or more by one or more blocked persons. <C id="supplier-verification-03"/> A factory that is not named on any list can still be blocked through its owners, so search the parent company and any shareholder names the supplier gives you.
+
+OFAC points users to its Sanctions List Search tool for searching its current sanctions lists. <C id="supplier-verification-05"/>
+
+## Check 2: the Consolidated Screening List
+
+The International Trade Administration's Consolidated Screening List (CSL) is a list of parties for which the U.S. government maintains restrictions on certain exports. <C id="supplier-verification-06"/> It consolidates multiple export screening lists of the Departments of Commerce, State and the Treasury, <C id="supplier-verification-07"/> including the Entity List and OFAC's Specially Designated Nationals List. <C id="supplier-verification-11"/> Its fuzzy name search allows a search without knowing the exact spelling of an entity's name, <C id="supplier-verification-08"/> which matters when a Chinese company name has several romanized spellings.
+
+The CSL is a screening aid, not the final word. ITA says the user must check the official publication of restricted parties in the Federal Register, <C id="supplier-verification-10"/> and that if a listed party appears to match a party in your transaction, additional due diligence should be conducted before proceeding. <C id="supplier-verification-09"/>
+
+## Check 3: UFLPA exposure
+
+The UFLPA (Public Law 117-78, approved December 23, 2021) <C id="supplier-verification-18"/> creates a presumption covering goods mined, produced or manufactured wholly or in part in the Xinjiang Uyghur Autonomous Region, <C id="supplier-verification-12"/> or produced by an entity on the lists required by the Act. <C id="supplier-verification-13"/> Covered goods are not entitled to entry at any U.S. port. <C id="supplier-verification-14"/> DHS describes the same rule as a rebuttable presumption that such goods are prohibited from importation under 19 U.S.C. 1307. <C id="supplier-verification-35"/>
+
+### The UFLPA Entity List
+
+Additions are announced by the chair of the DHS-led Forced Labor Enforcement Task Force. <C id="supplier-verification-24"/> Listed entities are subject to the UFLPA's rebuttable presumption that products they produce, wholly or in part, are made with forced labor. <C id="supplier-verification-21"/>
+
+<Timeline
+  title="Recent UFLPA Entity List milestone"
+  items={[
+    { date: "2021-12-23", t: "UFLPA approved", d: "Public Law 117-78.", claim: "supplier-verification-18" },
+    { date: "2026-08-03", t: "DHS adds 43 entities", d: "Federal Register notice 2026-15628; two of the new entities appear on two sub-lists.", claim: "supplier-verification-19" }
+  ]}
+/>
+
+The August 3, 2026 notice states that 187 entities meeting the criteria of the four required lists are specified on the UFLPA Entity List, <C id="supplier-verification-20"/> and that the list will be published on the DHS UFLPA website. <C id="supplier-verification-23"/> A listed entity may submit a request for removal, <C id="supplier-verification-22"/> so the list changes in both directions; re-check it on each new order, not only at onboarding.
+
+The Entity List only covers named companies. Your supplier being absent from it does not answer the Xinjiang-input question. Ask where key raw materials come from, and read the [country of origin guide](/guides/country-of-origin-sourcing/) for how origin is decided.
+
+### What the exception requires
+
+The presumption can be overcome only if CBP determines, among other things, that the importer completely and substantively responded to all inquiries for information <C id="supplier-verification-15"/> and also determines, by clear and convincing evidence, that the goods were not made wholly or in part by forced labor. <C id="supplier-verification-16"/> The Act directs guidance to importers on due diligence, effective supply chain tracing and supply chain management measures. <C id="supplier-verification-17"/> Because the importer has to answer CBP's inquiries completely and substantively, agree with your supplier before the first order which traceability documents it will provide.
+
+## Check 4: is the paperwork from the company you vetted?
+
+The commercial invoice your supplier issues has to identify the parties to the sale: when, where and by whom the goods were sold, and to whom. <C id="supplier-verification-26"/> It must also identify by name a responsible employee of the exporter. <C id="supplier-verification-25"/> Compare the seller on the invoice, the beneficiary on the bank account and the company you screened. If they differ, ask why before paying. Our [supplier invoice guide](/guides/the-supplier-invoice/) covers every required field.
+
+## Check 5: payment-instruction fraud
+
+The FBI's Internet Crime Complaint Center (IC3) describes business email compromise as targeting businesses and individuals who perform legitimate transfer-of-funds requests. <C id="supplier-verification-27"/> It reported a domestic and international exposed dollar loss of $55,499,915,582 <C id="supplier-verification-28"/> for the period October 2013 to December 2023. <C id="supplier-verification-29"/> Its recommendation: use secondary channels and/or two-factor authentication to verify requests for changes in account information. <C id="supplier-verification-30"/>
+
+## Deciding what to do with a result
+
+<Decision
+  title="Screening outcomes and next steps"
+  rows={[
+    { if: "Supplier, parent or owner appears on the SDN List", then: "Do not deal with them; U.S. persons are generally prohibited from dealing with SDN-listed parties", claim: "supplier-verification-02" },
+    { if: "Owners on the SDN List together hold 50% or more of the supplier", then: "Treat the supplier as blocked even if it is not named", claim: "supplier-verification-03" },
+    { if: "CSL fuzzy search returns a possible match", then: "Check the official Federal Register publication and do more due diligence before proceeding", claim: "supplier-verification-09" },
+    { if: "Supplier or its producer is on the UFLPA Entity List", then: "Its products are presumed made with forced labor, and goods covered by the presumption are not entitled to entry", claim: "supplier-verification-21" },
+    { if: "Inputs may come from Xinjiang", then: "Plan for clear and convincing evidence before you order", claim: "supplier-verification-16" },
+    { if: "Supplier emails new bank details", then: "Verify by a secondary channel before paying", claim: "supplier-verification-30" }
+  ]}
+/>
+
+<Checklist
+  title="Supplier verification file (keep one per supplier)"
+  items={[
+    "Legal name, all romanized spellings, address and parent company",
+    "Dated OFAC Sanctions List Search results for supplier, parent and known owners",
+    "Dated Consolidated Screening List results, with any near-matches resolved",
+    "Dated UFLPA Entity List check for the supplier and each named sub-supplier",
+    "Raw-material sourcing statement and traceability documents",
+    "Bank-account holder name matched to the invoice seller",
+    "Record of how any change to payment details was verified"
+  ]}
+/>
+
+<Callout type="note" title="What ITA's company background report covers">
+ITA sells an International Company Profile with background check information on a specific international company, <C id="supplier-verification-31"/> at $700 for the full version for small companies. <C id="supplier-verification-33"/> It is offered to export-ready U.S. companies, <C id="supplier-verification-32"/> so a business that only imports should not plan its supplier vetting around it.
+</Callout>
+
+<Callout type="warning" title="Scope">
+Screening tools flag names; they do not clear a transaction. Whether a specific dealing is prohibited is for OFAC (licensing and guidance) and, for UFLPA detentions, CBP to decide on the facts. Get sanctions or trade counsel involved before acting on any possible match.
+</Callout>
+
+## How to confirm it before each order
+
+Run the supplier and its owners through OFAC's Sanctions List Search and read OFAC's basic sanctions FAQs at ofac.treasury.gov. Search trade.gov's Consolidated Screening List and resolve near-matches against the Federal Register. Check the current UFLPA Entity List at dhs.gov/uflpa-entity-list and the latest "Notice Regarding the Uyghur Forced Labor Prevention Act Entity List" on federalregister.gov. Read the IC3 public service announcement on business email compromise at ic3.gov before you set up payment procedures.

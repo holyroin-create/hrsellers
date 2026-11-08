@@ -1,0 +1,105 @@
+---
+title: "Amazon Seller Central Reports: Which One Answers What"
+description: "The Amazon seller reports that matter — settlement, orders, inventory ledger, FBA fees, returns, reimbursements, performance — what each holds and how long it is kept."
+pillar: "operations"
+type: "reference"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "printed spreadsheet pages with columns of figures and a highlighter on a desk next to a laptop, no readable brand names or logos"
+  alt: "A desk calculator resting on printed report pages with charts, with a notebook, keyboard and laptop blurred in the background"
+  image: "prior-disclosure-protests"
+keyFacts:
+  - { label: "Default retention", value: "90 days if not specified", claim: "seller-central-reports-02" }
+  - { label: "Settlement reports", value: "Generated automatically by Amazon", claim: "seller-central-reports-07" }
+  - { label: "Inventory Ledger history", value: "18 months", claim: "seller-central-reports-14" }
+  - { label: "Deferred transactions", value: "Up to 10 years per report", claim: "seller-central-reports-23" }
+summary:
+  - "Settlement reports are generated automatically by Amazon and cannot be requested or scheduled; other report types are generated and retrieved, for example through the Reports API."
+  - "Where Amazon specifies no retention period, a generated report is kept for 90 days, so files you need for bookkeeping should be downloaded and stored."
+  - "Amazon compares the Inventory Ledger Report to a bank statement for FBA inventory, and its detailed view shows 18 months of movements."
+  - "Separate FBA reports cover reimbursements, customer returns, storage fees, long-term storage charges, fee estimates and removal orders."
+  - "Account health data is available as the Seller Performance Report, and one- to three-star feedback as the Flat File Feedback Report."
+faq:
+  - { q: "How to download report from Amazon Seller Central?", a: "Settlement reports cannot be requested or scheduled because Amazon schedules them automatically; other report types are generated and then retrieved. Download promptly — where no retention is specified, a generated report is kept for 90 days.", claims: ["seller-central-reports-06", "seller-central-reports-07", "seller-central-reports-01", "seller-central-reports-02"] }
+related: ["order-defect-rate", "account-suspension-appeal", "accrual-accounting-cogs", "form-1099-k-marketplace-sellers"]
+---
+
+Amazon offers many seller reports, and the practical task is matching a question — what was I paid, where did my inventory go, what did FBA charge, why is my account health slipping — to the report that answers it. Amazon defines a report simply as "a type of tool that provides sellers with specific information about their business or performance." <C id="seller-central-reports-28"/> This page maps common questions to the report that answers them, using the report descriptions in Amazon's Selling Partner API documentation. Where the menu path inside Seller Central matters, check it there.
+
+Two rules apply across the board. Settlement reports "cannot be requested or scheduled" because "they are automatically scheduled by Amazon." <C id="seller-central-reports-06"/> <C id="seller-central-reports-07"/> And where Amazon specifies no retention period for a report type, "the report will be retained for 90 days." <C id="seller-central-reports-02"/> If your accountant will need a file next year, download it now.
+
+## Money: what you were paid and why
+
+For payouts, start with the settlement reports. The current flat-file version is the Flat File V2 Settlement Report, which "replaces the Flat File Settlement Report and XML Settlement Report." <C id="seller-central-reports-08"/> For a quick view, Seller Central's Payments Dashboard shows "sales, expenses, and refunds," and the Amazon Seller app lets you "view payments, and find current and past statements." <C id="seller-central-reports-27"/> <C id="seller-central-reports-26"/>
+
+If money is being held back, the Deferred Transaction Report is "a point-in-time report that contains a list of deferred transactions," and "a single report can provide up to 10 years of data." <C id="seller-central-reports-23"/> For bookkeeping that matches revenue to cost of goods, see the [accrual accounting and COGS guide](/guides/accrual-accounting-cogs/); for tax reporting of marketplace payments, see the [Form 1099-K guide](/guides/form-1099-k-marketplace-sellers/).
+
+## Orders and sales
+
+<Compare title="Order and sales reports" columns={["What it contains","Use it for"]} rows={[
+  {label:"Unshipped Orders Report", values:["Only orders not confirmed as shipped","Daily fulfillment queue for seller-fulfilled orders"], claim:"seller-central-reports-03"},
+  {label:"Flat File Order Report (Shipping)", values:["Orders from the previous 60 days","Shipping Amazon orders"], claim:"seller-central-reports-04"},
+  {label:"Orders By Last Update", values:["All orders updated in a period you specify","Catching status changes, cancellations"], claim:"seller-central-reports-05"},
+  {label:"Sales and Traffic Business Report", values:["Ordered product sales, revenue, units ordered, claim amount","Sales trend by product"], claim:"seller-central-reports-09"},
+  {label:"FBA Amazon Fulfilled Shipments", values:["Order, shipment and item detail with price, courier and tracking","Tracing FBA deliveries"], claim:"seller-central-reports-12"}
+]} />
+
+Brands get extra search data through Brand Analytics, which requires being "a Brand Representative for a brand enrolled in Amazon Brand Registry." <C id="seller-central-reports-11"/> Its Search Query Performance Report shows "impressions, clicks, cart adds, and purchases" for the queries that lead to your products. <C id="seller-central-reports-10"/>
+
+## FBA inventory and fees
+
+For FBA unit movements, use the Inventory Ledger. Amazon's description of its summary view: "The Inventory Ledger Report is like a bank statement of your inventory." <C id="seller-central-reports-13"/> The detailed view lets you "view all historical movements of your inventory for 18 months." <C id="seller-central-reports-14"/> For a snapshot of what is in stock now, the Manage Inventory report "contains current details of active (not archived) inventory including condition, quantity, and volume." <C id="seller-central-reports-29"/>
+
+| FBA report | What Amazon says it contains |
+|---|---|
+| Reimbursements | Itemized inventory reimbursements, including the reason for each |
+| Returns | Customer returns received at a fulfillment center, with return reason and disposition |
+| Storage Fees | Estimated monthly storage fees for each ASIN |
+| Long Term Storage Fee Charges | The charge data for long-term storage |
+| Fee Preview | Estimated selling and fulfillment fees for FBA inventory with active offers |
+| Removal Order Detail | All removal orders, with their items, in a chosen period |
+
+*Source: Amazon Selling Partner API documentation, FBA report types, checked Nov 8, 2026.* <C id="seller-central-reports-15"/> <C id="seller-central-reports-16"/> <C id="seller-central-reports-17"/> <C id="seller-central-reports-19"/> <C id="seller-central-reports-18"/> <C id="seller-central-reports-20"/>
+
+FBA data is not live to the minute: Amazon says a near real-time FBA report is generated "no more than once every 30 minutes" and a daily one "no more than once every four hours." <C id="seller-central-reports-21"/> <C id="seller-central-reports-22"/> If a number looks stale, that refresh interval is the first thing to rule out.
+
+<Callout type="example" title="Worked example (hypothetical): checking a ledger month">
+Inputs for one SKU over a month: starting balance 500 units; receipts 300; customer shipments 420; customer returns put back into stock 10; units found damaged 4. Expected ending balance: 500 + 300 − 420 + 10 − 4 = 386. If the ledger's ending balance shows 380, six units are unexplained. The next steps are to look for those units in the Reimbursements report (was the loss already paid for?) and the Removal Order Detail report (were they removed on your instruction?), and only then to open a case.
+</Callout>
+
+The example treats the ledger the way Amazon's bank-statement comparison suggests, and the Reimbursements report lists the reason for each reimbursement. <C id="seller-central-reports-13"/> <C id="seller-central-reports-15"/>
+
+## Account health and feedback
+
+The Seller Performance Report "contains the individual performance metrics data from the Seller Central Account Health dashboard," and the Flat File Feedback Report "contains negative and neutral feedback (one to three stars)." <C id="seller-central-reports-24"/> <C id="seller-central-reports-25"/> The [order defect rate guide](/guides/order-defect-rate/) explains how to read the order metrics, and the [account suspension appeal guide](/guides/account-suspension-appeal/) covers the policy side.
+
+## Pick the report from the question
+
+<Decision title="Which report answers your question" rows={[
+  {if:"Why does my payout differ from my sales?", then:"Settlement report (generated automatically by Amazon)", claim:"seller-central-reports-07"},
+  {if:"Is some of my money being held?", then:"Deferred Transaction Report", claim:"seller-central-reports-23"},
+  {if:"Where did FBA units go?", then:"Inventory Ledger, detailed view (18 months)", claim:"seller-central-reports-14"},
+  {if:"Did Amazon pay for lost or damaged units?", then:"FBA Reimbursements Report", claim:"seller-central-reports-15"},
+  {if:"Why are buyers returning this product?", then:"FBA Returns Report (return reason and disposition)", claim:"seller-central-reports-16"},
+  {if:"What will FBA charge per unit?", then:"FBA Fee Preview Report", claim:"seller-central-reports-18"},
+  {if:"Which products sell, and how many claims?", then:"Sales and Traffic Business Report", claim:"seller-central-reports-09"},
+  {if:"How is my account health trending?", then:"Seller Performance Report", claim:"seller-central-reports-24"}
+]} />
+
+<Checklist title="Monthly report routine" items={[
+  "Download every settlement report for the month and file it with your books",
+  "Export the Inventory Ledger summary and compare ending balances with your own records",
+  "Review the Reimbursements and Returns reports for the same month",
+  "Check the Storage Fees report before the next inventory shipment",
+  "Save the Seller Performance Report and the feedback report with the date",
+  "Store everything outside Amazon, since unspecified retention is 90 days"
+]} />
+
+Sellers who pull reports through software use the Reports API, which Amazon describes as the way "to retrieve and manage reports that you can use to manage your selling business." <C id="seller-central-reports-01"/>
+
+## How to confirm a report's contents
+
+Report names, fields and limits change; Amazon notes some older formats have already been replaced. <C id="seller-central-reports-08"/> Check the report type pages in the Selling Partner API documentation at developer-docs.amazon.com (Payment, Order, Settlement, FBA, Analytics and Performance reports) for the current description and date limits, and Seller Central Help for where each report sits in the Seller Central menus.

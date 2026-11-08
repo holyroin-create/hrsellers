@@ -1,0 +1,126 @@
+---
+title: "Amazon AWD vs a 3PL Warehouse: Costs and When Each Fits"
+description: "Amazon Warehousing and Distribution rates per cubic foot and per box, what AWD can and cannot do, and how to compare it line by line with a 3PL storage quote."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "pallets of sealed cartons on tall racking in a bulk storage warehouse, forklift aisle, no people, no logos"
+  alt: "Warehouse aisle with tall pallet racking holding shrink-wrapped cartons on wooden pallets under rows of ceiling lights"
+  image: "hub-guides"
+keyFacts:
+  - { label: "AWD storage, East/South regions", value: "$0.48 per cu ft per month (base)", claim: "awd-vs-3pl-warehousing-03" }
+  - { label: "AWD inbound and outbound processing", value: "$1.40 per box each", claim: "awd-vs-3pl-warehousing-06" }
+  - { label: "Holiday surcharge on AWD storage", value: "None", claim: "awd-vs-3pl-warehousing-10" }
+  - { label: "FBA standard-size storage, Oct–Dec", value: "$2.40 per cu ft per month", claim: "awd-vs-3pl-warehousing-20" }
+summary:
+  - "AWD storage costs $0.48 per cubic foot per month in the East Coast, South East and South Central regions and $0.57 on the West Coast, before discounts."
+  - "Inbound and outbound processing are each $1.40 per box, and AWD pricing covers FBA inbound placement."
+  - "AWD has no extra holiday-season storage cost, while FBA standard-size storage rises from $0.78 to $2.40 per cubic foot per month in October–December."
+  - "AWD can feed FBA automatically and send inventory to other channels such as Walmart Fulfillment Services, but inventory already in FBA cannot be moved into AWD."
+  - "Amazon's own 3PL pricing guide says many 3PLs bill receiving, storage by volume and picking separately, and often want long-term space and throughput commitments."
+faq:
+  - { q: "What does Amazon Warehousing and Distribution cost?", a: "Base storage is $0.48 per cubic foot per month (East Coast, South East, South Central) or $0.57 (West Coast); inbound and outbound processing are $1.40 per box each; transportation is listed at $1.40 per cubic foot.", claims: ["awd-vs-3pl-warehousing-03", "awd-vs-3pl-warehousing-02", "awd-vs-3pl-warehousing-06", "awd-vs-3pl-warehousing-09"] }
+  - { q: "How is Amazon Warehousing and Distribution different from FBA?", a: "AWD is bulk storage that replenishes FBA. Amazon's comparison puts AWD storage at $0.48 per cubic foot per month all year against $0.78 (January–September) and $2.40 (October–December) for FBA standard-size storage.", claims: ["awd-vs-3pl-warehousing-01", "awd-vs-3pl-warehousing-20"] }
+  - { q: "How does AWD differ from FBA?", a: "With auto-replenishment on, products count as in stock and buyable once AWD receives them, but promised delivery dates for units in AWD differ from units already at a fulfillment center.", claims: ["awd-vs-3pl-warehousing-13", "awd-vs-3pl-warehousing-21"] }
+related: ["mcf-off-amazon-orders", "removal-vs-hold-decision", "walmart-wfs", "fba-vs-fbm-breakeven"]
+---
+
+If you are deciding where to keep the inventory that does not fit, or should not sit, in FBA, the choice is between Amazon Warehousing and Distribution (AWD) — which Amazon describes as "an integrated, low-cost bulk storage solution" — and an independent third-party logistics warehouse (3PL). <C id="awd-vs-3pl-warehousing-01"/> AWD publishes flat rates per cubic foot and per box, with no holiday surcharge and automatic replenishment into FBA. <C id="awd-vs-3pl-warehousing-10"/> A 3PL quotes its own mix of receiving, storage and handling charges, often with commitments. The sections below put AWD's published numbers next to the cost lines you will see on a 3PL quote, so you can compare like with like.
+
+## What AWD charges
+
+Amazon lists three rate columns for AWD: a base rate, a "smart storage" rate and an "Amazon managed" rate.
+
+| Cost type | Base rate | Smart storage rate | Amazon managed rate |
+|---|---|---|---|
+| Storage – West Coast (incl. West Coast Palletizable) | $0.57/cu ft/month | $0.51 (10% off) | $0.46 (20% off) |
+| Storage – East Coast, South East, South Central | $0.48/cu ft/month | $0.43 (10% off) | $0.38 (20% off) |
+| Inbound processing – all regions except West Coast Palletizable | $1.40/box | $1.40/box | $1.40/box |
+| Inbound processing – West Coast Palletizable | $1.05/box | $1.05/box | $1.05/box |
+| Outbound processing | $1.40/box | $1.40/box | $1.40/box |
+| Transportation | $1.40/cu ft | $1.40/cu ft | $1.26/cu ft (10% off) |
+
+*Source: Amazon, AWD program page on sell.amazon.com, checked Nov 8, 2026.* <C id="awd-vs-3pl-warehousing-02"/> <C id="awd-vs-3pl-warehousing-03"/> <C id="awd-vs-3pl-warehousing-04"/> <C id="awd-vs-3pl-warehousing-05"/> <C id="awd-vs-3pl-warehousing-06"/> <C id="awd-vs-3pl-warehousing-07"/> <C id="awd-vs-3pl-warehousing-08"/> <C id="awd-vs-3pl-warehousing-09"/>
+
+The $1.05 West Coast Palletizable rate is the $1.40 inbound rate with a $0.35 promotional discount for eligible shipments received through December 31, 2026. <C id="awd-vs-3pl-warehousing-07"/> Budget at $1.40 for shipments that will arrive after that date unless Amazon extends the promotion.
+
+The page does not define the two discount columns, but Amazon's supply chain overview explains them: when you use AWD auto-replenishment and maintain healthy inventory levels, you can save 10% on storage costs with AWD smart storage rates, and when you use the Amazon Managed Service, which delivers to AWD through AGL, SEND or PCP, you can save 20% on AWD storage and 10% on transportation. <C id="awd-vs-3pl-warehousing-18"/> <C id="awd-vs-3pl-warehousing-19"/>
+
+Three more pricing rules matter when you compare quotes:
+
+- **No seasonal step-up.** AWD has "simple, pay-as-you-go pricing with no additional costs for the holiday season." <C id="awd-vs-3pl-warehousing-10"/>
+- **Inbound placement is included.** AWD pricing covers the FBA inbound placement service, so there is no separate placement charge on inventory replenished from AWD. <C id="awd-vs-3pl-warehousing-11"/>
+- **No enrollment fee.** FBA sellers pay nothing to enroll and are charged only when they send inventory to AWD facilities. <C id="awd-vs-3pl-warehousing-12"/>
+
+<Stat value="$2.40 vs $0.48" label="FBA standard-size storage vs AWD storage, per cu ft per month, October–December (Amazon's comparison)" claim="awd-vs-3pl-warehousing-20" />
+
+## What a 3PL quote usually contains
+
+Amazon's own guide to 3PL pricing lists the cost lines a typical warehouse contract bills separately. Use it as a checklist when you read a quote, because each line needs a number before you can compare it with AWD:
+
+<Checklist title="Lines to find on a 3PL quote" items={[
+  "Receiving: a flat or hourly rate for the labor to unload your goods",
+  "Storage: usually priced by volume (cubic feet or meters) — check whether it changes by season",
+  "Picking: an hourly or per-item rate",
+  "Order consolidation, which is often charged extra",
+  "Hazmat surcharges for storing and shipping dangerous items",
+  "Account management and software costs",
+  "Contract terms: dedicated-space commitments and minimum throughput"
+]} />
+
+Those items come from Amazon's description: most 3PLs charge a flat or hourly rate for receiving labor, storage fees are "typically based on the volume of space," picking is typically charged hourly or per item, 3PLs often charge extra for order consolidation, hazardous items may carry a surcharge, and account management and software costs may apply. <C id="awd-vs-3pl-warehousing-24"/> <C id="awd-vs-3pl-warehousing-25"/> <C id="awd-vs-3pl-warehousing-26"/> <C id="awd-vs-3pl-warehousing-30"/> <C id="awd-vs-3pl-warehousing-31"/> <C id="awd-vs-3pl-warehousing-27"/> The same guide says many 3PLs require long-term storage contracts, with commitments to dedicated space and a minimum level of throughput. <C id="awd-vs-3pl-warehousing-23"/> Bear in mind this is Amazon describing its competitors; the quote in front of you is what counts.
+
+## Side by side
+
+<Compare title="AWD vs a typical 3PL, by cost line" columns={["AWD (published)","3PL (read your quote)"]} rows={[
+  {label:"Storage basis", values:["$0.48–$0.57 per cu ft per month before discounts","Usually by volume; rate set by the warehouse"], claim:"awd-vs-3pl-warehousing-03"},
+  {label:"Receiving", values:["$1.40 per box inbound processing","Flat or hourly labor rate"], claim:"awd-vs-3pl-warehousing-24"},
+  {label:"Holiday season", values:["No additional storage cost","Check for peak-season pricing"], claim:"awd-vs-3pl-warehousing-10"},
+  {label:"Commitment", values:["No enrollment fee; pay when you send inventory","Often long-term space and throughput commitments"], claim:"awd-vs-3pl-warehousing-23"},
+  {label:"Replenishing FBA", values:["Automatic; inbound placement included","Ask how the 3PL ships to FBA and what it charges"], claim:"awd-vs-3pl-warehousing-11"},
+  {label:"Other channels", values:["Can send to channels such as Walmart Fulfillment Services","Depends on the 3PL's services"], claim:"awd-vs-3pl-warehousing-14"}
+]} />
+
+## What AWD cannot do
+
+Four limits decide whether AWD can replace a 3PL for you:
+
+1. **It moves inventory in bulk.** Amazon describes AWD distribution to FBA, to other sales channels such as Walmart Fulfillment Services, and, through Amazon's storage and distribution service, to "your own or third-party warehouses, brick-and-mortar stores, and other destinations." <C id="awd-vs-3pl-warehousing-14"/> <C id="awd-vs-3pl-warehousing-22"/> For single-unit orders from your website, see [MCF for off-Amazon orders](/guides/mcf-off-amazon-orders/).
+2. **It is one-way from FBA.** You cannot move inventory from FBA to AWD, because items are stored differently in fulfillment and distribution centers. <C id="awd-vs-3pl-warehousing-15"/> Excess units already in FBA need a different plan — see [removal vs hold](/guides/removal-vs-hold-decision/).
+3. **Eligibility is checked per product.** Amazon confirms whether products are eligible when you book a shipment to AWD. <C id="awd-vs-3pl-warehousing-16"/>
+4. **Not in China.** AWD is not available in China; Amazon points sellers to Global Warehousing and Distribution, which offers bulk storage in Shenzhen. <C id="awd-vs-3pl-warehousing-17"/>
+
+There is also a delivery-promise trade-off. With auto-replenishment on, products count as in stock and buyable once AWD receives them, but the promised delivery dates for products stored with AWD, or in transit from AWD to the fulfillment network, "will differ from delivery dates for products that are already in the fulfillment network." <C id="awd-vs-3pl-warehousing-13"/> <C id="awd-vs-3pl-warehousing-21"/>
+
+## Worked example: pricing a quarter of bulk storage
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: 400 cartons of 2.0 cu ft each (800 cu ft), stored for 4 months in the East Coast region, every carton later sent on as a box. AWD base rates from the table above.
+
+- Inbound processing: 400 × $1.40 = $560
+- Storage at base rate: 800 × $0.48 × 4 = $1,536 (at the $0.43 smart storage rate: $1,376)
+- Outbound processing: 400 × $1.40 = $560
+- Transportation, if charged on all 800 cu ft: 800 × $1.40 = $1,120 (the page lists this rate but does not say which moves it covers, so treat it as an upper bound)
+
+Total at base rates: about $3,776, or $4.72 per cubic foot over four months. For the 3PL, fill in the same lines from the quote — receiving, 4 months of storage, outbound handling and freight to Amazon — and add any FBA inbound placement charge for the shipments from the 3PL to Amazon, a service AWD pricing covers.
+</Callout>
+
+For scale, holding those same 800 cubic feet in FBA standard-size storage would cost 800 × $0.78 = $624 a month from January to September, and 800 × $2.40 = $1,920 a month from October to December, before any other FBA charges. <C id="awd-vs-3pl-warehousing-20"/>
+
+## Which one fits
+
+<Decision title="AWD or a 3PL?" rows={[
+  {if:"Most of your stock is destined for FBA and you want to avoid Q4 storage rates", then:"AWD: flat storage all year and automatic replenishment into FBA", claim:"awd-vs-3pl-warehousing-10"},
+  {if:"Your goods ship from a factory in China and you want origin storage", then:"AWD is not available there; Amazon offers Global Warehousing and Distribution in Shenzhen", claim:"awd-vs-3pl-warehousing-17"},
+  {if:"The excess inventory is already inside FBA", then:"AWD cannot take it; decide between removal and holding", claim:"awd-vs-3pl-warehousing-15"}
+]} />
+
+This page compares published prices only. Your actual bill depends on the contract you sign or the program terms you accept in Seller Central.
+
+## How to confirm the rates
+
+Re-check the AWD rate table and the promotional end date on Amazon's AWD page at sell.amazon.com/programs/warehousing, and the FBA-versus-AWD storage comparison at sell.amazon.com/programs/supply-chain, before you commit a shipment. AWD product requirements are listed in Seller Central, where Amazon also confirms eligibility when you book. For a 3PL, ask for the full rate sheet and contract terms in writing, covering every line in the checklist above.

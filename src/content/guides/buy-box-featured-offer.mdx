@@ -1,0 +1,106 @@
+---
+title: "Amazon Featured Offer (Buy Box): Eligibility and Pricing"
+description: "What Amazon's Featured Offer (the \"Buy Box\") is, what decides eligibility, and how expected-price and pricing-health signals show why you lost it."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 10
+photo:
+  subject: "several blank price tags in different colors hanging side by side, one slightly in front of the others, no text or logos"
+  alt: "Four blank hang tags in white, kraft and black paper hanging on strings against a pale wall"
+  image: "amazon-referral-fees"
+keyFacts:
+  - { label: "Eligibility basics", value: "Price, availability, delivery speed", claim: "buy-box-featured-offer-04" }
+  - { label: "Winners per ASIN", value: "Up to 2 (Prime and non-Prime)", claim: "buy-box-featured-offer-13" }
+  - { label: "Out of stock", value: "Cannot be featured", claim: "buy-box-featured-offer-08" }
+  - { label: "Price lookup batch", value: "Up to 40 SKUs per request", claim: "buy-box-featured-offer-18" }
+summary:
+  - "The Featured Offer is the offer selected when a shopper chooses Add to Cart on a product detail page; the area that shows it, the Offer Display, is sometimes called the Buy Box."
+  - "Amazon says Featured Offer eligibility requires great prices, availability and delivery speed, and an out-of-stock offer cannot be featured."
+  - "There can be up to two Buy Box winners per ASIN at a time, one eligible for Prime and one not."
+  - "Amazon publishes a featured offer expected price (FOEP): the item price at or below which your offer may be featured, which is not a guarantee."
+  - "An offer loses eligibility when its price plus shipping is above the Competitive External Price or recent prices; Amazon flags this through Pricing Health."
+faq:
+  - { q: "What is the featured offer on Amazon?", a: "It is the offer selected when a shopper chooses Add to Cart on the product detail page. It appears in the Offer Display near the top of the page, which is sometimes called the Buy Box.", claims: ["buy-box-featured-offer-03", "buy-box-featured-offer-01"] }
+  - { q: "Is the Featured Offer the same as the Buy Box?", a: "They describe the same placement. Amazon calls the area the Offer Display, sometimes called the Buy Box, and the offers shown there are Featured Offers.", claims: ["buy-box-featured-offer-01", "buy-box-featured-offer-02"] }
+  - { q: "Why is my Amazon Featured Offer not showing?", a: "Amazon notes that sometimes no available offer is eligible to be featured. Reasons it lists include running out of stock and a price that is too high or too low.", claims: ["buy-box-featured-offer-11", "buy-box-featured-offer-08", "buy-box-featured-offer-09", "buy-box-featured-offer-10"] }
+related: ["cross-channel-price-parity", "listing-disappeared", "amazon-referral-fees", "walmart-wfs"]
+---
+
+When several sellers offer the same product, Amazon selects one offer for the Add to Cart button and calls it the Featured Offer. The levers Amazon names are concrete: keep the offer in stock, deliver fast, and price it competitively, using the expected price Amazon computes as a guide, without dropping below what your margin can carry. This page sets out what Amazon publishes about each of those levers and how to read the signals that tell you which one failed.
+
+## Featured Offer, Offer Display, Buy Box: the terms
+
+Amazon calls the prominent area at the top of a product detail page the Offer Display, sometimes called the Buy Box. <C id="buy-box-featured-offer-01"/> It contains one or more Featured Offers. <C id="buy-box-featured-offer-02"/> The Featured Offer is the offer selected when a shopper chooses Add to Cart. <C id="buy-box-featured-offer-03"/>
+
+"One or more" is literal. Amazon's offers data says there can be up to two Buy Box winners per ASIN at any time, one eligible for Prime and one not. <C id="buy-box-featured-offer-13"/> Featured offers can also be broken out by customer membership, Prime and non-Prime shoppers. <C id="buy-box-featured-offer-23"/> So "who has the Buy Box" can have more than one answer, depending on who is looking.
+
+## What Amazon says decides eligibility
+
+Amazon's developer documentation puts it in one sentence: to be Featured Offer eligible, you must provide great prices, availability, and delivery speed. <C id="buy-box-featured-offer-04"/> Amazon's seller pages expand each element.
+
+<Compare title="The three levers Amazon names" columns={["What Amazon says", "What to check"]} rows={[
+  {label:"Price", values:["Featured Offer prices are commonly at or below the lowest priced alternatives", "Your price against the lowest priced alternatives"], claim:"buy-box-featured-offer-05"},
+  {label:"Availability", values:["An out-of-stock offer cannot become featured", "That the offer has stock available"], claim:"buy-box-featured-offer-08"},
+  {label:"Delivery", values:["Offers with fast, free shipping are more likely to be featured", "Shipping speed and whether shipping is free"], claim:"buy-box-featured-offer-06"}
+]} />
+
+Price is not the whole test. Amazon says lowering your price can help, but you also need to meet performance-based requirements in areas like inventory availability, fulfillment, and customer service. <C id="buy-box-featured-offer-12"/> Amazon also notes that other offers might be featured based on factors such as fulfillment capability to a specific customer, <C id="buy-box-featured-offer-17"/>
+
+### FBA or self-fulfilled?
+
+FBA products are eligible for free, two-day shipping through Prime, <C id="buy-box-featured-offer-28"/> and Amazon handles customer service and returns for those orders. <C id="buy-box-featured-offer-29"/> Amazon also says fulfilling orders yourself can be just as effective at increasing your chances of becoming the Featured Offer. <C id="buy-box-featured-offer-07"/> For FBA fee levels, see [Amazon referral fees](/guides/amazon-referral-fees/) and Amazon's pricing pages.
+
+## Price: both too high and too low
+
+Amazon lists a price that is too high as a reason an offer may not be featured <C id="buy-box-featured-offer-09"/> — and a price that is too low as well. <C id="buy-box-featured-offer-10"/> It can also happen that no available offer is eligible at all. <C id="buy-box-featured-offer-11"/>
+
+The ceiling is set partly by prices outside Amazon. An offer becomes ineligible when its total price (price plus shipping) is higher than the Competitive External Price, if one is available, or higher than recent prices. <C id="buy-box-featured-offer-22"/> Amazon may also use a product's list price when deciding whether to feature an offer. <C id="buy-box-featured-offer-24"/> How external prices and your own website's prices interact with this is covered in [cross-channel price parity](/guides/cross-channel-price-parity/).
+
+## Reading Amazon's signals
+
+Amazon gives sellers three ways to see where an offer stands.
+
+**Manage All Inventory.** The Price and shipping costs column shows whether your item is the Featured Offer. <C id="buy-box-featured-offer-27"/>
+
+**Pricing Health.** This view lists your offers that are not currently eligible to become the Featured Offer. <C id="buy-box-featured-offer-26"/> The same event is available to software as a PRICING_HEALTH notification, sent when an offer is disqualified. <C id="buy-box-featured-offer-31"/> In the offers data, a flag shows whether the seller is eligible to win the Buy Box. <C id="buy-box-featured-offer-14"/>
+
+**Featured offer expected price (FOEP).** Amazon computes the listing price at or below which a seller can expect to become the featured offer, before applicable promotions. <C id="buy-box-featured-offer-15"/> It is defined as an item price, <C id="buy-box-featured-offer-30"/> and it is not a guarantee, because competing offers might change. <C id="buy-box-featured-offer-16"/> Software can request it for up to 40 SKUs at once. <C id="buy-box-featured-offer-18"/>
+
+The FOEP result status is itself diagnostic:
+
+<Decision title="What the FOEP result tells you to do" rows={[
+  {if:"Result: VALID_FOEP and your price is above it", then:"Decide whether matching the expected price leaves enough margin", claim:"buy-box-featured-offer-15"},
+  {if:"Result: NO_COMPETING_OFFER", then:"No competing offer exists; you might already be eligible", claim:"buy-box-featured-offer-20"},
+  {if:"Result: OFFER_NOT_ELIGIBLE", then:"Price is not the blocker; check the eligibility requirements", claim:"buy-box-featured-offer-19"},
+  {if:"Result: OFFER_NOT_FOUND", then:"The offer might be unbuyable or you are not qualified; fix the listing first", claim:"buy-box-featured-offer-21"}
+]} />
+
+An OFFER_NOT_FOUND result points to the offer itself rather than its price. Check listing status and issues with the steps in [why an Amazon listing disappears](/guides/listing-disappeared/).
+
+<Callout type="example" title="Worked example (hypothetical): is the expected price worth matching?">
+Inputs: your item price is $27.99, the FOEP is $25.49, and your costs before Amazon's referral fee total $15.00. Matching the FOEP cuts revenue per unit by $2.50 ($27.99 − $25.49). If the referral fee is 15% (assumed rate for this example), it falls from $4.20 to $3.82, so the margin before other costs goes from $8.79 ($27.99 − $4.20 − $15.00) to $6.67 ($25.49 − $3.82 − $15.00). Amazon does not guarantee the featured offer at that price, <C id="buy-box-featured-offer-16"/> so the question is whether the extra units at $6.67 beat fewer units at $8.79.
+</Callout>
+
+## Automating price changes
+
+Amazon's Automate Pricing tool is included free in the Professional selling plan. <C id="buy-box-featured-offer-25"/> A repricing rule only moves the price; it cannot fix stock, delivery or service gaps, which Amazon treats as separate requirements. <C id="buy-box-featured-offer-12"/>
+
+<Checklist title="Featured Offer review for one ASIN" items={[
+  "Confirm the offer is in stock and buyable",
+  "Check Manage All Inventory to see whether you hold the Featured Offer",
+  "Open Pricing Health for any offer flagged as ineligible",
+  "Compare your price plus shipping with the expected price and recent prices",
+  "Check delivery speed and whether shipping is free",
+  "Set a minimum price that protects margin before automating"
+]} />
+
+<Callout type="note" title="Scope">
+We found no Amazon page that publishes a formula for the Featured Offer, and the account-level performance targets are shown inside Seller Central. This page reflects what Amazon states publicly; for a specific ASIN, check Manage All Inventory and the Pricing Health page.
+</Callout>
+
+## How to confirm it for your offers
+
+Read Amazon's own explanation in [Maximize your sales potential with the Amazon Featured Offer](https://sell.amazon.com/blog/buy-box-featured-offer), then check each ASIN in Manage All Inventory and Pricing Health. <C id="buy-box-featured-offer-27"/> <C id="buy-box-featured-offer-26"/> The expected-price and pricing-health definitions are in Amazon's [price adjustment workflows guide](https://developer-docs.amazon/sp-api/docs/price-adjustment-automation-workflows-guide). <C id="buy-box-featured-offer-04"/>

@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import Photo from '../../components/Photo.astro';
+import Icon from '../../components/Icon.astro';
+import { allEntries } from '../../lib/entries';
+import { fmtDate } from '../../lib/claims';
+const list = (await allEntries()).filter((x) => x.kind === 'reviews').sort((a, b) => a.e.id.localeCompare(b.e.id));
+---
+<Base title="Seller software: what each tool officially offers" description="Plain summaries of popular Amazon seller software — features, data sources and prices — taken only from each vendor's own pages, with no ratings or affiliate links.">
+  <PageHero title="Seller software" kicker="Software" photo="hub-tools" lede="What each tool's maker says it does and costs, taken from the vendor's own pages and dated. These are not tests or ratings, and no vendor pays for or reviews them." />
+  <div class="wrap" style="padding:56px 24px 88px">
+    {list.length > 0 && <div class="cards">{list.map((x) => (
+      <article class="acard"><div class="acard-photo"><Photo id={x.e.data.photo?.image || x.e.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
+        <div class="acard-body"><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p><div class="acard-meta"><span><Icon name="checkCircle" />Verified {fmtDate(x.e.data.lastVerified, true)}</span></div><span class="go"><Icon name="arrow" /></span></div></article>))}
+    </div>}
+    <div class="prose narrow" style="margin-top:48px">
+      <h2>How these pages are written</h2>
+      <p>Each page answers the questions a seller asks before signing up: what the tool does, which marketplaces and data it works with, what the plans cost and what they include, and where the vendor's own terms, privacy and cancellation rules are published. Every fact comes from a page the vendor publishes about its own product and carries a link and a check date.</p>
+      <p>We did not test these tools, and the pages do not score, rank or recommend them. Vendors change features and prices often; check the linked pricing page before you buy. The site earns nothing if you sign up — see the <a href="/affiliate-disclosure/">affiliate and advertising disclosure</a>.</p>
+    </div>
+  </div>
+</Base>

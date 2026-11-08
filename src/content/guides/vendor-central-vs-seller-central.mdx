@@ -1,0 +1,106 @@
+---
+title: "Vendor Central vs Seller Central: Selling to Amazon or on It"
+description: "The real difference between Vendor Central and Seller Central: who is seller of record, how money flows, what each workflow involves, how to compare margins."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a printed purchase order and an invoice side by side on a desk with a pen, no readable text, no logos"
+  alt: "Hands of three people around a table reviewing printed documents, faces not shown"
+  image: "incoterms-who-is-importer"
+keyFacts:
+  - { label: "Seller Central: seller of record", value: "You, not Amazon", claim: "vendor-central-vs-seller-central-02" }
+  - { label: "Professional seller plan", value: "$39.99/month", claim: "vendor-central-vs-seller-central-12" }
+  - { label: "Amazon 2025 online stores sales", value: "$269,287 million", claim: "vendor-central-vs-seller-central-06" }
+  - { label: "Amazon 2025 third-party seller services", value: "$172,162 million", claim: "vendor-central-vs-seller-central-07" }
+summary:
+  - "In Seller Central you sell in Amazon's store as the seller of record and pay Amazon fees; in Vendor Central you sell goods to Amazon, which resells them from its own inventory."
+  - "Amazon books its own inventory sales as gross product sales and only its net share of third-party sales as service revenue."
+  - "Vendor work runs on documents: purchase orders, acknowledgements, shipment notices, invoices and credit notes, all supported by vendor-only APIs."
+  - "Amazon treats most funds it receives from vendors, such as volume rebates, as a reduction of the price it pays for their goods."
+  - "Both groups can use Sponsored Products and the Selling Partner API; the commercial terms for vendors are not published on Amazon's public seller pages."
+faq:
+  - { q: "What is the difference between Vendor Central and Seller Central?", a: "Seller Central is for third-party sellers, who sell in Amazon's store while Amazon is not the seller of record. Vendor Central is for suppliers whose goods Amazon buys and sells from its own inventory.", claims: ["vendor-central-vs-seller-central-02", "vendor-central-vs-seller-central-04"] }
+  - { q: "What is vendor central?", a: "It is the portal used by vendors, who supply Amazon's own retail business. Amazon's vendor APIs show the workflow: receive purchase orders, accept or reject them, send shipment confirmations and submit invoices.", claims: ["vendor-central-vs-seller-central-15", "vendor-central-vs-seller-central-16", "vendor-central-vs-seller-central-17", "vendor-central-vs-seller-central-18"] }
+  - { q: "What is amazon seller central fee?", a: "Amazon's selling plans are $0.99 per item sold on the Individual plan or $39.99 per month on the Professional plan, plus a referral fee on each sale.", claims: ["vendor-central-vs-seller-central-11", "vendor-central-vs-seller-central-12", "vendor-central-vs-seller-central-13"] }
+related: ["amazon-referral-fees", "amazon-business-b2b", "brand-registry-trademark", "amazon-renewed"]
+---
+
+The choice comes down to one question: do you want to sell **in** Amazon's store, or sell **to** Amazon? In Seller Central you are a third-party seller; Amazon's annual report says plainly, "We are not the seller of record in these transactions," and Amazon earns fees from you. <C id="vendor-central-vs-seller-central-02"/> <C id="vendor-central-vs-seller-central-03"/> In Vendor Central you are a supplier: Amazon buys your goods and resells them from its own inventory, recording that revenue "gross" as its own product sales. <C id="vendor-central-vs-seller-central-04"/> Everything else, from who sets the shelf price to how you get paid, follows from that split.
+
+## Two business models, as Amazon itself accounts for them
+
+Amazon's Form 10-K for 2025 is the clearest public statement of the difference. On the seller side, Amazon offers "programs that enable sellers to grow their businesses, sell their products in our stores." <C id="vendor-central-vs-seller-central-01"/> It is paid through "fixed fees, a percentage of sales, per-unit activity fees, interest, or some combination thereof." <C id="vendor-central-vs-seller-central-03"/>
+
+On the retail side, Amazon recognizes "gross revenue from items we sell from our inventory as product sales" and its "net share of revenue of items sold by third-party sellers as service sales." <C id="vendor-central-vs-seller-central-04"/> <C id="vendor-central-vs-seller-central-05"/> The two lines are reported separately:
+
+<Chart title="Amazon 2025 net sales by line (US$ millions)" kind="bar" unit="$" rows={[
+  {label:"Online stores (product sales recorded gross)", value:269287, claim:"vendor-central-vs-seller-central-06"},
+  {label:"Third-party seller services (commissions and fees)", value:172162, claim:"vendor-central-vs-seller-central-07"}
+]} />
+
+The "third-party seller services" figure is Amazon's commissions and fulfillment and shipping fees, not the value of goods sellers sold, so the two bars measure different things. <C id="vendor-central-vs-seller-central-07"/>
+
+## Side by side
+
+<Compare title="Seller Central vs Vendor Central" columns={["Seller Central (third-party)", "Vendor Central (first-party)"]} rows={[
+  {label:"Who sells to the shopper", values:["You; Amazon is not seller of record", "Amazon, from its own inventory"], claim:"vendor-central-vs-seller-central-02"},
+  {label:"How Amazon earns", values:["Fees: fixed, percentage, per-unit", "Sells your goods from its own inventory"], claim:"vendor-central-vs-seller-central-03"},
+  {label:"How Amazon books it", values:["Net share as service sales", "Gross as product sales"], claim:"vendor-central-vs-seller-central-05"},
+  {label:"Core documents", values:["Orders, shipments, payments data", "Purchase orders, ASNs, invoices, credit notes"], claim:"vendor-central-vs-seller-central-17"},
+  {label:"Public price list on sell.amazon.com", values:["Yes: $39.99/month Professional plan plus referral fees", "Not covered by the seller pricing page"], claim:"vendor-central-vs-seller-central-12"}
+]} />
+
+## How a vendor relationship works day to day
+
+Vendor work is document exchange. Amazon's Selling Partner API documentation for vendors lays out the cycle:
+
+<Steps title="Retail procurement cycle (vendor side)" steps={[
+  {t:"Receive the purchase order", d:"The Vendor Orders API is used to receive purchase orders and get complete PO details.", claim:"vendor-central-vs-seller-central-15"},
+  {t:"Acknowledge", d:"Accept or reject a purchase order for fulfillment.", claim:"vendor-central-vs-seller-central-16"},
+  {t:"Ship and send the ASN", d:"Submit shipment confirmations, called Advance Shipment Notifications.", claim:"vendor-central-vs-seller-central-17"},
+  {t:"Invoice", d:"Submit invoices for shipped items; submit credit notes for returns, pricing corrections and allowances.", claim:"vendor-central-vs-seller-central-18"}
+]} />
+
+The credit-note step is where vendor economics show up. Amazon's 10-K says it receives funds from vendors for items such as cooperative marketing, promotions, incentives and volume rebates, and that "We generally consider these amounts received from vendors to be a reduction of the prices we pay for their goods." <C id="vendor-central-vs-seller-central-08"/> It adds that "Volume rebates typically depend on reaching minimum purchase thresholds." <C id="vendor-central-vs-seller-central-09"/> In other words, the invoice price is not the whole story; allowances agreed in your vendor terms reduce what you net.
+
+Amazon also runs a direct-fulfillment program for vendors, in which the vendor retrieves orders, acknowledges them, generates a shipping label, ships and confirms, then invoices to release payment. <C id="vendor-central-vs-seller-central-22"/> Amazon's guide says "Vendors should submit accurate acknowledgements as fast as possible, within at most 24 hours." <C id="vendor-central-vs-seller-central-19"/>
+
+The retail procurement shipments API also lets vendors "Get shipment status and pickup details" and "Generate shipping labels from Amazon." <C id="vendor-central-vs-seller-central-23"/> In direct fulfillment the order of operations is fixed: "You must acknowledge an order before you submit a shipping label request," and items "should be invoiced only after they are confirmed and shipped." <C id="vendor-central-vs-seller-central-24"/> <C id="vendor-central-vs-seller-central-25"/>
+
+## How a seller account works
+
+In Seller Central you list and price your own offers and pay published fees. Amazon's plans are $0.99 per item sold on the Individual plan or $39.99 per month on the Professional plan. <C id="vendor-central-vs-seller-central-11"/> <C id="vendor-central-vs-seller-central-12"/> On each sale, "you'll pay a percentage of the total price or a minimum amount, whichever is greater." <C id="vendor-central-vs-seller-central-13"/> The category rates are in the [referral fee guide](/guides/amazon-referral-fees/), and the business-buyer tools available to sellers are in the [Amazon Business guide](/guides/amazon-business-b2b/).
+
+## What both sides share
+
+- **Advertising.** Amazon Ads says "Sponsored Products are available for professional sellers, vendors, book vendors," among others. <C id="vendor-central-vs-seller-central-10"/>
+- **APIs.** The Selling Partner API "helps sellers and vendors access their data on orders, shipments, payments, inventory, and other business information." <C id="vendor-central-vs-seller-central-20"/>
+- **Brand Registry.** Amazon's Brand Registry FAQ notes that "If you have a Seller Central or Vendor Central account," you can use the same login to create a Brand Registry account. <C id="vendor-central-vs-seller-central-21"/> See the [Brand Registry guide](/guides/brand-registry-trademark/).
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs, all invented: a product retails at $30.00. As a seller using FBA, assume a 15% referral fee ($4.50) and a $5.50 fulfillment fee, so you receive $30.00 − $4.50 − $5.50 = $20.00 per unit before your own costs and advertising. As a vendor, assume Amazon's purchase price is $17.00 with a 4% allowance credited back, so you net $17.00 × 0.96 = $16.32 before your own costs. Under these invented inputs the seller route keeps $20.00 − $16.32 = $3.68 more per unit, before advertising and your own operating costs on either route. Replace every input with your own figures.
+</Callout>
+
+<Decision title="Which route fits your situation" rows={[
+  {if:"You want to set the retail price and own the customer order", then:"Seller Central: you are the seller of record and pay published fees.", claim:"vendor-central-vs-seller-central-02"},
+  {if:"You prefer bulk purchase orders and invoicing a single retail customer", then:"Vendor Central: Amazon buys and resells from its inventory.", claim:"vendor-central-vs-seller-central-04"},
+  {if:"Your systems can handle PO acknowledgements, ASNs and invoices", then:"The vendor workflow is document-driven and API-supported.", claim:"vendor-central-vs-seller-central-17"},
+  {if:"You need to model allowances and rebates in your price", then:"Treat them as a reduction of your selling price to Amazon.", claim:"vendor-central-vs-seller-central-08"}
+]} />
+
+<Checklist title="Questions to answer before choosing" items={[
+  "Do you want to control the retail price shoppers see, or sell at a wholesale price?",
+  "Can your systems acknowledge purchase orders and send ASNs and invoices on time?",
+  "Have you modeled allowances, rebates and credit notes as price reductions?",
+  "Have you modeled referral, fulfillment and advertising fees per unit as a seller?",
+  "Who will handle customer-facing listing content and returns on each route?",
+  "Do you already hold a registered or pending trademark for Brand Registry?"
+]} />
+
+## How to confirm the terms that apply to you
+
+For sellers, the [selling plans and fees page](https://sell.amazon.com/pricing) is the public reference. For vendors, Amazon's public sources are its [Form 10-K](https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm) and the vendor sections of the Selling Partner API documentation; payment terms, allowances and chargebacks are set in the vendor agreement and shown inside Vendor Central, so check them there. This page compares the two models; the contract you sign controls your actual terms.

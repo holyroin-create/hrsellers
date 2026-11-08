@@ -1,0 +1,24 @@
+---
+import { render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import { MDX } from '../../lib/mdx';
+import { citeOrder } from '../../lib/claims';
+import { allEntries } from '../../lib/entries';
+import { PILLARS } from '../../lib/pillars';
+export async function getStaticPaths() {
+  const all = await allEntries();
+  const idx = new Map(all.map((x) => [x.e.id, { id: x.e.data.photo?.image || x.e.id, href: x.href, title: x.e.data.title, description: x.e.data.description, minutes: x.e.data.minutes, pillar: PILLARS[x.e.data.pillar].short }]));
+  return all.filter((x) => x.kind === "reviews").map((x) => {
+    const rel = x.e.data.related.map((r) => idx.get(r)).filter(Boolean);
+    const fill = all.filter((y) => y.e.data.pillar === x.e.data.pillar && y.e.id !== x.e.id && !x.e.data.related.includes(y.e.id)).map((y) => idx.get(y.e.id));
+    return { params: { slug: x.e.id }, props: { entry: x.e, related: [...rel, ...fill].slice(0, 3) } };
+  });
+}
+const { entry, related } = Astro.props as any;
+const d = entry.data;
+(Astro.locals as any).citeOrder = citeOrder(entry.body, [...d.keyFacts.map((k: any) => k.claim)]).concat(d.faq.flatMap((f: any) => f.claims)).filter((v: string, i: number, a: string[]) => a.indexOf(v) === i);
+const { Content, headings } = await render(entry);
+---
+<Article entry={entry} headings={headings} related={related} crumb={{ label: "Seller software", href: "/reviews/" }} path={Astro.url.pathname}>
+  <Content components={MDX} />
+</Article>

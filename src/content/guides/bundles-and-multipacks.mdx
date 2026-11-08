@@ -1,0 +1,115 @@
+---
+title: "Bundles and Multipacks on Amazon: Listing, Labels and GTINs"
+description: "Physical bundles vs Virtual Bundles vs multipacks: Amazon's bundle rules, net quantity labels under 16 CFR 500, GTIN rules, and the per-unit fee math."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "three identical retail boxes shrink-wrapped together as a multipack beside a gift box holding two different complementary products, no brand names"
+  alt: "Two closed corrugated shipping boxes stacked on a white surface, each with a blank white address label"
+  image: "hub-marketplaces"
+keyFacts:
+  - { label: "Virtual Bundle size", value: "2 to 5 different products", claim: "bundles-and-multipacks-03" }
+  - { label: "Virtual Bundle access", value: "Brand Registry + FBA", claim: "bundles-and-multipacks-02" }
+  - { label: "Multipack net quantity", value: "Count, each unit, and total", claim: "bundles-and-multipacks-12" }
+  - { label: "Referral fee (Home and Kitchen)", value: "15%, $0.30 minimum", claim: "bundles-and-multipacks-21" }
+summary:
+  - "A physical bundle is packed as a single unit and listed under its own ASIN; a Virtual Bundle groups products in one listing without packing them together."
+  - "Virtual Bundles are open to Brand Registry brands using FBA and must contain 2 to 5 different new products, priced no higher than the items bought separately."
+  - "Under 16 CFR 500.27, a multipack label states the number of units, the quantity of each and the total quantity."
+  - "GS1 rules require a new GTIN when the fixed contents of an assortment change, and when the number of trade items in a case changes."
+faq:
+  - { q: "Can you sell bundles on Amazon?", a: "Yes. A physical bundle is packed as a single unit with its own ASIN, and brands in Brand Registry that use FBA can also create Virtual Bundles of 2 to 5 different products in one listing.", claims: ["bundles-and-multipacks-07", "bundles-and-multipacks-08", "bundles-and-multipacks-02", "bundles-and-multipacks-03"] }
+  - { q: "What is considered a multipack?", a: "Under the federal packaging rules, a multiunit package is a retail package containing two or more individually packaged or labeled units of an identical commodity in the same quantity.", claims: ["bundles-and-multipacks-11"] }
+related: ["fbt-fixed-dollar-problem", "gs1-barcodes-fnsku", "packaging-design-fba", "sipp-packaging-program"]
+---
+
+Selling items together on Amazon takes one of three shapes, and each has different rules: a physical bundle that you pack as a single unit under its own ASIN, a Virtual Bundle that links products you already stock, and the federal labeling that applies the moment several units share one retail package. <C id="bundles-and-multipacks-07"/> <C id="bundles-and-multipacks-08"/> <C id="bundles-and-multipacks-01"/> Choose the shape first; the listing, the barcode and the label follow from it.
+
+## Three ways to sell items together
+
+Amazon describes product bundling as a strategy where you group and sell multiple complementary products together. <C id="bundles-and-multipacks-06"/>
+
+<Compare title="Physical bundle, multipack or Virtual Bundle" columns={["Physical bundle", "Virtual Bundle"]} rows={[
+  {label:"How it ships", values:["You pack all items in one box or package as a single unit", "Products are grouped in one listing"], claim:"bundles-and-multipacks-08"},
+  {label:"Listing", values:["Its own unique ASIN", "One listing for multiple products"], claim:"bundles-and-multipacks-07"},
+  {label:"Who can use it", values:["Set by Amazon's bundling policy in Seller Central", "Brands in Brand Registry that fulfill with FBA"], claim:"bundles-and-multipacks-02"},
+  {label:"Contents", values:["Set by you", "2 to 5 different products, all new"], claim:"bundles-and-multipacks-03"}
+]} />
+
+Amazon's full bundling policy for physical bundles, including what can be combined and how a bundle must be described, is published inside Seller Central; check it there before creating a bundle ASIN.
+
+## Virtual Bundles: the Brand Registry route
+
+Brand Registry describes Virtual Bundles as a way to group and sell multiple products in one listing so customers can buy more from your brand. <C id="bundles-and-multipacks-01"/> They are a benefit for brands enrolled in Brand Registry and FBA, <C id="bundles-and-multipacks-02"/> and Amazon lists these conditions:
+
+- Bundles must include 2 to 5 different products. <C id="bundles-and-multipacks-03"/>
+- All products in the bundle must be in new condition. <C id="bundles-and-multipacks-04"/>
+- The total cost must be equal to or less than the combined price of each item bought individually. <C id="bundles-and-multipacks-05"/>
+- Some categories, such as gift cards, digital items and subscription products, are not allowed. <C id="bundles-and-multipacks-09"/>
+
+Brand Registry itself is free, but it requires an active registered trademark or a pending trademark application for your brand name or logo. <C id="bundles-and-multipacks-10"/> <C id="bundles-and-multipacks-22"/> See the [Brand Registry guide](/guides/brand-registry-trademark/) for that step. Because a Virtual Bundle does not require packing the products together as one unit, it can test a combination before you commit to a combined box.
+
+## Labeling a physical multipack or bundle
+
+Once units share one retail package, the Fair Packaging and Labeling Act rules in 16 CFR Part 500 set how the net quantity is declared. The regulation distinguishes three package types:
+
+| Package type | Definition | Net quantity statement |
+|---|---|---|
+| Multiunit (500.27) | Two or more individually packaged or labeled units of an identical commodity in the same quantity | Number of units, quantity of each unit, and total quantity |
+| Variety (500.28) | Two or more units of similar but not identical commodities | Units of each identical commodity with its weight or measure; total quantity last |
+| Combination (500.29) | Two or more units of dissimilar commodities | Weight, measure or count suited to each package or unit |
+
+*Source: eCFR, 16 CFR 500.27–500.29, checked Nov 8, 2026.* <C id="bundles-and-multipacks-11"/> <C id="bundles-and-multipacks-12"/> <C id="bundles-and-multipacks-15"/> <C id="bundles-and-multipacks-16"/> <C id="bundles-and-multipacks-17"/> <C id="bundles-and-multipacks-18"/>
+
+The regulation's own multiunit example reads: "6 Bars, Net Wt. 3.4 ozs. (96.3 g) each, Total Net Wt. 1 lb. 4.4 oz. (578 g)." <C id="bundles-and-multipacks-13"/> If the inner units are unlabeled and not meant for separate sale, the declaration may give the total quantity of the multipack without regard to inner packaging. <C id="bundles-and-multipacks-14"/>
+
+A three-pack of the same 8 oz lotion is a multiunit package. A lighter-fluid-and-flints set is the regulation's own combination example. <C id="bundles-and-multipacks-18"/> The [packaging design guide](/guides/packaging-design-fba/) covers where the net quantity sits on the panel.
+
+## Barcodes: when a combination needs a new GTIN
+
+GS1's GTIN Management Standard treats a fixed set of products sold together as a predefined assortment: a fixed composition of two or more trade items combined and sold as a single physical trade item. <C id="bundles-and-multipacks-19"/> Changing, adding or replacing any item in that assortment requires a new GTIN. <C id="bundles-and-multipacks-19"/> At the case level, changing the number of trade items in a case also requires a new GTIN; GS1's example is a case moving from 9 trade items to 12. <C id="bundles-and-multipacks-20"/>
+
+In practice, swapping one item in a fixed gift set means a new GTIN. Costs and options for licensing GTINs are covered in the [GS1 barcodes guide](/guides/gs1-barcodes-fnsku/).
+
+## The fee side: why packs change the per-unit math
+
+Amazon charges referral fees as a percentage of the total price or a minimum amount, whichever is greater; <C id="bundles-and-multipacks-23"/> in Home and Kitchen, for example, the rate is 15% with a $0.30 minimum. <C id="bundles-and-multipacks-21"/> FBA fulfillment costs are based on the product's weights and dimensions. <C id="bundles-and-multipacks-24"/> A physical multipack is one unit with its own weight and dimensions, so it carries one fulfillment fee instead of several.
+
+<Callout type="example" title="Worked example (hypothetical): three singles vs one 3-pack">
+Inputs: a Home and Kitchen item sold at $6.00 as a single, or as a 3-pack at $16.00; referral fee 15%, $0.30 minimum. <C id="bundles-and-multipacks-21"/>
+
+- Three singles: referral 15% × $6.00 = $0.90 each, so $2.70 for three orders, plus three separate fulfillment fees.
+- One 3-pack: referral 15% × $16.00 = $2.40, plus one fulfillment fee for a heavier, larger unit.
+
+The referral saving is $0.30. The fulfillment fee can make a larger difference: compare one fee for the pack against three fees for singles in the Revenue Calculator. The [fixed per-unit fee guide](/guides/fbt-fixed-dollar-problem/) works through why this matters most for low-priced items.
+</Callout>
+
+If the pack will ship in its own packaging under Amazon's SIPP program, note that products grouped for one SIPP test must have the same number of units in a pack, <C id="bundles-and-multipacks-25"/> so a single and a 3-pack are certified separately. Details are in the [SIPP guide](/guides/sipp-packaging-program/).
+
+<Decision title="Which format should you use?" rows={[
+  {if:"You own a registered brand, use FBA, and want to test a combination", then:"Virtual Bundle of 2 to 5 different new products", claim:"bundles-and-multipacks-03"},
+  {if:"You sell several units of the same item together", then:"Physical multipack with a multiunit net quantity label", claim:"bundles-and-multipacks-12"},
+  {if:"You combine dissimilar products in one box", then:"Physical bundle labeled as a combination package; a new GTIN if contents change", claim:"bundles-and-multipacks-19"},
+  {if:"Your bundle includes gift cards, digital items or subscriptions", then:"Not allowed in a Virtual Bundle", claim:"bundles-and-multipacks-09"}
+]} />
+
+<Checklist title="Before you launch a bundle or multipack" items={[
+  "Decide between a physical pack and a Virtual Bundle",
+  "Check Amazon's bundling policy in Seller Central for physical bundles",
+  "Assign a new GTIN whenever a fixed assortment's contents change",
+  "Write the net quantity statement for the right package type",
+  "Price a Virtual Bundle at or below the sum of the individual prices",
+  "Compare one pack fulfillment fee against several single-unit fees"
+]} />
+
+<Callout type="note" title="Scope">
+This page combines Amazon's public bundle rules, the federal net quantity rules and GS1's GTIN rules. The decision on whether a specific physical bundle may be listed rests with Amazon's bundling policy in Seller Central, and product categories with their own labeling regulations can add requirements.
+</Callout>
+
+## How to confirm it for your bundle
+
+Re-check the Virtual Bundle conditions in Amazon's "5 product bundling tips" post and on the Brand Registry page at sell.amazon.com, <C id="bundles-and-multipacks-03"/> <C id="bundles-and-multipacks-01"/> the net quantity rules in 16 CFR 500.27 to 500.29 on eCFR, <C id="bundles-and-multipacks-12"/> and GS1's GTIN Management Standard rules for assortments and pack quantities. <C id="bundles-and-multipacks-19"/> <C id="bundles-and-multipacks-20"/>

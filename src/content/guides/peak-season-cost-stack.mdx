@@ -1,0 +1,117 @@
+---
+title: "Amazon Peak Season Cost Stack: One MCF Unit, Charge by Charge"
+description: "Worked example from Amazon's published MCF rate card: how peak storage, the peak fulfillment fee, 3.5% surcharge, battery and return fees add up on one unit."
+pillar: "fees"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a single boxed product on a packing table next to a calculator and a printed fee breakdown, no logos, no people"
+  alt: "A silver pocket calculator and a black pen resting on a red notebook on a white surface"
+  image: "merchandise-processing-fee"
+keyFacts:
+  - { label: "Peak storage, large standard", value: "$2.40 per cu ft per month (Oct–Dec)", claim: "peak-season-cost-stack-01" }
+  - { label: "Peak fulfillment, 1–2 lb, 1 unit", value: "$10.97", claim: "peak-season-cost-stack-06" }
+  - { label: "Surcharge on MCF fulfillment fees", value: "3.5%", claim: "peak-season-cost-stack-08" }
+  - { label: "Return fee, 1–2 lb large standard", value: "$4.70", claim: "peak-season-cost-stack-12" }
+summary:
+  - "Amazon's MCF rate card lists six charges that can apply to one unit in peak season: peak storage, the peak fulfillment rate, the 3.5% surcharge, a battery fee, a remote-area surcharge and a return fee."
+  - "Storage is billed per cubic foot by month, and the large standard rate roughly triples from $0.78 to $2.40 for October–December."
+  - "For a one-unit MCF order of a large standard item over 1 lb to 2 lb, the 2026–27 peak table lists $10.97; the card applies 3.5% to MCF fulfillment fees but does not say whether peak rates include it."
+  - "In this example order size moves the stack more than anything else: the same item is listed at $5.58 in the peak table's 4+ column."
+  - "Aged inventory and storage utilization surcharges are conditional layers whose triggers, but not rates, appear in Amazon's public MCF fee policy."
+faq:
+  - { q: "How much is amazon storage fee?", a: "Amazon's MCF rate card lists large standard, non-dangerous goods at $0.78 per cubic foot per month from January to September and $2.40 from October to December, and Amazon says MCF storage fees are the same as FBA's.", claims: ["peak-season-cost-stack-01", "peak-season-cost-stack-02", "peak-season-cost-stack-05"] }
+draft: true
+related: ["holiday-peak-fulfilment-fee", "peak-surcharge-2026-schedule", "fba-fuel-logistics-surcharge-2026", "shipping-lithium-batteries"]
+---
+
+During peak season, several of Amazon's published charges can land on the same unit. On the Multi-Channel Fulfillment (MCF) rate card, a unit shipped in November can carry peak-month storage, a peak fulfillment rate, a 3.5% surcharge on MCF fulfillment fees, and — if it comes back — a return fee. <C id="peak-season-cost-stack-01"/> <C id="peak-season-cost-stack-06"/> <C id="peak-season-cost-stack-08"/> <C id="peak-season-cost-stack-12"/> The worked example below adds them up for one hypothetical unit using Amazon's published MCF rate card. Amazon states that MCF storage and other non-fulfillment fees are the same as FBA's. <C id="peak-season-cost-stack-05"/> FBA's own peak fulfillment amounts are announced in Seller Central; swap them in if you are modeling orders placed on Amazon.
+
+## The layers
+
+Each layer has its own trigger. Knowing what triggers it tells you which ones you can control.
+
+| Layer | Trigger | Published amount |
+|---|---|---|
+| Peak storage | Units stored in October, November or December | $2.40 per cu ft per month (large standard) |
+| Peak fulfillment rate | Order ships October 15, 2026 – January 14, 2027 | $10.97 (large standard, 1–2 lb, "1" column) |
+| Fuel and logistics surcharge | MCF fulfillment fees in the US; card does not say whether peak rates include it | 3.5% |
+| Lithium battery fee | Item is or contains a lithium battery | $0.11 per unit |
+| Remote-area surcharge | Ships to Alaska, Hawaii, Guam, Puerto Rico or the Virgin Islands | 100% (standard-size) |
+| Return fee | Item is returned through MCF | $4.70 (large standard, 1–2 lb) |
+
+*Source: Amazon Supply Chain, 2026 MCF rate card, checked Nov 8, 2026.* <C id="peak-season-cost-stack-01"/> <C id="peak-season-cost-stack-07"/> <C id="peak-season-cost-stack-06"/> <C id="peak-season-cost-stack-08"/> <C id="peak-season-cost-stack-09"/> <C id="peak-season-cost-stack-11"/> <C id="peak-season-cost-stack-12"/>
+
+The calendar behind these triggers — which date starts and ends each one — is on our [2026 peak surcharge schedule](/guides/peak-surcharge-2026-schedule/).
+
+## How storage is charged per unit
+
+Storage is the layer that builds up before the sale. Amazon calculates monthly storage "by cubic foot," based on the average number of units stored per month. <C id="peak-season-cost-stack-02"/> <C id="peak-season-cost-stack-03"/> The rate depends on product type, size tier, time of year and storage utilization ratio. <C id="peak-season-cost-stack-04"/> For large standard, non-dangerous goods, that means $0.78 per cubic foot from January to September and $2.40 from October to December. <C id="peak-season-cost-stack-01"/>
+
+A unit's storage cost is its volume times the monthly rate, for every month it sits in a fulfillment center. Inventory sent in early for the holidays pays peak rates for every peak month it waits.
+
+## Worked example: one unit, sold November 20, 2026
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: a large standard item weighing 1.5 lb with a packaged volume of 0.2 cubic feet, no battery, received at a fulfillment center on September 1, 2026, sold on another channel and shipped through MCF as a one-unit, standard-speed order on November 20, 2026, to an address in the contiguous US. Storage is counted as a full month for September, October and November. Assumption: the 3.5% surcharge is added to the listed peak rate — Amazon's card does not say whether listed peak rates already include it. All rates are from Amazon's published MCF rate card.
+</Callout>
+
+| Line | Calculation | Cost |
+|---|---|---|
+| Storage, September | 0.2 cu ft × $0.78 | $0.16 |
+| Storage, October | 0.2 cu ft × $2.40 | $0.48 |
+| Storage, November | 0.2 cu ft × $2.40 | $0.48 |
+| Peak fulfillment fee | 1 unit, large standard, 1–2 lb | $10.97 |
+| Fuel and logistics surcharge | 3.5% × $10.97 | $0.38 |
+| **Total if kept** | | **$12.47** |
+| Return fee, if returned | large standard, 1–2 lb | $4.70 |
+| **Total if returned** | | **$17.17** |
+
+*Rates from Amazon Supply Chain's 2026 MCF rate card, checked Nov 8, 2026; arithmetic is ours and hypothetical (unrounded subtotals).* <C id="peak-season-cost-stack-01"/> <C id="peak-season-cost-stack-06"/> <C id="peak-season-cost-stack-08"/> <C id="peak-season-cost-stack-12"/>
+
+The fulfillment fee and its surcharge make up about 91% of the kept-unit total; peak storage adds just under a dollar. The return fee, if it happens, adds more than a third again. Amazon says MCF return fees include "return logistics transportation, regrading, and restocking." <C id="peak-season-cost-stack-13"/> The rate card does not say whether the 3.5% surcharge applies to return fees, so the example leaves it off.
+
+## Variations on the same unit
+
+<Compare title="Same unit, four variations (hypothetical, rounded)" columns={["Change","Effect on the stack"]} rows={[
+  {label:"Contains a lithium battery", values:["+$0.11 per unit to the base fulfillment fee","Fee base becomes $11.08 before the surcharge"], claim:"peak-season-cost-stack-09"},
+  {label:"Ships to Alaska or Hawaii", values:["Remote-area surcharge of 100% for standard-size, calculated after any battery fee","Adds $10.97 if the 100% is applied to the listed peak rate"], claim:"peak-season-cost-stack-10"},
+  {label:"Two units in one order", values:["$7.52 per unit peak rate","About $7.78 per unit if 3.5% is added, vs. $11.35"], claim:"peak-season-cost-stack-06"},
+  {label:"Four or more units in one order", values:["$5.58 per unit peak rate","About $5.78 per unit if 3.5% is added"], claim:"peak-season-cost-stack-06"}
+]} />
+
+The remote-area line shows why destination matters in peak season: Amazon calculates that surcharge after adding any lithium battery fee to the base fulfillment fee, and for a standard-size item it is 100%, so it doubles the base. <C id="peak-season-cost-stack-10"/> <C id="peak-season-cost-stack-11"/> The multi-unit lines show the opposite: order size cuts the largest layer roughly in half. <C id="peak-season-cost-stack-06"/> The peak rate table by tier and speed is in our [holiday peak fulfillment fee guide](/guides/holiday-peak-fulfilment-fee/).
+
+## Conditional layers that can join the stack
+
+Two more surcharges can be added in peak season, depending on how much stock you hold and for how long:
+
+- **Aged inventory surcharge**, for inventory stored longer than 181 days. <C id="peak-season-cost-stack-14"/> A unit received in April and still unsold in November would cross that line.
+- **Storage utilization surcharge**, when storage utilization surpasses 22 weeks of cover. <C id="peak-season-cost-stack-15"/>
+
+Amazon's public MCF fee policy gives the triggers but not the amounts; check those in Seller Central and add them to the stack only when your account meets the trigger.
+
+<Decision title="Which layer to attack first" rows={[
+  {if:"Most orders are single units", then:"Bundle or promote multi-unit orders: the 4+ unit peak rate is about half the single-unit rate", claim:"peak-season-cost-stack-06"},
+  {if:"Inventory arrives months before it sells", then:"Weigh peak-month storage at $2.40 per cu ft against holding stock upstream", claim:"peak-season-cost-stack-01"},
+  {if:"You hold large volumes ahead of Q4", then:"Compare AWD, which Amazon says has no additional costs for the holiday season", claim:"peak-season-cost-stack-17"},
+  {if:"Return rates are high in your category", then:"Price the return fee into the unit; on this item it adds $4.70", claim:"peak-season-cost-stack-12"}
+]} />
+
+AWD's East Coast, South East and South Central base storage rate is $0.48 per cubic foot per month. <C id="peak-season-cost-stack-16"/> That is upstream storage, so inventory still has to move into fulfillment centers before it ships.
+
+<Checklist title="Build your own stack" items={[
+  "Measure each SKU's packaged volume in cubic feet",
+  "Count the months it will sit in a fulfillment center, splitting Jan–Sep from Oct–Dec",
+  "Look up the peak fulfillment rate by size tier, weight, units per order and speed",
+  "Add the 3.5% surcharge to MCF fulfillment fees, and check an invoice to see whether peak rates already include it",
+  "Add $0.11 for lithium battery items and the remote-area surcharge where it applies",
+  "Multiply your expected return rate by the return fee"
+]} />
+
+## How to confirm the stack for your SKUs
+
+Open the MCF rate card at supplychain.amazon.com/docs/rate-card (linked from supplychain.amazon.com/mcf/pricing) for fulfillment, return and storage rates. <C id="peak-season-cost-stack-07"/> For FBA orders on Amazon, open Seller Central and go to Reports, then Fulfillment, then Fee Preview. <C id="peak-season-cost-stack-19"/> To check the storage layer, the FBA Storage Fees Report shows month_of_charge, storage_rate and utilization_surcharge_rate for each ASIN. <C id="peak-season-cost-stack-18"/> This example uses Amazon's published rates. Your actual charges depend on how Amazon measures and classifies each item, and a dispute over those goes through a Seller Central support case.

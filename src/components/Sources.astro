@@ -7,7 +7,7 @@ const groups = sourceGroups(order);
 {groups.length > 0 && (
 <section class="sources" aria-labelledby="src-h">
   <h2 id="src-h">Sources</h2>
-  <p>Each source is the agency, regulation or platform page that sets the rule or fee. It was opened and compared with the statements it supports on the date shown.</p>
+  <p>Each source is the official page behind the statement it supports — the agency, regulation or platform page that sets a rule or fee, or, on seller software pages, the vendor's own page about its product. Each was opened and compared with the statements it supports on the date shown.</p>
   <ol>{groups.map((g) => (
     <li><div>
       {g.ids.map((id) => <span class="anchor" id={`src-${id}`}></span>)}

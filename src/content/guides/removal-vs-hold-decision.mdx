@@ -1,0 +1,110 @@
+---
+title: "Remove or Keep FBA Inventory? A Cost-Based Decision Method"
+description: "When slow FBA stock should come out and when holding is cheaper: storage rates, the 181-day aged charge, removal options and the reports that show the numbers."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "closed loading dock doors at a fulfillment warehouse with a pallet of cartons waiting outside, no people, no logos"
+  alt: "Two closed loading-dock doors with dark dock shelters above a yellow-edged dock wall at a warehouse"
+  image: "duty-drawback"
+keyFacts:
+  - { label: "Aged inventory charge applies", value: "After 181 days in a fulfillment center", claim: "removal-vs-hold-decision-03" }
+  - { label: "FBA standard-size storage", value: "$0.78 (Jan–Sep) / $2.40 (Oct–Dec) per cu ft per month", claim: "removal-vs-hold-decision-04" }
+  - { label: "Removal, disposal, liquidation", value: "Per-item charge", claim: "removal-vs-hold-decision-01" }
+  - { label: "Moving FBA stock to AWD", value: "Not possible", claim: "removal-vs-hold-decision-13" }
+summary:
+  - "Amazon can return, dispose of or liquidate inventory in a fulfillment center for a per-item charge."
+  - "Holding costs monthly storage by cubic foot — $0.78 for standard-size from January to September and $2.40 from October to December — plus an aged-inventory charge after 181 days."
+  - "The Recommended Removal report flags sellable items that will be 365 days old or older at the next long-term storage cleanup."
+  - "Inventory in FBA can serve off-Amazon orders through MCF, but it cannot be moved into AWD."
+  - "The decision compares expected months to sell, times the monthly holding cost, with the removal charge plus what the units are worth elsewhere."
+faq:
+  - { q: "How much does Amazon charge for removal order?", a: "Amazon's FBA page says it can return, dispose of or liquidate inventory in a fulfillment center for a per-item charge; check the current rate in Seller Central.", claims: ["removal-vs-hold-decision-01"] }
+  - { q: "How to remove inventory from Amazon FBA?", a: "Have Amazon return, dispose of or liquidate the units through a removal order. The Removal Order Detail report then lists each removal order and its items, and the Removal Shipment Detail report gives tracking.", claims: ["removal-vs-hold-decision-01", "removal-vs-hold-decision-10", "removal-vs-hold-decision-11"] }
+  - { q: "How much are Amazon FBA removal order fees?", a: "They are charged per item. Compare that charge with the storage you would otherwise pay each month — for standard-size items, $0.78 per cubic foot from January to September and $2.40 from October to December.", claims: ["removal-vs-hold-decision-01", "removal-vs-hold-decision-04"] }
+related: ["fba-vs-fbm-breakeven", "awd-vs-3pl-warehousing", "mcf-off-amazon-orders"]
+---
+
+Keep FBA units when the storage they will incur before they sell is less than what removing them costs and loses; remove them when the months-to-sell stretch into the aged-inventory period or the October–December rate. Amazon can return, dispose of or liquidate inventory in a fulfillment center for a per-item charge, while holding costs monthly storage and, after 181 days, an aged inventory charge. <C id="removal-vs-hold-decision-01"/> <C id="removal-vs-hold-decision-03"/> Check the current per-item removal rate and aged inventory rate in Seller Central before running the numbers below.
+
+## What holding costs
+
+FBA storage is charged monthly based on the daily average volume your inventory occupies, measured in cubic feet. <C id="removal-vs-hold-decision-02"/> Amazon quotes standard-size storage at $0.78 per cubic foot per month from January to September and $2.40 from October to December. <C id="removal-vs-hold-decision-04"/> On top of that, aged inventory is "charged monthly for all items stored in a fulfillment center for more than 181 days." <C id="removal-vs-hold-decision-03"/> Exceeding your restock limit may also increase storage costs. <C id="removal-vs-hold-decision-06"/>
+
+<Chart title="FBA standard-size storage, per cubic foot per month" kind="column" unit="$" rows={[
+  {label:"January–September", value:0.78, claim:"removal-vs-hold-decision-04"},
+  {label:"October–December", value:2.40, claim:"removal-vs-hold-decision-04"}
+]} />
+
+Amazon's FBA holiday guide lists "Restock or remove inventory" among the tasks for 7–9 weeks before the holiday season. <C id="removal-vs-hold-decision-17"/>
+
+## Your options for units that are not selling
+
+<Compare title="What you can do with slow FBA inventory" columns={["What happens","What it costs or needs"]} rows={[
+  {label:"Return to you", values:["Amazon returns the units to you","Per-item charge"], claim:"removal-vs-hold-decision-01"},
+  {label:"Dispose", values:["Amazon disposes of the units","Per-item charge"], claim:"removal-vs-hold-decision-01"},
+  {label:"Liquidate", values:["Amazon liquidates the units","Per-item charge"], claim:"removal-vs-hold-decision-01"},
+  {label:"Donate", values:["Eligible excess and returned products go to charitable organizations through FBA Donations","Only eligible products"], claim:"removal-vs-hold-decision-15"},
+  {label:"Sell elsewhere from FBA", values:["Ship off-Amazon orders from the same pool through MCF","MCF fulfillment fee per unit"], claim:"removal-vs-hold-decision-14"},
+  {label:"Move to AWD", values:["Not possible: FBA inventory cannot be moved to AWD","—"], claim:"removal-vs-hold-decision-13"}
+]} />
+
+For customer returns, FBA Grade and Resell gives sellers a resell channel on Amazon, with Amazon inspecting each item and assigning a condition such as "Like New" or "Acceptable." <C id="removal-vs-hold-decision-16"/> Amazon's ecommerce fulfillment guide lists removal, disposal and liquidation orders among the potential charges that inventory management and best practices can help you avoid. <C id="removal-vs-hold-decision-05"/>
+
+Because MCF and FBA draw from one inventory pool, slow stock can fill orders from your website or other channels without first being removed. <C id="removal-vs-hold-decision-14"/> See [MCF for off-Amazon orders](/guides/mcf-off-amazon-orders/) for the fee table.
+
+## The reports that give you the inputs
+
+Amazon's Selling Partner API documentation describes the FBA reports that hold the inputs for this decision.
+
+| Report | What it contains |
+|---|---|
+| Manage Inventory Health | A consolidated view of sales over 7, 30, 60 and 90 days, plus estimated storage and long-term storage fees and aged and excess units |
+| Storage Fees | Estimated monthly storage fees for each ASIN |
+| Recommended Removal | Sellable items that will be 365 days old or older at the next long-term storage cleanup event |
+| Removal Order Detail | All removal orders and the items in each, for a chosen period |
+| Removal Shipment Detail | Shipment tracking for removal orders |
+
+*Source: Amazon Selling Partner API documentation, FBA report types, checked Nov 8, 2026.* <C id="removal-vs-hold-decision-08"/> <C id="removal-vs-hold-decision-09"/> <C id="removal-vs-hold-decision-07"/> <C id="removal-vs-hold-decision-10"/> <C id="removal-vs-hold-decision-11"/>
+
+## The decision method
+
+<Steps title="Remove or hold, per ASIN" steps={[
+  {t:"Find months to sell", d:"Units on hand ÷ average monthly sales from the 30- and 90-day columns of the inventory health report.", claim:"removal-vs-hold-decision-08"},
+  {t:"Price the holding cost", d:"Unit cubic feet × storage rate × months, using $2.40 for any October–December months.", claim:"removal-vs-hold-decision-04"},
+  {t:"Add aged inventory months", d:"For every month a unit will be past 181 days, add the aged inventory rate from Seller Central.", claim:"removal-vs-hold-decision-03"},
+  {t:"Price removal", d:"Per-item removal charge plus your cost to receive, store and resell the units elsewhere.", claim:"removal-vs-hold-decision-01"},
+  {t:"Compare with the profit at stake", d:"Hold if holding cost is clearly below the margin you will earn; remove or liquidate if not."}
+]} />
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs (invented): 200 standard-size units, each 0.25 cu ft, margin after fees $6 per unit. Removal charge assumed at $1.00 per unit for illustration — use the real Seller Central rate.
+
+Case A — sells 100 units a month, starting in October: 2 months to clear. Average stock is about 150 units in month 1 (37.5 cu ft × $2.40 = $90) and 50 units in month 2 (12.5 cu ft × $2.40 = $30): $120 in total, or $0.60 per unit. That is well below the $6 margin: hold.
+
+Case B — sells 10 units a month, starting in January: 20 months to clear. Each unit costs 0.25 × $0.78 = about $0.20 a month from January to September and 0.25 × $2.40 = $0.60 a month from October to December, so a typical unit that waits a year costs about $3.56 in storage alone, before aged inventory charges that start after 181 days. Most units would pass that point, so holding could eat much of the $6 margin. Removing at $1.00 per unit ($200) and selling elsewhere, or liquidating, deserves a serious look.
+</Callout>
+
+Check of Case B: 9 × $0.195 + 3 × $0.60 = $1.755 + $1.80 = $3.555, rounded to $3.56. <C id="removal-vs-hold-decision-04"/>
+
+## Decision table
+
+<Decision title="Quick rules for slow FBA stock" rows={[
+  {if:"The item appears on the Recommended Removal report", then:"It will be 365+ days old at the next cleanup: decide now", claim:"removal-vs-hold-decision-07"},
+  {if:"Stock will clear before October at current sales", then:"Only the $0.78 per cu ft rate applies; compare that holding cost with the removal charge", claim:"removal-vs-hold-decision-04"},
+  {if:"Units will still be on hand after 181 days", then:"Add the aged inventory charge before deciding", claim:"removal-vs-hold-decision-03"},
+  {if:"You sell on other channels too", then:"Sell down through MCF before paying to remove", claim:"removal-vs-hold-decision-14"},
+  {if:"You want cheaper bulk storage for future stock", then:"Send new inventory to AWD from the start (base rate $0.48 per cu ft per month in the East Coast, South East and South Central regions); existing FBA stock cannot move there", claim:"removal-vs-hold-decision-12"}
+]} />
+
+For bulk storage that avoids the Q4 rate on future shipments, see [AWD vs a 3PL](/guides/awd-vs-3pl-warehousing/); to reconsider whether a product belongs in FBA at all, see [FBA vs FBM breakeven](/guides/fba-vs-fbm-breakeven/).
+
+The figures here are planning estimates; the charges Amazon actually bills to your account are the ones that count.
+
+## How to confirm the current charges
+
+Check the per-item removal, disposal and liquidation rates and the aged inventory rates in Seller Central, and the fee descriptions at sell.amazon.com/fulfillment-by-amazon. Re-check standard-size storage rates at sell.amazon.com/programs/supply-chain and AWD's rule on FBA inventory at sell.amazon.com/programs/warehousing. Pull the Manage Inventory Health and Recommended Removal reports for current, ASIN-level inputs.

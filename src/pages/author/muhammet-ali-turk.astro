@@ -1,0 +1,49 @@
+---
+import Page from '../../layouts/Page.astro';
+import { SITE } from '../../lib/site';
+import { allEntries } from '../../lib/entries';
+const url = new URL('/author/muhammet-ali-turk/', SITE.domain).href;
+const count = (await allEntries()).length;
+const ld = [{
+  '@context': 'https://schema.org', '@type': 'ProfilePage', url, mainEntity: {
+    '@type': 'Person', '@id': url + '#person', name: 'Muhammet Ali TÜRK', url, email: `mailto:${SITE.contactEmail}`,
+    jobTitle: 'Editor, FBA Tactics', homeLocation: { '@type': 'Place', name: 'Ankara, Türkiye' },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Ostim Technical University' },
+    knowsAbout: ['E-commerce operations on Amazon, Walmart and eBay', 'Data analysis and reporting', 'Project management'],
+    worksFor: { '@type': 'Organization', name: SITE.siteName, url: SITE.domain },
+  },
+}];
+---
+<Page title="Muhammet Ali TÜRK, editor of FBA Tactics" description="Who edits FBA Tactics: Muhammet Ali TÜRK's e-commerce operations background, education and training, his role on the site, and how to contact him." kicker="Editor" photo="hub-about" lede="Editor of FBA Tactics, responsible for what the site publishes and for correcting it." jsonld={ld} trail={[{ label: 'About', href: '/about/' }]}>
+  <h2>Role on this site</h2>
+  <p>Muhammet Ali TÜRK is the editor and publisher of FBA Tactics. He decides which topics the site covers, is responsible for every page it publishes ({count} guides, fee references and software overviews at the latest build), and handles reader reports and corrections. Pages are drafted with the help of AI writing tools from the primary sources listed at the end of each page, and every factual statement is checked against its source in a separate verification pass before publication; the process is described on <a href="/editorial-standards/">how we check facts</a>.</p>
+
+  <h2>E-commerce background</h2>
+  <ul>
+    <li><strong>E-commerce Specialist, Parknes Inc.</strong> (US-based e-commerce and third-party logistics company), August 2024 – May 2025. Ran listing work, logistics tracking, and product and competitor analysis for sales on Amazon, Walmart and eBay.</li>
+    <li><strong>Founder, HR Express</strong> (e-commerce start-up), January 2025 – January 2026. Set the business up from founding through operation and made product, sourcing and pricing decisions using data analysis.</li>
+  </ul>
+  <p>This is the practical side the site writes for: the fee lines, inventory and shipping steps, and supplier and pricing decisions that decide whether a marketplace product makes money.</p>
+
+  <h2>Other experience</h2>
+  <ul>
+    <li><strong>Computer Technician, Radio and Television Supreme Council (RTÜK)</strong>, since September 2026 — supports the IT infrastructure, user accounts and IT inventory records behind the institution's AI-assisted media monitoring system.</li>
+    <li><strong>Assistant Project Manager (long-term internship), Ender ARGE</strong> (defense industry), February – June 2026 — work breakdown structures, schedules and work-package tracking; weekly progress and variance reporting; coordination between engineering, purchasing and quality teams.</li>
+  </ul>
+
+  <h2>Education and training</h2>
+  <ul>
+    <li>Bachelor's degree in Management Information Systems, Ostim Technical University (2022 – 2026).</li>
+    <li>Scrum Fundamentals Certified (SFC), VMEdu / SCRUMstudy (2025).</li>
+    <li>BTK Akademi courses (2025 – 2026), including Introduction to E-Commerce, Dashboards and Advanced Functions in Excel, and project management courses.</li>
+  </ul>
+
+  <h2>Skills he brings to the site</h2>
+  <p>E-commerce operations management on Amazon and Walmart; data analysis and reporting in advanced Excel and dashboards; supplier and subcontractor coordination; process modelling (BPMN 2.0); and web prototyping in HTML, CSS and JavaScript.</p>
+
+  <h2>What he does not claim</h2>
+  <p>He is not a lawyer, licensed customs broker, accountant or tax adviser, and the site does not give legal, customs or tax advice. Where a decision depends on your own facts, the guides point to the official source and say when to ask a licensed professional.</p>
+
+  <h2>Contact</h2>
+  <p>Corrections, questions and source suggestions: <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>. Confirmed corrections are logged on the <a href="/corrections/">corrections page</a>.</p>
+</Page>

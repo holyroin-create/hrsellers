@@ -19,10 +19,10 @@ async function make(out, title, kicker, photoId) {
   await base.composite([{ input: svg }]).png({ palette: true, quality: 80, compressionLevel: 9 }).toFile(out);
   
 }
-const kick = { importing: 'Importing to the US', fees: 'Marketplace fees', compliance: 'Product compliance', money: 'Money & tax' };
+const kick = { importing: 'Importing to the US', fees: 'Marketplace fees', compliance: 'Product compliance', money: 'Money & tax', operations: 'Selling operations' };
 await make(path.join(ROOT, 'public/og/default.png'), 'Know every fee, duty and rule before you ship', 'Reference for marketplace sellers', 'home-hero');
-for (const [dir, kind] of [['src/content/guides', 'guides'], ['src/content/marketplaces', 'marketplaces']]) for (const f of walk(dir, '.mdx')) {
+for (const [dir, kind] of [['src/content/guides', 'guides'], ['src/content/marketplaces', 'marketplaces'], ['src/content/reviews', 'reviews']]) for (const f of walk(dir, '.mdx')) {
   const t = read(f); const title = (t.match(/^title:\s*"?(.*?)"?\s*$/m) || [])[1] || ''; const pillar = (t.match(/^pillar:\s*"?(\w+)/m) || [])[1] || 'fees'; const slug = path.basename(f, '.mdx');
-  await make(path.join(ROOT, 'public/og', kind, slug + '.png'), title, kick[pillar] || '', slug);
+  await make(path.join(ROOT, 'public/og', kind, slug + '.png'), title, kick[pillar] || '', (t.match(/^\s+image:\s*"?([a-z0-9-]+)/m) || [])[1] || slug);
 }
 console.log('og images written');

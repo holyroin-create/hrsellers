@@ -1,0 +1,113 @@
+---
+title: "Amazon Ungating: Restricted Categories and Brand Approval"
+description: "Which Amazon categories commonly need approval, how to tell a category gate from a brand gate or a hard block, and what Amazon says an application needs."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "a hand signing an application form on a desk next to a printed supplier invoice and a closed product box, no logos or readable text"
+  alt: "Hand holding a fountain pen over the signature line of a printed approval form on a wooden desk"
+  image: "customs-bonds"
+keyFacts:
+  - { label: "Commonly gated", value: "Beauty, Health, Clothing, Grocery, Jewelry, Watches", claim: "ungating-restricted-categories-02" }
+  - { label: "Approval route shown", value: "Apply to sell button", claim: "ungating-restricted-categories-13" }
+  - { label: "Brand application review", value: "Usually within 3 business days", claim: "ungating-restricted-categories-17" }
+  - { label: "No appeal path", value: "NOT_ELIGIBLE: no path forward link", claim: "ungating-restricted-categories-08" }
+summary:
+  - "Some Amazon categories are open to everyone, some need a Professional plan, some need Amazon's approval, and some cannot be sold by third-party sellers at all."
+  - "Categories that commonly require approval include Beauty, Health, and Personal Care; Clothing and Accessories; Grocery and Gourmet; Jewelry; and Watches."
+  - "A product can need category approval and brand authorization at the same time, as in Amazon's own Nike shoes example."
+  - "Amazon's restriction check distinguishes APPROVAL_REQUIRED, which comes with a path to apply, from NOT_ELIGIBLE, which does not."
+  - "Brand applications need a purchase invoice from a manufacturer or distributor or a brand authorization letter, and Amazon says review is usually completed within three business days."
+faq:
+  - { q: "How to get ungated on Amazon?", a: "Look up the product in Add Products; if it requires approval you will see an Apply to sell button. For brand approval, Amazon says you will need a purchase invoice from a manufacturer or distributor, or a brand authorization letter.", claims: ["ungating-restricted-categories-13", "ungating-restricted-categories-15", "ungating-restricted-categories-16"] }
+  - { q: "What invoices does Amazon require for ungating?", a: "For a brand application, Amazon's public guidance names a purchase invoice you received from a manufacturer or distributor, or a brand authorization letter. The detailed invoice rules for each category are published inside Seller Central.", claims: ["ungating-restricted-categories-15"] }
+  - { q: "Which Amazon categories are restricted?", a: "Amazon lists Beauty, Health, and Personal Care; Clothing and Accessories; Grocery and Gourmet; Jewelry; and Watches as categories that commonly require approval. Some other categories cannot be sold by third-party sellers at all.", claims: ["ungating-restricted-categories-02", "ungating-restricted-categories-01"] }
+related: ["brand-registry-trademark", "listing-disappeared", "us-product-compliance", "hazmat-dangerous-goods"]
+---
+
+Before buying inventory for a new category or brand, find out which kind of gate it sits behind. Amazon separates four situations: categories open to all sellers, categories that need a Professional selling plan, categories that need Amazon's approval, and categories third-party sellers cannot sell in at all. <C id="ungating-restricted-categories-01"/> Approval can be applied for; a category closed to third-party sellers cannot. Check each ASIN before you place a purchase order.
+
+Amazon's category-by-category approval requirements are published inside Seller Central; this page covers what Amazon documents publicly about how the gates work and what an application involves. Check the current requirements for your category in Seller Central before applying.
+
+## Which categories are gated
+
+Amazon says that, to help ensure safety and authenticity, categories that commonly require approval include Beauty, Health, and Personal Care; Clothing and Accessories; Grocery and Gourmet; Jewelry; and Watches. <C id="ungating-restricted-categories-02"/> Separately, some products may not be listed at all as a matter of compliance with legal or regulatory restrictions. <C id="ungating-restricted-categories-04"/> Amazon's seller training pairs the two topics, covering its Restricted Products policy and which categories require approval. <C id="ungating-restricted-categories-22"/>
+
+Jewelry shows how granular this gets. Amazon says certain types of fine jewelry require approval, some items go through a certification process to meet its quality standards, <C id="ungating-restricted-categories-19"/> and to get approval for other fine jewelry and gemstones a seller should choose a Professional selling plan and enroll in Brand Registry. <C id="ungating-restricted-categories-20"/> The Professional plan costs $39.99 per month plus a per-item referral fee that varies by category. <C id="ungating-restricted-categories-23"/> For the trademark side of Brand Registry, see [Brand Registry and trademarks](/guides/brand-registry-trademark/).
+
+## Category gate, brand gate, or hard block
+
+The three are different problems with different fixes. Amazon's own example: to sell Nike shoes, a seller may need both category approval and brand authorization. <C id="ungating-restricted-categories-03"/> Some branded products need permission from the brand or Amazon before they can be sold. <C id="ungating-restricted-categories-24"/>
+
+Amazon's restriction check (the Listings Restrictions API) can return three reason codes:
+
+<Compare title="What each restriction code means" columns={["Meaning", "Can you apply?"]} rows={[
+  {label:"APPROVAL_REQUIRED", values:["Approval is required to create a listing for this ASIN", "Yes: a path forward link may let you remove the restriction"], claim:"ungating-restricted-categories-07"},
+  {label:"NOT_ELIGIBLE", values:["You are not eligible to create a listing for this ASIN", "No: no path forward link is provided"], claim:"ungating-restricted-categories-08"},
+  {label:"ASIN_NOT_FOUND", values:["The ASIN does not exist in that marketplace", "Not a gate: check the identifier or marketplace"], claim:"ungating-restricted-categories-09"}
+]} />
+
+Two details matter when you check. First, restrictions can be filtered by condition type, <C id="ungating-restricted-categories-06"/> so an ASIN open to you in one condition can be restricted in another; check the condition you actually plan to sell. Second, if no restriction applies, the list returned is simply empty. <C id="ungating-restricted-categories-12"/>
+
+If you have already submitted a listing, the gate appears as a listing issue instead: QUALIFICATION_REQUIRED means approval or qualification is required to list the product. <C id="ungating-restricted-categories-11"/> Diagnosing other listing problems is covered in [why an Amazon listing disappears](/guides/listing-disappeared/).
+
+### Brand-name errors
+
+Brand gates also surface as numbered errors. Error 5665 can appear when you enter a brand name that has not been approved by Amazon, <C id="ungating-restricted-categories-18"/> and error 5461 means you do not have permission to create new detail pages for that brand. <C id="ungating-restricted-categories-25"/> Products enrolled in Transparency add another layer: Amazon requires a valid Transparency code to list or ship them. <C id="ungating-restricted-categories-21"/>
+
+<Decision title="What to do with each result" rows={[
+  {if:"APPROVAL_REQUIRED for a category you plan to build in", then:"Apply before buying inventory; follow the path forward link", claim:"ungating-restricted-categories-10"},
+  {if:"Product requires brand approval", then:"Complete the Selling application for Brand with supplier documents", claim:"ungating-restricted-categories-14"},
+  {if:"NOT_ELIGIBLE", then:"Do not buy for this ASIN; there is no application route", claim:"ungating-restricted-categories-08"},
+  {if:"Restriction empty for your condition", then:"No restriction applies; you can list", claim:"ungating-restricted-categories-12"}
+]} />
+
+## How an application works
+
+<Steps title="Applying for approval" steps={[
+  {t:"Look up the product", d:"In Add Products, search the ASIN. If approval is needed you will see an Apply to sell button.", claim:"ungating-restricted-categories-13"},
+  {t:"Identify the type of approval", d:"A brand-approval product prompts a Selling application for Brand.", claim:"ungating-restricted-categories-14"},
+  {t:"Prepare supply-chain proof", d:"A brand application needs a purchase invoice from a manufacturer or distributor, or a brand authorization letter.", claim:"ungating-restricted-categories-15"},
+  {t:"Or get brand authorization", d:"A brand authorization letter comes directly from the brand and authorizes you to sell its products.", claim:"ungating-restricted-categories-16"},
+  {t:"Wait for review", d:"Amazon says review is usually completed within three business days.", claim:"ungating-restricted-categories-17"}
+]} />
+
+The invoice Amazon names is one you received from a manufacturer or distributor. <C id="ungating-restricted-categories-15"/> If instead you see a Sell this product button, you are already approved for that item. <C id="ungating-restricted-categories-26"/> You can follow open applications from the Catalog menu in Seller Central. <C id="ungating-restricted-categories-31"/>
+
+## What two gated categories ask for
+
+Two examples Amazon documents publicly:
+
+<Compare title="Approval inputs Amazon describes for two gated categories" columns={["Health and personal care", "Grocery and gourmet"]} rows={[
+  {label:"Purchase records", values:["Invoices showing purchase of 10 or more units may be needed", "See Amazon's grocery selling guide for its document list"], claim:"ungating-restricted-categories-27"},
+  {label:"Product evidence", values:["Photos of all sides of packaging, including labels and ingredient lists", "Every unit needs a clear, permanent expiration date"], claim:"ungating-restricted-categories-28"},
+  {label:"Regulatory items", values:["Supplements: FDA registration, cGMP certificate, Certificate of Analysis", "US labels in English, meeting FDA and USDA guidelines"], claim:"ungating-restricted-categories-29"},
+  {label:"Further requirements", values:["OTC drugs: FDA registration and drug facts panel compliance", "Some grocery products can't be sold at all"], claim:"ungating-restricted-categories-34"}
+]} />
+
+For grocery, Amazon says labels in the US store must be in English and meet all FDA and USDA labeling guidelines, <C id="ungating-restricted-categories-32"/> and every unit should carry a clearly and permanently marked expiration date. <C id="ungating-restricted-categories-33"/> For over-the-counter drugs it lists FDA registration and drug facts panel compliance. <C id="ungating-restricted-categories-35"/> For supplements, Amazon estimates $500 to $2,000 per product for testing and a Certificate of Analysis. <C id="ungating-restricted-categories-30"/>
+
+<Callout type="example" title="Worked example (hypothetical): is approval worth the wait?">
+Inputs: you plan a first order of 200 units at $9.00 each in a gated grocery item, and you would pay a supplier deposit of 30% before approval. Deposit at risk: 200 × $9.00 × 0.30 = $540. If the ASIN returns NOT_ELIGIBLE, there is no application route, so that $540 buys inventory you cannot list on Amazon. Running the restriction check before paying the deposit tells you whether there is an application route at all. <C id="ungating-restricted-categories-08"/>
+</Callout>
+
+<Checklist title="Before buying inventory in a gated category" items={[
+  "Check the ASIN's restriction for the exact condition you will sell",
+  "Separate category approval from brand approval",
+  "Confirm whether the product is enrolled in Transparency",
+  "Line up a manufacturer or distributor that can issue a purchase invoice",
+  "Ask the brand whether it issues authorization letters",
+  "Apply and get approval before paying deposits"
+]} />
+
+<Callout type="note" title="Scope">
+Approval decisions are Amazon's, and the category-specific document rules are published inside Seller Central. For federal product rules, see [US product compliance](/guides/us-product-compliance/) and [hazmat and dangerous goods](/guides/hazmat-dangerous-goods/).
+</Callout>
+
+## How to confirm it for your products
+
+Search each ASIN in Seller Central's Add Products and note whether an Apply to sell button appears, <C id="ungating-restricted-categories-13"/> then read Amazon's own guidance in [3 ways to sell branded products on Amazon](https://sell.amazon.com/blog/sell-branded-products-on-amazon) and the category list in [How to sell online](https://sell.amazon.com/sell-online). <C id="ungating-restricted-categories-02"/> Developers can check restrictions with the [Listings Restrictions API](https://developer-docs.amazon/sp-api/docs/listings-restrictions-api). <C id="ungating-restricted-categories-05"/>

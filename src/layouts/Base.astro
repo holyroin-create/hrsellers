@@ -2,6 +2,7 @@
 import '../styles/site.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Consent from '../components/Consent.astro';
 import { SITE, ADS_ON } from '../lib/site';
 interface Props { title: string; description: string; og?: string; noindex?: boolean; noCanonical?: boolean; jsonld?: object[]; ads?: boolean; type?: string; preload?: string }
 const { title, description, og = '/og/default.png', noindex = false, noCanonical = false, jsonld = [], ads = false, type = 'website', preload } = Astro.props;
@@ -33,11 +34,13 @@ const full = Astro.url.pathname === '/' ? `${SITE.siteName}: ${title}` : title.l
   <meta name="theme-color" content="#0b1f33" />
   <noscript><style>.nav{display:flex}.mega{display:grid;position:static;box-shadow:none}</style></noscript>
   {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+  {ADS_ON && ads && <script is:inline>try{var c=localStorage.getItem('fbt-consent');(window.adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=c==='accept'?0:1}catch(e){(window.adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1}</script>}
   {ADS_ON && ads && <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`} crossorigin="anonymous"></script>}
 </head>
 <body>
   <Header />
   <main id="main"><slot /></main>
   <Footer />
+  <Consent />
 </body>
 </html>

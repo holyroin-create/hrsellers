@@ -1,0 +1,72 @@
+[
+  {
+    "claim_id": "tiktok-shop-plus-membership-01",
+    "claim": "TikTok's US seller portal lists TikTok Shop-funded discounts and campaigns among its seller incentives.",
+    "page": "/guides/tiktok-shop-plus-membership/",
+    "source_url": "https://seller.tiktok.com/us",
+    "publisher": "TikTok Shop — US seller portal (seller.tiktok.com)",
+    "source_type": "official-documentation",
+    "accessed": "2026-11-08",
+    "evidence": "Increase visibility with TikTok Shop-funded discounts and campaigns",
+    "archive_url": "",
+    "produced_by": "writer-W-P",
+    "verified_by": "verifier-V4-P",
+    "status": "verified"
+  },
+  {
+    "claim_id": "tiktok-shop-plus-membership-02",
+    "claim": "The referral fee is the rate multiplied by (customer payment + platform discount − tax).",
+    "page": "/guides/tiktok-shop-plus-membership/",
+    "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=5982454398175018",
+    "publisher": "TikTok Shop Academy — TikTok Shop Referral Fee Updates",
+    "source_type": "official-documentation",
+    "accessed": "2026-11-08",
+    "evidence": "Referral Fee Rate % *(Customer Payment + Platform Discount - Tax)",
+    "archive_url": "",
+    "produced_by": "writer-W-P",
+    "verified_by": "verifier-V4-P",
+    "status": "verified"
+  },
+  {
+    "claim_id": "tiktok-shop-plus-membership-03",
+    "claim": "In TikTok's example, a $5 platform discount is added to a $102 customer payment, less $2 tax, giving a 6% fee of $6.30.",
+    "page": "/guides/tiktok-shop-plus-membership/",
+    "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=5982454398175018",
+    "publisher": "TikTok Shop Academy — TikTok Shop Referral Fee Updates",
+    "source_type": "official-documentation",
+    "accessed": "2026-11-08",
+    "evidence": "6%*($102+$5-$2)=$6.30",
+    "archive_url": "",
+    "produced_by": "writer-W-P",
+    "verified_by": "verifier-V4-P",
+    "status": "verified"
+  },
+  {
+    "claim_id": "tiktok-shop-plus-membership-04",
+    "claim": "TikTok may amend the Referral Fee at its sole discretion from time to time.",
+    "page": "/guides/tiktok-shop-plus-membership/",
+    "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=1331308753078058",
+    "publisher": "TikTok Shop — Seller Terms of Service for TikTok Shop",
+    "source_type": "official-documentation",
+    "accessed": "2026-11-08",
+    "evidence": "TT Commerce & Global Services may, in its sole discretion, amend the Referral Fee from time to time",
+    "archive_url": "",
+    "produced_by": "writer-W-P",
+    "verified_by": "verifier-V4-P",
+    "status": "verified"
+  },
+  {
+    "claim_id": "tiktok-shop-plus-membership-05",
+    "claim": "TikTok informs sellers of a Referral Fee amendment by email or through the Seller Center.",
+    "page": "/guides/tiktok-shop-plus-membership/",
+    "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=1331308753078058",
+    "publisher": "TikTok Shop — Seller Terms of Service for TikTok Shop",
+    "source_type": "official-documentation",
+    "accessed": "2026-11-08",
+    "evidence": "will inform you of such amendment by email or through the Seller Center",
+    "archive_url": "",
+    "produced_by": "writer-W-P",
+    "verified_by": "verifier-V4-P",
+    "status": "verified"
+  }
+]

@@ -1,0 +1,18 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE } from '../lib/site';
+---
+<Page title="Affiliate and advertising disclosure" description="How FBA Tactics is funded: no affiliate links, no sponsored posts and no vendor payments; display advertising from Google AdSense, labeled and kept apart from content." kicker="Legal" updated="November 8, 2026" lede="The short version: we earn nothing when you buy something we mention.">
+  <h2>No affiliate links</h2>
+  <p>FBA Tactics does not use affiliate links, referral codes or tracking parameters that pay the site when you sign up for, or buy, a product or service. Links to Amazon, Walmart, eBay, Etsy, Shopify, software vendors and government agencies point to their own pages so you can check the source; following them earns the site nothing.</p>
+  <h2>No sponsored content or paid placements</h2>
+  <p>No company pays to be mentioned, ranked, included or left out. No vendor sees a page before it is published or approves what it says. Pages in the <a href="/reviews/">seller software</a> section describe what each vendor publishes about its own product and pricing; they are not tests, ratings or endorsements, and they say so at the top.</p>
+  <h2>Advertising</h2>
+  <p>The site is intended to be funded by display advertising served by Google AdSense. Advertisers and Google do not choose topics or influence what pages say. When ads are shown they are labeled "Advertisements", placed apart from tables, calculators, navigation and source lists, and are not shown on legal pages, calculators, hub pages or the error page. How advertising cookies work, and how to refuse personalized ads, is explained in the <a href="/privacy/">privacy policy</a> and the <a href="/cookie-policy/">cookie policy</a>.</p>
+  <h2>Gifts, free accounts and samples</h2>
+  <p>The site does not accept free products, free software accounts, discounts or other gifts in exchange for coverage. If that ever changes for a specific page, the page will say so at the top.</p>
+  <h2>The editor's background</h2>
+  <p>The editor, <a href="/author/muhammet-ali-turk/">{SITE.editorName}</a>, previously worked as an e-commerce specialist at Parknes Inc. and founded the e-commerce business HR Express (2025 – January 2026). Neither business pays for, reviews or influences the site's content.</p>
+  <h2>Questions</h2>
+  <p>Write to <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
+</Page>

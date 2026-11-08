@@ -10,7 +10,7 @@ const all = (await allEntries()).sort((a, b) => a.e.data.title.localeCompare(b.e
 const keys = Object.keys(PILLARS) as (keyof typeof PILLARS)[];
 ---
 <Base title="Seller guides: fees, importing, compliance and tax" description="Every FBA Tactics guide by topic: marketplace fees, US import and customs rules, product compliance, and money and tax — each checked against its official source.">
-  <PageHero title="Seller guides" kicker="Library" photo="hub-guides" lede={`${all.length} guides and fee references, grouped by the four areas sellers have to get right. Every page lists its official sources and the date they were checked.`}>
+  <PageHero title="Seller guides" kicker="Library" photo="hub-guides" lede={`${all.length} guides and fee references, grouped by the five areas sellers have to get right. Every page lists its official sources and the date they were checked.`}>
     <nav class="filters" style="margin:26px 0 0" aria-label="Jump to topic">{keys.map((k) => <a href={`#${k}`} style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25)">{PILLARS[k].short} <b style="color:#b8c7da">{all.filter((x) => x.e.data.pillar === k).length}</b></a>)}</nav>
   </PageHero>
   <div class="wrap" style="padding:56px 24px 88px">
@@ -18,7 +18,7 @@ const keys = Object.keys(PILLARS) as (keyof typeof PILLARS)[];
       <section id={k} style="scroll-margin-top:96px;margin-bottom:56px" aria-labelledby={`h-${k}`}>
         <div class="sec-head" style="margin-bottom:22px"><div><span class="kicker">{PILLARS[k].short}</span><h2 id={`h-${k}`}>{PILLARS[k].name}</h2><p>{PILLARS[k].blurb}</p></div></div>
         <ul class="list-rows">{list.map((x) => (
-          <li class="row-card"><div class="p"><Photo id={x.e.id} sizes="(max-width: 640px) 100vw, 200px" /></div>
+          <li class="row-card"><div class="p"><Photo id={x.e.data.photo?.image || x.e.id} sizes="(max-width: 640px) 100vw, 200px" /></div>
             <div><span class="chip chip-green"><Icon name="checkCircle" />Verified {fmtDate(x.e.data.lastVerified, true)}</span><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p></div></li>))}</ul>
       </section>) : null; })}
   </div>

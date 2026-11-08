@@ -1,0 +1,135 @@
+---
+title: "Sponsored Products Campaign Structure for a Product Launch"
+description: "How to structure Sponsored Products for a launch using Amazon Ads' own guidance: auto first, match types, bid order, negatives, ad groups and daily budgets."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "a planning sheet with hand-drawn campaign boxes and arrows next to a calculator and printed charts on a desk, no screens, no logos"
+  alt: "Desk with a calculator, printed charts and paperwork held by a clipboard clip, and a pair of eyeglasses"
+  image: "pillar-money"
+keyFacts:
+  - { label: "Auto before manual", value: "About two weeks", claim: "ppc-campaign-structure-launch-08" }
+  - { label: "Bid order", value: "Exact > phrase > broad", claim: "ppc-campaign-structure-launch-15" }
+  - { label: "Negative-keyword test", value: "At least 20 clicks", claim: "ppc-campaign-structure-launch-18" }
+  - { label: "Products per ad group", value: "Up to 1,000", claim: "ppc-campaign-structure-launch-21" }
+  - { label: "$100/day budget", value: "Up to $3,100 of clicks a month", claim: "ppc-campaign-structure-launch-26" }
+summary:
+  - "Amazon recommends Sponsored Products as the first campaign type, and Amazon Ads suggests running an automatic campaign for about two weeks before creating manual ones."
+  - "The automatic campaign's search term report supplies the keywords and products for manual campaigns; Amazon Ads says running both is common."
+  - "Keep one targeting strategy per campaign and ad group, because targeting cannot be changed once a campaign is live."
+  - "Bid highest on exact match, lower on phrase and lowest on broad, and give each match type at least 1–2 weeks before pausing keywords."
+  - "Daily budgets are not paced through the day, so a small budget can run out in minutes; a $100 daily budget can mean up to $3,100 of clicks in a month."
+faq:
+  - { q: "How should an Amazon PPC campaign be structured?", a: "Amazon Ads' guidance is to separate targeting strategies: an automatic campaign to discover terms, and manual keyword and product-targeting campaigns built from its search term report. It recommends not mixing targeting strategies in the same campaign or ad group.", claims: ["ppc-campaign-structure-launch-09", "ppc-campaign-structure-launch-20"] }
+  - { q: "What is Amazon PPC campaign?", a: "On Amazon it usually means a Sponsored Products campaign: cost-per-click ads that promote individual product listings in the Amazon store, where you bid the most you are willing to pay per click.", claims: ["ppc-campaign-structure-launch-01", "ppc-campaign-structure-launch-27"] }
+  - { q: "How much does Amazon sponsored products cost?", a: "You set a daily budget and a maximum bid per click. Budgets are not paced through the day, and Amazon Ads' example is that a $100 daily budget may produce up to $3,100 of clicks in a calendar month.", claims: ["ppc-campaign-structure-launch-25", "ppc-campaign-structure-launch-26", "ppc-campaign-structure-launch-27"] }
+related: ["amazon-ppc-benchmarks", "launch-sequence", "q4-deal-deadlines-2026"]
+---
+
+For a new product, Amazon's own advice gives a clear order: start with Sponsored Products, run an automatic campaign for about two weeks, then build manual keyword and product-targeting campaigns from what the automatic campaign found. <C id="ppc-campaign-structure-launch-02"/> <C id="ppc-campaign-structure-launch-08"/> <C id="ppc-campaign-structure-launch-09"/> The structure matters because Amazon Ads says campaign targeting cannot be changed once a campaign is live, so a mixed or badly scoped first campaign has to be rebuilt rather than edited. <C id="ppc-campaign-structure-launch-22"/> This guide lays out that structure, the bids and budgets that go with it, and when to add negatives.
+
+## Check the product can be advertised
+
+Sponsored Products are cost-per-click ads that promote individual product listings in the Amazon store. <C id="ppc-campaign-structure-launch-01"/> To advertise, a product must be in an eligible category and be eligible for the Featured Offer; adult, used and refurbished products and products in closed categories are excluded. <C id="ppc-campaign-structure-launch-03"/> <C id="ppc-campaign-structure-launch-04"/> Check Featured Offer eligibility before building campaigns; Amazon Ads lists it as a condition for advertising. Account-level launch steps and new-seller credits are covered in [the Amazon launch sequence](/guides/launch-sequence/).
+
+## The launch structure, campaign by campaign
+
+Amazon Ads recommends that you "avoid mixing different targeting strategies within the same campaign and ad group." <C id="ppc-campaign-structure-launch-20"/> That one rule produces the structure below. Each targeting strategy gets its own campaign so its budget and results stay separate.
+
+<Compare title="Three campaigns for a launch" columns={["Automatic","Manual — keywords","Manual — products"]} rows={[
+  {label:"What it targets", values:["Keywords and products similar to yours, chosen by Amazon","Keywords you choose, by match type","Products (ASINs) you choose"], claim:"ppc-campaign-structure-launch-05"},
+  {label:"When to start", values:["Day 1","After about two weeks of automatic data","After about two weeks of automatic data"], claim:"ppc-campaign-structure-launch-08"},
+  {label:"Where its targets come from", values:["Amazon's matching","Search term report of the automatic campaign","Search term report of the automatic campaign"], claim:"ppc-campaign-structure-launch-09"},
+  {label:"Keep running?", values:["Yes, alongside manual","Yes","Yes"], claim:"ppc-campaign-structure-launch-10"}
+]} />
+
+### The automatic campaign
+
+With automatic targeting, your ad is matched with keywords and products similar to the product you advertise. <C id="ppc-campaign-structure-launch-05"/> Amazon Ads splits that matching into four groups: close match and loose match (shoppers using search terms closely or loosely related to your product), and substitutes and complements (shoppers on detail pages of similar or complementary products). <C id="ppc-campaign-structure-launch-06"/> <C id="ppc-campaign-structure-launch-07"/> Its job at launch is discovery: after about two weeks, its search term report shows which queries and products produced clicks and orders. <C id="ppc-campaign-structure-launch-08"/> <C id="ppc-campaign-structure-launch-09"/>
+
+Amazon Ads calls automatic targeting "a great supplement to manual campaigns," and says advertisers often find success running both, so it does not need to be switched off once manual campaigns exist. <C id="ppc-campaign-structure-launch-10"/>
+
+### The manual keyword campaign
+
+Manual keyword targeting uses three match types:
+
+| Match type | How Amazon Ads describes it | Suggested bid level |
+|---|---|---|
+| Broad | Query can contain the keyword terms in any order; broad exposure | Lowest |
+| Phrase | More restrictive than broad; generally more relevant placements | Middle |
+| Exact | Matched word for word, same words, same order | Highest |
+
+*Source: Amazon Ads, Targeting with Sponsored Products, checked Nov 8, 2026.* <C id="ppc-campaign-structure-launch-11"/> <C id="ppc-campaign-structure-launch-12"/> <C id="ppc-campaign-structure-launch-13"/> <C id="ppc-campaign-structure-launch-15"/>
+
+Each keyword is limited to 10 words and 80 characters. <C id="ppc-campaign-structure-launch-14"/> Amazon Ads recommends testing match types "for at least 1-2 weeks" before pausing any keyword. <C id="ppc-campaign-structure-launch-16"/>
+
+### The manual product-targeting campaign
+
+Amazon Ads points to the automatic campaign's search term report for product targets too: targeted ASINs that generate clicks or conversions show up in it, so the same two-week data feeds both manual campaigns. <C id="ppc-campaign-structure-launch-09"/> Keeping it separate from the keyword campaign follows the no-mixing rule above. <C id="ppc-campaign-structure-launch-20"/>
+
+### Ad groups
+
+An ad group can hold up to 1,000 products. <C id="ppc-campaign-structure-launch-21"/> For a launch, a practical approach is one product (or one tightly related variation family) per ad group, so the search term data belongs clearly to that product.
+
+## Bids and bidding strategy
+
+In Sponsored Products you bid the maximum you are willing to pay per click. <C id="ppc-campaign-structure-launch-27"/> Two Amazon Ads recommendations shape launch bids:
+
+- **Bid by match type.** Highest on exact, lower on phrase, lowest on broad. <C id="ppc-campaign-structure-launch-15"/>
+- **Pick the bidding strategy by goal.** Amazon Ads recommends dynamic bidding up and down to help maximize performance, and suggests dynamic down only if you are optimizing for return on ad spend. <C id="ppc-campaign-structure-launch-23"/> <C id="ppc-campaign-structure-launch-24"/>
+
+Whether a bid is affordable depends on your margin and conversion rate; [Amazon PPC benchmarks](/guides/amazon-ppc-benchmarks/) shows how to work out break-even ACOS and break-even CPC for a product.
+
+## Daily budgets: why small ones run out early
+
+Sponsored Products budgets are set per day, and Amazon Ads states that "daily budgets are not paced throughout the day," so a small daily budget can be spent within minutes when shopper interest is high. <C id="ppc-campaign-structure-launch-25"/> The monthly exposure is larger than the daily figure suggests: with a $100 daily budget, you may receive up to $3,100 worth of clicks in a calendar month. <C id="ppc-campaign-structure-launch-26"/>
+
+<Callout type="example" title="Worked example (hypothetical): launch budget">
+Inputs: automatic campaign at $25/day for the first 14 days; then automatic $15/day plus manual keyword $25/day plus manual product $10/day for the remaining 17 days of a 31-day month. Maximum spend: 14 × $25 = $350, plus 17 × ($15 + $25 + $10) = $850, total up to $1,200 for the month. The same three campaigns left at $50/day combined for a full 31-day month could spend up to $1,550 — the same 31× ratio as Amazon Ads' $100 → $3,100 example.
+</Callout>
+
+## Negatives: when to add them
+
+Negative keywords stop your ad showing on irrelevant queries. Amazon Ads recommends negative phrase (blocks queries containing the complete phrase or close variations) and negative exact (blocks the exact phrase or close variations). <C id="ppc-campaign-structure-launch-17"/> Its timing guidance prevents cutting terms too early:
+
+- Evaluate a keyword after it has received at least 20 clicks before making it a negative. <C id="ppc-campaign-structure-launch-18"/>
+- Let negative keywords run for two weeks or more before changing strategy again. <C id="ppc-campaign-structure-launch-19"/>
+
+One option at launch: when a query moves from the automatic campaign into an exact-match manual campaign, add it as a negative exact in the automatic campaign so the two do not compete for the same search. That is a structural choice, not an Amazon requirement.
+
+<Steps title="First 30 days, in order" steps={[
+  {t:"Day 1: launch one automatic campaign", d:"Separate ad group per product; Amazon Ads recommends dynamic bids up and down to help maximize performance (dynamic down only if optimizing for ROAS).", claim:"ppc-campaign-structure-launch-23"},
+  {t:"Days 1–14: let it collect data", d:"Amazon Ads suggests about two weeks before building manual campaigns.", claim:"ppc-campaign-structure-launch-08"},
+  {t:"About day 14: read the search term report", d:"Pick the queries and products that produced orders.", claim:"ppc-campaign-structure-launch-09"},
+  {t:"Build manual keyword and product campaigns", d:"Keep them separate; bid exact highest, phrase lower, broad lowest.", claim:"ppc-campaign-structure-launch-15"},
+  {t:"Days 14–30: test before cutting", d:"At least 1–2 weeks per match type and at least 20 clicks before adding a negative.", claim:"ppc-campaign-structure-launch-18"}
+]} />
+
+## Mistakes that force a rebuild
+
+| Mistake | Why it hurts |
+|---|---|
+| Automatic and manual targets in one campaign | Amazon Ads recommends against mixing targeting strategies, and targeting cannot be changed after launch. <C id="ppc-campaign-structure-launch-20"/> <C id="ppc-campaign-structure-launch-22"/> |
+| Same bid on every match type | Amazon Ads suggests exact highest, broad lowest. <C id="ppc-campaign-structure-launch-15"/> |
+| Pausing keywords after a few days | It recommends at least 1–2 weeks per match type. <C id="ppc-campaign-structure-launch-16"/> |
+| Adding negatives on a handful of clicks | It recommends waiting for at least 20 clicks. <C id="ppc-campaign-structure-launch-18"/> |
+| A tiny daily budget on a busy term | Budgets are not paced, so it can be spent in minutes. <C id="ppc-campaign-structure-launch-25"/> |
+
+<Checklist title="Before you press launch" items={[
+  "Product is in an eligible category and is eligible for the Featured Offer",
+  "One targeting strategy per campaign and ad group",
+  "Ad groups organized by product so search term data is clean",
+  "Bidding strategy chosen to match your goal",
+  "Daily budget set with the monthly maximum (about 31× daily) in mind",
+  "Calendar reminder at day 14 to read the search term report"
+]} />
+
+This structure follows Amazon Ads' published recommendations; it does not guarantee any sales result, and the right bids depend on your own margin.
+
+## How to confirm the current rules
+
+Match-type definitions, the two-week guidance, negative-keyword timing and the 1,000-product ad-group limit are on the Amazon Ads guide [Targeting with Sponsored Products](https://advertising.amazon.com/library/guides/targeting-with-sponsored-products). Eligibility, bidding and budget terms are on the [Sponsored Products page](https://advertising.amazon.com/solutions/products/sponsored-products), and Amazon's seller-side overview is at [sell.amazon.com/advertising](https://sell.amazon.com/advertising). Check them before a launch.

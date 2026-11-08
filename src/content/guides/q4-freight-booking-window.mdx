@@ -1,0 +1,101 @@
+---
+title: "Q4 Freight Booking Window: Planning Backward From FBA"
+description: "Plan Q4 imports backward from your FBA in-stock date: ISF timing, air vs ocean, restock limits, October–December storage rates and AWD as a buffer."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a row of warehouse loading-dock doors with a truck backed into one bay in late-afternoon light, no people, no logos"
+  alt: "Two closed loading-dock doors with dark dock shelters at a warehouse"
+  image: "duty-drawback"
+keyFacts:
+  - { label: "FBA storage, standard, Oct–Dec", value: "$2.40 per cu ft/month", claim: "q4-freight-booking-window-02" }
+  - { label: "FBA storage, standard, Jan–Sep", value: "$0.78 per cu ft/month", claim: "q4-freight-booking-window-01" }
+  - { label: "AWD storage, all year", value: "$0.48 per cu ft/month", claim: "q4-freight-booking-window-08" }
+  - { label: "Amazon air freight to FBA", value: "Within 7–10 days", claim: "q4-freight-booking-window-20" }
+summary:
+  - "Amazon's public pages do not post a single Q4 inbound cutoff; plan backward from your own in-stock date and check Seller Central for current deadlines and restock limits."
+  - "Standard-size FBA storage rises from $0.78 to $2.40 per cubic foot per month in October–December, so arriving too early also has a price."
+  - "Amazon lists AWD storage at $0.48 per cubic foot per month in both periods and says that with auto-replenishment enabled it manages replenishments around FBA capacity limits."
+  - "The ocean ISF is due 24 hours before loading abroad, so supplier data has to be final before the ship sails, not when it lands."
+  - "Amazon says its air service reaches the fulfillment network within 7–10 days — the fallback when an ocean booking slips."
+faq:
+  - { q: "How much are Amazon storage fees in Q4?", a: "Amazon's FBA page lists monthly storage at $2.40 per cubic foot for standard-size and $1.40 for oversize products from October to December, against $0.78 and $0.56 from January to September.", claims: ["q4-freight-booking-window-02", "q4-freight-booking-window-04", "q4-freight-booking-window-01", "q4-freight-booking-window-03"] }
+  - { q: "When is peak season for freight?", a: "Amazon's public pages do not give a freight peak calendar, but they note that demand can increase when the holidays roll around and price FBA storage higher from October to December. Book against those dates, using your forwarder's quoted transit times.", claims: ["q4-freight-booking-window-12", "q4-freight-booking-window-02"] }
+  - { q: "How much is Amazon storage fee?", a: "For standard-size products, $0.78 per cubic foot per month from January to September and $2.40 from October to December, charged on the daily average volume your inventory occupies.", claims: ["q4-freight-booking-window-01", "q4-freight-booking-window-02", "q4-freight-booking-window-05"] }
+related: ["freight-modes", "demand-forecasting-reorder", "choosing-a-freight-forwarder", "walmart-wfs"]
+---
+
+Book Q4 freight by working backward from the date your inventory must be available at Amazon, adding every leg's lead time and a buffer for slippage — and weigh that against the cost of arriving too early, because Amazon's standard-size FBA storage rises from $0.78 to $2.40 per cubic foot per month for October through December. <C id="q4-freight-booking-window-01"/> <C id="q4-freight-booking-window-02"/> Amazon's public pages say demand can increase when the holidays roll around and advise optimizing stock for moments like Black Friday, but they do not post a single holiday inbound cutoff. <C id="q4-freight-booking-window-12"/> <C id="q4-freight-booking-window-13"/> Any current Q4 receiving deadline and your restock limits are published inside Seller Central, so check them there before you fix dates.
+
+## What fixes the window
+
+Four constraints set the earliest and latest sensible booking dates.
+
+<Compare title="Constraints on a Q4 import" columns={["Constraint","What the source says"]} rows={[
+  {label:"Customs data (ocean)", values:["ISF before loading","Most elements due 24 hours before lading at the foreign port"], claim:"q4-freight-booking-window-19"},
+  {label:"Inbound capacity", values:["Restock limits","Determine how much inventory you can ship into Amazon's network"], claim:"q4-freight-booking-window-10"},
+  {label:"Storage cost", values:["Seasonal FBA rate","$2.40/cu ft/month standard-size, October–December"], claim:"q4-freight-booking-window-02"},
+  {label:"Aging", values:["Aged inventory charge","Monthly, for items stored more than 181 days"], claim:"q4-freight-booking-window-11"}
+]} />
+
+The aging line is the long-range limit: stock received too far ahead of the season, and still unsold after 181 days, draws a monthly charge. <C id="q4-freight-booking-window-11"/> Amazon also treats over 90 days of supply as excess inventory, while recommending about two months of supply on hand. <C id="q4-freight-booking-window-14"/> <C id="q4-freight-booking-window-15"/> How to set the normal level is covered in [Demand forecasting and reorder points](/guides/demand-forecasting-reorder/).
+
+## The storage-rate step
+
+<Chart title="FBA monthly storage per cubic foot" kind="column" unit="$" rows={[
+  {label:"Standard, Jan–Sep", value:0.78, claim:"q4-freight-booking-window-01"},
+  {label:"Standard, Oct–Dec", value:2.40, claim:"q4-freight-booking-window-02"},
+  {label:"Oversize, Jan–Sep", value:0.56, claim:"q4-freight-booking-window-03"},
+  {label:"Oversize, Oct–Dec", value:1.40, claim:"q4-freight-booking-window-04"}
+]} />
+
+Storage is charged monthly on the daily average volume your inventory occupies, in cubic feet. <C id="q4-freight-booking-window-05"/> Additional storage costs apply to dangerous goods and to sellers holding a high volume of inventory relative to recent weekly sales. <C id="q4-freight-booking-window-06"/>
+
+## AWD as a buffer
+
+Amazon lists Amazon Warehousing and Distribution (AWD) storage at $0.48 per cubic foot per month in both the January–September and October–December periods, and describes Ship to AWD pricing as pay-as-you-go with no seasonal surcharges. <C id="q4-freight-booking-window-08"/> <C id="q4-freight-booking-window-07"/> If you leave auto-replenishment enabled, Amazon says it manages your replenishments so you don't have to worry about FBA capacity limits, and leaving the feature defaulted gets a waiver for FBA storage-utilization surcharges and low-inventory-level costs. <C id="q4-freight-booking-window-09"/> Whatever warehouse you use, Amazon's own advice is that space should accommodate seasonal fluctuations in demand, like holidays. <C id="q4-freight-booking-window-16"/>
+
+## Building the backward schedule
+
+<Steps title="Plan from the in-stock date back to the factory" steps={[
+  {t:"Fix the in-stock date", d:"Take your target and check the current receiving guidance and restock limits in Seller Central.", claim:"q4-freight-booking-window-10"},
+  {t:"Size the order", d:"Use the Restock Inventory report's suggested quantities and reorder dates as a cross-check.", claim:"q4-freight-booking-window-17"},
+  {t:"Choose the mode", d:"Ocean for the base load; a faster ocean service or air for top-ups.", claims:["q4-freight-booking-window-21","q4-freight-booking-window-20"]},
+  {t:"Lock supplier data", d:"ISF elements are due 24 hours before the container is loaded abroad.", claim:"q4-freight-booking-window-19"},
+  {t:"Line up the provider early", d:"If you are new to Amazon's freight program, allow for its stated reply to inquiry forms within seven business days.", claim:"q4-freight-booking-window-22"}
+]} />
+
+The Restock Inventory report carries a Recommended ship date field, which is a useful sanity check against your own schedule. <C id="q4-freight-booking-window-18"/>
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs (all assumed): you want units available at FBA by November 1; you allow 14 days for receiving, 7 days for the domestic truck leg after customs, 30 days door-to-port by ocean and 14 days of factory buffer. Backward: delivery to the fulfillment center by October 18 → cleared at the U.S. port by October 11 → vessel departs September 11 → ISF filed by September 10 (24 hours before loading) → goods ready at the factory by August 28.
+
+Storage trade-off for 400 cubic feet of standard-size goods: a month at the January–September rate costs 400 × $0.78 = $312; a month at the October–December rate costs 400 × $2.40 = $960. Landing in September costs $312 per month held before October, while every month held in Q4 costs $960 regardless of arrival date — so arriving earlier only adds the cheaper months, but the 181-day aging clock starts sooner.
+</Callout>
+
+## Split the order: base load and top-ups
+
+One pattern is to bring the bulk of the season's units by ocean early enough to clear the restock-limit and receiving checks, then plan one or more smaller top-ups whose mode you choose late. Amazon's freight program gives a reference point for each option: Fast Ocean is described as faster than Standard Ocean to the US, and air as reaching the fulfillment network within 7–10 days. <C id="q4-freight-booking-window-21"/> <C id="q4-freight-booking-window-20"/> The base load carries the most storage exposure, so it is the part to route through AWD if your FBA space is tight, since AWD storage does not step up for October–December in Amazon's comparison. <C id="q4-freight-booking-window-08"/> The top-up is sized from live sales, not from the forecast you made in summer.
+
+## Reading your position before you book the top-up
+
+Amazon's FBA Manage Inventory Health report gives the data for this decision. It provides a consolidated view of your sales over 7, 30, 60 and 90 days alongside shipment statuses, and it covers estimated storage and long-term storage fees together with aged and excess units. <C id="q4-freight-booking-window-25"/> <C id="q4-freight-booking-window-26"/> Two of its fields to check before any late booking are estimated-storage-cost-next-month and estimated-excess-quantity. <C id="q4-freight-booking-window-27"/> <C id="q4-freight-booking-window-28"/>
+
+## When a booking slips
+
+<Decision title="If the plan breaks" rows={[
+  {if:"Ocean departure slips by a week or more", then:"Move a top-up quantity to air; Amazon's air service quotes 7–10 days into its network.", claim:"q4-freight-booking-window-20"},
+  {if:"Restock limits block the full quantity", then:"Hold the overflow in AWD and let auto-replenishment feed FBA.", claims:["q4-freight-booking-window-10","q4-freight-booking-window-09"]},
+  {if:"Containers sit at the port past free time", then:"Check that any demurrage or detention invoice arrives within 30 days of the last charge; you have at least 30 days to request mitigation, refund or waiver.", claims:["q4-freight-booking-window-23","q4-freight-booking-window-24"]},
+  {if:"Units will not sell before the 181-day mark", then:"Plan a removal or promotion before the aged-inventory charge starts.", claim:"q4-freight-booking-window-11"}
+]} />
+
+Under 46 CFR Part 541, a demurrage or detention invoice must be issued within 30 calendar days of the date the charge was last incurred, and you get at least 30 calendar days from issuance to request mitigation, refund or waiver. <C id="q4-freight-booking-window-23"/> <C id="q4-freight-booking-window-24"/> The full billing rules are in [Choosing a freight forwarder](/guides/choosing-a-freight-forwarder/).
+
+## How to confirm this year's dates
+
+Check the storage table on Amazon's FBA page and the AWD rates on its supply-chain page, then read Seller Central for this season's receiving deadlines and your restock limits — those are the dates your schedule must hit. <C id="q4-freight-booking-window-02"/> <C id="q4-freight-booking-window-08"/> <C id="q4-freight-booking-window-10"/> The ISF deadline is in 19 CFR Part 149 on eCFR. <C id="q4-freight-booking-window-19"/> The schedule above is a planning method; your forwarder's written transit quote, not a published average, is what to plan against.

@@ -1,0 +1,99 @@
+---
+title: "Amazon Buyer-Seller Messaging: Message Types and Rules"
+description: "Which messages Amazon lets sellers send buyers, the link, length and language rules Amazon documents, how review requests differ, and where the full policy lives."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a seller at a packing table reading a short message on a phone beside a sealed mailer, hands only, no screens readable, no brand names or logos"
+  alt: "Kraft paper mailer envelope with a blank white address label, lying on white sheets on a dark wooden table"
+  image: "ebay-etsy-for-amazon-sellers"
+keyFacts:
+  - { label: "Order-question text", value: "1 to 2,000 characters", claim: "buyer-seller-messaging-07" }
+  - { label: "Review requests", value: "One per order", claim: "buyer-seller-messaging-18" }
+  - { label: "Language", value: "Buyer's preferred language", claim: "buyer-seller-messaging-17" }
+  - { label: "Links", value: "Only links related to the message's purpose", claim: "buyer-seller-messaging-08" }
+summary:
+  - "Amazon offers a fixed set of message types per order — such as confirming order details, arranging delivery, sharing a warranty or reporting an unexpected problem — and not every type is available for every order."
+  - "Amazon's documentation limits links to the message's purpose, bars HTML and email addresses in several types, and requires text in the buyer's preferred language."
+  - "Amazon allows one review-and-feedback request or free-form proactive message per order; buyers cannot reply to the request and it does not appear in the buyer's Message Center."
+  - "Amazon's full communication guidelines, including what is prohibited in free-form messages, are published in Seller Central Help."
+faq:
+  - { q: "Can you message sellers on Amazon?", a: "Yes. Amazon's Seller app lets sellers respond to buyer messages and get notifications for messages that might need attention.", claims: ["buyer-seller-messaging-22"] }
+related: ["order-defect-rate", "review-manipulation-risk", "account-suspension-appeal", "seller-central-reports"]
+---
+
+Amazon lets sellers write to buyers, but only for specific, order-related purposes, and the safest way to decide whether a message is allowed is to ask which of Amazon's defined message types it fits. Amazon's developer documentation for the Messaging API lists those types, and says plainly that "not all message types are available in all circumstances." <C id="buyer-seller-messaging-02"/> Availability depends on "whether the order has been fulfilled, the type of seller, or the number of messages already sent for the order." <C id="buyer-seller-messaging-03"/> Amazon's complete communication guidelines, including the rules for free-form messages and buyer opt-outs, are published inside Seller Central Help and should be checked there; this page covers what Amazon documents publicly.
+
+## How Amazon delivers seller messages
+
+The Messaging API is what software uses "to send messages to buyers." <C id="buyer-seller-messaging-01"/> For messages sent this way, Amazon describes the delivery simply: "Amazon emails a message from the seller to the buyer." <C id="buyer-seller-messaging-04"/> Before sending, an app asks Amazon which message types are available for that order: the getMessagingActionsForOrder operation "returns a list of message types that are available for an order that you specify." <C id="buyer-seller-messaging-05"/>
+
+## The message types Amazon defines
+
+| Message type | Amazon's description of its purpose |
+|---|---|
+| Confirm order details | Ask a buyer an order-related question before shipping the order |
+| Confirm delivery details | Arrange a delivery or confirm contact information for a delivery |
+| Confirm customization details | Ask the buyer to provide or verify details such as name spelling, images or initials |
+| Unexpected problem | Tell the buyer an unexpected problem is affecting completion of the order |
+| Warranty | Provide warranty information on a purchase in the order |
+| Legal disclosure | Deliver documents required by law — only those |
+| Digital access key | Share a key needed to use digital content in the order |
+| Invoice | Provide the buyer an invoice |
+| Confirm service details | Arrange or prepare a Home Service call |
+
+*Source: Amazon Selling Partner API reference, Messaging v1 operations, checked Nov 8, 2026.* <C id="buyer-seller-messaging-06"/> <C id="buyer-seller-messaging-09"/> <C id="buyer-seller-messaging-10"/> <C id="buyer-seller-messaging-12"/> <C id="buyer-seller-messaging-13"/> <C id="buyer-seller-messaging-11"/> <C id="buyer-seller-messaging-14"/> <C id="buyer-seller-messaging-15"/> <C id="buyer-seller-messaging-16"/>
+
+The descriptions are narrow. The confirm-order-details message, for example, is for an order question "prior to shipping their order." <C id="buyer-seller-messaging-06"/> The legal-disclosure type "should only be used to deliver documents that are required by law." <C id="buyer-seller-messaging-11"/>
+
+## Content rules Amazon documents
+
+Each message type comes with its own text rules, and they share a pattern:
+
+- **Links tied to the purpose.** In a confirm-order-details message, "only links related to order completion are allowed." <C id="buyer-seller-messaging-08"/> In a delivery message, "only links related to order delivery are allowed. Do not include HTML or email addresses." <C id="buyer-seller-messaging-28"/>
+- **Length limits.** The confirm-order-details text must be between 1 and 2,000 characters. <C id="buyer-seller-messaging-07"/>
+- **The buyer's language.** "The text must be written in the buyer's preferred language," which apps retrieve through the GetAttributes operation. <C id="buyer-seller-messaging-17"/>
+
+For these message types, that means links only for the stated purpose, and no HTML or email addresses where the type rules them out.
+
+## Review requests are a separate channel
+
+Amazon handles requests for a product review and seller feedback through a separate Solicitations API, and "currently only the productReviewAndSellerFeedbackSolicitation solicitation type is available." <C id="buyer-seller-messaging-21"/> Amazon's rule is to "send only one productReviewAndSellerFeedback or free form proactive message per order." <C id="buyer-seller-messaging-18"/> These requests behave differently from normal messages: "buyers cannot respond to solicitations sent by this API," and they "do not appear in the Messaging section of Seller Central or in the recipient's Message Center." <C id="buyer-seller-messaging-19"/> <C id="buyer-seller-messaging-20"/>
+
+In Seller Central, Amazon's "Request a Review" feature sends "automated review requests to customers who have purchased the products you sell." <C id="buyer-seller-messaging-24"/> Amazon's limit counts a review-and-feedback request and a free-form proactive message together: one of them per order. <C id="buyer-seller-messaging-18"/> Amazon's general instruction is to "not attempt to influence customer ratings, feedback, and reviews," and the federal rules on review incentives are covered in the [FTC fake review rule guide](/guides/review-manipulation-risk/). <C id="buyer-seller-messaging-25"/>
+
+<Decision title="What you want to tell the buyer, and the route Amazon provides" rows={[
+  {if:"You need a detail before you can ship (size, engraving text)", then:"Confirm order details or confirm customization details, before shipping", claim:"buyer-seller-messaging-06"},
+  {if:"The carrier needs a delivery arrangement or contact detail", then:"Confirm delivery details; only delivery-related links", claim:"buyer-seller-messaging-28"},
+  {if:"Something is preventing you from completing the order", then:"Unexpected problem message", claim:"buyer-seller-messaging-12"},
+  {if:"You must give a legally required document", then:"Legal disclosure — for documents required by law only", claim:"buyer-seller-messaging-11"},
+  {if:"You want a review or feedback", then:"One review-and-feedback request per order, via Request a Review or the Solicitations API", claim:"buyer-seller-messaging-18"},
+  {if:"A buyer has written to you", then:"Reply to buyer messages, for example in the Amazon Seller app", claim:"buyer-seller-messaging-22"}
+]} />
+
+## Replying to buyers, and why speed is measured
+
+The Amazon Seller app lets you "respond to buyer messages, get notifications for messages that might need your attention." <C id="buyer-seller-messaging-22"/> Amazon measures how quickly you answer: its XML Customer Metrics Report includes average response time in hours and counts of responses under 24 hours, over 24 hours, and contacts older than 24 hours with no response. <C id="buyer-seller-messaging-26"/> Those fields are split at the 24-hour mark, so that is the line to plan coverage around. Brands in Brand Registry also have a Contact Buyer feature in the Customer Reviews tool "to engage with customers one-on-one." <C id="buyer-seller-messaging-23"/>
+
+For FBA orders, Amazon says it will "handle customer service and returns on your behalf." <C id="buyer-seller-messaging-27"/> The [order defect rate guide](/guides/order-defect-rate/) covers how feedback and claims are counted.
+
+<Checklist title="Before you press send" items={[
+  "The message fits one of Amazon's defined message types for this order",
+  "Any link relates only to that purpose (order completion, delivery, customization)",
+  "No HTML and no email addresses in the text",
+  "Written in the buyer's preferred language",
+  "No review or feedback request unless it is the single one allowed for the order",
+  "Nothing that offers a benefit in exchange for a rating or review"
+]} />
+
+<Callout type="note" title="Scope">
+This page reflects Amazon's developer and seller documentation. Whether a particular message breaches Amazon's communication guidelines is Amazon's call under its own policy; if a message is blocked or flagged, the Seller Central policy page and Seller Support are the routes to clarify it.
+</Callout>
+
+## How to confirm the current rules
+
+Read Amazon's buyer-seller communication guidelines in Seller Central Help before setting up any template or automated message, since that page holds the permitted and prohibited content list. For the message types, text limits and link rules that apps must follow, check the Messaging API and Solicitations API references in the Selling Partner API documentation at developer-docs.amazon.com. <C id="buyer-seller-messaging-05"/> <C id="buyer-seller-messaging-21"/>

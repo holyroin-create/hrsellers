@@ -1,0 +1,125 @@
+---
+title: "Amazon Listing Disappeared? Diagnose Status, Issues and Fixes"
+description: "Tell a hidden, unbuyable, suppressed or removed Amazon listing apart using Amazon's own status and issue codes, then find the report that shows the fix."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 9
+photo:
+  subject: "an empty open cardboard product box on a plain table beside a laptop showing a blank listing page, no logos or readable text"
+  alt: "Empty corrugated carton with its flaps opened, standing on a pale table in raking light"
+  image: "customs-holds-and-exams"
+keyFacts:
+  - { label: "Visible to shoppers", value: "Status DISCOVERABLE", claim: "listing-disappeared-02" }
+  - { label: "Can be purchased", value: "Status BUYABLE", claim: "listing-disappeared-01" }
+  - { label: "Hidden from search", value: "Action SEARCH_SUPPRESSED", claim: "listing-disappeared-09" }
+  - { label: "Bulk search cap", value: "1,000 SKUs per search", claim: "listing-disappeared-17" }
+summary:
+  - "Amazon tracks two separate listing statuses: DISCOVERABLE (visible to shoppers) and BUYABLE (can be purchased), so a listing can lose one without the other."
+  - "Listing issues carry a severity and a category such as MISSING_ATTRIBUTE, MISSING_PRICE, MISSING_IMAGE, QUALIFICATION_REQUIRED or DUPLICATE."
+  - "Enforcement actions explain the visible symptom: SEARCH_SUPPRESSED hides the item from search, LISTING_SUPPRESSED removes buyability, and CATALOG_ITEM_REMOVED makes every offer non-buyable."
+  - "The Suppressed Listings Report lists each suppressed listing with the reason and instructions for removing the suppression."
+  - "For FBA sellers, the Stranded Inventory Report breaks down stranded inventory with recommended actions."
+faq:
+  - { q: "Why is my Amazon listing inactive?", a: "Amazon's listings documentation says listing issues can cause listings to go inactive, search suppression or other quality problems. If the catalog item itself is removed, every offer on it becomes non-buyable, so check the listing's issues first.", claims: ["listing-disappeared-14", "listing-disappeared-12"] }
+  - { q: "Why is my Amazon listing suppressed?", a: "A suppression is an enforcement action tied to a listing issue, such as a missing required attribute, image or price. The Suppressed Listings Report gives the reason for each suppressed listing and instructions for removing it.", claims: ["listing-disappeared-10", "listing-disappeared-05", "listing-disappeared-18"] }
+  - { q: "Why is my Amazon listing not showing up?", a: "If the listing carries the SEARCH_SUPPRESSED action, the catalog item is hidden from search results even though the listing still exists. Check whether it is still DISCOVERABLE and which issue triggered the action.", claims: ["listing-disappeared-09", "listing-disappeared-02"] }
+related: ["ungating-restricted-categories", "variations-review-pooling", "buy-box-featured-offer", "gs1-barcodes-fnsku"]
+---
+
+When a listing seems to have disappeared, start by finding out which state it is in, because the fix depends on it. Amazon's own listing data separates being visible to shoppers from being buyable, and attaches coded issues and enforcement actions that say why. Read those codes first: they tell you whether you need to fill in a missing attribute, add a price, request approval, resolve a duplicate, or deal with a removal that applies to the whole catalog item rather than your offer.
+
+This guide uses the definitions Amazon publishes in its Selling Partner API documentation. The detailed policy behind any single suppression is published inside Seller Central, so check the message attached to your listing there.
+
+## Two statuses, four possible states
+
+Amazon assigns listings two independent statuses. BUYABLE means the listings item can be purchased by shoppers. <C id="listing-disappeared-01"/> DISCOVERABLE means the listings item is visible to shoppers. <C id="listing-disappeared-02"/> Because they are separate values, a listing can carry one status without the other.
+
+<Compare title="What each status combination looks like to a shopper" columns={["DISCOVERABLE", "Not DISCOVERABLE"]} rows={[
+  {label:"BUYABLE", values:["Visible to shoppers and can be purchased", "Can be purchased, but not visible to shoppers"], claim:"listing-disappeared-01"},
+  {label:"Not BUYABLE", values:["Visible to shoppers, but cannot be purchased", "Neither visible to shoppers nor purchasable"], claim:"listing-disappeared-02"}
+]} />
+
+Status changes are events Amazon records. The listings item status notification is published when a listings item is created, deleted, or its buyability changes, <C id="listing-disappeared-15"/> and a separate notification is sent when the issues associated with a listing you own change. <C id="listing-disappeared-24"/>
+
+## Read the issue: severity and category
+
+Every problem Amazon detects on a listing is reported as an issue. Amazon's listings guide says issues point out problems that cause listings to go inactive, search suppression, or other quality problems. <C id="listing-disappeared-14"/>
+
+Severity tells you whether your last change even went through. An ERROR means the issue prevented the submission from processing, such as a validation error. <C id="listing-disappeared-03"/> A WARNING should be reviewed but did not stop the submission. <C id="listing-disappeared-04"/> If an edit did not take effect, check that submission for an ERROR-severity issue.
+
+The category tells you what to fix:
+
+| Issue category | Amazon's definition | What to do |
+|---|---|---|
+| MISSING_ATTRIBUTE | One or more required attributes are missing | Fill in the attributes named in the issue |
+| MISSING_IMAGE | One or more required images are missing | Upload the required image |
+| MISSING_PRICE | One or more required price attributes are missing | Add the missing price data |
+| QUALIFICATION_REQUIRED | Approval or qualification is required to list the product | Apply for approval before relisting |
+| DUPLICATE | The ASIN may duplicate another ASIN | Work out which detail page your product belongs on |
+
+*Source: Amazon Selling Partner API documentation, checked Nov 8, 2026.* <C id="listing-disappeared-05"/> <C id="listing-disappeared-23"/> <C id="listing-disappeared-06"/> <C id="listing-disappeared-07"/> <C id="listing-disappeared-08"/>
+
+In Seller Central the same problems appear as listing errors, which Amazon describes as messages paired with a reference number. <C id="listing-disappeared-26"/> The quickest place to see them is the Search Suppressed and Inactive Listings tab in Manage All Inventory, <C id="listing-disappeared-27"/> and attribute errors can also be worked through with the Fix Your Products tool. <C id="listing-disappeared-28"/> One brand-related example: error 5461 means you do not have permission to create new detail pages for that brand. <C id="listing-disappeared-29"/>
+
+A QUALIFICATION_REQUIRED issue means approval is needed; the approval process is covered in [restricted categories and ungating](/guides/ungating-restricted-categories/). For DUPLICATE issues on products that differ only by size or color, the [variations guide](/guides/variations-review-pooling/) covers how a product family is structured.
+
+## Read the enforcement action: what the shopper sees
+
+Issues can carry enforcement actions, and the action is what explains the symptom you noticed.
+
+<Decision title="Match the symptom to the enforcement action" rows={[
+  {if:"Listing exists but you cannot find it in search", then:"SEARCH_SUPPRESSED: the catalog item is hidden from search results", claim:"listing-disappeared-09"},
+  {if:"Detail page loads but your offer cannot be bought", then:"LISTING_SUPPRESSED: the enforcement takes down your listing's buyability", claim:"listing-disappeared-10"},
+  {if:"One attribute value on the listing was not accepted", then:"ATTRIBUTE_SUPPRESSED: that attribute value was invalid and rejected", claim:"listing-disappeared-11"},
+  {if:"Every offer on the item is non-buyable", then:"CATALOG_ITEM_REMOVED: the catalog item is inactive and all offers on it are non-buyable", claim:"listing-disappeared-12"}
+]} />
+
+The last row matters most. CATALOG_ITEM_REMOVED applies to the catalog item, not to your offer, so every offer on that item in that store becomes non-buyable. <C id="listing-disappeared-12"/>
+
+Some listings carry an exemption. Amazon can grant a temporary exemption from the listed enforcement actions, and the exemption has an expiry timestamp after which Amazon begins enforcing them. <C id="listing-disappeared-13"/> If a listing with a known issue changed state on a specific date, check whether an exemption expired then.
+
+## Other causes to rule out
+
+Three further checks concern quantity, FBA inventory status and brand protection rather than listing data.
+
+**No sellable quantity.** For seller-fulfilled offers, the quantity field is the item quantity you are making available for sale. <C id="listing-disappeared-21"/> Check that the quantity you are making available is above zero.
+
+**Stranded FBA inventory.** FBA units can be in stranded status. The FBA Stranded Inventory Report breaks down inventory in stranded status, including recommended actions, and is updated in near real-time. <C id="listing-disappeared-20"/>
+
+**Brand protection programs.** For products enrolled in Transparency, Amazon requires a valid Transparency code to list or ship them. <C id="listing-disappeared-22"/>
+
+## Which report to pull
+
+<Steps title="Find every affected listing, not just the one you noticed" steps={[
+  {t:"Pull the Suppressed Listings Report", d:"It lists each suppressed listing, the reason, and instructions for removing the suppression.", claim:"listing-disappeared-18"},
+  {t:"Pull the Inactive Listings Report", d:"Amazon describes it as a detailed inactive listings report.", claim:"listing-disappeared-19"},
+  {t:"Check the Canceled Listings Report", d:"Amazon describes it as a canceled listings report.", claim:"listing-disappeared-25"},
+  {t:"FBA sellers: pull the Stranded Inventory Report", d:"Shows inventory in stranded status with recommended actions.", claim:"listing-disappeared-20"},
+  {t:"Fix the issue named, then resubmit", d:"Confirm the resubmission has no ERROR-severity issue, because errors stop processing.", claim:"listing-disappeared-03"}
+]} />
+
+For larger catalogs, the listings search operation can filter to listings whose issues match a given severity, <C id="listing-disappeared-16"/> but it pages through at most 1,000 SKUs per search, <C id="listing-disappeared-17"/> so larger catalogs need several narrower filtered searches.
+
+<Callout type="example" title="Worked example (hypothetical): sizing a cleanup">
+Inputs: a seller has 2,400 active SKUs and wants every listing with an ERROR issue. One search returns at most 1,000 SKUs, so at least 3 filtered searches are needed (2,400 ÷ 1,000 = 2.4, rounded up to 3), each narrowed so it returns no more than 1,000 SKUs. <C id="listing-disappeared-17"/>
+</Callout>
+
+<Checklist title="Before you open a case" items={[
+  "Note whether the listing is DISCOVERABLE, BUYABLE, both or neither",
+  "Copy the issue code, severity and category exactly as shown",
+  "Note any enforcement action and exemption expiry date",
+  "Confirm sellable quantity is above zero (or check stranded status for FBA)",
+  "Check whether the product needs approval or Transparency codes",
+  "Pull the Suppressed and Inactive Listings Reports to find other affected SKUs"
+]} />
+
+<Callout type="note" title="Scope">
+Amazon's API documentation defines the codes; the wording of each suppression message and the policy behind it are shown inside Seller Central.
+</Callout>
+
+## How to confirm it for your listing
+
+Open the listing in Seller Central and read the issue message, severity and any enforcement action, then compare them with the definitions in Amazon's [Listings Items API reference](https://developer-docs.amazon/sp-api/reference/getlistingsitem). <C id="listing-disappeared-14"/> For a catalog-wide view, request the Suppressed Listings, Inactive Listings and (for FBA) Stranded Inventory reports described in Amazon's [report type documentation](https://developer-docs.amazon/sp-api/docs/report-type-values-inventory). <C id="listing-disappeared-18"/> <C id="listing-disappeared-20"/>

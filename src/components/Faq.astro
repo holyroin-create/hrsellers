@@ -1,9 +1,9 @@
 ---
 import Cites from './Cites.astro';
-const { items = [], heading = 'Questions sellers ask', hid = 'faq-h' } = Astro.props as { items: { q: string; a: string; claims?: string[]; href?: string; where?: string }[]; heading?: string; hid?: string };
+const { items = [], heading = 'Questions sellers ask', hid = 'faq-h', schema = true } = Astro.props as { schema?: boolean; items: { q: string; a: string; claims?: string[]; href?: string; where?: string }[]; heading?: string; hid?: string };
 const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items.map((i) => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a } })) };
 ---
 {items.length > 0 && <section aria-labelledby={hid}><h2 id={hid}>{heading}</h2>
   <div class="faq">{items.map((i) => <details><summary>{i.q}</summary><div><p>{i.a} <Cites ids={i.claims || []} /></p>{i.href && <p class="where"><a href={i.href}>{i.where || 'Read the full guide'} →</a></p>}</div></details>)}</div>
-  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(ld)} />}
 </section>}

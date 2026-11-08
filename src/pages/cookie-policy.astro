@@ -2,13 +2,13 @@
 import Page from '../layouts/Page.astro';
 import { ADS_ON } from '../lib/site';
 ---
-<Page title="Cookie policy" description="Which cookies fbatactics.com uses: none of its own, and Google advertising cookies only once ads are enabled — with consent in the EEA, UK and Switzerland." kicker="Legal" updated="November 8, 2026">
-  <h2>Cookies set by this site</h2><p>None. There is no login, analytics, comments, newsletter or preference storage. Calculators, search, checklists and the knowledge check keep what you enter only in the open page.</p>
+<Page title="Cookie policy" description="Which cookies and storage fbatactics.com uses: one essential consent record of its own, and Google advertising cookies only once ads are enabled and you choose." kicker="Legal" updated="November 8, 2026">
+  <h2>Cookies and storage set by this site</h2><p>The site sets no cookies of its own. It stores one value in your browser's local storage, <code>fbt-consent</code>, which records whether you chose “Accept all” or “Essential only” in the cookie banner so the banner is not shown again; it contains nothing else and is never sent to us. There is no login, analytics, comments or newsletter. Calculators, search, checklists and the knowledge check keep what you enter only in the open page.</p>
   <h2>Third parties</h2>
   <table><thead><tr><th>Provider</th><th>Purpose</th><th>Status</th></tr></thead><tbody>
     <tr><td>Google AdSense</td><td>Serving and measuring ads; personalization where you allow it; fraud prevention</td><td>{ADS_ON ? 'Active' : 'Not active — no ad code runs until approval and switch-on'}</td></tr>
     <tr><td>Google consent message</td><td>Records consent choices for the EEA, UK and Switzerland</td><td>{ADS_ON ? 'Active in those regions' : 'Not active'}</td></tr>
     <tr><td>GitHub Pages</td><td>Hosts the files; sets no cookies on this site</td><td>Active</td></tr>
   </tbody></table>
-  <h2>Your choices</h2><p>Block or delete cookies in your browser. Once ads are active, visitors in the EEA, UK and Switzerland can change consent from the privacy settings link on the page, and anyone can manage personalized ads at <a href="https://www.google.com/settings/ads" rel="noopener">Google Ads Settings</a>. Details: <a href="/privacy/">privacy policy</a>.</p>
+  <h2>Your choices</h2><p>Use the <strong>Cookie settings</strong> link in the footer of any page to change your choice; “Essential only” tells Google to show only non-personalized ads. You can also block or delete cookies and site storage in your browser. Once ads are active, visitors in the EEA, UK and Switzerland can change consent from the privacy settings link on the page, and anyone can manage personalized ads at <a href="https://www.google.com/settings/ads" rel="noopener">Google Ads Settings</a>. Details: <a href="/privacy/">privacy policy</a>.</p>
 </Page>

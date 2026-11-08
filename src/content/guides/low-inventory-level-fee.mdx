@@ -1,0 +1,122 @@
+---
+title: "Amazon Low-Inventory-Level Fee: How It Works and the 2027 Rule"
+description: "What Amazon publishes about the FBA low-inventory-level fee: the inventory health metrics, today's 30/90-day test and the 28-day rule in the 2027 fee update."
+pillar: "fees"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a nearly empty warehouse shelf bay with two remaining cartons beside a fully stocked bay, no logos, no people"
+  alt: "Empty corrugated carton with its flaps opened, standing on a pale table in raking light"
+  image: "customs-holds-and-exams"
+keyFacts:
+  - { label: "Today's test", value: "Trailing 30- and 90-day sales", claim: "low-inventory-level-fee-07" }
+  - { label: "New threshold", value: "Below 28 days of supply", claim: "low-inventory-level-fee-08" }
+  - { label: "New rule effective", value: "February 1 (2027 fee update)", claim: "low-inventory-level-fee-08" }
+  - { label: "New demand window", value: "4 weeks before and after assessment", claim: "low-inventory-level-fee-09" }
+summary:
+  - "The low-inventory-level fee is an FBA charge for products that consistently run low on inventory relative to sales; Amazon publishes its rates and exemptions in Seller Central."
+  - "Today Amazon assesses the fee using trailing 30- and 90-day sales."
+  - "Amazon's 2027 fee update says that, effective February 1, the fee applies only when inventory falls below 28 days of supply, based on actual shipments in the four weeks before and after the assessment date."
+  - "Amazon says the change targets SKUs that need replenishment and cuts cases caused by demand spikes or end-of-season and end-of-life products."
+  - "Amazon launched three Manage Inventory Health report metrics on December 5, 2023, including one it says helps sellers avoid the fee."
+faq:
+  - { q: "What is low inventory level fee?", a: "It is an FBA fee Amazon applies when a product's inventory runs low relative to its sales. Today it is assessed on trailing 30- and 90-day sales; under Amazon's 2027 fee update, effective February 1, it applies only below 28 days of supply.", claims: ["low-inventory-level-fee-03", "low-inventory-level-fee-07", "low-inventory-level-fee-08"] }
+  - { q: "How to avoid low inventory level fee?", a: "Keep sellable inventory above the minimum level Amazon recommends in the Manage Inventory Health report. Amazon says doing so helps sellers avoid the fee and improve delivery speeds.", claims: ["low-inventory-level-fee-02", "low-inventory-level-fee-05"] }
+  - { q: "What is the Amazon FBA low-inventory-level fee?", a: "Amazon's 2027 fee update describes how the fee is assessed today and how it changes effective February 1; the per-unit rates and any exemptions are listed in Seller Central.", claims: ["low-inventory-level-fee-08", "low-inventory-level-fee-09"] }
+related: ["fba-storage-four-layers", "aged-inventory-15-month-tier", "amazon-fba-fee-changes-2026", "inbound-placement-split-arithmetic"]
+---
+
+Amazon's low-inventory-level fee applies to FBA products that run low on stock relative to sales. Today it is assessed using trailing 30- and 90-day sales; Amazon's 2027 fee update says that, effective February 1, it will apply only when inventory falls below 28 days of supply, based on actual shipments in the four weeks before and after the assessment date. <C id="low-inventory-level-fee-07"/> <C id="low-inventory-level-fee-08"/> <C id="low-inventory-level-fee-09"/> The fee's per-unit rates, size-tier differences and exemptions are published inside Seller Central and should be checked there. What you need to decide is a stocking band: enough supply to clear the low-inventory test, not so much that you trip Amazon's excess and aged inventory lines.
+
+## What Amazon has published about the fee
+
+This page draws on two Amazon sources: the Selling Partner API changelog, which documents inventory metrics tied to the fee, and Amazon's 2027 fee announcement.
+
+The changelog states: "On December 5, 2023, we launched three new metrics on the FBA Manage Inventory Health Report." <C id="low-inventory-level-fee-01"/> Each relates to the fee:
+
+| Metric | What Amazon says it does |
+|---|---|
+| `fba-minimum-inventory-level` | Helps sellers plan inventory levels "and help them to avoid the recently announced low-inventory-level fee." <C id="low-inventory-level-fee-02"/> |
+| `historical-days-of-supply` | Identifies products that held low inventory relative to sales "over the past 90 days, and may incur low-inventory-level fees." <C id="low-inventory-level-fee-03"/> |
+| `fba-inventory-level-health-status` | Evaluates sellable inventory "against the recommended minimum level and estimated excess units." <C id="low-inventory-level-fee-04"/> |
+
+*Source: Amazon Selling Partner API changelog, checked Nov 8, 2026.* <C id="low-inventory-level-fee-01"/>
+
+Amazon's guidance in the same entry: "Keeping inventory above the minimum recommended level helps sellers improve delivery speeds" and avoid the fee. <C id="low-inventory-level-fee-05"/> The report is available for sellers and API integrators to pull via API. <C id="low-inventory-level-fee-06"/>
+
+## How the fee is assessed today
+
+In its 2027 fee announcement Amazon summarized the current method in one sentence: "Today, the fee is assessed using trailing 30- and 90-day sales." <C id="low-inventory-level-fee-07"/> Amazon says the coming change will reduce instances triggered by unexpected demand spikes or end-of-season and end-of-life products, which indicates those cases can trigger the fee today. <C id="low-inventory-level-fee-11"/>
+
+## What changes on February 1 (2027 update)
+
+Amazon says it is "updating the low-inventory-level fee to better reflect your actual demand." <C id="low-inventory-level-fee-12"/> Three things change:
+
+- **A fixed threshold.** "Effective February 1, the fee will apply only when your inventory falls below 28 days of supply." <C id="low-inventory-level-fee-08"/>
+- **A two-sided demand window.** Supply is measured "based on actual shipments in both the four weeks before and after the assessment date." <C id="low-inventory-level-fee-09"/>
+- **A demand check.** Amazon says that evaluating the four weeks after the assessment "confirms whether low inventory reflects ongoing demand." <C id="low-inventory-level-fee-10"/>
+
+Amazon states the intent: to "target SKUs that need replenishment and reduce instances triggered by unexpected demand spikes or end-of-season and end-of-life products." <C id="low-inventory-level-fee-11"/>
+
+<Compare title="Low-inventory-level fee test: today and under the 2027 update" columns={["Today","From February 1 (2027 update)"]} rows={[
+  {label:"Demand measure", values:["Trailing 30- and 90-day sales","Actual shipments, four weeks before and after the assessment date"], claim:"low-inventory-level-fee-09"},
+  {label:"When the fee applies", values:["Per the current Seller Central rule","Only when inventory is below 28 days of supply"], claim:"low-inventory-level-fee-08"},
+  {label:"Sudden demand spikes", values:["Can trigger the fee, per Amazon's description","Amazon says instances should fall"], claim:"low-inventory-level-fee-11"},
+  {label:"End-of-season or end-of-life products", values:["Can trigger the fee","Amazon says instances should fall"], claim:"low-inventory-level-fee-11"}
+]} />
+
+## Worked example (hypothetical): reading 28 days of supply
+
+Amazon's announcement does not give a days-of-supply formula. The simple version below shows how a two-sided window behaves.
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: 90 sellable units on hand on the assessment date. Days of supply = units on hand ÷ average daily shipments over the 56 days (four weeks before plus four weeks after).
+
+- **Continuing demand:** 120 units shipped in the four weeks before, 160 in the four weeks after. Daily average = 280 ÷ 56 = 5. Days of supply = 90 ÷ 5 = 18 days — below 28. <C id="low-inventory-level-fee-08"/>
+- **End of season:** 120 before, 60 after. Daily average = 180 ÷ 56 ≈ 3.21. Days of supply = 90 ÷ 3.21 = 28 days — at the threshold, not below it.
+</Callout>
+
+The same 90 units and the same past sales give different answers once the four weeks after the assessment are counted. Under a backward-only test the two cases would look identical. That is the scenario Amazon says the new rule is designed to handle. <C id="low-inventory-level-fee-10"/>
+
+## The stocking band: not too low, not too high
+
+The low-inventory fee is one edge of a band; storage fees are the other.
+
+<Chart title="Inventory lines Amazon publishes, in days" kind="bar" unit="days" rows={[
+  {label:"Low-inventory threshold, 2027 update (below)", value:28, claim:"low-inventory-level-fee-08"},
+  {label:"Excess inventory: over 90 days of supply", value:90, claim:"low-inventory-level-fee-14"},
+  {label:"Aged inventory charge: over 181 days stored", value:181, claim:"low-inventory-level-fee-18"}
+]} />
+
+Amazon's inventory guide says to "Ensure you have about two months of supply available," and lists over 90 days of supply, or at least one unit aged over 90 days, among the situations in which it considers you to have excess inventory. <C id="low-inventory-level-fee-15"/> <C id="low-inventory-level-fee-14"/> Items stored more than 181 days draw a monthly aged inventory charge. <C id="low-inventory-level-fee-18"/> Running too lean has a sales cost as well: Amazon says "Low stock levels can hurt your sales and brand reputation." <C id="low-inventory-level-fee-19"/>
+
+One more 2027 change helps the upper side of the band: Amazon will eliminate the storage utilization surcharge on February 1, 2027, which it says "will make it easier to stock up ahead of high-demand events." <C id="low-inventory-level-fee-13"/> The storage side is covered in [FBA storage fees: the four layers](/guides/fba-storage-four-layers/).
+
+<Decision title="Which situation are you in?" rows={[
+  {if:"The health status shows a SKU below the recommended minimum", then:"Replenish; Amazon says staying above the minimum helps avoid the fee", claim:"low-inventory-level-fee-05"},
+  {if:"A SKU is being discontinued or is at the end of its season", then:"Under the 2027 update the after-assessment window is meant to reduce fees in this case", claim:"low-inventory-level-fee-11"},
+  {if:"You had a one-off demand spike", then:"The 2027 rule is meant to reduce fees triggered by unexpected spikes", claim:"low-inventory-level-fee-11"},
+  {if:"You keep a buffer in Amazon Warehousing and Distribution", then:"Amazon says AWD auto-replenishment monitors inventory in Prime-ready fulfillment centers and triggers replenishments to keep products in stock", claim:"low-inventory-level-fee-16"},
+  {if:"Supply is above 90 days", then:"Amazon classes this as excess inventory; review storage cost rather than stock-outs", claim:"low-inventory-level-fee-14"}
+]} />
+
+<Checklist title="Weekly low-inventory check" items={[
+  "Pull the Manage Inventory Health report",
+  "Compare sellable units with fba-minimum-inventory-level for each active SKU",
+  "Check historical-days-of-supply for SKUs that ran low over the past 90 days",
+  "Flag SKUs projected to fall below 28 days of supply once the February 1 rule applies",
+  "Confirm current rates and exemptions on the fee's page in Seller Central"
+]} />
+
+For 2026, Amazon also listed "maintaining healthy inventory levels" among its ways to reach lower fees. <C id="low-inventory-level-fee-17"/> The complete list of 2026 and 2027 fee dates is in [Amazon FBA fee changes 2026](/guides/amazon-fba-fee-changes-2026/).
+
+## How to confirm the fee for your SKUs
+
+- Amazon's 2027 fee announcement on sellingpartners.aboutamazon.com, for the February 1 rule. <C id="low-inventory-level-fee-08"/>
+- The Selling Partner API changelog entry on the Manage Inventory Health report metrics. <C id="low-inventory-level-fee-01"/>
+- In Seller Central: the low-inventory-level fee help page for per-unit rates, size tiers and exemptions, and the Manage Inventory Health report for your own SKUs.
+
+This page describes Amazon's published method only. Whether a particular charge was correctly applied has to be raised with Amazon through your seller account.

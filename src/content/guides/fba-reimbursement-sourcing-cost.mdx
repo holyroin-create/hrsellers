@@ -1,0 +1,129 @@
+---
+title: "FBA Reimbursements at Sourcing Cost: What Counts and What Doesn't"
+description: "Amazon reimburses many lost or damaged FBA units at sourcing cost. What the term covers, why freight and duty fall outside it, and how to dispute a value."
+pillar: "operations"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "supplier invoice and a calculator on a desk next to a sample product box, no readable names, no logos"
+  alt: "Desk with a calculator, printed charts and paperwork held by a clipboard clip, and a pair of eyeglasses"
+  image: "pillar-money"
+keyFacts:
+  - { label: "Pre-fulfillment basis (redline text)", value: "Sourcing cost", claim: "fba-reimbursement-sourcing-cost-03" }
+  - { label: "Excluded", value: "Shipping, handling, customs duties", claim: "fba-reimbursement-sourcing-cost-02" }
+  - { label: "Dispute window", value: "60 days after issue", claim: "fba-reimbursement-sourcing-cost-15" }
+  - { label: "No cost on file", value: "Amazon's own estimate", claim: "fba-reimbursement-sourcing-cost-06" }
+summary:
+  - "The pre-order section of Amazon's redlined policy PDF says shipment-to-Amazon, removals and fulfillment-center claims that occur before fulfillment are reimbursed at sourcing cost; confirm the live policy in Seller Central."
+  - "Sourcing cost is what you paid a manufacturer, wholesaler or reseller (or your cost to produce), and it excludes shipping, handling and customs duties."
+  - "If you do not enter a sourcing cost, Amazon uses its own estimate; if it declines your figure, it falls back to a previously approved amount."
+  - "Customer-return claims are valued on the refund amount or the replacement's sales price on the original order, minus applicable fees."
+  - "If you don't agree with Amazon's valuation of a unit, the policy text allows a claim through Contact Us in Seller Central within 60 days after the reimbursement is issued."
+faq:
+  - { q: "What is Amazon's Manage Your Sourcing Cost page?", a: "It is the page where you enter your sourcing cost for an item so Amazon can use it in reimbursement calculations. If you leave it empty, Amazon uses its own cost estimate.", claims: ["fba-reimbursement-sourcing-cost-05", "fba-reimbursement-sourcing-cost-06"] }
+  - { q: "What is Amazon FBA inventory reimbursement?", a: "It is the payment Amazon makes under its FBA inventory reimbursement policy when eligible inventory registered in FBA is lost or damaged. In Amazon's financial data it appears as an FBAInventoryReimbursement adjustment.", claims: ["fba-reimbursement-sourcing-cost-19", "fba-reimbursement-sourcing-cost-17"] }
+related: ["shipment-discrepancy-claims", "reimbursement-recovery-services", "accrual-accounting-cogs", "first-sale-valuation"]
+---
+
+When Amazon loses or damages your FBA inventory before it is sold, the sourcing-cost text of its reimbursement policy pays the item's sourcing cost — what you paid for the product, not what it cost to land it in the US. <C id="fba-reimbursement-sourcing-cost-03"/> <C id="fba-reimbursement-sourcing-cost-02"/> The decision for you is what figure to put on file for each SKU, how to support it, and whether a reimbursement you received is worth disputing.
+
+This page is built on Amazon's FBA inventory reimbursement policy as published in a marked-up ("redlined") PDF on Amazon's own media server. A redline shows old and new wording together, and the PDF also contains passages that value shipment-to-Amazon, removals and unsellable-unit claims on estimated sale proceeds, which the document does not reconcile with the sourcing-cost text. Only the sourcing-cost rules are summarized here, as the PDF states them. The live policy is published inside Seller Central and should be checked there before you rely on any figure.
+
+## What "sourcing cost" means
+
+Amazon defines sourcing cost as your cost to source a product from a manufacturer, wholesaler or reseller — or, if you make it yourself, your cost to produce it. <C id="fba-reimbursement-sourcing-cost-01"/> It excludes shipping, handling, customs duties and other costs. <C id="fba-reimbursement-sourcing-cost-02"/>
+
+That exclusion matters for importers. If your books carry a landed cost that includes freight and duty (see [accrual accounting and COGS](/guides/accrual-accounting-cogs/)), the sourcing-cost figure covers only the product-cost part of it.
+
+| Cost component | In Amazon's sourcing cost? |
+|---|---|
+| Cost to source from a manufacturer, wholesaler or reseller | Yes |
+| Your cost to produce the item, if you are the manufacturer | Yes |
+| Shipping and handling | No |
+| Customs duties | No |
+| Other costs | No |
+
+*Source: Amazon, FBA inventory reimbursement policy, redlined PDF on m.media-amazon.com, checked Nov 8, 2026.* <C id="fba-reimbursement-sourcing-cost-01"/> <C id="fba-reimbursement-sourcing-cost-02"/>
+
+## Which losses are paid at sourcing cost
+
+<Compare title="How each claim type is valued in the sourcing-cost text" columns={["Claim type","Valuation stated"]} rows={[
+  {label:"Before fulfillment", values:["Shipment to Amazon, removals, fulfillment center operations","Sourcing cost of the item"], claim:"fba-reimbursement-sourcing-cost-03"},
+  {label:"Replenishment", values:["Lost or damaged during replenishment handled by or for Amazon","Covered by the same sourcing-cost rule"], claim:"fba-reimbursement-sourcing-cost-04"},
+  {label:"Unsellable units", values:["Unsellable when lost, damaged or removed","Reduced estimated cost; documentation may be requested"], claim:"fba-reimbursement-sourcing-cost-13"},
+  {label:"After the order", values:["Customer return claims","Refund amount or replacement sales price, minus applicable fees"], claim:"fba-reimbursement-sourcing-cost-14"}
+]} />
+
+Two exceptions change the number. In the pre-order section, units that were already unsellable when they were lost, damaged or removed are paid at a reduced estimated cost, and Amazon may ask for documentation. <C id="fba-reimbursement-sourcing-cost-13"/> And when Amazon refunded or replaced an item on your FBA order, a customer return claim is valued on the refund amount or the replacement's sales price on the original order, minus applicable fees, rather than on your sourcing cost. <C id="fba-reimbursement-sourcing-cost-14"/> So a sourcing cost on file matters most for inbound shortfalls, removals and warehouse losses — the events that happen before a customer is involved.
+
+The item also has to be registered in FBA at the time it is lost or damaged, among the policy's other eligibility conditions. <C id="fba-reimbursement-sourcing-cost-19"/> For the inbound side of those conditions, see [shipment discrepancy claims](/guides/shipment-discrepancy-claims/).
+
+## How Amazon gets the number
+
+<Steps title="Where the reimbursement value comes from" steps={[
+  {t:"You enter a sourcing cost", d:"Use the 'Manage Your Sourcing cost' page for the item.", claim:"fba-reimbursement-sourcing-cost-05"},
+  {t:"Or Amazon estimates", d:"With no figure on file, Amazon uses its own cost estimate.", claim:"fba-reimbursement-sourcing-cost-06"},
+  {t:"Amazon may ask for support", d:"It may request additional information to validate the amount.", claim:"fba-reimbursement-sourcing-cost-16"},
+  {t:"If your figure is declined", d:"Amazon reimburses based on a previously approved amount.", claim:"fba-reimbursement-sourcing-cost-11"},
+  {t:"Estimates are refreshed", d:"After March 31, 2025, Amazon said it would refresh its cost estimates periodically.", claim:"fba-reimbursement-sourcing-cost-12"}
+]} />
+
+Amazon lists four reasons it may decline a submitted sourcing cost:
+
+<Checklist title="Reasons a sourcing cost submission can be declined" items={[
+  "The figure is an outlier against similar products or Amazon's own estimate",
+  "Documentation is forged, tampered with or illegible",
+  "The account is suspected of fraud, significant policy violations or non-compliant selling",
+  "You already received a decision for the same item within 30 days and supplied nothing new"
+]} />
+
+*Source: Amazon, FBA inventory reimbursement policy, redlined PDF, checked Nov 8, 2026.* <C id="fba-reimbursement-sourcing-cost-07"/> <C id="fba-reimbursement-sourcing-cost-08"/> <C id="fba-reimbursement-sourcing-cost-09"/> <C id="fba-reimbursement-sourcing-cost-10"/>
+
+The policy points to a Seller Central help page for accepted proof-of-value documentation; check that list there. <C id="fba-reimbursement-sourcing-cost-20"/> Whatever you submit, a supplier invoice that shows the SKU's unit price separately from freight or duty lines matches the definition most directly.
+
+<Callout type="example" title="Worked example (hypothetical)">
+Inputs: factory price $6.40 per unit; ocean freight allocated $1.10 per unit; customs duty $0.60 per unit; landed cost therefore $8.10. A fulfillment center loses 12 units, and your $6.40 sourcing cost is on file and accepted.
+
+- Reimbursement at sourcing cost: 12 × $6.40 = $76.80.
+- Landed cost of the same units: 12 × $8.10 = $97.20.
+- Unrecovered: $97.20 − $76.80 = $20.40, all of it freight and duty, which the definition excludes.
+
+If no figure were on file, the payout would rest on Amazon's own cost estimate instead.
+</Callout>
+
+## Keeping the figure current
+
+A sourcing cost is not a one-time entry. Supplier prices move between production runs, and the policy's fallback works against you when they rise: if Amazon declines a new figure, it pays on the previously approved amount. <C id="fba-reimbursement-sourcing-cost-11"/> Amazon also said that after March 31, 2025 it would refresh its own cost estimates periodically, so a SKU without a figure on file can be valued differently over time. <C id="fba-reimbursement-sourcing-cost-12"/> <C id="fba-reimbursement-sourcing-cost-06"/>
+
+A simple record per SKU keeps updates defensible:
+
+- the supplier invoice number and date for the current production run;
+- the unit price on that invoice, with freight, duty and handling kept on separate lines;
+- the date you entered or changed the figure in Seller Central and the outcome;
+- for your own manufacturing, the cost build-up behind the per-unit figure.
+
+Updating the figure each time the invoice price changes, rather than in a batch later, keeps each submission tied to a single document — and avoids repeat requests inside the 30-day window. <C id="fba-reimbursement-sourcing-cost-10"/>
+
+## Disputing an amount
+
+If you don't agree with Amazon's valuation of a unit, the policy says you can file a claim through Contact Us in Seller Central within 60 days after the reimbursement was issued; in the redlined PDF this sentence sits in the post-order section, so confirm the channel for your claim type in Seller Central. <C id="fba-reimbursement-sourcing-cost-15"/> Having already received a decision on a cost update request or amount dispute for the same item within the last 30 days, with no new information, is one of the listed reasons to decline, so a second attempt should add a document the first one lacked. <C id="fba-reimbursement-sourcing-cost-10"/>
+
+To find what was paid and why, the FBA Reimbursements Report lists itemized reimbursements with the reason and is updated daily. <C id="fba-reimbursement-sourcing-cost-18"/> In Amazon's financial event data, these payments carry the adjustment type FBAInventoryReimbursement. <C id="fba-reimbursement-sourcing-cost-17"/> Matching the two each month, and noting the 60-day date for each line, helps you spot values to question in time.
+
+<Decision title="Is a reimbursement worth disputing?" rows={[
+  {if:"Paid amount is below your documented sourcing cost for that SKU", then:"The policy text allows a claim via Contact Us within 60 days if you don't agree with the valuation; include the supplier invoice.", claim:"fba-reimbursement-sourcing-cost-15"},
+  {if:"Paid amount equals your sourcing cost but below landed cost", then:"Not a valuation error: freight, handling and duty are excluded by definition.", claim:"fba-reimbursement-sourcing-cost-02"},
+  {if:"You never entered a sourcing cost", then:"Amazon used its own estimate; enter your figure for future events.", claim:"fba-reimbursement-sourcing-cost-06"},
+  {if:"The claim was a customer return", then:"Sourcing cost does not apply; the value follows the refund or replacement price, minus applicable fees.", claim:"fba-reimbursement-sourcing-cost-14"}
+]} />
+
+## How to confirm
+
+This page is not accounting or legal advice; how a reimbursement is booked is a question for your accountant, and the amount itself is settled only through Amazon's dispute process. Re-check:
+
+- The live FBA inventory reimbursement policy and the "Manage Your Sourcing cost" page in Seller Central.
+- Amazon's policy PDF on m.media-amazon.com (file Redlined_FBA_Reimbursement_policy_US.pdf) for the sourcing-cost wording quoted here.
+- SP-API docs on developer-docs.amazon: "Report type values – FBA" (Reimbursements Report) and the listFinancialEvents reference (FBAInventoryReimbursement).

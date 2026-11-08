@@ -15,15 +15,16 @@ import { PILLARS } from '../lib/pillars';
 const { entry, headings = [], related = [], crumb, path } = Astro.props as any;
 const d = entry.data;
 const pillar = PILLARS[d.pillar as keyof typeof PILLARS];
-const photoId = entry.id;
+const photoId = d.photo?.image || entry.id;
 const p = img(photoId);
 const og = `/og/${entry.collection}/${entry.id}.png`;
 const ld = [{
   '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.description,
   datePublished: d.published, dateModified: d.modified, mainEntityOfPage: new URL(path, SITE.domain).href,
   image: p ? new URL(`/${p.file}-1600.webp`, SITE.domain).href : new URL(og, SITE.domain).href,
-  author: { '@type': 'Organization', name: SITE.publisherName, url: new URL('/about/', SITE.domain).href },
-  publisher: { '@type': 'Organization', name: SITE.publisherName, url: SITE.domain },
+  author: { '@type': 'Organization', '@id': SITE.domain + '/#org', name: SITE.siteName, url: SITE.domain },
+  editor: { '@type': 'Person', '@id': new URL('/author/muhammet-ali-turk/', SITE.domain).href + '#person', name: SITE.editorName, url: new URL('/author/muhammet-ali-turk/', SITE.domain).href },
+  publisher: { '@type': 'Organization', '@id': SITE.domain + '/#org', name: SITE.siteName, url: SITE.domain, logo: { '@type': 'ImageObject', url: new URL('/favicon.svg', SITE.domain).href } },
 }];
 const h2 = headings.filter((h: any) => h.depth === 2);
 const tools: Record<string, [string, string, string][]> = {
@@ -31,6 +32,7 @@ const tools: Record<string, [string, string, string][]> = {
   fees: [['/tools/margin-calculator/', 'Profit & margin calculator', 'calculator'], ['/tools/fee-comparison/', 'Fee comparison', 'scale'], ['/marketplaces/', 'Fee tables', 'tag']],
   compliance: [['/checklists/', 'Compliance checklist', 'printer'], ['/resources/', 'Primary sources', 'doc'], ['/quiz/', 'Knowledge check', 'quiz']],
   money: [['/tools/cash-flow-planner/', 'Cash flow planner', 'chart'], ['/tools/margin-calculator/', 'Profit & margin calculator', 'calculator'], ['/resources/', 'Primary sources', 'doc']],
+  operations: [['/tools/margin-calculator/', 'Profit & margin calculator', 'calculator'], ['/tools/ppc-budget-calculator/', 'Ad budget & break-even ACoS', 'chart'], ['/reviews/', 'Seller software', 'list']],
 };
 ---
 <Base title={d.title} description={d.description} og={og} jsonld={ld} ads={true} type="article" preload={p ? `/${p.file}-960.webp` : undefined}>
@@ -46,12 +48,12 @@ const tools: Record<string, [string, string, string][]> = {
             <span class="chip chip-green"><Icon name="checkCircle" />Verified {fmtDate(d.lastVerified, true)}</span>
             <span><Icon name="clock" />{d.minutes} min read</span>
             <span><Icon name="calendar" />Updated {fmtDate(d.modified, true)}</span>
-            <span><Icon name="user" />By <a href="/about/">{SITE.publisherName}</a>{d.reviewedBy && <>, reviewed by {d.reviewedBy}</>}</span>
+            <span><Icon name="user" />Editor: <a href="/author/muhammet-ali-turk/" rel="author">{SITE.editorName}</a>{d.reviewedBy && <> · reviewed by {d.reviewedBy}{d.reviewedDate && <> on {fmtDate(d.reviewedDate)}</>}</>}</span>
           </div>
         </div>
         <figure class="figure-photo">
           <div class="frame"><Photo id={photoId} eager sizes="(max-width: 960px) 100vw, 520px" /></div>
-          <figcaption><Credit id={photoId} prefix={p?.caption || 'Illustrative photo'} /></figcaption>
+          <figcaption><Credit id={photoId} prefix={d.photo?.image ? `Illustrative photo: ${d.photo.alt.replace(/[.\s]+$/, '')}` : (p?.caption || 'Illustrative photo')} /></figcaption>
         </figure>
       </div>
     </div>
@@ -64,7 +66,7 @@ const tools: Record<string, [string, string, string][]> = {
           <ul>{d.summary.map((s: string) => <li><Icon name="check" /><span>{s}</span></li>)}</ul></section>
         <slot />
         <Faq items={d.faq.map((f: any) => ({ q: f.q, a: f.a, claims: f.claims }))} />
-        <div class="byline-box"><Icon name="checkCircle" /><p>Every figure on this page links to the regulation, notice or platform page it comes from and was checked on {fmtDate(d.lastVerified)}. Read <a href="/editorial-standards/">how we check facts</a>; spotted an error? <a href="/contact/">Tell us</a> — changes are logged on the <a href="/corrections/">corrections page</a>. General information, not legal or tax advice.</p></div>
+        <div class="byline-box"><Icon name="checkCircle" /><p>Every figure on this page links to the official page it comes from. The page was drafted with AI writing tools from those sources, and each statement was checked against its source in a separate, automated verification pass on {fmtDate(d.lastVerified)}. Editor responsible: <a href="/author/muhammet-ali-turk/">{SITE.editorName}</a>. Read <a href="/editorial-standards/">how we check facts</a>; spotted an error? <a href="/contact/">Tell us</a> — changes are logged on the <a href="/corrections/">corrections page</a>. General information, not legal, tax or financial advice.</p></div>
         <Sources />
         <AdSlot slot="endOfArticle" />
       </article>

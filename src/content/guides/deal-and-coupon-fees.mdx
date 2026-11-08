@@ -1,0 +1,112 @@
+---
+title: "Amazon Deal and Coupon Fees: What Is Published and Where"
+description: "What Amazon publicly says about deal and coupon costs, eligibility and timing, where fees appear in settlement data, and how to test one first."
+pillar: "fees"
+type: "guide"
+published: "2026-11-08"
+modified: "2026-11-08"
+lastVerified: "2026-11-08"
+minutes: 8
+photo:
+  subject: "a few blank paper price tags on strings, one with a hand-drawn strike-through price, on a plain table, no logos"
+  alt: "Four blank hang tags in white, kraft and black paper hanging on strings against a pale wall"
+  image: "amazon-referral-fees"
+keyFacts:
+  - { label: "Coupon cost", value: "Charged each time a coupon is used", claim: "deal-and-coupon-fees-10" }
+  - { label: "Lightning Deal length", value: "4 to 12 hours", claim: "deal-and-coupon-fees-02" }
+  - { label: "Coupon life", value: "Expires after 90 days", claim: "deal-and-coupon-fees-11" }
+  - { label: "Rating to run deals", value: "At least four stars overall", claim: "deal-and-coupon-fees-05" }
+summary:
+  - "Amazon publicly confirms that coupons carry a redemption cost each time one is used and that deals may carry costs; the current fee amounts are set out inside Seller Central."
+  - "Deals come in two types: Lightning Deals, which run 4 to 12 hours as Amazon determines, and Best Deals, which run for a select number of days."
+  - "Deals need a Professional plan and at least a four-star overall rating; coupons need a Professional plan and at least 3.5 stars."
+  - "In Amazon's settlement data, deal fees arrive as SellerDealPaymentEvent records and coupon costs as CouponPaymentEvent records with a clip-or-redemption count."
+  - "Every coupon expires after 90 days, and Amazon suggests running one for two to three months."
+faq:
+  - { q: "How much are Amazon coupon fees?", a: "Amazon says there is a redemption cost each time a coupon is used. The current amounts are published in Seller Central, and the charges appear in your financial events as coupon payment events with a count of clips or redemptions.", claims: ["deal-and-coupon-fees-10", "deal-and-coupon-fees-19"] }
+  - { q: "How much are Amazon deal fees?", a: "Amazon's seller guide says there may be costs associated with a deal; the fee schedule itself is in Seller Central. Deal fees post to your account as seller deal payment events, for example with the fee type RunLightningDealFee.", claims: ["deal-and-coupon-fees-06", "deal-and-coupon-fees-17", "deal-and-coupon-fees-18"] }
+  - { q: "What does an Amazon Best Deal cost?", a: "Best Deals are the multi-day deal type, and like Lightning Deals they may carry a cost. Check the current fee in Seller Central before you submit.", claims: ["deal-and-coupon-fees-03", "deal-and-coupon-fees-06"] }
+related: ["q4-deal-deadlines-2026", "amazon-referral-fees", "subscribe-and-save-economics"]
+---
+
+Amazon confirms in public that coupons carry "a redemption cost each time a coupon is used" and that deals may carry costs, but it publishes the actual fee amounts only inside Seller Central, so check the current figures there before you create one. <C id="deal-and-coupon-fees-10"/> <C id="deal-and-coupon-fees-06"/> What you can plan from public sources is everything around the fee: which tool fits your goal, who is eligible, how long each runs, and how the charges appear in your settlement data. That is enough to decide whether a promotion can pay for itself before you see the fee screen.
+
+## Deals, coupons and price discounts side by side
+
+Amazon's seller guide describes deals, coupons and price discounts as separate tools, alongside promotions such as percentage-off, buy one get one, and social media promo codes. <C id="deal-and-coupon-fees-22"/>
+
+<Compare title="Deals, coupons and price discounts" columns={["Lightning Deal","Best Deal","Coupon","Price discount"]} rows={[
+  {label:"Duration", values:["4 to 12 hours, as Amazon determines","A select number of days","Up to 90 days; Amazon suggests 2–3 months","Up to 30 days, limited units"], claim:"deal-and-coupon-fees-02"},
+  {label:"How the shopper gets it", values:["Applied automatically, no code","Applied automatically, no code","Clipped on the detail page or by code","Discounted price; strike-through if reference price is validated"], claim:"deal-and-coupon-fees-04"},
+  {label:"Seller rating needed", values:["At least 4 stars overall","At least 4 stars overall","At least 3.5 stars overall","Not stated; discount must pass validation"], claim:"deal-and-coupon-fees-05"},
+  {label:"Publicly stated cost", values:["May carry costs","May carry costs","Redemption cost each time used","Not stated"], claim:"deal-and-coupon-fees-06"}
+]} />
+
+*Source: Amazon, Sell on Amazon blog, "Guide to running Amazon seller promotions, coupons, and deals," checked Nov 8, 2026.* <C id="deal-and-coupon-fees-03"/> <C id="deal-and-coupon-fees-09"/> <C id="deal-and-coupon-fees-11"/> <C id="deal-and-coupon-fees-14"/> <C id="deal-and-coupon-fees-15"/>
+
+All of these need a Professional selling plan, which Amazon prices at $39.99 a month plus selling fees. <C id="deal-and-coupon-fees-16"/>
+
+## Deals: what is public
+
+Amazon describes deals as limited-time promotional offers of two types. <C id="deal-and-coupon-fees-01"/> A Lightning Deal "can run from 4 to 12 hours, as determined by Amazon"; a Best Deal "can run for a select number of days." <C id="deal-and-coupon-fees-02"/> <C id="deal-and-coupon-fees-03"/> Deals apply automatically without a code and can carry special merchandising such as a Deals Badge. <C id="deal-and-coupon-fees-04"/>
+
+To create deals you need a Professional plan and "an overall rating of at least four stars." <C id="deal-and-coupon-fees-05"/> On cost, the public guide says only that "there may also be costs associated with your deal." <C id="deal-and-coupon-fees-06"/>
+
+The fee for a deal you ran does surface in data Amazon documents publicly. The Selling Partner API's Finances model defines a SellerDealPaymentEvent as "an event linked to the payment of a fee related to the specified deal," with an event type of SellerDealComplete and, in the published model, a fee type of RunLightningDealFee. <C id="deal-and-coupon-fees-17"/> <C id="deal-and-coupon-fees-18"/> If you reconcile settlements, those are the records to match to each deal.
+
+## Coupons: what is public
+
+A coupon gives shoppers a percentage off or a fixed amount off one product or a set of products. <C id="deal-and-coupon-fees-07"/> Any shopper can use it; it appears on the product detail page, and shoppers clip it or enter a code. <C id="deal-and-coupon-fees-08"/> Eligibility needs a Professional plan and an overall rating of at least 3.5 stars. <C id="deal-and-coupon-fees-09"/>
+
+Three timing and control rules shape the cost:
+
+- **Per-use cost.** "There is a redemption cost each time a coupon is used." <C id="deal-and-coupon-fees-10"/> More redemptions mean more fees, on top of the discount itself.
+- **Usage limits.** You can set how many times a customer can use the coupon. <C id="deal-and-coupon-fees-13"/>
+- **Duration.** All coupons expire after 90 days, and Amazon suggests a duration of two to three months so customers have time to find it. <C id="deal-and-coupon-fees-11"/> <C id="deal-and-coupon-fees-12"/>
+
+In settlement data, coupon charges arrive as CouponPaymentEvent records. Each carries the coupon's identifier, "the description provided by the seller when they created the coupon," and a ClipOrRedemptionCount — "the number of coupon clips or redemptions." <C id="deal-and-coupon-fees-21"/> <C id="deal-and-coupon-fees-19"/> Its TotalAmount is "the FeeComponent value plus the ChargeComponent value." <C id="deal-and-coupon-fees-20"/> Giving each coupon a distinct description makes those records easy to tie back to a campaign.
+
+## Price discounts
+
+Price discounts are time-bound campaigns that offer a lower price "for up to 30 days on a limited number of units," either to Prime customers or to all customers. <C id="deal-and-coupon-fees-14"/> They must be submitted for validation; discounts with a validated reference price appear with a strike-through price. <C id="deal-and-coupon-fees-15"/> The public guide lists no fee for them.
+
+## Can the promotion pay for itself?
+
+Because the fee amounts sit in Seller Central, the useful pre-check is how much fee per unit you can absorb. The method below needs only your own numbers; enter Amazon's current fee once you see it.
+
+<Callout type="example" title="Worked example (hypothetical): coupon headroom">
+Inputs: price $40.00; profit per unit before the promotion $12.00 (after product cost, referral and fulfillment fees); a $5.00 money-off coupon. Profit per redeemed unit before the coupon fee = $12.00 − $5.00 = $7.00. That $7.00 is the most that total coupon fees, divided by the number of redeemed units, can reach before each coupon sale stops earning. If the coupon also lifts sales of non-coupon units, count that separately — this check covers only the redeemed units.
+</Callout>
+
+| Discount on a $40 item | Profit left before fee (from $12) | Fee headroom per redeemed unit |
+|---|---|---|
+| $2 off (5%) | $10.00 | $10.00 |
+| $4 off (10%) | $8.00 | $8.00 |
+| $6 off (15%) | $6.00 | $6.00 |
+| $8 off (20%) | $4.00 | $4.00 |
+
+*Hypothetical inputs; arithmetic is ours. Compare the headroom with the current fee shown in Seller Central.* <C id="deal-and-coupon-fees-10"/>
+
+For deals, apply the same idea to the whole event: total deal fee ÷ expected extra units = fee per extra unit, which must be below the profit each extra unit earns at the deal price.
+
+<Decision title="Which tool to check first" rows={[
+  {if:"You want a short, high-visibility spike and have a four-star rating", then:"Lightning Deal (4–12 hours) — confirm the deal fee in Seller Central", claim:"deal-and-coupon-fees-02"},
+  {if:"You want a multi-day event discount without a code", then:"Best Deal — runs a select number of days", claim:"deal-and-coupon-fees-03"},
+  {if:"You want a cost that scales only with use, and your rating is 3.5 stars or more", then:"Coupon — redemption cost per use, up to 90 days", claim:"deal-and-coupon-fees-10"},
+  {if:"You want a lower price for up to 30 days without a deal badge", then:"Price discount — submit for validation", claim:"deal-and-coupon-fees-14"}
+]} />
+
+<Checklist title="Before you create a deal or coupon" items={[
+  "Confirm your overall rating: four stars for deals, 3.5 for coupons",
+  "Look up the current fee in Seller Central and note the amount",
+  "Work out fee headroom per unit from your own margin",
+  "Set a redemption limit per customer on coupons",
+  "Give each coupon a distinct description for settlement matching",
+  "After it ends, reconcile SellerDealPaymentEvent or CouponPaymentEvent records"
+]} />
+
+The fee schedule is Amazon's to set and change; this page explains the public framework and does not replace the figures shown in your account.
+
+## How to confirm the current fees
+
+Fee amounts for deals and coupons are published in Seller Central, which is the only place to confirm them before submitting. Eligibility, durations and the coupon redemption-cost rule are on Amazon's [Guide to running Amazon seller promotions, coupons, and deals](https://sell.amazon.com/blog/seller-promotions). The settlement record formats are in the [Selling Partner API Finances model](https://github.com/amzn/selling-partner-api-models/blob/main/models/finances-api-model/financesV0.json). For event timing in Q4, see [Q4 2026 deal dates](/guides/q4-deal-deadlines-2026/).
