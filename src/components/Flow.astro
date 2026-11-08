@@ -1,0 +1,9 @@
+---
+import Cite from './Cite.astro';
+const { title, steps = [], claim } = Astro.props as { title: string; steps: { t: string; d?: string }[]; claim?: string };
+---
+<figure class="figure">
+  <figcaption class="figure-title">{title}</figcaption>
+  <ol class="flow">{steps.map((s) => <li><b>{s.t}</b>{s.d && <span>{s.d}</span>}</li>)}</ol>
+  {claim ? <Cite id={claim} /> : <p class="figure-source">Diagram: FBA Tactics, summarizing the steps described on this page.</p>}
+</figure>

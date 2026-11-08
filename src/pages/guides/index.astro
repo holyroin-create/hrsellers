@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CATS } from '../../lib/data';
+import { fmtDate } from '../../lib/claims';
+const guides = (await getCollection('guides', (e) => !e.data.draft)).sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<Base title="Guides" description="Every guide on FBA Tactics, grouped by topic: US import and customs rules, marketplace fees, product compliance, and operations and accounting.">
+  <div class="wrap">
+    <Breadcrumbs trail={[{ label: 'Guides', href: '/guides/' }]} />
+    <header class="index-head"><p class="eyebrow">Library</p><h1>Guides</h1>
+      <p class="lede">{guides.length} guides. Each one is built from the regulation, notice or platform page that sets the rule, and lists those sources at the end.</p></header>
+    {CATS.map((cat) => { const list = guides.filter((g) => g.data.category === cat.name); return list.length ? (
+      <section id={cat.id} aria-labelledby={`g-${cat.id}`} style="scroll-margin-top:1rem">
+        <h2 id={`g-${cat.id}`}>{cat.name}</h2><p class="meta">{cat.d}</p>
+        <ul class="rows">{list.map((g) => (
+          <li><p class="meta">Verified<br />{fmtDate(g.data.lastVerified)}</p>
+            <div><h3><a href={`/guides/${g.id}/`}>{g.data.title}</a></h3><p>{g.data.description}</p></div></li>))}</ul>
+      </section>) : null; })}
+  </div>
+</Base>

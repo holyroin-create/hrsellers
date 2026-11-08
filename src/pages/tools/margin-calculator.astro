@@ -1,0 +1,59 @@
+---
+import Tool from '../../layouts/Tool.astro';
+import fs from 'node:fs';
+import { allClaims } from '../../lib/claims';
+const claims = allClaims();
+const presets = (fs.existsSync('data/fee-presets.json') ? JSON.parse(fs.readFileSync('data/fee-presets.json', 'utf8')) : [])
+  .filter((p: any) => claims.get(p.claim_id)?.status === 'verified');
+const cites = [...new Set(presets.map((p: any) => p.claim_id))] as string[];
+---
+<Tool title="Margin calculator" description="Net profit, margin and return per unit after a marketplace referral or transaction fee, with fee presets taken from each platform's published fee page." lede="Price in, fees out, and what is left per unit. Pick a fee preset from a platform's published schedule or type your own rate." cites={cites}>
+  <form slot="calc" class="calc" id="mc" onsubmit="this.dispatchEvent(new Event('input'));return false">
+    <fieldset><legend>Inputs</legend>
+      <div class="field"><label for="preset">Fee preset</label><select id="preset">
+        <option value="" data-rate="15" data-min="0">Custom — type a rate below</option>
+        {presets.map((p: any, i: number) => <option value={String(i)} data-rate={p.rate_pct} data-min={p.min_fee_usd ?? 0}>{p.marketplace} — {p.category} ({p.rate_pct}%{p.min_fee_usd ? `, min $${p.min_fee_usd}` : ''})</option>)}
+      </select><span class="hint">Presets cover the simple flat-rate cases. Tiered categories are described on the <a href="/marketplaces/">fee reference pages</a>.</span></div>
+      <div class="field"><label for="price">Selling price ($)</label><input id="price" type="number" min="0" step="0.01" value="25" /></div>
+      <div class="field"><label for="rate">Referral / transaction fee (%)</label><input id="rate" type="number" min="0" step="0.1" value="15" /></div>
+      <div class="field"><label for="minfee">Minimum fee per unit ($)</label><input id="minfee" type="number" min="0" step="0.01" value="0" /></div>
+      <div class="field"><label for="fixed">Other per-unit platform fees ($) <span class="hint">Fulfillment, per-order or listing fees from the platform's fee page</span></label><input id="fixed" type="number" min="0" step="0.01" value="4" /></div>
+      <div class="field"><label for="cogs">Landed cost per unit ($)</label><input id="cogs" type="number" min="0" step="0.01" value="7" /></div>
+      <div class="field"><label for="ads">Advertising per unit ($)</label><input id="ads" type="number" min="0" step="0.01" value="2" /></div>
+      <button class="btn btn-tag" type="submit">Calculate</button>
+    </fieldset>
+    <fieldset aria-live="polite"><legend>Result</legend>
+      <div class="out"><span>Percentage fee</span><span class="v" id="o-fee">—</span></div>
+      <div class="out"><span>Total platform fees</span><span class="v" id="o-tf">—</span></div>
+      <div class="out big"><span>Net profit per unit</span><span class="v" id="o-net">—</span></div>
+      <div class="out"><span>Net margin</span><span class="v" id="o-mar">—</span></div>
+      <div class="out"><span>Return on landed cost</span><span class="v" id="o-roi">—</span></div>
+      <div class="out"><span>Break-even price</span><span class="v" id="o-be">—</span></div>
+      <p class="verdict" id="o-v"></p>
+    </fieldset>
+  </form>
+  <h2>Formulas</h2>
+  <ul>
+    <li>Percentage fee = the greater of (price × rate) and the minimum fee.</li>
+    <li>Net profit = price − percentage fee − other platform fees − landed cost − advertising.</li>
+    <li>Net margin = net profit ÷ price. Return on landed cost = net profit ÷ landed cost.</li>
+    <li>Break-even price = (other fees + landed cost + advertising) ÷ (1 − rate), checked against the minimum fee.</li>
+  </ul>
+  <h2>What the presets are, and are not</h2>
+  <p>Each preset is a single category rate copied from the platform's public fee page on the date shown in the sources list. Platforms charge some fees on the total including shipping and gift wrap, use tiered rates in some categories, and add fees that depend on size, weight or program. Enter those yourself in "other per-unit platform fees" from the platform's current schedule. Sales tax collected by the marketplace is not your revenue and is excluded.</p>
+  <script>
+    const el = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const $m = (n: number) => (n < 0 ? '−$' : '$') + Math.abs(n).toFixed(2);
+    el('preset').addEventListener('change', () => { const o = (el('preset') as unknown as HTMLSelectElement).selectedOptions[0]; if (o.value !== '') { el('rate').value = o.dataset.rate!; el('minfee').value = o.dataset.min!; } run(); });
+    function run() {
+      const P = +el('price').value, r = +el('rate').value / 100, mn = +el('minfee').value, F = +el('fixed').value, C = +el('cogs').value, A = +el('ads').value;
+      const fee = Math.max(P * r, mn), net = P - fee - F - C - A;
+      let be = r < 1 ? (F + C + A) / (1 - r) : Infinity; if (be * r < mn) be = F + C + A + mn;
+      el('o-fee').textContent = $m(fee); el('o-tf').textContent = $m(fee + F); el('o-net').textContent = $m(net);
+      el('o-mar').textContent = P ? ((net / P) * 100).toFixed(1) + '%' : '—'; el('o-roi').textContent = C ? ((net / C) * 100).toFixed(1) + '%' : '—';
+      el('o-be').textContent = isFinite(be) ? $m(be) : '—';
+      el('o-v').textContent = net < 0 ? 'This unit loses money at these inputs.' : `Each unit keeps ${$m(net)} after every cost entered.`;
+    }
+    document.getElementById('mc')!.addEventListener('input', run); run();
+  </script>
+</Tool>

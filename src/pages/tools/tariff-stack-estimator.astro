@@ -1,0 +1,56 @@
+---
+import Tool from '../../layouts/Tool.astro';
+import fs from 'node:fs';
+import { allClaims , citeNum } from '../../lib/claims';
+const claims = allClaims();
+const rates = fs.existsSync('data/tool-rates.json') ? JSON.parse(fs.readFileSync('data/tool-rates.json', 'utf8')) : null;
+const ok = rates && ['mpf_rate_claim', 'mpf_min_claim', 'mpf_max_claim', 'hmf_rate_claim'].every((k) => claims.get(rates[k])?.status === 'verified');
+const extra = ((rates && rates.extra_claims) || []).filter((i: string) => claims.get(i)?.status === 'verified');
+const cites = ok ? [...new Set([rates.mpf_rate_claim, rates.mpf_min_claim, rates.mpf_max_claim, rates.hmf_rate_claim, ...extra])] : [];
+const R = ok ? rates : { mpf_rate_pct: 0, mpf_min: 0, mpf_max: 0, hmf_rate_pct: 0, mpf_period: '' };
+---
+<Tool title="Duty and entry fee estimator" description="Estimate duty, additional duties, the Merchandise Processing Fee and the Harbor Maintenance Fee on one formal US entry, with fee rates taken from the regulations and current Federal Register notices." lede="Customs value in, every ad valorem charge out. You supply the duty rates for your classification; the fee rates come from the cited federal sources." cites={cites}>
+  <form slot="calc" class="calc" id="ts" onsubmit="this.dispatchEvent(new Event('input'));return false" data-mpf={R.mpf_rate_pct} data-min={R.mpf_min} data-max={R.mpf_max} data-hmf={R.hmf_rate_pct}>
+    <fieldset><legend>Entry</legend>
+      <div class="field"><label for="val">Customs (entered) value ($)</label><input id="val" type="number" min="0" step="0.01" value="20000" /></div>
+      <div class="field"><label for="gen">General duty rate (%) <span class="hint">From the HTSUS line for your goods</span></label><input id="gen" type="number" min="0" step="0.1" value="5" /></div>
+      <div class="field"><label for="add">Additional duties (%) <span class="hint">Sum of any additional duties that apply to your goods and origin (enter 0 if none)</span></label><input id="add" type="number" min="0" step="0.1" value="0" /></div>
+      <div class="field"><label for="ocean"><input id="ocean" type="checkbox" checked style="width:auto;display:inline" /> Arrived by vessel (Harbor Maintenance Fee applies at a port subject to it)</label></div>
+      <button class="btn btn-tag" type="submit">Calculate</button>
+    </fieldset>
+    <fieldset aria-live="polite"><legend>Result</legend>
+      <div class="out"><span>General duty</span><span class="v" id="o-g">—</span></div>
+      <div class="out"><span>Additional duties</span><span class="v" id="o-a">—</span></div>
+      <div class="out"><span>Merchandise Processing Fee</span><span class="v" id="o-m">—</span></div>
+      <div class="out"><span>Harbor Maintenance Fee</span><span class="v" id="o-h">—</span></div>
+      <div class="out big"><span>Total</span><span class="v" id="o-t">—</span></div>
+      <div class="out"><span>As % of value</span><span class="v" id="o-p">—</span></div>
+    </fieldset>
+  </form>
+  {ok ? <p class="meta">Fee rates used: MPF {R.mpf_rate_pct}% of value, minimum ${R.mpf_min}, maximum ${R.mpf_max}{R.mpf_period && ` (${R.mpf_period})`}; HMF {R.hmf_rate_pct}% of value. See sources below.</p>
+      : <p class="meta">Fee rates are pending verification; the MPF and HMF lines show $0 until they are confirmed.</p>}
+  <h2>Formulas</h2>
+  <ul>
+    <li>General duty = value × the HTSUS rate you enter.</li>
+    <li>Additional duties = value × the sum you enter. Additional duty programs apply by classification and country of origin; check each against its Federal Register notice. See <a href="/guides/tariff-stack-2026/">how duties stack on one entry</a>.</li>
+    <li>MPF = value × MPF rate, raised to the minimum or capped at the maximum.</li>
+    <li>HMF = value × HMF rate, for cargo unloaded at ports where it applies.</li>
+  </ul>
+  <h2>Limits</h2>
+  {extra.length === 2 && <p>Low-value shipments entered informally are treated differently: the Harbor Maintenance Fee is not assessed on cargo that would be entitled to informal entry <sup class="cite"><a href={`#src-${extra[0]}`}>[{citeNum(cites, extra[0])}]</a></sup>, and for fiscal year 2027 the MPF on an automated informal entry not prepared by CBP personnel is $2.77 <sup class="cite"><a href={`#src-${extra[1]}`}>[{citeNum(cites, extra[1])}]</a></sup>. See <a href="/guides/entry-type-11-vs-01/">informal versus formal entry</a>.</p>}
+  <p>This models a formal entry with ad valorem rates only. Specific and compound duty rates (per kilogram, per item), antidumping or countervailing duty cash deposits, and informal-entry fees are not modeled. The figure is an estimate for planning; the amount owed is what Customs assesses at liquidation.</p>
+  <script>
+    const f = document.getElementById('ts') as HTMLFormElement; const d = f.dataset;
+    const n = (id: string) => +(document.getElementById(id) as HTMLInputElement).value;
+    const $m = (x: number) => '$' + x.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    function run() {
+      const V = n('val'), g = (V * n('gen')) / 100, a = (V * n('add')) / 100;
+      let m = (V * +d.mpf!) / 100; if (+d.mpf! > 0) m = Math.min(Math.max(m, +d.min!), +d.max!);
+      const h = (document.getElementById('ocean') as HTMLInputElement).checked ? (V * +d.hmf!) / 100 : 0, t = g + a + m + h;
+      const s = (id: string, x: number) => (document.getElementById(id)!.textContent = $m(x));
+      s('o-g', g); s('o-a', a); s('o-m', m); s('o-h', h); s('o-t', t);
+      document.getElementById('o-p')!.textContent = V ? ((t / V) * 100).toFixed(2) + '%' : '—';
+    }
+    f.addEventListener('input', run); run();
+  </script>
+</Tool>

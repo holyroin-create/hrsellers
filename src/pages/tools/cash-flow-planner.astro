@@ -1,0 +1,49 @@
+---
+import Tool from '../../layouts/Tool.astro';
+---
+<Tool title="Inventory cash flow planner" description="See the month-by-month cash position of one inventory purchase: deposit, balance, transit, sell-through and payout lag, all from numbers you enter." lede="One purchase order, followed month by month from the deposit you pay the supplier to the payouts that bring the money back.">
+  <form slot="calc" class="calc" id="cf" onsubmit="this.dispatchEvent(new Event('input'));return false">
+    <fieldset><legend>Purchase and sales</legend>
+      <div class="field"><label for="units">Units ordered</label><input id="units" type="number" min="1" value="1000" /></div>
+      <div class="field"><label for="cost">Landed cost per unit ($) <span class="hint">Product, freight, duty and entry fees</span></label><input id="cost" type="number" min="0" step="0.01" value="6" /></div>
+      <div class="field"><label for="dep">Deposit at order (%)</label><input id="dep" type="number" min="0" max="100" value="30" /></div>
+      <div class="field"><label for="bal">Balance paid in month</label><input id="bal" type="number" min="0" max="12" value="2" /><span class="hint">Months after the order month (0 = same month)</span></div>
+      <div class="field"><label for="live">First sales in month</label><input id="live" type="number" min="0" max="18" value="3" /></div>
+      <div class="field"><label for="rate">Units sold per month</label><input id="rate" type="number" min="1" value="200" /></div>
+      <div class="field"><label for="net">Net received per unit sold ($) <span class="hint">Price minus all platform fees and ad cost</span></label><input id="net" type="number" min="0" step="0.01" value="11" /></div>
+      <div class="field"><label for="lag">Payout lag (months)</label><input id="lag" type="number" min="0" max="3" value="1" /></div>
+      <button class="btn btn-tag" type="submit">Calculate</button>
+    </fieldset>
+    <fieldset aria-live="polite"><legend>Result</legend>
+      <div class="out big"><span>Lowest cumulative cash</span><span class="v" id="o-min">—</span></div>
+      <div class="out"><span>Month cash turns positive</span><span class="v" id="o-be">—</span></div>
+      <div class="out"><span>Total profit when sold out</span><span class="v" id="o-tot">—</span></div>
+      <table class="data" id="o-tab"><thead><tr><th>Month</th><th>Out</th><th>In</th><th>Cumulative</th></tr></thead><tbody></tbody></table>
+    </fieldset>
+  </form>
+  <h2>What the planner models</h2>
+  <p>The order month is month 0. The deposit percentage of the total landed cost leaves in month 0 and the balance leaves in the month you set. Sales start in the month you set and continue at a flat rate until the units run out. Money from a month’s sales arrives after the payout lag. The lowest point of the cumulative line is the cash you need available to carry this order; the month it crosses zero is when the order has paid for itself.</p>
+  <h2>What it leaves out</h2>
+  <p>Real sell-through is uneven, platforms hold reserves on some accounts, and storage or ad costs may rise while stock waits. Put those into the net-per-unit figure or run the planner twice with pessimistic and optimistic inputs. The planner assumes one purchase; reorders overlap and need their own run.</p>
+  <script>
+    const v = (id: string) => +(document.getElementById(id) as HTMLInputElement).value;
+    const money = (n: number) => (n < 0 ? '−$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-US');
+    function run() {
+      const U = v('units'), C = v('cost'), dep = v('dep') / 100, bal = v('bal'), live = v('live'), R = v('rate'), N = v('net'), lag = v('lag');
+      const total = U * C, months = Math.min(60, live + Math.ceil(U / R) + lag + 1);
+      let cum = 0, min = 0, be = -1; const rows: string[] = []; let left = U;
+      for (let m = 0; m <= months; m++) {
+        let out = 0, inn = 0;
+        if (m === 0) out += total * dep; if (m === bal) out += total * (1 - dep);
+        const sm = m - lag; if (sm >= live) { const sold = Math.min(R, Math.max(0, U - R * (sm - live))); inn = sold * N; }
+        cum += inn - out; if (cum < min) min = cum; if (be < 0 && m > 0 && cum >= 0 && inn > 0) be = m;
+        rows.push(`<tr><td>${m}</td><td>${out ? money(-out) : '—'}</td><td>${inn ? money(inn) : '—'}</td><td>${money(cum)}</td></tr>`);
+      }
+      document.getElementById('o-min')!.textContent = money(min);
+      document.getElementById('o-be')!.textContent = be >= 0 ? `Month ${be}` : 'Not within plan';
+      document.getElementById('o-tot')!.textContent = money(U * N - total);
+      document.querySelector('#o-tab tbody')!.innerHTML = rows.join('');
+    }
+    document.getElementById('cf')!.addEventListener('input', run); run();
+  </script>
+</Tool>

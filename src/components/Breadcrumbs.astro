@@ -1,0 +1,10 @@
+---
+import { SITE } from '../lib/site';
+interface Props { trail: { label: string; href: string }[] }
+const trail = [{ label: 'Home', href: '/' }, ...Astro.props.trail];
+const ld = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: trail.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.label, item: new URL(t.href, SITE.domain).href })) };
+---
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+  {trail.map((t, i) => <li>{i === trail.length - 1 ? <span aria-current="page">{t.label}</span> : <a href={t.href}>{t.label}</a>}</li>)}
+</ol></nav>
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />

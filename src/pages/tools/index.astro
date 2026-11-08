@@ -1,0 +1,15 @@
+---
+import Page from '../../layouts/Page.astro';
+const tools = [
+  ['/tools/margin-calculator/', 'Margin calculator', 'Net profit and margin per unit after a marketplace referral or transaction fee, with presets taken from each platform’s fee page.'],
+  ['/tools/tariff-stack-estimator/', 'Duty and entry fee estimator', 'Ad valorem duty, additional duties you enter, the Merchandise Processing Fee and the Harbor Maintenance Fee on one formal entry.'],
+  ['/tools/dimensional-weight/', 'Dimensional weight checker', 'Compares actual and dimensional weight using the divisor in your carrier’s rate guide, and shows which one you would be billed on.'],
+  ['/tools/cash-flow-planner/', 'Inventory cash flow planner', 'Month-by-month cash position from a purchase order, transit time, sell-through and payout lag that you enter.'],
+  ['/tools/ppc-budget-calculator/', 'Ad budget and break-even ACoS', 'Daily budget from target clicks and cost per click, and the advertising cost of sale at which a unit stops making money.'],
+];
+---
+<Page title="Calculators" eyebrow="Tools" description="Free browser-based calculators for marketplace sellers: margin after fees, import duty and entry fees, dimensional weight, inventory cash flow, and ad break-even." lede="Each calculator shows the formula it uses. Platform and government rates come from cited primary sources; everything else is your input.">
+  <p>The calculators are built for the decisions this site's guides describe: whether a product still makes money after a platform's fees, what an entry will cost in duty and federal fees before the goods arrive, whether a box size is costing you on carrier rates, how long cash stays tied up in a purchase order, and where advertising stops paying. They run in your browser, keep nothing you type, and print cleanly if you want a record.</p>
+  <p>Where a calculator uses a rate published by a platform or an agency — a referral fee, the Merchandise Processing Fee — the rate is listed with its source and the date it was checked, and the calculator page links to it. Where no single published figure applies to everyone, such as a carrier's dimensional divisor, the field is left for you to fill in from your own contract.</p>
+  <ul class="rows">{tools.map(([h, t, d]) => <li><p class="meta">Calculator</p><div><h3><a href={h}>{t}</a></h3><p>{d}</p></div></li>)}</ul>
+</Page>

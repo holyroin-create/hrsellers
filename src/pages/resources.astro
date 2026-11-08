@@ -1,0 +1,16 @@
+---
+import Page from '../layouts/Page.astro';
+import { allClaims, hostOf } from '../lib/claims';
+const verified = [...allClaims().values()].filter((c) => c.status === 'verified');
+const byPub = new Map<string, Map<string, number>>();
+for (const c of verified) { const m = byPub.get(c.publisher) || new Map(); m.set(c.source_url, (m.get(c.source_url) || 0) + 1); byPub.set(c.publisher, m); }
+const pubs = [...byPub.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+---
+<Page title="Primary source directory" eyebrow="Reference" description="Every official document this site cites — regulations, Federal Register notices, IRS publications and marketplace fee pages — grouped by publisher, so you can go straight to the source." lede="The documents behind every figure on this site, grouped by who publishes them. Bookmark the ones that govern your business; they change before summaries do.">
+  <h2>How to use these sources</h2>
+  <p>The <strong>eCFR</strong> carries the regulations; the <strong>Federal Register</strong> carries new rules and notices. Check the date shown on each document before relying on it. Marketplace fee pages are the platforms' own published schedules and can change without notice.</p>
+  {pubs.map(([pub, urls]) => (
+    <><h2 style="font-size:1.2rem">{pub}</h2>
+    <ul>{[...urls.entries()].map(([u, n]) => <li><a href={u} rel="noopener">{u.replace(/^https?:\/\/(www\.)?/, '').slice(0, 90)}</a> <span class="meta">— cited {n}×</span></li>)}</ul></>
+  ))}
+</Page>

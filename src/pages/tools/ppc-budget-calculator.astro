@@ -1,0 +1,48 @@
+---
+import Tool from '../../layouts/Tool.astro';
+---
+<Tool title="Ad budget and break-even ACoS" description="Work out a daily ad budget from target clicks and cost per click, and the advertising cost of sale (ACoS) at which each ad-driven sale stops making money." lede="Two questions every seller running sponsored ads should answer before setting a budget: what will this cost per day, and at what ACoS does a sale stop paying for itself?">
+  <form slot="calc" class="calc" id="pp" onsubmit="this.dispatchEvent(new Event('input'));return false">
+    <fieldset><legend>Your numbers</legend>
+      <div class="field"><label for="price">Selling price ($)</label><input id="price" type="number" min="0" step="0.01" value="25" /></div>
+      <div class="field"><label for="profit">Profit per unit before advertising ($) <span class="hint">Price minus product, shipping and platform fees</span></label><input id="profit" type="number" step="0.01" value="7" /></div>
+      <div class="field"><label for="cpc">Average cost per click ($)</label><input id="cpc" type="number" min="0" step="0.01" value="0.9" /></div>
+      <div class="field"><label for="cvr">Conversion rate (%) <span class="hint">Orders ÷ clicks, from your own ad reports</span></label><input id="cvr" type="number" min="0" step="0.1" value="10" /></div>
+      <div class="field"><label for="clicks">Target clicks per day</label><input id="clicks" type="number" min="0" value="40" /></div>
+      <button class="btn btn-tag" type="submit">Calculate</button>
+    </fieldset>
+    <fieldset aria-live="polite"><legend>Result</legend>
+      <div class="out big"><span>Break-even ACoS</span><span class="v" id="o-be">—</span></div>
+      <div class="out"><span>Daily budget</span><span class="v" id="o-bud">—</span></div>
+      <div class="out"><span>Expected orders per day</span><span class="v" id="o-ord">—</span></div>
+      <div class="out"><span>Ad cost per order</span><span class="v" id="o-cpo">—</span></div>
+      <div class="out"><span>Expected ACoS</span><span class="v" id="o-acos">—</span></div>
+      <div class="out"><span>Profit per day after ads</span><span class="v" id="o-pd">—</span></div>
+      <p class="verdict" id="o-v"></p>
+    </fieldset>
+  </form>
+  <h2>Formulas</h2>
+  <ul>
+    <li>Daily budget = target clicks × cost per click.</li>
+    <li>Orders per day = clicks × conversion rate.</li>
+    <li>Ad cost per order = cost per click ÷ conversion rate.</li>
+    <li>ACoS = ad spend ÷ ad-attributed sales = ad cost per order ÷ price.</li>
+    <li>Break-even ACoS = profit per unit before advertising ÷ price. Above it, each ad-attributed sale loses money.</li>
+  </ul>
+  <h2>Using it well</h2>
+  <p>Take cost per click and conversion rate from your own campaign reports over a period long enough to include several dozen orders; a few days of data swings widely. Break-even ACoS is a ceiling, not a target — a campaign run at exactly that level adds sales and no profit. Sales that ads bring in may also lift organic ranking, which this calculator cannot measure; decide for yourself how much that is worth before accepting an ACoS above break-even.</p>
+  <script>
+    const v = (id: string) => +(document.getElementById(id) as HTMLInputElement).value;
+    const set = (id: string, t: string) => (document.getElementById(id)!.textContent = t);
+    const $m = (n: number) => (n < 0 ? '−$' : '$') + Math.abs(n).toFixed(2);
+    function run() {
+      const P = v('price'), pr = v('profit'), cpc = v('cpc'), cvr = v('cvr') / 100, cl = v('clicks');
+      const be = P ? pr / P : 0, bud = cl * cpc, ord = cl * cvr, cpo = cvr ? cpc / cvr : Infinity, acos = P ? cpo / P : 0;
+      set('o-be', P ? (be * 100).toFixed(1) + '%' : '—'); set('o-bud', $m(bud)); set('o-ord', ord.toFixed(1));
+      set('o-cpo', isFinite(cpo) ? $m(cpo) : '—'); set('o-acos', isFinite(acos) ? (acos * 100).toFixed(1) + '%' : '—');
+      set('o-pd', isFinite(cpo) ? $m(ord * (pr - cpo)) : '—');
+      set('o-v', !isFinite(cpo) ? 'Enter a conversion rate above zero.' : acos > be ? 'At these inputs, each ad-attributed sale costs more in ads than it earns.' : 'At these inputs, ad-attributed sales remain profitable.');
+    }
+    document.getElementById('pp')!.addEventListener('input', run); run();
+  </script>
+</Tool>

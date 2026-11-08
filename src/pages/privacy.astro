@@ -1,0 +1,37 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE, ADS_ON } from '../lib/site';
+const updated = 'November 8, 2026';
+---
+<Page title="Privacy policy" eyebrow="Legal" description="What data FBA Tactics and its service providers collect when you visit, how advertising cookies work, consent for visitors in the EEA, UK and Switzerland, and your choices." updated={updated} lede="This site has no accounts, no comments, no forms that send data to us, no newsletter and no analytics. The site search runs entirely in your browser. What it collects is limited to what its hosting and, when enabled, its advertising provider collect.">
+  <h2>Who is responsible</h2>
+  <p>{SITE.publisherName}, publisher of fbatactics.com{SITE.publisherLegalAddress && <>, {SITE.publisherLegalAddress}</>}. Contact: <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
+  <h2>Hosting</h2>
+  <p>The site is a set of static files served by GitHub Pages, operated by GitHub, Inc. When you request a page, GitHub's servers receive technical data such as your IP address, browser user agent and the page requested, and GitHub may log it for security and operation of the service. We do not receive or use those logs. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub General Privacy Statement</a>.</p>
+  <h2>Advertising (Google AdSense)</h2>
+  {ADS_ON
+    ? <p>This site shows ads served by Google through Google AdSense.</p>
+    : <p>This site has applied to show ads served by Google through Google AdSense. <strong>At the time of this version, no advertising code runs on the site.</strong> The section below describes what will apply once ads are switched on; this page will be updated on that date.</p>}
+  <ul>
+    <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites.</li>
+    <li>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.</li>
+    <li>You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" rel="noopener">Ads Settings</a>, or opt out of some third-party vendors' use of cookies for personalized advertising at <a href="https://www.aboutads.info/choices/" rel="noopener">www.aboutads.info</a>.</li>
+    <li>When ads are served, Google and its partners may place or read cookies, use web beacons, and receive your IP address and device identifiers.</li>
+    <li>Third-party vendors other than Google that may serve or measure ads are named in the consent message shown in the EEA, UK and Switzerland, and listed in Google's <a href="https://support.google.com/admanager/answer/9012903" rel="noopener">ad technology partners</a> list.</li>
+    <li>How Google uses information from sites that use its services: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a>.</li>
+  </ul>
+  <h2>Visitors in the EEA, the UK and Switzerland</h2>
+  <p>Before any advertising cookies are set or personal data is used for ads, visitors from these regions are shown a consent message from Google's certified consent management platform (configured in AdSense "Privacy &amp; messaging"). You can accept, decline, or choose options, and change your choice later through the "Privacy and cookie settings" link that appears on the page once the message is active. If you decline, Google may still serve non-personalized or limited ads as its policies allow.</p>
+  <h2>California and other US state privacy laws</h2>
+  <p>We do not sell personal information for money and hold no customer database. Advertising cookies placed by Google may count as "sharing" for cross-context behavioral advertising under some state laws; you can limit personalized advertising through the Ads Settings and aboutads.info links above, or by blocking third-party cookies in your browser.</p>
+  <h2>Cookies and local storage set by this site itself</h2>
+  <p>None. The calculators and the knowledge check run in your browser and do not store or send what you enter. See the <a href="/cookie-policy/">cookie policy</a>.</p>
+  <h2>Email</h2>
+  <p>If you email us, we receive your address and message and use them only to reply or correct the site. We delete correspondence within 24 months unless it documents a correction.</p>
+  <h2>Children</h2>
+  <p>The site is written for business sellers and is not directed at children under 13.</p>
+  <h2>Your rights</h2>
+  <p>Depending on where you live you may have rights to access, correct, delete or object to processing of your personal data. Because the site holds no personal data apart from email correspondence, requests about emails go to <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>; requests about hosting logs or advertising data go to GitHub and Google through the links above.</p>
+  <h2>Changes</h2>
+  <p>We update this page when the site's data practices change — for example, on the day advertising is switched on — and change the date at the top.</p>
+</Page>

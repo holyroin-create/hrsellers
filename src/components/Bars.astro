@@ -1,0 +1,30 @@
+---
+import { claim as getClaim , citeNum } from '../lib/claims';
+const { title, unit = '', rows = [] } = Astro.props as { title: string; unit?: string; rows: { label: string; value: number; claim?: string; display?: string }[] };
+rows.forEach((r) => r.claim && getClaim(r.claim));
+const order: string[] = (Astro.locals as any).citeOrder || [];
+const max = Math.max(...rows.map((r) => r.value), 0) || 1;
+const W = 640, rowH = 38, labelW = 210, H = rows.length * rowH + 10;
+const fmt = (r: any) => r.display ?? (unit === '$' ? `$${r.value.toLocaleString('en-US')}` : `${r.value.toLocaleString('en-US')}${unit}`);
+const colors = ['var(--data-1)', 'var(--data-2)', 'var(--data-3)'];
+const cites = [...new Set(rows.map((r) => r.claim).filter(Boolean))] as string[];
+---
+<figure class="figure bars">
+  <figcaption class="figure-title">{title}</figcaption>
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}. ${rows.map((r) => `${r.label}: ${fmt(r)}`).join('; ')}`}>
+    {rows.map((r, i) => {
+      const w = Math.max(2, ((W - labelW - 90) * r.value) / max);
+      const y = i * rowH + 6;
+      return (<g>
+        <text x={labelW - 10} y={y + 20} text-anchor="end" font-size="13" fill="#3d4a57">{r.label.length > 30 ? r.label.slice(0, 29) + '…' : r.label}</text>
+        <rect x={labelW} y={y + 4} width={w} height="22" fill={colors[i % 3]} />
+        <text x={labelW + w + 8} y={y + 20} font-size="13" fill="#15202b">{fmt(r)}</text>
+      </g>);
+    })}
+  </svg>
+  <details class="datatable"><summary>Show the data as a table</summary>
+    <table class="data"><thead><tr><th>Item</th><th>Value</th></tr></thead>
+      <tbody>{rows.map((r) => <tr><td>{r.label}</td><td>{fmt(r)}</td></tr>)}</tbody></table>
+  </details>
+  {cites.length > 0 && <p class="figure-source">Source{cites.length > 1 ? 's' : ''}: {cites.map((c) => <a href={`#src-${c}`}>[{citeNum(order, c)}]</a>)} · checked {getClaim(cites[0]).accessed}</p>}
+</figure>

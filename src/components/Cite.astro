@@ -1,0 +1,8 @@
+---
+/* Inline "Source:" line used under figures. */
+import { claim , citeNum } from '../lib/claims';
+const { id, label = 'Source' } = Astro.props as { id?: string; label?: string };
+const c = id ? claim(id) : null;
+const order: string[] = (Astro.locals as any).citeOrder || [];
+---
+{c && <p class="figure-source">{label}: {c.publisher}, checked {c.accessed}. <a href={`#src-${id}`}>[{citeNum(order, id!)}]</a></p>}

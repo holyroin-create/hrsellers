@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { fmtDate } from '../../lib/claims';
+const list = (await getCollection('marketplaces', (e) => !e.data.draft)).sort((a, b) => a.id.localeCompare(b.id));
+---
+<Base title="Fee reference by marketplace" description="Selling fees for Amazon, Walmart, eBay, Etsy and Shopify, taken from each platform's own fee pages, with the date each figure was checked.">
+  <div class="wrap">
+    <Breadcrumbs trail={[{ label: 'Fee reference', href: '/marketplaces/' }]} />
+    <header class="index-head"><p class="eyebrow">Reference</p><h1>Fee reference by marketplace</h1>
+      <p class="lede">One page per platform, built only from that platform's public fee pages. Where a platform publishes a fee only inside its seller dashboard, this site does not repeat it.</p></header>
+    <div class="prose" style="padding:1.5rem 0 0">
+      <p>Each page sets out the platform's selling fees as the platform publishes them — plan or subscription charges, the percentage taken on each sale, per-order and listing fees — and works them through on the same hypothetical $25 item so the totals can be compared. Fees that depend on size, weight or program enrollment are linked to the platform's own calculator or schedule rather than restated.</p>
+      <p>Platforms change fees with little notice. Every row carries the date it was checked, and the <a href="/policy-log/">policy log</a> records changes when the platform publishes them.</p>
+    </div>
+    <ul class="rows">{list.map((m) => (
+      <li><p class="meta">Verified<br />{fmtDate(m.data.lastVerified)}</p>
+        <div><h3><a href={`/marketplaces/${m.id}/`}>{m.data.title}</a></h3><p>{m.data.description}</p></div></li>))}</ul>
+    <p class="meta" style="margin-top:2rem">Comparing platforms? See <a href="/guides/ebay-etsy-for-amazon-sellers/">fees on five marketplaces for one $25 item</a>.</p>
+  </div>
+</Base>

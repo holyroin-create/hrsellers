@@ -1,0 +1,46 @@
+---
+import BrandMark from './BrandMark.astro';
+import { NAV } from '../lib/nav';
+const path = Astro.url.pathname;
+---
+<a class="skip" href="#main">Skip to content</a>
+<div class="utility"><div class="wrap">
+  <span>Marketplace fees and US import rules, read from the primary source</span>
+  <span><a href="/policy-log/">Policy log</a></span>
+</div></div>
+<header class="mast">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="FBA Tactics home">
+      <BrandMark />
+      <span><span class="brand-name">FBA Tactics</span><span class="brand-sub">fbatactics.com</span></span>
+    </a>
+    <button class="btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      {NAV.map((g) => (
+        <details>
+          <summary class={g.items.some((i) => path.startsWith(i.href.split('#')[0]) && i.href !== '/') ? 'active' : ''}>{g.label}</summary>
+          <div class="panel">
+            {g.items.map((i) => <a href={i.href}>{i.t}{i.d && <small>{i.d}</small>}</a>)}
+          </div>
+        </details>
+      ))}
+      <a class="btn btn-tag nav-cta" href="/tools/">Free calculators</a>
+    </nav>
+  </div>
+</header>
+<div class="searchbar"><div class="wrap">
+  <form action="/search/" method="get" role="search">
+    <label class="vh" for="q">Search the site</label>
+    <input id="q" name="q" type="search" placeholder="Search guides, fees, regulations" autocomplete="off" />
+    <button class="btn btn-tag" type="submit">Search</button>
+  </form>
+</div></div>
+<script>
+  const t = document.querySelector('.menu-toggle');
+  const n = document.getElementById('site-nav');
+  t?.addEventListener('click', () => { const o = n!.classList.toggle('open'); t.setAttribute('aria-expanded', String(o)); });
+  const ds = document.querySelectorAll('.nav details');
+  ds.forEach((d) => d.addEventListener('toggle', () => { if ((d as HTMLDetailsElement).open) ds.forEach((o) => { if (o !== d) (o as HTMLDetailsElement).open = false; }); }));
+  document.addEventListener('click', (e) => { if (!(e.target as Element).closest('.nav')) ds.forEach((d) => ((d as HTMLDetailsElement).open = false)); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') ds.forEach((d) => ((d as HTMLDetailsElement).open = false)); });
+</script>

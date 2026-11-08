@@ -1,0 +1,13 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE } from '../lib/site';
+---
+<Page title="Contact" eyebrow="Contact" description="How to contact the publisher of FBA Tactics to report an error, suggest a primary source, or ask about the site." lede="Email is the only contact channel. There is no contact form, so nothing you send passes through a third-party form service.">
+  <p><strong>Email:</strong> <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p>
+  <h2>Reporting an error</h2>
+  <p>Include the page address, the sentence or figure you believe is wrong, and — if you have it — the primary source that shows the correct value (a regulation, a Federal Register notice, or the platform's own fee page). Confirmed corrections are made and logged on the <a href="/corrections/">corrections page</a> with the date.</p>
+  <h2>What we cannot help with</h2>
+  <p>We cannot advise on your individual shipment, classification, account or tax position, and we do not sell services. For those, a licensed customs broker, a CBP binding ruling, or a tax professional are the right routes.</p>
+  <h2>Your email and your data</h2>
+  <p>Emails are read by the publisher and used only to answer you or fix the site. How long we keep them and your rights are set out in the <a href="/privacy/">privacy policy</a>.</p>
+</Page>

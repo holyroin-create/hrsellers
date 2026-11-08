@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, ADS_ON } from '../lib/site';
+interface Props { title: string; description: string; og?: string; noindex?: boolean; jsonld?: object[]; ads?: boolean; type?: string; noCanonical?: boolean; bareTitle?: boolean }
+const { title, description, og = '/og/default.png', noindex = false, jsonld = [], ads = false, type = 'website', noCanonical = false, bareTitle = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.domain).href;
+const fullTitle = Astro.url.pathname === '/' ? `${SITE.siteName} — ${title}` : bareTitle || title.length > 56 ? title : `${title} | ${SITE.siteName}`;
+const ogUrl = new URL(og, SITE.domain).href;
+const loadAds = ADS_ON && ads;
+---
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  {!noCanonical && <link rel="canonical" href={canonical} />}
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  <meta name="google-adsense-account" content={SITE.adsensePublisherId} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="FBA Tactics policy log" href="/rss.xml" />
+  <meta property="og:site_name" content={SITE.siteName} />
+  <meta property="og:type" content={type} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#15202b" />
+  <noscript><style>.nav{display:flex;position:static}.menu-toggle{display:none}</style></noscript>
+  {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+  {loadAds && <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsensePublisherId}`} crossorigin="anonymous"></script>}
+</head>
+<body>
+  <Header />
+  <main id="main"><slot /></main>
+  <Footer />
+</body>
+</html>

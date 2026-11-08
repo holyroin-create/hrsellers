@@ -1,0 +1,15 @@
+{
+  "mpf_rate_pct": 0.3464,
+  "mpf_min": 34.58,
+  "mpf_max": 670.86,
+  "hmf_rate_pct": 0.125,
+  "mpf_period": "FY2027, required as of October 1, 2026 (CBP Dec. 26-14)",
+  "mpf_rate_claim": "tool-tariff-stack-estimator-01",
+  "mpf_min_claim": "tool-tariff-stack-estimator-02",
+  "mpf_max_claim": "tool-tariff-stack-estimator-03",
+  "hmf_rate_claim": "tool-tariff-stack-estimator-04",
+  "extra_claims": [
+    "tool-tariff-stack-estimator-05",
+    "tool-tariff-stack-estimator-06"
+  ]
+}

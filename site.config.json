@@ -1,0 +1,18 @@
+{
+  "_comment": "Owner-supplied facts. Values below were taken from the previous site's repository (holyroin-create/hrsellers, src/config.ts). Nothing here was guessed. The release gate fails while ownerConfirmed is false or a required field is empty.",
+  "ownerConfirmed": false,
+  "siteName": "FBA Tactics",
+  "domain": "https://fbatactics.com",
+  "publisherName": "HR Express",
+  "publisherLegalAddress": "",
+  "contactEmail": "contact@fbatactics.com",
+  "editorName": "Muhammet Ali Türk",
+  "editorRole": "Editor",
+  "editorBio": "",
+  "foundedYear": "2026",
+  "adsensePublisherId": "ca-pub-9985150163567506",
+  "adsEnabled": false,
+  "googleCmpConfigured": false,
+  "adSlots": { "inArticle": "", "endOfArticle": "" },
+  "required": ["siteName", "domain", "publisherName", "contactEmail", "editorName", "adsensePublisherId"]
+}
