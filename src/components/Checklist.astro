@@ -1,9 +1,0 @@
----
-const { title, items = [] } = Astro.props as { title: string; items: string[] };
-const id = 'cl-' + title.toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40);
----
-<figure class="figure checklist" id={id}>
-  <figcaption class="figure-title">{title}</figcaption>
-  <ul>{items.map((it, i) => <li><input type="checkbox" id={`${id}-${i}`} /><label for={`${id}-${i}`} set:html={it.replace(/</g, '&lt;')} /></li>)}</ul>
-  <p class="print"><button class="btn" type="button" onclick="window.print()">Print this checklist</button> <span class="meta">Ticks are not saved or sent anywhere.</span></p>
-</figure>

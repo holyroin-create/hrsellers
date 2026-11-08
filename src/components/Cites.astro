@@ -1,6 +1,0 @@
----
-import { citeNum } from '../lib/claims';
-const { ids = [] } = Astro.props as { ids: string[] };
-const order: string[] = (Astro.locals as any).citeOrder || [];
----
-<sup class="cite">{ids.map((id) => <a href={`#src-${id}`} aria-label={`Source ${citeNum(order, id)}`}>[{citeNum(order, id)}]</a>)}</sup>

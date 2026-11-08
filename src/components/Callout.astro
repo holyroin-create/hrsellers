@@ -1,8 +1,0 @@
----
-const { type = 'note', title = '' } = Astro.props as { type?: 'note' | 'warning' | 'example'; title?: string };
-const fallback = { note: 'Note', warning: 'Watch for this', example: 'Worked example' }[type];
----
-<div class={`callout callout-${type}`} role="note">
-  <p class="callout-title">{title || fallback}</p>
-  <slot />
-</div>
