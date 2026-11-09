@@ -118,8 +118,14 @@ In Seller Central you list and price your own offers and pay published fees. Ama
 - **APIs.** The Selling Partner API "helps sellers and vendors access their data on orders, shipments, payments, inventory, and other business information." <C id="vendor-central-vs-seller-central-20"/>
 - **Brand Registry.** Amazon's Brand Registry FAQ notes that "If you have a Seller Central or Vendor Central account," you can use the same login to create a Brand Registry account. <C id="vendor-central-vs-seller-central-21"/> See the [Brand Registry guide](/guides/brand-registry-trademark/).
 
-<Callout type="example" title="Worked example (hypothetical)">
-Inputs, all invented: a product retails at $30.00. As a seller using FBA, assume a 15% referral fee ($4.50) and a $5.50 fulfillment fee, so you receive $30.00 − $4.50 − $5.50 = $20.00 per unit before your own costs and advertising. As a vendor, assume Amazon's purchase price is $17.00 with a 4% allowance credited back, so you net $17.00 × 0.96 = $16.32 before your own costs. Under these invented inputs the seller route keeps $20.00 − $16.32 = $3.68 more per unit, before advertising and your own operating costs on either route. Replace every input with your own figures.
+<Callout type="example" title="Worked example: comparing the two routes when vendor terms are private">
+Vendor terms are not published on Amazon's public seller pages, so the comparison has to run on letters until you hold an offer. Write *P* for the retail price you would set as a seller, *r* for your category's referral rate, *F* for the FBA fulfillment fee (both from Amazon's seller pricing pages and Revenue Calculator), *C* for the purchase price Amazon offers as a vendor and *a* for the share of it returned as allowances.
+
+- Seller route, per unit before your own costs and advertising: *P* − *r* × *P* − *F*.
+- Vendor route, per unit before your own costs: *C* × (1 − *a*).
+- The vendor offer matches the seller route only when *C* ≥ (*P* × (1 − *r*) − *F*) ÷ (1 − *a*).
+
+That last line is the useful one: compute it before a vendor negotiation, and you know the lowest purchase price worth accepting. Then adjust both sides for what the formula leaves out — advertising, returns, inbound freight and the work each route puts on your team.
 </Callout>
 
 <Decision title="Which route fits your situation" rows={[

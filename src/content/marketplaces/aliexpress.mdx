@@ -74,10 +74,14 @@ Each item comes from the agreement's registration and product clauses. <C id="ma
 
 **Exit.** After deregistration or termination, any payment that has to be reimbursed is paid within 180 days from order shipment <C id="marketplace-aliexpress-13"/>.
 
-<Callout type="example" title="Worked example (hypothetical): why the rate source matters">
-Inputs: $10,000 of monthly sales; two possible announced commission rates of 5% and 8% (illustrative inputs, not AliExpress figures).
+<Callout type="example" title="Worked example: what one point of commission is worth">
+The agreement prints no rate, so this example keeps the rate as an unknown, *r*, and uses only your own sales figure. <C id="marketplace-aliexpress-04"/>
 
-Commission: $500 at 5%, $800 at 8%. A three-point difference is $300 a month, or $3,600 a year. Because the agreement lets the rate be "as announced," re-check it whenever AliExpress notifies a rule change. <C id="marketplace-aliexpress-04"/> <C id="marketplace-aliexpress-09"/>
+- Monthly commission = monthly sales × *r*.
+- Each percentage point of *r* costs 1% of sales. On $10,000 of monthly sales (your input), one point is $100 a month, or $1,200 a year.
+- Against margin, the effect is larger: if a product keeps 20% of its price as profit before commission (again your input), each point of commission removes one-twentieth of that profit.
+
+Because the rate is "as announced," re-run this whenever AliExpress gives notice of a rule change. <C id="marketplace-aliexpress-09"/>
 </Callout>
 
 <Callout type="example" title="Worked example (hypothetical): what late-payment interest adds">
@@ -85,6 +89,51 @@ Inputs: $2,000 due and payable to AliExpress and paid 30 days late, at the agree
 
 Interest: $2,000 × 0.000437 × 30 = $26.22. Over 365 days the same simple rate comes to 0.0437% × 365 ≈ 15.95% of the unpaid amount.
 </Callout>
+
+## Commission without a printed rate: how to build a reliable cost
+
+A missing number in the contract does not mean the cost is unknowable; it means the number lives in a different document and can move. The agreement fixes the *mechanism* even though it leaves out the *rate*, and the mechanism tells you how to plan.
+
+### What the contract does fix about the rate
+
+| Question | What the US documents settle | Planning consequence |
+|---|---|---|
+| Who sets the rate | AliExpress, by announcement from time to time <C id="marketplace-aliexpress-04"/> | Treat the rate as an input you look up and date, not a constant |
+| Which document carries it | Commission is payable under the Platform User Agreements, which include the Rules for U.S. Platform Sellers <C id="marketplace-aliexpress-03"/> <C id="marketplace-aliexpress-06"/> | Record the announced rate that applies to your products, with its source and date |
+| How much warning you get | At least 15 days for rule changes, unless exceptional circumstances apply <C id="marketplace-aliexpress-09"/> | Your repricing process has to fit inside that window |
+| Who collects it | AliExpress International (United States) Corporation, in its own name <C id="marketplace-aliexpress-05"/> | Reconcile commission lines against that entity on your statements |
+| What happens if you reject a change | The agreement's remedy is to stop using the services <C id="marketplace-aliexpress-10"/> | Decide your walk-away level before a notice arrives |
+
+### Cost lines to carry in your model
+
+Commission is only one of the money terms in the US agreement. A complete per-order and per-month model has these lines, each tied to the clause that creates it:
+
+| Line | Where the amount comes from | Cash or cost? |
+|---|---|---|
+| Commission | The announced rate that applies to your products <C id="marketplace-aliexpress-04"/> | Cost on every order |
+| Membership | Free for an unspecified period, with a reserved right to charge <C id="marketplace-aliexpress-20"/> <C id="marketplace-aliexpress-21"/> | Zero today; keep a line for it |
+| Deposit | First source AliExpress deducts from if your breach causes it losses <C id="marketplace-aliexpress-07"/> | Locked cash; becomes cost only if deducted |
+| Late-payment interest | 0.0437% a day on overdue amounts you owe <C id="marketplace-aliexpress-34"/> | Avoidable cost |
+| Promotion pricing | AliExpress may adjust product conditions to match promotions you join <C id="marketplace-aliexpress-19"/> | Price reduction on promoted orders |
+| Recall costs | All associated costs and expenses, including refunds, sit with you <C id="marketplace-aliexpress-33"/> | Contingent cost |
+| Payments due at exit | May take up to 180 days from order shipment <C id="marketplace-aliexpress-13"/> | Allow for the wait in your exit cash plan |
+
+### Find the highest rate your price can carry
+
+Rather than guess the rate, work backwards to the most commission a product can absorb, then compare that ceiling with the announced rate:
+
+**Maximum commission rate = (price − product cost − shipping − other per-order costs − the profit you need) ÷ price**
+
+Every term on the right is yours. If the announced rate that applies to the product is above the result, the product does not work on AliExpress at that price, whatever the sales volume. If it is close below, a single rule change could cross it, so note how far below it sits.
+
+### Strategy when the rate can change
+
+<Decision title="Planning around an announced, changeable rate" rows={[
+  { if: "You are pricing a product for the first time", then: "Record the announced rate that applies to your products, with its source and date, and compute the maximum rate above", claim: "marketplace-aliexpress-04" },
+  { if: "A rule-change notice arrives", then: "Re-run the maximum-rate check for every affected product within the notice period, which is at least 15 days unless exceptional circumstances apply", claim: "marketplace-aliexpress-09" },
+  { if: "A change pushes a product past its maximum rate", then: "Reprice, delist the product, or stop using the services, which is the agreement's stated remedy for a change you reject", claim: "marketplace-aliexpress-10" },
+  { if: "You plan to join promotions", then: "Model the promoted price, not the list price, because AliExpress may adjust conditions to match the promotion", claim: "marketplace-aliexpress-19" }
+]} />
 
 ## Control: rule changes, pricing conditions and termination
 
@@ -136,7 +185,7 @@ Each line above is drawn from AliExpress's own terms <C id="marketplace-aliexpre
 <Decision
   title="Before you open a US AliExpress store"
   rows={[
-    { if: "You need a fixed commission rate to build a price", then: "Get the current announced rate for your category first; the US agreement does not print one", claim: "marketplace-aliexpress-04" },
+    { if: "You need a fixed commission rate to build a price", then: "Get the current announced rate that applies to your products first; the US agreement does not print one", claim: "marketplace-aliexpress-04" },
     { if: "You sell items that may need California warnings", then: "Set up Proposition 65 warnings on the product page before listing", claim: "marketplace-aliexpress-22" },
     { if: "Your cash plan depends on reimbursements settling quickly at exit", then: "Allow up to 180 days from order shipment", claim: "marketplace-aliexpress-13" },
     { if: "You expect to need contract disputes resolved under US law", then: "Note that the US service agreement names New York law, while the general Terms of Use name Hong Kong law for the entities that clause lists", claim: "marketplace-aliexpress-29" }

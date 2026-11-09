@@ -10,6 +10,9 @@ const active = (g: any) => g.base.some((b: string) => path.startsWith(b)) || g.i
   <div class="wrap hdr">
     <Logo />
     <nav class="nav" id="nav" aria-label="Main">
+      <div class={`nav-item nav-articles${path.startsWith('/articles/') ? ' is-active' : ''}`}>
+        <a href="/articles/" aria-current={path.startsWith('/articles/') ? 'page' : undefined}><Icon name="doc" />Articles</a>
+      </div>
       {NAV.map((g, n) => (
         <div class={`nav-item${active(g) ? ' is-active' : ''}`}>
           <button type="button" aria-expanded="false" aria-controls={`mega-${n}`}>{g.label}<Icon name="chevron" /></button>

@@ -4,7 +4,7 @@ description: "How to compare Amazon's inbound placement options: per-unit placem
 pillar: "fees"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
+modified: "2026-11-09"
 lastVerified: "2026-11-08"
 minutes: 8
 photo:
@@ -58,19 +58,19 @@ For large bulky products, Amazon cut the fee for 2025: "We are lowering inbound 
 ## Worked example (hypothetical): fee vs freight
 
 <Callout type="example" title="Worked example (hypothetical)">
-Inputs (all invented for illustration): 600 standard-size units in 30 cartons. Seller Central shows two placement options.
+Inputs: 600 standard-size units in 30 cartons, with freight quotes you obtained (your figures, chosen for illustration). Seller Central shows two placement options; the per-unit placement fee on the single-destination option is written *p*, because only Seller Central shows it for your shipment.
 
-- **Option A — one destination:** placement fee $0.30 per unit; freight for one shipment $450.
+- **Option A — one destination:** placement fee *p* per unit; freight for one shipment $450.
 - **Option B — three destinations:** no placement fee; freight for three shipments of 10 cartons each, $250 apiece.
 
 Totals:
-- Option A: 600 × $0.30 = $180 placement + $450 freight = **$630**.
+- Option A: 600 × *p* + $450.
 - Option B: $0 placement + 3 × $250 freight = **$750**.
 
-Option A is $120 cheaper. The break-even placement fee is the freight difference divided by units: ($750 − $450) ÷ 600 = **$0.50 per unit**. Below $0.50, concentrate; above it, split.
+The two options cost the same when 600 × *p* = $750 − $450, so the break-even placement fee is ($750 − $450) ÷ 600 = **$0.50 per unit**. If the fee Seller Central shows is below $0.50, concentrate; above it, split. You can make this decision the moment the options appear, with nothing but your freight quotes.
 </Callout>
 
-Two things move the answer. First, **volume**: a per-unit placement fee scales with units, while freight is quoted per shipment. Repeat the calculation with hypothetical inputs of 2,400 units, $0.30 per unit, $1,200 freight for one shipment and $700 for each of three: Option A is $720 + $1,200 = $1,920; Option B is $2,100; the break-even falls to ($2,100 − $1,200) ÷ 2,400 = $0.375 per unit. Second, **the offer itself**: fees and discounts are set by an algorithm that uses expected volume, carrier appointment availability and fulfillment speed, and expired options have to be regenerated, so redo the comparison on the options in front of you. <C id="inbound-placement-split-arithmetic-04"/> <C id="inbound-placement-split-arithmetic-06"/>
+Two things move the answer. First, **volume**: a per-unit placement fee scales with units, while freight is quoted per shipment. Repeat the calculation with 2,400 units, $1,200 freight for one shipment and $700 for each of three: Option B costs $2,100, and the break-even falls to ($2,100 − $1,200) ÷ 2,400 = $0.375 per unit. Four times the units, but less than four times the freight saving, so the fee you can accept per unit drops. Second, **the offer itself**: fees and discounts are set by an algorithm that uses expected volume, carrier appointment availability and fulfillment speed, and expired options have to be regenerated, so redo the comparison on the options in front of you. <C id="inbound-placement-split-arithmetic-04"/> <C id="inbound-placement-split-arithmetic-06"/>
 
 <Checklist title="Before you confirm a placement option" items={[
   "Enter box contents first; options can change once Amazon has box data",

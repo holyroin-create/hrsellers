@@ -80,8 +80,28 @@ Amazon's FAQ: sellers "will pay the Remote Fulfillment with FBA costs and the ca
 
 Pricing is automated by default. The listing tool "synchronizes your prices to preserve your profit margins" while "adjusting for differences in fulfillment costs, referral fees, and currency exchange rates." <C id="narf-canada-mexico-06"/> If you override it, "Any manual price adjustments in the destination store will break the connection." <C id="narf-canada-mexico-19"/>
 
-<Callout type="example" title="Worked example (hypothetical)">
-Inputs, all invented: in the US you keep $9.00 per unit after referral and FBA fees on a $30.00 item. For a Canadian order, assume the destination referral fee and the Remote Fulfillment cost together come to the equivalent of US$11.50 more than the US fees they replace. To keep $9.00, the Canadian price must rise by about US$11.50, to roughly US$41.50 before conversion to Canadian dollars, and the customer then pays import duties and taxes on top as importer of record. Replace the US$11.50 with the real rate card difference and compare the resulting price with local competitors before enrolling a SKU.
+### Pricing a destination order without the rate card in front of you
+
+The public pages tell you which fees apply and which US fees they replace, but not the per-unit amounts. That is enough to set up the comparison correctly; the rate card only supplies the last number. <C id="narf-canada-mexico-13"/> <C id="narf-canada-mexico-14"/>
+
+**Per-unit margin on a destination order = destination price (in US dollars) − destination referral fee − Remote Fulfillment cost − your product and inbound cost**
+
+Three things follow from the structure, before any rate is known:
+
+- **The two fee sets are substitutes, not additions.** You never pay the US FBA fee and the Remote Fulfillment cost on the same order, so the question is the *difference* between them, not the sum. <C id="narf-canada-mexico-14"/>
+- **The referral fee follows the destination store's category rate**, so a product can sit in a different rate band in Canada or Mexico than in the US. Check its category in each store. <C id="narf-canada-mexico-13"/>
+- **Duties and taxes do not enter your margin**, because the customer pays them as importer of record. They still raise the customer's total price, which is what local competitors are compared against. <C id="narf-canada-mexico-08"/>
+
+<Callout type="example" title="Worked example: the price rise needed to hold your US margin">
+Write *P* for the US price, *r*<sub>US</sub> and *r*<sub>D</sub> for the US and destination referral rates, *F* for the US FBA fee and *R* for the Remote Fulfillment cost, all converted to US dollars; the fees come from Seller Central.
+
+- What you keep on a US sale: *P* × (1 − *r*<sub>US</sub>) − *F*.
+- Destination price that keeps the same amount: (*P* × (1 − *r*<sub>US</sub>) − *F* + *R*) ÷ (1 − *r*<sub>D</sub>).
+- The division matters: because the referral fee is a share of the price, each extra dollar of fixed cost needs 1 ÷ (1 − *r*<sub>D</sub>) dollars of price, not one. If *R* is below *F* and the rates are equal, the destination order is cheaper to serve.
+
+Compare the resulting price plus the customer's duties and taxes with local offers before enrolling the SKU.
+
+Because the listing tool adjusts prices for fee and exchange-rate differences by default, this calculation is mainly a check on what it sets — and the basis for any manual price, which breaks that automatic link. <C id="narf-canada-mexico-06"/> <C id="narf-canada-mexico-19"/>
 </Callout>
 
 ## What ships, and what doesn't

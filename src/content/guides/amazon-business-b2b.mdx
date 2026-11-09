@@ -73,6 +73,26 @@ Inputs: a toner cartridge with a retail price of $40.00. You set a business pric
 
 Among the program's benefits, Amazon lists: "Enjoy lower referral fees on larger purchases." <C id="amazon-business-b2b-17"/> The public program page does not publish the discount schedule. Sellers can see what they actually received in a Selling Partner API report called the Referral Fee Discounts Report (`FEE_DISCOUNTS_REPORT`), which "Contains a summary of the seller's fee discounts" and is available to Amazon Business sellers. <C id="amazon-business-b2b-28"/> Its columns include a target price and the referral fee at that target price. <C id="amazon-business-b2b-43"/> Its data can be up to 24 hours old, and Amazon asks that it not be requested more than once in 24 hours. <C id="amazon-business-b2b-42"/> For standard category referral rates, see the [referral fee guide](/guides/amazon-referral-fees/).
 
+### Planning B2B prices before you know the discount
+
+The discount schedule is not public, but the report above returns the inputs you need to measure it for your own listings. Three steps turn it into a pricing rule:
+
+1. **Start from the standard rate.** Set business prices and quantity tiers so each one is profitable at your category's standard referral rate. The fee reduction on larger purchases can then only add to that margin. <C id="amazon-business-b2b-17"/>
+2. **Read your effective rate from the report.** The report shows the referral fee at a target price; where those target prices line up with your quantity-tier prices, fee ÷ price gives the effective rate *e* at that tier — your own figure, measured rather than assumed. <C id="amazon-business-b2b-43"/>
+3. **Fund quantity tiers from what you can see.** Where you can read an effective rate for a tier, you know how much of a deeper quantity discount the lower fee pays for, and how much comes out of your margin.
+
+<Callout type="example" title="Worked example: how much of a quantity discount the fee saving covers">
+Write *P* for the business price per unit, *q* for the quantity discount you offer at a tier, *r* for the standard referral rate and *e* for the effective rate the report shows at that tier.
+
+- Revenue given up per unit by the discount: *P* × *q*.
+- Referral fee saved per unit: *P* × *r* − *P* × (1 − *q*) × *e*.
+- The tier costs you nothing extra when the saving at least equals the revenue given up. Any shortfall is a real price cut, and it should earn its keep in volume.
+
+Run the calculation per tier: a deeper discount at a tier where *e* is barely below *r* is mostly paid from your margin.
+</Callout>
+
+The report data can be up to a day old, so re-run the calculation after changing a price rather than immediately. <C id="amazon-business-b2b-42"/>
+
 ## Bulk listings, quotes and B2B tools
 
 Amazon suggests you "encourage bulk sales by creating package hierarchies and listing products as case packs and pallets." <C id="amazon-business-b2b-08"/> For product identifiers, see [barcodes and FNSKU](/guides/gs1-barcodes-fnsku/).

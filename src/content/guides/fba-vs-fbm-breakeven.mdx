@@ -4,7 +4,7 @@ description: "Which costs Amazon's FBA fees replace, which FBM costs you carry y
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
+modified: "2026-11-09"
 lastVerified: "2026-11-08"
 minutes: 9
 photo:
@@ -74,14 +74,14 @@ One cost is the same on both sides: the referral fee. It is a percentage of the 
 ]} />
 
 <Callout type="example" title="Worked example (hypothetical)">
-Inputs (all invented for illustration): a $25 kitchen item offered with free shipping under both methods, 0.1 cu ft packed, sells within 2 months during January–September. Revenue Calculator FBA fulfillment fee: $6.00. Inbound freight and placement: $0.40 per unit. FBM: label $4.30, packaging $0.35, labor $0.75. Fixed cost of running your own fulfillment: $580 per month.
+Inputs (your own figures, chosen for illustration): a $25 kitchen item offered with free shipping under both methods, 0.1 cu ft packed, sells within 2 months during January–September. Inbound freight and placement: $0.40 per unit. FBM: label $4.30, packaging $0.35, labor $0.75. Fixed cost of running your own fulfillment: $580 per month. The FBA fulfillment fee is written *F*: read it for your exact size and weight from Amazon's Revenue Calculator instead of assuming one.
 
-- FBA per unit: $6.00 + (0.1 × $0.78 × 2 = $0.16) + $0.40 = $6.56
+- FBA per unit: *F* + storage (0.1 × $0.78 × 2 = $0.16) + $0.40 = *F* + $0.56 <C id="fba-vs-fbm-breakeven-08"/>
 - FBM variable per unit: $4.30 + $0.35 + $0.75 = $5.40
-- Gap: $6.56 − $5.40 = $1.16 per unit in FBM's favor
-- Breakeven: $580 ÷ $1.16 = 500 units per month
+- Gap: (*F* + $0.56) − $5.40 = *F* − $4.84 per unit
+- Breakeven: $580 ÷ (*F* − $4.84) units per month
 
-Below 500 units a month, FBA is cheaper overall in this example; above it, FBM is. The referral fee is identical either way because both offers have free shipping. If the same item sat in FBA from October to December, storage would be 0.1 × $2.40 × 2 = $0.48 instead of $0.16, widening the gap to $1.48 and lowering breakeven to about 392 units.
+Two readings follow. If *F* is $4.84 or less, FBA costs no more per unit and carries none of the fixed cost, so it wins at every volume. If *F* is above $4.84, FBM wins above the breakeven volume, and every extra dime in *F* pulls that breakeven down. The referral fee is identical either way because both offers have free shipping. If the same item sat in FBA from October to December, storage would be 0.1 × $2.40 × 2 = $0.48 instead of $0.16, so the threshold falls to *F* = $4.52 and breakeven becomes $580 ÷ (*F* − $4.52).
 </Callout>
 
 <Chart title="FBA standard-size storage rate by season" kind="column" unit="$" rows={[

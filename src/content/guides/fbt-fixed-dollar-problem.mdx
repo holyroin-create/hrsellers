@@ -73,9 +73,9 @@ Above the threshold you need a price well clear of it before the higher rate pay
 The fulfillment fee has its own price break. In its December 2023 fee announcement, Amazon said "Products priced below $10 will continue to have an additional $0.77 discount on per-unit fees." <C id="fbt-fixed-dollar-problem-19"/> That was the figure stated for 2024; the current low-price rates are in the Seller Central fee tables, and Amazon's 2027 announcement refers to further updates for small and large standard-size items and items priced above $50 in a separate summary. <C id="fbt-fixed-dollar-problem-23"/>
 
 <Callout type="example" title="Worked example (hypothetical): two price breaks at once">
-Inputs: a Beauty, Health and Personal Care item; a $0.77 low-price discount assumed to apply below $10, as Amazon stated for 2024 (confirm the current amount in Seller Central); referral rates from Amazon's pricing page.
+Inputs: a Beauty, Health and Personal Care item; referral rates from Amazon's pricing page; the current low-price fulfillment discount for items under $10, written *δ*, read from the Seller Central fee tables (the last public figure, $0.77, was the one stated for 2024). <C id="fbt-fixed-dollar-problem-19"/>
 
-Moving from $9.99 to $10.49: referral goes from 8% × $9.99 = $0.80 to 15% × $10.49 = $1.57 (+$0.77), and the item loses the assumed $0.77 fulfillment discount. Fees rise by about $1.54 for a 50-cent price rise, so the seller nets about $1.04 less per unit. <C id="fbt-fixed-dollar-problem-19"/> <C id="fbt-fixed-dollar-problem-06"/>
+Moving from $9.99 to $10.49: referral goes from 8% × $9.99 = $0.80 to 15% × $10.49 = $1.57 (+$0.77), and the item loses the discount *δ*. Revenue rises by $0.50 while fees rise by $0.77 + *δ*, so the seller nets $0.27 + *δ* less per unit. The referral step alone already outweighs the price rise, whatever *δ* is today; at the 2024 figure the loss would have been $1.04. <C id="fbt-fixed-dollar-problem-06"/>
 </Callout>
 
 ## The same dollar increase at different prices
@@ -94,17 +94,16 @@ Amazon announced on October 15, 2025 that FBA fees would rise by an average of $
 A fee Amazon does publish in full makes the point. On the MCF rate card, the peak standard-speed fee in the first ("1") column for a small standard item up to 4 oz is $7.53. <C id="fbt-fixed-dollar-problem-27"/> On a $10 item sold through another channel, that is 75% of the price; on a $30 item, 25% (our arithmetic).
 
 <Callout type="example" title="Worked example (hypothetical): the same product at $8 and at $24">
-Inputs: a small Home and Kitchen item; referral fee 15% with a $0.30 minimum <C id="fbt-fixed-dollar-problem-05"/>; an assumed FBA fulfillment fee of $3.50 per unit, used only for illustration (get the real figure for your product from Amazon's Revenue Calculator <C id="fbt-fixed-dollar-problem-13"/>); Professional plan, so no per-item plan fee.
+Inputs: a small Home and Kitchen item; referral fee 15% with a $0.30 minimum <C id="fbt-fixed-dollar-problem-05"/>; Professional plan, so no per-item plan fee. The FBA fulfillment fees are written *F₁* for the single unit and *F₃* for the heavier 3-pack; read both from Amazon's Revenue Calculator for the real sizes and weights. <C id="fbt-fixed-dollar-problem-13"/>
 
 | | Sold at $8.00 | Sold as a 3-pack at $24.00 |
 |---|---|---|
 | Referral fee (15%) | $1.20 | $3.60 |
-| FBA fulfillment (assumed) | $3.50 | $4.25 (assumed for the larger, heavier pack) |
-| Total Amazon fees | $4.70 | $7.85 |
-| Fees as share of price | 58.8% | 32.7% |
-| Fees per item inside | $4.70 | $2.62 |
+| FBA fulfillment | *F₁* | *F₃* |
+| Total Amazon fees | $1.20 + *F₁* | $3.60 + *F₃* |
+| Fees per item inside | $1.20 + *F₁* | $1.20 + *F₃* ÷ 3 |
 
-The referral fee scales with price, but the fulfillment fee does not, so it dominates the cheap sale. Selling three units as one pack spreads one fulfillment fee over three items.
+Per item, the referral fee is the same $1.20 either way, because it scales with price. The whole difference sits in the fulfillment fee, which does not: the pack lowers fees per item whenever one pack fee is less than three single-unit fees (*F₃* < 3 × *F₁*). Run both sizes through the calculator before you build the pack; if the heavier pack lands in a higher size tier, that is where the condition can fail.
 </Callout>
 
 ## Ways to change the math

@@ -4,7 +4,7 @@ description: "How Amazon's Inventory Performance Index relates to FBA capacity a
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
+modified: "2026-11-09"
 lastVerified: "2026-11-08"
 minutes: 8
 photo:
@@ -22,7 +22,7 @@ summary:
   - "Sellers can bid for extra space with a reservation fee; performance credits can offset up to 100% of that fee."
   - "Amazon's public pages describe what the IPI rewards but not its formula; the score and its components are shown inside Seller Central."
 faq:
-  - { q: "What is a good IPI score on Amazon?", a: "Amazon's public pages do not publish a target score. They say the IPI reflects how well you replenish popular products, keep optimal inventory levels and fix listing problems, and that a high score helps lower storage costs; your score and its drivers are shown in Seller Central.", claims: ["ipi-restock-limits-02", "ipi-restock-limits-03"] }
+  - { q: "What is a good IPI score on Amazon?", a: "Amazon's public pages do not publish a general target score; one public threshold is that the FBA New Selection program requires an IPI of 300 or higher. They say the IPI reflects how well you replenish popular products, keep optimal inventory levels and fix listing problems, and that a high score helps lower storage costs; your score and its drivers are shown in Seller Central.", claims: ["returns-cost-and-badge-08", "ipi-restock-limits-02", "ipi-restock-limits-03"] }
   - { q: "Can you request an Amazon capacity limit increase?", a: "Amazon lets sellers request additional capacity by specifying a reservation fee. Requests are granted starting with the highest fee per cubic foot, and performance credits can offset up to 100% of the fee.", claims: ["ipi-restock-limits-15", "ipi-restock-limits-16", "ipi-restock-limits-17"] }
 related: ["shipment-discrepancy-claims", "amazon-stopped-prepping", "accrual-accounting-cogs", "amazon-fba-fee-changes-2026"]
 ---
@@ -57,7 +57,7 @@ The practical consequence: an order with a long production and freight lead time
 
 Amazon describes the IPI as a metric that measures how efficiently you manage FBA inventory. <C id="ipi-restock-limits-01"/> Its public seller site says the score is based on how well you replenish popular products, maintain optimal inventory levels and fix listing problems, and that you should keep it high to lower storage costs. <C id="ipi-restock-limits-02"/> <C id="ipi-restock-limits-03"/> The FBA Dashboard in Seller Central shows the factors contributing to your IPI and your storage utilization ratio, along with recommendations such as restocking or creating outlet deals. <C id="ipi-restock-limits-19"/> <C id="ipi-restock-limits-20"/>
 
-Amazon's public pages do not publish the IPI formula, score range or any threshold. Those details, and your current score, are published inside Seller Central and should be checked there.
+Amazon's public pages do not publish the IPI formula or its score range. One public threshold does exist: Amazon's FBA New Selection program requires an IPI of 300 or higher. <C id="returns-cost-and-badge-08"/> Any other cut-offs, and your current score, are shown inside Seller Central.
 
 The public page does define the inventory conditions the three drivers point at:
 
@@ -81,6 +81,22 @@ Inputs: in the last period you received 600 units of a SKU and sold 450; you now
 
 Holding 300 units instead of 600 would free about 75 cubic feet (150 − 75) for other SKUs. The arithmetic is illustrative only; your forecast and Amazon's recommendations will differ.
 </Callout>
+
+## Managing a score whose formula is not public
+
+You cannot reverse-engineer a private formula, and you do not need to. Amazon names the three behaviours the score is built on, and each has a measure you can calculate from your own reports before the score moves. <C id="ipi-restock-limits-02"/> Manage those measures and treat the score as the result.
+
+| What Amazon says the IPI rewards | Measure you can track yourself | Where the data comes from |
+|---|---|---|
+| Replenishing popular products | Whether your best sellers are in stock, against the suggested reorder quantities and dates | Restock Inventory Report <C id="ipi-restock-limits-24"/> |
+| Keeping optimal inventory levels | Days of supply per SKU against the 90-day excess line, and sell-through (units sold ÷ units received) | Inventory health data; Amazon's definitions <C id="ipi-restock-limits-21"/> <C id="ipi-restock-limits-23"/> |
+| Fixing listing problems | Count of stranded units and the days each has been stranded | Seller Central inventory pages; Amazon on stranded stock <C id="ipi-restock-limits-22"/> |
+
+Three working rules follow:
+
+- **Watch direction, not the number.** Without a published scale, a single score says little; the useful signal is whether it moves with the measures above. If the measures improve and the score does not, check the factor breakdown on the FBA Dashboard, which is the one place that shows what is pulling it. <C id="ipi-restock-limits-19"/>
+- **Fix the cheapest driver first.** Stranded units cost sales, storage fees and capacity at once, and clearing them needs no new purchase. <C id="ipi-restock-limits-22"/>
+- **Know the published line.** If you plan to launch new parent ASINs and want the New Selection benefits, the 300 threshold is a real constraint; plan the clean-up before the launch, not after. <C id="returns-cost-and-badge-08"/> <C id="returns-cost-and-badge-09"/>
 
 ## Your options when the limit is too low
 

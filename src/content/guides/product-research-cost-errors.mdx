@@ -4,7 +4,7 @@ description: "The cost lines that turn a promising Amazon product into a loss: r
 pillar: "fees"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
+modified: "2026-11-09"
 lastVerified: "2026-11-08"
 minutes: 9
 photo:
@@ -80,7 +80,7 @@ Getting a new product seen is not free. Amazon Ads offers cost-per-click options
 ## Worked example: the same product, two models
 
 <Callout type="example" title="Worked example (hypothetical)">
-Inputs: a Home and Kitchen item sold via FBA at $24.99; landed cost $6.00 per unit; FBA fulfillment fee $5.00 per unit (assumed — take the real figure from Amazon's Revenue Calculator); storage $0.10 per unit per month for 3 months; Professional plan $39.99 spread over 100 units a month ($0.40 per unit); ad spend $2.00 per unit sold; 5% of units returned and not resellable (5% × $6.00 = $0.30 per unit sold); returns processing ignored for simplicity. Referral fee: 15% × $24.99 = $3.75.
+Inputs: a Home and Kitchen item sold via FBA at $24.99; landed cost $6.00 per unit; FBA fulfillment fee written *F* (take it from Amazon's Revenue Calculator for the packed size and weight); storage $0.10 per unit per month for 3 months; Professional plan $39.99 spread over 100 units a month ($0.40 per unit); ad spend $2.00 per unit sold; 5% of units returned and not resellable (5% × $6.00 = $0.30 per unit sold); returns processing ignored for simplicity. Referral fee: 15% × $24.99 = $3.75.
 </Callout>
 
 | Line | First model | Full model |
@@ -88,16 +88,16 @@ Inputs: a Home and Kitchen item sold via FBA at $24.99; landed cost $6.00 per un
 | Sale price | $24.99 | $24.99 |
 | Landed cost | −$6.00 | −$6.00 |
 | Referral fee (15%) | −$3.75 | −$3.75 |
-| FBA fulfillment | — | −$5.00 |
+| FBA fulfillment | — | −*F* |
 | Storage (3 months) | — | −$0.30 |
 | Plan fee per unit | — | −$0.40 |
 | Advertising | — | −$2.00 |
 | Lost returned units | — | −$0.30 |
-| **Profit per unit** | **$15.24 (61%)** | **$7.24 (29%)** |
+| **Profit per unit** | **$15.24 (61%)** | **$12.24 − *F*** |
 
 *Source: referral rate and plan fee from Amazon, sell.amazon.com/pricing, checked Nov 8, 2026; all other inputs are hypothetical and the arithmetic is ours.* <C id="product-research-cost-errors-03"/> <C id="product-research-cost-errors-05"/>
 
-The product still makes money, but less than half of what the first model promised. If the stock sat past 181 days, the aged-inventory charge would come out of that $7.24 as well. <C id="product-research-cost-errors-09"/> Run your own numbers in our [margin calculator](/tools/margin-calculator/), using Amazon's Revenue Calculator output for the fulfillment fee.
+The lines the first model leaves out, apart from the fulfillment fee, already cost $3.00 per unit; add *F* and the gap is $3.00 + *F*. The product stays profitable only while *F* is below $12.24, and every dollar of *F* removes four points of margin on a $24.99 price. If the stock sat past 181 days, the aged-inventory charge would come out of what is left as well. <C id="product-research-cost-errors-09"/> Run your own numbers in our [margin calculator](/tools/margin-calculator/), using Amazon's Revenue Calculator output for the fulfillment fee.
 
 <Checklist title="Cost lines to fill in before you order inventory" items={[
   "Fee category and referral rate for the exact product, applied to price plus any shipping charged",

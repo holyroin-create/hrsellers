@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import { allEntries } from '../lib/entries';
+import { PILLARS } from '../lib/pillars';
+import { fmtDate } from '../lib/claims';
+import { SITE } from '../lib/site';
+
+// Every published, indexable article, newest change first.
+const all = (await allEntries())
+  .filter((x) => !x.e.data.noindex)
+  .map((x) => ({ ...x, date: x.e.data.modified || x.e.data.published }))
+  .sort((a, b) => b.date.localeCompare(a.date) || a.e.data.title.localeCompare(b.e.data.title));
+
+const keys = (Object.keys(PILLARS) as (keyof typeof PILLARS)[]).filter((k) => all.some((x) => x.e.data.pillar === k));
+const monthKey = (d: string) => d.slice(0, 7);
+const monthName = (k: string) => new Date(`${k}-01T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const months = [...new Set(all.map((x) => monthKey(x.date)))];
+const kindLabel = { guides: 'Guide', marketplaces: 'Fee reference', reviews: 'Software' } as const;
+
+const jsonld = [{
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'All articles',
+  url: new URL('/articles/', SITE.domain).href,
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: all.length,
+    itemListElement: all.map((x, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(x.href, SITE.domain).href, name: x.e.data.title })),
+  },
+}];
+---
+<Base title="All articles, newest first" description="Every FBA Tactics guide and fee reference in one list, newest change first, with the date each page was last updated and checked against its sources." jsonld={jsonld}>
+  <PageHero title="All articles" kicker="Archive" photo="hub-guides" lede={`${all.length} guides and fee references, newest change first. Each entry shows when the page was last updated and when its sources were last checked.`}>
+    <p style="margin:22px 0 0;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-sm" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)" href="/guides/"><Icon name="list" />Browse by topic</a>
+      <a class="btn btn-sm" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)" href="/policy-log/"><Icon name="stamp" />Policy log</a>
+    </p>
+  </PageHero>
+
+  <div class="wrap" style="padding:48px 24px 88px">
+    <div class="filters arc-filters" role="group" aria-label="Filter articles by topic">
+      <button type="button" class="arc-f" aria-pressed="true" data-f="all">All <b>{all.length}</b></button>
+      {keys.map((k) => <button type="button" class="arc-f" aria-pressed="false" data-f={k}>{PILLARS[k].short} <b>{all.filter((x) => x.e.data.pillar === k).length}</b></button>)}
+    </div>
+    <p class="arc-count" aria-live="polite"><span id="arc-n">{all.length}</span> articles shown</p>
+
+    {months.map((m) => (
+      <section class="arc-month" aria-labelledby={`m-${m}`}>
+        <h2 id={`m-${m}`} class="arc-h">{monthName(m)}</h2>
+        <ol class="arc-list">
+          {all.filter((x) => monthKey(x.date) === m).map((x) => (
+            <li class="arc-item" data-p={x.e.data.pillar}>
+              <time datetime={x.date}>{fmtDate(x.date, true)}</time>
+              <div>
+                <p class="arc-meta">
+                  <span class="chip">{PILLARS[x.e.data.pillar].short}</span>
+                  <span>{kindLabel[x.kind]}</span>
+                  {x.e.data.minutes && <span><Icon name="clock" />{x.e.data.minutes} min read</span>}
+                  <span><Icon name="checkCircle" />Sources checked {fmtDate(x.e.data.lastVerified, true)}</span>
+                </p>
+                <h3><a href={x.href}>{x.e.data.title}</a></h3>
+                <p class="arc-desc">{x.e.data.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
+    <p class="arc-empty" hidden>No articles in this topic.</p>
+  </div>
+</Base>
+
+<script>
+  const btns = [...document.querySelectorAll<HTMLButtonElement>('.arc-f')];
+  const items = [...document.querySelectorAll<HTMLElement>('.arc-item')];
+  const months = [...document.querySelectorAll<HTMLElement>('.arc-month')];
+  const n = document.getElementById('arc-n')!;
+  const empty = document.querySelector<HTMLElement>('.arc-empty')!;
+  const apply = (f: string) => {
+    let shown = 0;
+    items.forEach((it) => { const on = f === 'all' || it.dataset.p === f; it.hidden = !on; if (on) shown++; });
+    months.forEach((m) => { m.hidden = !m.querySelector('.arc-item:not([hidden])'); });
+    btns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === f)));
+    n.textContent = String(shown);
+    empty.hidden = shown > 0;
+  };
+  btns.forEach((b) => b.addEventListener('click', () => { apply(b.dataset.f!); history.replaceState(null, '', b.dataset.f === 'all' ? location.pathname : `#${b.dataset.f}`); }));
+  const start = location.hash.slice(1);
+  if (start && btns.some((b) => b.dataset.f === start)) apply(start);
+</script>

@@ -13,7 +13,7 @@ const REQ = ['index.html', '404.html', 'about/index.html', 'contact/index.html',
 for (const f of REQ) if (!fs.existsSync(path.join(ROOT, 'dist', f))) r.err(`dist/${f} missing`);
 if (fs.existsSync(path.join(ROOT, 'dist/ads.txt')) && !read('dist/ads.txt').includes(`google.com, ${cfg.adsensePublisherId.replace('ca-', '')}, DIRECT, f08c47fec0942fa0`)) r.err('ads.txt does not match the publisher id');
 const BAD = [[/(?<!per-)\bclick (on )?(the |our )?ads?\b/i, 'encourages ad clicks'], [/support (us|this site) by clicking/i, 'encourages ad clicks'], [/\b(we|I) (have )?tested\b|\bin our experience\b|\bour clients\b/i, 'unbacked experience claim'], [/\blimited[- ]time (offer|deal)\b|\bact now\b/i, 'artificial urgency'], [/lorem ipsum|\bTODO\b|photo pending/, 'placeholder text']];
-const NOADS = /^dist\/(404\.html|(about|contact|privacy|terms|cookie-policy|disclaimer|editorial-standards|corrections|image-credits|sitemap|search|tools|quiz|glossary|policy-log|resources|start-here|faq|reference|checklists)\/|index\.html)/;
+const NOADS = /^dist\/(404\.html|(about|contact|privacy|terms|cookie-policy|disclaimer|editorial-standards|corrections|image-credits|sitemap|search|tools|quiz|glossary|policy-log|resources|start-here|faq|reference|checklists|articles)\/|index\.html)/;
 for (const f of walk('dist', '.html')) {
   const h = read(f); if (/http-equiv="refresh"/.test(h)) continue;
   const text = h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ');

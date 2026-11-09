@@ -83,11 +83,11 @@ Two timing details matter. The Recommended Removal report flags 365-day units on
 ]} />
 
 <Callout type="example" title="Worked example (hypothetical)">
-Inputs (invented): 200 standard-size units, each 0.25 cu ft, margin after fees $6 per unit. Removal charge assumed at $1.00 per unit for illustration — use the real Seller Central rate.
+Inputs (your own figures, chosen for illustration): 200 standard-size units, each 0.25 cu ft, margin after fees $6 per unit. The removal charge per unit is written *R*: take it from Seller Central rather than assuming one.
 
 Case A — sells 100 units a month, starting in October: 2 months to clear. Average stock is about 150 units in month 1 (37.5 cu ft × $2.40 = $90) and 50 units in month 2 (12.5 cu ft × $2.40 = $30): $120 in total, or $0.60 per unit. That is well below the $6 margin: hold.
 
-Case B — sells 10 units a month, starting in January: 20 months to clear. Each unit costs 0.25 × $0.78 = about $0.20 a month from January to September and 0.25 × $2.40 = $0.60 a month from October to December, so a typical unit that waits a year costs about $3.56 in storage alone, before aged inventory charges that start after 181 days. Most units would pass that point, so holding could eat much of the $6 margin. Removing at $1.00 per unit ($200) and selling elsewhere, or liquidating, deserves a serious look.
+Case B — sells 10 units a month, starting in January: 20 months to clear. Each unit costs 0.25 × $0.78 = about $0.20 a month from January to September and 0.25 × $2.40 = $0.60 a month from October to December, so a typical unit that waits a year costs about $3.56 in storage alone, before aged inventory charges that start after 181 days. Most units would pass that point, so holding could eat much of the $6 margin. Removing costs 200 × *R*. As long as *R* is below the storage a unit would otherwise pay while it waits (about $3.56 a year here, before aged inventory charges), removal and resale elsewhere, or liquidation, deserves a serious look.
 </Callout>
 
 Check of Case B: 9 × $0.195 + 3 × $0.60 = $1.755 + $1.80 = $3.555, rounded to $3.56. <C id="removal-vs-hold-decision-04"/>
@@ -97,13 +97,13 @@ Check of Case B: 9 × $0.195 + 3 × $0.60 = $1.755 + $1.80 = $3.555, rounded to 
 In Amazon's Finances API, an FBA liquidation payment event carries two amounts: what the liquidator paid for your inventory, and the liquidation fee. Amazon's model says the seller "receives this amount minus `LiquidationFeeAmount`." <C id="removal-vs-hold-decision-27"/> That event "is used only in the US marketplace." <C id="removal-vs-hold-decision-28"/> For units returned to you, the removal shipment item's `FeeAmount` is "The fee that Amazon charged to the seller for the removal of the item," recorded as a negative number. <C id="removal-vs-hold-decision-26"/>
 
 <Callout type="example" title="Worked example (hypothetical): three exits for 200 units">
-Inputs (invented): 200 slow units, margin if sold normally $6 per unit; removal charge assumed at $1.00 per unit; liquidator assumed to pay $1.50 per unit with an assumed liquidation fee of $0.60 per unit; resale elsewhere assumed to net $4.00 per unit after your own shipping and handling. Use your actual Seller Central rates and settlement figures.
+Inputs: 200 slow units. Amazon's amounts are kept as letters because they come from Seller Central and your settlement data: *R* is the removal charge per unit, *P* the amount the liquidator pays per unit and *L* the liquidation fee per unit. *D* is the disposal charge per unit. *S* is what one unit nets when you resell it elsewhere after your own shipping and handling (your estimate).
 
-- **Return to you and resell:** 200 × ($4.00 − $1.00) = $600.
-- **Liquidate:** 200 × ($1.50 − $0.60) = $180 net payout, with no further storage.
-- **Dispose:** 200 × −$1.00 = −$200; only sensible when the units cannot be sold.
+- **Return to you and resell:** 200 × (*S* − *R*).
+- **Liquidate:** 200 × (*P* − *L*), with no further storage. <C id="removal-vs-hold-decision-27"/>
+- **Dispose:** −200 × *D*; only sensible when the units cannot be sold. <C id="removal-vs-hold-decision-01"/>
 
-Compare each figure with the holding cost from Case B above. With these inputs, returning and reselling nets more than liquidation; if resale elsewhere is not realistic, liquidation is the only one of the three exits here that pays out.
+Returning beats liquidating whenever *S* − *R* is larger than *P* − *L*. Put differently, the resale route has to net at least the liquidation payout plus the removal charge, after your own handling. Compare the winning figure with the holding cost from Case B above; if resale elsewhere is not realistic, liquidation is the exit that turns stock into a payout.
 </Callout>
 
 ## Checking a removal order after you place it
