@@ -1,16 +1,15 @@
 ---
 title: "Bundles and Multipacks on Amazon: Listing, Labels and GTINs"
-description: "Physical bundles vs Virtual Bundles vs multipacks: Amazon's bundle rules, net quantity labels under 16 CFR 500, GTIN rules, and the per-unit fee math."
+description: "Physical bundles, Virtual Bundles and multipacks on Amazon: bundle rules, set prep for FBA, Market Basket data, 16 CFR 500 net quantity labels and GTINs."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 9
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "three identical retail boxes shrink-wrapped together as a multipack beside a gift box holding two different complementary products, no brand names"
-  alt: "Two closed corrugated shipping boxes stacked on a white surface, each with a blank white address label"
-  image: "hub-marketplaces"
+  alt: "Close-up of the corners of plain, unprinted kraft cardboard boxes stacked on top of a molded-pulp box on an orange surface"
 keyFacts:
   - { label: "Virtual Bundle size", value: "2 to 5 different products", claim: "bundles-and-multipacks-03" }
   - { label: "Virtual Bundle access", value: "Brand Registry + FBA", claim: "bundles-and-multipacks-02" }
@@ -36,7 +35,7 @@ Amazon describes product bundling as a strategy where you group and sell multipl
 <Compare title="Physical bundle, multipack or Virtual Bundle" columns={["Physical bundle", "Virtual Bundle"]} rows={[
   {label:"How it ships", values:["You pack all items in one box or package as a single unit", "Products are grouped in one listing"], claim:"bundles-and-multipacks-08"},
   {label:"Listing", values:["Its own unique ASIN", "One listing for multiple products"], claim:"bundles-and-multipacks-07"},
-  {label:"Who can use it", values:["Set by Amazon's bundling policy in Seller Central", "Brands in Brand Registry that fulfill with FBA"], claim:"bundles-and-multipacks-02"},
+  {label:"Who can use it", values:["Set by Amazon's bundling policy", "Brands in Brand Registry that fulfill with FBA"], claim:"bundles-and-multipacks-02"},
   {label:"Contents", values:["Set by you", "2 to 5 different products, all new"], claim:"bundles-and-multipacks-03"}
 ]} />
 
@@ -51,7 +50,22 @@ Brand Registry describes Virtual Bundles as a way to group and sell multiple pro
 - The total cost must be equal to or less than the combined price of each item bought individually. <C id="bundles-and-multipacks-05"/>
 - Some categories, such as gift cards, digital items and subscription products, are not allowed. <C id="bundles-and-multipacks-09"/>
 
+<Callout type="example" title="Worked example (hypothetical): the Virtual Bundle price ceiling">
+Amazon's own illustration sells a $15 cleanser and a $20 moisturizer together for $30. <C id="bundles-and-multipacks-34"/> Apply the rule to a three-item set with stated inputs: a $12 bowl, an $18 pan and a $9 utensil set, individually $39 in total.
+
+- Ceiling: the bundle price must be equal to or less than $39. <C id="bundles-and-multipacks-05"/>
+- At $35, the customer saves $4 against buying separately; at $39 the bundle is allowed but offers no saving.
+
+If any component's own price is later cut, recheck the sum, because the ceiling moves with the individual prices.
+</Callout>
+
 Brand Registry itself is free, but it requires an active registered trademark or a pending trademark application for your brand name or logo. <C id="bundles-and-multipacks-10"/> <C id="bundles-and-multipacks-22"/> See the [Brand Registry guide](/guides/brand-registry-trademark/) for that step. Because a Virtual Bundle does not require packing the products together as one unit, it can test a combination before you commit to a combined box.
+
+## Picking the combination: the Market Basket report
+
+Amazon says Virtual Bundles are compatible with the Market Basket Analysis dashboard in Brand Analytics, as well as with Amazon Deals, coupons, Sponsored Brands ads and A+ Content. <C id="bundles-and-multipacks-30"/> The same data is available as a report, `GET_BRAND_ANALYTICS_MARKET_BASKET_REPORT`, which contains the items most commonly purchased in combination with the items in a customer's basket. <C id="bundles-and-multipacks-31"/> It is open to sellers and vendors who have the Brand Analytics Selling Partner API role and are registered in Brand Registry, and it is requested for a `reportPeriod` of DAY, WEEK, MONTH or QUARTER. <C id="bundles-and-multipacks-32"/>
+
+For each of your ASINs the report lists `purchasedWithAsin`, `purchasedWithRank` and `combinationPct`. <C id="bundles-and-multipacks-33"/> One way to use it is as a shortlist of companion items to consider for a 2-to-5-item Virtual Bundle. <C id="bundles-and-multipacks-03"/> Brand Registry presents Virtual Bundles as a way for customers to buy more from your brand, so the rows to look at first are those where the companion item is one of your own ASINs. <C id="bundles-and-multipacks-01"/>
 
 ## Labeling a physical multipack or bundle
 
@@ -68,6 +82,20 @@ Once units share one retail package, the Fair Packaging and Labeling Act rules i
 The regulation's own multiunit example reads: "6 Bars, Net Wt. 3.4 ozs. (96.3 g) each, Total Net Wt. 1 lb. 4.4 oz. (578 g)." <C id="bundles-and-multipacks-13"/> If the inner units are unlabeled and not meant for separate sale, the declaration may give the total quantity of the multipack without regard to inner packaging. <C id="bundles-and-multipacks-14"/>
 
 A three-pack of the same 8 oz lotion is a multiunit package. A lighter-fluid-and-flints set is the regulation's own combination example. <C id="bundles-and-multipacks-18"/> The [packaging design guide](/guides/packaging-design-fba/) covers where the net quantity sits on the panel.
+
+## Getting a physical set through FBA receiving
+
+Amazon's inbound system has a prep category for this case, SET, defined as multiple items sold as one unit. <C id="bundles-and-multipacks-26"/> Two prep instructions describe what the packaging must show:
+
+| Instruction | What it requires |
+|---|---|
+| ITEM_SETCREAT | The unit is labeled as a set on its packaging, and the individual items' barcodes do not face outward or need covering <C id="bundles-and-multipacks-27"/> |
+| ITEM_SETSTK | A label clearly stating the products must be received and sold as a single unit; in Amazon's example of six unique toy cars, each car's packaging shows it is part of the set <C id="bundles-and-multipacks-28"/> |
+| ITEM_DEBUNDLE | The reverse case: a set of items labeled for individual sale is taken apart by removing the tape or shrink wrap that groups them <C id="bundles-and-multipacks-29"/> |
+
+*Source: Amazon Selling Partner API models, Fulfillment Inbound v2024-03-20, checked Nov 9, 2026.*
+
+The design point is the scannable barcodes: the individual items' barcodes must not face outward and must not require covering, <C id="bundles-and-multipacks-27"/> and the unit needs a label clearly stating that the products must be received and sold as a single unit. <C id="bundles-and-multipacks-28"/> The [packaging design guide](/guides/packaging-design-fba/) covers the other prep triggers.
 
 ## Barcodes: when a combination needs a new GTIN
 
@@ -102,14 +130,16 @@ If the pack will ship in its own packaging under Amazon's SIPP program, note tha
   "Check Amazon's bundling policy in Seller Central for physical bundles",
   "Assign a new GTIN whenever a fixed assortment's contents change",
   "Write the net quantity statement for the right package type",
+  "Label a physical set as sold as one unit and keep inner barcodes from facing outward",
+  "Check the Market Basket report before choosing Virtual Bundle components",
   "Price a Virtual Bundle at or below the sum of the individual prices",
   "Compare one pack fulfillment fee against several single-unit fees"
 ]} />
 
 <Callout type="note" title="Scope">
-This page combines Amazon's public bundle rules, the federal net quantity rules and GS1's GTIN rules. The decision on whether a specific physical bundle may be listed rests with Amazon's bundling policy in Seller Central, and product categories with their own labeling regulations can add requirements.
+Product categories with their own labeling regulations can add requirements to the general net quantity rules shown here; the agency that regulates the category has the final word on the label.
 </Callout>
 
-## How to confirm it for your bundle
+## Sources to re-check before you create the bundle ASIN
 
-Re-check the Virtual Bundle conditions in Amazon's "5 product bundling tips" post and on the Brand Registry page at sell.amazon.com, <C id="bundles-and-multipacks-03"/> <C id="bundles-and-multipacks-01"/> the net quantity rules in 16 CFR 500.27 to 500.29 on eCFR, <C id="bundles-and-multipacks-12"/> and GS1's GTIN Management Standard rules for assortments and pack quantities. <C id="bundles-and-multipacks-19"/> <C id="bundles-and-multipacks-20"/>
+Re-check the Virtual Bundle conditions in Amazon's "5 product bundling tips" post and on the Brand Registry page at sell.amazon.com, <C id="bundles-and-multipacks-03"/> <C id="bundles-and-multipacks-01"/> the net quantity rules in 16 CFR 500.27 to 500.29 on eCFR, <C id="bundles-and-multipacks-12"/> GS1's GTIN Management Standard rules for assortments and pack quantities, <C id="bundles-and-multipacks-19"/> <C id="bundles-and-multipacks-20"/> and the SET prep instructions in the Fulfillment Inbound API reference. <C id="bundles-and-multipacks-27"/>

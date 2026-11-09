@@ -370,5 +370,35 @@
     "verified_by": "verifier-VB",
     "status": "verified",
     "verifier_note": "Added the 'except as provided in subdivisions (b) through (k)' qualifier and the note 52 attribution from Annex I. The notice does not mention headings 9903.88 or the 2018 China actions; the page now says only what the note says, and the worked example labels stacking with the 2018 duties as an assumption."
+  },
+  {
+    "claim_id": "country-of-origin-sourcing-26",
+    "claim": "A Federal Register search of USTR documents for 'exclusion', sorted newest first and run November 9, 2026, returned the October 7, 2026 conforming amendment to a product exclusion (2026-20511) as the most recent result, with no later extension notice.",
+    "page": "/guides/country-of-origin-sourcing/",
+    "source_url": "https://www.federalregister.gov/documents/search?conditions%5Bagencies%5D%5B%5D=trade-representative-office-of-united-states&conditions%5Bterm%5D=exclusion&order=newest",
+    "fetched_via": "https://www.federalregister.gov/api/v1/documents.json?conditions[agencies][]=trade-representative-office-of-united-states&conditions[term]=exclusion&order=newest&per_page=8",
+    "publisher": "Federal Register API — Office of the United States Trade Representative",
+    "source_type": "official-documentation",
+    "accessed": "2026-11-09",
+    "evidence": "Notice of Conforming Amendment to Product Exclusion: China's Acts, Policies, and Practices Related to Technology Transfer, Intellectual Property, and Innovation",
+    "archive_url": "",
+    "produced_by": "date-auditor-D1",
+    "verified_by": "verifier-V5-7",
+    "status": "verified"
+  },
+  {
+    "claim_id": "country-of-origin-sourcing-27",
+    "claim": "The December 1, 2025 extension notice says the U.S. Trade Representative may continue to consider further extensions and/or additional modifications as appropriate.",
+    "page": "/guides/country-of-origin-sourcing/",
+    "source_url": "https://www.federalregister.gov/documents/2025/12/01/2025-21671/notice-of-product-exclusion-extensions-chinas-acts-policies-and-practices-related-to-technology",
+    "fetched_via": "https://www.govinfo.gov/content/pkg/FR-2025-12-01/html/2025-21671.htm",
+    "publisher": "Federal Register — Office of the United States Trade Representative",
+    "source_type": "federal-register-notice",
+    "accessed": "2026-11-09",
+    "evidence": "The U.S. Trade Representative may continue to consider further extensions and/or additional modifications as appropriate.",
+    "archive_url": "",
+    "produced_by": "date-auditor-D1",
+    "verified_by": "verifier-V5-7",
+    "status": "verified"
   }
 ]

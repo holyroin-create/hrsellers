@@ -1,16 +1,15 @@
 ---
 title: "Demand Forecasting and Reorder Points for FBA Sellers"
-description: "Set an FBA reorder point from sales velocity, total lead time and backup stock, then check it against Amazon's restock report, IPI and excess-inventory rules."
+description: "Set an FBA reorder point from sales velocity, lead time and backup stock, count inbound and reserved units correctly, and check it against Amazon's reports."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 9
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "warehouse shelving with partly emptied bays next to fully stocked bays, a clipboard with a stock count sheet on a cart, no people, no logos"
-  alt: "Warehouse aisle with tall pallet racking holding shrink-wrapped cartons under ceiling lights"
-  image: "hub-guides"
+  alt: "Rows of empty green picking shelves on white steel racking in a warehouse, with a bay sign on the upright"
 keyFacts:
   - { label: "Amazon's suggested cover", value: "About two months of supply", claim: "demand-forecasting-reorder-04" }
   - { label: "Excess inventory signal", value: "Over 90 days of supply", claim: "demand-forecasting-reorder-02" }
@@ -31,7 +30,7 @@ related: ["q4-freight-booking-window", "freight-modes", "accrual-accounting-cogs
 
 Your reorder point is the stock level at which you must place the next purchase order so that new units arrive before you sell out: average daily sales times the full lead time from order to sellable at Amazon, plus a cushion of backup units. Amazon's own guidance supplies the guardrails around that number — keep about two months of supply, treat more than 90 days of supply as excess, and keep backup units against supply chain mishaps. <C id="demand-forecasting-reorder-04"/> <C id="demand-forecasting-reorder-02"/> <C id="demand-forecasting-reorder-06"/> This page shows how to compute the point, which Amazon reports to feed it, and where Amazon's published thresholds should override your instinct to buy more.
 
-## The three inputs
+## The three inputs and where to get them
 
 Amazon frames ordering decisions around the same variables: it notes that economic order quantity considers lead time, carrying costs and demand variability. <C id="demand-forecasting-reorder-05"/> For a reorder point you need three of them in units you can measure.
 
@@ -46,7 +45,7 @@ A recent stockout drags a simple sales average down. Amazon's planning data sepa
 
 Count inbound units when you compare stock to the trigger. Amazon's Restock Inventory report does this in its Total Days of Supply figure, which includes units from open shipments; if your own spreadsheet counts only sellable units, it will fire the reorder too early and stack purchase orders on top of shipments already on the water. <C id="demand-forecasting-reorder-27"/> The reverse error — counting a shipment as inbound before the supplier has actually handed it to the carrier — fires the order too late.
 
-Lead time must include every leg, not just the factory. The freight portion depends on mode; the deadlines and options per mode are in [Freight modes](/guides/freight-modes/).
+Lead time must include every leg, not just the factory. Amazon's inventory guide adds that the right inventory level may depend on seasonality, sales history or customer demands. <C id="demand-forecasting-reorder-43"/> The freight portion depends on mode; the deadlines and options per mode are in [Freight modes](/guides/freight-modes/).
 
 <Callout type="example" title="Worked example (hypothetical)">
 Inputs (assumed): 600 units sold in the last 30 days, so 20 units per day; total lead time 60 days (25 production, 30 freight and customs, 5 receiving); 14 days of backup stock.
@@ -55,6 +54,35 @@ Reorder point = 20 × (60 + 14) = 1,480 units. When sellable plus inbound units 
 
 Guardrails: about two months of supply at this pace is 20 × 60 = 1,200 units; more than 90 days of supply — over 1,800 units — would put you in Amazon's excess range. By the time the order lands, about 280 units remain (1,480 − 20 × 60). If it brings 1,600 more, you hold 1,880 units, or 94 days — over the line. An order of 1,500 leaves 1,780 units, or 89 days.
 </Callout>
+
+## Which units count toward the trigger
+
+"Sellable plus inbound" sounds simple until you open the Restock Inventory report, which splits a SKU's stock into Available, FC transfer, FC Processing, Customer Order, Unfulfillable, Working, Shipped and Receiving. <C id="demand-forecasting-reorder-28"/> Amazon's FBA Inventory API defines matching quantities. The right-hand column is this page's own counting method, not an Amazon rule:
+
+| Bucket | Amazon's definition | Count toward the reorder trigger? (this page's method) |
+|---|---|---|
+| Available (fulfillable) | Can be picked, packed and shipped | Yes |
+| Working | In an inbound shipment you have notified Amazon about | Only once the goods have really left the supplier |
+| Shipped | Notified to Amazon and given a tracking number | Yes |
+| Receiving | Not yet received, in a shipment that is partly received and processed | Yes |
+| FC transfer / FC processing | Moving between fulfillment centers, or sidelined for additional processing | Yes (this page counts them as stock already in Amazon's network) |
+| Customer Order | Reserved for customer orders | No — already sold |
+| Unfulfillable | Unsellable condition (customer, warehouse, distributor or carrier damaged, defective, expired) | No |
+| Researching | Misplaced or warehouse-damaged units being confirmed | No, until they are found |
+
+*Source: Amazon Selling Partner API documentation and FBA Inventory API model, checked Nov 9, 2026. The count column is this page's planning method, not an Amazon rule.* <C id="demand-forecasting-reorder-32"/> <C id="demand-forecasting-reorder-33"/> <C id="demand-forecasting-reorder-34"/> <C id="demand-forecasting-reorder-35"/> <C id="demand-forecasting-reorder-36"/> <C id="demand-forecasting-reorder-37"/> <C id="demand-forecasting-reorder-38"/>
+
+Working covers units in a shipment you have notified Amazon about; units move to Shipped once a tracking number is provided. Under this page's method, counting Working units while the goods are still at the supplier delays the reorder. <C id="demand-forecasting-reorder-33"/> <C id="demand-forecasting-reorder-34"/>
+
+<Callout type="example" title="Worked example (hypothetical): one SKU's inventory position">
+Inputs from a Restock report row: Available 820; FC transfer 40; FC Processing 10; Customer Order 35; Unfulfillable 12; Working 350 (shipment created, goods still at the factory); Shipped 250; Receiving 60. Reorder point from the example above: 1,480 units.
+
+Position counted with this page's method: 820 + 40 + 10 + 250 + 60 = **1,180 units**. That is 300 below the 1,480 trigger, so the next purchase order is due now. If the 350 Working units had been counted, the position would read 1,530, above the trigger, and the order would wait until the factory shipped.
+</Callout>
+
+<C id="demand-forecasting-reorder-28"/>
+
+The same report also carries Supplier and Supplier part no. columns next to 30-day sales, and its content is updated in near real-time. <C id="demand-forecasting-reorder-30"/> <C id="demand-forecasting-reorder-29"/> It reports Days of Supply at Amazon Fulfillment Network separately from Total Days of Supply, which includes units from open shipments. <C id="demand-forecasting-reorder-31"/>
 
 ## What Amazon's reports give you
 
@@ -66,11 +94,13 @@ Amazon says it uses machine learning models to offer recommendations through the
   {label:"Fee signal", values:["—","Whether the Low-Inventory-Level fee applied this week","—"], claim:"demand-forecasting-reorder-21"}
 ]} />
 
+The Inventory Health report carries `units-shipped-t7` through `units-shipped-t90`, `weeks-of-cover-t30` and `weeks-of-cover-t90`, `sell-through` and `estimated-excess-quantity`, so a single export gives you short- and long-window velocity and Amazon's own excess estimate side by side. <C id="demand-forecasting-reorder-39"/> It also flags seasonal SKUs with `is-seasonal-in-next-3-months`, `season-name`, `season-start-date` and `season-end-date`. <C id="demand-forecasting-reorder-40"/> Age buckets such as `inv-age-91-to-180-days` and `inv-age-181-to-270-days` sit either side of the 181-day aged-inventory threshold, and the report adds its own recommended ship-in quantity and date, plus whether a SKU is exempted from the Low-Inventory-Level fee. <C id="demand-forecasting-reorder-41"/> <C id="demand-forecasting-reorder-42"/>
+
 Treat the Restock report's suggested quantity as a second opinion, not an order. The Ledger report, which Amazon likens to a bank statement of your inventory, is where to check the "units received" in your sell-through math. <C id="demand-forecasting-reorder-22"/> Amazon defines sell-through as units sold divided by units received. <C id="demand-forecasting-reorder-01"/>
 
 ## The fees that punish both mistakes
 
-Running too lean and too heavy both cost money at Amazon. On the lean side, the Inventory Health report flags whether the Low-Inventory-Level fee applied in the current week. <C id="demand-forecasting-reorder-21"/> The thresholds for that fee are published inside Seller Central, so check them there rather than relying on a summary. On the heavy side, excess inventory can tie up resources and run up storage costs, and items stored more than 181 days draw a monthly aged-inventory charge. <C id="demand-forecasting-reorder-11"/> <C id="demand-forecasting-reorder-24"/> Amazon also links the Inventory Performance Index to cost: the score measures how efficiently you manage FBA inventory, is based on how well you replenish popular products, keep optimal inventory levels and fix listing problems, and Amazon advises keeping it high to lower storage costs. <C id="demand-forecasting-reorder-08"/> <C id="demand-forecasting-reorder-09"/> <C id="demand-forecasting-reorder-10"/>
+Running too lean and too heavy both cost money at Amazon. On the lean side, the Inventory Health report flags whether the Low-Inventory-Level fee applied in the current week. <C id="demand-forecasting-reorder-21"/> The thresholds for that fee are published inside Seller Central, so check them there rather than relying on a summary. On the heavy side, excess inventory can tie up resources and run up storage costs, and items stored more than 181 days draw a monthly aged-inventory charge. <C id="demand-forecasting-reorder-11"/> <C id="demand-forecasting-reorder-24"/> Amazon's inventory guide also warns that if stock sits on the shelf for over three months, you may not be able to recover the expenses. <C id="demand-forecasting-reorder-44"/> Amazon also links the Inventory Performance Index to cost: the score measures how efficiently you manage FBA inventory, is based on how well you replenish popular products, keep optimal inventory levels and fix listing problems, and Amazon advises keeping it high to lower storage costs. <C id="demand-forecasting-reorder-08"/> <C id="demand-forecasting-reorder-09"/> <C id="demand-forecasting-reorder-10"/>
 
 If the lean-side risk is the one you keep hitting, Amazon says AWD automated replenishment periodically monitors inventory levels in Prime-ready fulfillment centers and triggers replenishments; with auto-replenishment enabled it manages replenishments so you don't have to worry about FBA capacity limits, and leaving it defaulted gets a waiver for FBA storage-utilization surcharges and low-inventory-level costs. <C id="demand-forecasting-reorder-26"/> <C id="demand-forecasting-reorder-25"/>
 
@@ -85,6 +115,6 @@ If the lean-side risk is the one you keep hitting, Amazon says AWD automated rep
 
 Amazon describes ABC analysis as a way to categorize inventory based on importance, which lets you forecast top sellers carefully and run simple rules on the tail. <C id="demand-forecasting-reorder-14"/> Just-in-Time, which Amazon describes as ordering products just before you need them, sits in tension with its advice to keep backup units against supply chain mishaps. <C id="demand-forecasting-reorder-13"/> <C id="demand-forecasting-reorder-06"/> Whatever the method, Amazon suggests auditing inventory at least one to two times a year so the counts feeding the forecast are right. <C id="demand-forecasting-reorder-15"/> How inventory values flow into cost of goods sold is covered in [Accrual accounting and COGS](/guides/accrual-accounting-cogs/).
 
-## How to confirm the current thresholds
+## Where to re-check Amazon's thresholds
 
 Re-read Amazon's inventory-management guide on sell.amazon.com for the excess-inventory definition and the FBA page for the aged-inventory rule, and pull the Restock and Inventory Health reports from your own account. <C id="demand-forecasting-reorder-02"/> <C id="demand-forecasting-reorder-24"/> <C id="demand-forecasting-reorder-16"/> Restock limits and the Low-Inventory-Level fee thresholds are set inside Seller Central and can change; the arithmetic here is a planning method, and your own sales history is the input that decides it.

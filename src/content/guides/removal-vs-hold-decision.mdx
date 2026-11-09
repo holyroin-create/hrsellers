@@ -1,16 +1,15 @@
 ---
 title: "Remove or Keep FBA Inventory? A Cost-Based Decision Method"
-description: "When slow FBA stock should come out and when holding is cheaper: storage rates, the 181-day aged charge, removal options and the reports that show the numbers."
+description: "When slow FBA stock should come out and when holding is cheaper: storage rates, the 181-day charge, liquidation payouts and the report columns to read."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 10
 photo:
   subject: "closed loading dock doors at a fulfillment warehouse with a pallet of cartons waiting outside, no people, no logos"
-  alt: "Two closed loading-dock doors with dark dock shelters above a yellow-edged dock wall at a warehouse"
-  image: "duty-drawback"
+  alt: "Two closed roller-shutter doors, one orange and one blue, on the corrugated white wall of an industrial unit, with yellow bollards and an empty concrete apron in front"
 keyFacts:
   - { label: "Aged inventory charge applies", value: "After 181 days in a fulfillment center", claim: "removal-vs-hold-decision-03" }
   - { label: "FBA standard-size storage", value: "$0.78 (Jan–Sep) / $2.40 (Oct–Dec) per cu ft per month", claim: "removal-vs-hold-decision-04" }
@@ -26,7 +25,7 @@ faq:
   - { q: "How much does Amazon charge for removal order?", a: "Amazon's FBA page says it can return, dispose of or liquidate inventory in a fulfillment center for a per-item charge; check the current rate in Seller Central.", claims: ["removal-vs-hold-decision-01"] }
   - { q: "How to remove inventory from Amazon FBA?", a: "Have Amazon return, dispose of or liquidate the units through a removal order. The Removal Order Detail report then lists each removal order and its items, and the Removal Shipment Detail report gives tracking.", claims: ["removal-vs-hold-decision-01", "removal-vs-hold-decision-10", "removal-vs-hold-decision-11"] }
   - { q: "How much are Amazon FBA removal order fees?", a: "They are charged per item. Compare that charge with the storage you would otherwise pay each month — for standard-size items, $0.78 per cubic foot from January to September and $2.40 from October to December.", claims: ["removal-vs-hold-decision-01", "removal-vs-hold-decision-04"] }
-related: ["fba-vs-fbm-breakeven", "awd-vs-3pl-warehousing", "mcf-off-amazon-orders"]
+related: ["fba-vs-fbm-breakeven", "awd-vs-3pl-warehousing", "mcf-off-amazon-orders", "aged-inventory-15-month-tier"]
 ---
 
 Keep FBA units when the storage they will incur before they sell is less than what removing them costs and loses; remove them when the months-to-sell stretch into the aged-inventory period or the October–December rate. Amazon can return, dispose of or liquidate inventory in a fulfillment center for a per-item charge, while holding costs monthly storage and, after 181 days, an aged inventory charge. <C id="removal-vs-hold-decision-01"/> <C id="removal-vs-hold-decision-03"/> Check the current per-item removal rate and aged inventory rate in Seller Central before running the numbers below.
@@ -57,19 +56,21 @@ For customer returns, FBA Grade and Resell gives sellers a resell channel on Ama
 
 Because MCF and FBA draw from one inventory pool, slow stock can fill orders from your website or other channels without first being removed. <C id="removal-vs-hold-decision-14"/> See [MCF for off-Amazon orders](/guides/mcf-off-amazon-orders/) for the fee table.
 
-## The reports that give you the inputs
+## The report columns that give you the inputs
 
-Amazon's Selling Partner API documentation describes the FBA reports that hold the inputs for this decision.
+Amazon's Selling Partner API documentation lists the fields in each FBA report, so you can see exactly which column answers which part of the decision.
 
-| Report | What it contains |
-|---|---|
-| Manage Inventory Health | A consolidated view of sales over 7, 30, 60 and 90 days, plus estimated storage and long-term storage fees and aged and excess units |
-| Storage Fees | Estimated monthly storage fees for each ASIN |
-| Recommended Removal | Sellable items that will be 365 days old or older at the next long-term storage cleanup event |
-| Removal Order Detail | All removal orders and the items in each, for a chosen period |
-| Removal Shipment Detail | Shipment tracking for removal orders |
+| Report (SP-API report type) | What it is for | Columns to read |
+|---|---|---|
+| Manage Inventory Health (`GET_FBA_INVENTORY_PLANNING_DATA`) | Sales over 7, 30, 60 and 90 days, estimated storage and long-term storage fees, aged and excess units | `days-of-supply`, `estimated-storage-cost-next-month`, `recommended-removal-quantity`, `pending-removal-quantity` |
+| Storage Fees (`GET_FBA_STORAGE_FEE_CHARGES_DATA`) | Estimated monthly storage fees for each ASIN | `average_quantity_on_hand`, `average_quantity_pending_removal` |
+| Recommended Removal (`GET_FBA_RECOMMENDED_REMOVAL_DATA`) | Sellable items that will be 365 days old or older at the next long-term storage cleanup | `sellable-181-270-days`, `sellable-271-365-days`, `sellable-365+-days`, `sellable-removal-quantity` |
+| Removal Order Detail (`GET_FBA_FULFILLMENT_REMOVAL_ORDER_DETAIL_DATA`) | All removal orders and the items in each, for a chosen period | `order-type`, `order-status`, `requested-quantity`, `shipped-quantity`, `disposed-quantity`, `removal-fee` |
+| Removal Shipment Detail (`GET_FBA_FULFILLMENT_REMOVAL_SHIPMENT_DETAIL_DATA`) | Shipment tracking for removal orders | `shipment-date`, `carrier`, `tracking-number` |
 
-*Source: Amazon Selling Partner API documentation, FBA report types, checked Nov 8, 2026.* <C id="removal-vs-hold-decision-08"/> <C id="removal-vs-hold-decision-09"/> <C id="removal-vs-hold-decision-07"/> <C id="removal-vs-hold-decision-10"/> <C id="removal-vs-hold-decision-11"/>
+*Source: Amazon Selling Partner API documentation, FBA report types, checked Nov 9, 2026.* <C id="removal-vs-hold-decision-08"/> <C id="removal-vs-hold-decision-25"/> <C id="removal-vs-hold-decision-09"/> <C id="removal-vs-hold-decision-31"/> <C id="removal-vs-hold-decision-07"/> <C id="removal-vs-hold-decision-24"/> <C id="removal-vs-hold-decision-10"/> <C id="removal-vs-hold-decision-19"/> <C id="removal-vs-hold-decision-11"/> <C id="removal-vs-hold-decision-22"/>
+
+Two timing details matter. The Recommended Removal report flags 365-day units only "if the report is generated within six weeks of the cleanup event date," although it covers sellable and unsellable stock and is refreshed daily. <C id="removal-vs-hold-decision-23"/> And `pending-removal-quantity` tells you which units are already on a removal order, so you do not count them twice when you plan the next one. <C id="removal-vs-hold-decision-25"/>
 
 ## The decision method
 
@@ -91,7 +92,36 @@ Case B — sells 10 units a month, starting in January: 20 months to clear. Each
 
 Check of Case B: 9 × $0.195 + 3 × $0.60 = $1.755 + $1.80 = $3.555, rounded to $3.56. <C id="removal-vs-hold-decision-04"/>
 
-## Decision table
+## Liquidation: what actually reaches your account
+
+In Amazon's Finances API, an FBA liquidation payment event carries two amounts: what the liquidator paid for your inventory, and the liquidation fee. Amazon's model says the seller "receives this amount minus `LiquidationFeeAmount`." <C id="removal-vs-hold-decision-27"/> That event "is used only in the US marketplace." <C id="removal-vs-hold-decision-28"/> For units returned to you, the removal shipment item's `FeeAmount` is "The fee that Amazon charged to the seller for the removal of the item," recorded as a negative number. <C id="removal-vs-hold-decision-26"/>
+
+<Callout type="example" title="Worked example (hypothetical): three exits for 200 units">
+Inputs (invented): 200 slow units, margin if sold normally $6 per unit; removal charge assumed at $1.00 per unit; liquidator assumed to pay $1.50 per unit with an assumed liquidation fee of $0.60 per unit; resale elsewhere assumed to net $4.00 per unit after your own shipping and handling. Use your actual Seller Central rates and settlement figures.
+
+- **Return to you and resell:** 200 × ($4.00 − $1.00) = $600.
+- **Liquidate:** 200 × ($1.50 − $0.60) = $180 net payout, with no further storage.
+- **Dispose:** 200 × −$1.00 = −$200; only sensible when the units cannot be sold.
+
+Compare each figure with the holding cost from Case B above. With these inputs, returning and reselling nets more than liquidation; if resale elsewhere is not realistic, liquidation is the only one of the three exits here that pays out.
+</Callout>
+
+## Checking a removal order after you place it
+
+Amazon describes the Removal Order Detail report as a way to reconcile "the total number of items requested to be removed from an Amazon fulfillment center with the actual number of items removed," along with each item's status. <C id="removal-vs-hold-decision-18"/> Both removal reports are updated in near real time. <C id="removal-vs-hold-decision-20"/>
+
+<Steps title="Reconciling a removal" steps={[
+  {t:"Match requested to outcome", d:"In Removal Order Detail, compare requested-quantity with the shipped, disposed, cancelled and in-process quantities; follow up on units that are not accounted for.", claim:"removal-vs-hold-decision-19"},
+  {t:"Check the fee per line", d:"Compare the removal-fee column with the per-item charge you expected.", claim:"removal-vs-hold-decision-19"},
+  {t:"Track the shipment", d:"Use carrier and tracking-number from Removal Shipment Detail; it excludes canceled returns and disposed items, so disposals will not appear there.", claim:"removal-vs-hold-decision-21"},
+  {t:"Confirm on the settlement", d:"Find the removal fee as a negative amount, or the liquidation proceeds and fee, in your financial events.", claim:"removal-vs-hold-decision-26"}
+]} />
+
+## What changes for held stock on February 1, 2027
+
+Amazon will "remove the aged inventory surcharge and combine it with monthly storage fees into a single, age-based rate," with storage changes effective February 1, 2027. <C id="removal-vs-hold-decision-29"/> <C id="removal-vs-hold-decision-32"/> Amazon says that means flat or lower fees for inventory turning in under six months and higher fees for aged inventory. <C id="removal-vs-hold-decision-30"/> For the remove-or-hold math, the separate aged-inventory step in Case B is replaced by the age-based storage rate, which Amazon says will mean higher fees for aged inventory. The age bands and reports are covered in [the aged inventory surcharge and the 15-month tier](/guides/aged-inventory-15-month-tier/).
+
+## Rules of thumb by situation
 
 <Decision title="Quick rules for slow FBA stock" rows={[
   {if:"The item appears on the Recommended Removal report", then:"It will be 365+ days old at the next cleanup: decide now", claim:"removal-vs-hold-decision-07"},
@@ -105,6 +135,6 @@ For bulk storage that avoids the Q4 rate on future shipments, see [AWD vs a 3PL]
 
 The figures here are planning estimates; the charges Amazon actually bills to your account are the ones that count.
 
-## How to confirm the current charges
+## Where to check removal and storage rates
 
-Check the per-item removal, disposal and liquidation rates and the aged inventory rates in Seller Central, and the fee descriptions at sell.amazon.com/fulfillment-by-amazon. Re-check standard-size storage rates at sell.amazon.com/programs/supply-chain and AWD's rule on FBA inventory at sell.amazon.com/programs/warehousing. Pull the Manage Inventory Health and Recommended Removal reports for current, ASIN-level inputs.
+Check the per-item removal, disposal and liquidation rates and the aged inventory rates in Seller Central, and the fee descriptions at sell.amazon.com/fulfillment-by-amazon. Re-check standard-size storage rates at sell.amazon.com/programs/supply-chain and AWD's rule on FBA inventory at sell.amazon.com/programs/warehousing. Pull the Manage Inventory Health and Recommended Removal reports for current, ASIN-level inputs, and the Removal Order Detail report after any removal.

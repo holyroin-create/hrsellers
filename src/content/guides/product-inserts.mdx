@@ -1,16 +1,15 @@
 ---
 title: "Product Inserts: What Federal Rules Allow in the Box"
-description: "What to put on product insert cards: the FTC review-incentive and suppression rules, warranty card limits under 16 CFR 700.7, and where Amazon's insert policy sits."
+description: "What product insert cards may say: FTC review rules, warranty card limits, the 16 CFR 701.3 warranty disclosures, and Amazon's own review and MCF slip tools."
 pillar: "compliance"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 7
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 10
 photo:
   subject: "a small printed thank-you card and a folded instruction leaflet resting on top of a product inside an opened box, no brand names or readable text"
-  alt: "Kraft paper mailer envelope with a blank white address label, lying on white sheets on a dark wooden table"
-  image: "ebay-etsy-for-amazon-sellers"
+  alt: "Top-down close-up of an open, unprinted kraft box with a smaller plain kraft box resting inside it, on an orange surface"
 keyFacts:
   - { label: "Incentive for a positive (or negative) review", value: "Prohibited, 16 CFR 465.4", claim: "product-inserts-01" }
   - { label: "Warranty card as condition of a full warranty", value: "Unreasonable duty, 16 CFR 700.7", claim: "product-inserts-04" }
@@ -20,7 +19,7 @@ summary:
   - "An insert may not use groundless legal threats, physical threats, intimidation or knowingly false public accusations to stop a customer from posting a review or to get one removed."
   - "A full warranty cannot require the customer to return a registration card; a card may be offered as proof of purchase date only with a notice that not returning it will not affect warranty rights."
   - "For products costing the consumer more than $15, warranty terms must be available before sale; a warrantor may post them online and say on the product, packaging or manual where to find them."
-  - "Amazon's own product insert rules are published inside Seller Central and should be checked there."
+  - "If the insert is the written warranty for a product over $15, 16 CFR 701.3 lists what that single document must disclose, including three fixed statements."
 faq:
   - { q: "Do you have to register a product for warranty?", a: "Not as a condition of a full warranty: 16 CFR 700.7 treats requiring the return of a registration card as an unreasonable duty. A full warranty may offer a card the consumer can return to place proof of the purchase date on file.", claims: ["product-inserts-04", "product-inserts-06"] }
   - { q: "What happens if you don't register your warranty?", a: "Under a full warranty, a card offered as proof of purchase date must carry notice that failing to return it will not affect warranty rights, as long as you can show the purchase date in a reasonable manner.", claims: ["product-inserts-07"] }
@@ -68,9 +67,51 @@ Inputs: a catalog with a $12.99 phone stand and a $24.99 desk lamp, both sold wi
 The threshold turns on what the consumer actually pays, so a discount that takes a product under $15.00 changes the answer for that sale.
 </Callout>
 
+## If the insert is your warranty: what it must say
+
+If the insert card carries the warranty itself, check it against the disclosure rule. For a consumer product actually costing the consumer more than $15.00, 16 CFR 701.3 requires a written warranty to clearly and conspicuously disclose its terms in a single document. <C id="product-inserts-15"/>
+
+<Checklist title="What a written warranty document must cover (16 CFR 701.3(a))" items={[
+  "Who the warranty is extended to, if it is limited to the original purchaser or others",
+  "Which products, parts or characteristics are covered, and any exclusions",
+  "What the warrantor will do on a defect, malfunction or failure to conform, and at whose expense",
+  "When the term starts, if not on the purchase date, and how long it lasts",
+  "A step-by-step claim procedure, with who to contact",
+  "Any informal dispute settlement mechanism the warrantor elects under Part 703",
+  "Any limit on implied warranties, with the required State-law statement",
+  "Any exclusion of incidental or consequential damages, with the required State-law statement",
+  "The statement on specific legal rights that vary from State to State"
+]} />
+
+The items in this list come from 16 CFR 701.3(a). <C id="product-inserts-16"/> <C id="product-inserts-17"/> Three statements are fixed wording, so copy them exactly:
+
+| When it is required | Required sentence |
+|---|---|
+| The warranty limits how long implied warranties last | "Some States do not allow limitations on how long an implied warranty lasts, so the above limitation may not apply to you." <C id="product-inserts-18"/> |
+| The warranty excludes incidental or consequential damages | "Some States do not allow the exclusion or limitation of incidental or consequential damages, so the above limitation or exclusion may not apply to you." (It may be combined with the statement above.) <C id="product-inserts-19"/> |
+| Every written warranty covered by 701.3 | "This warranty gives you specific legal rights, and you may also have other rights which vary from State to State." <C id="product-inserts-20"/> |
+
+*Source: eCFR, 16 CFR 701.3, checked Nov 9, 2026.*
+
+Putting the warranty in the box is one of the methods 16 CFR 702.3 recognizes for getting warranty materials to sellers: a copy of the written warranty with every warranted product, or a tag, sign, sticker, label, decal or other attachment to the product that contains the full text of the warranty. <C id="product-inserts-21"/> The seller's separate duty is to make the text readily available to the prospective buyer, <C id="product-inserts-22"/> and a card inside a sealed box is only seen after the purchase. That is why the website option described above, with the web address printed on the product, packaging or manual, matters for online sales. <C id="product-inserts-10"/>
+
+<Callout type="example" title="Worked example (hypothetical): auditing a warranty card draft">
+Inputs: a $34.99 kitchen scale; the draft card says "2-year warranty. Register within 30 days or coverage is void. We are not liable for any damages." The scale costs more than $15.00, so 701.3 applies. <C id="product-inserts-15"/>
+
+- "Register … or coverage is void": if the warranty is designated full, this is the kind of registration condition 16 CFR 700.7 calls an unreasonable duty; remove it or make registration optional with the required notice. <C id="product-inserts-04"/> <C id="product-inserts-07"/>
+- "Not liable for any damages": an exclusion of incidental or consequential damages needs the fixed State-law sentence. <C id="product-inserts-19"/>
+- Missing: what the warrantor will do on a defect, the step-by-step claim procedure, and the legal-rights statement. <C id="product-inserts-16"/> <C id="product-inserts-20"/>
+</Callout>
+
+## Asking for reviews through Amazon instead of the card
+
+Amazon has its own route for review requests. The Solicitations API sends a buyer a solicitation asking for seller feedback and a product review, and only one such solicitation or free-form proactive message may be sent per order. <C id="product-inserts-23"/> It is a single template-based email that asks for both. <C id="product-inserts-24"/> Amazon's workflow first verifies that the order is available for solicitation and then creates the request, and a second request for the same order returns a 403 status code. <C id="product-inserts-25"/>
+
 ## Inserts in Multi-Channel Fulfillment orders
 
 If you fulfill off-Amazon orders through Amazon's Multi-Channel Fulfillment, MCF and Buy with Prime shipments do not include packing slips by default; they can be turned on at the account level or per MCF order. <C id="product-inserts-14"/> Unless you turn them on, any message you want customers to see has to be in or on the product packaging.
+
+Through the Fulfillment Outbound API, an MCF order can carry `displayableOrderComment`, order-specific text of up to 750 characters that appears in recipient-facing materials such as the packing slip. <C id="product-inserts-26"/> The same API's feature settings include `PACKING_SLIP`, which requires a slip with the order, and `BLANK_BOX`, which ships in non-Amazon branded packaging. <C id="product-inserts-27"/> The review rules above concern what a business offers or threatens in connection with reviews, so they apply to the wording of a packing-slip comment as much as to a printed card. <C id="product-inserts-01"/> <C id="product-inserts-02"/>
 
 <Checklist title="Before you print an insert" items={[
   "No gift, refund or discount tied to a review or to its star rating",
@@ -78,7 +119,7 @@ If you fulfill off-Amazon orders through Amazon's Multi-Channel Fulfillment, MCF
   "No statement that a warranty depends on returning a card",
   "If a registration card is included, add the notice that not returning it does not affect warranty rights",
   "For products over $15 with a written warranty, state where the terms can be read",
-  "Check Amazon's product insert policy in Seller Central"
+  "If the card is the warranty, include all 701.3 items and the fixed State-law sentences"
 ]} />
 
 <Decision title="Where does each insert element belong?" rows={[
@@ -91,6 +132,6 @@ If you fulfill off-Amazon orders through Amazon's Multi-Channel Fulfillment, MCF
 This page reflects the federal regulations as published on eCFR. Whether a particular insert breaks a marketplace rule is decided by that marketplace's own policy, and whether specific wording violates an FTC rule is ultimately a question for the FTC or a court.
 </Callout>
 
-## How to confirm it for your inserts
+## Rules to read before the print run
 
-Read 16 CFR 465.4 and 465.7 for the review rules, 16 CFR 700.7 for registration cards, and 16 CFR 702.3 for pre-sale warranty availability on eCFR, <C id="product-inserts-01"/> <C id="product-inserts-02"/> <C id="product-inserts-04"/> <C id="product-inserts-08"/> then check Amazon's product insert policy in Seller Central before printing.
+Read 16 CFR 465.4 and 465.7 for the review rules, 16 CFR 700.7 for registration cards, 16 CFR 701.3 for warranty contents and 16 CFR 702.3 for pre-sale warranty availability on eCFR, <C id="product-inserts-15"/> <C id="product-inserts-01"/> <C id="product-inserts-02"/> <C id="product-inserts-04"/> <C id="product-inserts-08"/> then check Amazon's product insert policy in Seller Central before printing.

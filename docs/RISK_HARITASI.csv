@@ -1,0 +1,119 @@
+# Başlangıç durumu (2026-11-09, iyileştirme öncesi). Sonrası: DEGISIKLIK_KAYDI_V5.md ve DENETIM_RAPORU_V5.md
+url,seviye,riskler,ana_metin_kelime,render_kelime,iddia,yayimlanmamis_kural_atif,en_benzer_sayfa,benzerlik,gorsel,gorsel_kullanim,tarih_hassas,aksiyon
+/guides/account-suspension-appeal/,Orta,görsel-tekrar x3,932,2462,21,2,/guides/order-defect-rate/,0.42,section-321-repeal-2027,3,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/accrual-accounting-cogs/,Orta,görsel-tekrar x5,969,3038,32,0,/guides/form-1099-k-marketplace-sellers/,0.34,accrual-accounting-cogs,5,,ayrı görsel
+/guides/aged-inventory-15-month-tier/,Yüksek,ince-metin; benzer:/guides/fba-storage-four-layers/; görsel-tekrar x5; tarih-hassas,769,2247,17,1,/guides/fba-storage-four-layers/,0.49,accrual-accounting-cogs,5,"August 1, 2026;February 1, 2026;February 1, 2027;May 1, 2026;May 1, 2027",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/guides/ai-image-tagging-rule/,Yüksek,ince-metin; tarih-hassas,737,2041,24,2,/guides/main-image-compliance/,0.34,hub-about,1,"June 9, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/guides/amazon-200-billion-quarter/,Orta,görsel-tekrar x4; tarih-hassas,829,2343,27,0,/guides/product-research-cost-errors/,0.34,pillar-money,4,"February 5, 2026",ayrı görsel; tarih kontrolü
+/guides/amazon-business-b2b/,Yüksek,ince-metin; görsel-tekrar x5,782,2306,32,3,/guides/vendor-central-vs-seller-central/,0.33,accrual-accounting-cogs,5,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/amazon-fba-fee-changes-2026/,Orta,görsel-tekrar x3; tarih-hassas,943,2600,23,2,/guides/aged-inventory-15-month-tier/,0.43,merchandise-processing-fee,3,"February 1, 2027;January 15, 2026;January 15, 2027;November 5, 2026",ayrı görsel; tarih kontrolü
+/guides/amazon-ppc-benchmarks/,Orta,görsel-tekrar x7,1320,2735,22,1,/guides/ppc-campaign-structure-launch/,0.35,prior-disclosure-protests,7,,ayrı görsel
+/guides/amazon-referral-fees/,Yüksek,benzer:/marketplaces/amazon/; görsel-tekrar x6,1101,2531,19,0,/marketplaces/amazon/,0.47,amazon-referral-fees,6,,ayrı görsel
+/guides/amazon-renewed/,Orta,görsel-tekrar x3,1014,2397,27,2,/guides/ungating-restricted-categories/,0.3,country-of-origin-sourcing,3,,ayrı görsel
+/guides/amazon-stopped-prepping/,Orta,görsel-tekrar x2; tarih-hassas,828,2247,25,1,/guides/shipment-discrepancy-claims/,0.34,entry-type-11-vs-01,2,"January 1, 2026",ayrı görsel; tarih kontrolü
+/guides/antidumping-duties/,Düşük,tarih-hassas,966,2869,32,0,/guides/section-301-china-tariffs/,0.31,antidumping-duties,1,"November 5, 2026;November 6, 2026",tarih kontrolü
+/guides/aplus-content-brand-tools/,Orta,görsel-tekrar x5; tarih-hassas,879,2373,30,3,/guides/brand-referral-bonus/,0.38,gs1-barcodes-fnsku,5,"February 1, 2027;January 4, 2027;March 1, 2027;March 15, 2027",ayrı görsel; tarih kontrolü
+/guides/authorised-reseller/,Orta,görsel-tekrar x6; tarih-hassas,804,2437,34,0,/guides/ip-complaints-retractions/,0.36,incoterms-who-is-importer,6,"June 1, 2026;November 28, 2026;November 8, 2026",ayrı görsel; tarih kontrolü
+/guides/awd-vs-3pl-warehousing/,Orta,görsel-tekrar x4; tarih-hassas,909,2506,29,1,/guides/removal-vs-hold-decision/,0.42,hub-guides,4,"December 31, 2026",ayrı görsel; tarih kontrolü
+/guides/brand-referral-bonus/,Orta,görsel-tekrar x5,824,2290,29,0,/guides/aplus-content-brand-tools/,0.38,tools-calculator,5,,ayrı görsel
+/guides/brand-registry-trademark/,Düşük,tarih-hassas,890,2730,36,0,/guides/gs1-barcodes-fnsku/,0.35,brand-registry-trademark,1,"October 1, 2026",tarih kontrolü
+/guides/bundles-and-multipacks/,Yüksek,ince-metin; görsel-tekrar x6,780,2372,25,1,/guides/fbt-fixed-dollar-problem/,0.39,hub-marketplaces,6,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/buy-box-featured-offer/,Yüksek,ince-metin; görsel-tekrar x6,719,2341,31,1,/guides/cross-channel-price-parity/,0.34,amazon-referral-fees,6,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/buyer-seller-messaging/,Orta,görsel-tekrar x3,816,2312,28,1,/guides/order-defect-rate/,0.36,ebay-etsy-for-amazon-sellers,3,,ayrı görsel
+/guides/choosing-a-freight-forwarder/,Orta,görsel-tekrar x6,993,3031,42,0,/guides/sourcing-agents/,0.33,incoterms-who-is-importer,6,,ayrı görsel
+/guides/country-of-origin-sourcing/,Orta,görsel-tekrar x3; tarih-hassas,921,2988,25,0,/guides/section-301-china-tariffs/,0.4,country-of-origin-sourcing,3,"July 24, 2026;July 28, 2026;June 23, 2027;November 8, 2026;November 9, 2026;October 7, 2026",ayrı görsel; tarih kontrolü
+/guides/cross-channel-price-parity/,Orta,görsel-tekrar x2,838,2485,25,1,/guides/buy-box-featured-offer/,0.34,shopify,2,,ayrı görsel
+/guides/currency-conversion-payouts/,Orta,görsel-tekrar x2,900,2492,33,0,/guides/dd7-payout-reserve/,0.36,first-sale-valuation,2,,ayrı görsel
+/guides/customs-bonds/,Orta,görsel-tekrar x4,834,2670,27,0,/guides/entry-type-11-vs-01/,0.36,customs-bonds,4,,ayrı görsel
+/guides/customs-holds-and-exams/,Orta,görsel-tekrar x6,921,3009,35,0,/guides/prior-disclosure-protests/,0.3,customs-holds-and-exams,6,,ayrı görsel
+/guides/dd7-payout-reserve/,Yüksek,ince-metin; görsel-tekrar x7,768,2320,17,0,/guides/currency-conversion-payouts/,0.36,prior-disclosure-protests,7,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/de-minimis-suspension-2026/,Yüksek,ince-metin; görsel-tekrar x3; tarih-hassas,762,2647,25,0,/guides/section-321-repeal-2027/,0.42,de-minimis-suspension-2026,3,"December 7, 2026;February 24, 2026;July 1, 2027;July 24, 2026;June 24, 2026;November 8, 2026",ayrı görsel; tarih kontrolü
+/guides/deal-and-coupon-fees/,Orta,görsel-tekrar x6,805,2144,22,2,/guides/q4-deal-deadlines-2026/,0.39,amazon-referral-fees,6,,ayrı görsel
+/guides/demand-forecasting-reorder/,Yüksek,ince-metin; görsel-tekrar x4,785,2222,27,1,/guides/q4-freight-booking-window/,0.4,hub-guides,4,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/duty-drawback/,Orta,görsel-tekrar x5,1023,3113,36,0,/guides/prior-disclosure-protests/,0.35,duty-drawback,5,,ayrı görsel
+/guides/ebay-etsy-for-amazon-sellers/,Yüksek,benzer:/guides/etsy-offsite-ads-economics/; görsel-tekrar x3,1068,2738,24,0,/guides/etsy-offsite-ads-economics/,0.45,ebay-etsy-for-amazon-sellers,3,,ayrı görsel
+/guides/entry-type-11-vs-01/,Orta,görsel-tekrar x2; tarih-hassas,880,2850,31,0,/guides/merchandise-processing-fee/,0.4,entry-type-11-vs-01,2,"December 7, 2026;January 5, 2027;October 1, 2026",ayrı görsel; tarih kontrolü
+/guides/etsy-offsite-ads-economics/,Yüksek,benzer:/guides/ebay-etsy-for-amazon-sellers/,984,2408,13,0,/guides/ebay-etsy-for-amazon-sellers/,0.45,etsy-offsite-ads-economics,1,,izle
+/guides/expanding-eu-uk-compliance/,Orta,görsel-tekrar x3,1025,2754,32,0,/guides/gs1-barcodes-fnsku/,0.3,pillar-compliance,3,,ayrı görsel
+/guides/fba-fuel-logistics-surcharge-2026/,Yüksek,yayımlanmamış-kural-bağımlı; benzer:/guides/holiday-peak-fulfilment-fee/; görsel-tekrar x5; tarih-hassas,819,2238,20,6,/guides/holiday-peak-fulfilment-fee/,0.49,duty-drawback,5,"January 14, 2027;January 15, 2026;October 15, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/guides/fba-reimbursement-sourcing-cost/,Orta,görsel-tekrar x4,920,2356,20,1,/guides/reimbursement-recovery-services/,0.35,pillar-money,4,,ayrı görsel
+/guides/fba-storage-four-layers/,Yüksek,benzer:/guides/aged-inventory-15-month-tier/; görsel-tekrar x4; tarih-hassas,912,2390,18,0,/guides/aged-inventory-15-month-tier/,0.49,hub-guides,4,"February 1, 2027",ayrı görsel; tarih kontrolü
+/guides/fba-vs-fbm-breakeven/,Orta,görsel-tekrar x2,802,2367,25,0,/guides/seller-fulfilled-prime/,0.42,hub-tools,2,,ayrı görsel
+/guides/fbt-fixed-dollar-problem/,Yüksek,ince-metin; görsel-tekrar x5; tarih-hassas,507,1881,15,0,/guides/amazon-fba-fee-changes-2026/,0.4,tools-calculator,5,"January 15, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/guides/first-sale-valuation/,Orta,görsel-tekrar x2,975,2762,34,0,/guides/the-supplier-invoice/,0.33,first-sale-valuation,2,,ayrı görsel
+/guides/foreign-trade-zones/,Düşük,,1055,3182,38,0,/guides/duty-drawback/,0.33,foreign-trade-zones,1,,izle
+/guides/form-1099-k-marketplace-sellers/,Düşük,,885,2774,28,0,/guides/sales-tax-nexus/,0.36,form-1099-k-marketplace-sellers,1,,izle
+/guides/freight-modes/,Yüksek,ince-metin; görsel-tekrar x2,799,2454,24,2,/guides/q4-freight-booking-window/,0.37,cta-ship,2,,ayrı görsel
+/guides/gs1-barcodes-fnsku/,Orta,görsel-tekrar x5,832,2297,25,0,/guides/brand-registry-trademark/,0.35,gs1-barcodes-fnsku,5,,ayrı görsel
+/guides/hazmat-dangerous-goods/,Düşük,,1001,3051,39,0,/guides/shipping-lithium-batteries/,0.35,hazmat-dangerous-goods,1,,izle
+/guides/holiday-peak-fulfilment-fee/,Yüksek,yayımlanmamış-kural-bağımlı; benzer:/guides/fba-fuel-logistics-surcharge-2026/; görsel-tekrar x3; tarih-hassas,831,2282,23,4,/guides/fba-fuel-logistics-surcharge-2026/,0.49,de-minimis-suspension-2026,3,"January 14, 2027;October 15, 2026",ayrı görsel; tarih kontrolü
+/guides/hts-classification-basics/,Yüksek,ince-metin; görsel-tekrar x2; tarih-hassas,782,3231,40,0,/guides/tariff-engineering-design/,0.37,hts-classification-basics,2,"October 30, 2026",ayrı görsel; tarih kontrolü
+/guides/inbound-placement-split-arithmetic/,Orta,görsel-tekrar x5,903,2309,21,0,/guides/amazon-fba-fee-changes-2026/,0.36,duty-drawback,5,,ayrı görsel
+/guides/incoterms-who-is-importer/,Orta,görsel-tekrar x6; tarih-hassas,1000,2923,32,0,/guides/entry-type-11-vs-01/,0.33,incoterms-who-is-importer,6,"January 5, 2027;June 3, 2026;November 6, 2026",ayrı görsel; tarih kontrolü
+/guides/ip-complaints-retractions/,Yüksek,ince-metin; görsel-tekrar x4; tarih-hassas,672,1957,33,1,/guides/authorised-reseller/,0.36,customs-bonds,4,"July 31, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/guides/ipi-restock-limits/,Orta,görsel-tekrar x5,811,2322,28,1,/guides/demand-forecasting-reorder/,0.39,accrual-accounting-cogs,5,,ayrı görsel
+/guides/launch-sequence/,Orta,görsel-tekrar x6,1158,3034,28,0,/guides/brand-referral-bonus/,0.35,hub-marketplaces,6,,ayrı görsel
+/guides/listing-disappeared/,Orta,görsel-tekrar x6,813,2355,29,1,/guides/variations-review-pooling/,0.33,customs-holds-and-exams,6,,ayrı görsel
+/guides/listing-optimisation-a10/,Yüksek,ince-metin; görsel-tekrar x6,766,2164,26,3,/guides/rufus-listing-optimization/,0.37,hub-marketplaces,6,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/low-inventory-level-fee/,Orta,görsel-tekrar x6; tarih-hassas,805,2312,19,1,/guides/aged-inventory-15-month-tier/,0.42,customs-holds-and-exams,6,"February 1, 2027",ayrı görsel; tarih kontrolü
+/guides/main-image-compliance/,Yüksek,ince-metin; görsel-tekrar x5,795,2080,26,3,/guides/title-limit-984-million/,0.35,gs1-barcodes-fnsku,5,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/mcf-off-amazon-orders/,Orta,görsel-tekrar x6; tarih-hassas,848,2622,36,1,/guides/holiday-peak-fulfilment-fee/,0.4,hub-marketplaces,6,"January 14, 2027;January 15, 2027;October 15, 2026",ayrı görsel; tarih kontrolü
+/guides/merchandise-processing-fee/,Orta,görsel-tekrar x3; tarih-hassas,911,2861,27,0,/guides/tariff-stack-2026/,0.41,merchandise-processing-fee,3,"October 1, 2026",ayrı görsel; tarih kontrolü
+/guides/narf-canada-mexico/,Yüksek,ince-metin; görsel-tekrar x3,770,2363,29,1,/guides/subscribe-and-save-economics/,0.34,de-minimis-suspension-2026,3,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/order-defect-rate/,Yüksek,ince-metin; görsel-tekrar x6,686,2086,18,3,/guides/account-suspension-appeal/,0.42,customs-holds-and-exams,6,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/origin-marking-requirements/,Düşük,,1039,3450,44,0,/guides/country-of-origin-sourcing/,0.31,origin-marking-requirements,1,,izle
+/guides/packaging-design-fba/,Yüksek,ince-metin; görsel-tekrar x5; tarih-hassas,775,2528,27,0,/guides/fbt-fixed-dollar-problem/,0.35,gs1-barcodes-fnsku,5,"January 15, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/guides/ppc-campaign-structure-launch/,Orta,görsel-tekrar x4,981,2474,27,0,/guides/amazon-ppc-benchmarks/,0.35,pillar-money,4,,ayrı görsel
+/guides/prior-disclosure-protests/,Orta,görsel-tekrar x7,896,3101,38,0,/guides/duty-drawback/,0.35,prior-disclosure-protests,7,,ayrı görsel
+/guides/product-inserts/,Yüksek,ince-metin; görsel-tekrar x3,683,2142,14,1,/guides/buyer-seller-messaging/,0.3,ebay-etsy-for-amazon-sellers,3,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/product-research-cost-errors/,Orta,görsel-tekrar x5,1073,2520,23,1,/guides/fba-vs-fbm-breakeven/,0.39,tools-calculator,5,,ayrı görsel
+/guides/q4-deal-deadlines-2026/,Orta,görsel-tekrar x4,822,2133,21,1,/guides/deal-and-coupon-fees/,0.39,hub-guides,4,,ayrı görsel
+/guides/q4-freight-booking-window/,Yüksek,ince-metin; görsel-tekrar x5,686,2377,28,1,/guides/demand-forecasting-reorder/,0.4,duty-drawback,5,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/qc-inspections/,Orta,görsel-tekrar x3,895,2505,23,0,/guides/sourcing-agents/,0.32,pillar-compliance,3,,ayrı görsel
+/guides/reimbursement-recovery-services/,Orta,görsel-tekrar x7,859,2320,29,0,/guides/shipment-discrepancy-claims/,0.37,prior-disclosure-protests,7,,ayrı görsel
+/guides/removal-vs-hold-decision/,Yüksek,ince-metin; görsel-tekrar x5,541,2149,17,0,/guides/awd-vs-3pl-warehousing/,0.42,duty-drawback,5,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/returns-cost-and-badge/,Yüksek,ince-metin; görsel-tekrar x6,661,2253,23,1,/guides/holiday-peak-fulfilment-fee/,0.41,customs-holds-and-exams,6,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/review-manipulation-risk/,Orta,görsel-tekrar x2,963,2936,30,0,/guides/product-inserts/,0.29,review-manipulation-risk,2,,ayrı görsel
+/guides/rufus-listing-optimization/,Yüksek,ince-metin; görsel-tekrar x3; tarih-hassas,761,2264,25,3,/guides/listing-optimisation-a10/,0.37,amazon,3,"May 13, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/guides/sales-tax-nexus/,Düşük,tarih-hassas,1059,3173,26,0,/guides/form-1099-k-marketplace-sellers/,0.36,sales-tax-nexus,1,"January 1, 2026",tarih kontrolü
+/guides/section-301-china-tariffs/,Düşük,tarih-hassas,1002,3374,37,0,/guides/country-of-origin-sourcing/,0.4,section-301-china-tariffs,1,"August 23, 2026;July 1, 2026;July 24, 2026;July 6, 2026;June 23, 2027;November 8, 2026",tarih kontrolü
+/guides/section-321-repeal-2027/,Yüksek,ince-metin; görsel-tekrar x3; tarih-hassas,786,2467,21,0,/guides/de-minimis-suspension-2026/,0.42,section-321-repeal-2027,3,"December 7, 2026;January 5, 2027;July 1, 2027;June 24, 2026;May 31, 2026;November 6, 2026",ayrı görsel; tarih kontrolü
+/guides/seller-central-reports/,Yüksek,ince-metin; görsel-tekrar x7,718,2266,29,0,/guides/order-defect-rate/,0.37,prior-disclosure-protests,7,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/seller-financing/,Yüksek,ince-metin; görsel-tekrar x5,709,2418,37,0,/guides/currency-conversion-payouts/,0.31,tools-calculator,5,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/seller-fulfilled-prime/,Yüksek,ince-metin; görsel-tekrar x3,650,2056,25,1,/guides/fba-vs-fbm-breakeven/,0.42,amazon,3,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/seller-insurance-coi/,Orta,görsel-tekrar x4,812,2308,30,1,/guides/brand-registry-trademark/,0.29,customs-bonds,4,,ayrı görsel
+/guides/selling-your-fba-business/,Orta,görsel-tekrar x6,844,2424,32,1,/guides/seller-financing/,0.3,incoterms-who-is-importer,6,,ayrı görsel
+/guides/shipment-discrepancy-claims/,Orta,görsel-tekrar x6,877,2241,22,1,/guides/reimbursement-recovery-services/,0.37,customs-holds-and-exams,6,,ayrı görsel
+/guides/shipping-lithium-batteries/,Düşük,tarih-hassas,1122,2976,30,0,/guides/hazmat-dangerous-goods/,0.35,shipping-lithium-batteries,1,"December 31, 2026",tarih kontrolü
+/guides/sipp-packaging-program/,Düşük,tarih-hassas,946,2799,43,0,/guides/fbt-fixed-dollar-problem/,0.36,pillar-fees,1,"January 15, 2026",ayrı görsel; tarih kontrolü
+/guides/sourcing-agents/,Orta,görsel-tekrar x3,909,2446,22,0,/guides/supplier-payment-terms/,0.34,country-of-origin-sourcing,3,,ayrı görsel
+/guides/subscribe-and-save-economics/,Yüksek,ince-metin; görsel-tekrar x6,739,1992,20,0,/guides/deal-and-coupon-fees/,0.35,hub-marketplaces,6,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/supplier-payment-terms/,Yüksek,ince-metin; görsel-tekrar x5,730,2319,27,0,/guides/sourcing-agents/,0.34,tools-calculator,5,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/supplier-verification/,Orta,görsel-tekrar x6; tarih-hassas,901,2676,35,0,/guides/supplier-payment-terms/,0.29,incoterms-who-is-importer,6,"August 3, 2026",ayrı görsel; tarih kontrolü
+/guides/tariff-engineering-design/,Orta,görsel-tekrar x3,851,2744,34,0,/guides/hts-classification-basics/,0.37,pillar-compliance,3,,ayrı görsel
+/guides/tariff-stack-2026/,Düşük,tarih-hassas,1040,2891,21,0,/guides/merchandise-processing-fee/,0.41,tariff-stack-2026,1,"April 6, 2026;February 20, 2026;February 24, 2026;July 24, 2026;October 1, 2026",tarih kontrolü
+/guides/the-supplier-invoice/,Yüksek,ince-metin; görsel-tekrar x3,748,2402,32,0,/guides/first-sale-valuation/,0.33,section-321-repeal-2027,3,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/tiktok-shop-fees/,Orta,görsel-tekrar x3,928,2348,19,0,/marketplaces/ebay/,0.35,merchandise-processing-fee,3,,ayrı görsel
+/guides/title-limit-984-million/,Yüksek,ince-metin; görsel-tekrar x6; tarih-hassas,734,2145,22,2,/guides/rufus-listing-optimization/,0.36,amazon-referral-fees,6,"July 27, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/guides/ungating-restricted-categories/,Yüksek,ince-metin; görsel-tekrar x4,653,2599,35,2,/guides/authorised-reseller/,0.34,customs-bonds,4,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/us-product-compliance/,Düşük,tarih-hassas,943,2834,28,0,/guides/qc-inspections/,0.32,us-product-compliance,1,"January 8, 2027;July 8, 2026;March 10, 2026;March 10, 2027",tarih kontrolü
+/guides/variations-review-pooling/,Yüksek,ince-metin; görsel-tekrar x2,754,2410,30,2,/guides/listing-disappeared/,0.33,review-manipulation-risk,2,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/vendor-central-vs-seller-central/,Yüksek,ince-metin; görsel-tekrar x6,671,2301,24,0,/guides/brand-referral-bonus/,0.34,incoterms-who-is-importer,6,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/vine-and-early-reviews/,Yüksek,ince-metin,719,2142,34,2,/guides/aplus-content-brand-tools/,0.35,hub-faq,1,,zenginleştir + ayrı doğrulama; ayrı görsel
+/guides/walmart-wfs/,Düşük,,1036,2681,33,0,/guides/ebay-etsy-for-amazon-sellers/,0.42,walmart-wfs,1,,izle
+/marketplaces/aliexpress/,Yüksek,ince-metin; görsel-tekrar x2,583,2127,29,0,/marketplaces/tiktok-shop/,0.31,cta-ship,2,,zenginleştir + ayrı doğrulama; ayrı görsel
+/marketplaces/amazon/,Yüksek,benzer:/marketplaces/walmart/; görsel-tekrar x3,997,3120,44,0,/marketplaces/walmart/,0.48,amazon,3,,ayrı görsel
+/marketplaces/ebay/,Düşük,,948,2791,28,0,/marketplaces/shopify/,0.43,ebay,1,,izle
+/marketplaces/etsy/,Yüksek,benzer:/guides/etsy-offsite-ads-economics/,918,2365,20,0,/guides/etsy-offsite-ads-economics/,0.45,etsy,1,,izle
+/marketplaces/shopify/,Orta,görsel-tekrar x2,915,2186,11,0,/marketplaces/ebay/,0.43,shopify,2,,ayrı görsel
+/marketplaces/tiktok-shop/,Yüksek,ince-metin; görsel-tekrar x6; tarih-hassas,638,2046,21,0,/guides/tiktok-shop-fees/,0.32,hub-marketplaces,6,"October 15, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/marketplaces/walmart/,Yüksek,benzer:/marketplaces/amazon/,954,2731,43,0,/marketplaces/amazon/,0.48,walmart,1,,izle
+/reviews/a2x/,Yüksek,ince-metin; benzer:/reviews/sellerboard/; görsel-tekrar x7; tarih-hassas,741,2266,32,0,/reviews/sellerboard/,0.45,prior-disclosure-protests,7,"November 14, 2026;November 8, 2026",ayrı görsel; tarih kontrolü
+/reviews/amzscout/,Yüksek,ince-metin; görsel-tekrar x7; tarih-hassas,747,2164,29,0,/reviews/jungle-scout/,0.38,prior-disclosure-protests,7,"November 8, 2026",ayrı görsel; tarih kontrolü
+/reviews/aura/,Yüksek,ince-metin; görsel-tekrar x6; tarih-hassas,781,2423,39,0,/reviews/zonguru/,0.38,amazon-referral-fees,6,"November 8, 2026",ayrı görsel; tarih kontrolü
+/reviews/getida/,Yüksek,ince-metin; görsel-tekrar x5; tarih-hassas,704,2052,28,2,/reviews/a2x/,0.33,accrual-accounting-cogs,5,"November 8, 2026",ayrı görsel; tarih kontrolü
+/reviews/helium-10/,Yüksek,ince-metin; benzer:/reviews/jungle-scout/; görsel-tekrar x2; tarih-hassas,787,2445,37,0,/reviews/jungle-scout/,0.49,hub-tools,2,"November 8, 2026",ayrı görsel; tarih kontrolü
+/reviews/jungle-scout/,Yüksek,ince-metin; benzer:/reviews/helium-10/; görsel-tekrar x2; tarih-hassas,739,2402,34,0,/reviews/helium-10/,0.49,hts-classification-basics,2,"February 18, 2026;November 8, 2026",ayrı görsel; tarih kontrolü
+/reviews/keepa/,Yüksek,ince-metin; görsel-tekrar x6; tarih-hassas,620,1817,22,0,/reviews/helium-10/,0.39,amazon-referral-fees,6,"November 8, 2026",zenginleştir + ayrı doğrulama; ayrı görsel; tarih kontrolü
+/reviews/sellerboard/,Yüksek,ince-metin; benzer:/reviews/a2x/; görsel-tekrar x4; tarih-hassas,728,2209,35,0,/reviews/a2x/,0.45,pillar-money,4,"November 8, 2026",ayrı görsel; tarih kontrolü
+/reviews/zonguru/,Yüksek,ince-metin; görsel-tekrar x5; tarih-hassas,688,2067,33,0,/reviews/aura/,0.38,gs1-barcodes-fnsku,5,"November 8, 2026",ayrı görsel; tarih kontrolü

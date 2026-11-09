@@ -1,16 +1,15 @@
 ---
 title: "Amazon A10 Algorithm: What Amazon Actually Says About Search"
-description: "We found no Amazon page that uses \"A10.\" Here is what Amazon itself says shapes search results and the listing levers it documents for sellers."
+description: "Amazon never uses the name \"A10.\" What Amazon says shapes its search results, and how to read its search reports field by field to find weak listings."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 9
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "a laptop on a plain desk showing a generic, unbranded grid of product search results, shot at an angle so no text is legible"
-  alt: "Two closed corrugated shipping boxes stacked on a white surface, each with a blank white address label"
-  image: "hub-marketplaces"
+  alt: "A hand holding a black magnifying glass over the keyboard of a silver laptop"
 keyFacts:
   - { label: "Amazon's stated goal", value: "Show products customers will be most satisfied with", claim: "listing-optimisation-a10-01" }
   - { label: "Signals Amazon names", value: "Purchases, price, delivery speed, return rates", claim: "listing-optimisation-a10-03" }
@@ -22,6 +21,7 @@ summary:
   - "Amazon's Australian store also names item information such as title, price and description as inputs."
   - "A search-suppressed listing is no longer discoverable, so clear listing issues before working on content."
   - "Documented levers include keywords in listing copy, a 500-byte search terms field, Brand Analytics search reports, A+ Content and Sponsored Products."
+  - "The Search Query Performance report gives, per search query, your ASIN's share of impressions, clicks, cart adds and purchases; Search Catalog Performance impression counts include sponsored results."
 faq:
   - { q: "What is Amazon A10 algorithm?", a: "We found no Amazon page that uses the term A10. Amazon's own pages describe the goal instead: showing customers products it thinks they will be most satisfied with, refined by signals such as purchases, price, delivery speed and return rates.", claims: ["listing-optimisation-a10-01", "listing-optimisation-a10-02", "listing-optimisation-a10-03", "listing-optimisation-a10-04"] }
   - { q: "How does Amazon search work?", a: "Amazon says it predicts which products a searcher will be most satisfied with and, when customers signal dissatisfaction, ranks products customers are more likely to love higher in search results. It also says its systems now try to understand the intent behind a search, not just match keywords.", claims: ["listing-optimisation-a10-01", "listing-optimisation-a10-05", "listing-optimisation-a10-08"] }
@@ -70,7 +70,7 @@ Amazon also says that, compared with non-AI content, its AI-generated listing co
 
 ## Use Amazon's own search data instead of guessing
 
-Brand Analytics is the official source for search behavior on your own products. It requires a Professional selling account and a Brand Representative role for a brand enrolled in Brand Registry. <C id="listing-optimisation-a10-16"/>
+Brand Analytics is the official source for search behavior on your own products. It requires a Professional selling account and a Brand Representative role for a brand enrolled in Brand Registry. <C id="listing-optimisation-a10-16"/> Through the Selling Partner API, the Search Query Performance and Search Catalog Performance reports can be requested by sellers who have the Brand Analytics role and are registered in Brand Registry; the Amazon Search Terms report also requires being a brand representative. <C id="listing-optimisation-a10-27"/>
 
 <Steps title="A keyword review cycle using Amazon's reports" steps={[
   {t:"Find the queries", d:"The Search Query Performance dashboard lists the keywords customers use to find your brand.", claim:"listing-optimisation-a10-15"},
@@ -78,6 +78,35 @@ Brand Analytics is the official source for search behavior on your own products.
   {t:"Track the funnel", d:"Monitor impressions, clicks, cart adds and purchases.", claim:"listing-optimisation-a10-17"},
   {t:"Update the listing", d:"Work relevant terms into title, bullets, description or search terms within the documented limits.", claim:"listing-optimisation-a10-13"}
 ]} />
+
+## Reading the search reports field by field
+
+Amazon publishes the field definitions for its search reports in its Selling Partner API models. Three of them:
+
+| Report (API report type) | What it covers | Key fields |
+|---|---|---|
+| Search Query Performance (`GET_BRAND_ANALYTICS_SEARCH_QUERY_PERFORMANCE_REPORT`) | Impressions, clicks, cart adds and purchases for the ASINs you list | searchQueryVolume, asinImpressionShare, asinClickShare, asinCartAddShare, asinPurchaseShare |
+| Search Catalog Performance (`GET_BRAND_ANALYTICS_SEARCH_CATALOG_PERFORMANCE_REPORT`) | Search engagement metrics (impressions, clicks, cart adds, purchases) by ASIN | impressionCount, clickRate, conversionRate |
+| Search Terms (`GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT`) | The top three clicked ASINs by search keyword and department | searchFrequencyRank, clickShare, conversionShare |
+
+*Source: Amazon Selling Partner API models, Brand Analytics report schemas, checked Nov 9, 2026.* <C id="listing-optimisation-a10-28"/> <C id="listing-optimisation-a10-29"/> <C id="listing-optimisation-a10-30"/>
+
+What the main fields measure, in Amazon's definitions:
+
+- **searchQueryVolume** is the number of times customers searched for a query in the period. <C id="listing-optimisation-a10-31"/>
+- **asinImpressionShare** is the fraction of impressions for your ASIN compared with all impressions for that query; asinClickShare, asinCartAddShare and asinPurchaseShare apply the same idea to clicks, cart adds and purchases. <C id="listing-optimisation-a10-32"/> <C id="listing-optimisation-a10-33"/>
+- **searchQueryScore** ranks a query against your ASIN's other queries on overall performance, with 1 as the highest rank. <C id="listing-optimisation-a10-34"/>
+- In Search Catalog Performance, **clickRate** is clicks divided by impressions and **conversionRate** is purchases divided by clicks. <C id="listing-optimisation-a10-35"/> <C id="listing-optimisation-a10-36"/>
+
+Three details affect how you read the numbers. Impressions in Search Catalog Performance include sponsored search results, <C id="listing-optimisation-a10-37"/> so the count is not an organic-only measure. Requests use WEEK, MONTH or QUARTER periods and cannot span more than one period, <C id="listing-optimisation-a10-28"/> and the ASIN list in a Search Query Performance request has a 200-character limit. <C id="listing-optimisation-a10-38"/>
+
+The reports also split clicks, cart adds and purchases by the delivery promise shown in search results, with separate counts for same-day, one-day and two-day delivery messages. <C id="listing-optimisation-a10-39"/> Amazon names delivery speed as one of the signals it uses, <C id="listing-optimisation-a10-03"/> and these counts show how the listing performs under each delivery message.
+
+<Callout type="example" title="Worked example (hypothetical): finding where a query leaks">
+Inputs from one week's Search Query Performance row for the query "insulated lunch bag": asinImpressionShare 0.12, asinClickShare 0.04, asinCartAddShare 0.05, asinPurchaseShare 0.05.
+
+Reading: the ASIN gets 12% of the query's impressions but only 4% of its clicks, so its click share is one-third of its impression share (0.04 ÷ 0.12 ≈ 0.33). After the click, its share rises slightly (cart adds and purchases at 5%). On these inputs, the weak point is the search result itself (what the shopper sees in the results before clicking), not the detail page. A row where click share is high but purchase share drops would point the other way, to the detail page and offer.
+</Callout>
 
 ## Paid placement is separate
 
@@ -94,6 +123,6 @@ The Featured Offer is a different contest from search. Amazon says it features t
 
 How Amazon's shopping assistant reads listings is covered separately in [Rufus and your listings](/guides/rufus-listing-optimization/). Inflating sales or reviews to game these signals carries its own risk; see [review manipulation risk](/guides/review-manipulation-risk/).
 
-## How to confirm
+## Where to check Amazon's own statements and your data
 
-Amazon's own statements are the only reliable baseline: re-read "How customers get to pick the winners in Amazon's store" on aboutamazon.com for the signals it names, the Brand Analytics page on sell.amazon.com for report eligibility, and the Selling Partner API listing status guide for what "discoverable" and "suppressed" mean. For a specific listing, the issues shown in Seller Central or returned by the API show whether it is search suppressed; we found no Amazon page that publishes ranking weights.
+Amazon's own statements are the only reliable baseline: re-read "How customers get to pick the winners in Amazon's store" on aboutamazon.com for the signals it names, the Brand Analytics page on sell.amazon.com for report eligibility, the Brand Analytics report schemas in Amazon's selling-partner-api-models repository on GitHub for field definitions, and the Selling Partner API listing status guide for what "discoverable" and "suppressed" mean. For a specific listing, the issues shown in Seller Central or returned by the API show whether it is search suppressed; we found no Amazon page that publishes ranking weights.

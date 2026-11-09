@@ -1,12 +1,12 @@
 ---
 title: "Amazon Business for Sellers: B2B Pricing, Quotes and Setup"
-description: "How a US seller reaches business buyers on Amazon: business prices, quantity discounts, quotes, case packs, certifications, tax exemption and FBA."
+description: "Selling to Amazon Business: business prices and quantity tiers, B2B opportunity reports, B2B fields in your sales reports, fee discounts, certifications and FBA."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "office supply cartons and a pallet of case-packed goods staged at a business loading area, no people, no logos"
   alt: "Warehouse aisle between tall metal racks stocked with cardboard cartons and wrapped pallets"
@@ -59,13 +59,19 @@ A business price is a second price on the same offer, visible to Amazon Business
 
 If you manage listings through the Selling Partner API, Amazon's developer changelog says the Listings Items API and the JSON listings feed support Amazon Business pricing: you set the `audience` attribute to `B2B` to create a business offer and use `quantity_discount_plan` for quantity-based pricing. <C id="amazon-business-b2b-26"/> <C id="amazon-business-b2b-27"/>
 
+### Seeing the business offer the way business buyers do
+
+Amazon's offers lookup returns consumer offers unless you ask for business ones; the CustomerType setting takes Consumer or Business, with Consumer as the default. <C id="amazon-business-b2b-39"/> In the business view, each tiered price carries a quantityTier, the quantity at which it becomes active, <C id="amazon-business-b2b-40"/> and the B2B_ANY_OFFER_CHANGED notification reports the quantity tier of each offer. <C id="amazon-business-b2b-50"/>
+
+One detail in Amazon's definitions explains an odd result. When a consumer (B2C) offer wins the Buy Box at a quantity-discount tier, Amazon says that is because others do not have inventory at that quantity, not because that seller has a quantity discount. <C id="amazon-business-b2b-41"/> If a competitor without tiers wins your 50-unit tier, check stock depth before cutting price.
+
 <Callout type="example" title="Worked example (hypothetical)">
 Inputs: a toner cartridge with a retail price of $40.00. You set a business price of $38.00, then a quantity discount of 5% at 10 units and 8% at 25 units, applied to the business price. A buyer ordering 30 units pays 30 × ($38.00 × 0.92) = 30 × $34.96 = $1,048.80, against 30 × $40.00 = $1,200.00 at retail. The $151.20 gap is what you give up for the larger order; set it against your own landed cost, fees and the lower return rate you expect before choosing tiers. The tier levels here are invented for the arithmetic and are not Amazon recommendations.
 </Callout>
 
 ## Referral fees on larger orders
 
-Among the program's benefits, Amazon lists: "Enjoy lower referral fees on larger purchases." <C id="amazon-business-b2b-17"/> The public program page does not publish the discount schedule. Sellers can see what they actually received in a Selling Partner API report called the Referral Fee Discounts Report (`FEE_DISCOUNTS_REPORT`), which "Contains a summary of the seller's fee discounts" and is available to Amazon Business sellers. <C id="amazon-business-b2b-28"/> The detailed discount rules are published inside Seller Central, so check them there before building a tier on an assumed fee. For standard category referral rates, see the [referral fee guide](/guides/amazon-referral-fees/).
+Among the program's benefits, Amazon lists: "Enjoy lower referral fees on larger purchases." <C id="amazon-business-b2b-17"/> The public program page does not publish the discount schedule. Sellers can see what they actually received in a Selling Partner API report called the Referral Fee Discounts Report (`FEE_DISCOUNTS_REPORT`), which "Contains a summary of the seller's fee discounts" and is available to Amazon Business sellers. <C id="amazon-business-b2b-28"/> Its columns include a target price and the referral fee at that target price. <C id="amazon-business-b2b-43"/> Its data can be up to 24 hours old, and Amazon asks that it not be requested more than once in 24 hours. <C id="amazon-business-b2b-42"/> For standard category referral rates, see the [referral fee guide](/guides/amazon-referral-fees/).
 
 ## Bulk listings, quotes and B2B tools
 
@@ -77,6 +83,37 @@ The other B2B Central tools Amazon names:
 - **B2B Product Opportunities** — recommendations for B2B products to add. <C id="amazon-business-b2b-09"/>
 - **Case Pack Product Opportunities and Business Discounts Insights** — which products suit bulk sale, and suggested B2B prices and discounts. <C id="amazon-business-b2b-10"/>
 
+### The two B2B product opportunity reports
+
+Amazon also provides B2B product opportunities as two report types; each report offers up to 10,000 recommendations and is refreshed weekly. <C id="amazon-business-b2b-44"/> They answer different sourcing questions:
+
+<Compare title="B2B product opportunity reports" columns={["Recommended for You","Not Yet on Amazon"]} rows={[
+  {label:"Report type", values:["GET_B2B_PRODUCT_OPPORTUNITIES_RECOMMENDED_FOR_YOU","GET_B2B_PRODUCT_OPPORTUNITIES_NOT_YET_ON_AMAZON"], claim:"amazon-business-b2b-44"},
+  {label:"What it lists", values:["Products already on Amazon, recommended based on predicted incremental units sold, unmet buyer demand, low offer count and other factors","Products in demand that are not yet on Amazon"], claim:"amazon-business-b2b-45"},
+  {label:"Demand signal", values:["b2bSalesRank, based only on Amazon Business purchases","Industry of the first business customer who requested it"], claim:"amazon-business-b2b-46"},
+  {label:"Sales signal", values:["productPerformance over 30 days, TIER_1 (best) to TIER_3","No sales field in the report schema"], claim:"amazon-business-b2b-47"}
+]} />
+
+*Source: Amazon Selling Partner API report schemas and documentation, checked Nov 9, 2026.* <C id="amazon-business-b2b-48"/> <C id="amazon-business-b2b-49"/>
+
+## Measuring B2B sales separately from retail
+
+With FBA, business orders draw on the same inventory pool as retail orders, <C id="amazon-business-b2b-18"/> so B2B results need their own numbers. Amazon's data marks them in these fields:
+
+| Where | Field | What it tells you |
+|---|---|---|
+| Orders | IsBusinessOrder | True when the buyer is a Verified Business Buyer <C id="amazon-business-b2b-33"/> |
+| Orders | PurchaseOrderNumber | Only returned when the buyer entered a PO number at checkout <C id="amazon-business-b2b-34"/> |
+| Sales and Traffic report | unitsOrderedB2B | Units ordered by Amazon Business customers <C id="amazon-business-b2b-35"/> |
+| Sales and Traffic report | buyBoxPercentageB2B | Share of business page views where the buy box showed for your product <C id="amazon-business-b2b-37"/> |
+| Sales and Traffic report | unitSessionPercentageB2B | Units bought by business customers relative to business customers who viewed <C id="amazon-business-b2b-38"/> |
+
+*Source: Amazon Selling Partner API models, Orders API v0 and Sales and Traffic report schema, checked Nov 9, 2026.* The B2B report fields are only populated for B2B sellers. <C id="amazon-business-b2b-36"/>
+
+<Callout type="example" title="Worked example (hypothetical): did the quantity tiers work?">
+Inputs: for one SKU, the four weeks before adding tiers show 120 unitsOrderedB2B and a unitSessionPercentageB2B of 6%; the four weeks after show 210 units and 9%. Units rose by 90 (75%), and conversion by 3 points. Using the earlier toner example's tier economics, the question is whether those extra 90 units at tier prices earn more than the margin you gave up on business units that would have sold anyway. Compare buyBoxPercentageB2B in the same weeks: if it did not change, the gain is less likely to have come from winning the business Buy Box more often.
+</Callout>
+
 ## Certifications and the business profile
 
 Many business buyers are asked to meet sourcing targets. Amazon says certifications "can help attract Amazon Business customers, many of whom are tasked with meeting quality sourcing objectives." <C id="amazon-business-b2b-32"/> You choose from a list of accepted certifications and "upload a digital copy of the certificate or provide a business identifier number (such as DUNS)." <C id="amazon-business-b2b-13"/> Certifications "appear to Amazon Business customers throughout the shopping experience" and are listed on your profile page. <C id="amazon-business-b2b-14"/>
@@ -87,7 +124,7 @@ Many business buyers are asked to meet sourcing targets. Amazon says certificati
 
 ## Tax-exempt buyers
 
-For tax-exempt buyers, Amazon points to the Amazon Tax-Exemption program: "Automate tax exemptions on qualified purchases by participating in the Amazon Tax-Exemption program." <C id="amazon-business-b2b-16"/> Enrollment terms are set out in Seller Central. How marketplace facilitator rules shift sales tax collection is covered in the [sales tax nexus guide](/guides/sales-tax-nexus/).
+For tax-exempt buyers, Amazon points to the Amazon Tax-Exemption program: "Automate tax exemptions on qualified purchases by participating in the Amazon Tax-Exemption program." <C id="amazon-business-b2b-16"/> How marketplace facilitator rules shift sales tax collection is covered in the [sales tax nexus guide](/guides/sales-tax-nexus/).
 
 ## Fulfillment: FBA, your own warehouse, or both
 
@@ -109,6 +146,6 @@ For tax-exempt buyers, Amazon points to the Amazon Tax-Exemption program: "Autom
   "Business-only offers set up if stock must be reserved"
 ]} />
 
-## How to confirm the current rules
+## Where to check the rules and your own B2B numbers
 
-Re-check Amazon's [Amazon Business seller program page](https://sell.amazon.com/programs/amazon-business) for features and steps, and the [selling plans page](https://sell.amazon.com/pricing) for the Professional plan price. Fee discount schedules and tax-exemption terms are published in Seller Central, and the `FEE_DISCOUNTS_REPORT` in the Selling Partner API shows the discounts actually applied to your account. This page explains how the program is described publicly; your agreement with Amazon and the terms inside Seller Central govern what applies to your account.
+Re-check Amazon's [Amazon Business seller program page](https://sell.amazon.com/programs/amazon-business) for features and steps, and the [selling plans page](https://sell.amazon.com/pricing) for the Professional plan price. The referral fee discount schedule and the Tax-Exemption program terms are published in Seller Central; to find them, search Seller Central Help using words such as business pricing or tax exemption (suggested searches, not page titles). For your own account, the `FEE_DISCOUNTS_REPORT` shows discounts applied, the [B2B product opportunities report types](https://developer-docs.amazon/sp-api/docs/report-type-values-b2b-product-opportunities) show what to add, and the B2B columns of the Sales and Traffic report show what business buyers did. This page explains how the program is described publicly; your agreement with Amazon and the terms inside Seller Central govern what applies to your account.

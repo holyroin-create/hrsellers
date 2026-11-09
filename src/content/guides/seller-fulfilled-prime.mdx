@@ -1,16 +1,15 @@
 ---
 title: "Seller Fulfilled Prime: Requirements, Trial and What You Commit To"
-description: "Amazon's published Seller Fulfilled Prime rules: who can apply, how prequalification and the 30-day trial work, ongoing performance checks, and when FBA is simpler."
+description: "Seller Fulfilled Prime rules from Amazon: eligibility, the 30-day trial, weekly reviews, the report fields that show your own rates, and when FBA is simpler."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 10
 photo:
   subject: "seller packing a parcel at their own packing table with kraft paper and twine, hands only, no logos"
-  alt: "Person, seen from the chest down, tying a cardboard box with twine on a white packing table beside kraft paper"
-  image: "amazon"
+  alt: "Overhead view of two hands finishing a box wrapped in brown kraft paper and tied with twine, with a handwritten card and a sprig of leaves, beside a spool of jute twine, scissors and a roll of wrapping paper"
 keyFacts:
   - { label: "Trial length", value: "30 days", claim: "seller-fulfilled-prime-05" }
   - { label: "Required account", value: "Professional, US default ship-from address", claim: "seller-fulfilled-prime-02" }
@@ -30,11 +29,11 @@ faq:
 related: ["fba-vs-fbm-breakeven", "mcf-off-amazon-orders", "removal-vs-hold-decision"]
 ---
 
-Seller Fulfilled Prime (SFP) lets you put Prime branding on listings for products you ship yourself. <C id="seller-fulfilled-prime-01"/> Before applying, decide whether your operation can promise Prime delivery speeds every day: entry requires prequalification and a 30-day trial, and Amazon keeps checking performance weekly after you are enrolled. <C id="seller-fulfilled-prime-05"/> <C id="seller-fulfilled-prime-08"/> Amazon's public program page does not list the numeric thresholds; those are in the Seller Fulfilled Prime program policy in Seller Central, which you should read before you start.
+Seller Fulfilled Prime (SFP) lets you put Prime branding on listings for products you ship yourself. <C id="seller-fulfilled-prime-01"/> Before applying, decide whether your operation can promise Prime delivery speeds every day: entry requires prequalification and a 30-day trial, and Amazon keeps checking performance weekly after you are enrolled. <C id="seller-fulfilled-prime-05"/> <C id="seller-fulfilled-prime-08"/> The numeric thresholds and the minimum package count are not on Amazon's public program page; they sit in the Seller Fulfilled Prime program policy in Seller Central. What is public is where your own numbers come from, and this page shows which report fields and order fields to watch.
 
 ## Who can apply
 
-You need a Professional selling account and a domestic US address as your default shipping address. <C id="seller-fulfilled-prime-02"/> The Professional plan costs $39.99 per month plus selling fees. <C id="seller-fulfilled-prime-20"/> You are not required to use a warehouse: Amazon lets you choose your own storage facilities. <C id="seller-fulfilled-prime-15"/> <C id="seller-fulfilled-prime-14"/>
+You need a Professional selling account and a domestic US address as your default shipping address. <C id="seller-fulfilled-prime-02"/> The Professional plan costs $39.99 per month plus selling fees. <C id="seller-fulfilled-prime-20"/> You are not required to use a warehouse: Amazon lets you choose your own storage facilities, and says some sellers use storage space in their homes or third-party solutions. <C id="seller-fulfilled-prime-15"/> <C id="seller-fulfilled-prime-14"/> <C id="seller-fulfilled-prime-28"/> Made-to-order goods are not excluded either: you can offer customizable products if you can fulfill customized orders while meeting Prime promises. <C id="seller-fulfilled-prime-29"/>
 
 ## How enrollment works
 
@@ -56,11 +55,39 @@ You choose which products to enroll, so you do not have to put your whole catalo
 
 ## What you commit to after enrollment
 
-Enrollment is not permanent. Amazon reviews performance weekly, from Sunday through Saturday, and ongoing failures "may lead to Prime offers being disabled and disenrollment from the program." <C id="seller-fulfilled-prime-08"/> <C id="seller-fulfilled-prime-09"/> You monitor this on a dedicated Seller Fulfilled Prime performance dashboard. <C id="seller-fulfilled-prime-21"/>
+Enrollment is not permanent. Amazon reviews performance weekly, from Sunday through Saturday, and sends email notices for any requirement you miss; ongoing failures "may lead to Prime offers being disabled and disenrollment from the program." <C id="seller-fulfilled-prime-08"/> <C id="seller-fulfilled-prime-26"/> <C id="seller-fulfilled-prime-09"/> You monitor this on a dedicated Seller Fulfilled Prime performance dashboard. <C id="seller-fulfilled-prime-21"/> Disenrollment is not a permanent bar: if you later prequalify again, you can start a new trial to re-enroll. <C id="seller-fulfilled-prime-27"/>
 
 Delivery promises depend on size. Amazon says the delivery speed offered to Prime customers varies by size tier, and SFP has three tiers: standard-size, oversize and extra large. <C id="seller-fulfilled-prime-10"/> <C id="seller-fulfilled-prime-11"/>
 
 The main safety valve is volume control. The "Control Prime order volume" option sets daily limits on how many same-, one- and two-day delivery orders customers can place, and Amazon says the limit "should reflect the number of orders you can reliably ship each day." <C id="seller-fulfilled-prime-12"/> <C id="seller-fulfilled-prime-13"/>
+
+## Where to read your own late-shipment, tracking and cancellation rates
+
+Amazon's Seller Performance Report, `GET_V2_SELLER_PERFORMANCE_REPORT`, contains the individual performance metrics from the Account Health dashboard, including late-shipment, valid-tracking and pre-fulfillment cancellation rates. It can only be requested, not scheduled. <C id="seller-fulfilled-prime-31"/> <C id="seller-fulfilled-prime-32"/> <C id="seller-fulfilled-prime-33"/> <C id="seller-fulfilled-prime-34"/>
+
+| Metric object | Count fields | Fields that show where you stand |
+|---|---|---|
+| `lateShipmentRate` | `orderCount`, `lateShipmentCount` | `rate`, `status`, `targetValue`, `targetCondition` |
+| `validTrackingRate` | `shipmentCount`, `validTrackingCount` | `rate`, `status`, `targetValue`, `targetCondition` |
+| `preFulfillmentCancellationRate` | `orderCount`, `cancellationCount` | `rate`, `status`, `targetValue`, `targetCondition` |
+| `onTimeDeliveryRate` | `shipmentCountWithValidTracking`, `onTimeDeliveryCount` | `rate`, `status`, `targetValue`, `targetCondition` |
+
+*Source: Amazon Selling Partner API documentation, performance report types, checked Nov 9, 2026.* <C id="seller-fulfilled-prime-32"/> <C id="seller-fulfilled-prime-33"/> <C id="seller-fulfilled-prime-34"/> <C id="seller-fulfilled-prime-35"/>
+
+Each metric also has a `reportingDateRange`, so check which window a rate covers before comparing it with the weekly Sunday–Saturday SFP review. <C id="seller-fulfilled-prime-32"/> <C id="seller-fulfilled-prime-08"/> The targets in this report come from the Account Health dashboard; the SFP thresholds are in the program policy, and Amazon points SFP sellers to their Seller Fulfilled Prime performance dashboard for ongoing monitoring. <C id="seller-fulfilled-prime-31"/> <C id="seller-fulfilled-prime-21"/>
+
+<Callout type="example" title="Worked example (hypothetical): reading the counts, not just the rate">
+Inputs: in one reporting window, `orderCount` is 400 and `lateShipmentCount` is 6; `shipmentCount` is 390 and `validTrackingCount` is 382.
+
+- Late shipments: 6 ÷ 400 = 1.5%.
+- Valid tracking: 382 ÷ 390 ≈ 97.9%, so 8 shipments lacked valid tracking.
+
+The counts show how many shipments are behind each rate: 6 late and 8 without valid tracking in this example.
+</Callout>
+
+## Spotting Prime orders in your own order data
+
+If your order system reads Amazon's Orders API, three fields carry the Prime promise for each order. `IsPrime` is true when the order is a seller-fulfilled Amazon Prime order. <C id="seller-fulfilled-prime-36"/> `LatestShipDate` is the end of the period within which you committed to ship, returned only for seller-fulfilled orders, and `LatestDeliveryDate` is the end of the period within which you committed to fulfill the order. <C id="seller-fulfilled-prime-37"/> <C id="seller-fulfilled-prime-38"/> `ShipmentServiceLevelCategory` tells you the speed bucket; its values are Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled and Standard. <C id="seller-fulfilled-prime-39"/>
 
 ## Who does what
 
@@ -68,6 +95,7 @@ The main safety valve is volume control. The "Control Prime order volume" option
   {label:"Storage and packing", values:["Choose products, storage facilities, packaging and materials","—"], claim:"seller-fulfilled-prime-14"},
   {label:"Carriers", values:["Choose among Amazon-integrated shipping carriers","Buy Shipping adds account-health protections"], claim:"seller-fulfilled-prime-18"},
   {label:"Customer questions", values:["All pre-order buyer inquiries","All post-order customer service for Prime items"], claim:"seller-fulfilled-prime-16"},
+  {label:"Refunds and adjustments", values:["—","Handled by Amazon for SFP items, along with returns"], claim:"seller-fulfilled-prime-30"},
   {label:"Returns", values:["—","Free returns for domestic Prime customers; auto-authorizes returns in the window"], claim:"seller-fulfilled-prime-17"}
 ]} />
 
@@ -98,8 +126,6 @@ Whether $2,160 is worth more than the staff, carrier pickups and weekend coverag
 
 To price the underlying choice between shipping yourself and FBA, use the method in [FBA vs FBM breakeven](/guides/fba-vs-fbm-breakeven/). For Prime-speed delivery on your own website rather than on Amazon, see [MCF for off-Amazon orders](/guides/mcf-off-amazon-orders/).
 
-Enrollment decisions and disenrollment appeals are made under Amazon's program policy in Seller Central, not on the public pages summarized here.
+## Where the thresholds that apply to you are published
 
-## How to confirm the current rules
-
-Read the program page at sell.amazon.com/programs/seller-fulfilled-prime, then the Seller Fulfilled Prime program policy and trial registration page in Seller Central, which carry the performance thresholds and minimum package count that the public page does not state. Re-check Professional plan pricing at sell.amazon.com/pricing.
+Read the program page at sell.amazon.com/programs/seller-fulfilled-prime for the enrollment steps, then open the trial registration page and the Seller Fulfilled Prime program policy in Seller Central for the thresholds and package minimum. Your own current rates are in the Account Health dashboard or the `GET_V2_SELLER_PERFORMANCE_REPORT` fields listed above. <C id="seller-fulfilled-prime-31"/> Re-check Professional plan pricing at sell.amazon.com/pricing.

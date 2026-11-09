@@ -1,0 +1,127 @@
+[
+  {
+    "image_id": "aged-inventory-15-month-tier",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License (not Unsplash+); author Ruchindra Gunasekara and photo-1553413077-190dd305871c match. Real warehouse photo, no faces, no legible brands (only an orange 'do not rest' handling sticker). Alt/caption accurate. Note: 1600 file 254,802 B (under 260 KB, over contract's 230 KB)."
+  },
+  {
+    "image_id": "amazon-200-billion-quarter",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Jakub Żerdzicki and photo-1707157284454-553ef0a4ed0d match. Real photo, generic printed charts and phone calculator, no logos, no faces, no personal data. Alt/caption accurate; illustrative only."
+  },
+  {
+    "image_id": "amazon-renewed",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Andrey Matveev and photo-1705494833979-9377fbdee229 match. Real photo of laptop internals; only component part markings and QR stickers, no brand logo legible, no faces. Alt/caption accurate. Note: 1600 file 257,982 B (under 260 KB, over 230 KB)."
+  },
+  {
+    "image_id": "aplus-content-brand-tools",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Compagnons and photo-1600132806608-231446b2e7af match. Real photo of hand-drawn wireframe (French handwritten labels, no brands/personal data). Alt/caption accurate."
+  },
+  {
+    "image_id": "awd-vs-3pl-warehousing",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Rack Manufacturing Expert and photo-1714650601435-67a4d51a0798 match. Real warehouse photo; crop check found no legible brand or logo on racking or pallets, no people. Alt/caption accurate."
+  },
+  {
+    "image_id": "buy-box-featured-offer",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Angèle Kamp and photo-1571907483091-fbe746bee132 match. Real photo of blank tags, no text. Alt/caption accurate."
+  },
+  {
+    "image_id": "cross-channel-price-parity",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author rupixen and photo-1563013544-824ae1b704d3 match. Real photo; hands only, card face blank (no number/name), no logos. Alt/caption accurate."
+  },
+  {
+    "image_id": "deal-and-coupon-fees",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Birgith Roosipuu and photo-1638609269753-d79285e49cc0 match. Real photo, blank kraft tag, no text. Alt/caption accurate."
+  },
+  {
+    "image_id": "fba-storage-four-layers",
+    "verdict": "rejected",
+    "reason": "License OK (free Unsplash License; Russ Murray; photo-1749244768351-2726dc23d26c matches) but content fails: the 'TYR' brand mark (swimwear brand) is printed on several cartons and legible on the lower-centre shelves even at 960 px, and is clearly legible in the 1600 file; contract says reject when in doubt. Image also looks heavily processed/over-sharpened (HDR/upscale halo look). 1600 file is 263,328 B, over 260 KB."
+  },
+  {
+    "image_id": "freight-modes",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Haydn and photo-1699589080655-f00497141852 match. Real aerial photo; ship is small, no legible operator name/logo at any size (page description names the vessel, but not legible in image). Alt/caption accurate."
+  },
+  {
+    "image_id": "holiday-peak-fulfilment-fee",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Hyundai Motor Group and photo-1701328778019-e95dedbf5346 match. Real photo of sorting conveyors; no legible logos (carton labels/barcodes illegible), no people. Alt/caption accurate."
+  },
+  {
+    "image_id": "jungle-scout",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Jessica Lewis and photo-1576014984719-500e07ce212b match. Real photo; handwritten general notes, no personal data, laptop/phone show no logos. Alt/caption accurate; does not imply a Jungle Scout screenshot."
+  },
+  {
+    "image_id": "listing-disappeared",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Kelli McClintock and photo-1573376670774-4427757f7963 match. Real photo, blank box, no text. Alt/caption accurate."
+  },
+  {
+    "image_id": "main-image-compliance",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author NordWood Themes and photo-1514228742587-6b1558fcca3d match. Real photo, plain mug, no marks. Alt/caption accurate (background described as light grey-white, not claimed pure white)."
+  },
+  {
+    "image_id": "order-defect-rate",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Jernej Breznik and photo-1772546553716-223166b787d2 match. Real photo, unmarked box, no labels. Alt/caption accurate."
+  },
+  {
+    "image_id": "product-inserts",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Harper Sunday and photo-1686632800715-b705ba1b0eb6 match. Real photo, unprinted kraft boxes. Alt/caption accurate."
+  },
+  {
+    "image_id": "q4-freight-booking-window",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Theo Laflamme and photo-1764046155497-ad7e50737ffa match. Real film-style photo; only graffiti tags (not brands), no faces, no legible signage. Alt/caption accurate."
+  },
+  {
+    "image_id": "returns-cost-and-badge",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author adison clark and photo-1654115350772-16922326b89a match. Real photo; hand only, no face, no labels. Alt/caption accurate. Note: 1600 file 232,408 B (under 260 KB, slightly over 230 KB)."
+  },
+  {
+    "image_id": "seller-financing",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Towfiqu barbhuiya and photo-1626266061368-46a8f578ddd6 match. Real photo; hands/torso only, face out of frame, no logos. Alt/caption accurate."
+  },
+  {
+    "image_id": "sellerboard",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Barney Goodman and photo-1791209135230-08ce0343b7a7 match. Real film photo; calculator maker text is blurred and illegible even in 1600 crop. Alt/caption accurate; not presented as a Sellerboard screenshot."
+  },
+  {
+    "image_id": "sipp-packaging-program",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Christopher Bill and photo-1607166452427-7e4477079cb9 match. Real photo, plain unprinted box. Alt/caption accurate."
+  },
+  {
+    "image_id": "supplier-payment-terms",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Mathieu Turle and photo-1516570161787-2fd917215a3d match. Real photo of U.S. banknotes/coins (currency, not a tax/government form; partial serial digits only, no personal data). Alt/caption accurate."
+  },
+  {
+    "image_id": "the-supplier-invoice",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Camilo Rueda López and photo-1771758249853-415175dc29b9 match. Real photo; receipt text blurred by shallow focus, only generic words ('firma cliente') readable in 1600 crop, no names/addresses/amounts legible. Alt/caption accurate; caption says papers and receipts, not a specific invoice."
+  },
+  {
+    "image_id": "title-limit-984-million",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author 'Sticker it' and photo-1668686056289-c520e101f6b1 match. Real photo; the only text is a generic 'HAND MADE' sticker (no brand name or logo). Alt/caption accurate."
+  },
+  {
+    "image_id": "vendor-central-vs-seller-central",
+    "verdict": "verified",
+    "reason": "Free under Unsplash License; author Alexander Grey and photo-1562240020-ce31ccb0fa7d match. Real photo; envelopes show only blurred postal indicia, no legible names/addresses in 1600 crop. Alt/caption accurate."
+  }
+]

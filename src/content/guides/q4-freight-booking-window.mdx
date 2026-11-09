@@ -1,23 +1,22 @@
 ---
 title: "Q4 Freight Booking Window: Planning Backward From FBA"
-description: "Plan Q4 imports backward from your FBA in-stock date: ISF timing, air vs ocean, restock limits, October–December storage rates and AWD as a buffer."
+description: "Plan Q4 imports backward from your FBA in-stock date: ISF data and timing, inbound placement and delivery windows, restock limits, Q4 storage rates and AWD."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "a row of warehouse loading-dock doors with a truck backed into one bay in late-afternoon light, no people, no logos"
-  alt: "Two closed loading-dock doors with dark dock shelters at a warehouse"
-  image: "duty-drawback"
+  alt: "An open loading door in a red-brick warehouse wall with wrapped pallets inside, a stack of empty wooden pallets on the asphalt outside and a weathered wooden utility pole in the foreground"
 keyFacts:
   - { label: "FBA storage, standard, Oct–Dec", value: "$2.40 per cu ft/month", claim: "q4-freight-booking-window-02" }
   - { label: "FBA storage, standard, Jan–Sep", value: "$0.78 per cu ft/month", claim: "q4-freight-booking-window-01" }
   - { label: "AWD storage, all year", value: "$0.48 per cu ft/month", claim: "q4-freight-booking-window-08" }
   - { label: "Amazon air freight to FBA", value: "Within 7–10 days", claim: "q4-freight-booking-window-20" }
 summary:
-  - "Amazon's public pages do not post a single Q4 inbound cutoff; plan backward from your own in-stock date and check Seller Central for current deadlines and restock limits."
+  - "Amazon's public pages do not post a single Q4 inbound cutoff, so plan backward from your own in-stock date and your current restock limits."
   - "Standard-size FBA storage rises from $0.78 to $2.40 per cubic foot per month in October–December, so arriving too early also has a price."
   - "Amazon lists AWD storage at $0.48 per cubic foot per month in both periods and says that with auto-replenishment enabled it manages replenishments around FBA capacity limits."
   - "The ocean ISF is due 24 hours before loading abroad, so supplier data has to be final before the ship sails, not when it lands."
@@ -62,7 +61,7 @@ Amazon lists Amazon Warehousing and Distribution (AWD) storage at $0.48 per cubi
 ## Building the backward schedule
 
 <Steps title="Plan from the in-stock date back to the factory" steps={[
-  {t:"Fix the in-stock date", d:"Take your target and check the current receiving guidance and restock limits in Seller Central.", claim:"q4-freight-booking-window-10"},
+  {t:"Fix the in-stock date", d:"Set your target, then check it against your current restock limits.", claim:"q4-freight-booking-window-10"},
   {t:"Size the order", d:"Use the Restock Inventory report's suggested quantities and reorder dates as a cross-check.", claim:"q4-freight-booking-window-17"},
   {t:"Choose the mode", d:"Ocean for the base load; a faster ocean service or air for top-ups.", claims:["q4-freight-booking-window-21","q4-freight-booking-window-20"]},
   {t:"Lock supplier data", d:"ISF elements are due 24 hours before the container is loaded abroad.", claim:"q4-freight-booking-window-19"},
@@ -72,10 +71,38 @@ Amazon lists Amazon Warehousing and Distribution (AWD) storage at $0.48 per cubi
 The Restock Inventory report carries a Recommended ship date field, which is a useful sanity check against your own schedule. <C id="q4-freight-booking-window-18"/>
 
 <Callout type="example" title="Worked example (hypothetical)">
-Inputs (all assumed): you want units available at FBA by November 1; you allow 14 days for receiving, 7 days for the domestic truck leg after customs, 30 days door-to-port by ocean and 14 days of factory buffer. Backward: delivery to the fulfillment center by October 18 → cleared at the U.S. port by October 11 → vessel departs September 11 → ISF filed by September 10 (24 hours before loading) → goods ready at the factory by August 28.
+Inputs (all assumed): you want units available at FBA by November 1; you allow 14 days for receiving, 7 days for the domestic truck leg after customs, 30 days door-to-port by ocean and 14 days of factory buffer. Backward: delivery to the fulfillment center by October 18 → cleared at the U.S. port by October 11 → vessel departs September 11 → ISF filed by September 10 (24 hours before loading) → goods ready at the factory by August 28. The inbound plan's ready-to-ship window is the date the truck collects at the port, around October 11, not the October 18 delivery date. <C id="q4-freight-booking-window-31"/>
 
 Storage trade-off for 400 cubic feet of standard-size goods: a month at the January–September rate costs 400 × $0.78 = $312; a month at the October–December rate costs 400 × $2.40 = $960. Landing in September costs $312 per month held before October, while every month held in Q4 costs $960 regardless of arrival date — so arriving earlier only adds the cheaper months, but the 181-day aging clock starts sooner.
 </Callout>
+
+## What your supplier must give you before the ISF deadline
+
+The ocean ISF is only as early as the data behind it. The importer elements in 19 CFR 149.3(a) are the seller, buyer, importer of record number, consignee number, manufacturer or supplier, ship-to party, country of origin, HTSUS number, container stuffing location and consolidator. <C id="q4-freight-booking-window-38"/> Most are due 24 hours before lading abroad, but the stuffing location and consolidator may follow: as early as possible and no later than 24 hours before arrival in a U.S. port (or on lading, if the foreign port is less than a 24-hour voyage from the closest U.S. port). <C id="q4-freight-booking-window-19"/> <C id="q4-freight-booking-window-39"/> If anything changes, or more accurate information becomes available, before the goods enter the limits of a port, the filing must be updated. <C id="q4-freight-booking-window-40"/>
+
+| Element | Usually comes from | Fix it by |
+|---|---|---|
+| Seller, buyer, manufacturer or supplier | Purchase order and commercial invoice | Purchase order date |
+| Importer of record and consignee numbers | You or your customs broker | Before the first booking |
+| Ship-to party | Your booking: FBA, AWD or a 3PL | Before the booking is confirmed |
+| Country of origin, HTSUS number | Product file and classification | Before production ends |
+| Container stuffing location, consolidator | Forwarder or factory loading the box | 24 hours before arrival in the U.S. |
+
+*Elements and deadlines: eCFR, 19 CFR 149.2–149.3, checked Nov 9, 2026. The "Usually comes from" column and the "Fix it by" dates in the first four rows are planning assumptions.* <C id="q4-freight-booking-window-38"/> <C id="q4-freight-booking-window-39"/>
+
+## The Send to Amazon decisions that lock your dates
+
+Amazon's Fulfillment Inbound API (version 2024-03-20) describes the choices in an inbound plan and which of them become fixed once confirmed.
+
+<Steps title="Inbound plan checkpoints" steps={[
+  {t:"Placement option", d:"Each option has fees, discounts and an expiration date; status is OFFERED, ACCEPTED or EXPIRED. Once confirmed, it cannot be changed for the plan.", claims:["q4-freight-booking-window-30","q4-freight-booking-window-29"]},
+  {t:"Ready-to-ship window", d:"The dates you intend to ship: the pick-up date, not an estimated delivery date.", claim:"q4-freight-booking-window-31"},
+  {t:"Delivery window", d:"Options come back as AVAILABLE, BLOCKED, CONGESTED or DISCOUNTED. Some transportation options require a confirmed window first; the window can still be updated before shipment closure.", claims:["q4-freight-booking-window-32","q4-freight-booking-window-33"]},
+  {t:"Transportation mode", d:"Modes include small parcel, LTL, FTL, OCEAN_LCL, OCEAN_FCL and air small parcel.", claim:"q4-freight-booking-window-35"},
+  {t:"Box contents", d:"Provide contents yourself or by 2D barcode; manual processing at receiving incurs charges.", claim:"q4-freight-booking-window-37"}
+]} />
+
+Two details matter when plans change late. Cancelling an inbound plan may incur charges outside the void window, which for Amazon Partnered Carriers is 24 hours for small parcel and one hour for LTL. <C id="q4-freight-booking-window-34"/> And a shipment's status tells you where it stands: it typically starts as UNCONFIRMED, moves to WORKING once a placement option is confirmed and to READY_TO_SHIP when labels are generated, then on through statuses such as IN_TRANSIT, DELIVERED, CHECKED_IN, RECEIVING and CLOSED. <C id="q4-freight-booking-window-36"/> The gap between DELIVERED and CLOSED is the receiving time your backward schedule has to allow for.
 
 ## Split the order: base load and top-ups
 
@@ -96,6 +123,6 @@ Amazon's FBA Manage Inventory Health report gives the data for this decision. It
 
 Under 46 CFR Part 541, a demurrage or detention invoice must be issued within 30 calendar days of the date the charge was last incurred, and you get at least 30 calendar days from issuance to request mitigation, refund or waiver. <C id="q4-freight-booking-window-23"/> <C id="q4-freight-booking-window-24"/> The full billing rules are in [Choosing a freight forwarder](/guides/choosing-a-freight-forwarder/).
 
-## How to confirm this year's dates
+## Where this season's dates are published
 
 Check the storage table on Amazon's FBA page and the AWD rates on its supply-chain page, then read Seller Central for this season's receiving deadlines and your restock limits — those are the dates your schedule must hit. <C id="q4-freight-booking-window-02"/> <C id="q4-freight-booking-window-08"/> <C id="q4-freight-booking-window-10"/> The ISF deadline is in 19 CFR Part 149 on eCFR. <C id="q4-freight-booking-window-19"/> The schedule above is a planning method; your forwarder's written transit quote, not a published average, is what to plan against.

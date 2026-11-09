@@ -1,16 +1,15 @@
 ---
 title: "Amazon Returns Cost: Processing Fees and the Free-Return Trigger"
-description: "What Amazon publishes on seller returns costs: when the FBA returns processing fee applies, MCF return fees by size, the New Selection waiver and reports."
+description: "What Amazon publishes on returns costs: when the FBA returns processing fee applies, MCF return fees by size, where refunds post and which reports to read."
 pillar: "fees"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 10
 photo:
   subject: "a returned product in its opened shipping carton on an inspection table in a warehouse, no logos, no faces"
-  alt: "Empty corrugated carton with its flaps opened, standing on a pale table in raking light"
-  image: "customs-holds-and-exams"
+  alt: "Top-down view of an opened cardboard shipping box on a wooden table, holding an item wrapped in crumpled brown kraft paper, with a hand at the box edge"
 keyFacts:
   - { label: "FBA fee trigger", value: "Amazon gives the customer free return shipping", claim: "returns-cost-and-badge-01" }
   - { label: "Scope from June 1, 2024", value: "High return-rate products, all categories except apparel and shoes", claim: "returns-cost-and-badge-05" }
@@ -27,11 +26,11 @@ faq:
 related: ["amazon-referral-fees", "review-manipulation-risk"]
 ---
 
-Amazon charges sellers for returns in two published ways. For FBA orders on Amazon, the returns processing fee is "charged on orders when Amazon provides a customer with free return shipping." <C id="returns-cost-and-badge-01"/> For Multi-Channel Fulfillment (MCF) orders from other channels, Amazon publishes a flat return fee by size tier and weight — $4.70 for a large standard item over 1 lb to 2 lb. <C id="returns-cost-and-badge-10"/> <C id="returns-cost-and-badge-14"/> The FBA fee amounts, and Amazon's rules for return-related labels and badges shown on product pages, are published inside Seller Central and should be checked there. This page covers what is public: when the FBA fee applies, how its scope has changed, the MCF return fee table, the waivers, and the reports you can use to track it.
+Amazon charges sellers for returns in two published ways. For FBA orders on Amazon, the returns processing fee is "charged on orders when Amazon provides a customer with free return shipping." <C id="returns-cost-and-badge-01"/> For Multi-Channel Fulfillment (MCF) orders from other channels, Amazon publishes a per-unit return fee by size tier and weight — $4.70 for a large standard item over 1 lb to 2 lb. <C id="returns-cost-and-badge-10"/> <C id="returns-cost-and-badge-14"/> This page covers what is public: when the FBA fee applies, how its scope has changed, the MCF return fee table, the waivers, and the reports you can use to track it.
 
 ## When the FBA returns processing fee applies
 
-FBA's fulfillment service already includes returns handling. Amazon describes fulfillment costs as covering picking, packing and shipping, "as well as handling customer service and returns." <C id="returns-cost-and-badge-02"/> The returns processing fee is a separate charge, and its trigger is specific: Amazon gives the customer free return shipping. <C id="returns-cost-and-badge-01"/> The fee is tied to how the return is offered to the shopper, not simply to whether a unit comes back.
+FBA's fulfillment service already includes returns handling. Amazon describes fulfillment costs as covering picking, packing and shipping, "as well as handling customer service and returns." <C id="returns-cost-and-badge-02"/> The returns processing fee is a separate charge, and its trigger is specific: Amazon gives the customer free return shipping. <C id="returns-cost-and-badge-01"/>
 
 Its scope has widened over time:
 
@@ -40,7 +39,7 @@ Its scope has widened over time:
   {date:"2024-06-01", t:"Fee expanded to high return-rate products", d:"All categories, excluding apparel and shoes, for products with the highest return rates in their category", claim:"returns-cost-and-badge-05"}
 ]} />
 
-The 2023 announcement described the expansion this way: Amazon would "expand the returns processing fee to apply to high return-rate products in all categories, excluding apparel and shoes." <C id="returns-cost-and-badge-04"/> It added that the fee would "only apply to products that have the highest return rates relative to other products in their category," starting June 1, 2024. <C id="returns-cost-and-badge-05"/> The benchmark is your category, not an absolute rate. The public announcement does not give the thresholds.
+The 2023 announcement described the expansion this way: Amazon would "expand the returns processing fee to apply to high return-rate products in all categories, excluding apparel and shoes." <C id="returns-cost-and-badge-04"/> It added that the fee would "only apply to products that have the highest return rates relative to other products in their category," starting June 1, 2024. <C id="returns-cost-and-badge-05"/> The benchmark is your category, not an absolute rate. Amazon's stated purpose was cost and waste: "This fee will address the operational costs of returns and reduce waste." <C id="returns-cost-and-badge-24"/> For apparel and shoes, which already carried the fee, Amazon said existing returns processing fees "will remain unchanged on average." <C id="returns-cost-and-badge-25"/> The per-unit FBA fee amounts and the return-rate thresholds are published in Seller Central; look up "returns processing fee" there.
 
 <Decision title="Will a returned unit cost you a processing fee?" rows={[
   {if:"FBA order where Amazon gave the customer free return shipping", then:"Returns processing fee is charged on the order", claim:"returns-cost-and-badge-01"},
@@ -77,7 +76,19 @@ For MCF, Amazon publishes the full table. "Amazon charges return processing fees
 Inputs: 100 units shipped through MCF; return fees from Amazon's published MCF table; return-related refunds and resale value left out. Large standard, 1–2 lb, 8 returns: 8 × $4.70 = $37.60, or $0.38 per unit sold. Same item, 15 returns: 15 × $4.70 = $70.50, or $0.71 per unit sold. Small standard, up to 4 oz, 8 returns: 8 × $3.22 = $25.76, or $0.26 per unit sold.
 </Callout>
 
-The example covers only the return fee, not the value of the returned unit. To see how a return fee adds to peak-season storage and fulfillment charges on a single unit, see our [peak season cost stack](/guides/holiday-peak-fulfilment-fee/).
+The example covers only the return fee, not the value of the returned unit.
+
+<Callout type="example" title="Worked example (hypothetical): one SKU's returns in a month">
+Inputs (invented): a large standard item of 1–2 lb sold through MCF; 400 units shipped in the month; 24 units returned, of which 18 are resellable and 6 damaged; product cost $9.00 per unit; 2 of the damaged units are later reimbursed at $9.00 each.
+
+- MCF return fees: 24 × $4.70 = $112.80 (published rate for large standard, over 1 lb to 2 lb).
+- Damaged units written off: 6 × $9.00 = $54.00, less 2 × $9.00 = $18.00 reimbursed, so $36.00.
+- Total: $112.80 + $36.00 = $148.80, or about $0.37 per unit shipped.
+
+Return fees are three-quarters of the cost here, so for this SKU cutting the return rate matters more than chasing reimbursements. Refunds to the customer are not counted because they reverse the sale rather than add a fee.
+</Callout>
+
+To see how a return fee adds to peak-season storage and fulfillment charges on a single unit, see our [peak season cost stack](/guides/holiday-peak-fulfilment-fee/).
 
 ## Waivers for new products
 
@@ -87,14 +98,44 @@ The FBA New Selection program covers returns for new listings. Amazon says it wi
 
 Amazon says "the vast majority of returns are resold as new or used, returned to selling partners, liquidated, or donated." <C id="returns-cost-and-badge-17"/> Items resold by Amazon are graded into one of four conditions: Like New, Very Good, Good or Acceptable. <C id="returns-cost-and-badge-18"/> For your own FBA stock, you can have Amazon return, dispose of or liquidate inventory in a fulfillment center for a per-item charge. <C id="returns-cost-and-badge-22"/>
 
-## Tracking returns with Amazon's reports
+## FBA returns and seller-fulfilled returns use different reports
 
-<Steps title="Find where your return costs come from" steps={[
-  {t:"Pull the FBA Returns Report", d:"It lists customer-returned items received at a fulfillment center, with return reason and disposition", claim:"returns-cost-and-badge-19"},
-  {t:"Group by reason and disposition", d:"Use the reason, detailed-disposition, status and customer-comments fields to find patterns by SKU", claim:"returns-cost-and-badge-20"},
-  {t:"Check reimbursements", d:"The FBA Reimbursements Report itemizes inventory reimbursements and the reason for each", claim:"returns-cost-and-badge-23"},
-  {t:"Review seller-fulfilled return settings", d:"The Return Attributes Report shows prepaid label and returnless refund eligibility by SKU", claim:"returns-cost-and-badge-21"}
+Amazon's returns report types "only cover seller-fulfilled order returns"; FBA returns and returnless refunds are excluded, and for FBA returns Amazon points to the FBA Returns Report instead. <C id="returns-cost-and-badge-30"/> Pick the report by who fulfilled the order.
+
+<Compare title="Where each kind of return is documented" columns={["FBA order","Seller-fulfilled order"]} rows={[
+  {label:"Main report", values:["FBA Returns Report (GET_FBA_FULFILLMENT_CUSTOMER_RETURNS_DATA)","Flat File Returns Report by Return Date (GET_FLAT_FILE_RETURNS_DATA_BY_RETURN_DATE)"], claim:"returns-cost-and-badge-30"},
+  {label:"Why it came back", values:["reason, customer-comments","Return Reason, In policy"], claim:"returns-cost-and-badge-20"},
+  {label:"What happened to the unit", values:["detailed-disposition, status, license-plate-number","Resolution, Refunded Amount"], claim:"returns-cost-and-badge-32"},
+  {label:"Return label cost", values:["No label-cost field in the FBA Returns Report","Label cost, Label to be paid by"], claim:"returns-cost-and-badge-32"},
+  {label:"Claims and reimbursements", values:["FBA Reimbursements Report","SAFE-T claim state and reimbursement amount"], claim:"returns-cost-and-badge-33"},
+  {label:"Refresh or range", values:["Updated daily; request only","Up to 60 days of data per report"], claim:"returns-cost-and-badge-31"}
 ]} />
+
+The FBA Returns Report lists each customer-returned unit received at a fulfillment center with return reason and disposition, and its fields include `return-date`, `order-id`, `sku`, `fnsku`, `quantity` and `fulfillment-center-id`, so you can join it to orders and to individual sites. <C id="returns-cost-and-badge-19"/> <C id="returns-cost-and-badge-27"/> It can only be requested and is updated daily. <C id="returns-cost-and-badge-26"/> To check that a return was actually counted back into stock, the Inventory Ledger summary view has a Customer Returns column next to receipts, shipments, lost, damaged and disposed units. <C id="returns-cost-and-badge-29"/>
+
+## Where return money shows up in your settlement
+
+Amazon's Finances API model defines several charge types that relate to returns. Refunds are a separate event list, and fee adjustments on an item "only returned for refunds, guarantee claims, and chargeback events". Read the refund and its fee adjustments together with the original sale before you total what a return cost. <C id="returns-cost-and-badge-36"/>
+
+| Finances API name | What Amazon's model says it is |
+|---|---|
+| `RestockingFee` | "The charge that is applied to the buyer when returning a product in certain categories" |
+| `ReturnShipping` | Money given to the buyer "to compensate for shipping the item back if we are at fault" |
+| `FBAInventoryReimbursement` | An FBA inventory reimbursement to your account, which "occurs if a seller's inventory is damaged" |
+
+*Source: Amazon Selling Partner API models, Finances API v0 (github.com/amzn), checked Nov 9, 2026.* <C id="returns-cost-and-badge-34"/> <C id="returns-cost-and-badge-35"/> <C id="returns-cost-and-badge-37"/>
+
+The FBA Reimbursements Report itemizes reimbursements with the reason for each, and its `amount-per-unit`, `quantity-reimbursed-cash` and `quantity-reimbursed-inventory` columns show whether you were paid in cash or with replacement units. <C id="returns-cost-and-badge-23"/> <C id="returns-cost-and-badge-28"/>
+
+<Steps title="Tracing the cost of one SKU's returns" steps={[
+  {t:"Pull the FBA Returns Report", d:"Filter by SKU for the month; count units and read reason and detailed-disposition", claim:"returns-cost-and-badge-20"},
+  {t:"Match refunds in financial events", d:"Find the refund for each order-id and note any fee adjustments on it", claim:"returns-cost-and-badge-36"},
+  {t:"Find the returns processing fee", d:"Check whether the order had free return shipping, the FBA fee trigger", claim:"returns-cost-and-badge-01"},
+  {t:"Check reimbursements", d:"Look up damaged or lost returned units in the FBA Reimbursements Report", claim:"returns-cost-and-badge-28"},
+  {t:"Confirm the unit came back", d:"Reconcile the Customer Returns column of the Inventory Ledger", claim:"returns-cost-and-badge-29"}
+]} />
+
+For seller-fulfilled orders, the Return Attributes Report shows by SKU whether a prepaid label and a returnless refund are eligible. <C id="returns-cost-and-badge-21"/>
 
 <Checklist title="Cutting return costs" items={[
   "Rank SKUs by returns per 100 units sold, not by raw return count",
@@ -104,6 +145,6 @@ Amazon says "the vast majority of returns are resold as new or used, returned to
   "Decide in advance whether unsellable returns are removed, disposed of or liquidated"
 ]} />
 
-## How to confirm the returns charges on your account
+## Where to check the returns charges on your account
 
 Start with Amazon's FBA page at sell.amazon.com/fulfillment-by-amazon, which describes when the returns processing fee applies, and the MCF rate card at supplychain.amazon.com/docs/rate-card for MCF return fees. <C id="returns-cost-and-badge-01"/> <C id="returns-cost-and-badge-10"/> Match the fees on your settlement against the FBA Returns Report for the same period. <C id="returns-cost-and-badge-19"/> This page summarizes Amazon's published terms. A disputed returns charge or reimbursement is settled through a Seller Central support case.

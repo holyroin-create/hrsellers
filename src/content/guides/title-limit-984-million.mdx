@@ -1,16 +1,15 @@
 ---
 title: "Amazon Title Limits: 200 Characters and the New 75 + 125 Split"
-description: "Amazon's documented title limits: 200 characters for item_name, the July 27, 2026 modular split into a 75-character name and 125 characters of highlights."
+description: "Amazon's title limits: 200 characters, the July 2026 split into a 75-character name and 125 characters of Item Highlights, byte counts and the error codes."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 10
 photo:
   subject: "close-up of a printed product label with a short product name in large type and a line of smaller descriptive text beneath it, on a plain cardboard box, no real brand names"
-  alt: "Four blank hang tags in white, kraft and black paper hanging on strings against a pale wall"
-  image: "amazon-referral-fees"
+  alt: "A square white sticker printed HAND MADE in large black serif letters on a package wrapped in pink-brown paper inside an open cardboard box, with straw fill and flowers beside it"
 keyFacts:
   - { label: "Total title limit", value: "200 characters", claim: "title-limit-984-million-07" }
   - { label: "Item name (modular)", value: "Up to 75 characters", claim: "title-limit-984-million-05" }
@@ -32,20 +31,29 @@ related: ["listing-optimisation-a10", "rufus-listing-optimization", "main-image-
 
 Amazon's documented ceiling for a product title is 200 characters, and from July 27, 2026 that ceiling is split in two for non-media products: an item name of up to 75 characters and up to 125 characters of "Item Highlights." <C id="title-limit-984-million-01"/> <C id="title-limit-984-million-10"/> <C id="title-limit-984-million-07"/> If you send an item name longer than 75 characters, Amazon still accepts it but may split it across the two fields. <C id="title-limit-984-million-13"/> The decision in front of you is whether to restructure your titles yourself before that happens.
 
-We found no Amazon page that gives a "984 million" figure in connection with titles, so this page covers only the limits Amazon does document: the item_name length, the modular split, and the related search terms field.
+## Every text field around the title, with its documented limit
 
-## The limits Amazon documents
+Amazon's Selling Partner API troubleshooting guide notes that some attributes have a maximum length for the value you can submit, and lists the common ones. <C id="title-limit-984-million-03"/> Put together with the modular title guide and Amazon's public listing guide, the text fields a seller writes look like this:
 
-Amazon's Selling Partner API troubleshooting guide notes that some attributes have a maximum length for the value you can submit, and lists the common ones. <C id="title-limit-984-million-03"/>
+| Field | Attribute | What it holds | Documented limit |
+|---|---|---|---|
+| Title (item name) | `item_name` | The product title | 200 characters; 75 if you also send Item Highlights |
+| Item Highlights | `title_differentiation` | Comma-separated differentiators | 125 characters |
+| Search terms | `generic_keyword` | Backend search terms | 500 bytes |
+| Included components | `included_components` | Included components | 80 characters |
+| Bullet points | `bullet_point` | Most important details and attributes | Up to five bullets |
 
-| Attribute | What it holds | Documented maximum |
-|---|---|---|
-| `item_name` | The product title | 200 characters |
-| `generic_keyword` | Backend search terms | 500 bytes |
+*Sources: Amazon Selling Partner API (Listings Items API issues troubleshooting; Submit modular titles) and Amazon's "How to create an Amazon product listing" guide on sell.amazon.com, checked Nov 9, 2026.* <C id="title-limit-984-million-01"/> <C id="title-limit-984-million-02"/> <C id="title-limit-984-million-23"/> <C id="title-limit-984-million-24"/>
 
-*Source: Amazon Selling Partner API, Listings Items API issues troubleshooting, checked Nov 8, 2026.* <C id="title-limit-984-million-01"/> <C id="title-limit-984-million-02"/>
+When a value runs over its limit, the API returns issue 90225, "Value for attribute_name is longer than the allowed maximum." <C id="title-limit-984-million-04"/> Amazon's own developer guide adds that the Seller Central title guide carries category-specific style guides and character limits by product type, <C id="title-limit-984-million-40"/> so check your product type's limit there as well.
 
-Note the unit difference: titles are counted in characters, search terms in bytes. When a value runs over its limit, the API returns issue 90225, "Value for attribute_name is longer than the allowed maximum." <C id="title-limit-984-million-04"/>
+### Characters versus bytes
+
+Titles are counted in characters, search terms in bytes, and the difference matters as soon as you use anything beyond plain English letters. Amazon's product type schemas use a keyword, maxUtf8ByteLength, that "defines the maximum length of a string, measured in UTF-8 bytes." <C id="title-limit-984-million-25"/> Under the UTF-8 standard, US-ASCII characters take one byte each, <C id="title-limit-984-million-26"/> while characters from U+0080 to U+07FF take two. <C id="title-limit-984-million-27"/>
+
+<Callout type="example" title="Worked example (hypothetical): a search terms field that looks short enough">
+Inputs: a search terms value of 490 characters, of which 480 are plain ASCII letters, digits and spaces and 10 are the letter "é" (U+00E9, inside the two-byte range). Bytes: 480 × 1 + 10 × 2 = 500 bytes, exactly at the 500-byte limit. Adding one more "é" makes it 491 characters but 502 bytes, and the submission would be over the maximum even though a character counter still shows fewer than 500. Count bytes, not characters, for this field.
+</Callout>
 
 ## The modular title structure from July 27, 2026
 
@@ -62,7 +70,7 @@ Three rules decide how the two fields interact:
 
 - You can only send Item Highlights when the item name is 75 characters or fewer. <C id="title-limit-984-million-08"/> If you send highlights with a longer item name, the API returns error 100476: "Provide an Item Name that is 75 characters or less to use Item Highlights." <C id="title-limit-984-million-09"/>
 - An item name over 75 characters is still accepted, but Amazon may reconcile it in the catalog by splitting it across the two fields. <C id="title-limit-984-million-13"/>
-- Highlights should be written as comma-separated phrases, not full sentences. <C id="title-limit-984-million-16"/>
+- Highlights should be written as comma-separated phrases, not full sentences, <C id="title-limit-984-million-16"/> focused on details that help customers compare options: "materials, recommended use cases, compatibility, and key specifications." <C id="title-limit-984-million-33"/>
 
 Amazon's own example pairs the item name "Fast Charger Adapter" with the highlights "USB-C, PPS Support, Cable not included." <C id="title-limit-984-million-18"/>
 
@@ -70,7 +78,7 @@ Item Highlights are not hidden text. Amazon says they are fully searchable, so c
 
 ## Timing: who has to change, and when
 
-The structure applies to all non-media product types from July 27, 2026, <C id="title-limit-984-million-10"/> and Amazon says you can adopt it at any time through 2026. <C id="title-limit-984-million-12"/> The change does not touch your current listings unless you submit an update. <C id="title-limit-984-million-11"/> In practice, the first time you edit a title on an older listing is when the new rules start to bite.
+The structure applies to all non-media product types from July 27, 2026, <C id="title-limit-984-million-10"/> Amazon encourages using it for all listings created or updated after that date, <C id="title-limit-984-million-39"/> and it says you can adopt it at any time through 2026. <C id="title-limit-984-million-12"/> The change does not touch your current listings unless you submit an update. <C id="title-limit-984-million-11"/> In practice, the first time you edit a title on an older listing is when the new rules start to bite.
 
 <Decision title="Which path fits your catalog" rows={[
   {if:"Your current title is 75 characters or fewer", then:"You can add Item Highlights now without touching the item name.", claim:"title-limit-984-million-08"},
@@ -85,9 +93,11 @@ Inputs: an existing 135-character title, "Northfield Insulated Water Bottle 32 o
 Restructured: item name "Northfield Insulated Water Bottle" (33 characters) and highlights "Leak-Proof Lid, 32 oz, Stainless Steel, Dishwasher Safe, Keeps Drinks Cold 24 Hours" (83 characters). Total: 33 + 83 = 116 characters, within both the 75- and 125-character caps and the 200-character total. The phrase "for Gym Office Travel" was dropped because it is not a product detail.
 </Callout>
 
-## How to check your product type before you submit
+## Checking your product type's title schema before you submit
 
-Title support is not identical everywhere, so check the schema for the product type you sell. Amazon tells developers to call the getDefinitionsProductType operation to retrieve that schema; the response includes the title_differentiation attribute when it is available. <C id="title-limit-984-million-17"/> Product type definitions describe the attribute and data requirements for catalog items using JSON schemas. <C id="title-limit-984-million-20"/>
+Title support is not identical everywhere, so check the schema for the product type you sell. Amazon tells developers to call the getDefinitionsProductType operation to retrieve that schema; the response includes the title_differentiation attribute when it is available, <C id="title-limit-984-million-17"/> listed in the schema's product_identity property group. <C id="title-limit-984-million-32"/> Product type definitions describe the attribute and data requirements for catalog items using JSON schemas. <C id="title-limit-984-million-20"/> If you are not sure which product type applies, the product type search operation accepts an itemName parameter, documented as the "title of ASIN to get product type recommendation." <C id="title-limit-984-million-38"/>
+
+For a title-only change, you can request a schema that does not enforce required attributes: the requirementsEnforced option NOT_ENFORCED returns a schema "used for partial payload validation, such as for single attributes." <C id="title-limit-984-million-41"/>
 
 <Steps title="Restructure a title without breaking the listing" steps={[
   {t:"Pull the schema", d:"Retrieve the product type definition and confirm title_differentiation is listed for your product type.", claim:"title-limit-984-million-17"},
@@ -97,9 +107,31 @@ Title support is not identical everywhere, so check the schema for the product t
   {t:"Submit and watch for 100476", d:"That error means the item name is still over 75 characters.", claim:"title-limit-984-million-09"}
 ]} />
 
+## Issue codes you may see on a title edit
+
+| Code | Message (as documented) | What it usually means for a title |
+|---|---|---|
+| 90225 | Value for attribute_name is longer than the allowed maximum | Title, highlights or search terms over the limit |
+| 100476 | Provide an Item Name that is 75 characters or less to use Item Highlights | Highlights sent with a long item name |
+| 90220 | attribute_name is required but not supplied | A required attribute is missing from the submission |
+| 90114 | Value for attribute_name is less than the required minimum limit | A value is below the schema minimum |
+| 4005033 | The value for attribute_name cannot be edited | The attribute cannot be changed on an existing item |
+
+*Source: Amazon Selling Partner API, Listings Items API issues troubleshooting and Submit modular titles, checked Nov 9, 2026.* <C id="title-limit-984-million-04"/> <C id="title-limit-984-million-09"/> <C id="title-limit-984-million-31"/> <C id="title-limit-984-million-30"/> <C id="title-limit-984-million-29"/>
+
+Before editing an attribute on an existing item, you can check the schema: Amazon's product type schemas mark properties with an "editable" keyword that "indicates whether or not a property value can be modified for an existing item." <C id="title-limit-984-million-28"/> If you hit 4005033, Amazon's fix is to revert the value to the original and resubmit; <C id="title-limit-984-million-29"/> if the original value is wrong, its guide says to submit a Contact Us case listing the UPCs or EANs, the attribute and the new value. <C id="title-limit-984-million-43"/>
+
+## Where to see the title Amazon actually displays
+
+After a modular submission, there can be two versions of your title. Amazon says the getListingsItem and searchListingsItems operations "return your original submitted value, while the catalog shows Amazon's reconciled version." <C id="title-limit-984-million-34"/> To see the catalog side, the Catalog Items API returns an itemName summary, "the name that is associated with the Amazon catalog item." <C id="title-limit-984-million-35"/> Compare the two after any long item name you submitted; where they differ, the catalog value is Amazon's reconciled version.
+
+Changes to detail page text can also reach you as a notification: the BRANDED_ITEM_CONTENT_CHANGE notification lists changed attributes, with "possible values include bullet_point, item_name, product_description, and image-related attributes." <C id="title-limit-984-million-36"/>
+
+For a catalog-wide rewrite through JSON_LISTINGS_FEED, Amazon advises you to "test the change on a small number of listings first before deploying it in production." <C id="title-limit-984-million-37"/> One feed document can carry up to 25,000 messages. <C id="title-limit-984-million-42"/>
+
 If you write listings with Amazon's generative AI listing tool, it produces titles, bullet points and descriptions from a short product description, an uploaded image or a website URL. <C id="title-limit-984-million-22"/> Check the length of any generated title against the limits above before you accept it.
 
-## What this page does not cover
+## Prohibited characters and style rules
 
 Amazon's developer guide does not list prohibited characters; it points to the Seller Central title requirements guide for the full list of title dos and don'ts and prohibited characters. <C id="title-limit-984-million-19"/> That guide is published inside Seller Central, so check it there before you finalize wording. What Amazon says about search is covered in [what Amazon says about search](/guides/listing-optimisation-a10/); how Amazon's shopping assistant reads listings is in [Rufus and listings](/guides/rufus-listing-optimization/).
 
@@ -107,10 +139,11 @@ Amazon's developer guide does not list prohibited characters; it points to the S
   "Item name is 75 characters or fewer if you use Item Highlights",
   "Item name plus highlights is 200 characters or fewer",
   "Highlights are comma-separated phrases, not sentences",
-  "Search terms field stays within 500 bytes",
+  "Search terms field stays within 500 bytes, counted in bytes rather than characters",
+  "Catalog itemName compared with your submitted item_name after the update",
   "Prohibited characters checked against Seller Central's title requirements guide"
 ]} />
 
-## How to confirm
+## Where to re-check these limits
 
 Re-check the numbers on Amazon's developer pages before a bulk title edit: the "Submit modular titles" guide (developer-docs.amazon.com/sp-api/docs/submit-modular-titles) for the 75/125/200 split and the July 27, 2026 date, and the "Listings Items API issues troubleshooting" guide for the item_name and generic_keyword maximums. For the character rules, open the product title requirements guide in Seller Central. These limits are platform rules, not law; if a listing is rejected, the issue code and message returned by the API or Seller Central are what settle it.

@@ -1,16 +1,15 @@
 ---
 title: "Amazon Ungating: Restricted Categories and Brand Approval"
-description: "Which Amazon categories commonly need approval, how to tell a category gate from a brand gate or a hard block, and what Amazon says an application needs."
+description: "Which Amazon categories need approval, how to read a restriction check by condition and store, brand vs. category gates, and what an application needs."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 9
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "a hand signing an application form on a desk next to a printed supplier invoice and a closed product box, no logos or readable text"
-  alt: "Hand holding a fountain pen over the signature line of a printed approval form on a wooden desk"
-  image: "customs-bonds"
+  alt: "Close-up of a hand signing a printed multi-page document with a fountain pen while the other hand holds the page, in moody blue-toned light"
 keyFacts:
   - { label: "Commonly gated", value: "Beauty, Health, Clothing, Grocery, Jewelry, Watches", claim: "ungating-restricted-categories-02" }
   - { label: "Approval route shown", value: "Apply to sell button", claim: "ungating-restricted-categories-13" }
@@ -31,8 +30,6 @@ related: ["brand-registry-trademark", "listing-disappeared", "us-product-complia
 
 Before buying inventory for a new category or brand, find out which kind of gate it sits behind. Amazon separates four situations: categories open to all sellers, categories that need a Professional selling plan, categories that need Amazon's approval, and categories third-party sellers cannot sell in at all. <C id="ungating-restricted-categories-01"/> Approval can be applied for; a category closed to third-party sellers cannot. Check each ASIN before you place a purchase order.
 
-Amazon's category-by-category approval requirements are published inside Seller Central; this page covers what Amazon documents publicly about how the gates work and what an application involves. Check the current requirements for your category in Seller Central before applying.
-
 ## Which categories are gated
 
 Amazon says that, to help ensure safety and authenticity, categories that commonly require approval include Beauty, Health, and Personal Care; Clothing and Accessories; Grocery and Gourmet; Jewelry; and Watches. <C id="ungating-restricted-categories-02"/> Separately, some products may not be listed at all as a matter of compliance with legal or regulatory restrictions. <C id="ungating-restricted-categories-04"/> Amazon's seller training pairs the two topics, covering its Restricted Products policy and which categories require approval. <C id="ungating-restricted-categories-22"/>
@@ -52,6 +49,28 @@ Amazon's restriction check (the Listings Restrictions API) can return three reas
 ]} />
 
 Two details matter when you check. First, restrictions can be filtered by condition type, <C id="ungating-restricted-categories-06"/> so an ASIN open to you in one condition can be restricted in another; check the condition you actually plan to sell. Second, if no restriction applies, the list returned is simply empty. <C id="ungating-restricted-categories-12"/>
+
+### Reading a restriction result field by field
+
+Each restriction Amazon returns has the same parts.
+
+| Field | What Amazon says it holds | Why it matters |
+|---|---|---|
+| marketplaceId | The marketplace where the restriction is enforced <C id="ungating-restricted-categories-37"/> | A gate is store-specific; check each store you will sell in (several can be checked in one call) <C id="ungating-restricted-categories-38"/> |
+| conditionType | One of 13 values, e.g. new_new, new_open_box, new_oem, used_like_new <C id="ungating-restricted-categories-36"/> | Tells you which condition is blocked |
+| reasons → reasonCode | APPROVAL_REQUIRED, NOT_ELIGIBLE or ASIN_NOT_FOUND <C id="ungating-restricted-categories-07"/> | Decides whether an application route exists |
+| reasons → message | A message describing the reason <C id="ungating-restricted-categories-39"/> | States the reason in words |
+| reasons → links | Path forward links that may let you remove the restriction <C id="ungating-restricted-categories-40"/> | Where to act on the restriction, if a link is given |
+
+*Source: Amazon Selling Partner API models, Listings Restrictions API 2021-08-01, checked Nov 9, 2026.*
+
+In Amazon's own sample response, the message reads "You cannot list the product in this condition." <C id="ungating-restricted-categories-42"/> and the path forward link is titled "Request Approval via Seller Central." <C id="ungating-restricted-categories-41"/>
+
+<Callout type="example" title="Worked example (hypothetical): one ASIN, two conditions">
+Inputs: you plan to sell an ASIN both new and as returned stock graded Used – Like New in the US store. The check for new_new returns an empty list; the check for used_like_new returns APPROVAL_REQUIRED with a path forward link. Reading: the new listing can go up now, <C id="ungating-restricted-categories-12"/> but the used units need an approval first. If you had checked only new_new, the returned stock would have been bought for a condition you cannot yet list.
+</Callout>
+
+When a product type and brand name are supplied, Amazon's check also evaluates GTIN exemption restrictions in addition to brand restrictions. <C id="ungating-restricted-categories-43"/> Amazon's documentation gives the order as: check for restrictions first and, if none exist, create offer-only listings. <C id="ungating-restricted-categories-44"/>
 
 If you have already submitted a listing, the gate appears as a listing issue instead: QUALIFICATION_REQUIRED means approval or qualification is required to list the product. <C id="ungating-restricted-categories-11"/> Diagnosing other listing problems is covered in [why an Amazon listing disappears](/guides/listing-disappeared/).
 
@@ -77,6 +96,10 @@ Brand gates also surface as numbered errors. Error 5665 can appear when you ente
 ]} />
 
 The invoice Amazon names is one you received from a manufacturer or distributor. <C id="ungating-restricted-categories-15"/> If instead you see a Sell this product button, you are already approved for that item. <C id="ungating-restricted-categories-26"/> You can follow open applications from the Catalog menu in Seller Central. <C id="ungating-restricted-categories-31"/>
+
+### After approval: confirm the offer is live
+
+Approval removes the gate; it does not prove the offer is selling. Re-run the restriction check for the condition you sell (an empty list means no restriction), <C id="ungating-restricted-categories-12"/> then check the listing's status. BUYABLE means shoppers can purchase it <C id="ungating-restricted-categories-45"/> and DISCOVERABLE means shoppers can see it. <C id="ungating-restricted-categories-46"/> A QUALIFICATION_REQUIRED issue on the listing means approval or qualification is still required. <C id="ungating-restricted-categories-11"/>
 
 ## What two gated categories ask for
 
@@ -105,9 +128,9 @@ Inputs: you plan a first order of 200 units at $9.00 each in a gated grocery ite
 ]} />
 
 <Callout type="note" title="Scope">
-Approval decisions are Amazon's, and the category-specific document rules are published inside Seller Central. For federal product rules, see [US product compliance](/guides/us-product-compliance/) and [hazmat and dangerous goods](/guides/hazmat-dangerous-goods/).
+Approval decisions are Amazon's, and the category-specific document rules are published inside Seller Central; to find them, search Seller Central Help using words such as categories requiring approval (a suggested search, not a page title). For federal product rules, see [US product compliance](/guides/us-product-compliance/) and [hazmat and dangerous goods](/guides/hazmat-dangerous-goods/).
 </Callout>
 
-## How to confirm it for your products
+## Where to check a specific ASIN before you buy
 
 Search each ASIN in Seller Central's Add Products and note whether an Apply to sell button appears, <C id="ungating-restricted-categories-13"/> then read Amazon's own guidance in [3 ways to sell branded products on Amazon](https://sell.amazon.com/blog/sell-branded-products-on-amazon) and the category list in [How to sell online](https://sell.amazon.com/sell-online). <C id="ungating-restricted-categories-02"/> Developers can check restrictions with the [Listings Restrictions API](https://developer-docs.amazon/sp-api/docs/listings-restrictions-api). <C id="ungating-restricted-categories-05"/>

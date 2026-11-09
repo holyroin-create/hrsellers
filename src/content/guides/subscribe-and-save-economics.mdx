@@ -1,16 +1,15 @@
 ---
 title: "Amazon Subscribe & Save for Sellers: Discount Tiers and Margin"
-description: "What Subscribe & Save costs a seller: 0%, 5% or 10% seller-funded discount, Amazon's 5% on five-item orders, eligibility rules, and the margin math per tier."
+description: "Subscribe & Save for sellers: 0%, 5% or 10% funding, Amazon's 5% on five-item orders, FBM rules, eligibility statuses and the metrics that show payback."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 10
 photo:
   subject: "identical small cartons of a household consumable stacked for repeat delivery on a clean shelf, no brand marks, no people"
-  alt: "Two closed corrugated shipping boxes stacked on a white surface, each with a blank white address label"
-  image: "hub-marketplaces"
+  alt: "White metal storage canisters labeled sugar, tea and coffee beside a larger lidded pail on a wooden wall shelf"
 keyFacts:
   - { label: "Seller-funded discount", value: "0%, 5% or 10%", claim: "subscribe-and-save-economics-08" }
   - { label: "Amazon-funded discount", value: "5% on orders of 5+ items", claim: "subscribe-and-save-economics-09" }
@@ -50,6 +49,12 @@ Subscribe & Save gives Amazon customers regular deliveries and discounts. <C id=
 
 Brand Registry is a prerequisite; see [Brand Registry and trademarks](/guides/brand-registry-trademark/). All of this sits on top of a Professional selling plan at $39.99 a month plus selling fees. <C id="subscribe-and-save-economics-19"/>
 
+### Extra criteria if you fulfill orders yourself
+
+Auto-enrollment is for products sold through FBA, and Fulfilled by Merchant offers must also meet additional criteria for at least three consecutive months to be eligible. <C id="subscribe-and-save-economics-03"/> <C id="subscribe-and-save-economics-21"/> Check the current list of those criteria in Seller Central before you request enrollment.
+
+If a product does not show as eligible, the Manage products tab of the Subscribe & Save tool has a self-service eligibility check that says why. <C id="subscribe-and-save-economics-28"/>
+
 ## What each discount tier gives the customer
 
 Eligible FBA products start at 0% seller funding. Amazon funds a 5% discount on Subscribe & Save orders of five items or more, and adds it on top of whatever the seller provides; the customer maximum is 15%. <C id="subscribe-and-save-economics-09"/> <C id="subscribe-and-save-economics-20"/> <C id="subscribe-and-save-economics-11"/>
@@ -65,7 +70,7 @@ The 0% tier is the important one to understand: Amazon states that at 0% funding
 ## The margin cost of each tier
 
 <Callout type="example" title="Worked example (hypothetical)">
-Inputs: price $25.00; product and inbound cost $6.00; referral and FBA fees $9.00, held constant across tiers for simplicity (check in Seller Central how fees apply to discounted subscription orders); profit per unit with no discount $10.00. Subscription orders of one to four units.
+Inputs: price $25.00; product and inbound cost $6.00; referral and FBA fees $9.00, held constant across tiers for simplicity; profit per unit with no discount $10.00. Subscription orders of one to four units.
 </Callout>
 
 | Seller funding | Discount per unit | Profit per unit | Extra volume needed to keep total profit |
@@ -90,9 +95,40 @@ The same discount applies to subscribers who would have bought anyway, so the ex
   {if:"You want a one-time push to start subscriptions", then:"Consider a coupon aimed at subscribers rather than a permanent higher tier", claim:"subscribe-and-save-economics-18"}
 ]} />
 
-## The cost of running out of stock
+## Measuring whether a higher tier pays for itself
 
-The in-stock requirement is part of the economics. Eligibility needs an in-stock rate greater than 90%, and Amazon calls keeping products in stock "a key consideration" for the program. <C id="subscribe-and-save-economics-06"/> <C id="subscribe-and-save-economics-17"/> A subscription order you cannot fill is a lost repeat sale and a risk to staying eligible. Plan FBA replenishment with subscription orders in mind.
+Amazon's own advice is to test: run some tests to find the right seller-funded level, starting with 5%. <C id="subscribe-and-save-economics-27"/> The test only works if you read the right numbers afterwards. The Subscribe & Save dashboard and its downloadable performance report carry them, <C id="subscribe-and-save-economics-25"/> and Amazon's Replenishment API, available to vendors and FBA selling partners, defines each metric. <C id="subscribe-and-save-economics-29"/>
+
+| Metric (API name) | What it measures | The question it answers |
+|---|---|---|
+| SIGNUP_CONVERSION_BY_SELLER_FUNDING | Subscriptions created in a discount tier as a share of all new orders, one-time purchases included, past 12 months <C id="subscribe-and-save-economics-38"/> | Does 10% convert more shoppers into subscribers than 5%? |
+| REVENUE_PENETRATION_BY_SELLER_FUNDING | Share of subscription revenue from each seller-funded tier, last 12 months <C id="subscribe-and-save-economics-37"/> | Which tier your subscription revenue actually comes from |
+| SUBSCRIBER_RETENTION | Share of subscriptions retained 30 and 90 days after creation <C id="subscribe-and-save-economics-36"/> | How many repeat cycles the discount buys |
+| SUBSCRIBER_NON_SUBSCRIBER_AVERAGE_REVENUE | Average revenue per subscriber vs. non-subscriber, past 12 months for sellers <C id="subscribe-and-save-economics-39"/> | Whether subscribers are worth more than one-time buyers |
+| NOT_DELIVERED_DUE_TO_OOS | Share of units not shipped because of stock-outs <C id="subscribe-and-save-economics-34"/> | How much of the program you are losing to inventory |
+
+*Source: Amazon Selling Partner API models, Replenishment API 2022-11-07, checked Nov 9, 2026.* Metrics cover only the trailing two years. <C id="subscribe-and-save-economics-44"/>
+
+<Callout type="example" title="Worked example (hypothetical): reading a 5% test with retention">
+Inputs: the per-unit figures from the table above ($8.75 profit at 5% funding, $10.00 on a one-off sale); 100 new subscriptions in a month, each for one unit a month; your SUBSCRIBER_RETENTION shows 60 still active at 90 days. Assume the 40 that cancelled each took one delivery and the 60 took three over the first 90 days. Deliveries: 40 × 1 + 60 × 3 = 220. Profit: 220 × $8.75 = $1,925.00. If, without the program, those 100 customers had each bought once at full price, profit would be 100 × $10.00 = $1,000.00. The 5% tier wins here only because of the repeat deliveries; at 20% retention (20 × 3 + 80 × 1 = 140 deliveries, $1,225.00) the margin is thin.
+</Callout>
+
+## Eligibility status and stock-outs: what happens to existing subscribers
+
+Eligibility needs an in-stock rate greater than 90%, and Amazon calls keeping products in stock "a key consideration" for the program. <C id="subscribe-and-save-economics-06"/> <C id="subscribe-and-save-economics-17"/> The dashboard's inventory planning section shows missed deliveries and the revenue lost to stock-outs, <C id="subscribe-and-save-economics-26"/> which the API calls LOST_REVENUE_DUE_TO_OOS: the revenue that would have been generated without the stock-out. <C id="subscribe-and-save-economics-35"/>
+
+Losing eligibility does not always mean the same thing. The status of each offer decides what happens to the subscriptions you already have:
+
+<Compare title="Offer status in Subscribe & Save" columns={["New subscriptions","Existing subscriptions"]} rows={[
+  {label:"ELIGIBLE", values:["Can be added","Fulfilled"], claim:"subscribe-and-save-economics-30"},
+  {label:"SUSPENDED", values:["Blocked","Still fulfilled"], claim:"subscribe-and-save-economics-32"},
+  {label:"REPLENISHMENT_ONLY_ORDERING", values:["Blocked; one-time purchases also blocked to save stock","Still fulfilled"], claim:"subscribe-and-save-economics-33"},
+  {label:"INELIGIBLE", values:["Blocked","Cancelled"], claim:"subscribe-and-save-economics-31"}
+]} />
+
+INELIGIBLE is the expensive one: the subscriber base you paid discounts to build is cancelled. <C id="subscribe-and-save-economics-31"/> Two early-warning flags look 30 days ahead: deliveries paused because of a pricing issue, <C id="subscribe-and-save-economics-41"/> and deliveries paused because the offer is not buyable. <C id="subscribe-and-save-economics-42"/> For replenishment planning, the forecast metrics give expected subscription units for the next 30, 60 and 90 days. <C id="subscribe-and-save-economics-40"/>
+
+To reconcile subscription sales in your own books, order items sold through the program carry the program value SUBSCRIBE_AND_SAVE in Amazon's order data. <C id="subscribe-and-save-economics-43"/>
 
 ## Coupons for subscribers
 
@@ -107,8 +143,8 @@ Amazon lists coupons that "encourage customers to subscribe to a product for add
 | Raising price before enrolling | Eligibility requires an average selling price without exaggerated increases. <C id="subscribe-and-save-economics-07"/> |
 | Ignoring stock levels | An in-stock rate above 90% is part of eligibility. <C id="subscribe-and-save-economics-06"/> |
 
-This page covers Amazon's published program terms and simple margin arithmetic; how fees are computed on your discounted subscription orders is shown in your Seller Central fee reports.
+This page covers Amazon's published program terms and simple margin arithmetic. How fees are computed on your discounted subscription orders is shown in your Seller Central fee reports.
 
-## How to confirm the current terms
+## Where to check your own Subscribe & Save numbers
 
-Funding tiers, the Amazon-funded 5% and the no-extra-cost statement are on Amazon's [Subscribe & Save program page](https://sell.amazon.com/programs/subscribe-and-save). Eligibility criteria, including the in-stock rate, are in Amazon's post [What is Amazon Subscribe & Save?](https://sell.amazon.com/blog/subscribe-and-save). Enrollment status and your current funding level are managed in Seller Central.
+Funding tiers, the Amazon-funded 5% and the no-extra-cost statement are on Amazon's [Subscribe & Save program page](https://sell.amazon.com/programs/subscribe-and-save). Eligibility criteria, the in-stock rate and the three-month requirement for self-fulfilled offers are in Amazon's post [What is Amazon Subscribe & Save?](https://sell.amazon.com/blog/subscribe-and-save). For your own products, open the Subscribe & Save tool's Dashboard tab and download the performance report; <C id="subscribe-and-save-economics-25"/> metric definitions are in the [Replenishment API model](https://github.com/amzn/selling-partner-api-models/blob/main/models/replenishment-api-model/replenishment-2022-11-07.json).

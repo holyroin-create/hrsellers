@@ -1,0 +1,130 @@
+[
+ {
+  "image_id": "account-suspension-appeal",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Handwritten notes are coherent French (on public-sphere theory) - consistent with a real photo, not AI. No pen visible; alt corrected to drop the pen.",
+  "alt": "A desk under warm lamp light with two pages of handwritten notes marked with red boxes and yellow highlights, a highlighted printed book with a yellow highlighter, a pad of sticky notes and the corner of a laptop"
+ },
+ {
+  "image_id": "aliexpress",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Hands and torso only, no face. No marks."
+ },
+ {
+  "image_id": "amazon-ppc-benchmarks",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Generic phone calculator UI; charts have no legible text or brand."
+ },
+ {
+  "image_id": "amzscout",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Laptop screen out of focus; no legible site or logo at 1600 px."
+ },
+ {
+  "image_id": "authorised-reseller",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Hands/sleeves only; one person wears a ghutra, no faces. Document text illegible at 1600 px except a generic heading fragment ('...a big issue in the construction'); no personal data or brand."
+ },
+ {
+  "image_id": "bundles-and-multipacks",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Plain unprinted boxes; no text."
+ },
+ {
+  "image_id": "choosing-a-freight-forwarder",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Same shoot as authorised-reseller but a different photo. Faces out of frame; document text illegible; orange book spine illegible."
+ },
+ {
+  "image_id": "dd7-payout-reserve",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Calendar shows a September grid with 'Labor Day' note; no brand."
+ },
+ {
+  "image_id": "fba-fuel-logistics-surcharge-2026",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Driver in cab is a tiny, unrecognizable silhouette; cab-door emblem and trailer number not legible as a brand at display size."
+ },
+ {
+  "image_id": "fbt-fixed-dollar-problem",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Calculator maker name at top-left is blurred and illegible at 1600 px; handwritten notes not personal data."
+ },
+ {
+  "image_id": "helium-10",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Blurred shoulder of a person in foreground left, no face; screen charts blurred, no legible text/brand."
+ },
+ {
+  "image_id": "ipi-restock-limits",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Pallet labels show only illegible codes; rack location numbers generic; 'Caution 3.8 m maximum height' signs are generic safety signage."
+ },
+ {
+  "image_id": "launch-sequence",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Plain unmarked cartons."
+ },
+ {
+  "image_id": "low-inventory-level-fee",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. No legible text; a few sacks visible at far left top shelf. Alt lightly corrected.",
+  "alt": "A long storage aisle lined with grey metal shelving; the shelves on the left are almost empty, while the shelves on the right still hold cartons"
+ },
+ {
+  "image_id": "narf-canada-mexico",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. No legible brand on totes, conveyor or red cart."
+ },
+ {
+  "image_id": "ppc-campaign-structure-launch",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Mind-map words are generic ('Creative', 'Books', 'Coaching'); markers unbranded at display size."
+ },
+ {
+  "image_id": "q4-deal-deadlines-2026",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Carton labels small and illegible; no people."
+ },
+ {
+  "image_id": "removal-vs-hold-decision",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Only generic safety signage ('Forklifts in use', partial hazard sign)."
+ },
+ {
+  "image_id": "seller-central-reports",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Hand-drawn chart labelled 'Sucking / Not sucking / The past / The future' (jokey, not misleading). Ruler text 'Flexible Stainless Steel Ruler R590-12' is generic; tiny emblem illegible."
+ },
+ {
+  "image_id": "seller-insurance-coi",
+  "verdict": "rejected",
+  "reason": "License OK (free Unsplash License, author and photo ID match), but content fails: legible 'sprintpoint' company wordmark; printed sheets are legibly a UX 'User Persona'/'Website Inspiration' worksheet (not insurance paperwork), misleading on an insurance/COI page; template footer carries a CC BY-SA 4.0 notice for the depicted printed work."
+ },
+ {
+  "image_id": "shipment-discrepancy-claims",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Plain empty carton; no text."
+ },
+ {
+  "image_id": "subscribe-and-save-economics",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Only generic words 'sugar', 'tea', 'coffee' on canisters; no brand."
+ },
+ {
+  "image_id": "tariff-engineering-design",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Bench power supply front shows only generic control labels, no legible maker name at 1600 px."
+ },
+ {
+  "image_id": "tiktok-shop-fees",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Lock screen shows 'Saturday' and a clock only; no phone brand or notifications legible."
+ },
+ {
+  "image_id": "variations-review-pooling",
+  "verdict": "verified",
+  "reason": "Free under the Unsplash License (not Unsplash+); author and photo ID match; visual check passed. Shelves show teal row (top), cream row with one yellow mug at left (middle), grey mugs (bottom); no coral mugs. Alt corrected.",
+  "alt": "Identical plain mugs lined up on wooden shelves by colour: a row of teal mugs above a row of cream mugs with one yellow mug at the end, and grey mugs on the shelf below"
+ }
+]

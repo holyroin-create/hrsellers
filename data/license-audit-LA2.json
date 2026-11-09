@@ -1,0 +1,135 @@
+[
+  {
+    "image_id": "a2x",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Hands only (wrist band visible); laptop is dark and out of focus with no visible logo; calculator has no legible brand; printed charts carry no readable text."
+  },
+  {
+    "image_id": "ai-image-tagging-rule",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Person seen from behind in silhouette wearing headphones; no facial features visible. Monitor and laptop show a generic photo-editing interface with thumbnails; no app name or logo legible in the 1600 crop. Photo of a screen in use, not a screenshot."
+  },
+  {
+    "image_id": "amazon-fba-fee-changes-2026",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Printed calendar page; only \"Jan\", Mon/Tue/Wed and the grey dates 27, 28, 29 visible. No brand. Alt corrected: the visible dates are 27-29 (trailing dates in grey), not the first dates of the month.",
+    "alt": "Close-up of a printed black-and-white calendar page headed Jan, showing the weekday names Mon, Tue and Wed and the dates 27, 28 and 29 in grey"
+  },
+  {
+    "image_id": "amazon-stopped-prepping",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Texture shot of bubble wrap; no people, no text."
+  },
+  {
+    "image_id": "aura",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Blank glitter tags on strings on a dark textured surface; no text, no people."
+  },
+  {
+    "image_id": "brand-referral-bonus",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Phone shown screen-up, screen off; no Apple logo or other mark visible on the front. Envelope plain."
+  },
+  {
+    "image_id": "buyer-seller-messaging",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Hands only. Phone screen shows a blurred blank compose area and an on-screen keyboard; no message text, names or app branding legible in the 1600 crop."
+  },
+  {
+    "image_id": "currency-conversion-payouts",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Pile of about 30 banknotes (US dollar, Mexican pesos, Chinese yuan, Myanmar kyats, others). Banknote portraits (e.g. Washington on the US $1, portraits on two other notes) are engraved portraits of historical figures, each a small part of a cluttered frame whose subject is the pile of currency; judged not prominent faces and not privacy-relevant. Serial numbers are currency serials, not personal data. No commercial logos."
+  },
+  {
+    "image_id": "demand-forecasting-reorder",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Empty green shelves on white racking; only sign text is the generic bay label \"PICKING - M2F / TD\". No company name or logo."
+  },
+  {
+    "image_id": "fba-vs-fbm-breakeven",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Plain grey calculator with blank display; key legends only (OFF, MR, M-, M+, digits); no brand visible."
+  },
+  {
+    "image_id": "getida",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Warehouse racking with wrapped cartons; 1600 crops show only rack location labels (e.g. 40-22-20, red \"40\") and small carton labels that are not legible as any brand. No people."
+  },
+  {
+    "image_id": "ip-complaints-retractions",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Black-and-white; aged hands only. The printed sheet is dense small print that is not legible even in the 1600 crop, so no personal data and no identifiable official form. It is not clearly a form with fields, so alt/caption reworded to \"printed sheet\".",
+    "alt": "Black-and-white close-up of a hand writing with a pen on a densely printed sheet on a dark desk, the small print not readable",
+    "caption": "Illustrative photo: a hand writing with a pen on a printed sheet"
+  },
+  {
+    "image_id": "keepa",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Photo of a laptop screen at an angle showing a generic green line chart (axis values 765-780, times 09:00-17:00, German \"Tag\"/\"5 Tag\" tabs); no product, site name or logo legible in the 1600 crop. Generic chart, not a Keepa screenshot; caption states it is illustrative."
+  },
+  {
+    "image_id": "listing-optimisation-a10",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Hand in shadow holding a magnifying glass over a silver laptop keyboard; no logo visible."
+  },
+  {
+    "image_id": "mcf-off-amazon-orders",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Two plain kraft boxes with blank white labels; no text or marks."
+  },
+  {
+    "image_id": "packaging-design-fba",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Close-up of die-cut kraft corrugated board on a teal surface; no text."
+  },
+  {
+    "image_id": "product-research-cost-errors",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: White calculator; legible text is key legends only (+TAX, -TAX, RATE SET, MRC, GT, ON/CA etc.); no maker name or logo seen in the 1600 crop."
+  },
+  {
+    "image_id": "qc-inspections",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Hands and forearm only; digital caliper reading 7.00 with no legible brand; machine panel and blurred monitor in background with no legible logo."
+  },
+  {
+    "image_id": "rufus-listing-optimization",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Hand holding a phone with a blank light-grey screen on white; no logo visible on the front."
+  },
+  {
+    "image_id": "seller-fulfilled-prime",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Overhead, hands and forearms only. Handwritten greeting card text (partly legible, e.g. \"...be happy\") is a decorative message, not personal data. Wrapping-paper roll has a tiny barcode strip, not legible as a brand. Unsplash description mentions a \"Lovebox\" product shoot, but no Lovebox branding appears in the image."
+  },
+  {
+    "image_id": "selling-your-fba-business",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Faces out of frame; hands of two people. The papers carry a small blurred coloured crest; neither the crest nor any text is legible in the 1600 crops, so the document cannot be identified as a specific official form and shows no personal data."
+  },
+  {
+    "image_id": "sourcing-agents",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Empty factory hall with automated line; only safety pictograms and small Chinese safety labels; no company name or logo legible (photographer account is a manufacturer, but its name/logo does not appear in the frame). No people."
+  },
+  {
+    "image_id": "supplier-verification",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Overhead desk still life; camera at top edge shows no legible maker name; earphones and laptop edge carry no visible logo; notebook blank."
+  },
+  {
+    "image_id": "tiktok-shop",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: No people. Phone (front, cracked screen) shows no logo. Background is a Thai food menu board (e.g. \"khao man gai\", prices 40/50) which is legible but is a menu, not a brand logo; its header line is cut off and blurred. No TikTok or other platform marks."
+  },
+  {
+    "image_id": "ungating-restricted-categories",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Hands only. The sheet is a Polish private contract template (field labels such as PESEL/Adres readable at 1600 px), but every filled-in entry is an illegible scribble, so no personal data is legible. It is a private-law contract form, not a government or tax form."
+  },
+  {
+    "image_id": "zonguru",
+    "verdict": "verified",
+    "reason": "Unsplash page states \"Free to use under the Unsplash License\" (not Unsplash+); photographer matches manifest author; page image ID matches original_url. Visual: Plain unbranded kraft box on white; no text."
+  }
+]

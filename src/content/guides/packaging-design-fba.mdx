@@ -1,16 +1,15 @@
 ---
 title: "Packaging Design for FBA: Labels, Size and Structure Rules"
-description: "Design retail packaging for FBA: the federal label panel rules in 16 CFR 500, why box size drives fees, and the flexible vs rigid specs that qualify for SIPP."
+description: "Design FBA retail packaging: 16 CFR 500 panel, type-size and spacing rules, box size and fees, packaging that avoids Amazon prep, and SIPP structure specs."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 9
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "a flat printed retail box die-line laid out on a design table next to a ruler and a finished folded box, no brand names"
-  alt: "Plain cardboard product box with a blank white label area on its side, on a white table"
-  image: "gs1-barcodes-fnsku"
+  alt: "Close-up of a flat die-cut piece of kraft corrugated cardboard with a rounded tab and a slot, casting a shadow on a teal surface"
 keyFacts:
   - { label: "Net quantity placement", value: "Bottom 30% of the display panel", claim: "packaging-design-fba-13" }
   - { label: "FBA fulfillment cost basis", value: "Weight and dimensions", claim: "packaging-design-fba-01" }
@@ -72,6 +71,29 @@ Panel area: 5 × 4 = 20 square inches. Bottom 30%: 0.30 × 20 = 6 square inches,
 
 Decide which face is the display face before the artwork is drawn, because "bottom" follows the way the package is designed to stand.
 
+### Minimum type size and clear space for the net quantity
+
+Type height for the net quantity depends on the area of the principal display panel. For a rectangular package that area is the height times the width of the side bearing the panel; for a cylindrical or nearly cylindrical container it is 40 percent of the height times the circumference. <C id="packaging-design-fba-39"/>
+
+| Principal display panel area | Minimum height of net quantity type |
+|---|---|
+| 5 sq in or less | 1/16 inch (1.5 mm) |
+| More than 5, up to 25 sq in | 1/8 inch (3.1 mm) |
+| More than 25, up to 100 sq in | 3/16 inch (4.7 mm) |
+| More than 100, up to 400 sq in | 1/4 inch (6.35 mm) |
+| More than 400 sq in | 1/2 inch (12.7 mm) |
+
+*Source: eCFR, 16 CFR 500.21(b), checked Nov 9, 2026.* <C id="packaging-design-fba-40"/>
+
+The declaration also needs clear space: above and below, a gap at least equal to the height of its lettering; to the left and right, at least twice the width of the letter "N" in that type. <C id="packaging-design-fba-41"/> Leave that space free when you place icons or barcodes in the bottom band.
+
+<Callout type="example" title="Worked example (hypothetical): type size for two pack shapes">
+Inputs: the 5 × 4 inch front panel above, and a 6-inch-tall bottle with a 7-inch circumference.
+
+- Box: 20 sq in falls in the "more than 5, up to 25" row, so the net quantity type must be at least 1/8 inch tall, and the clear space above and below it at least 1/8 inch. <C id="packaging-design-fba-40"/> <C id="packaging-design-fba-41"/>
+- Bottle: 0.40 × 6 × 7 = 16.8 sq in, the same row, so also at least 1/8 inch. <C id="packaging-design-fba-39"/>
+</Callout>
+
 ### Private label: the "Distributed by" line
 
 If a factory makes your product and your company sells it, your company can be the named party, but the name must be qualified by a phrase that reveals your connection, such as "Manufactured for" or "Distributed by." <C id="packaging-design-fba-11"/> The street address may be left off only if it appears in a readily accessible, widely published and publicly available resource. <C id="packaging-design-fba-25"/>
@@ -92,6 +114,24 @@ Each inbound unit of a SIPP-certified product needs an exterior scannable label,
 
 The stakes rose for bulky items: new packaging fees took effect for small bulky and large bulky products in the US starting January 15, 2026, <C id="packaging-design-fba-20"/> while products already enrolled in SIPP remain unaffected. <C id="packaging-design-fba-27"/>
 
+## Design out Amazon's prep work
+
+Several of the prep categories and prep instructions in Amazon's Fulfillment Inbound API (version 2024-03-20) describe packaging features you settle at the design stage. The definitions below come from that API; the detailed prep instructions behind them are in Seller Central's FBA prep pages.
+
+| Prep category or instruction | What triggers it | Design response |
+|---|---|---|
+| BABY | Made for a child aged three or younger; packaging with cutouts greater than one square inch <C id="packaging-design-fba-28"/> | Avoid open windows over 1 sq in on baby products |
+| SMALL | Longest side under 2 1/8 inches, the width of a credit card <C id="packaging-design-fba-29"/> | A unit whose longest side is 2 1/8 in or more is outside this category |
+| PERFORATED | Packaging with a perforated opening <C id="packaging-design-fba-30"/> | Use a tear strip only on the outer shipper, not the retail unit |
+| LIQUID | Liquid or viscous without a double seal <C id="packaging-design-fba-31"/> | Specify a secondary seal: induction seal, safety ring, clips, heat-shrink band or boxing <C id="packaging-design-fba-35"/> |
+| FRAGILE | Glass or otherwise fragile, or a liquid in glass <C id="packaging-design-fba-32"/> | Overboxing may be required for fragile items; for items over 4.5 kg, double-wall corrugated boxes <C id="packaging-design-fba-34"/> |
+| Suffocation warning | Poly bag opening of 12 cm or more, measured flat <C id="packaging-design-fba-33"/> | The warning must be printed on the bag or attached as a label |
+| Blank sticker | A bad barcode that cannot be covered by another sticker <C id="packaging-design-fba-36"/> | Place any printed barcode where an FNSKU label can cover it, or leave it off |
+
+*Source: Amazon Selling Partner API models, Fulfillment Inbound v2024-03-20, checked Nov 9, 2026.*
+
+Two practical consequences follow. First, in the US marketplace the inbound API does not accept Amazon as the label owner or the prep owner, which leaves SELLER or NONE as the accepted values there. <C id="packaging-design-fba-37"/> Second, you can check the prep details on file for your SKUs before you print a new run: the `listPrepDetails` operation returns the preparation details for a list of seller SKUs in a marketplace. <C id="packaging-design-fba-38"/>
+
 ## Branding without breaking the rules
 
 Shipping in your own packaging is also a branding surface. Amazon describes SIPP packaging as a chance to display your brand and product messages and improve the unboxing experience. <C id="packaging-design-fba-19"/> Customers can still choose Amazon packaging at no additional cost, <C id="packaging-design-fba-22"/> so the box should work both as the shipper and as a retail pack inside an Amazon carton. Messages inside the box carry their own rules, covered in [product inserts](/guides/product-inserts/).
@@ -107,8 +147,10 @@ Shipping in your own packaging is also a branding surface. Amazon describes SIPP
   "Pick the principal display panel and the face the box stands on",
   "Put the product identity on that panel as a principal feature",
   "Place the net quantity in the bottom 30% of the panel, parallel to the base",
+  "Size the net quantity type from the panel area and keep the required clear space around it",
   "Add the company name with the right qualifier, e.g. Distributed by",
   "Reserve a flat area for the scannable FBA unit label",
+  "Check the design against the BABY, SMALL, LIQUID and poly-bag prep triggers",
   "Check outer dimensions against 6 × 4 × 0.375 in and against your size tier",
   "Plan the origin marking and GTIN barcode positions"
 ]} />
@@ -116,9 +158,9 @@ Shipping in your own packaging is also a branding surface. Amazon describes SIPP
 Amazon's Send to Amazon workflow then guides preparing, packing and labeling inventory for inbound shipments. <C id="packaging-design-fba-05"/>
 
 <Callout type="note" title="Scope">
-This page covers the general consumer-commodity label rules and Amazon's public packaging specs. Product-specific regimes and Amazon's detailed prep and packing rules in Seller Central can add requirements; where your product is regulated by another agency, that agency's rule decides what goes on the box.
+This page covers the general consumer-commodity label rules and Amazon's public packaging and prep definitions. Where your product is regulated by another agency, that agency's rule decides what goes on the box.
 </Callout>
 
-## How to confirm it for your packaging
+## Pages to re-read before you approve artwork
 
-Read 16 CFR 500.4 through 500.7 on eCFR for the label panel rules, <C id="packaging-design-fba-08"/> <C id="packaging-design-fba-13"/> the "FBA Sellers" and FAQ pages on amazon-packaging.com for the structure specs, <C id="packaging-design-fba-15"/> <C id="packaging-design-fba-17"/> and sell.amazon.com/fulfillment-by-amazon for how fulfillment and storage costs are calculated. <C id="packaging-design-fba-01"/>
+Read 16 CFR 500.4 through 500.7 and 500.21 on eCFR for the label panel, type-size and area rules, <C id="packaging-design-fba-40"/> <C id="packaging-design-fba-08"/> <C id="packaging-design-fba-13"/> the "FBA Sellers" and FAQ pages on amazon-packaging.com for the structure specs, <C id="packaging-design-fba-15"/> <C id="packaging-design-fba-17"/> and sell.amazon.com/fulfillment-by-amazon for how fulfillment and storage costs are calculated. <C id="packaging-design-fba-01"/>

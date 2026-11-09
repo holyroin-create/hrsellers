@@ -1,0 +1,153 @@
+# Değişiklik kaydı v5 — 2026-11-09
+
+## Değiştirilen dosyalar (kod ve altyapı)
+
+- src/content.config.ts (noindex alanı)
+- astro.config.mjs (sitemap lastmod + noindex hariç tutma)
+- src/layouts/Article.astro (inceleme kaydı, API ad notu, ads/noindex)
+- src/components/Faq.astro, Decision.astro
+- src/pages/faq.astro, reviews/index.astro (noindex)
+- src/pages/about.astro, editorial-standards.astro
+- src/styles/site.css (CTA kontrastı #bd4609, mobil key facts/TOC)
+- tools/gate-policy.mjs (inceleme kaydı denetimi)
+- tools/gate-claims.mjs (resmî host listesi)
+- tools/log-review.mjs (yeni)
+- tools/postbuild.mjs (yönlendirme başlığı + noindex)
+- data/editor-reviews.json (yeni, boş)
+- data/images.json (+74 doğrulanmış fotoğraf; 123 toplam)
+- data/corrections.json
+- data/claims/*.json (38 sayfa)
+
+## İçeriği genişletilen / düzeltilen URL'ler (modified 2026-11-09)
+
+- /guides/account-suspension-appeal/ — 13 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (10), developer-docs.amazon.com (3)
+- /guides/aged-inventory-15-month-tier/ — 10 yeni/yeniden doğrulanmış iddia; kaynaklar: developer-docs.amazon (8), sellingpartners.aboutamazon.com (2)
+- /guides/ai-image-tagging-rule/ — 12 yeni/yeniden doğrulanmış iddia; kaynaklar: www.nysenate.gov (9), advertising.amazon.com (2), www.governor.ny.gov (1)
+- /guides/amazon-business-b2b/ — 18 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (14), developer-docs.amazon (4)
+- /guides/bundles-and-multipacks/ — 9 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (4), developer-docs.amazon (3), sell.amazon.com (2)
+- /guides/buy-box-featured-offer/ — 17 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (17)
+- /guides/country-of-origin-sourcing/ — 2 yeni/yeniden doğrulanmış iddia; kaynaklar: www.federalregister.gov (2)
+- /guides/dd7-payout-reserve/ — 17 yeni/yeniden doğrulanmış iddia; kaynaklar: sell.amazon.com (9), github.com (5), developer-docs.amazon (3)
+- /guides/demand-forecasting-reorder/ — 17 yeni/yeniden doğrulanmış iddia; kaynaklar: developer-docs.amazon (8), github.com (7), sell.amazon.com (2)
+- /guides/fba-fuel-logistics-surcharge-2026/ — 12 yeni/yeniden doğrulanmış iddia; kaynaklar: sellingpartners.aboutamazon.com (6), supplychain.amazon.com (3), developer-docs.amazon (2), github.com (1)
+- /guides/fbt-fixed-dollar-problem/ — 13 yeni/yeniden doğrulanmış iddia; kaynaklar: sellingpartners.aboutamazon.com (5), sell.amazon.com (4), github.com (2), developer-docs.amazon (1), supplychain.amazon.com (1)
+- /guides/ip-complaints-retractions/ — 29 yeni/yeniden doğrulanmış iddia; kaynaklar: sell.amazon.com (19), github.com (4), www.uspto.gov (4), trustworthyshopping.aboutamazon.com (1), developer-docs.amazon.com (1)
+- /guides/listing-optimisation-a10/ — 13 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (12), developer-docs.amazon.com (1)
+- /guides/main-image-compliance/ — 21 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (10), sell.amazon.com (9), advertising.amazon.com (2)
+- /guides/narf-canada-mexico/ — 16 yeni/yeniden doğrulanmış iddia; kaynaklar: www.canada.ca (8), sell.amazon.com (4), cbsa-asfc.gc.ca (4)
+- /guides/order-defect-rate/ — 16 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (12), developer-docs.amazon.com (4)
+- /guides/packaging-design-fba/ — 14 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (11), www.ecfr.gov (2), www.govinfo.gov (1)
+- /guides/product-inserts/ — 13 yeni/yeniden doğrulanmış iddia; kaynaklar: www.ecfr.gov (8), github.com (3), developer-docs.amazon (2)
+- /guides/q4-freight-booking-window/ — 12 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (9), www.ecfr.gov (3)
+- /guides/removal-vs-hold-decision/ — 15 yeni/yeniden doğrulanmış iddia; kaynaklar: developer-docs.amazon (9), github.com (3), sellingpartners.aboutamazon.com (3)
+- /guides/returns-cost-and-badge/ — 14 yeni/yeniden doğrulanmış iddia; kaynaklar: developer-docs.amazon (8), github.com (4), sellingpartners.aboutamazon.com (2)
+- /guides/rufus-listing-optimization/ — 11 yeni/yeniden doğrulanmış iddia; kaynaklar: www.aboutamazon.com (11)
+- /guides/section-301-china-tariffs/ — 2 yeni/yeniden doğrulanmış iddia; kaynaklar: www.federalregister.gov (2)
+- /guides/seller-central-reports/ — 18 yeni/yeniden doğrulanmış iddia; kaynaklar: developer-docs.amazon (16), github.com (2)
+- /guides/seller-financing/ — 23 yeni/yeniden doğrulanmış iddia; kaynaklar: www.sba.gov (14), sell.amazon.com (9)
+- /guides/seller-fulfilled-prime/ — 14 yeni/yeniden doğrulanmış iddia; kaynaklar: sell.amazon.com (5), developer-docs.amazon (5), github.com (4)
+- /guides/subscribe-and-save-economics/ — 21 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (16), sell.amazon.com (5)
+- /guides/supplier-payment-terms/ — 17 yeni/yeniden doğrulanmış iddia; kaynaklar: www.trade.gov (15), www.ecfr.gov (2)
+- /guides/the-supplier-invoice/ — 19 yeni/yeniden doğrulanmış iddia; kaynaklar: www.ecfr.gov (19)
+- /guides/title-limit-984-million/ — 21 yeni/yeniden doğrulanmış iddia; kaynaklar: developer-docs.amazon.com (13), github.com (5), www.rfc-editor.org (2), sell.amazon.com (1)
+- /guides/ungating-restricted-categories/ — 11 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (9), developer-docs.amazon (2)
+- /guides/variations-review-pooling/ — 12 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (10), www.govinfo.gov (2)
+- /guides/vendor-central-vs-seller-central/ — 20 yeni/yeniden doğrulanmış iddia; kaynaklar: github.com (20)
+- /guides/vine-and-early-reviews/ — 13 yeni/yeniden doğrulanmış iddia; kaynaklar: sell.amazon.com (6), www.govinfo.gov (4), github.com (3)
+- /marketplaces/aliexpress/ — 13 yeni/yeniden doğrulanmış iddia; kaynaklar: cdn.contract.alibaba.com (13)
+- /marketplaces/tiktok-shop/ — 21 yeni/yeniden doğrulanmış iddia; kaynaklar: seller-us.tiktok.com (20), seller.tiktok.com (1)
+- /reviews/a2x/ — 0 yeni/yeniden doğrulanmış iddia; kaynaklar: 
+- /reviews/keepa/ — 26 yeni/yeniden doğrulanmış iddia; kaynaklar: keepa.com (26)
+
+## Kendi fotoğrafını alan URL'ler (74)
+
+- /guides/account-suspension-appeal/
+- /guides/aged-inventory-15-month-tier/
+- /guides/ai-image-tagging-rule/
+- /guides/amazon-200-billion-quarter/
+- /guides/amazon-fba-fee-changes-2026/
+- /guides/amazon-ppc-benchmarks/
+- /guides/amazon-renewed/
+- /guides/amazon-stopped-prepping/
+- /guides/aplus-content-brand-tools/
+- /guides/authorised-reseller/
+- /guides/awd-vs-3pl-warehousing/
+- /guides/brand-referral-bonus/
+- /guides/bundles-and-multipacks/
+- /guides/buy-box-featured-offer/
+- /guides/buyer-seller-messaging/
+- /guides/choosing-a-freight-forwarder/
+- /guides/cross-channel-price-parity/
+- /guides/currency-conversion-payouts/
+- /guides/dd7-payout-reserve/
+- /guides/deal-and-coupon-fees/
+- /guides/demand-forecasting-reorder/
+- /guides/fba-fuel-logistics-surcharge-2026/
+- /guides/fba-vs-fbm-breakeven/
+- /guides/fbt-fixed-dollar-problem/
+- /guides/freight-modes/
+- /guides/holiday-peak-fulfilment-fee/
+- /guides/ip-complaints-retractions/
+- /guides/ipi-restock-limits/
+- /guides/launch-sequence/
+- /guides/listing-disappeared/
+- /guides/listing-optimisation-a10/
+- /guides/low-inventory-level-fee/
+- /guides/main-image-compliance/
+- /guides/mcf-off-amazon-orders/
+- /guides/narf-canada-mexico/
+- /guides/order-defect-rate/
+- /guides/packaging-design-fba/
+- /guides/ppc-campaign-structure-launch/
+- /guides/product-inserts/
+- /guides/product-research-cost-errors/
+- /guides/q4-deal-deadlines-2026/
+- /guides/q4-freight-booking-window/
+- /guides/qc-inspections/
+- /guides/removal-vs-hold-decision/
+- /guides/returns-cost-and-badge/
+- /guides/rufus-listing-optimization/
+- /guides/seller-central-reports/
+- /guides/seller-financing/
+- /guides/seller-fulfilled-prime/
+- /guides/selling-your-fba-business/
+- /guides/shipment-discrepancy-claims/
+- /guides/sipp-packaging-program/
+- /guides/sourcing-agents/
+- /guides/subscribe-and-save-economics/
+- /guides/supplier-payment-terms/
+- /guides/supplier-verification/
+- /guides/tariff-engineering-design/
+- /guides/the-supplier-invoice/
+- /guides/tiktok-shop-fees/
+- /guides/title-limit-984-million/
+- /guides/ungating-restricted-categories/
+- /guides/variations-review-pooling/
+- /guides/vendor-central-vs-seller-central/
+- /marketplaces/aliexpress/
+- /marketplaces/tiktok-shop/
+- /reviews/a2x/
+- /reviews/amzscout/
+- /reviews/aura/
+- /reviews/getida/
+- /reviews/helium-10/
+- /reviews/jungle-scout/
+- /reviews/keepa/
+- /reviews/sellerboard/
+- /reviews/zonguru/
+
+## noindex yapılan URL'ler (URL korunur, sitemap dışında)
+
+- /guides/amazon-200-billion-quarter/
+- /guides/q4-deal-deadlines-2026/
+- /reviews/a2x/
+- /reviews/amzscout/
+- /reviews/aura/
+- /reviews/getida/
+- /reviews/helium-10/
+- /reviews/jungle-scout/
+- /reviews/keepa/
+- /reviews/sellerboard/
+- /reviews/zonguru/
+- /reviews/ (dizin)
+- /faq/ (dizin)

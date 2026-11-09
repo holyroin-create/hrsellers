@@ -5,6 +5,9 @@ const r = new Report('policy'); const REL = process.env.RELEASE === '1'; const s
 const cfg = JSON.parse(read('site.config.json'));
 const miss = cfg.required.filter((k) => !String(cfg[k] || '').trim()); if (miss.length) soft(`site.config.json empty: ${miss.join(', ')} — SAHİP BİLGİSİ BEKLİYOR`);
 if (!cfg.ownerConfirmed) soft('site.config.json ownerConfirmed=false');
+// Editor review log: only the configured editor, valid non-future dates, existing pages (docs/EDITOR_INCELEME_SISTEMI.md).
+{ const log = JSON.parse(read('data/editor-reviews.json')); const today = new Date().toISOString().slice(0, 10);
+  for (const x of log) { if (x.reviewer !== cfg.editorName) r.err(`editor-reviews: reviewer "${x.reviewer}" is not the configured editor`); if (!/^\d{4}-\d{2}-\d{2}$/.test(x.date) || x.date > today) r.err(`editor-reviews: bad date ${x.date} for ${x.url}`); const [, c, sl] = String(x.url).split('/'); if (!fs.existsSync(path.join(ROOT, `src/content/${c}/${sl}.mdx`))) r.err(`editor-reviews: no page ${x.url}`); } }
 if (cfg.adsEnabled && (!cfg.googleCmpConfigured || !Object.values(cfg.adSlots).every((s) => /^\d{6,}$/.test(s)))) r.err('adsEnabled requires googleCmpConfigured and numeric ad slot ids');
 const REQ = ['index.html', '404.html', 'about/index.html', 'contact/index.html', 'privacy/index.html', 'cookie-policy/index.html', 'terms/index.html', 'disclaimer/index.html', 'editorial-standards/index.html', 'corrections/index.html', 'image-credits/index.html', 'author/muhammet-ali-turk/index.html', 'affiliate-disclosure/index.html', 'sitemap/index.html', 'robots.txt', 'ads.txt', 'sitemap-index.xml'];
 for (const f of REQ) if (!fs.existsSync(path.join(ROOT, 'dist', f))) r.err(`dist/${f} missing`);

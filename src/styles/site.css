@@ -16,7 +16,7 @@
   --bg: #ffffff;
   --bg-soft: #f6f8fb;
   --bg-tint: #eef4fb;
-  --cta: #cf4c0a;         /* white text ≥4.5:1 */
+  --cta: #bd4609;         /* white text ≥4.5:1 */
   --cta-hover: #ad3f08;
   --orange: #f26a21;      /* decorative only (icons, bars, rules) — never text on white */
   --orange-soft: #fff1e8;
@@ -577,3 +577,9 @@ sup.cite a:hover { background: var(--navy-700); color: #fff; }
 .consent-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn-ghost-dark { background: #fff; color: #0b1f33; border: 1px solid #0b1f33; }
 .linklike { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; cursor: pointer; font: inherit; }
+/* mobile: bring the first paragraph up */
+@media (max-width: 760px) {
+  .keyfacts { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .keyfacts > * { padding: 12px 14px; }
+  .art-side .toc { display: none; }
+}

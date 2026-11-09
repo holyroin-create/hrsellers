@@ -6,7 +6,7 @@ const all = await allEntries();
 const groups = (Object.keys(PILLARS) as (keyof typeof PILLARS)[]).map((k) => ({ k, pages: all.filter((x) => x.e.data.pillar === k && x.e.data.faq.length) })).filter((g) => g.pages.length);
 const total = groups.reduce((n, g) => n + g.pages.reduce((m, x) => m + x.e.data.faq.length, 0), 0);
 ---
-<Page title="Seller FAQ index: fees, duties, compliance and tax" description="An index of the seller questions answered across FBA Tactics guides, grouped by topic. Each question links to the guide where it is answered with sources." kicker="FAQ" photo="hub-faq" lede={`${total} questions sellers search for, grouped by topic. Each one is answered, with its sources, at the end of the guide it links to.`} wide>
+<Page noindex={true} title="Seller FAQ index: fees, duties, compliance and tax" description="An index of the seller questions answered across FBA Tactics guides, grouped by topic. Each question links to the guide where it is answered with sources." kicker="FAQ" photo="hub-faq" lede={`${total} questions sellers search for, grouped by topic. Each one is answered, with its sources, at the end of the guide it links to.`} wide>
   <p>This page is an index rather than a second copy of the answers: each question below opens the guide that answers it, where the answer sits next to the rule it depends on and the sources it was checked against. For a quick overview, the five most-asked fee and customs questions are also answered on the <a href="/">home page</a>.</p>
   {groups.map((g) => <section id={g.k} style="margin-top:40px"><h2>{PILLARS[g.k].name}</h2>
     {g.pages.map((x) => <div style="margin-top:18px"><h3 style="font-size:1.05rem;margin-bottom:6px"><a href={x.href}>{x.e.data.title}</a></h3>

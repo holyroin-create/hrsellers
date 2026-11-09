@@ -9,6 +9,7 @@ const page = z.object({
   type: z.enum(['guide', 'reference']).default('guide'),
   published: date, modified: date, lastVerified: date,
   minutes: z.number().int().positive(),
+  noindex: z.boolean().optional(),
   photo: z.object({ subject: z.string(), alt: z.string(), image: z.string().optional() }),
   keyFacts: z.array(z.object({ label: z.string(), value: z.string(), claim: z.string() })).min(2).max(6),
   summary: z.array(z.string()).min(2).max(6),

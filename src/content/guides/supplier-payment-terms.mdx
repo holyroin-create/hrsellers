@@ -1,16 +1,15 @@
 ---
 title: "Supplier Payment Terms: Deposits, LCs, Collections, Net 60"
-description: "The five international payment methods from the buyer's side: what each puts at risk, what LCs and collections cost, and how payments affect customs value."
+description: "Deposits, escrow, letters of credit, collections and open account from the importer's side: how each works, what it puts at risk and what customs counts."
 pillar: "money"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 9
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "a bank wire transfer form, a purchase order and a pen on a wooden desk next to a calculator and a few U.S. dollar bills, no readable names or account numbers"
-  alt: "Desk calculator beside stacks of copper coins, U.S. dollar bills and a white pen on a wooden table"
-  image: "tools-calculator"
+  alt: "Close-up of creased U.S. dollar banknotes with a few coins resting on top"
 keyFacts:
   - { label: "Primary payment methods", value: "5", claim: "supplier-payment-terms-01" }
   - { label: "Typical open-account terms", value: "30, 60 or 90 days", claim: "supplier-payment-terms-18" }
@@ -24,6 +23,7 @@ summary:
   - "For customs, payment by letter of credit or other instruments still counts toward the price actually paid or payable, and rebates made after importation are disregarded."
 faq:
   - { q: "What is a letter of credit?", a: "ITA defines it as a contractual commitment by the foreign buyer's bank to pay once the exporter ships the goods. As the importer, you apply to your bank to open it in the supplier's favor.", claims: ["supplier-payment-terms-07", "supplier-payment-terms-08"] }
+  - { q: "How does a letter of credit work?", a: "You apply to your bank, which drafts the LC from the sales agreement and sends it to the supplier's bank. The supplier ships and presents documents, which are checked against the LC; your bank then pays and releases the documents you need to claim the goods.", claims: ["supplier-payment-terms-08", "supplier-payment-terms-36", "supplier-payment-terms-37", "supplier-payment-terms-38"] }
   - { q: "What does a letter of credit cost?", a: "ITA gives no single price; it says LCs can be labor-intensive and relatively expensive due to bank fees, and that documentary collections are generally less expensive. Ask your bank for its fee schedule.", claims: ["supplier-payment-terms-09", "supplier-payment-terms-16"] }
   - { q: "What is documentary collection in international trade?", a: "The supplier's documents are sent through the banks and released to you either against full payment or against your signed acceptance committing to pay later. The banks do not verify the documents or guarantee payment.", claims: ["supplier-payment-terms-13", "supplier-payment-terms-14", "supplier-payment-terms-15"] }
 related: ["supplier-verification", "first-sale-valuation", "incoterms-who-is-importer", "qc-inspections"]
@@ -49,17 +49,31 @@ The payment term you agree with a supplier decides who is carrying the risk whil
 
 ### Cash-in-advance (including deposits)
 
-ITA calls payment in advance the least attractive option for the buyer. <C id="supplier-payment-terms-04"/> For small transactions, escrow services are becoming another cash-in-advance option. <C id="supplier-payment-terms-05"/> Any deposit or balance you prepay is exposed until goods are in your hands, so put [supplier verification](/guides/supplier-verification/) and a pre-shipment [QC inspection](/guides/qc-inspections/) in front of the balance payment.
+ITA calls payment in advance the least attractive option for the buyer. <C id="supplier-payment-terms-04"/> Wire transfers and credit cards are the most commonly used cash-in-advance options. <C id="supplier-payment-terms-28"/> For small transactions, escrow services are becoming another cash-in-advance option. <C id="supplier-payment-terms-05"/>
+
+Escrow adds a check before the money is released. It places the funds with a trusted third party until the specified conditions are met; on delivery, the importer has a pre-determined time to inspect and accept the goods — ITA's example is five days — and if the buyer returns the goods during that period, the exporter is not paid. <C id="supplier-payment-terms-29"/> <C id="supplier-payment-terms-30"/> <C id="supplier-payment-terms-31"/>
+
+ITA tells exporters to consider cash-in-advance when the importer is a new customer or has a less-established purchasing history. <C id="supplier-payment-terms-32"/> Any deposit or balance you prepay is exposed until goods are in your hands, so put [supplier verification](/guides/supplier-verification/) and a pre-shipment [QC inspection](/guides/qc-inspections/) in front of the balance payment.
 
 ### Letters of credit
 
 A letter of credit is a contractual commitment by the foreign buyer's bank to pay once the exporter ships the goods. <C id="supplier-payment-terms-07"/> The importer applies to its bank to open the letter of credit in favor of the exporter. <C id="supplier-payment-terms-08"/> ITA says LCs are designed to protect both exporters and importers, <C id="supplier-payment-terms-27"/> and an LC protects the buyer since no payment obligation arises until the goods have been shipped as promised. <C id="supplier-payment-terms-06"/>
 
-The costs are real. LCs can be labor-intensive and relatively expensive due to bank fees. <C id="supplier-payment-terms-09"/> The required documents are detailed and prone to errors and discrepancies, <C id="supplier-payment-terms-10"/> and any errors must be amended and resubmitted. <C id="supplier-payment-terms-11"/> ITA recommends them for higher-risk situations. <C id="supplier-payment-terms-12"/> For a buyer, the practical lever is the document list; ask your bank whether an inspection certificate can be included among the required documents.
+<Steps title="How a letter of credit runs, seen from the buyer's side" steps={[
+  {t:"You apply to your bank", d:"You ask your bank to open the LC in the supplier's favor.", claim:"supplier-payment-terms-08"},
+  {t:"Your bank drafts it from the sales agreement", d:"The LC is drafted using the sales agreement's terms and conditions and sent to the supplier's bank.", claim:"supplier-payment-terms-36"},
+  {t:"Supplier ships and presents documents", d:"The supplier's bank checks the documents against the LC's terms and conditions.", claim:"supplier-payment-terms-37"},
+  {t:"Discrepancies are fixed", d:"Any errors must be amended and resubmitted.", claim:"supplier-payment-terms-11"},
+  {t:"Your bank pays and releases documents", d:"You receive the documents you need to claim the goods and clear customs.", claim:"supplier-payment-terms-38"}
+]} />
+
+ITA also recommends LCs when the importer's credit is unacceptable or not available. <C id="supplier-payment-terms-39"/>
+
+The costs are real. LCs can be labor-intensive and relatively expensive due to bank fees. <C id="supplier-payment-terms-09"/> The required documents are detailed and prone to errors and discrepancies, <C id="supplier-payment-terms-10"/> and any errors must be amended and resubmitted. <C id="supplier-payment-terms-11"/> ITA recommends them for higher-risk situations. <C id="supplier-payment-terms-12"/> For a buyer, the practical lever is the document list; ask your bank whether an inspection certificate can be included among the required documents. ITA's list of questions to ask the bank includes "How much does a Letter of Credit cost? Who pays the fees?" <C id="supplier-payment-terms-40"/>
 
 ### Documentary collections
 
-Here the shipping documents travel through the banks and are released to you in one of two ways: upon receipt of your full payment, <C id="supplier-payment-terms-13"/> or upon your signed acceptance of terms that commit to future payment. <C id="supplier-payment-terms-14"/> The banks do not verify that the documents are accurate and do not guarantee payment as they do with letters of credit. <C id="supplier-payment-terms-15"/> ITA notes collections offer no verification process and limited recourse in the event of non-payment, <C id="supplier-payment-terms-26"/> that they are generally less expensive than LCs, <C id="supplier-payment-terms-16"/> and that it recommends them only for established trade relationships in economically and politically stable markets. <C id="supplier-payment-terms-17"/>
+Payment under a collection is either at sight (documents against payment) or on a specified date (documents against acceptance). <C id="supplier-payment-terms-33"/> The supplier's bill of exchange, also called a draft, tells the banks which documents are required. <C id="supplier-payment-terms-34"/> Here the shipping documents travel through the banks and are released to you in one of two ways: upon receipt of your full payment, <C id="supplier-payment-terms-13"/> or upon your signed acceptance of terms that commit to future payment. <C id="supplier-payment-terms-14"/> The banks do not verify that the documents are accurate and do not guarantee payment as they do with letters of credit. <C id="supplier-payment-terms-15"/> ITA notes collections offer no verification process and limited recourse in the event of non-payment, <C id="supplier-payment-terms-26"/> that they are generally less expensive than LCs, <C id="supplier-payment-terms-16"/> and that it recommends them only for established trade relationships in economically and politically stable markets. <C id="supplier-payment-terms-17"/> ITA also describes the exporter's position under a collection: if the importer does not pay, the exporter typically has to find another buyer, pay for return transportation or abandon the goods. <C id="supplier-payment-terms-35"/>
 
 ### Open account
 
@@ -68,6 +82,27 @@ The goods ship and payment is due later, typically in 30, 60 or 90 days in inter
 ### Consignment
 
 Payment is sent to the exporter only after the goods have been sold by the foreign distributor to the end customer. <C id="supplier-payment-terms-20"/>
+
+## When each method takes your cash
+
+<Compare title="When money leaves your account, and what you hold at that moment" columns={["Cash leaves","What you hold then"]} rows={[
+  {label:"Deposit / cash-in-advance", values:["Before shipment","Nothing but the supplier's promise"], claim:"supplier-payment-terms-04"},
+  {label:"Escrow", values:["Before shipment, to a trusted third party","A right to inspect and accept on delivery"], claims:["supplier-payment-terms-29","supplier-payment-terms-30"]},
+  {label:"LC", values:["Your bank pays once the documents comply","The documents needed to claim the goods"], claims:["supplier-payment-terms-37","supplier-payment-terms-38"]},
+  {label:"Collection, documents against payment", values:["At sight, to get the documents","The documents to clear the goods"], claim:"supplier-payment-terms-33"},
+  {label:"Collection, documents against acceptance", values:["On the agreed later date","The goods, since documents came on acceptance"], claim:"supplier-payment-terms-14"},
+  {label:"Open account", values:["Typically 30, 60 or 90 days after shipment","The goods"], claim:"supplier-payment-terms-18"}
+]} />
+
+<Callout type="example" title="Worked example (hypothetical): matching terms to the sales cycle">
+Inputs: a $30,000 order; 35 days from shipment until the goods are sellable at the marketplace warehouse; first sales cover the order cost 50 days after that, so day 85 after shipment.
+
+Prepaid in full: $30,000 is out for 85 days before sales replace it. Documents against acceptance with payment 60 days after shipment: the bill falls due on day 60, 25 days before sales cover it, so $30,000 still has to be found for 25 days. Open account at 90 days: payment is due on day 90, after the day-85 mark, so the order is funded by its own sales.
+
+The same order needs different working capital depending on the term.
+</Callout>
+
+<C id="supplier-payment-terms-18"/> <C id="supplier-payment-terms-33"/>
 
 ## Choosing terms for a supplier relationship
 
@@ -92,11 +127,15 @@ Under B, $6,000 is at risk during production and the remaining $14,000 is paid o
 
 The payment instrument does not take a payment outside the price: payment may be made by letters of credit or negotiable instruments and may be made directly or indirectly. <C id="supplier-payment-terms-21"/> An indirect payment includes the settlement by the buyer, in whole or in part, of a debt owed by the seller. <C id="supplier-payment-terms-22"/> If you pay a supplier's raw-material bill to keep an order moving, that payment can form part of the price.
 
+The price actually paid or payable is considered without regard to its method of derivation. <C id="supplier-payment-terms-43"/> If you pay a delivered price that includes ocean freight and insurance, those charges incident to the international shipment are excluded from the price actually paid or payable. <C id="supplier-payment-terms-44"/> What the invoice must show is covered in [the supplier invoice](/guides/the-supplier-invoice/).
+
 Credits that come later do not reduce the entered value: any rebate of, or other decrease in, the price made after the date of importation is disregarded in determining transaction value. <C id="supplier-payment-terms-23"/> Settle quality claims and discounts before the goods are imported if you want them reflected in the value. Valuation details are in our [first-sale valuation guide](/guides/first-sale-valuation/).
 
 ## Sanctions and fraud: the two payment risks no term removes
 
 No payment method makes it lawful to pay a blocked party; U.S. persons are generally prohibited from dealing with the individuals and entities on the SDN List. <C id="supplier-payment-terms-24"/> And none of them helps if you pay the wrong account: the FBI's IC3 recommends using secondary channels and/or two-factor authentication to verify requests for changes in account information. <C id="supplier-payment-terms-25"/>
+
+ITA's payment-problems guidance is written for exporters who are owed money: it calls contacting and negotiating with the customer the simplest and least costly solution, and says arbitration is often faster and cheaper than legal action. <C id="supplier-payment-terms-41"/> <C id="supplier-payment-terms-42"/>
 
 <Checklist
   title="Before you agree payment terms"
@@ -114,6 +153,6 @@ No payment method makes it lawful to pay a blocked party; U.S. persons are gener
 This page compares payment methods; the legal terms of a particular LC or collection are set by your bank's documents and your contract. Have your bank's trade finance desk review the LC application before you sign it.
 </Callout>
 
-## How to confirm it before you sign
+## Where to read the official guidance
 
-Read ITA's "Methods of Payment," "Letter of Credit" and "Documentary Collections" pages on trade.gov. For customs value, read 19 CFR 152.103 on the eCFR. Screen the payee through OFAC's Sanctions List Search, and read the IC3 business email compromise announcement on ic3.gov.
+Read ITA's "Methods of Payment," "Cash-in-Advance," "Letter of Credit," "Documentary Collections" and "Payment Problems" pages on trade.gov. For customs value, read 19 CFR 152.102(f) and 152.103 on the eCFR. Screen the payee through OFAC's Sanctions List Search, and read the IC3 business email compromise announcement on ic3.gov.

@@ -1,43 +1,43 @@
 ---
 title: "Keepa: features and pricing from the vendor's own pages"
-description: "What Keepa publishes about its Amazon price history tool and API as of Nov 8, 2026: locales covered, token-based API plans, billing, cancellation and refunds."
+description: "Keepa's own docs on its Amazon price-history API: token costs, the fields that hold price, rank and Buy Box data, how to read raw values, and billing rules."
 pillar: "operations"
 type: "reference"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 6
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 9
+noindex: true
 photo:
   subject: "a laptop screen showing a generic line chart of price over time, no brand names or product images"
-  alt: "Four blank hang tags in white, kraft and black paper hanging on strings against a pale wall"
-  image: "amazon-referral-fees"
+  alt: "Angled close-up of a laptop screen showing a generic green line chart of values over the hours of a day"
 keyFacts:
   - { label: "Amazon locales in API docs", value: "11", claim: "keepa-05" }
   - { label: "API billing", value: "Monthly in advance", claim: "keepa-11" }
   - { label: "Unused API tokens", value: "Expire after 60 minutes", claim: "keepa-10" }
+  - { label: "Plan downgrades", value: "Once every 28 days", claim: "keepa-26" }
 summary:
   - "Keepa provides Amazon price history charts, price drop alerts, price watches, daily drops and browser extensions."
   - "Its API documentation covers 11 Amazon locales, from amazon.com to amazon.com.br."
   - "API plans are token-based, differ by tokens generated per minute, and are billed monthly in advance until canceled."
   - "Downgrades give an account credit with no refund; a canceled API subscription ends at the end of its period."
-  - "Keepa publishes its prices on its own site; those pages could not be read as text on Nov 8, 2026, so no prices are stated here."
+  - "Product data comes as indexed histories (Amazon price, New, sales rank, offer count, Buy Box) with prices as integers in the locale's smallest currency unit, such as cents, and -1 for no offer."
+  - "Keepa publishes its prices only behind its API pages; they could not be read as text on Nov 8 or Nov 9, 2026, so no prices are stated here."
 faq:
   - { q: "How much is Keepa API?", a: "Keepa publishes API plan prices on its own site. Its documentation says plans differ by the number of tokens generated per minute and are billed monthly in advance.", claims: ["keepa-09", "keepa-11"] }
   - { q: "Does Keepa cost money?", a: "Keepa's API is sold as paid plans billed monthly in advance, payable by credit card through Stripe. Check Keepa's site for current subscription prices.", claims: ["keepa-11", "keepa-14"] }
 related: ["helium-10", "jungle-scout", "amazon", "amazon-referral-fees"]
 ---
 
-This page summarizes what Keepa publishes about its own product on keepa.com and in its API documentation, checked on November 8, 2026. We have not tested the software, we do not rate it, and this site has no affiliate relationship with Keepa. Keepa's own pages describe a price-history service and an API, so the decisions are narrow: whether its data covers the Amazon marketplaces you sell or source in, and, if you plan to pull its data into your own spreadsheets or software, how its token-based API plans are billed.
+This page summarizes what Keepa publishes about its own product on keepa.com and in its API documentation, checked on November 8 and again on November 9, 2026. We have not tested the software, we do not rate it, and this site has no affiliate relationship with Keepa. Keepa's own pages describe a price-history service and an API, so the decisions are narrow: whether its data covers the Amazon marketplaces you sell or source in, and, if you plan to pull its data into your own spreadsheets or software, how its token-based API plans are billed.
 
 ## What Keepa says it is
 
-Keepa says it provides Amazon price history charts and price drop alerts. <C id="keepa-02"/> Its site also lists price watches, daily drops and browser extensions among its features. <C id="keepa-03"/>
+Keepa says it provides Amazon price history charts and price drop alerts. <C id="keepa-02"/> Its site also lists price watches, daily drops and browser extensions among its features, <C id="keepa-03"/> and says it tracks over 7 billion Amazon products. <C id="keepa-24"/>
 
-## Pricing: where it is published
+## Prices: only on Keepa's API plans page
 
-Keepa publishes its prices on keepa.com; its API documentation links to an "API plans" page there. Keepa's pricing pages load as an interactive application and could not be read as text when this page was checked on November 8, 2026, so no prices are stated here. Check the current figures directly on Keepa's site before you subscribe.
-
-What the documentation does say about how API plans work is set out below.
+Keepa's API documentation links to an "API plans" page on keepa.com for current plans and prices. That page loads as an interactive application and showed no plan prices as text when it was checked on November 8 and November 9, 2026, so no prices are stated here. Two pricing rules are published in the documentation: Keepa does not offer discounts, <C id="keepa-25"/> and plans differ by the number of tokens generated per minute. <C id="keepa-09"/>
 
 ## How the API plans are structured
 
@@ -50,12 +50,28 @@ API access is limited by a token bucket, and plans differ by the number of token
 | Product Search | 10 tokens per search, up to 20 results |
 | Browsing Deals | 5 tokens per request, up to 150 deals |
 | Best Sellers | 50 tokens per request |
+| Product Finder | 10 tokens plus 1 per 100 ASINs |
+| Seller Information | 1 token per seller, plus 9 for the storefront |
 
-*Source: Keepa API documentation, checked Nov 8, 2026.* <C id="keepa-06"/> <C id="keepa-07"/> <C id="keepa-17"/> <C id="keepa-18"/>
+*Source: Keepa API documentation, checked Nov 9, 2026.* <C id="keepa-06"/> <C id="keepa-07"/> <C id="keepa-17"/> <C id="keepa-18"/> <C id="keepa-29"/>
+
+On a Product Request, several options are free and some are not:
+
+| Product Request option | Extra token cost |
+|---|---|
+| stats, history, days, only-live-offers | None <C id="keepa-30"/> |
+| buybox (all Buy Box data) | 2 per product <C id="keepa-31"/> |
+| rating | Up to 1 per product <C id="keepa-31"/> |
+| update (force a refresh if data is older than the hours you set) | 0 or 1 per product <C id="keepa-31"/> <C id="keepa-32"/> |
+| offers | 6 per found offer page <C id="keepa-07"/> |
+
+*Source: Keepa API documentation, Product Request page, checked Nov 9, 2026.* <C id="keepa-30"/>
 
 <Callout type="example" title="Worked example (hypothetical): sizing a refresh of your catalog">
-Inputs: a list of 300 ASINs refreshed with basic Product Requests at 1 token per product, <C id="keepa-06"/> on a plan that generates 60 tokens a minute with a 3,600-token bucket. <C id="keepa-10"/> A full refresh uses 300 × 1 = 300 tokens, which fits inside a full bucket. Requesting offers instead costs 6 tokens per found offer page and replaces the 1-token base cost, <C id="keepa-07"/> so one offer page per product raises the refresh to 300 × 6 = 1,800 tokens, half of the bucket. Run the same arithmetic with your own ASIN count before picking a plan size.
+Inputs: a list of 300 ASINs refreshed with basic Product Requests at 1 token per product, <C id="keepa-06"/> on a plan that generates 60 tokens a minute with a 3,600-token bucket. <C id="keepa-10"/> A full refresh uses 300 × 1 = 300 tokens, which fits inside a full bucket. Requesting offers instead costs 6 tokens per found offer page and replaces the 1-token base cost, <C id="keepa-07"/> so one offer page per product raises the refresh to 300 × 6 = 1,800 tokens, half of the bucket. A weekly screen of 1,000 ASINs with the free stats option plus buybox costs 1,000 × (1 + 2) = 3,000 tokens, <C id="keepa-31"/> close to the whole 3,600-token bucket in one pass. Run the same arithmetic with your own ASIN count before picking a plan size.
 </Callout>
+
+If you overspend, requests fail with HTTP 429 until the bucket refills, <C id="keepa-33"/> and every response tells you tokensLeft and tokensConsumed, <C id="keepa-34"/> so a script can read its remaining balance from each response.
 
 Tracking adds a standing cost. Keepa's Tracking API tracks product changes and notifies you by webhook push or API pull, <C id="keepa-19"/> and each tracked product lowers your token refill rate, at 0.9 tokens per update per locale for regular tracking. <C id="keepa-20"/>
 
@@ -65,10 +81,11 @@ Tracking adds a standing cost. Keepa's Tracking API tracks product changes and n
   {t:"Pay by card", d:"Keepa accepts credit card payments through Stripe.", claim:"keepa-14"},
   {t:"Billed monthly in advance", d:"Plans continue from one billing period to the next until canceled.", claim:"keepa-11"},
   {t:"Change plan", d:"An upgrade is charged on a prorated basis; a downgrade gives a credit to your Keepa account, with no refund possible.", claim:"keepa-12"},
-  {t:"Cancel", d:"Cancel at any time through your dashboard; the subscription ends at the end of its period.", claim:"keepa-13"}
+  {t:"Cancel", d:"Cancel at any time through your dashboard; the subscription ends at the end of its period.", claim:"keepa-13"},
+  {t:"Resume or lose it", d:"You can resume before the period ends; once expired, it cannot be reactivated.", claim:"keepa-28"}
 ]} />
 
-Because a downgrade produces an account credit rather than a refund, starting on a smaller plan and upgrading avoids money sitting as credit.
+Downgrades are allowed only once every 28 days <C id="keepa-26"/> and produce an account credit rather than a refund, <C id="keepa-12"/> so starting on a smaller plan and upgrading avoids money sitting as credit. Several subscriptions can also run at once; all are active simultaneously and share the same payment method and API key. <C id="keepa-27"/>
 
 ## What data the API returns
 
@@ -82,10 +99,41 @@ The Keepa API delivers Keepa's data on Amazon marketplaces to your own applicati
 
 The Keepa pages checked for this summary describe product and marketplace data; they do not describe connecting your own Seller Central account.
 
+## Which Keepa field answers which sourcing question
+
+Product histories arrive in a csv array indexed by price type, and summary figures in a statistics object. The documented fields that map to common sourcing questions:
+
+| Your question | Where Keepa puts it | What the docs say it holds |
+|---|---|---|
+| Has Amazon itself been selling, and at what price? | csv index 0, AMAZON | Amazon price history <C id="keepa-36"/> |
+| What has the lowest New offer been? | csv index 1, NEW | Marketplace New price history <C id="keepa-36"/> |
+| What has the lowest FBA competitor charged? | csv index 10, NEW_FBA | Lowest third-party New offer fulfilled by Amazon <C id="keepa-38"/> |
+| What has the Buy Box cost a buyer? | csv index 18, BUY_BOX_SHIPPING | New Buy Box price including shipping <C id="keepa-40"/> |
+| How crowded is the listing? | csv index 11, COUNT_NEW | Count of merchants selling it new <C id="keepa-39"/> |
+| How fast does it sell? | csv index 3, SALES; monthlySold | Sales rank history; <C id="keepa-37"/> purchases in the past month <C id="keepa-42"/> |
+| How has the star rating moved? | csv index 16, RATING | Integer 0–50, where 45 = 4.5 stars <C id="keepa-41"/> |
+| Is Amazon or FBA holding the Buy Box? | stats: buyBoxIsAmazon, buyBoxIsFBA | Flags for Amazon as seller and FBA fulfillment <C id="keepa-46"/> |
+| How often is it out of stock, and how often does rank drop? | stats: outOfStockPercentage30, salesRankDrops30 | 30-day out-of-stock share; count of rank drops <C id="keepa-45"/> |
+| What will Amazon charge me? | fbaFees, referralFeePercentage | FBA pick & pack fee; referral fee % at the assumed price <C id="keepa-43"/> |
+
+*Source: Keepa API documentation, Product Object and Statistics Object pages, checked Nov 9, 2026.* <C id="keepa-36"/>
+
+Not every product has a sales rank, and variation items usually lack individual ranks, <C id="keepa-37"/> so an empty SALES series is not by itself a sales figure. The stats window can be a number of recent days or an explicit date range. <C id="keepa-47"/> Amazon's own fees are set on Amazon's pages, covered in our [referral fee guide](/guides/amazon-referral-fees/).
+
+## Reading the raw numbers correctly
+
+<Callout type="example" title="Worked example (hypothetical): decoding one data point">
+Inputs: an amazon.com NEW series point with time 7,000,000 and value 2499, then a later point with value -1.
+
+Prices are integers in the locale's smallest currency unit, <C id="keepa-35"/> so 2499 is $24.99. A -1 means no offer was available in that interval, such as out of stock, <C id="keepa-49"/> not a price of minus one cent. Times are Keepa Time minutes: (7,000,000 + 21,564,000) × 60,000 = 1,713,840,000,000 Unix milliseconds, <C id="keepa-44"/> which is April 23, 2024 (UTC).
+</Callout>
+
+One definition changed in 2026. For the NEW, USED, COLLECTIBLE and REFURBISHED series, entries before February 23, 2026 are the lowest listing price, and entries from that date on are the lowest landing price, listing plus shipping. <C id="keepa-48"/> A series that spans that date therefore mixes two definitions; BUY_BOX_SHIPPING is defined as the New Buy Box price including shipping costs. <C id="keepa-40"/>
+
 ## Amazon's own tools on pricing and demand
 
 Amazon offers related views inside Seller Central. Product Opportunity Explorer groups products into niches built from customer search terms and analyzes trends in pricing, reviews and returns. <C id="keepa-21"/> Amazon's Automate Pricing tool is described as increasing your chances of becoming the Featured Offer. <C id="keepa-23"/> Both come with a Professional selling account, which Amazon lists at $39.99 a month plus selling fees. <C id="keepa-22"/> For what Amazon charges on each sale, see our [referral fee guide](/guides/amazon-referral-fees/).
 
-## How to confirm
+## Where to check Keepa's current terms
 
 Keepa's prices are only on its own site: check keepa.com and the API plans page linked from the [Plans & Tokens documentation](https://keepa.com/api-docs/plans-tokens.html) on the day you subscribe. The token costs and billing rules above come from that documentation and the [Product Request page](https://keepa.com/api-docs/product.html); re-read both if you are sizing an API plan.

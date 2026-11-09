@@ -8,14 +8,18 @@ import Cites from '../components/Cites.astro';
 import Sources from '../components/Sources.astro';
 import Faq from '../components/Faq.astro';
 import AdSlot from '../components/AdSlot.astro';
-import { fmtDate } from '../lib/claims';
+import { fmtDate, allClaims } from '../lib/claims';
 import { img } from '../lib/images';
 import { SITE } from '../lib/site';
 import { PILLARS } from '../lib/pillars';
+import reviewsLog from '../../data/editor-reviews.json';
 const { entry, headings = [], related = [], crumb, path } = Astro.props as any;
 const d = entry.data;
 const pillar = PILLARS[d.pillar as keyof typeof PILLARS];
 const photoId = d.photo?.image || entry.id;
+const usesApi = [...allClaims().values()].some((c) => c.page === path && c.status === 'verified' && /developer-docs\.amazon|github\.com\/amzn\//.test(c.source_url));
+// Only real, logged reviews by the editor are displayed (see docs/EDITOR_INCELEME_SISTEMI.md).
+const review = (reviewsLog as { url: string; reviewer: string; date: string }[]).filter((r) => r.url === path && r.reviewer === SITE.editorName).sort((a, b) => b.date.localeCompare(a.date))[0];
 const p = img(photoId);
 const og = `/og/${entry.collection}/${entry.id}.png`;
 const ld = [{
@@ -35,7 +39,7 @@ const tools: Record<string, [string, string, string][]> = {
   operations: [['/tools/margin-calculator/', 'Profit & margin calculator', 'calculator'], ['/tools/ppc-budget-calculator/', 'Ad budget & break-even ACoS', 'chart'], ['/reviews/', 'Seller software', 'list']],
 };
 ---
-<Base title={d.title} description={d.description} og={og} jsonld={ld} ads={true} type="article" preload={p ? `/${p.file}-960.webp` : undefined}>
+<Base title={d.title} description={d.description} og={og} jsonld={ld} ads={!d.noindex} noindex={!!d.noindex} type="article" preload={p ? `/${p.file}-960.webp` : undefined}>
   <section class="art-hero">
     <div class="wrap">
       <Breadcrumbs trail={[crumb, { label: d.title, href: path }]} />
@@ -48,7 +52,7 @@ const tools: Record<string, [string, string, string][]> = {
             <span class="chip chip-green"><Icon name="checkCircle" />Verified {fmtDate(d.lastVerified, true)}</span>
             <span><Icon name="clock" />{d.minutes} min read</span>
             <span><Icon name="calendar" />Updated {fmtDate(d.modified, true)}</span>
-            <span><Icon name="user" />Editor: <a href="/author/muhammet-ali-turk/" rel="author">{SITE.editorName}</a>{d.reviewedBy && <> · reviewed by {d.reviewedBy}{d.reviewedDate && <> on {fmtDate(d.reviewedDate)}</>}</>}</span>
+            <span><Icon name="user" />Editor: <a href="/author/muhammet-ali-turk/" rel="author">{SITE.editorName}</a>{review && <> · reviewed by {review.reviewer} on {fmtDate(review.date)}</>}</span>
           </div>
         </div>
         <figure class="figure-photo">
@@ -64,9 +68,10 @@ const tools: Record<string, [string, string, string][]> = {
       <article class="prose">
         <section class="summary" aria-labelledby="sum-h"><h2 id="sum-h">Key points</h2>
           <ul>{d.summary.map((s: string) => <li><Icon name="check" /><span>{s}</span></li>)}</ul></section>
+        {usesApi && <aside class="callout callout-note" role="note"><Icon name="info" /><div><p style="margin:0"><strong>About the report and field names on this page.</strong> Identifiers written in code style, such as <code>GET_…</code> report types or field names, come from Amazon's public Selling Partner API documentation. They are what developers and connected software use. If you work in Seller Central directly, look the report up by its plain-language name in Seller Central Help; you do not need API access to use this guide.</p></div></aside>}
         <slot />
         <Faq items={d.faq.map((f: any) => ({ q: f.q, a: f.a, claims: f.claims }))} />
-        <div class="byline-box"><Icon name="checkCircle" /><p>Every figure on this page links to the official page it comes from. The page was drafted with AI writing tools from those sources, and each statement was checked against its source in a separate, automated verification pass on {fmtDate(d.lastVerified)}. Editor responsible: <a href="/author/muhammet-ali-turk/">{SITE.editorName}</a>. Read <a href="/editorial-standards/">how we check facts</a>; spotted an error? <a href="/contact/">Tell us</a> — changes are logged on the <a href="/corrections/">corrections page</a>. General information, not legal, tax or financial advice.</p></div>
+        <div class="byline-box"><Icon name="checkCircle" /><p>Every figure on this page links to the official page it comes from. The page was drafted with AI writing tools from those sources, and each statement was checked against its source in a separate, automated verification pass on {fmtDate(d.lastVerified)}. Editor responsible: <a href="/author/muhammet-ali-turk/">{SITE.editorName}</a>{review ? <>, who reviewed this page against its sources on {fmtDate(review.date)}</> : <>; this page has not yet had a logged human review</>}. Read <a href="/editorial-standards/">how we check facts</a>; spotted an error? <a href="/contact/">Tell us</a> — changes are logged on the <a href="/corrections/">corrections page</a>. General information, not legal, tax or financial advice.</p></div>
         <Sources />
         <AdSlot slot="endOfArticle" />
       </article>

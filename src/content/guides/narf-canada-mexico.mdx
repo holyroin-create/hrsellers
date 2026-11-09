@@ -1,16 +1,15 @@
 ---
 title: "NARF Today: Remote Fulfillment to Canada and Mexico From US FBA"
-description: "How Amazon's Remote Fulfillment with FBA sells US FBA stock to Canada and Mexico: requirements, who pays duties, fees, excluded goods and the alternatives."
+description: "Remote Fulfillment with FBA (ex-NARF): selling US FBA stock in Canada and Mexico, excluded goods, Canada's courier duty bands, and GST/HST if you stock Canada."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "parcels on a conveyor at a cross-border sorting facility with a border-crossing truck lane visible outside, no people, no logos"
-  alt: "Curving roller conveyor lines in a distribution center, with stacked cartons and storage totes in the background"
-  image: "de-minimis-suspension-2026"
+  alt: "Grey plastic totes moving along a curved roller conveyor in a distribution centre, with tall automated storage racking and concrete columns behind"
 keyFacts:
   - { label: "Destinations", value: "Canada, Mexico, Brazil", claim: "narf-canada-mexico-01" }
   - { label: "Importer of record", value: "The customer", claim: "narf-canada-mexico-08" }
@@ -48,19 +47,57 @@ This is the feature that makes the program workable for small sellers: "Customer
 
 That changes if you send inventory into Canada yourself. The Canada Revenue Agency says the Excise Tax Act was amended, effective July 1, 2021, with GST/HST provisions, and it lists qualifying goods "such as goods located in a fulfillment warehouse." <C id="narf-canada-mexico-22"/> <C id="narf-canada-mexico-27"/> For those supplies, "The normal GST/HST registration, reporting and remittance regime is applicable to these non-resident vendors." <C id="narf-canada-mexico-23"/> Importing goods into Canada also calls for a nine-digit business number and an import-export (RM) program account, which the CRA says to register "before you import or export goods." <C id="narf-canada-mexico-24"/>
 
+### What a Canadian customer pays at the border
+
+Because the customer is the importer of record, Canada's border rules decide what duty and tax the shopper pays at import. For a shipment imported by courier from the US and Mexico, the Canada Border Services Agency sets three bands, in Canadian dollars of value for duty: <C id="narf-canada-mexico-46"/>
+
+| Value for duty (C$) | Duty | Taxes |
+|---|---|---|
+| Up to $40 | Free | Free <C id="narf-canada-mexico-43"/> |
+| Above $40 to $150 | Free | Apply <C id="narf-canada-mexico-44"/> |
+| Above $150 | Apply | Apply <C id="narf-canada-mexico-45"/> |
+
+*Source: Canada Border Services Agency, CUSMA low-value shipments, checked Nov 9, 2026.*
+
+<Callout type="example" title="Worked example (hypothetical): which band is your SKU in?">
+Inputs: a US$25 item shipped to Canada by courier and an exchange rate of 1.40 Canadian dollars per US dollar, with value for duty taken as the item price converted. 25 × 1.40 = C$35, inside the C$40 band, so the shopper pays no duty or tax at import. <C id="narf-canada-mexico-43"/> A US$60 item converts to C$84: no duty, but taxes apply. <C id="narf-canada-mexico-44"/> A US$120 item converts to C$168, above C$150, so both apply. <C id="narf-canada-mexico-45"/> SKUs priced near a band edge can cross it when the exchange rate or the synchronized price moves.
+</Callout>
+
+### If you hold stock in Canada instead
+
+The Canadian GST/HST measure turns on where the goods ship from. It covers goods held in Canada, such as in a fulfillment warehouse, or shipped from a place in Canada to a Canadian purchaser, <C id="narf-canada-mexico-36"/> and it does not include goods sent by mail or courier to a Canadian purchaser from an address outside Canada by the supplier or someone acting for it. <C id="narf-canada-mexico-35"/> Remote Fulfillment uses your US FBA inventory; <C id="narf-canada-mexico-28"/> stock you export to Canadian fulfillment centers is held in Canada, which the measure covers.
+
+<Compare title="Stock in a Canadian warehouse: who collects GST/HST (CRA examples)" columns={["Vendor not registered","Vendor registered"]} rows={[
+  {label:"Who charges the tax", values:["The distribution platform operator","The vendor itself"], claim:"narf-canada-mexico-37"},
+  {label:"CRA's worked example", values:["Ontario delivery: platform collects 13% HST","British Columbia delivery: vendor collects 5% GST"], claim:"narf-canada-mexico-38"}
+]} />
+
+*Source: Canada Revenue Agency, supply of qualifying goods, checked Nov 9, 2026.* <C id="narf-canada-mexico-39"/> The CRA's registration check asks whether your registration threshold exceeds $30,000 CAD, <C id="narf-canada-mexico-40"/> and a vendor required to register under the normal regime cannot use the simplified one. <C id="narf-canada-mexico-41"/> Separately, warehouses storing goods in Canada for non-resident vendors must notify the CRA. <C id="narf-canada-mexico-42"/>
+
 ## Fees
 
-Amazon's FAQ: sellers "will pay the Remote Fulfillment with FBA costs and the category referral fee for the store where the sale occurred." <C id="narf-canada-mexico-13"/> "These costs replace US FBA costs and referral fees." <C id="narf-canada-mexico-14"/> The per-unit Remote Fulfillment rate card is published inside Seller Central, not on the public program page, so check it there before you set prices.
+Amazon's FAQ: sellers "will pay the Remote Fulfillment with FBA costs and the category referral fee for the store where the sale occurred." <C id="narf-canada-mexico-13"/> "These costs replace US FBA costs and referral fees." <C id="narf-canada-mexico-14"/> The per-unit Remote Fulfillment rate card is published inside Seller Central, not on the public program page; to find it, search Seller Central Help using words such as Remote Fulfillment with FBA fees (a suggested search, not a page title).
 
 Pricing is automated by default. The listing tool "synchronizes your prices to preserve your profit margins" while "adjusting for differences in fulfillment costs, referral fees, and currency exchange rates." <C id="narf-canada-mexico-06"/> If you override it, "Any manual price adjustments in the destination store will break the connection." <C id="narf-canada-mexico-19"/>
 
 <Callout type="example" title="Worked example (hypothetical)">
-Inputs, all invented: in the US you keep $9.00 per unit after referral and FBA fees on a $30.00 item. For a Canadian order, assume the destination referral fee and the Remote Fulfillment cost together come to the equivalent of US$11.50 more than the US fees they replace. To keep $9.00, the Canadian price must rise by about US$11.50, to roughly US$41.50 before conversion to Canadian dollars, and the customer then pays import duties and taxes on top as importer of record. Look up the real rate card in Seller Central and compare that landed price with local competitors before enrolling a SKU.
+Inputs, all invented: in the US you keep $9.00 per unit after referral and FBA fees on a $30.00 item. For a Canadian order, assume the destination referral fee and the Remote Fulfillment cost together come to the equivalent of US$11.50 more than the US fees they replace. To keep $9.00, the Canadian price must rise by about US$11.50, to roughly US$41.50 before conversion to Canadian dollars, and the customer then pays import duties and taxes on top as importer of record. Replace the US$11.50 with the real rate card difference and compare the resulting price with local competitors before enrolling a SKU.
 </Callout>
 
 ## What ships, and what doesn't
 
-Every product must "Meet all trade compliance and destination-country regulations." <C id="narf-canada-mexico-16"/> Amazon's program page does not list the excluded product types in its public text, so check eligibility for each SKU in Seller Central; for hazmat products see the [dangerous goods guide](/guides/hazmat-dangerous-goods/).
+Every product must "Meet all trade compliance and destination-country regulations." <C id="narf-canada-mexico-16"/> Amazon names four product types that are not eligible:
+
+| Not eligible | Destination lists Amazon links |
+|---|---|
+| Restricted products | Canada, Mexico, Brazil <C id="narf-canada-mexico-31"/> |
+| Prohibited products | Canada, Mexico, Brazil <C id="narf-canada-mexico-31"/> |
+| Dangerous goods | Canada, Mexico, Brazil <C id="narf-canada-mexico-31"/> |
+| Blocked for importation | Mexico, Brazil <C id="narf-canada-mexico-32"/> |
+
+*Source: Amazon, Remote Fulfillment with FBA page, checked Nov 9, 2026.* For hazmat products see the [dangerous goods guide](/guides/hazmat-dangerous-goods/).
+
+To see which of your ASINs qualify, download the ASIN Eligibility Report from the Remote Fulfillment with FBA section; <C id="narf-canada-mexico-33"/> you can enroll or unenroll individual products by typing Yes or No in its Enable/Disable column and uploading the file. <C id="narf-canada-mexico-34"/>
 
 After the sale, Amazon says it will "handle the export logistics, fulfillment, customer inquiries, and returns for your orders," and "Prime customers receive free shipping to Canada, Mexico, and Brazil." <C id="narf-canada-mexico-11"/> <C id="narf-canada-mexico-10"/> "Returns will be sent back to the US and are subject to the FBA customer returns policy." <C id="narf-canada-mexico-12"/>
 
@@ -92,11 +129,12 @@ Amazon's own tip for new stores is that "offering deals and other types of disco
   "Professional plan, unified North America and Brazil account, FBA Export enabled",
   "SKU meets trade compliance and destination-country regulations",
   "Destination-country rules for the product checked (labeling, language, safety)",
-  "Remote Fulfillment rate card read in Seller Central",
+  "Remote Fulfillment rate card checked and landed price modeled",
+  "Courier duty and tax band for the Canadian price identified",
   "Landed price for the customer, including duties and taxes, compared with local offers",
   "No seller-fulfilled offer sharing the same SKU"
 ]} />
 
-## How to confirm before you enroll
+## Where to check before you enroll a SKU
 
-Re-check Amazon's [Remote Fulfillment with FBA page](https://sell.amazon.com/fulfillment-by-amazon/remote-fulfillment) for requirements and exclusions and the [Global Selling page](https://sell.amazon.com/global-selling) for account structure. The fee rate card is in Seller Central. If you will hold stock in Canada, read the CRA's [GST/HST digital economy overview](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy.html) and [import-export account page](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/import-export-program-account.html). Canadian tax status is settled by the CRA, not by Amazon's program terms.
+Re-check Amazon's [Remote Fulfillment with FBA page](https://sell.amazon.com/fulfillment-by-amazon/remote-fulfillment) for requirements and exclusions and the [Global Selling page](https://sell.amazon.com/global-selling) for account structure; your own SKUs' status is in the ASIN Eligibility Report. For the Canadian shopper's border cost, see CBSA's [CUSMA low-value shipment thresholds](https://cbsa-asfc.gc.ca/services/cusma-aceum/lvs-efv-eng.html). If you will hold stock in Canada, read the CRA's [supply of qualifying goods rules](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy-gsthst/charge-collect/sales-good.html), its [GST/HST digital economy overview](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy.html) and the [import-export account page](https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/import-export-program-account.html). This page does not cover Mexico's import rules. Canadian tax status is settled by the CRA, not by Amazon's program terms.

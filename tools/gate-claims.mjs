@@ -5,7 +5,7 @@ const r = new Report('claims');
 const ALLOWED = ['ecfr.gov', 'federalregister.gov', 'govinfo.gov', 'irs.gov', 'usitc.gov', 'sell.amazon.com', 'marketplace.walmart.com', 'ebay.com', 'etsy.com', 'shopify.com', 'uspto.gov', 'gs1us.org', 'cdtfa.ca.gov', 'comptroller.texas.gov', 'floridarevenue.com', 'tax.illinois.gov', 'dor.wa.gov', 'pe.usps.com', 'usps.com', 'congress.gov', 'phmsa.dot.gov', 'trade.gov', 'ustr.gov', 'cbp.gov', 'ftc.gov', 'cpsc.gov',
   'aboutamazon.com', 'aboutamazon.com.au', 'developer-docs.amazon', 'developer-docs.amazon.com', 'supplychain.amazon.com', 'advertising.amazon.com', 'buywithprime.amazon.com', 'business.amazon.com', 'amazon-packaging.com', 'm.media-amazon.com', 'github.com',
   'seller-us.tiktok.com', 'seller.tiktok.com', 'cdn.contract.alibaba.com', 'terms.alicdn.com', 'developer.walmart.com', 'marketplacelearn.walmart.com',
-  'sba.gov', 'sec.gov', 'gov.uk', 'eur-lex.europa.eu', 'canada.ca', 'nysenate.gov', 'governor.ny.gov', 'ofac.treasury.gov', 'ic3.gov', 'dhs.gov', 'fmc.gov', 'wto.org', 'gs1.org'];
+  'sba.gov', 'sec.gov', 'gov.uk', 'eur-lex.europa.eu', 'canada.ca', 'nysenate.gov', 'governor.ny.gov', 'ofac.treasury.gov', 'ic3.gov', 'dhs.gov', 'fmc.gov', 'wto.org', 'gs1.org', 'cbsa-asfc.gc.ca', 'rfc-editor.org', 'raw.githubusercontent.com'];
 // Vendor sites: allowed only as the source for that vendor's own /reviews/ page.
 const VENDOR = ['zonguru.com', 'helium10.com', 'amzscout.net', 'junglescout.com', 'goaura.com', 'a2xaccounting.com', 'sellerboard.com', 'keepa.com', 'getida.com'];
 const REQ = ['claim_id', 'claim', 'page', 'source_url', 'publisher', 'source_type', 'accessed', 'status'];

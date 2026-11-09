@@ -1,10 +1,10 @@
-# Sayfa bazında birincil kaynaklar (2026-11-08)
+# Sayfa bazında birincil kaynaklar (2026-11-09)
 
-Her sayfanın sonundaki "Sources" listesiyle aynıdır; kaynak: data/claims/*.json (yalnızca verified iddialar).
+Her sayfanın sonundaki "Sources" listesiyle aynıdır (yalnızca verified iddialar).
 
 
 ## /guides/account-suspension-appeal/ — Amazon Account Suspension Appeals: What Amazon Publishes
-_YENİDEN YAZILDI (eski URL) · 21 doğrulanmış iddia_
+_34 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.aboutamazon.com/news/small-business/amazon-helps-sellers-manage-their-account-health
 - https://sell.amazon.com/tools/seller-central
@@ -15,16 +15,19 @@ _YENİDEN YAZILDI (eski URL) · 21 doğrulanmış iddia_
 - https://sell.amazon.com/programs/seller-fulfilled-prime
 - https://developer-docs.amazon.com/sp-api/docs/report-type-values
 - https://sell.amazon.com/blog/announcements/seller-account-health-assurance
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/accountHealthReport-2020-11-18.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/listings-items-api-model/listingsItems_2021-08-01.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/notifications/ListingsItemIssuesChangeNotification_2023-12-13.json
 
 ## /guides/accrual-accounting-cogs/ — Inventory and Cost of Goods Sold for Small Sellers (2025)
-_v3 · 32 doğrulanmış iddia_
+_32 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.irs.gov/publications/p334
 - https://www.irs.gov/instructions/i1040sc
 - https://www.irs.gov/publications/p538
 
 ## /guides/aged-inventory-15-month-tier/ — Aged Inventory Surcharge: The 15-Month Tier and the 2027 Change
-_YENİDEN YAZILDI (eski URL) · 17 doğrulanmış iddia_
+_27 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://aboutamazon.com/news/company-news/an-update-to-our-us-referral-and-fba-fees
@@ -35,7 +38,7 @@ _YENİDEN YAZILDI (eski URL) · 17 doğrulanmış iddia_
 - https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026
 
 ## /guides/ai-image-tagging-rule/ — AI-Generated People in Amazon Images: The Disclosure Rules
-_YENİDEN YAZILDI (eski URL) · 24 doğrulanmış iddia_
+_36 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.nysenate.gov/legislation/laws/GBS/396-B
 - https://www.nysenate.gov/legislation/bills/2025/S8420
@@ -46,7 +49,7 @@ _YENİDEN YAZILDI (eski URL) · 24 doğrulanmış iddia_
 - https://developer-docs.amazon.com/sp-api/docs/submit-media
 
 ## /guides/amazon-200-billion-quarter/ — Amazon's $200 Billion Quarter: What the Seller Lines Mean
-_YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
+_27 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Fourth-Quarter-Results/
 - https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/
@@ -56,15 +59,22 @@ _YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
 - https://sell.amazon.com/pricing
 
 ## /guides/amazon-business-b2b/ — Amazon Business for Sellers: B2B Pricing, Quotes and Setup
-_YENİDEN YAZILDI (eski URL) · 32 doğrulanmış iddia_
+_50 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/programs/amazon-business
 - https://developer-docs.amazon/sp-api/changelog/update-listings-items-api-v2021-08-01-and-json_listings_feed-now-support-amazon-business-b2b-pricing
 - https://developer-docs.amazon/sp-api/docs/report-type-values-amazon-business
 - https://business.amazon.com/
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/orders-api-model/ordersV0.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/sellerSalesAndTrafficReport.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/product-pricing-api-model/productPricingV0.json
+- https://developer-docs.amazon/sp-api/docs/report-type-values-b2b-product-opportunities
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/b2bProductOpportunitiesRecommendedForYouReport-2020-11-19.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/b2bProductOpportunitiesNotYetOnAmazonReport-2020-11-19.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/notifications/B2bAnyOfferChangedNotification.json
 
 ## /guides/amazon-fba-fee-changes-2026/ — Amazon FBA Fee Changes 2026: What Changed and What Comes Next
-_YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
+_23 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026
 - https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027
@@ -73,7 +83,7 @@ _YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
 - https://sell.amazon.com/pricing/estimate
 
 ## /guides/amazon-ppc-benchmarks/ — Amazon PPC Benchmarks: Build Your Own From ACOS, CPC and CVR
-_YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
+_22 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://advertising.amazon.com/library/guides/acos-advertising-cost-of-sales
 - https://advertising.amazon.com/library/guides/cost-per-click
@@ -83,17 +93,17 @@ _YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
 - https://advertising.amazon.com/solutions/products/sponsored-products
 
 ## /guides/amazon-referral-fees/ — Amazon Referral Fees: How the Percentage and Minimum Work
-_v3 (yeni) · 19 doğrulanmış iddia_
+_19 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/pricing
 
 ## /guides/amazon-renewed/ — Selling on Amazon Renewed: Application, Invoices and Rules
-_YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
+_27 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/programs/renewed
 
 ## /guides/amazon-stopped-prepping/ — Amazon Stopped Prepping in the US: What Sellers Must Do Now
-_YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
+_25 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://developer-docs.amazon/sp-api/changelog/us-fba-prep-and-labeling-services-to-end-january-1-2026
 - https://developer-docs.amazon/sp-api/reference/createinboundplan
@@ -104,7 +114,7 @@ _YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
 - https://developer-docs.amazon/sp-api/reference/listshipmentitems
 
 ## /guides/antidumping-duties/ — Antidumping Duties for Small Importers: How AD/CVD Works
-_v3 · 32 doğrulanmış iddia_
+_32 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-III/part-351/subpart-B
 - https://www.ecfr.gov/current/title-19/chapter-III/part-351/subpart-D
@@ -113,7 +123,7 @@ _v3 · 32 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2026/11/05/2026-22629/initiation-of-antidumping-and-countervailing-duty-administrative-reviews
 
 ## /guides/aplus-content-brand-tools/ — A+ Content and Brand Tools: Who Qualifies and What Each Does
-_YENİDEN YAZILDI (eski URL) · 30 doğrulanmış iddia_
+_30 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/tools/a-content
 - https://sell.amazon.com/brand-registry
@@ -122,7 +132,7 @@ _YENİDEN YAZILDI (eski URL) · 30 doğrulanmış iddia_
 - https://sell.amazon.com/tools/manage-your-experiments
 
 ## /guides/authorised-reseller/ — Amazon Authorized Reseller: Brand Approval and the Reseller Role
-_YENİDEN YAZILDI (eski URL) · 34 doğrulanmış iddia_
+_34 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/blog/sell-branded-products-on-amazon
 - https://sell.amazon.com/blog/brand-registry-roles
@@ -131,7 +141,7 @@ _YENİDEN YAZILDI (eski URL) · 34 doğrulanmış iddia_
 - https://sell.amazon.com/brand-registry/transparency
 
 ## /guides/awd-vs-3pl-warehousing/ — Amazon AWD vs a 3PL Warehouse: Costs and When Each Fits
-_YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
+_29 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/programs/warehousing
 - https://sell.amazon.com/programs/supply-chain
@@ -139,7 +149,7 @@ _YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
 - https://supplychain.amazon.com/learn/guide-to-third-party-logistics-3pl-pricing
 
 ## /guides/brand-referral-bonus/ — Amazon Brand Referral Bonus: Rates, Rules and How It Pays
-_YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
+_29 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/blog/brand-referral-bonus
 - https://advertising.amazon.com/solutions/products/amazon-attribution
@@ -148,7 +158,7 @@ _YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
 - https://sell.amazon.com/pricing
 
 ## /guides/brand-registry-trademark/ — US Trademarks for Sellers: Fees, Timeline, Brand Registry
-_v3 · 36 doğrulanmış iddia_
+_36 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.uspto.gov/trademarks/basics/what-trademark
 - https://www.uspto.gov/trademarks/basics/why-register-your-trademark
@@ -160,7 +170,7 @@ _v3 · 36 doğrulanmış iddia_
 - https://sell.amazon.com/brand-registry
 
 ## /guides/bundles-and-multipacks/ — Bundles and Multipacks on Amazon: Listing, Labels and GTINs
-_YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
+_34 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/brand-registry
 - https://sell.amazon.com/blog/product-bundling
@@ -172,9 +182,11 @@ _YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
 - https://sell.amazon.com/pricing
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://www.amazon-packaging.com/sellers
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/fulfillment-inbound-api-model/fulfillmentInbound_2024-03-20.json
+- https://developer-docs.amazon/sp-api/docs/report-type-values-analytics
 
 ## /guides/buy-box-featured-offer/ — Amazon Featured Offer (Buy Box): Eligibility and Pricing
-_YENİDEN YAZILDI (eski URL) · 31 doğrulanmış iddia_
+_48 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/blog/buy-box-featured-offer
 - https://developer-docs.amazon/sp-api/docs/price-adjustment-automation-workflows-guide
@@ -184,9 +196,13 @@ _YENİDEN YAZILDI (eski URL) · 31 doğrulanmış iddia_
 - https://developer-docs.amazon/sp-api/docs/pricing-faq
 - https://developer-docs.amazon/sp-api/reference/getcompetitivesummary
 - https://sell.amazon.com/fulfillment-by-amazon
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/sellerSalesAndTrafficReport.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/product-pricing-api-model/productPricingV0.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/product-pricing-api-model/productPricing_2022-05-01.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/notifications/PricingHealthNotification.json
 
 ## /guides/buyer-seller-messaging/ — Amazon Buyer-Seller Messaging: Message Types and Rules
-_YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
+_28 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://developer-docs.amazon.com/sp-api/docs/messaging-api-v1-use-case-guide
 - https://developer-docs.amazon.com/sp-api/reference/getmessagingactionsfororder
@@ -208,7 +224,7 @@ _YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
 - https://sell.amazon.com/fulfillment-by-amazon
 
 ## /guides/choosing-a-freight-forwarder/ — Choosing a Freight Forwarder: Licenses, Bonds and Red Flags
-_YENİDEN YAZILDI (eski URL) · 42 doğrulanmış iddia_
+_42 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-46/chapter-IV/subchapter-B/part-515
 - https://www.fmc.gov/ocean-transportation-intermediaries/
@@ -220,7 +236,7 @@ _YENİDEN YAZILDI (eski URL) · 42 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-46/chapter-IV/subchapter-B/part-541
 
 ## /guides/country-of-origin-sourcing/ — Country of Origin for Tariffs: Substantial Transformation
-_v3 · 25 doğrulanmış iddia_
+_27 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-134/subpart-A
 - https://www.ecfr.gov/current/title-19/chapter-I/part-102
@@ -230,9 +246,10 @@ _v3 · 25 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2025/12/01/2025-21671/notice-of-product-exclusion-extensions-chinas-acts-policies-and-practices-related-to-technology
 - https://www.federalregister.gov/documents/2025/12/29/2025-23912/notice-of-action-chinas-acts-policies-and-practices-related-to-targeting-of-the-semiconductor
 - https://www.federalregister.gov/documents/2026/07/28/2026-15181/notice-of-actions-in-section-301-investigations-of-acts-policies-and-practices-of-various-economies
+- https://www.federalregister.gov/documents/search?conditions%5Bagencies%5D%5B%5D=trade-representative-office-of-united-states&conditions%5Bterm%5D=exclusion&order=newest
 
 ## /guides/cross-channel-price-parity/ — Cross-Channel Price Parity: How Amazon and Walmart Compare
-_YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
+_25 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://developer-docs.amazon/sp-api/docs/pricing-faq
 - https://developer-docs.amazon/sp-api/docs/notification-type-values
@@ -244,7 +261,7 @@ _YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
 - https://developer-docs.amazon/sp-api/reference/getcompetitivesummary
 
 ## /guides/currency-conversion-payouts/ — Amazon Currency Conversion on Payouts: Fees and Options
-_YENİDEN YAZILDI (eski URL) · 33 doğrulanmış iddia_
+_33 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/programs/amazon-currency-converter
 - https://sell.amazon.com/tools/seller-wallet
@@ -252,7 +269,7 @@ _YENİDEN YAZILDI (eski URL) · 33 doğrulanmış iddia_
 - https://github.com/amzn/selling-partner-api-models/blob/main/models/finances-api-model/financesV0.json
 
 ## /guides/customs-bonds/ — Customs Bonds: Single vs Continuous, Amounts and Coverage
-_v3 · 27 doğrulanmış iddia_
+_27 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-142
 - https://www.ecfr.gov/current/title-19/chapter-I/part-113
@@ -261,7 +278,7 @@ _v3 · 27 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2026/10/08/2026-20650/low-value-shipments
 
 ## /guides/customs-holds-and-exams/ — Customs Holds and Exams: Detention and Seizure Timelines
-_v3 · 35 doğrulanmış iddia_
+_35 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-151/subpart-A
 - https://www.ecfr.gov/current/title-19/chapter-I/part-162
@@ -272,7 +289,7 @@ _v3 · 35 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-113
 
 ## /guides/dd7-payout-reserve/ — Amazon DD+7 and Payout Reserves: How Deferred Funds Work
-_YENİDEN YAZILDI (eski URL) · 17 doğrulanmış iddia_
+_34 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://github.com/amzn/selling-partner-api-models/blob/main/models/finances-api-model/finances_2024-06-19.json
 - https://developer-docs.amazon/sp-api/reference/listtransactions
@@ -280,9 +297,11 @@ _YENİDEN YAZILDI (eski URL) · 17 doğrulanmış iddia_
 - https://github.com/amzn/selling-partner-api-models/blob/main/models/finances-api-model/financesV0.json
 - https://developer-docs.amazon/sp-api/docs/report-type-values-settlement
 - https://developer-docs.amazon/sp-api/reference/listbalances
+- https://sell.amazon.com/blog/amazon-seller-payments
+- https://developer-docs.amazon/sp-api/docs/report-type-values-payment
 
 ## /guides/de-minimis-suspension-2026/ — The $800 De Minimis Exemption Is Suspended: 2026 Status
-_v3 · 25 doğrulanmış iddia_
+_25 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.federalregister.gov/documents/2025/08/05/2025-14897/suspending-duty-free-de-minimis-treatment-for-all-countries
 - https://www.federalregister.gov/documents/2026/02/25/2026-03829/continuing-the-suspension-of-duty-free-de-minimis-treatment-for-all-countries
@@ -292,21 +311,22 @@ _v3 · 25 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2026/10/08/2026-20650/low-value-shipments
 
 ## /guides/deal-and-coupon-fees/ — Amazon Deal and Coupon Fees: What Is Published and Where
-_YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
+_22 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/blog/seller-promotions
 - https://github.com/amzn/selling-partner-api-models/blob/main/models/finances-api-model/financesV0.json
 
 ## /guides/demand-forecasting-reorder/ — Demand Forecasting and Reorder Points for FBA Sellers
-_YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
+_44 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/learn/inventory-management
 - https://developer-docs.amazon/sp-api/docs/report-type-values-fba
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://sell.amazon.com/programs/supply-chain
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/fba-inventory-api-model/fbaInventory.json
 
 ## /guides/duty-drawback/ — Duty Drawback for Sellers: Returns, Exports and the 99% Rule
-_v3 · 36 doğrulanmış iddia_
+_36 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-190/subpart-A/section-190.2
 - https://www.ecfr.gov/current/title-19/chapter-I/part-190/subpart-A
@@ -319,7 +339,7 @@ _v3 · 36 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-190/subpart-F
 
 ## /guides/ebay-etsy-for-amazon-sellers/ — One $25 Item: Amazon, Walmart, eBay, Etsy and Shopify Fees
-_v3 · 24 doğrulanmış iddia_
+_24 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/pricing
 - https://marketplace.walmart.com/referral-fees/
@@ -329,7 +349,7 @@ _v3 · 24 doğrulanmış iddia_
 - https://www.shopify.com/pricing
 
 ## /guides/entry-type-11-vs-01/ — Informal vs Formal Entry: Type 11 vs Type 01 Explained
-_v3 · 31 doğrulanmış iddia_
+_31 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-141
 - https://www.ecfr.gov/current/title-19/chapter-I/part-143
@@ -341,13 +361,13 @@ _v3 · 31 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2026/11/06/2026-22735/heightened-requirements-for-foreign-importers-of-record
 
 ## /guides/etsy-offsite-ads-economics/ — Etsy Offsite Ads Fees: 15% vs 12%, the Cap, and Per-Order Cost
-_v3 · 13 doğrulanmış iddia_
+_13 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.etsy.com/legal/fees/
 - https://www.etsy.com/legal/etsy-payments/
 
 ## /guides/expanding-eu-uk-compliance/ — Selling in the EU and UK: GPSR, UKCA and VAT for US Sellers
-_YENİDEN YAZILDI (eski URL) · 32 doğrulanmış iddia_
+_32 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32023R0988
 - https://www.gov.uk/government/publications/general-product-safety-regulations-2005
@@ -359,7 +379,7 @@ _YENİDEN YAZILDI (eski URL) · 32 doğrulanmış iddia_
 - https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32017L2455
 
 ## /guides/fba-fuel-logistics-surcharge-2026/ — Amazon's 3.5% Fuel and Logistics Surcharge: What Is Published
-_YENİDEN YAZILDI (eski URL) · 20 doğrulanmış iddia_
+_32 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://supplychain.amazon.com/docs/2026-peak-card
 - https://supplychain.amazon.com/mcf/pricing
@@ -369,16 +389,19 @@ _YENİDEN YAZILDI (eski URL) · 20 doğrulanmış iddia_
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://developer-docs.amazon.com/sp-api/docs/report-type-values-fba
 - https://supplychain.amazon.com/docs/rate-card
+- https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027
+- https://developer-docs.amazon/sp-api/docs/report-type-values-fba
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/product-fees-api-model/productFeesV0.json
 
 ## /guides/fba-reimbursement-sourcing-cost/ — FBA Reimbursements at Sourcing Cost: What Counts and What Doesn't
-_YENİDEN YAZILDI (eski URL) · 20 doğrulanmış iddia_
+_20 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://m.media-amazon.com/images/G/01/rainier/help./Redlined_FBA_Reimbursement_policy_US.pdf
 - https://developer-docs.amazon/sp-api/reference/listfinancialevents
 - https://developer-docs.amazon/sp-api/docs/report-type-values-fba
 
 ## /guides/fba-storage-four-layers/ — FBA Storage Fees: The Four Layers and the February 2027 Reset
-_YENİDEN YAZILDI (eski URL) · 18 doğrulanmış iddia_
+_18 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://aboutamazon.com/news/company-news/an-update-to-our-us-referral-and-fba-fees
@@ -389,7 +412,7 @@ _YENİDEN YAZILDI (eski URL) · 18 doğrulanmış iddia_
 - https://sell.amazon.com/learn/inventory-management
 
 ## /guides/fba-vs-fbm-breakeven/ — FBA vs FBM: How to Find Your Breakeven per Unit and per Month
-_YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
+_25 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://sell.amazon.com/programs/supply-chain
@@ -398,15 +421,20 @@ _YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
 - https://sell.amazon.com/pricing
 
 ## /guides/fbt-fixed-dollar-problem/ — Fixed Per-Unit FBA Fees: Why Low-Priced Items Lose Margin
-_YENİDEN YAZILDI (eski URL) · 15 doğrulanmış iddia_
+_27 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://sell.amazon.com/pricing
 - https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026
 - https://buywithprime.amazon.com/knowledge-center/ships-in-product-packaging
+- https://sellingpartners.aboutamazon.com/Update%20to%20US%20referral%20and%20Fulfillment%20by%20Amazon%20fees
+- https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027
+- https://developer-docs.amazon/sp-api/docs/report-type-values-fba
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/product-fees-api-model/productFeesV0.json
+- https://supplychain.amazon.com/docs/rate-card
 
 ## /guides/first-sale-valuation/ — First Sale Valuation: Pay Duty on the Factory Price
-_v3 · 34 doğrulanmış iddia_
+_34 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-152/subpart-E
 - https://www.federalregister.gov/documents/2008/01/24/E8-1140/proposed-interpretation-of-the-expression-sold-for-exportation-to-the-united-states-for-purposes-of
@@ -414,7 +442,7 @@ _v3 · 34 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2008/08/25/E8-19640/first-sale-declaration-requirement
 
 ## /guides/foreign-trade-zones/ — Foreign-Trade Zones: Zone Status, Duty Deferral, Weekly Entry
-_v3 · 38 doğrulanmış iddia_
+_38 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-15/subtitle-B/chapter-IV/part-400
 - https://www.govinfo.gov/content/pkg/USCODE-2023-title19/html/USCODE-2023-title19-chap1A-sec81c.htm
@@ -425,7 +453,7 @@ _v3 · 38 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-146/subpart-A
 
 ## /guides/form-1099-k-marketplace-sellers/ — Form 1099-K for Marketplace Sellers: Threshold and Fixes
-_v3 (yeni) · 28 doğrulanmış iddia_
+_28 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.irs.gov/businesses/understanding-your-form-1099-k
 - https://www.irs.gov/newsroom/form-1099-k-faqs-general-information
@@ -435,7 +463,7 @@ _v3 (yeni) · 28 doğrulanmış iddia_
 - https://www.irs.gov/instructions/i1040sc
 
 ## /guides/freight-modes/ — Freight Modes for Importers: Ocean, Air, Truck and Rail
-_YENİDEN YAZILDI (eski URL) · 24 doğrulanmış iddia_
+_24 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-149
 - https://www.ecfr.gov/current/title-19/chapter-I/part-122/subpart-E
@@ -446,7 +474,7 @@ _YENİDEN YAZILDI (eski URL) · 24 doğrulanmış iddia_
 - https://developer-docs.amazon/sp-api/docs/fulfillment-inbound-api-v2024-03-20-use-case-guide
 
 ## /guides/gs1-barcodes-fnsku/ — UPC Barcodes and GTINs for Sellers: GS1 US Prices Explained
-_v3 · 25 doğrulanmış iddia_
+_25 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.gs1us.org/upcs-barcodes-prefixes/what-is-a-gtin
 - https://www.gs1us.org/upcs-barcodes-prefixes/get-started-guide
@@ -455,7 +483,7 @@ _v3 · 25 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2025/01/08/2024-30826/certificates-of-compliance
 
 ## /guides/hazmat-dangerous-goods/ — When a Consumer Product Is Hazmat for Shipping (49 CFR)
-_v3 · 39 doğrulanmış iddia_
+_39 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-171/subpart-A/section-171.8
 - https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-173/subpart-B
@@ -467,7 +495,7 @@ _v3 · 39 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-A/part-107/subpart-D
 
 ## /guides/holiday-peak-fulfilment-fee/ — Amazon Holiday Peak Fulfillment Fee: 2026–27 MCF Rates and Rules
-_YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
+_23 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://supplychain.amazon.com/pricing/fees-policy
 - https://supplychain.amazon.com/docs/2026-peak-card
@@ -479,7 +507,7 @@ _YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
 - https://developer-docs.amazon.com/sp-api/docs/report-type-values-fba
 
 ## /guides/hts-classification-basics/ — HTS Classification Basics: Find and Defend Your Code
-_v3 · 40 doğrulanmış iddia_
+_40 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.usitc.gov/harmonized_tariff_information/frequently_asked_questions
 - https://www.usitc.gov/harmonized_tariff_information
@@ -491,7 +519,7 @@ _v3 · 40 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-163
 
 ## /guides/inbound-placement-split-arithmetic/ — Inbound Placement Fee: The Arithmetic of Shipment Splits
-_YENİDEN YAZILDI (eski URL) · 21 doğrulanmış iddia_
+_21 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://developer-docs.amazon/sp-api/docs/create-an-inbound-shipment
@@ -502,7 +530,7 @@ _YENİDEN YAZILDI (eski URL) · 21 doğrulanmış iddia_
 - https://developer-docs.amazon/sp-api/docs/fulfillment-inbound-faq
 
 ## /guides/incoterms-who-is-importer/ — Who Is the Importer of Record? DDP, Suppliers and the 2027 Rule
-_v3 · 32 doğrulanmış iddia_
+_32 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-101
 - https://www.ecfr.gov/current/title-19/chapter-I/part-141
@@ -510,16 +538,21 @@ _v3 · 32 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2026/11/06/2026-22735/heightened-requirements-for-foreign-importers-of-record
 - https://www.ecfr.gov/current/title-19/chapter-I/part-163
 
-## /guides/ip-complaints-retractions/ — Amazon IP Complaints: Filing, Tracking and Retracting Reports
-_YENİDEN YAZILDI (eski URL) · 33 doğrulanmış iddia_
+## /guides/ip-complaints-retractions/ — Amazon IP Complaints: Filing, Tracking and APEX Patent Terms
+_46 doğrulanmış iddia · son doğrulama 2026-11-09_
 
-- https://sell.amazon.com/blog/report-a-violation-to-amazon
 - https://sell.amazon.com/blog/announcements/report-a-violation
 - https://sell.amazon.com/brand-registry
 - https://trustworthyshopping.aboutamazon.com/2025-trustworthy-shopping-experience-report
+- https://sell.amazon.com/blog/report-a-violation-to-amazon
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/accountHealthReport-2020-11-18.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/listings-items-api-model/listingsItems_2021-08-01.json
+- https://developer-docs.amazon.com/sp-api/docs/notification-type-values
+- https://www.uspto.gov/patents/basics/essentials
+- https://www.uspto.gov/trademarks/basics/what-trademark
 
 ## /guides/ipi-restock-limits/ — IPI and FBA Restock Limits: What Amazon Actually Publishes
-_YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
+_28 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/learn/inventory-management
 - https://sell.amazon.com/fulfillment-by-amazon
@@ -528,7 +561,7 @@ _YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
 - https://developer-docs.amazon/sp-api/docs/report-type-values-fba
 
 ## /guides/launch-sequence/ — Amazon Launch Sequence: What to Do, in Order, in 90 Days
-_YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
+_28 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/sell
 - https://sell.amazon.com/sell/registration-guide
@@ -539,7 +572,7 @@ _YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
 - https://sell.amazon.com/tools/product-opportunity-explorer
 
 ## /guides/listing-disappeared/ — Amazon Listing Disappeared? Diagnose Status, Issues and Fixes
-_YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
+_29 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://developer-docs.amazon/sp-api/reference/getlistingsitem
 - https://developer-docs.amazon/sp-api/docs/manage-product-listings-guide
@@ -550,7 +583,7 @@ _YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
 - https://sell.amazon.com/blog/amazon-listing-errors
 
 ## /guides/listing-optimisation-a10/ — Amazon A10 Algorithm: What Amazon Actually Says About Search
-_YENİDEN YAZILDI (eski URL) · 26 doğrulanmış iddia_
+_39 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.aboutamazon.com/news/how-amazon-works/how-customers-get-to-pick-the-winners-in-amazons-store
 - https://www.aboutamazon.com.au/news/how-amazon-works/how-customers-get-to-pick-the-winners-in-amazon-australias-store
@@ -565,9 +598,13 @@ _YENİDEN YAZILDI (eski URL) · 26 doğrulanmış iddia_
 - https://sell.amazon.com/learn/ecommerce-marketing
 - https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-powered-product-listings
 - https://advertising.amazon.com/solutions/products/sponsored-products
+- https://developer-docs.amazon.com/sp-api/docs/report-type-values-analytics
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/sellingPartnerSearchQueryPerformanceReport.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/sellingPartnerSearchCatalogPerformanceReport.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/sellingPartnerSearchTermsReport.json
 
 ## /guides/low-inventory-level-fee/ — Amazon Low-Inventory-Level Fee: How It Works and the 2027 Rule
-_YENİDEN YAZILDI (eski URL) · 19 doğrulanmış iddia_
+_19 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://developer-docs.amazon/sp-api/changelog/new-metrics-added-to-the-fba-manage-inventory-health-report-for-the-us-marketplace
 - https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027
@@ -577,7 +614,7 @@ _YENİDEN YAZILDI (eski URL) · 19 doğrulanmış iddia_
 - https://sell.amazon.com/fulfillment-by-amazon
 
 ## /guides/main-image-compliance/ — Amazon Main Image Compliance: What's Public and Where to Check
-_YENİDEN YAZILDI (eski URL) · 26 doğrulanmış iddia_
+_47 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://developer-docs.amazon.com/sp-api/docs/submit-media
 - https://developer-docs.amazon.com/sp-api/docs/manage-product-listings-guide
@@ -587,9 +624,15 @@ _YENİDEN YAZILDI (eski URL) · 26 doğrulanmış iddia_
 - https://sell.amazon.com/blog/amazon-product-listings
 - https://advertising.amazon.com/library/guides/sponsored-display-custom-product-image-creative
 - https://advertising.amazon.com/library/guides/sponsored-brands-sponsored-display-moderation
+- https://sell.amazon.com/blog/product-photos
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/listings-items-api-model/listingsItems_2021-08-01.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/notifications/ListingsItemIssuesChangeNotification_2023-12-13.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/catalog-items-api-model/catalogItems_2022-04-01.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/notifications/BrandedItemContentChangeNotification.json
+- https://advertising.amazon.com/resources/ad-specs/component-based-creative
 
 ## /guides/mcf-off-amazon-orders/ — Amazon MCF for Off-Amazon Orders: Fees, Rules, Walmart Setup
-_YENİDEN YAZILDI (eski URL) · 36 doğrulanmış iddia_
+_36 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://supplychain.amazon.com/mcf/faqs
 - https://supplychain.amazon.com/multichannel-fulfillment
@@ -599,7 +642,7 @@ _YENİDEN YAZILDI (eski URL) · 36 doğrulanmış iddia_
 - https://supplychain.amazon.com/mcf/prime
 
 ## /guides/merchandise-processing-fee/ — Merchandise Processing Fee (MPF): FY2027 Rates and Examples
-_v3 (yeni) · 27 doğrulanmış iddia_
+_27 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-24/section-24.23
 - https://www.federalregister.gov/documents/2026/07/31/2026-15530/customs-user-fees-to-be-adjusted-for-inflation-in-fiscal-year-2027
@@ -608,16 +651,20 @@ _v3 (yeni) · 27 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-143
 
 ## /guides/narf-canada-mexico/ — NARF Today: Remote Fulfillment to Canada and Mexico From US FBA
-_YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
+_45 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/fulfillment-by-amazon/remote-fulfillment
 - https://sell.amazon.com/global-selling
 - https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy.html
 - https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/import-export-program-account.html
 - https://sell.amazon.com/fulfillment-by-amazon/fba-international
+- https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy-gsthst/charge-collect/sales-good.html
+- https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy-gsthst/find-out-need-register.html
+- https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/digital-economy-gsthst/notification-information-reporting.html
+- https://cbsa-asfc.gc.ca/services/cusma-aceum/lvs-efv-eng.html
 
 ## /guides/order-defect-rate/ — Amazon Order Defect Rate: What Counts and How to Track It
-_YENİDEN YAZILDI (eski URL) · 18 doğrulanmış iddia_
+_34 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://developer-docs.amazon.com/sp-api/docs/report-type-values-performance
 - https://sell.amazon.com/learn/selling-glossary
@@ -629,9 +676,11 @@ _YENİDEN YAZILDI (eski URL) · 18 doğrulanmış iddia_
 - https://sell.amazon.com/tools/amazon-seller-app
 - https://sell.amazon.com/tools/customer-reviews
 - https://developer-docs.amazon.com/sp-api/docs/report-type-values-analytics
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/accountHealthReport-2020-11-18.json
+- https://developer-docs.amazon.com/sp-api/docs/report-type-values
 
 ## /guides/origin-marking-requirements/ — Country of Origin Marking Rules for Importers (19 CFR 134)
-_v3 · 44 doğrulanmış iddia_
+_44 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-134
 - https://www.ecfr.gov/current/title-19/chapter-I/part-134/subpart-A
@@ -641,7 +690,7 @@ _v3 · 44 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-134/subpart-F
 
 ## /guides/packaging-design-fba/ — Packaging Design for FBA: Labels, Size and Structure Rules
-_YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
+_41 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026
@@ -653,16 +702,19 @@ _YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
 - https://www.amazon-packaging.com/sellers
 - https://www.amazon-packaging.com/faqs
 - https://buywithprime.amazon.com/knowledge-center/ships-in-product-packaging
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/fulfillment-inbound-api-model/fulfillmentInbound_2024-03-20.json
+- https://www.ecfr.gov/current/title-16/chapter-I/subchapter-E/part-500/section-500.21
+- https://www.govinfo.gov/content/pkg/CFR-2025-title16-vol1/xml/CFR-2025-title16-vol1-part500.xml
 
 ## /guides/ppc-campaign-structure-launch/ — Sponsored Products Campaign Structure for a Product Launch
-_YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
+_27 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/advertising
 - https://advertising.amazon.com/solutions/products/sponsored-products
 - https://advertising.amazon.com/library/guides/targeting-with-sponsored-products
 
 ## /guides/prior-disclosure-protests/ — Found a Mistake on Your Customs Entry? Disclosure vs. Protest
-_v3 · 38 doğrulanmış iddia_
+_38 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-159/subpart-A
 - https://www.ecfr.gov/current/title-19/chapter-I/part-173
@@ -671,7 +723,7 @@ _v3 · 38 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-162/subpart-G
 
 ## /guides/product-inserts/ — Product Inserts: What Federal Rules Allow in the Box
-_YENİDEN YAZILDI (eski URL) · 14 doğrulanmış iddia_
+_27 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.ecfr.gov/current/title-16/chapter-I/subchapter-D/part-465/section-465.4
 - https://www.ecfr.gov/current/title-16/chapter-I/subchapter-D/part-465/section-465.7
@@ -680,9 +732,14 @@ _YENİDEN YAZILDI (eski URL) · 14 doğrulanmış iddia_
 - https://www.amazon-packaging.com/sellers
 - https://www.ecfr.gov/current/title-16/chapter-I/subchapter-G/part-702/section-702.1
 - https://buywithprime.amazon.com/knowledge-center/ships-in-product-packaging
+- https://www.ecfr.gov/current/title-16/chapter-I/subchapter-G/part-701/section-701.3
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/solicitations-api-model/solicitations.json
+- https://developer-docs.amazon/sp-api/docs/solicitations-api
+- https://developer-docs.amazon/sp-api/docs/solicit-feedback-for-an-order
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/fulfillment-outbound-api-model/fulfillmentOutbound_2020-07-01.json
 
 ## /guides/product-research-cost-errors/ — Product Research Cost Errors: The Amazon Fees New Sellers Miss
-_YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
+_23 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/pricing
 - https://sell.amazon.com/fulfillment-by-amazon
@@ -693,7 +750,7 @@ _YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
 - https://sell.amazon.com/pricing/estimate
 
 ## /guides/q4-deal-deadlines-2026/ — Q4 2026 Amazon Deal Dates: Black Friday, Cyber Monday, Lead Times
-_YENİDEN YAZILDI (eski URL) · 21 doğrulanmış iddia_
+_21 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://www.aboutamazon.com/news/retail/amazon-prime-big-deal-days-faq
 - https://www.aboutamazon.com/news/retail/when-is-amazon-black-friday-faq
@@ -702,7 +759,7 @@ _YENİDEN YAZILDI (eski URL) · 21 doğrulanmış iddia_
 - https://advertising.amazon.com/solutions/products/sponsored-products
 
 ## /guides/q4-freight-booking-window/ — Q4 Freight Booking Window: Planning Backward From FBA
-_YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
+_40 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://sell.amazon.com/programs/supply-chain
@@ -712,9 +769,12 @@ _YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-149
 - https://sell.amazon.com/programs/amazon-global-logistics
 - https://www.ecfr.gov/current/title-46/chapter-IV/subchapter-B/part-541
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/fulfillment-inbound-api-model/fulfillmentInbound_2024-03-20.json
+- https://www.ecfr.gov/current/title-19/chapter-I/part-149/section-149.3
+- https://www.ecfr.gov/current/title-19/chapter-I/part-149/section-149.2
 
 ## /guides/qc-inspections/ — QC Inspections for Importers: What the Rules Expect
-_YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
+_23 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1110
 - https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1107
@@ -725,7 +785,7 @@ _YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
 - https://www.trade.gov/letter-credit
 
 ## /guides/reimbursement-recovery-services/ — FBA Reimbursement Recovery Services: What Amazon's Rules Say
-_YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
+_29 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://developer-docs.amazon/sp-api/docs/report-type-values-fba
 - https://developer-docs.amazon/sp-api/docs/roles-in-the-selling-partner-api
@@ -737,7 +797,7 @@ _YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
 - https://developer-docs.amazon/sp-api/reference/listfinancialevents
 
 ## /guides/removal-vs-hold-decision/ — Remove or Keep FBA Inventory? A Cost-Based Decision Method
-_YENİDEN YAZILDI (eski URL) · 17 doğrulanmış iddia_
+_32 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://sell.amazon.com/programs/supply-chain
@@ -748,9 +808,12 @@ _YENİDEN YAZILDI (eski URL) · 17 doğrulanmış iddia_
 - https://www.aboutamazon.com/news/small-business/donation-of-excess-and-returned-products-to-charities
 - https://www.aboutamazon.com/news/small-business/amazon-return-options-sellers
 - https://sell.amazon.com/fulfillment-by-amazon/holiday
+- https://developer-docs.amazon/sp-api/docs/report-type-values-fba
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/finances-api-model/financesV0.json
+- https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027
 
 ## /guides/returns-cost-and-badge/ — Amazon Returns Cost: Processing Fees and the Free-Return Trigger
-_YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
+_37 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://www.aboutamazon.com/news/company-news/an-update-to-our-us-referral-and-fba-fees
@@ -760,9 +823,12 @@ _YENİDEN YAZILDI (eski URL) · 23 doğrulanmış iddia_
 - https://www.aboutamazon.com/news/retail/what-happens-to-amazon-returns
 - https://developer-docs.amazon.com/sp-api/docs/report-type-values-fba
 - https://developer-docs.amazon.com/sp-api/docs/report-type-values-returns
+- https://developer-docs.amazon/sp-api/docs/report-type-values-fba
+- https://developer-docs.amazon/sp-api/docs/report-type-values-returns
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/finances-api-model/financesV0.json
 
 ## /guides/review-manipulation-risk/ — FTC Fake Review Rule: What Sellers Can and Can't Do
-_v3 · 30 doğrulanmış iddia_
+_30 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.federalregister.gov/documents/2024/08/22/2024-18519/trade-regulation-rule-on-the-use-of-consumer-reviews-and-testimonials
 - https://www.ecfr.gov/current/title-16/chapter-I/subchapter-A/part-1/subpart-L
@@ -770,7 +836,7 @@ _v3 · 30 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255
 
 ## /guides/rufus-listing-optimization/ — Rufus, Now Alexa for Shopping: What It Reads From Your Listing
-_YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
+_36 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.aboutamazon.com/news/retail/amazon-rufus
 - https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant
@@ -783,9 +849,11 @@ _YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
 - https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-powered-product-listings
 - https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-seller-growth-shopping-experience
 - https://sell.amazon.com/blog/amazon-listing-ai
+- https://www.aboutamazon.com/news/amazon-ai/amazon-improves-customer-reviews-with-generative-ai
+- https://www.aboutamazon.com/news/retail/amazon-shopping-app-buy-for-me-brands
 
 ## /guides/sales-tax-nexus/ — Sales Tax Nexus and Marketplace Facilitator Rules by State
-_v3 · 26 doğrulanmış iddia_
+_26 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.cdtfa.ca.gov/industry/wayfair.htm
 - https://www.cdtfa.ca.gov/formspubs/l694.pdf
@@ -797,7 +865,7 @@ _v3 · 26 doğrulanmış iddia_
 - https://dor.wa.gov/taxes-rates/retail-sales-tax/marketplace-fairness-leveling-playing-field/marketplace-sellers
 
 ## /guides/section-301-china-tariffs/ — Section 301 Tariffs on China: Lists, Rates and Current Status
-_v3 (yeni) · 37 doğrulanmış iddia_
+_39 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.federalregister.gov/documents/2026/05/06/2026-08806/initiation-of-second-four-year-review-process-chinas-acts-policies-and-practices-related-to
 - https://www.federalregister.gov/documents/2026/10/07/2026-20510/continuation-of-actions-chinas-acts-policies-and-practices-related-to-technology-transfer
@@ -808,9 +876,10 @@ _v3 (yeni) · 37 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2025/12/29/2025-23912/notice-of-action-chinas-acts-policies-and-practices-related-to-targeting-of-the-semiconductor
 - https://www.federalregister.gov/documents/2026/07/28/2026-15181/notice-of-actions-in-section-301-investigations-of-acts-policies-and-practices-of-various-economies
 - https://www.federalregister.gov/documents/search?conditions%5Bagencies%5D%5B%5D=trade-representative-office-of-united-states&conditions%5Bterm%5D=section+301+china&order=newest
+- https://www.federalregister.gov/documents/search?conditions%5Bagencies%5D%5B%5D=trade-representative-office-of-united-states&conditions%5Bterm%5D=exclusion&order=newest
 
 ## /guides/section-321-repeal-2027/ — Section 321 Repeal on July 1, 2027: What the Law Changes
-_v3 · 21 doğrulanmış iddia_
+_21 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm
 - https://www.federalregister.gov/documents/2026/06/24/2026-12670/indefinite-suspension-of-the-de-minimis-exemption-for-merchandise-arriving-through-all-modes-other
@@ -820,7 +889,7 @@ _v3 · 21 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2026/07/31/2026-15530/customs-user-fees-to-be-adjusted-for-inflation-in-fiscal-year-2027
 
 ## /guides/seller-central-reports/ — Amazon Seller Central Reports: Which One Answers What
-_YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
+_47 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-use-case-guide
 - https://developer-docs.amazon.com/sp-api/docs/report-type-values
@@ -834,33 +903,41 @@ _YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
 - https://sell.amazon.com/tools/amazon-seller-app
 - https://sell.amazon.com/tools/seller-central
 - https://sell.amazon.com/learn/selling-glossary
+- https://developer-docs.amazon/sp-api/docs/report-type-values-order
+- https://developer-docs.amazon/sp-api/docs/report-type-values-analytics
+- https://developer-docs.amazon/sp-api/docs/report-type-values-fba
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/reports-api-model/reports_2021-06-30.json
+- https://developer-docs.amazon/sp-api/docs/report-type-values-settlement
 
 ## /guides/seller-financing/ — Financing for Amazon Sellers: Amazon Lending vs. SBA Loans
-_YENİDEN YAZILDI (eski URL) · 37 doğrulanmış iddia_
+_60 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/programs/amazon-lending
 - https://www.sba.gov/funding-programs/loans
 - https://www.sba.gov/funding-programs/loans/7a-loans
 - https://www.sba.gov/funding-programs/loans/microloans
 - https://sell.amazon.com/blog/amazon-lending
+- https://www.sba.gov/partners/lenders/7a-loan-program/types-7a-loans
 
 ## /guides/seller-fulfilled-prime/ — Seller Fulfilled Prime: Requirements, Trial and What You Commit To
-_YENİDEN YAZILDI (eski URL) · 25 doğrulanmış iddia_
+_39 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/programs/seller-fulfilled-prime
 - https://sell.amazon.com/programs/fulfilled-by-merchant
 - https://sell.amazon.com/fulfillment-by-amazon
 - https://sell.amazon.com/programs/supply-chain
+- https://developer-docs.amazon/sp-api/docs/report-type-values-performance
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/orders-api-model/ordersV0.json
 
 ## /guides/seller-insurance-coi/ — Seller Insurance and COIs for Amazon and Walmart Sellers
-_YENİDEN YAZILDI (eski URL) · 30 doğrulanmış iddia_
+_30 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://aboutamazon.com/news/how-amazon-works/new-a-to-z-guarantee-better-protects-amazon-customers-and-sellers
 - https://marketplacelearn.walmart.com/guides/Policies%20&%20standards/Account/Liability-insurance-policy
 - https://www.sba.gov/business-guide/launch-your-business/get-business-insurance
 
 ## /guides/selling-your-fba-business/ — Selling Your FBA Business: Asset Sale, Form 8594 and Closing
-_YENİDEN YAZILDI (eski URL) · 32 doğrulanmış iddia_
+_32 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.irs.gov/publications/p544
 - https://www.irs.gov/instructions/i8594
@@ -869,7 +946,7 @@ _YENİDEN YAZILDI (eski URL) · 32 doğrulanmış iddia_
 - https://www.sba.gov/funding-programs/loans/7a-loans
 
 ## /guides/shipment-discrepancy-claims/ — FBA Shipment Discrepancies: Reconcile Before You Claim
-_YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
+_22 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://m.media-amazon.com/images/G/01/rainier/help./Redlined_FBA_Reimbursement_policy_US.pdf
 - https://developer-docs.amazon/sp-api/reference/getshipment
@@ -880,13 +957,13 @@ _YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
 - https://sell.amazon.com/blog/grow-your-business/fba-dashboard
 
 ## /guides/shipping-lithium-batteries/ — Shipping Lithium Batteries: 49 CFR 173.185 and USPS Rules
-_v3 (yeni) · 30 doğrulanmış iddia_
+_30 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-173/subpart-E/section-173.185
 - https://pe.usps.com/text/pub52/pub52apxc_032.htm
 
 ## /guides/sipp-packaging-program/ — Amazon SIPP: Ships in Product Packaging Certification Guide
-_YENİDEN YAZILDI (eski URL) · 43 doğrulanmış iddia_
+_43 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.amazon-packaging.com/faqs
 - https://www.amazon-packaging.com/sellers
@@ -894,7 +971,7 @@ _YENİDEN YAZILDI (eski URL) · 43 doğrulanmış iddia_
 - https://sustainability.aboutamazon.com/waste/packaging
 
 ## /guides/sourcing-agents/ — Sourcing Agents: Commissions, Customs Value and Broker Limits
-_YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
+_22 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-111/subpart-A
 - https://www.ecfr.gov/current/title-19/chapter-I/part-111
@@ -906,14 +983,16 @@ _YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
 - https://ofac.treasury.gov/faqs/topic/1501
 
 ## /guides/subscribe-and-save-economics/ — Amazon Subscribe & Save for Sellers: Discount Tiers and Margin
-_YENİDEN YAZILDI (eski URL) · 20 doğrulanmış iddia_
+_41 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/programs/subscribe-and-save
 - https://sell.amazon.com/blog/subscribe-and-save
 - https://sell.amazon.com/blog/seller-promotions
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/replenishment-api-model/replenishment-2022-11-07.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/orders-api-model/ordersV0.json
 
 ## /guides/supplier-payment-terms/ — Supplier Payment Terms: Deposits, LCs, Collections, Net 60
-_YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
+_44 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.trade.gov/methods-payment
 - https://www.trade.gov/letter-credit
@@ -921,9 +1000,11 @@ _YENİDEN YAZILDI (eski URL) · 27 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-19/chapter-I/part-152/subpart-E
 - https://ofac.treasury.gov/faqs/topic/1501
 - https://www.ic3.gov/PSA/2024/PSA240911
+- https://www.trade.gov/cash-advance
+- https://www.trade.gov/payment-problems
 
 ## /guides/supplier-verification/ — Supplier Verification: Sanctions, UFLPA and Payment Checks
-_YENİDEN YAZILDI (eski URL) · 35 doğrulanmış iddia_
+_35 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://ofac.treasury.gov/faqs/topic/1501
 - https://www.trade.gov/consolidated-screening-list
@@ -936,7 +1017,7 @@ _YENİDEN YAZILDI (eski URL) · 35 doğrulanmış iddia_
 - https://www.dhs.gov/uflpa
 
 ## /guides/tariff-engineering-design/ — Tariff Engineering: Product Design Choices and HTS Rules
-_YENİDEN YAZILDI (eski URL) · 34 doğrulanmış iddia_
+_34 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.usitc.gov/tata/hts/archive/0400/0400gn.pdf
 - https://www.ecfr.gov/current/title-19/chapter-I/part-177
@@ -944,7 +1025,7 @@ _YENİDEN YAZILDI (eski URL) · 34 doğrulanmış iddia_
 - https://www.usitc.gov/harmonized_tariff_information/frequently_asked_questions
 
 ## /guides/tariff-stack-2026/ — How Import Duties Stack on One Entry in 2026
-_v3 · 21 doğrulanmış iddia_
+_21 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.federalregister.gov/documents/2026/07/31/2026-15530/customs-user-fees-to-be-adjusted-for-inflation-in-fiscal-year-2027
 - https://www.ecfr.gov/current/title-19/chapter-I/part-24
@@ -956,13 +1037,13 @@ _v3 · 21 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2026/06/24/2026-12670/indefinite-suspension-of-the-de-minimis-exemption-for-merchandise-arriving-through-all-modes-other
 
 ## /guides/the-supplier-invoice/ — The Supplier Invoice: What 19 CFR 141.86 Requires
-_YENİDEN YAZILDI (eski URL) · 32 doğrulanmış iddia_
+_51 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.ecfr.gov/current/title-19/chapter-I/part-141
 - https://www.ecfr.gov/current/title-19/chapter-I/part-152/subpart-E
 
 ## /guides/tiktok-shop-fees/ — TikTok Shop Fees: How the US Referral Fee Is Calculated
-_YENİDEN YAZILDI (eski URL) · 19 doğrulanmış iddia_
+_19 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://seller-us.tiktok.com/university/essay?knowledge_id=5982454398175018
 - https://seller-us.tiktok.com/university/essay?knowledge_id=5988482086864682&identity=1&role=1
@@ -970,16 +1051,23 @@ _YENİDEN YAZILDI (eski URL) · 19 doğrulanmış iddia_
 - https://seller.tiktok.com/us
 
 ## /guides/title-limit-984-million/ — Amazon Title Limits: 200 Characters and the New 75 + 125 Split
-_YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
+_43 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://developer-docs.amazon.com/sp-api/docs/listings-items-api-issues-troubleshooting
 - https://developer-docs.amazon.com/sp-api/docs/submit-modular-titles
 - https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api
 - https://developer-docs.amazon.com/sp-api/docs/preview-errors-before-creating-a-listing
 - https://sellingpartners.aboutamazon.com/product-listings-with-gen-ai
+- https://sell.amazon.com/blog/amazon-product-listings
+- https://developer-docs.amazon.com/sp-api/docs/product-type-definition-meta-schema
+- https://www.rfc-editor.org/rfc/rfc3629
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/catalog-items-api-model/catalogItems_2022-04-01.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/notifications/BrandedItemContentChangeNotification.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/product-type-definitions-api-model/definitionsProductTypes_2020-09-01.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/feeds/listings-feed-schema-v2.json
 
 ## /guides/ungating-restricted-categories/ — Amazon Ungating: Restricted Categories and Brand Approval
-_YENİDEN YAZILDI (eski URL) · 35 doğrulanmış iddia_
+_46 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/learn/faq
 - https://sell.amazon.com/sell-online
@@ -993,9 +1081,11 @@ _YENİDEN YAZILDI (eski URL) · 35 doğrulanmış iddia_
 - https://sell.amazon.com/learn/prepare-to-sell
 - https://sell.amazon.com/blog/how-to-sell-health-personal-care
 - https://sell.amazon.com/blog/how-to-sell-groceries-amazon
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/listings-restrictions-api-model/listingsRestrictions_2021-08-01.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/listings-items-api-model/listingsItems_2021-08-01.json
 
 ## /guides/us-product-compliance/ — CPSC Certificates and Children's Product Testing for Sellers
-_v3 · 28 doğrulanmış iddia_
+_28 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1200
 - https://www.federalregister.gov/documents/2025/01/08/2024-30826/certificates-of-compliance
@@ -1006,7 +1096,7 @@ _v3 · 28 doğrulanmış iddia_
 - https://www.ecfr.gov/current/title-16/chapter-II/subchapter-B/part-1107
 
 ## /guides/variations-review-pooling/ — Amazon Variations and Shared Reviews: Where the Line Is
-_YENİDEN YAZILDI (eski URL) · 30 doğrulanmış iddia_
+_42 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/blog/amazon-variation-listing
 - https://developer-docs.amazon/sp-api/docs/catalog-items-api-v2022-04-01-reference
@@ -1017,9 +1107,12 @@ _YENİDEN YAZILDI (eski URL) · 30 doğrulanmış iddia_
 - https://www.federalregister.gov/documents/2024/08/22/2024-18519/trade-regulation-rule-on-the-use-of-consumer-reviews-and-testimonials
 - https://sell.amazon.com/tools/customer-reviews
 - https://sell.amazon.com/sell/clothes
+- https://www.govinfo.gov/content/pkg/CFR-2025-title16-vol1/xml/CFR-2025-title16-vol1-part465.xml
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/catalog-items-api-model/catalogItems_2022-04-01.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/customer-feedback-api-model/customerFeedback_2024-06-01.json
 
 ## /guides/vendor-central-vs-seller-central/ — Vendor Central vs Seller Central: Selling to Amazon or on It
-_YENİDEN YAZILDI (eski URL) · 24 doğrulanmış iddia_
+_44 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm
 - https://advertising.amazon.com/solutions/products/sponsored-products
@@ -1030,64 +1123,73 @@ _YENİDEN YAZILDI (eski URL) · 24 doğrulanmış iddia_
 - https://developer-docs.amazon/sp-api/docs/vendor-df-workflow-guide
 - https://developer-docs.amazon/sp-api/docs/what-is-the-selling-partner-api
 - https://sell.amazon.com/brand-registry
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/vendor-orders-api-model/vendorOrders.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/vendor-invoices-api-model/vendorInvoices.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/vendorNetPureProductMarginReport.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/vendorForecastingReport.json
+- https://github.com/amzn/selling-partner-api-models/blob/main/schemas/reports/vendorSalesReport.json
 
 ## /guides/vine-and-early-reviews/ — Amazon Vine for Early Reviews: Fees, Rules and Timing
-_YENİDEN YAZILDI (eski URL) · 34 doğrulanmış iddia_
+_47 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://sell.amazon.com/programs/vine
 - https://trustworthyshopping.aboutamazon.com/2025-trustworthy-shopping-experience-report
+- https://www.govinfo.gov/content/pkg/CFR-2025-title16-vol1/xml/CFR-2025-title16-vol1-part465.xml
+- https://github.com/amzn/selling-partner-api-models/blob/main/models/customer-feedback-api-model/customerFeedback_2024-06-01.json
 
 ## /guides/walmart-wfs/ — Walmart Fulfillment Services (WFS) Fees, With Worked Examples
-_v3 · 33 doğrulanmış iddia_
+_33 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://marketplace.walmart.com/walmart-fulfillment-services-pricing/
 - https://marketplace.walmart.com/referral-fees/
 
-## /marketplaces/aliexpress/ — Selling on AliExpress as a US Seller: Contract, Commission and Rules
-_YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
+## /marketplaces/aliexpress/ — Selling on AliExpress as a US Seller: What the Contract Says
+_42 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://terms.alicdn.com/legal-agreement/terms/suit_bu1_aliexpress/suit_bu1_aliexpress202204182115_37406.html
 - https://cdn.contract.alibaba.com/terms/b_platform_service_agreement/20240701183317609/20240701183317609.html
 - https://terms.alicdn.com/legal-agreement/terms/suit_bu1_aliexpress/suit_bu1_aliexpress202204182115_66077.html
 
 ## /marketplaces/amazon/ — Amazon Seller Fees: Referral Rates by Category and Plan Costs
-_v3 · 44 doğrulanmış iddia_
+_44 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://sell.amazon.com/pricing
 
 ## /marketplaces/ebay/ — eBay Seller Fees: Final Value Rates, Per-Order Fee and Stores
-_v3 · 28 doğrulanmış iddia_
+_28 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees?id=4822
 - https://www.ebay.com/help/selling/fees-credits-invoices/store-selling-fees?id=4122
 
 ## /marketplaces/etsy/ — Etsy Seller Fees: Listing, Transaction, Processing and Ads
-_v3 · 20 doğrulanmış iddia_
+_20 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.etsy.com/legal/fees/
 - https://www.etsy.com/legal/etsy-payments/
 
 ## /marketplaces/shopify/ — Shopify Fees: Plan Prices, Card Rates and Transaction Fees
-_v3 · 11 doğrulanmış iddia_
+_11 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://www.shopify.com/pricing
 
-## /marketplaces/tiktok-shop/ — Selling on TikTok Shop (US): Signup, Fees, Payouts and Reserves
-_YENİDEN YAZILDI (eski URL) · 21 doğrulanmış iddia_
+## /marketplaces/tiktok-shop/ — Selling on TikTok Shop (US): Shipping Rules, Returns and Payouts
+_42 doğrulanmış iddia · son doğrulama 2026-11-09_
 
 - https://seller.tiktok.com/us
 - https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763531009
 - https://seller-us.tiktok.com/university/essay?knowledge_id=1331308753078058
 - https://seller-us.tiktok.com/university/essay?knowledge_id=5982454398175018
+- https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633
+- https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634
 
 ## /marketplaces/walmart/ — Walmart Marketplace Fees: Referral Rates for Every Category
-_v3 · 43 doğrulanmış iddia_
+_43 doğrulanmış iddia · son doğrulama 2026-11-08_
 
 - https://marketplace.walmart.com/referral-fees/
 - https://sell.amazon.com/pricing
 
 ## /reviews/a2x/ — A2X for Amazon: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 32 doğrulanmış iddia_
+_32 doğrulanmış iddia · noindex · son doğrulama 2026-11-09_
 
 - https://www.a2xaccounting.com/amazon/pricing
 - https://support.a2xaccounting.com/en/articles/17563884-a2x-price-list-from-november-14th-2026
@@ -1103,7 +1205,7 @@ _YENİDEN YAZILDI (eski URL) · 32 doğrulanmış iddia_
 - https://sell.amazon.com/tools
 
 ## /reviews/amzscout/ — AMZScout: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
+_29 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://amzscout.net/
 - https://amzscout.net/mcp/
@@ -1112,7 +1214,7 @@ _YENİDEN YAZILDI (eski URL) · 29 doğrulanmış iddia_
 - https://sell.amazon.com/tools/product-opportunity-explorer
 
 ## /reviews/aura/ — Aura repricer: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 39 doğrulanmış iddia_
+_39 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://goaura.com/pricing
 - https://goaura.com/
@@ -1128,7 +1230,7 @@ _YENİDEN YAZILDI (eski URL) · 39 doğrulanmış iddia_
 - https://sell.amazon.com/tools/selling-partner-appstore
 
 ## /reviews/getida/ — GETIDA: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
+_28 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://www.getida.com/pricing
 - https://getida.com/terms-of-service/
@@ -1140,7 +1242,7 @@ _YENİDEN YAZILDI (eski URL) · 28 doğrulanmış iddia_
 - https://sell.amazon.com/tools/selling-partner-appstore
 
 ## /reviews/helium-10/ — Helium 10: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 37 doğrulanmış iddia_
+_37 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://www.helium10.com/pricing/
 - https://www.helium10.com/terms-and-conditions/
@@ -1153,7 +1255,7 @@ _YENİDEN YAZILDI (eski URL) · 37 doğrulanmış iddia_
 - https://sell.amazon.com/tools
 
 ## /reviews/jungle-scout/ — Jungle Scout: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 34 doğrulanmış iddia_
+_34 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://www.junglescout.com/pricing/catalyst-plans/
 - https://www.junglescout.com/pricing/
@@ -1167,7 +1269,7 @@ _YENİDEN YAZILDI (eski URL) · 34 doğrulanmış iddia_
 - https://www.junglescout.com/
 
 ## /reviews/keepa/ — Keepa: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
+_48 doğrulanmış iddia · noindex · son doğrulama 2026-11-09_
 
 - https://keepa.com/
 - https://keepa.com/api-docs/
@@ -1177,9 +1279,12 @@ _YENİDEN YAZILDI (eski URL) · 22 doğrulanmış iddia_
 - https://keepa.com/api-docs/tracking.html
 - https://sell.amazon.com/tools/product-opportunity-explorer
 - https://sell.amazon.com/tools
+- https://keepa.com/api-docs/product-object.html
+- https://keepa.com/api-docs/statistics-object.html
+- https://keepa.com/api-docs/changelog.html
 
 ## /reviews/sellerboard/ — sellerboard: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 35 doğrulanmış iddia_
+_35 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://sellerboard.com/
 - https://sellerboard.com/terms
@@ -1192,7 +1297,7 @@ _YENİDEN YAZILDI (eski URL) · 35 doğrulanmış iddia_
 - https://help.sellerboard.com/2-1-6-ltv/
 
 ## /reviews/zonguru/ — ZonGuru: features and pricing from the vendor's own pages
-_YENİDEN YAZILDI (eski URL) · 33 doğrulanmış iddia_
+_33 doğrulanmış iddia · noindex · son doğrulama 2026-11-08_
 
 - https://www.zonguru.com/pricing
 - https://www.zonguru.com/

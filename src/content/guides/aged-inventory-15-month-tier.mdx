@@ -1,64 +1,74 @@
 ---
 title: "Aged Inventory Surcharge: The 15-Month Tier and the 2027 Change"
-description: "What Amazon publicly says about the FBA aged inventory surcharge, where the 15-month tier rates live, and how the February 1, 2027 age-based rate changes it."
+description: "How Amazon's aged inventory surcharge bands run up to 456+ days, which report columns show your charge, and the single age-based rate from Feb 1, 2027."
 pillar: "fees"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 10
 photo:
   subject: "dusty cartons on the top level of warehouse racking with a faded receiving date label visible, no logos, no people"
-  alt: "Warehouse aisle between tall metal racks stocked with cardboard cartons and wrapped pallets"
-  image: "accrual-accounting-cogs"
+  alt: "Upper levels of tall warehouse pallet racking on both sides of an aisle, loaded with shrink-wrapped cartons on wooden pallets under a row of ceiling lights"
 keyFacts:
   - { label: "Charge begins", value: "Items stored more than 181 days", claim: "aged-inventory-15-month-tier-01" }
-  - { label: "Billing cycle", value: "Monthly", claim: "aged-inventory-15-month-tier-01" }
+  - { label: "Oldest US report band", value: "456 days and over", claim: "aged-inventory-15-month-tier-19" }
   - { label: "Surcharge removed", value: "February 1, 2027", claim: "aged-inventory-15-month-tier-08" }
   - { label: "Replaced by", value: "Single, age-based storage rate", claim: "aged-inventory-15-month-tier-07" }
 summary:
   - "Amazon charges an aged inventory cost monthly on all FBA items stored in a fulfillment center for more than 181 days."
-  - "The surcharge has been assessed in age bands that Amazon has changed over time; the current band rates, including the 15-month tier, are published inside Seller Central."
+  - "Amazon's Manage Inventory Health report estimates the surcharge in 30-day bands from 181 to 365 days, then in 366–455 and 456-plus-day bands in the US store; by our arithmetic, 456 days is about 15 months."
+  - "The Long-Term Storage Fee Charges report shows what you were billed, with the age tier, rate, quantity and amount for each SKU."
   - "Effective February 1, 2027, Amazon removes the aged inventory surcharge and combines it with monthly storage fees into a single, age-based rate."
   - "Amazon says the new rate means flat or lower fees for inventory turning in under six months and higher fees for aged inventory."
-  - "Amazon says sound inventory health helps avoid the cost, and it offers return, disposal or liquidation of FBA inventory for a per-item charge."
 faq:
   - { q: "What is aged inventory surcharge?", a: "It is a monthly FBA charge on items stored in an Amazon fulfillment center for more than 181 days, on top of regular monthly storage. From February 1, 2027 Amazon folds it into a single, age-based storage rate.", claims: ["aged-inventory-15-month-tier-01", "aged-inventory-15-month-tier-07"] }
   - { q: "How to avoid aged inventory surcharge?", a: "Sell or remove units before they pass 181 days in storage. Amazon says sound inventory health helps avoid the cost, and it offers return, disposal or liquidation for a per-item charge.", claims: ["aged-inventory-15-month-tier-01", "aged-inventory-15-month-tier-02", "aged-inventory-15-month-tier-10"] }
   - { q: "When does Amazon charge long term storage fees?", a: "Amazon's FBA page says the aged inventory charge applies monthly to items stored more than 181 days. Amazon's November 2022 announcement tied its band changes to the April 15, 2023 aged inventory assessment date.", claims: ["aged-inventory-15-month-tier-01", "aged-inventory-15-month-tier-05"] }
-related: ["fba-storage-four-layers", "amazon-fba-fee-changes-2026", "low-inventory-level-fee"]
+related: ["fba-storage-four-layers", "amazon-fba-fee-changes-2026", "low-inventory-level-fee", "removal-vs-hold-decision"]
 ---
 
-If you hold FBA units that have been in storage for more than 181 days, you pay a monthly aged inventory charge on top of regular storage. <C id="aged-inventory-15-month-tier-01"/> The current rates for each age band, including the 15-month tier this page is named for, are published inside Seller Central and should be checked there. What Amazon has published is the threshold, how the bands have moved, and a structural change on February 1, 2027 that ends the separate surcharge. <C id="aged-inventory-15-month-tier-07"/> <C id="aged-inventory-15-month-tier-08"/> The decision for slow stock is whether to sell it down, pull it out, or liquidate it before that date and before it ages into the next band.
+If you hold FBA units that have been in storage for more than 181 days, you pay a monthly aged inventory charge on top of regular storage. <C id="aged-inventory-15-month-tier-01"/> The oldest band in Amazon's inventory report for the US store starts at 456 days, and the report estimates the charge for it separately; 456 days is about 15 months by our arithmetic, which is why this page calls it the "15-month" tier. <C id="aged-inventory-15-month-tier-19"/> The per-cubic-foot rate for each band is published inside Seller Central (look up "aged inventory surcharge" there); everything else on this page comes from Amazon's public announcements and Selling Partner API documentation. From February 1, 2027 the separate surcharge ends and age is priced into a single storage rate. <C id="aged-inventory-15-month-tier-07"/> <C id="aged-inventory-15-month-tier-08"/>
 
 ## What Amazon publicly says the charge is
 
 Amazon's FBA cost overview describes aged inventory as "Charged monthly for all items stored in a fulfillment center for more than 181 days," and adds that "Maintaining sound inventory health can help you avoid this cost." <C id="aged-inventory-15-month-tier-01"/> <C id="aged-inventory-15-month-tier-02"/>
 
-Three things follow from that wording:
-
 - **It is per item and age-based.** The test is how long each item has been stored, not how fast the SKU sells overall.
 - **It is monthly.** An aged unit keeps drawing the charge every month it stays.
-- **It is additional.** Regular storage is a separate charge, billed monthly on the space inventory occupies. <C id="aged-inventory-15-month-tier-17"/> How the layers combine is covered in [FBA storage fees: the four layers](/guides/fba-storage-four-layers/).
+- **It is additional.** Regular storage is a separate charge, billed monthly on the daily average volume inventory occupies. <C id="aged-inventory-15-month-tier-17"/> How the layers combine is covered in [FBA storage fees: the four layers](/guides/fba-storage-four-layers/).
 
-## How the age bands have moved
+## The age bands, as Amazon's report lays them out
 
-Amazon's announcements show that the surcharge is applied in age bands, tied to assessment dates, and that Amazon has adjusted bands and rates over time. Its November 2022 fee announcement, for example, said Amazon would "increase the surcharges applied to inventory stored between 271-365 days" and introduce surcharges on inventory stored 180–270 days, excluding Apparel, Shoes, Bags, Jewelry and Watches. <C id="aged-inventory-15-month-tier-03"/> <C id="aged-inventory-15-month-tier-04"/> Those changes applied from "the April 15, 2023 aged inventory assessment date." <C id="aged-inventory-15-month-tier-05"/>
+The field list of the Manage Inventory Health report (report type `GET_FBA_INVENTORY_PLANNING_DATA`) shows the bands the surcharge estimate is split into. For each band there is a `quantity-to-be-charged-ais-…` column (units that will be charged) and an `estimated-ais-…` column (the estimated surcharge). <C id="aged-inventory-15-month-tier-18"/> <C id="aged-inventory-15-month-tier-19"/>
 
-Amazon gave its reason at the time: the changes would "help drive more efficient use of our storage and create more capacity for sellers who are using space efficiently." <C id="aged-inventory-15-month-tier-06"/>
+| Days in storage | Report columns | Scope |
+|---|---|---|
+| 181–210 | `quantity-to-be-charged-ais-181-210-days`, `estimated-ais-181-210-days` | No store limit noted |
+| 211–240 | `…-ais-211-240-days` | No store limit noted |
+| 241–270 | `…-ais-241-270-days` | No store limit noted |
+| 271–300 | `…-ais-271-300-days` | No store limit noted |
+| 301–330 | `…-ais-301-330-days` | No store limit noted |
+| 331–365 | `…-ais-331-365-days` | No store limit noted |
+| 366–455 | `…-ais-366-455-days` | US, DE, UK, FR, IT, ES only |
+| 456 and over | `…-ais-456-plus-days` | US, DE, UK, FR, IT, ES only |
+
+*Source: Amazon Selling Partner API documentation, FBA report type values, checked Nov 9, 2026.* <C id="aged-inventory-15-month-tier-18"/> <C id="aged-inventory-15-month-tier-19"/>
+
+Fifteen average-length months come to about 456 days (15 × 30.4 = 456), so this page treats the 456-plus band as the 15-month tier; that equivalence is our arithmetic, not Amazon's wording. The same report carries inventory-age columns for the oldest brackets — `inv-age-271-to-365-days`, `inv-age-366-to-455-days` and `inv-age-456-plus-days` — so you can see how many units are in each bracket. <C id="aged-inventory-15-month-tier-20"/>
+
+## How the bands have moved
+
+Amazon has adjusted bands and rates before. Its November 2022 fee announcement said Amazon would "increase the surcharges applied to inventory stored between 271-365 days" and introduce surcharges on inventory stored 180–270 days, excluding Apparel, Shoes, Bags, Jewelry and Watches. <C id="aged-inventory-15-month-tier-03"/> <C id="aged-inventory-15-month-tier-04"/> Those changes applied from "the April 15, 2023 aged inventory assessment date." <C id="aged-inventory-15-month-tier-05"/> Amazon's stated reason: to "help drive more efficient use of our storage and create more capacity for sellers who are using space efficiently." <C id="aged-inventory-15-month-tier-06"/>
 
 <Timeline title="Aged inventory surcharge: publicly announced milestones" items={[
   {date:"2023-04-15", t:"Assessment date for expanded bands", d:"Higher surcharges for 271–365 days; new surcharges for 180–270 days with category exclusions.", claim:"aged-inventory-15-month-tier-05"},
   {date:"2027-02-01", t:"Aged surcharge removed", d:"Combined with monthly storage into a single, age-based rate.", claim:"aged-inventory-15-month-tier-08"}
 ]} />
 
-Rates for bands above 365 days, including the 15-month tier, are in Seller Central. Check the rate, the category exclusions, and the assessment day there before you model a long hold.
-
 ## February 1, 2027: one age-based rate
 
-Amazon's 2027 fee announcement changes the structure. It says Amazon will "remove the aged inventory surcharge and combine it with monthly storage fees into a single, age-based rate," with storage changes effective February 1, 2027. <C id="aged-inventory-15-month-tier-07"/> <C id="aged-inventory-15-month-tier-08"/> The stated effect: "flat or lower fees for inventory that turns in under six months, higher fees for aged inventory." <C id="aged-inventory-15-month-tier-09"/>
-
-So age keeps costing money after February 1, 2027 — Amazon says aged inventory will pay higher fees — but the cost moves into the storage rate itself rather than a separate surcharge line. <C id="aged-inventory-15-month-tier-09"/>
+Amazon's 2027 fee announcement says it will "remove the aged inventory surcharge and combine it with monthly storage fees into a single, age-based rate," with storage changes effective February 1, 2027. <C id="aged-inventory-15-month-tier-07"/> <C id="aged-inventory-15-month-tier-08"/> The stated effect: "flat or lower fees for inventory that turns in under six months, higher fees for aged inventory." <C id="aged-inventory-15-month-tier-09"/> Amazon also describes it as "a new age-based rate that will make your storage costs easier to predict." <C id="aged-inventory-15-month-tier-25"/>
 
 <Compare title="Aged stock before and after February 1, 2027" columns={["Through January 2027","From February 1, 2027"]} rows={[
   {label:"How age is charged", values:["Separate monthly surcharge on items over 181 days","Built into a single, age-based storage rate"], claim:"aged-inventory-15-month-tier-07"},
@@ -66,21 +76,23 @@ So age keeps costing money after February 1, 2027 — Amazon says aged inventory
   {label:"Aged inventory", values:["Storage plus surcharge band","Higher fees, per Amazon"], claim:"aged-inventory-15-month-tier-09"}
 ]} />
 
-## Worked example (hypothetical): when a lot reaches each threshold
+To see the effect on your own SKUs, Amazon points to a new Fee Change Comparison dashboard. <C id="aged-inventory-15-month-tier-26"/> Today's Storage Fees report (`GET_FBA_STORAGE_FEE_CHARGES_DATA`) already splits each ASIN's estimate into `base_rate`, `utilization_surcharge_rate` and `estimated_monthly_storage_fee`; save a copy for January 2027 so you have a before-and-after baseline when the structure changes. <C id="aged-inventory-15-month-tier-24"/>
+
+## Worked example (hypothetical): when a lot reaches each band
 
 <Callout type="example" title="Worked example (hypothetical)">
-Inputs: three lots of the same SKU, received into FBA on November 1, 2025, February 1, 2026 and August 1, 2026. Thresholds used: Amazon's published 181 days, and 15 calendar months, the tier this page is named for. Day counts are simple calendar arithmetic; Amazon's exact assessment day is set in Seller Central.
+Inputs: three lots of the same SKU, received into FBA on November 1, 2025, February 1, 2026 and August 1, 2026. Thresholds: Amazon's published 181 days and the 366-day and 456-day band starts shown in the inventory health report. Dates are simple calendar arithmetic (receipt date plus the number of days); Amazon's exact assessment day is set in Seller Central.
 
-| Lot received | 181 days reached | 365 days reached | 15 months reached | Billing structure at 15 months |
+| Lot received | Day 181 | Day 366 (366–455 band) | Day 456 (456+ band) | Structure when it reaches day 456 |
 |---|---|---|---|---|
-| Nov 1, 2025 | May 1, 2026 | Nov 1, 2026 | Feb 1, 2027 | Age-based storage rate begins that day |
-| Feb 1, 2026 | Aug 1, 2026 | Feb 1, 2027 | May 1, 2027 | Single age-based rate |
-| Aug 1, 2026 | Jan 29, 2027 | Aug 1, 2027 | Nov 1, 2027 | Single age-based rate |
+| Nov 1, 2025 | May 1, 2026 | Nov 2, 2026 | Jan 31, 2027 | Reaches day 456 one day before the change |
+| Feb 1, 2026 | Aug 1, 2026 | Feb 2, 2027 | May 3, 2027 | Single age-based rate |
+| Aug 1, 2026 | Jan 29, 2027 | Aug 2, 2027 | Oct 31, 2027 | Single age-based rate |
 
-*Source: 181-day threshold from Amazon's FBA page; February 1, 2027 date from Amazon's 2027 fee announcement, checked Nov 8, 2026; dates are our arithmetic.* <C id="aged-inventory-15-month-tier-01"/> <C id="aged-inventory-15-month-tier-08"/>
+*Source: 181-day threshold from Amazon's FBA page; band starts from the SP-API report fields; February 1, 2027 from Amazon's 2027 fee announcement, checked Nov 9, 2026; dates are our arithmetic.* <C id="aged-inventory-15-month-tier-01"/> <C id="aged-inventory-15-month-tier-19"/> <C id="aged-inventory-15-month-tier-08"/>
 </Callout>
 
-Two points come out of the table. The November 2025 lot is already past a year and will hit the 15-month mark exactly when the surcharge is replaced, so its cost from then on depends on the new age-based rate, not the old surcharge band. And the August 2026 lot crosses 181 days only three days before the structure changes, so on these dates what matters for it is the age-based rate from February.
+On these dates, the November 2025 lot is already in the 366–455 band and reaches 456 days on January 31, 2027, a day before the surcharge is folded into storage; its cost from February onward depends on the new age-based rate. The August 2026 lot passes 181 days three days before the change, so almost all of its aged period falls under the new rate.
 
 ## Your options for long-aged units
 
@@ -91,26 +103,36 @@ Two points come out of the table. The November 2025 lot is already past a year a
   {if:"It is a new product enrolled in the FBA New Selection Program that underperforms", then:"Amazon says you can liquidate at no cost within 180 days", claim:"aged-inventory-15-month-tier-15"}
 ]} />
 
-Amazon's inventory management guide lists over 90 days of supply, or at least one unit aged over 90 days, among the situations in which it considers you to have excess inventory, and it warns that "aging inventory could force you to liquidate." <C id="aged-inventory-15-month-tier-13"/> <C id="aged-inventory-15-month-tier-14"/> For 2026, Amazon also listed "maintaining healthy inventory levels" among the ways to reach lower fees. <C id="aged-inventory-15-month-tier-16"/>
+Amazon's inventory management guide lists over 90 days of supply, or at least one unit aged over 90 days, among the signs of excess inventory, and warns that "aging inventory could force you to liquidate." <C id="aged-inventory-15-month-tier-13"/> <C id="aged-inventory-15-month-tier-14"/> For 2026, Amazon also listed "maintaining healthy inventory levels" among the ways to reach lower fees. <C id="aged-inventory-15-month-tier-16"/> For the cost comparison itself, see [remove or keep FBA inventory](/guides/removal-vs-hold-decision/).
+
+## Which report answers which question
+
+| Question | Report (SP-API report type) | Columns to read |
+|---|---|---|
+| How many units are in each age bracket now? | Manage Inventory Health (`GET_FBA_INVENTORY_PLANNING_DATA`) | `inv-age-366-to-455-days`, `inv-age-456-plus-days` |
+| What will the next charge be, by band? | Manage Inventory Health | `quantity-to-be-charged-ais-…`, `estimated-ais-…` |
+| What does Amazon suggest doing? | Manage Inventory Health | `recommended-action`, `recommended-removal-quantity`, `recommended-sale-duration-days` |
+| Which sellable units are 365+ days old? | Recommended Removal (`GET_FBA_RECOMMENDED_REMOVAL_DATA`) | `sellable-271-365-days`, `sellable-365+-days` |
+| What was I actually billed? | Long-Term Storage Fee Charges (`GET_FBA_FULFILLMENT_LONGTERM_STORAGE_FEE_CHARGES_DATA`) | `surcharge-age-tier`, `rate-surcharge`, `qty-charged`, `amount-charged` |
+
+*Source: Amazon Selling Partner API documentation, FBA report type values, checked Nov 9, 2026.* <C id="aged-inventory-15-month-tier-12"/> <C id="aged-inventory-15-month-tier-23"/> <C id="aged-inventory-15-month-tier-27"/> <C id="aged-inventory-15-month-tier-21"/>
+
+The Long-Term Storage Fee Charges report "Contains the charge data for long-term storage," and Amazon says a request should span one month, so pull it month by month rather than for a whole year at once. <C id="aged-inventory-15-month-tier-11"/> <C id="aged-inventory-15-month-tier-22"/> The Manage Inventory Health report also gives a consolidated view of sales over 7, 30, 60 and 90 days, which you need to judge whether aged units will sell before the next band. <C id="aged-inventory-15-month-tier-12"/>
 
 <Checklist title="Monthly aged-stock review" items={[
-  "Pull the Manage Inventory Health report and sort by inventory age",
+  "Pull Manage Inventory Health and sort by inv-age-456-plus-days, then inv-age-366-to-455-days",
+  "Add up the estimated-ais columns to see next month's surcharge by band",
   "Flag units aged over 90 days, one of Amazon's excess-inventory signs",
-  "List units that will pass 181 days before the next month's charge",
-  "Check the current band rates, including the 15-month tier, in Seller Central",
-  "Compare one more month of storage with the per-item removal, disposal or liquidation charge",
-  "Note which lots will still be in FBA on February 1, 2027"
+  "Compare one more month of surcharge with the per-item removal, disposal or liquidation charge",
+  "Reconcile last month's Long-Term Storage Fee Charges report against the estimate",
+  "Save January 2027 storage estimates as a baseline for the new age-based rate"
 ]} />
 
-## Reports that show the charge
-
-Two Selling Partner API report types hold the data. The Long-Term Storage Fee Charges report "Contains the charge data for long-term storage." <C id="aged-inventory-15-month-tier-11"/> The Manage Inventory Health report "Provides a consolidated view across your sales (7, 30, 60, and 90 days), shipment statuses" and more, which is the starting point for the review above. <C id="aged-inventory-15-month-tier-12"/>
-
-## How to confirm the current age bands
+## Where to check the current band rates
 
 - Amazon's FBA cost overview at sell.amazon.com/fulfillment-by-amazon, for the 181-day definition. <C id="aged-inventory-15-month-tier-01"/>
 - Amazon's 2027 fee announcement on sellingpartners.aboutamazon.com, for the February 1, 2027 change. <C id="aged-inventory-15-month-tier-08"/>
-- Seller Central's aged inventory surcharge page, for the current bands (including 15 months and over), rates, exclusions and assessment day.
-- The Long-Term Storage Fee Charges report for what you were actually billed. <C id="aged-inventory-15-month-tier-11"/>
+- Seller Central's aged inventory surcharge page, for the per-band rates, category exclusions and assessment day.
+- The Fee Change Comparison dashboard, for the 2027 effect on your own SKUs. <C id="aged-inventory-15-month-tier-26"/>
 
 This page describes Amazon's published rules and is not a review of any specific charge; a charge you believe is wrong has to be raised with Amazon through your seller account.

@@ -1,16 +1,15 @@
 ---
 title: "Amazon Featured Offer (Buy Box): Eligibility and Pricing"
-description: "What Amazon's Featured Offer (the \"Buy Box\") is, what decides eligibility, and how expected-price and pricing-health signals show why you lost it."
+description: "How Amazon picks the Featured Offer (Buy Box), the price ceilings that make an offer ineligible, and which report fields show your Buy Box share and losses."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 10
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 12
 photo:
   subject: "several blank price tags in different colors hanging side by side, one slightly in front of the others, no text or logos"
-  alt: "Four blank hang tags in white, kraft and black paper hanging on strings against a pale wall"
-  image: "amazon-referral-fees"
+  alt: "Three blank hang tags on black cords against a sage-green wall: a pale pink tag layered in front of a white tag, with a longer black tag hanging beside them"
 keyFacts:
   - { label: "Eligibility basics", value: "Price, availability, delivery speed", claim: "buy-box-featured-offer-04" }
   - { label: "Winners per ASIN", value: "Up to 2 (Prime and non-Prime)", claim: "buy-box-featured-offer-13" }
@@ -57,7 +56,24 @@ FBA products are eligible for free, two-day shipping through Prime, <C id="buy-b
 
 Amazon lists a price that is too high as a reason an offer may not be featured <C id="buy-box-featured-offer-09"/> — and a price that is too low as well. <C id="buy-box-featured-offer-10"/> It can also happen that no available offer is eligible at all. <C id="buy-box-featured-offer-11"/>
 
-The ceiling is set partly by prices outside Amazon. An offer becomes ineligible when its total price (price plus shipping) is higher than the Competitive External Price, if one is available, or higher than recent prices. <C id="buy-box-featured-offer-22"/> Amazon may also use a product's list price when deciding whether to feature an offer. <C id="buy-box-featured-offer-24"/> How external prices and your own website's prices interact with this is covered in [cross-channel price parity](/guides/cross-channel-price-parity/).
+The ceiling is set partly by prices outside Amazon. An offer becomes ineligible when its total price (price plus shipping) is higher than the Competitive External Price, if one is available, or higher than recent prices. <C id="buy-box-featured-offer-22"/> Amazon may also use a product's list price when deciding whether to feature an offer. <C id="buy-box-featured-offer-24"/>
+
+The external benchmark has a name in Amazon's pricing data: CompetitivePriceThreshold, based on competitive prices from other retailers, excluding other Amazon sellers. <C id="buy-box-featured-offer-37"/> The offer may be ineligible if your price plus shipping, minus any Amazon Points, is greater than it. <C id="buy-box-featured-offer-38"/> The PRICING_HEALTH notification schema includes these reference prices:
+
+| Reference price in a Pricing Health alert | Amazon's definition |
+|---|---|
+| competitivePriceThreshold | The competitive price threshold from external competitors of Amazon <C id="buy-box-featured-offer-45"/> |
+| retailOfferPrice | The 14-day maximum of the retail offer price <C id="buy-box-featured-offer-46"/> |
+| msrpPrice | The manufacturer suggested retail price for the ASIN <C id="buy-box-featured-offer-47"/> |
+| averageSellingPrice | The average selling price of the item <C id="buy-box-featured-offer-48"/> |
+
+*Source: Amazon Selling Partner API models, PRICING_HEALTH notification schema, checked Nov 9, 2026.*
+
+<Callout type="example" title="Worked example (hypothetical): shipping counts toward the ceiling">
+Inputs: a self-fulfilled offer at $24.99 plus $4.99 shipping, no Amazon Points, and a competitive price threshold of $27.50. The total Amazon compares is $24.99 + $4.99 = $29.98, which is $2.48 over the threshold, so the offer may be ineligible even though the item price alone is below it. <C id="buy-box-featured-offer-38"/> Repricing to $26.99 with free shipping gives a total of $26.99, under the threshold, and collects $2.99 less per order ($29.98 − $26.99). Whether that clears your margin is the same calculation as in the expected-price example below.
+</Callout>
+
+How external prices and your own website's prices interact with these ceilings is covered in [cross-channel price parity](/guides/cross-channel-price-parity/).
 
 ## Reading Amazon's signals
 
@@ -78,11 +94,31 @@ The FOEP result status is itself diagnostic:
   {if:"Result: OFFER_NOT_FOUND", then:"The offer might be unbuyable or you are not qualified; fix the listing first", claim:"buy-box-featured-offer-21"}
 ]} />
 
+## The offer fields that explain a lost Featured Offer
+
+Amazon's offers data for an ASIN carries the fields below. Comparing them for your own offer and the current winner can point to the lever that failed.
+
+| Field | What Amazon says it is | What to compare |
+|---|---|---|
+| IsBuyBoxWinner | True when the offer is currently in the Buy Box <C id="buy-box-featured-offer-35"/> | Whether yours or a rival's is true (up to two can be) |
+| BuyBoxEligibleOffers | Count of Buy Box-eligible offers by condition and fulfillment channel <C id="buy-box-featured-offer-36"/> | How many offers you are actually competing with |
+| LandedPrice | ListingPrice + Shipping − Points <C id="buy-box-featured-offer-40"/> | Your landed price vs. the winner's, not item price alone |
+| SuggestedLowerPricePlusShipping | Based on historical selling prices, recent Buy Box-eligible prices and customer input <C id="buy-box-featured-offer-39"/> | Whether you are above what has recently won |
+| ShippingTime | Minimum and maximum hours until the item likely ships <C id="buy-box-featured-offer-41"/> | Your handling time vs. the winner's |
+| SellerPositiveFeedbackRating | Positive feedback percentage over the past 365 days <C id="buy-box-featured-offer-42"/> | Service history, one of the non-price requirements |
+| glanceViewWeightPercentage | A segment's share of the ASIN's total glance views <C id="buy-box-featured-offer-43"/> | Whether you win the segments most shoppers see |
+
+*Source: Amazon Selling Partner API models, Product Pricing API v0 and 2022-05-01, checked Nov 9, 2026.* The competitive summary lists up to 20 lowest priced offers, <C id="buy-box-featured-offer-44"/> so on crowded listings you may not see every competitor.
+
 An OFFER_NOT_FOUND result points to the offer itself rather than its price. Check listing status and issues with the steps in [why an Amazon listing disappears](/guides/listing-disappeared/).
 
 <Callout type="example" title="Worked example (hypothetical): is the expected price worth matching?">
 Inputs: your item price is $27.99, the FOEP is $25.49, and your costs before Amazon's referral fee total $15.00. Matching the FOEP cuts revenue per unit by $2.50 ($27.99 − $25.49). If the referral fee is 15% (assumed rate for this example), it falls from $4.20 to $3.82, so the margin before other costs goes from $8.79 ($27.99 − $4.20 − $15.00) to $6.67 ($25.49 − $3.82 − $15.00). Amazon does not guarantee the featured offer at that price, <C id="buy-box-featured-offer-16"/> so the question is whether the extra units at $6.67 beat fewer units at $8.79.
 </Callout>
+
+## Tracking your Featured Offer share over time
+
+A single check shows who holds the Featured Offer now; a trend shows whether a change worked. The Sales and Traffic report (GET_SALES_AND_TRAFFIC_REPORT) aggregates by day, week or month, and per ASIN at parent, child or SKU level. <C id="buy-box-featured-offer-33"/> Its buyBoxPercentage field is the percentage of page views where the buy box appeared for customers to add your product to their cart. <C id="buy-box-featured-offer-32"/> A separate buyBoxPercentageB2B field covers page views by Amazon Business customers and is populated only when the seller is a B2B seller. <C id="buy-box-featured-offer-34"/> Pulling it by SKU and by week before and after a price, stock or shipping change shows whether your share moved.
 
 ## Automating price changes
 
@@ -98,9 +134,9 @@ Amazon's Automate Pricing tool is included free in the Professional selling plan
 ]} />
 
 <Callout type="note" title="Scope">
-We found no Amazon page that publishes a formula for the Featured Offer, and the account-level performance targets are shown inside Seller Central. This page reflects what Amazon states publicly; for a specific ASIN, check Manage All Inventory and the Pricing Health page.
+This page covers what Amazon publishes on sell.amazon.com and in its Selling Partner API models. The account-level performance targets behind the non-price requirements are published inside Seller Central; to find them, search Seller Central Help using words such as Featured Offer eligibility (a suggested search, not a page title).
 </Callout>
 
-## How to confirm it for your offers
+## Where to check a specific ASIN
 
 Read Amazon's own explanation in [Maximize your sales potential with the Amazon Featured Offer](https://sell.amazon.com/blog/buy-box-featured-offer), then check each ASIN in Manage All Inventory and Pricing Health. <C id="buy-box-featured-offer-27"/> <C id="buy-box-featured-offer-26"/> The expected-price and pricing-health definitions are in Amazon's [price adjustment workflows guide](https://developer-docs.amazon/sp-api/docs/price-adjustment-automation-workflows-guide). <C id="buy-box-featured-offer-04"/>

@@ -1,16 +1,15 @@
 ---
 title: "Vendor Central vs Seller Central: Selling to Amazon or on It"
-description: "The real difference between Vendor Central and Seller Central: who is seller of record, how money flows, what each workflow involves, how to compare margins."
+description: "Vendor Central vs Seller Central: who is seller of record, what an Amazon PO and invoice contain, payment terms and allowances, and how to compare margins."
 pillar: "operations"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 8
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 11
 photo:
   subject: "a printed purchase order and an invoice side by side on a desk with a pen, no readable text, no logos"
-  alt: "Hands of three people around a table reviewing printed documents, faces not shown"
-  image: "incoterms-who-is-importer"
+  alt: "A tall, untidy stack of papers, envelopes and coloured folders against a pale grey background"
 keyFacts:
   - { label: "Seller Central: seller of record", value: "You, not Amazon", claim: "vendor-central-vs-seller-central-02" }
   - { label: "Professional seller plan", value: "$39.99/month", claim: "vendor-central-vs-seller-central-12" }
@@ -69,7 +68,45 @@ The credit-note step is where vendor economics show up. Amazon's 10-K says it re
 
 Amazon also runs a direct-fulfillment program for vendors, in which the vendor retrieves orders, acknowledges them, generates a shipping label, ships and confirms, then invoices to release payment. <C id="vendor-central-vs-seller-central-22"/> Amazon's guide says "Vendors should submit accurate acknowledgements as fast as possible, within at most 24 hours." <C id="vendor-central-vs-seller-central-19"/>
 
+### What an Amazon purchase order contains
+
+These are the values Amazon's vendor order data uses for a purchase order:
+
+| PO element | Values Amazon uses | What it means for you |
+|---|---|---|
+| Order type | RegularOrder, ConsignedOrder, NewProductIntroduction, RushOrder <C id="vendor-central-vs-seller-central-26"/> | Consigned stock stays yours until the product is used <C id="vendor-central-vs-seller-central-27"/> |
+| Payment method | Invoice, Consignment, CreditCard, Prepaid <C id="vendor-central-vs-seller-central-28"/> | How Amazon will pay for the order |
+| State | New (needs your acknowledgement), Acknowledged, Closed <C id="vendor-central-vs-seller-central-29"/> | Closed can mean you rejected it, Amazon cancelled it, or Amazon received it in full <C id="vendor-central-vs-seller-central-30"/> |
+| Line acknowledgement | Accepted, Backordered, Rejected <C id="vendor-central-vs-seller-central-32"/> | Rejection reasons: TemporarilyUnavailable, InvalidProductIdentifier, ObsoleteProduct <C id="vendor-central-vs-seller-central-33"/> |
+| Line price | Net cost per unit, plus a list price <C id="vendor-central-vs-seller-central-34"/> | The net cost you acknowledge must match the cost on the invoice |
+
+*Source: Amazon Selling Partner API models, Vendor Orders API, checked Nov 9, 2026.*
+
+A PO is not fixed once issued: Amazon can change it after it is placed, and vendors are required to fulfill the updated PO. <C id="vendor-central-vs-seller-central-31"/>
+
 The retail procurement shipments API also lets vendors "Get shipment status and pickup details" and "Generate shipping labels from Amazon." <C id="vendor-central-vs-seller-central-23"/> In direct fulfillment the order of operations is fixed: "You must acknowledge an order before you submit a shipping label request," and items "should be invoiced only after they are confirmed and shipped." <C id="vendor-central-vs-seller-central-24"/> <C id="vendor-central-vs-seller-central-25"/>
+
+## How a vendor gets paid: terms, charges and allowances
+
+A seller is paid out of marketplace sales; a vendor is paid against invoices. The invoice data Amazon accepts shows the moving parts:
+
+<Compare title="Vendor invoice elements" columns={["Values in Amazon's invoice format","Effect on what you collect"]} rows={[
+  {label:"Payment terms", values:["Basic, EndOfMonth, FixedDate, Proximo, PaymentDueUponReceiptOfInvoice, LetterofCredit","Sets when cash arrives; Proximo pays at the end of the following month"], claim:"vendor-central-vs-seller-central-35"},
+  {label:"Due date", values:["netDueDays: calendar days from invoice date until the total is due","When the full invoice amount is due"], claim:"vendor-central-vs-seller-central-37"},
+  {label:"Early-payment discount", values:["discountPercent, valid for discountDueDays from the invoice date","Lowers the amount collected if the discount is taken"], claim:"vendor-central-vs-seller-central-38"},
+  {label:"Charges", values:["Freight, Packing, Duty, Service, SmallOrder and others","Added to the invoice"], claim:"vendor-central-vs-seller-central-40"},
+  {label:"Allowances", values:["Discount, DiscountIncentive, Defective, Promotional, UnsaleableMerchandise, Special","Deducted from the invoice"], claim:"vendor-central-vs-seller-central-39"}
+]} />
+
+*Source: Amazon Selling Partner API models, Vendor Invoices API, checked Nov 9, 2026.* <C id="vendor-central-vs-seller-central-36"/> The invoice total includes charges, less allowances, before any terms discount, <C id="vendor-central-vs-seller-central-41"/> and the invoice date should be on or after the PO creation date. <C id="vendor-central-vs-seller-central-42"/> The format lists the possible values; it does not show which of them apply to your account.
+
+### Amazon's margin on your items: Net PPM
+
+Vendors can request a report on Amazon's own profitability on their products. The Net Pure Product Margin report (GET_VENDOR_NET_PURE_PRODUCT_MARGIN_REPORT) computes it as (Product Revenue − Product COGS − Vendor Funded Coop) / Product Revenue. <C id="vendor-central-vs-seller-central-43"/> Alongside it, the vendor sales report gives shippedCogs, revenue based on cost of goods sold and adjusted for returns, <C id="vendor-central-vs-seller-central-45"/> and a forecasting report forecasts customer demand for production and inventory planning. <C id="vendor-central-vs-seller-central-44"/>
+
+<Callout type="example" title="Worked example (hypothetical): reading Net PPM">
+Inputs: in one month Amazon's product revenue on your ASIN is $30,000, its product COGS (what it paid you) is $24,000, and vendor-funded co-op is $1,500. Net PPM = ($30,000 − $24,000 − $1,500) / $30,000 = $4,500 / $30,000 = 0.15, or 15%. If the same month showed $3,000 of co-op, Net PPM would be ($30,000 − $24,000 − $3,000) / $30,000 = 10%. In the formula, each extra dollar of product COGS or vendor-funded co-op lowers the numerator by one dollar.
+</Callout>
 
 ## How a seller account works
 
@@ -101,6 +138,6 @@ Inputs, all invented: a product retails at $30.00. As a seller using FBA, assume
   "Do you already hold a registered or pending trademark for Brand Registry?"
 ]} />
 
-## How to confirm the terms that apply to you
+## Where to read the terms that apply to you
 
-For sellers, the [selling plans and fees page](https://sell.amazon.com/pricing) is the public reference. For vendors, Amazon's public sources are its [Form 10-K](https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm) and the vendor sections of the Selling Partner API documentation; payment terms, allowances and chargebacks are set in the vendor agreement and shown inside Vendor Central, so check them there. This page compares the two models; the contract you sign controls your actual terms.
+For sellers, the [selling plans and fees page](https://sell.amazon.com/pricing) is the public reference. For vendors, Amazon's public sources are its [Form 10-K](https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm), the vendor sections of the Selling Partner API documentation and the [vendor order and invoice models](https://github.com/amzn/selling-partner-api-models/tree/main/models), which show the PO and invoice fields above. The payment terms, allowances and chargebacks that apply to you are set in the vendor agreement and shown inside Vendor Central, so check them there. This page compares the two models; the contract you sign controls your actual terms.

@@ -1,100 +1,118 @@
 ---
 title: "Amazon's 3.5% Fuel and Logistics Surcharge: What Is Published"
-description: "What Amazon's MCF rate card says about its 3.5% fuel and logistics surcharge, which fees it names, what it leaves open on peak rates, and where FBA terms sit."
+description: "Amazon's fuel and logistics surcharge: the 3.5% MCF rate card wording, the FBA surcharge Amazon says began in April 2026, other MCF add-ons and fee reports."
 pillar: "fees"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 7
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 9
 photo:
   subject: "a delivery van parked at a warehouse loading dock at dusk, no logos, no people"
-  alt: "Two closed loading-dock doors with dark dock shelters above a yellow-edged dock wall at a warehouse"
-  image: "duty-drawback"
+  alt: "A blue truck cab and a refrigerated trailer backed into a lit loading dock beside a long pale warehouse wall at night"
 keyFacts:
-  - { label: "Surcharge rate", value: "3.5% of MCF fulfillment fees (US)", claim: "fba-fuel-logistics-surcharge-2026-01" }
+  - { label: "MCF surcharge rate", value: "3.5% of MCF fulfillment fees (US)", claim: "fba-fuel-logistics-surcharge-2026-01" }
+  - { label: "FBA surcharge introduced", value: "April 2026", claim: "fba-fuel-logistics-surcharge-2026-22" }
+  - { label: "FBA surcharge in 2027", value: "Unchanged", claim: "fba-fuel-logistics-surcharge-2026-21" }
   - { label: "MCF peak fee tables", value: "Oct 15, 2026 – Jan 14, 2027", claim: "fba-fuel-logistics-surcharge-2026-05" }
-  - { label: "AWD storage", value: "No seasonal surcharges", claim: "fba-fuel-logistics-surcharge-2026-14" }
-  - { label: "Last FBA-wide surcharge", value: "Removed Jan 17, 2023", claim: "fba-fuel-logistics-surcharge-2026-10" }
 summary:
   - "Amazon's 2026 MCF rate card states that a 3.5% fuel and logistics-related surcharge will be applied to Multi-Channel Fulfillment (MCF) fulfillment fees in the US."
-  - "Amazon attributes the surcharge to elevated industry fuel and logistics costs and calls it consistent with other major carriers."
-  - "The same card lists peak fulfillment fees effective October 15, 2026–January 14, 2027, but does not say whether those listed rates already include the 3.5%."
-  - "Amazon ran a separate Fuel & Inflation Surcharge on FBA fees in 2022 and removed it in a change effective January 17, 2023."
-  - "For orders fulfilled through FBA on Amazon, the surcharge terms are published in Seller Central, and the Fee Preview report shows the fees Amazon expects to charge."
+  - "Amazon's 2027 fee announcement says it introduced an FBA fuel and logistics surcharge in April 2026 and that the surcharge remains unchanged, while it keeps reviewing it."
+  - "MCF also carries a remote area surcharge of 100% for standard-size items to Alaska, Hawaii, Guam, Puerto Rico and the Virgin Islands, and $0.11 per unit for lithium battery items."
+  - "The MCF peak fee tables run October 15, 2026–January 14, 2027, and the card does not say whether those listed rates already include the 3.5%."
+  - "The Fee Preview report and the Product Fees API give Amazon's fee estimates for each SKU."
 faq:
   - { q: "What is logistics surcharge?", a: "In Amazon's published MCF pricing, it is a 3.5% fuel and logistics-related surcharge added to US MCF fulfillment fees, which Amazon says offsets part of higher fuel and logistics costs.", claims: ["fba-fuel-logistics-surcharge-2026-01", "fba-fuel-logistics-surcharge-2026-04"] }
-  - { q: "Does Amazon charge sellers a fuel surcharge?", a: "Amazon's public pages document the 3.5% surcharge for Multi-Channel Fulfillment fees in the US. For FBA orders on Amazon, check the fee terms in Seller Central and your Fee Preview report.", claims: ["fba-fuel-logistics-surcharge-2026-01", "fba-fuel-logistics-surcharge-2026-15"] }
-related: ["holiday-peak-fulfilment-fee", "shipping-lithium-batteries"]
+  - { q: "Does Amazon charge sellers a fuel surcharge?", a: "Yes. Amazon's MCF rate card applies 3.5% to US MCF fulfillment fees, and Amazon's 2027 fee announcement says it introduced an FBA fuel and logistics surcharge in April 2026 that remains unchanged.", claims: ["fba-fuel-logistics-surcharge-2026-01", "fba-fuel-logistics-surcharge-2026-21", "fba-fuel-logistics-surcharge-2026-22"] }
+related: ["holiday-peak-fulfilment-fee", "shipping-lithium-batteries", "amazon-fba-fee-changes-2026"]
 ---
 
-Amazon's 2026 Multi-Channel Fulfillment (MCF) rate card states one thing clearly: "a 3.5% fuel and logistics-related surcharge will be applied to MCF fulfillment fees in the US." <C id="fba-fuel-logistics-surcharge-2026-01"/> If you use MCF to ship orders from other channels out of Amazon's warehouses, that 3.5% belongs in your fulfillment cost. The card's peak fee tables run October 15, 2026 to January 14, 2027, and it does not say whether those listed peak rates already include the surcharge. <C id="fba-fuel-logistics-surcharge-2026-05"/> For orders placed on Amazon and fulfilled by FBA, the surcharge's scope, rate and start date are published inside Seller Central, which is not publicly readable — check the fee announcement there before you reprice. This page covers what Amazon has published openly and how to model it.
+Amazon applies a fuel and logistics surcharge on both of its fulfillment services. For Multi-Channel Fulfillment (MCF), the rate card states that "a 3.5% fuel and logistics-related surcharge will be applied to MCF fulfillment fees in the US." <C id="fba-fuel-logistics-surcharge-2026-01"/> For FBA orders on Amazon, Amazon's 2027 fee announcement confirms the surcharge exists: it was introduced in April 2026 and "remains unchanged" for 2027. <C id="fba-fuel-logistics-surcharge-2026-22"/> <C id="fba-fuel-logistics-surcharge-2026-21"/> The FBA rate and the fees it applies to are stated inside Seller Central (search "fuel and logistics surcharge" there); of the public Amazon pages cited here, only the MCF rate card states a percentage. Put the surcharge into every fulfillment-fee line of your cost model, then check it against Amazon's fee reports for your SKUs.
 
 ## What Amazon says the surcharge is for
 
-Amazon's MCF rate card explains the reasoning in three steps. First: "Elevated fuel and logistics costs have increased operating expenses across the industry." <C id="fba-fuel-logistics-surcharge-2026-02"/> Second, Amazon says it had absorbed those increases until now. <C id="fba-fuel-logistics-surcharge-2026-03"/> Third, the 3.5% applies "to help offset a portion of these costs, consistent with other major carriers." <C id="fba-fuel-logistics-surcharge-2026-04"/>
+Amazon's MCF rate card explains the reasoning in three steps. First: "Elevated fuel and logistics costs have increased operating expenses across the industry." <C id="fba-fuel-logistics-surcharge-2026-02"/> Second, Amazon says it had absorbed those increases until then. <C id="fba-fuel-logistics-surcharge-2026-03"/> Third, the 3.5% applies "to help offset a portion of these costs, consistent with other major carriers." <C id="fba-fuel-logistics-surcharge-2026-04"/>
 
-## Which fees the 3.5% applies to
+## The FBA side: what the 2027 announcement confirms
 
-Amazon's wording names **fulfillment fees** as the base. <C id="fba-fuel-logistics-surcharge-2026-01"/> MCF fulfillment fees themselves depend on four inputs: product size, shipping weight, units per order and delivery speed. <C id="fba-fuel-logistics-surcharge-2026-07"/>
+Amazon's 2027 announcement adds three facts for FBA sellers. The surcharge stays as it is: "The FBA fuel and logistics surcharge remains unchanged." <C id="fba-fuel-logistics-surcharge-2026-21"/> Amazon dates it and gives the reason it stays: costs, "especially fuel and line-haul trucking, have remained elevated since we introduced the surcharge in April 2026." <C id="fba-fuel-logistics-surcharge-2026-22"/> Amazon also says "we'll keep reviewing the surcharge as conditions change." <C id="fba-fuel-logistics-surcharge-2026-23"/>
 
-Storage, labeling, inbound and removal fees are a separate group. Amazon states that for MCF these non-fulfillment fees "will continue to be the same as Fulfillment by Amazon (FBA)." <C id="fba-fuel-logistics-surcharge-2026-06"/> The published surcharge sentence does not name them.
+The regular fee schedule also moves in 2027: Amazon says FBA fulfillment fees will rise by an average of $0.19 per unit sold, about 0.8% of the average item's selling price, with most changes effective January 15, 2027. <C id="fba-fuel-logistics-surcharge-2026-24"/> <C id="fba-fuel-logistics-surcharge-2026-25"/> To see the effect on your own products, Amazon points to its new Fee Change Comparison dashboard. <C id="fba-fuel-logistics-surcharge-2026-32"/>
 
-For other percentage surcharges, Amazon does spell out the base. The rate card says the Amazon Logistics block surcharge and the remote-area surcharge are calculated after any lithium battery fee is added to the base fulfillment fee. <C id="fba-fuel-logistics-surcharge-2026-18"/> The fuel and logistics surcharge text gives no such ordering rule, so check how it appears on your invoice if you sell battery items.
+## Which MCF fees the 3.5% applies to
 
-<Decision title="Where the 3.5% shows up" rows={[
+Amazon's wording names **fulfillment fees** as the base. <C id="fba-fuel-logistics-surcharge-2026-01"/> MCF fulfillment fees themselves depend on product size, shipping weight, units per order and delivery speed. <C id="fba-fuel-logistics-surcharge-2026-07"/> Storage, labeling, inbound and removal fees are a separate group that, for MCF, "will continue to be the same as Fulfillment by Amazon (FBA)." <C id="fba-fuel-logistics-surcharge-2026-06"/> The published surcharge sentence does not name them.
+
+### Other MCF surcharges on the same order
+
+The fuel and logistics surcharge is one of several add-ons on the MCF rate card. For the others, Amazon states the amount and, in one case, the order of calculation.
+
+| MCF add-on | Amount on the rate card | When it applies |
+|---|---|---|
+| Fuel and logistics surcharge | 3.5% of fulfillment fees | US MCF orders |
+| Remote area surcharge | 100% (standard-size); 200% (large bulky and extra-large) | Orders to Alaska, Hawaii, Guam, Puerto Rico and the Virgin Islands |
+| Lithium battery fee | $0.11 per unit, added to the base fulfillment fee | Lithium batteries and items containing them |
+| Amazon Logistics block surcharge | 5%, waived for MCF orders, including Walmart, through January 14, 2027 | When you block Amazon Logistics as carrier |
+
+*Source: Amazon Supply Chain, MCF rate card, checked Nov 9, 2026.* <C id="fba-fuel-logistics-surcharge-2026-01"/> <C id="fba-fuel-logistics-surcharge-2026-26"/> <C id="fba-fuel-logistics-surcharge-2026-27"/> <C id="fba-fuel-logistics-surcharge-2026-19"/>
+
+The card says the Amazon Logistics block surcharge and the remote-area surcharge are calculated after any lithium battery fee is added to the base fulfillment fee. <C id="fba-fuel-logistics-surcharge-2026-18"/> It gives no such ordering rule for the 3.5%, so for battery items and remote addresses, check on an invoice which base the surcharge was applied to.
+
+<Decision title="Where the surcharge shows up" rows={[
   {if:"You ship non-Amazon orders through Multi-Channel Fulfillment in the US", then:"Add 3.5% to each MCF fulfillment fee", claim:"fba-fuel-logistics-surcharge-2026-01"},
   {if:"The MCF order ships between October 15, 2026 and January 14, 2027", then:"Use the card's peak table; the card does not say whether those rates include the 3.5%, so check your invoice", claim:"fba-fuel-logistics-surcharge-2026-05"},
+  {if:"The MCF order goes to Alaska, Hawaii, Guam, Puerto Rico or the Virgin Islands", then:"Add the remote area surcharge as well", claim:"fba-fuel-logistics-surcharge-2026-26"},
   {if:"The cost is storage, labeling, inbound or removal", then:"These follow FBA's non-fulfillment fee schedule; the published surcharge sentence names fulfillment fees only", claim:"fba-fuel-logistics-surcharge-2026-06"},
-  {if:"You hold upstream inventory in Amazon Warehousing and Distribution", then:"AWD is advertised as pay-as-you-go with no seasonal surcharges", claim:"fba-fuel-logistics-surcharge-2026-14"},
-  {if:"The order is placed on Amazon and fulfilled by FBA", then:"Check the Seller Central fee page and your Fee Preview report", claim:"fba-fuel-logistics-surcharge-2026-15"}
+  {if:"The order is placed on Amazon and fulfilled by FBA", then:"The FBA surcharge introduced in April 2026 applies; take its rate from Seller Central", claim:"fba-fuel-logistics-surcharge-2026-22"}
 ]} />
 
 ## What the card leaves open on peak rates
 
-The same card carries tables headed "Peak fulfillment fees," effective October 15, 2026 to January 14, 2027. It does not say whether the listed peak rates already include the 3.5% or whether the 3.5% is added to them. <C id="fba-fuel-logistics-surcharge-2026-05"/> In the standard-speed peak table, the large standard row for over 1 lb to 2 lb lists $10.97 in its first ("1") column. <C id="fba-fuel-logistics-surcharge-2026-20"/> Compare a peak-period MCF invoice with the table to see which way your charges were built. The peak rates themselves, and when they apply, are covered in our guide to the [holiday peak fulfillment fee](/guides/holiday-peak-fulfilment-fee/).
+The same card carries tables headed "Peak fulfillment fees," effective October 15, 2026 to January 14, 2027, and does not say whether the listed peak rates already include the 3.5% or whether the 3.5% is added to them. <C id="fba-fuel-logistics-surcharge-2026-05"/> Compare a peak-period MCF invoice with the table to see which way your charges were built. The peak rates themselves are covered in our guide to the [holiday peak fulfillment fee](/guides/holiday-peak-fulfilment-fee/).
 
-<Callout type="example" title="Worked example (hypothetical): 3.5% on different fee levels">
-Inputs: four MCF fulfillment fees. Assumption: the surcharge is added at 3.5% of the listed fee — Amazon's card does not say whether listed peak rates already include it. Per-unit amounts are rounded to the cent; the 1,000-unit column uses the unrounded surcharge. The $10.97 line uses the first-column figure in the 2026 standard-speed peak table for large standard over 1 lb to 2 lb; the others are illustrative.
+<Callout type="example" title="Worked example (hypothetical): 3.5% on published MCF peak fees">
+Inputs: four fees from the first ("1") column of the 2026 standard-speed peak table. Assumption: the surcharge is added at 3.5% of the listed fee, which the card does not confirm. Per-unit amounts are rounded to the cent; the 1,000-unit column uses the unrounded surcharge.
 </Callout>
 
-| Fulfillment fee | 3.5% surcharge | Fee with surcharge | Extra on 1,000 units |
-|---|---|---|---|
-| $4.00 | $0.14 | $4.14 | $140.00 |
-| $6.50 | $0.23 | $6.73 | $227.50 |
-| $10.97 (peak, see above) | $0.38 | $11.35 | $383.95 |
-| $15.00 | $0.53 | $15.53 | $525.00 |
+| Size tier and weight | Listed peak fee | 3.5% surcharge | Fee with surcharge | Extra on 1,000 units |
+|---|---|---|---|---|
+| Small standard, up to 4 oz | $7.53 | $0.26 | $7.79 | $263.55 |
+| Small standard, over 12 oz to 16 oz | $8.88 | $0.31 | $9.19 | $310.80 |
+| Large standard, over 1 lb to 2 lb | $10.97 | $0.38 | $11.35 | $383.95 |
+| Large standard, over 2 lb to 3 lb | $12.16 | $0.43 | $12.59 | $425.60 |
 
-*Source: surcharge rate and peak rate from Amazon Supply Chain's 2026 MCF rate card, checked Nov 8, 2026; arithmetic is ours and hypothetical.* <C id="fba-fuel-logistics-surcharge-2026-01"/> <C id="fba-fuel-logistics-surcharge-2026-20"/>
+*Source: surcharge rate and peak fees from Amazon Supply Chain's 2026 MCF rate card, checked Nov 9, 2026; arithmetic is ours and hypothetical.* <C id="fba-fuel-logistics-surcharge-2026-01"/> <C id="fba-fuel-logistics-surcharge-2026-20"/> <C id="fba-fuel-logistics-surcharge-2026-28"/>
 
-The surcharge scales with the fee. Heavier and faster shipments carry larger fees, so they absorb more of the 3.5% in dollar terms, while small, light items barely move.
+The surcharge scales with the fee: heavier and faster shipments carry larger fees, so they absorb more of the 3.5% in dollar terms. On the same assumption, a large standard 1–2 lb order to Hawaii would add both the 100% remote surcharge and the 3.5% — check the invoice to see which was calculated first. <C id="fba-fuel-logistics-surcharge-2026-26"/>
 
 ## Amazon has done this before
 
-A fuel-related surcharge on FBA fees is not new. In a November 17, 2022 message, Amazon wrote that "earlier this year, we introduced a Fuel & Inflation Surcharge for our FBA fees." <C id="fba-fuel-logistics-surcharge-2026-08"/> The same message said Amazon would "remove the separate Fuel & Inflation Surcharge" and that it would raise FBA outbound fee rates by $0.22 on average. <C id="fba-fuel-logistics-surcharge-2026-09"/> <C id="fba-fuel-logistics-surcharge-2026-11"/> Those changes took effect January 17, 2023, except where noted. <C id="fba-fuel-logistics-surcharge-2026-10"/>
+In a November 17, 2022 message, Amazon wrote that "earlier this year, we introduced a Fuel & Inflation Surcharge for our FBA fees." <C id="fba-fuel-logistics-surcharge-2026-08"/> The same message said Amazon would "remove the separate Fuel & Inflation Surcharge" and raise FBA outbound fee rates by $0.22 on average. <C id="fba-fuel-logistics-surcharge-2026-09"/> <C id="fba-fuel-logistics-surcharge-2026-11"/> Those changes took effect January 17, 2023, except where noted. <C id="fba-fuel-logistics-surcharge-2026-10"/>
 
 <Timeline title="Dated fee changes mentioned on this page" items={[
   {date:"2023-01-17", t:"Separate FBA Fuel & Inflation Surcharge removed", d:"Announced November 17, 2022 alongside an average $0.22 FBA outbound rate increase", claim:"fba-fuel-logistics-surcharge-2026-10"},
   {date:"2026-01-15", t:"2026 US fee changes take effect", d:"FBA fees up an average of $0.08 per unit sold", claim:"fba-fuel-logistics-surcharge-2026-13"},
-  {date:"2026-10-15", t:"MCF peak fee tables take effect", d:"Effective through January 14, 2027", claim:"fba-fuel-logistics-surcharge-2026-05"}
+  {date:"2026-10-15", t:"MCF peak fee tables take effect", d:"Effective through January 14, 2027", claim:"fba-fuel-logistics-surcharge-2026-05"},
+  {date:"2027-01-15", t:"Most 2027 fee changes take effect", d:"FBA fulfillment fees up $0.19 per unit on average; the FBA fuel and logistics surcharge unchanged", claim:"fba-fuel-logistics-surcharge-2026-25"}
 ]} />
 
-The 2026 FBA rate change itself was modest: Amazon said FBA fees would rise by an average of $0.08 per unit sold, effective January 15, 2026 unless otherwise noted. <C id="fba-fuel-logistics-surcharge-2026-12"/> <C id="fba-fuel-logistics-surcharge-2026-13"/>
-
-## What it means for your channel mix
-
-- **MCF for other channels.** Add 3.5% to every fulfillment fee in your model. <C id="fba-fuel-logistics-surcharge-2026-01"/>
-- **Amazon Logistics blocks.** If you block Amazon Logistics as a carrier, the 5% block surcharge is waived for MCF orders, including Walmart, through January 14, 2027. <C id="fba-fuel-logistics-surcharge-2026-19"/> Recheck the rate card for blocked orders after that date.
-- **Upstream storage.** AWD advertises "no seasonal surcharges." <C id="fba-fuel-logistics-surcharge-2026-14"/> That statement concerns AWD storage and processing pricing, not FBA or MCF fulfillment fees.
+The 2026 FBA rate change itself was modest: Amazon said FBA fees would rise by an average of $0.08 per unit sold, effective January 15, 2026 unless otherwise noted. <C id="fba-fuel-logistics-surcharge-2026-12"/> <C id="fba-fuel-logistics-surcharge-2026-13"/> AWD, by contrast, is advertised as pay-as-you-go with "no seasonal surcharges"; that concerns AWD storage and processing, not fulfillment fees. <C id="fba-fuel-logistics-surcharge-2026-14"/>
 
 <Checklist title="Updating your cost model" items={[
   "Separate fulfillment fees from storage, labeling, inbound and removal fees",
   "Apply 3.5% to MCF fulfillment fees in the US",
+  "Add the FBA fuel and logistics surcharge at the rate shown in Seller Central",
   "For October 15, 2026 to January 14, 2027, use the peak table and check on an invoice whether the 3.5% is added to it",
-  "Check whether battery items show the surcharge on the fee with or without the lithium charge",
-  "Pull a fresh Fee Preview report for FBA SKUs and compare it with your model"
+  "Flag remote-area destinations and battery items and check the calculation order on an invoice",
+  "Pull a fresh Fee Preview report and compare its fulfillment fee per unit with your model"
 ]} />
 
-## How to confirm the surcharge on your account
+## Where to check the surcharge on your own SKUs
 
-Start with Amazon Supply Chain's MCF rate card at supplychain.amazon.com/docs/rate-card (linked from the MCF pricing page) and the 2026 card at supplychain.amazon.com/docs/2026-peak-card; they publish the 3.5% statement, the peak dates and the rate tables. <C id="fba-fuel-logistics-surcharge-2026-01"/> <C id="fba-fuel-logistics-surcharge-2026-05"/> For FBA orders on Amazon, open Seller Central and go to Reports, then Fulfillment, then Fee Preview. <C id="fba-fuel-logistics-surcharge-2026-15"/> The same data is available through the Selling Partner API as the FBA Fee Preview Report, which holds estimated selling and fulfillment fees for FBA inventory with active offers and is updated at least once every 72 hours. <C id="fba-fuel-logistics-surcharge-2026-16"/> <C id="fba-fuel-logistics-surcharge-2026-17"/> Then compare those estimates with the fees on a recent settlement. This page summarizes Amazon's published statements. If a charge on your account doesn't match them, raise it in a Seller Central support case.
+Start with Amazon Supply Chain's MCF rate card at supplychain.amazon.com/docs/rate-card and the 2026 card at supplychain.amazon.com/docs/2026-peak-card for the 3.5% statement, the peak dates and the add-ons. <C id="fba-fuel-logistics-surcharge-2026-01"/> <C id="fba-fuel-logistics-surcharge-2026-05"/> For the FBA side, read Amazon's 2027 announcement on sellingpartners.aboutamazon.com, then your own data:
+
+- **Fee Preview report.** In Seller Central under Reports, then Fulfillment, then Fee Preview. <C id="fba-fuel-logistics-surcharge-2026-15"/> Through the Selling Partner API it is the FBA Fee Preview Report, with estimated selling and fulfillment fees for FBA inventory with active offers, updated at least once every 72 hours. <C id="fba-fuel-logistics-surcharge-2026-16"/> <C id="fba-fuel-logistics-surcharge-2026-17"/> For US SKUs, compare `expected-fulfillment-fee-per-unit` with `expected-future-fulfillment-fee-per-unit` and `estimated-fee-total`; the report can be requested only once per day per seller. <C id="fba-fuel-logistics-surcharge-2026-29"/> <C id="fba-fuel-logistics-surcharge-2026-30"/>
+- **Product Fees API.** Amazon says an estimate by seller SKU gives "accurate fees based on real item measurements, but only after they've sent their items to Amazon." <C id="fba-fuel-logistics-surcharge-2026-31"/>
+- **Fee Change Comparison dashboard.** For the 2027 changes at account and product level. <C id="fba-fuel-logistics-surcharge-2026-32"/>
+
+Then compare those estimates with the fees on a recent settlement. This page summarizes Amazon's published statements; if a charge on your account doesn't match them, raise it in a Seller Central support case.

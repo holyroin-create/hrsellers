@@ -1,33 +1,33 @@
 ---
 title: "Fixed Per-Unit FBA Fees: Why Low-Priced Items Lose Margin"
-description: "Why per-unit FBA fees take a bigger share of a cheap item's price, how Amazon's referral and fulfillment fees are structured, and how to test a price point."
+description: "Why per-unit FBA fees take a bigger share of a cheap item's price, where referral rates step up at $10, $15 and $20, and how to test a price point."
 pillar: "fees"
 type: "guide"
 published: "2026-11-08"
-modified: "2026-11-08"
-lastVerified: "2026-11-08"
-minutes: 7
+modified: "2026-11-09"
+lastVerified: "2026-11-09"
+minutes: 9
 photo:
   subject: "a single low-cost small product next to a calculator and a handwritten fee breakdown on a desk, no brand names"
-  alt: "Desk calculator beside stacks of copper coins, US dollar bills and a white pen on a wooden table"
-  image: "tools-calculator"
+  alt: "A desk calculator lying on a sheet of handwritten notes and figures"
 keyFacts:
-  - { label: "FBA fulfillment cost basis", value: "Weight and dimensions", claim: "fbt-fixed-dollar-problem-01" }
+  - { label: "FBA fulfillment cost basis", value: "Price, weight and dimensions", claim: "fbt-fixed-dollar-problem-28" }
   - { label: "Referral minimum (Home and Kitchen)", value: "$0.30", claim: "fbt-fixed-dollar-problem-05" }
-  - { label: "2026 average FBA increase", value: "$0.08 per unit", claim: "fbt-fixed-dollar-problem-09" }
+  - { label: "2027 average FBA increase", value: "$0.19 per unit", claim: "fbt-fixed-dollar-problem-21" }
   - { label: "Individual plan", value: "$0.99 per item sold", claim: "fbt-fixed-dollar-problem-07" }
 summary:
-  - "Amazon's FBA fulfillment costs are charged per unit and based on a product's weight and dimensions, so they do not shrink when the selling price is lower."
-  - "Referral fees are a percentage of the price or a minimum amount, whichever is greater, such as 15% with a $0.30 minimum in Home and Kitchen."
-  - "Amazon announced an average FBA fee increase of $0.08 per unit sold, with its 2026 fee changes effective January 15, 2026 unless otherwise noted."
-  - "The cheaper the item, the larger the share of its price that per-unit charges take, which makes multipacks and higher price points worth testing."
+  - "Amazon's FBA fulfillment costs are a per-unit charge based on a product's price, weight and dimensions, so they do not shrink in step with a lower selling price."
+  - "Referral fees are a percentage of the price or a minimum amount, whichever is greater, and several categories step their rate up at $10, $15 or $20."
+  - "Amazon said in December 2023 that products priced below $10 would continue to get an additional $0.77 discount on per-unit fees; the current low-price rates are in Seller Central."
+  - "Amazon's average FBA increase was $0.08 per unit for 2026 and is $0.19 per unit for 2027, and the same dollar amount weighs far more on a cheap item."
+  - "The Fee Preview report and Amazon's Product Fees API give the fees for your own SKUs, so you can work out the fee share at a proposed price."
 faq:
-  - { q: "How much does Amazon FBA charge per item?", a: "There is no single figure: Amazon bases FBA fulfillment costs on each product's weight and dimensions, and its Revenue Calculator compares estimates for FBA and your own fulfillment, so use it to estimate the fee for a specific product.", claims: ["fbt-fixed-dollar-problem-01", "fbt-fixed-dollar-problem-13"] }
-  - { q: "What percentage does Amazon FBA take?", a: "The fulfillment fee is a per-unit charge rather than a percentage. The percentage is the referral fee, for example 15% in Home and Kitchen with a $0.30 minimum, charged on top.", claims: ["fbt-fixed-dollar-problem-01", "fbt-fixed-dollar-problem-05"] }
+  - { q: "How much does Amazon FBA charge per item?", a: "There is no single figure: Amazon bases FBA fulfillment costs on each product's price, weight and dimensions, and its Revenue Calculator compares estimates for FBA and your own fulfillment, so use it to estimate the fee for a specific product.", claims: ["fbt-fixed-dollar-problem-28", "fbt-fixed-dollar-problem-13"] }
+  - { q: "What percentage does Amazon FBA take?", a: "The fulfillment fee is a per-unit charge rather than a percentage. The percentage is the referral fee, for example 15% in Home and Kitchen with a $0.30 minimum, charged on top.", claims: ["fbt-fixed-dollar-problem-28", "fbt-fixed-dollar-problem-05"] }
 related: ["amazon-referral-fees", "bundles-and-multipacks", "sipp-packaging-program", "packaging-design-fba"]
 ---
 
-On Amazon, the fees on a low-priced item do not fall in proportion to its price. FBA fulfillment is charged per unit and based on the product's weights and dimensions, and referral fees are a percentage of the price or a minimum amount, whichever is greater, so an $8 item can lose a far larger share of its price to fees than a $24 item that is the same size. <C id="fbt-fixed-dollar-problem-01"/> <C id="fbt-fixed-dollar-problem-04"/> Before you launch or reprice a cheap item, work out the fee share at your target price, not just the fee amount.
+On Amazon, the fees on a low-priced item do not fall in proportion to its price. FBA fulfillment is a per-unit charge based on the product's price, weight and dimensions, and referral fees are a percentage of the price or a minimum amount, whichever is greater, so an $8 item can lose a far larger share of its price to fees than a $24 item that is the same size. <C id="fbt-fixed-dollar-problem-28"/> <C id="fbt-fixed-dollar-problem-04"/> Before you launch or reprice a cheap item, work out the fee share at your target price — and check whether that price sits just above or below one of Amazon's thresholds.
 
 ## The per-unit charges in Amazon's fee structure
 
@@ -35,33 +35,63 @@ Amazon says FBA costs depend on the products you sell and the services you use. 
 
 | Charge | How Amazon describes it |
 |---|---|
-| FBA fulfillment | Picking and packing, shipping and handling, customer service and product returns; based on weights and dimensions |
+| FBA fulfillment | Picking and packing, shipping and handling, customer service and product returns; based on price, weight and dimensions |
 | Referral fee | A percentage of the total price or a minimum amount, whichever is greater |
 | Individual selling plan | $0.99 per item sold (the Professional plan is $39.99 a month instead) |
 
-*Source: Amazon, sell.amazon.com "Fulfillment by Amazon" and "Pricing," checked Nov 8, 2026.* <C id="fbt-fixed-dollar-problem-02"/> <C id="fbt-fixed-dollar-problem-01"/> <C id="fbt-fixed-dollar-problem-04"/> <C id="fbt-fixed-dollar-problem-07"/> <C id="fbt-fixed-dollar-problem-08"/>
+*Source: Amazon, sell.amazon.com "Fulfillment by Amazon" and "Pricing," checked Nov 9, 2026.* <C id="fbt-fixed-dollar-problem-02"/> <C id="fbt-fixed-dollar-problem-28"/> <C id="fbt-fixed-dollar-problem-04"/> <C id="fbt-fixed-dollar-problem-07"/> <C id="fbt-fixed-dollar-problem-08"/>
 
-Storage is separate: it is charged monthly based on daily average volume in cubic feet, <C id="fbt-fixed-dollar-problem-15"/> so it scales with how long and how bulky the stock is, not with the price. The full referral fee schedule is in the [referral fee guide](/guides/amazon-referral-fees/).
+Price is one of the inputs to the fulfillment fee, but the result is still a dollar amount per unit, not a percentage. Storage is separate: it is charged monthly based on daily average volume in cubic feet, <C id="fbt-fixed-dollar-problem-15"/> so it scales with how long and how bulky the stock is, not with the price. The per-unit FBA fee tables themselves are published in Seller Central (look up "FBA fulfillment fees" there); this page works from the structure Amazon publishes openly and from the fee figures your own reports return.
 
-### How the referral fee scales
+## Where referral rates step at low prices
 
-In Home and Kitchen, for example, the rate is 15% with a $0.30 minimum, <C id="fbt-fixed-dollar-problem-05"/> so the minimum applies only below $2.00 (15% × $2.00 = $0.30) and the percentage sets the fee above that. Some categories step the rate down for cheap items instead: Beauty, Health and Personal Care charges 8% on products with a total sales price of $10.00 or less and 15% above that, with a $0.30 minimum. <C id="fbt-fixed-dollar-problem-06"/>
+In Home and Kitchen the rate is 15% with a $0.30 minimum, <C id="fbt-fixed-dollar-problem-05"/> so the minimum applies only below $2.00 (15% × $2.00 = $0.30). Several categories instead set a lower rate for cheap items and step it up at a price threshold:
 
-<Callout type="example" title="Worked example (hypothetical): the $10.00 threshold">
-Inputs: a Beauty, Health and Personal Care item priced at $10.00, then repriced to $10.50; published rates of 8% and 15%.
+| Category | Rate at or below the threshold | Rate above | Minimum |
+|---|---|---|---|
+| Beauty, Health and Personal Care | 8% up to $10.00 | 15% | $0.30 |
+| Baby Products | 8% up to $10.00 | 15% | $0.30 |
+| Grocery and Gourmet | 8% up to $15.00 | 15% | None listed |
+| Clothing and Accessories | 5% up to $15.00; 10% over $15.00 to $20.00 | 17% over $20.00 | $0.30 |
+| Home and Kitchen | 15% at every price | 15% | $0.30 |
 
-A beauty item at $10.00 pays 8% × $10.00 = $0.80 in referral fees; raise it to $10.50 and the rate becomes 15%, so the fee is $1.58 (rounded). A 50-cent price rise costs $0.78 more in referral fees and nets the seller less than before, before the fulfillment fee is even counted. For low-priced items in tiered categories, check which side of the threshold your price sits on before moving it. <C id="fbt-fixed-dollar-problem-06"/>
+*Source: Amazon, sell.amazon.com/pricing, checked Nov 9, 2026.* <C id="fbt-fixed-dollar-problem-06"/> <C id="fbt-fixed-dollar-problem-17"/> <C id="fbt-fixed-dollar-problem-18"/> <C id="fbt-fixed-dollar-problem-16"/> <C id="fbt-fixed-dollar-problem-05"/>
+
+The apparel steps date from Amazon's December 2023 announcement, which cut referral fees from 17% to 5% for items under $15 and to 10% for items between $15 and $20, starting January 15, 2024. <C id="fbt-fixed-dollar-problem-20"/> These rates apply to the whole price, so a price just over a threshold can leave you with less than a price just under it.
+
+<Callout type="example" title="Worked example (hypothetical): crossing a referral threshold">
+Inputs: published rates only; fulfillment fee left out.
+
+- **Beauty item at $10.00 vs $10.50.** 8% × $10.00 = $0.80; 15% × $10.50 = $1.58 (rounded). The 50-cent rise costs $0.78 more in referral fees, so the seller nets $0.28 less. <C id="fbt-fixed-dollar-problem-06"/>
+- **Apparel item at $20.00 vs $21.00.** 10% × $20.00 = $2.00; 17% × $21.00 = $3.57. The $1.00 rise costs $1.57 more, so the seller nets $0.57 less. <C id="fbt-fixed-dollar-problem-16"/>
+
+Above the threshold you need a price well clear of it before the higher rate pays off: at 15%, the beauty item must reach $10.83 (fee $1.62, net $9.21) to beat $10.00 at 8% (net $9.20).
 </Callout>
 
-## What changed for 2026
+## The low-price FBA discount
 
-Amazon announced on October 15, 2025 that FBA fees would increase by an average of $0.08 per unit sold, which it put at less than 0.5% of an average item's selling price. <C id="fbt-fixed-dollar-problem-09"/> Unless otherwise noted, the changes took effect January 15, 2026. <C id="fbt-fixed-dollar-problem-10"/> Amazon said it added more granularity to the fee structure to offer lower fees where its costs are lower. <C id="fbt-fixed-dollar-problem-11"/>
+The fulfillment fee has its own price break. In its December 2023 fee announcement, Amazon said "Products priced below $10 will continue to have an additional $0.77 discount on per-unit fees." <C id="fbt-fixed-dollar-problem-19"/> That was the figure stated for 2024; the current low-price rates are in the Seller Central fee tables, and Amazon's 2027 announcement refers to further updates for small and large standard-size items and items priced above $50 in a separate summary. <C id="fbt-fixed-dollar-problem-23"/>
 
-<Callout type="example" title="Worked example (hypothetical): the same $0.08 at two prices">
-Inputs: the published $0.08 average per-unit increase applied to a $5.00 item and a $25.00 item. <C id="fbt-fixed-dollar-problem-09"/>
+<Callout type="example" title="Worked example (hypothetical): two price breaks at once">
+Inputs: a Beauty, Health and Personal Care item; a $0.77 low-price discount assumed to apply below $10, as Amazon stated for 2024 (confirm the current amount in Seller Central); referral rates from Amazon's pricing page.
 
-$0.08 ÷ $5.00 = 1.6% of the price; $0.08 ÷ $25.00 = 0.32%. The same dollar amount weighs five times as heavily on the cheaper item.
+Moving from $9.99 to $10.49: referral goes from 8% × $9.99 = $0.80 to 15% × $10.49 = $1.57 (+$0.77), and the item loses the assumed $0.77 fulfillment discount. Fees rise by about $1.54 for a 50-cent price rise, so the seller nets about $1.04 less per unit. <C id="fbt-fixed-dollar-problem-19"/> <C id="fbt-fixed-dollar-problem-06"/>
 </Callout>
+
+## The same dollar increase at different prices
+
+Amazon announced on October 15, 2025 that FBA fees would rise by an average of $0.08 per unit sold for 2026, less than 0.5% of an average item's selling price, effective January 15, 2026 unless otherwise noted. <C id="fbt-fixed-dollar-problem-09"/> <C id="fbt-fixed-dollar-problem-10"/> Amazon said it added granularity to the fee structure to offer lower fees where its costs are lower. <C id="fbt-fixed-dollar-problem-11"/> For 2027 it says FBA fulfillment fees will rise by an average of $0.19 per unit sold, about 0.8% of the average item's selling price, with most changes effective January 15, 2027. <C id="fbt-fixed-dollar-problem-21"/> <C id="fbt-fixed-dollar-problem-22"/>
+
+<Chart title="Average per-unit increase as a share of price (hypothetical prices)" kind="bar" unit="%" rows={[
+  {label:"$0.08 (2026) on a $5 item", value:1.6, claim:"fbt-fixed-dollar-problem-09"},
+  {label:"$0.08 (2026) on a $25 item", value:0.32, claim:"fbt-fixed-dollar-problem-09"},
+  {label:"$0.19 (2027) on a $5 item", value:3.8, claim:"fbt-fixed-dollar-problem-21"},
+  {label:"$0.19 (2027) on a $25 item", value:0.76, claim:"fbt-fixed-dollar-problem-21"}
+]} />
+
+*Arithmetic: increase ÷ price. The averages are Amazon's; the $5 and $25 prices are hypothetical, and your own SKUs will move by more or less than the average.*
+
+A fee Amazon does publish in full makes the point. On the MCF rate card, the peak standard-speed fee in the first ("1") column for a small standard item up to 4 oz is $7.53. <C id="fbt-fixed-dollar-problem-27"/> On a $10 item sold through another channel, that is 75% of the price; on a $30 item, 25% (our arithmetic).
 
 <Callout type="example" title="Worked example (hypothetical): the same product at $8 and at $24">
 Inputs: a small Home and Kitchen item; referral fee 15% with a $0.30 minimum <C id="fbt-fixed-dollar-problem-05"/>; an assumed FBA fulfillment fee of $3.50 per unit, used only for illustration (get the real figure for your product from Amazon's Revenue Calculator <C id="fbt-fixed-dollar-problem-13"/>); Professional plan, so no per-item plan fee.
@@ -80,31 +110,27 @@ The referral fee scales with price, but the fulfillment fee does not, so it domi
 ## Ways to change the math
 
 <Decision title="Which lever fits a low-priced item?" rows={[
-  {if:"Customers often buy several units", then:"Test a multipack: one fulfillment fee covers several items", claim:"fbt-fixed-dollar-problem-01"},
+  {if:"Customers often buy several units", then:"Test a multipack: one fulfillment fee covers several items", claim:"fbt-fixed-dollar-problem-28"},
+  {if:"Your price sits just above $10, $15 or $20 in a tiered category", then:"Compare net proceeds just under the threshold with a price well above it", claim:"fbt-fixed-dollar-problem-06"},
   {if:"Your box is larger or heavier than the product needs", then:"Redesign packaging; Amazon names updating packaging as a way to lower fees", claim:"fbt-fixed-dollar-problem-12"},
-  {if:"You sell fewer than about 40 units a month on an Individual plan", then:"Compare $0.99 per item with the $39.99 Professional plan", claim:"fbt-fixed-dollar-problem-07"},
+  {if:"You sell fewer than about 40 units a month on an Individual plan", then:"Compare $0.99 per item with the $39.99 Professional plan ($39.99 ÷ $0.99 ≈ 40)", claim:"fbt-fixed-dollar-problem-07"},
   {if:"The item could ship in its own packaging", then:"Check SIPP; MCF discounts start at $0.04 for the smallest tier", claim:"fbt-fixed-dollar-problem-14"}
 ]} />
 
-<Callout type="example" title="Worked example (hypothetical): Individual vs Professional plan">
-Inputs: $0.99 per item on the Individual plan versus $39.99 a month on the Professional plan. <C id="fbt-fixed-dollar-problem-07"/> <C id="fbt-fixed-dollar-problem-08"/>
+Multipacks bring their own labeling and barcode rules, covered in [bundles and multipacks](/guides/bundles-and-multipacks/); smaller packaging is covered in [packaging design for FBA](/guides/packaging-design-fba/); and the SIPP discount table is in the [SIPP guide](/guides/sipp-packaging-program/). At the light end, the SIPP discount for MCF and Buy with Prime orders is $0.04 per unit for small standard items of 4 oz or less. <C id="fbt-fixed-dollar-problem-14"/>
 
-$39.99 ÷ $0.99 ≈ 40.4, so below about 40 items a month the per-item plan fee costs less in plan fees alone.
-</Callout>
+## Testing a price point with Amazon's own fee data
 
-Multipacks bring their own labeling and barcode rules, covered in [bundles and multipacks](/guides/bundles-and-multipacks/); smaller packaging is covered in [packaging design for FBA](/guides/packaging-design-fba/); and the SIPP discount table is in the [SIPP guide](/guides/sipp-packaging-program/). Note how small SIPP's discount is at the light end: $0.04 per unit for small standard items of 4 oz or less in MCF and Buy with Prime orders. <C id="fbt-fixed-dollar-problem-14"/> For a cheap item it helps, but it does not change the structure.
+The Fee Preview report has the fields to compute a fee share per SKU: `your-price` and `sales-price`, `estimated-referral-fee-per-unit`, `estimated-fee-total`, and for US listings `product-size-tier` and `expected-fulfillment-fee-per-unit`. <C id="fbt-fixed-dollar-problem-24"/> For prices you have not set yet, Amazon's Product Fees API takes a proposed price and can be called "before the selling partner sets the item's price." <C id="fbt-fixed-dollar-problem-25"/> Estimates requested by ASIN use the catalog size, which "might not always match the actual size of the item sent to Amazon," so treat them as provisional until the item has been measured. <C id="fbt-fixed-dollar-problem-26"/>
 
-<Steps title="Testing a low price point before launch" steps={[
-  {t:"Get the fee estimate", d:"Run the product through Amazon's Revenue Calculator to estimate FBA costs against your own fulfillment.", claim:"fbt-fixed-dollar-problem-13"},
-  {t:"Add the referral fee", d:"Apply the category rate or the minimum, whichever is greater.", claim:"fbt-fixed-dollar-problem-04"},
-  {t:"Compute the fee share", d:"Divide total fees by the selling price, at your target price and one or two higher ones."},
+<Steps title="Testing a low price point" steps={[
+  {t:"Get the fee estimate", d:"Run the product through Amazon's Revenue Calculator, or request a fee estimate at your proposed price.", claim:"fbt-fixed-dollar-problem-25"},
+  {t:"Read the fee lines", d:"For listed SKUs, take estimated-referral-fee-per-unit and expected-fulfillment-fee-per-unit from the Fee Preview report.", claim:"fbt-fixed-dollar-problem-24"},
+  {t:"Compute the fee share", d:"Divide estimated-fee-total by the selling price, at your target price and one or two higher ones."},
+  {t:"Check the thresholds", d:"In tiered categories, test prices on both sides of $10, $15 or $20.", claim:"fbt-fixed-dollar-problem-16"},
   {t:"Model a pack", d:"Repeat for a 2-pack or 3-pack and compare fees per item inside."}
 ]} />
 
-<Callout type="note" title="Scope">
-Amazon publishes the per-unit FBA fee tables, including any rates for low-priced items, inside Seller Central; this page uses only the fee structure published on sell.amazon.com and Amazon's 2026 fee announcement. The Revenue Calculator and the fee preview in your account give the figures that will actually be charged.
-</Callout>
+## Where to check the fees for your product
 
-## How to confirm the fees for your product
-
-Re-check the referral rates and plan prices on sell.amazon.com/pricing, <C id="fbt-fixed-dollar-problem-04"/> the FBA cost description on sell.amazon.com/fulfillment-by-amazon, <C id="fbt-fixed-dollar-problem-01"/> and Amazon's "Update to U.S. Referral and Fulfillment by Amazon fees for 2026" on sellingpartners.aboutamazon.com, <C id="fbt-fixed-dollar-problem-09"/> then run your product through the Revenue Calculator. <C id="fbt-fixed-dollar-problem-13"/>
+Re-check the referral rates and plan prices on sell.amazon.com/pricing, <C id="fbt-fixed-dollar-problem-04"/> the FBA cost description on sell.amazon.com/fulfillment-by-amazon, <C id="fbt-fixed-dollar-problem-28"/> and Amazon's 2026 and 2027 fee announcements on sellingpartners.aboutamazon.com, <C id="fbt-fixed-dollar-problem-09"/> <C id="fbt-fixed-dollar-problem-21"/> then run your product through the Revenue Calculator. <C id="fbt-fixed-dollar-problem-13"/> The fee Amazon actually charges is the one on your settlement; the figures here are for planning a price.
