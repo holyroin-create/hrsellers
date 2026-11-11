@@ -24,4 +24,10 @@ for (const [from, to] of Object.entries(map)) {
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, `<!doctype html>\n<html lang="en-US"><head><meta charset="utf-8"><title>Page moved | FBA Tactics</title><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0; url=${esc(abs)}"><link rel="canonical" href="${esc(abs)}"><meta name="viewport" content="width=device-width, initial-scale=1"></head><body><p>This page has moved to <a href="${esc(abs)}">${esc(abs)}</a>.</p></body></html>\n`);
 }
-console.log(`postbuild: ${collapsed} citation groups merged, ${Object.keys(map).length} redirect stubs`);
+// 3) Preload the two Latin text fonts so headings and key-fact boxes don't reflow when the web font swaps in (CLS).
+const assets = fs.existsSync(path.join(ROOT, 'dist/_assets')) ? fs.readdirSync(path.join(ROOT, 'dist/_assets')) : [];
+const fonts = [/^inter-latin-wght-normal\.[\w-]+\.woff2$/, /^plus-jakarta-sans-latin-wght-normal\.[\w-]+\.woff2$/].map((re) => assets.find((f) => re.test(f))).filter(Boolean);
+const tags = fonts.map((f) => `<link rel="preload" href="/_assets/${f}" as="font" type="font/woff2" crossorigin="anonymous">`).join('');
+let preloaded = 0;
+if (tags) for (const f of walk('dist', '.html')) { const h = read(f); if (/http-equiv="refresh"/.test(h) || h.includes('as="font"')) continue; const i = h.indexOf('<link rel="stylesheet"'); const j = i >= 0 ? i : h.indexOf('</head>'); if (j < 0) continue; fs.writeFileSync(path.join(ROOT, f), h.slice(0, j) + tags + h.slice(j)); preloaded++; }
+console.log(`postbuild: ${collapsed} citation groups merged, ${Object.keys(map).length} redirect stubs, font preload on ${preloaded} pages (${fonts.length} fonts)`);
