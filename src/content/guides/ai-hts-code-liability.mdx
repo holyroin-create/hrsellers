@@ -1,0 +1,127 @@
+---
+title: "An AI Gave You an HTS Code: Who Is Liable at Customs?"
+description: "The importer of record owes reasonable care on HTS codes. The 19 U.S.C. 1592 penalty tiers, what AI terms say on accuracy, and how to document your code."
+pillar: "importing"
+type: "guide"
+published: "2026-11-11"
+modified: "2026-11-11"
+lastVerified: "2026-11-11"
+minutes: 10
+photo:
+  subject: "rows of labelled ring binders on office shelves"
+  alt: "Rows of colourful lever-arch ring binders with printed spine labels in Ukrainian on wooden office shelves"
+  image: "hub-reference"
+keyFacts:
+  - { label: "Duty on the importer of record", value: "Reasonable care", claim: "ai-hts-code-liability-01" }
+  - { label: "Negligence penalty cap", value: "Up to 2× lost duties; 20% of dutiable value if none lost", claim: "ai-hts-code-liability-08" }
+  - { label: "Gross negligence penalty cap", value: "Up to 4× lost duties; 40% of dutiable value if none lost", claim: "ai-hts-code-liability-07" }
+  - { label: "Binds CBP personnel", value: "A ruling letter, until modified or revoked", claim: "ai-hts-code-liability-18" }
+summary:
+  - "Federal law puts the classification declaration on the importer of record, who must make entry using reasonable care."
+  - "Under 19 U.S.C. 1592, a negligent misclassification can cost up to two times the lost duties, taxes and fees; gross negligence up to four times; fraud up to the domestic value."
+  - "Anthropic, OpenAI, Google and Moonshot AI all say in their own terms or help pages that their AI output can be wrong or should not be relied on without checking."
+  - "An AI-suggested code is a research lead you must check against the official HTS and the General Rules of Interpretation; only a CBP ruling letter binds CBP."
+  - "If a wrong code was already used, a prior disclosure made before a formal investigation caps a negligence penalty at interest on the lost duties, if the loss is tendered."
+faq:
+  - { q: "how to find hts code for product", a: "Search the official HTS published by the USITC and classify by the terms of the headings and their section and chapter notes, following the General Rules of Interpretation. Entries use the full 10-digit number; for certainty, request a binding ruling from CBP.", claims: ["ai-hts-code-liability-23", "ai-hts-code-liability-25", "ai-hts-code-liability-27"] }
+  - { q: "is hts code the same as hs code", a: "Partly. The 4- and 6-digit provisions of the HTS are part of the international Harmonized System; the digits after that are U.S.-specific.", claims: ["ai-hts-code-liability-31"] }
+  - { q: "is hts code the same as schedule b", a: "No. The HTS is used for imports, while exports are classified using Schedule B from the Census Bureau.", claims: ["ai-hts-code-liability-30"] }
+  - { q: "how to determine hts code", a: "Under GRI 1, classification is determined by the terms of the headings and any relative section or chapter notes; titles are for ease of reference only.", claims: ["ai-hts-code-liability-23", "ai-hts-code-liability-24"] }
+related: ["hts-classification-basics", "prior-disclosure-protests", "customs-holds-and-exams", "incoterms-who-is-importer"]
+---
+
+If an AI chatbot suggested the HTS code on your entry and the code is wrong, the liability sits with the importer of record, not with the AI provider. The statute requires the party qualifying as importer of record to make entry "using reasonable care," <C id="ai-hts-code-liability-01"/> and completing entry means filing the declared value, classification and rate of duty for the goods. <C id="ai-hts-code-liability-02"/> Meanwhile each AI provider covered below says in its own terms or help pages that its output can be wrong or should not be relied on. Put those two facts together and the practical rule is simple: an AI answer is a research lead you still have to verify, not a defense you can show CBP.
+
+## Who owns the classification decision
+
+The importer of record can be the owner or purchaser of the goods or, when appropriately designated by the owner, purchaser or consignee, a licensed customs broker. <C id="ai-hts-code-liability-03"/> Whoever fills that role files the classification, and the reasonable-care duty attaches to that filing. <C id="ai-hts-code-liability-01"/> <C id="ai-hts-code-liability-02"/> If you are not sure which party in your supply chain is the importer of record, read [who is the importer under each Incoterm](/guides/incoterms-who-is-importer/) first.
+
+The USITC, which publishes the HTS, says the same thing from the other side: "Importers are ultimately responsible for knowing CBP requirements." <C id="ai-hts-code-liability-28"/> Its own staff can help, but it calls that help "not binding advice." <C id="ai-hts-code-liability-26"/> If a federal agency's informal guidance does not bind CBP, a chatbot's answer certainly does not.
+
+## What 19 U.S.C. 1592 penalties look like
+
+Section 1592 bars entering merchandise "by fraud, gross negligence, or negligence" <C id="ai-hts-code-liability-04"/> through a statement, document or act that is "material and false." <C id="ai-hts-code-liability-05"/> A wrong tariff classification on an entry is a statement on an entry document, so the question becomes which culpability tier applies and what the cap is.
+
+| Culpability | Maximum civil penalty (without prior disclosure) | Maximum with a valid prior disclosure |
+|---|---|---|
+| Negligence | Lesser of the domestic value or 2× the lawful duties, taxes and fees lost; 20% of dutiable value if duties were not affected | Up to the interest on the lost duties, taxes and fees, computed from the date of liquidation, if the unpaid amount is tendered |
+| Gross negligence | Lesser of the domestic value or 4× the lawful duties, taxes and fees lost; 40% of dutiable value if duties were not affected | Same as negligence: up to the interest on the lost amount, with tender |
+| Fraud | Up to the domestic value of the merchandise | Up to 100% of the lost duties, taxes and fees, with tender; 10% of dutiable value if duties were not affected |
+
+*Source: govinfo.gov, 19 U.S.C. 1592(c), checked Nov 11, 2026.* <C id="ai-hts-code-liability-06"/> <C id="ai-hts-code-liability-07"/> <C id="ai-hts-code-liability-08"/> <C id="ai-hts-code-liability-09"/> <C id="ai-hts-code-liability-10"/>
+
+Two features of the statute matter for anyone who relied on AI. First, these figures are ceilings ("not to exceed"), not fixed fines. Second, in a negligence case the government proves the act or omission, and then "the alleged violator shall have the burden of proof that the act or omission did not occur as a result of negligence." <C id="ai-hts-code-liability-11"/> In other words, you need evidence that you took care. "A chatbot told me" is weak evidence of care when the chatbot's own terms tell you to check its work.
+
+<Callout type="example" title="Worked example (hypothetical): penalty ceilings for one misclassified entry">
+Inputs: dutiable value $50,000; domestic value $80,000; the wrong code caused $4,000 in lost duties. Negligence cap: lesser of $80,000 or 2 × $4,000, so $8,000. Gross negligence cap: lesser of $80,000 or 4 × $4,000, so $16,000. Fraud cap: $80,000. With a valid prior disclosure for negligence, the penalty cannot exceed interest on the $4,000, provided the $4,000 is tendered. These are statutory maximums from the stated inputs, not a prediction of what CBP would assess.
+</Callout>
+
+## What AI providers say about their own output
+
+Each provider below states the limits of its output in its own terms or help pages. The quotes are exactly what each page said when checked on Nov 11, 2026.
+
+| Provider (page) | What the page says |
+|---|---|
+| Anthropic (Consumer Terms) | "Outputs may not always be accurate and may contain material inaccuracies" |
+| Anthropic (Consumer Terms) | "You should not rely on any Outputs or Actions without independently confirming their accuracy." |
+| OpenAI (Terms of Use) | "use of our Services may in some situations result in incorrect Output" |
+| OpenAI (Terms of Use) | "You should evaluate the accuracy of any Output as appropriate for your use case" |
+| Google (Gemini Apps Privacy Hub) | Don't rely on Gemini Apps for "legal, financial, or other professional help." |
+| Moonshot AI (Kimi User Agreement, Chinese) | Generated content is filtered by algorithms, but some information may still be flawed or unreasonable (translated) |
+
+*Source: Anthropic Consumer Terms; OpenAI Terms of Use; Google Gemini Apps Help; Kimi User Agreement, checked Nov 11, 2026.* <C id="ai-hts-code-liability-35"/> <C id="ai-hts-code-liability-36"/> <C id="ai-hts-code-liability-39"/> <C id="ai-hts-code-liability-40"/> <C id="ai-hts-code-liability-41"/> <C id="ai-hts-code-liability-44"/>
+
+Anthropic's Usage Policy goes further for anyone who uses its products to advise an individual on their legal rights, obligations or liability: "A qualified person must meaningfully review a High-risk AI Recommendation" before it is delivered as advice to someone who might rely on it. The policy excludes general information that only explains what a law says. <C id="ai-hts-code-liability-38"/> OpenAI's terms likewise point to human review of output. <C id="ai-hts-code-liability-40"/>
+
+So the provider disclaims accuracy, and the statute assigns the classification duty to the importer of record. Nothing in either text shifts that duty to the tool. <C id="ai-hts-code-liability-01"/> <C id="ai-hts-code-liability-36"/>
+
+## How the official classification rules work
+
+A code is right only if it follows the official legal text. The HTS classifies goods using the General Rules of Interpretation (GRI). <C id="ai-hts-code-liability-22"/> GRI 1 (quoted here from the USITC's archived 2004 edition of the HTS General Notes) says titles of sections, chapters and sub-chapters "are provided for ease of reference only" <C id="ai-hts-code-liability-24"/> and that, for legal purposes, classification is determined "according to the terms of the headings" and any relative section or chapter notes. <C id="ai-hts-code-liability-23"/> That is exactly where AI answers tend to cut corners: a code chosen from a heading's title or a product nickname, without reading the chapter notes, has not been classified under GRI 1.
+
+Three structural points to check in any suggested code:
+
+- The legal text ends at the 8-digit level, where tariff rates are assigned. <C id="ai-hts-code-liability-29"/>
+- Entries must use the full 10-digit number, which is the 8-digit subheading plus the statistical suffix. <C id="ai-hts-code-liability-25"/>
+- The 4- and 6-digit levels are part of the international Harmonized System, so a code from a foreign tariff or an export document may match only to six digits. <C id="ai-hts-code-liability-31"/> Exports use Schedule B, not the HTS. <C id="ai-hts-code-liability-30"/>
+
+The schedule is revised often; the USITC announced that 2026 HTS Revision 23 was published on November 10, 2026. <C id="ai-hts-code-liability-32"/> An AI answer may not reflect the latest revision, so check the code in the live schedule at hts.usitc.gov on the day you file. For the basics of reading a heading, see [HTS classification basics](/guides/hts-classification-basics/).
+
+## Decide what to do with an AI-suggested code
+
+<Decision title="You have an AI-suggested HTS code. What next?" rows={[
+  {if:"You are planning a new product and the code is unclear between headings", then:"Request a CBP ruling before you import; rulings are generally for prospective transactions and bind CBP personnel until modified or revoked.", claim:"ai-hts-code-liability-17"},
+  {if:"You want certainty but the ruling would cover a different variant", then:"Request a ruling for each variant; a classification ruling applies only to articles identical to the sample or description.", claim:"ai-hts-code-liability-19"},
+  {if:"You need help preparing entries and classifying now", then:"Use a licensed customs broker; classification is part of customs business, which brokers are licensed to transact for others.", claim:"ai-hts-code-liability-33"},
+  {if:"You already filed entries under a code you now think is wrong", then:"Consider a prior disclosure before any formal investigation begins; for negligence it caps the penalty at interest on the lost duties, if the loss is tendered.", claim:"ai-hts-code-liability-10"},
+  {if:"The AI code matches the official HTS text, headings and chapter notes after your own check", then:"File it, and keep the reasoning file that shows how you reached it.", claim:"ai-hts-code-liability-11"}
+]} />
+
+A ruling can be requested by anyone with "a direct and demonstrable interest in the question," or that person's authorized agent. <C id="ai-hts-code-liability-16"/> The request must contain a complete statement of all relevant facts <C id="ai-hts-code-liability-20"/> and should include photographs, drawings or other pictorial representations of the article. <C id="ai-hts-code-liability-21"/> The USITC FAQ also notes you can request a binding electronic ruling from CBP. <C id="ai-hts-code-liability-27"/>
+
+If you go the prior disclosure route, the disclosure must be made before, or without knowledge of, the commencement of a formal investigation. <C id="ai-hts-code-liability-12"/> It must specify the false statements, explaining how and when they occurred, <C id="ai-hts-code-liability-13"/> and give the true information that should have been on the entry. <C id="ai-hts-code-liability-14"/> The loss can be tendered at disclosure or within 30 days after CBP notifies you in writing of its calculation. <C id="ai-hts-code-liability-15"/> The mechanics are covered in [prior disclosures and protests](/guides/prior-disclosure-protests/); if goods are already detained, see [customs holds and exams](/guides/customs-holds-and-exams/).
+
+## Document how you reached the code
+
+Because a negligence defense turns on showing your act did not result from negligence, <C id="ai-hts-code-liability-11"/> the most useful thing you can do is keep a classification file for every SKU.
+
+<Steps title="Build a reasoning file for each classification" steps={[
+  {t:"Describe the product from your specs", d:"Material, function, components and how it is sold, in the same detail a ruling request would need.", claim:"ai-hts-code-liability-20"},
+  {t:"Save photos or drawings", d:"The same pictorial material a ruling request should include.", claim:"ai-hts-code-liability-21"},
+  {t:"Record the AI suggestion as a lead only", d:"Note the tool, date and the code it proposed; the provider says not to rely on it without independent confirmation.", claim:"ai-hts-code-liability-36"},
+  {t:"Check the headings and notes yourself", d:"Quote the heading text and the relevant section and chapter notes you applied under GRI 1.", claim:"ai-hts-code-liability-23"},
+  {t:"Confirm the full 10-digit number in the current HTS", d:"Write down the revision you checked against.", claim:"ai-hts-code-liability-25"},
+  {t:"Escalate when unsure", d:"Attach a broker's written view or a CBP ruling letter, which binds CBP personnel until modified or revoked.", claim:"ai-hts-code-liability-18"}
+]} />
+
+<Callout type="warning" title="Think before uploading confidential product specs">
+Supplier drawings, formulations and bills of materials are often confidential. Google's Gemini Apps Privacy Hub says a subset of chats are reviewed by human reviewers <C id="ai-hts-code-liability-43"/> and asks users not to enter "confidential information that you wouldn’t want a reviewer to see." <C id="ai-hts-code-liability-42"/> Anthropic's Consumer Terms describe use of materials for training its models unless you opt out in account settings, <C id="ai-hts-code-liability-37"/> and Kimi's user agreement says Kimi may use what you input and what it outputs to you for further development and training. <C id="ai-hts-code-liability-45"/> Check each tool's data settings and your supplier agreements before pasting specs.
+</Callout>
+
+## Scope of this page
+
+This page explains the statutes, regulations and provider terms as published; it does not classify any product or assess any penalty. For a definitive answer on a specific article, the formal routes are a CBP ruling letter under 19 CFR Part 177 or a licensed customs broker acting for the importer of record. <C id="ai-hts-code-liability-18"/> <C id="ai-hts-code-liability-34"/>
+
+## How to confirm it for your goods
+
+Read the importer's reasonable-care duty in 19 U.S.C. 1484 and the penalty tiers in 19 U.S.C. 1592 on govinfo.gov. Read prior disclosure at 19 CFR 162.74 and binding rulings at 19 CFR Part 177 on ecfr.gov, and broker licensing in 19 CFR Part 111. Search the current HTS at hts.usitc.gov and read the General Rules of Interpretation in the USITC's General Notes. For the AI side, read the provider's own terms: Anthropic's Consumer Terms and Usage Policy, OpenAI's Terms of Use, the Gemini Apps Privacy Hub, and Kimi's user agreement.

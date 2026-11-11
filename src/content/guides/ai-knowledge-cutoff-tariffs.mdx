@@ -1,0 +1,132 @@
+---
+title: "Why AI Chatbots Quote Old Tariff Rates (and How to Check)"
+description: "AI models list a knowledge cutoff, and US tariffs kept changing after it. See the 2025–2026 changes and a five-step check for any AI-supplied duty rate."
+pillar: "importing"
+type: "guide"
+published: "2026-11-11"
+modified: "2026-11-11"
+lastVerified: "2026-11-11"
+minutes: 9
+photo:
+  image: "dd7-payout-reserve"
+  subject: "a desk calendar showing a month of dates"
+  alt: "Close-up of a white tent-style desk calendar showing a month grid of dates, standing on a light wooden desk"
+keyFacts:
+  - { label: "Gemini 2.5 Flash knowledge cutoff", value: "January 2025", claim: "ai-knowledge-cutoff-tariffs-09" }
+  - { label: "Section 122 surcharge", value: "10%, from Feb 24, 2026", claim: "ai-knowledge-cutoff-tariffs-18" }
+  - { label: "Forced-labor Section 301, China", value: "12.5%, with listed exceptions", claim: "ai-knowledge-cutoff-tariffs-24" }
+  - { label: "Latest HTS revision", value: "2026 Revision 23, Nov 10, 2026", claim: "ai-knowledge-cutoff-tariffs-29" }
+summary:
+  - "AI providers publish a knowledge cutoff for many models; as listed on November 11, 2026, they range from January 2025 (Gemini 2.5 Flash) to Jun 2026 (current Claude models)."
+  - "Several current model pages, including Gemini 4 Argon and the Kimi platform introduction, publish no knowledge cutoff at all."
+  - "US entry rules changed repeatedly in 2025–2026: IEEPA duties ended, a 10% Section 122 surcharge ran to July 24, 2026, and a 12.5% forced-labor Section 301 tariff on products of China, with listed exceptions, began that same day."
+  - "An AI answer produced without live search can only reflect rules from before the model's cutoff, so a duty rate from it is a starting point, not a number to file or price on."
+  - "The check is the official HTS on hts.usitc.gov, the current HTS revision, Chapter 99 and the Federal Register, and for certainty a CBP binding ruling under 19 CFR Part 177."
+faq:
+  - { q: "How do I find my HTS code?", a: "Search the official Harmonized Tariff Schedule at hts.usitc.gov and confirm you are reading the current revision. If you need certainty, USITC points importers to a binding ruling from CBP.", claims: ["ai-knowledge-cutoff-tariffs-38", "ai-knowledge-cutoff-tariffs-29", "ai-knowledge-cutoff-tariffs-32"] }
+  - { q: "How to look up Section 301 tariffs?", a: "USITC's China tariff table lists, for each covered subheading, the Chapter 99 heading that provides the additional tariff. Then read that heading in the HTS; 9903.88.03, for example, adds 25% to the subheading's duty.", claims: ["ai-knowledge-cutoff-tariffs-39", "ai-knowledge-cutoff-tariffs-30"] }
+  - { q: "Are Section 301 tariffs still in effect?", a: "Yes for the 2018 China actions: USTR's October 7, 2026 notice says the July 6, 2018 action did not terminate and remains in effect. A separate forced-labor Section 301 tariff of 12.5% on products of China, with exceptions listed in the notice, applies from July 24, 2026.", claims: ["ai-knowledge-cutoff-tariffs-27", "ai-knowledge-cutoff-tariffs-24", "ai-knowledge-cutoff-tariffs-25"] }
+related: ["tariff-stack-2026", "section-301-china-tariffs", "de-minimis-suspension-2026", "hts-classification-basics"]
+---
+
+An AI chatbot can quote an out-of-date tariff rate because each model learns from data up to a fixed date, its knowledge cutoff, and US import rules kept changing after those dates. As listed on November 11, 2026, Google's Gemini 2.5 Flash page shows a knowledge cutoff of January 2025, <C id="ai-knowledge-cutoff-tariffs-09"/> while its newer Gemini 4 Argon page lists none, <C id="ai-knowledge-cutoff-tariffs-10"/> OpenAI lists dates between Apr 30 and Jun 1, 2026 for its flagship models, <C id="ai-knowledge-cutoff-tariffs-04"/> <C id="ai-knowledge-cutoff-tariffs-06"/> and Anthropic lists Jun 2026 for its current Claude models. <C id="ai-knowledge-cutoff-tariffs-01"/> Since then, a 10% surcharge ended and a new 12.5% Section 301 tariff on products of China, with listed exceptions, began on July 24, 2026, <C id="ai-knowledge-cutoff-tariffs-19"/> <C id="ai-knowledge-cutoff-tariffs-24"/> <C id="ai-knowledge-cutoff-tariffs-25"/> and USITC published a new HTS revision on November 10, 2026. <C id="ai-knowledge-cutoff-tariffs-29"/> Treat any AI-supplied duty rate as a lead to check against the official schedule, not as the answer.
+
+## What the providers publish about knowledge cutoffs
+
+A knowledge cutoff is the date the provider gives for how recent the model's training knowledge is. Providers do not all publish one, and they label it differently. This is what each provider's own pages showed when checked on November 11, 2026; it says nothing about which model is better.
+
+| Provider and model | Cutoff as listed on Nov 11, 2026 |
+|---|---|
+| Anthropic: Claude Fable 5.2, Opus 5.5, Sonnet 5.5, Haiku 5.5 | Reliable knowledge cutoff Jun 2026 |
+| Anthropic: Claude Opus 5.5 | Training data cutoff Jun 2026 |
+| OpenAI: GPT-6 Astra | Apr 30, 2026 |
+| OpenAI: GPT-6.1 Sol | Apr 30, 2026 |
+| OpenAI: GPT-6 Luna | May 18, 2026 |
+| OpenAI: GPT-6.1 Terra | Jun 1, 2026 |
+| Google: Gemini 2.5 Flash | January 2025 |
+| Google: Gemini 4 Argon | Not published on the model page (latest update October 2026) |
+| Google: Gemini 3.8 Flash | Not published on the model page (latest update September 2026) |
+| Moonshot AI: Kimi (kimi-k3.1-pro) | Not published on the platform introduction |
+
+*Source: Anthropic (platform.claude.com), OpenAI (developers.openai.com), Google AI for Developers (ai.google.dev), Moonshot AI (platform.kimi.ai), checked Nov 11, 2026.* <C id="ai-knowledge-cutoff-tariffs-01"/> <C id="ai-knowledge-cutoff-tariffs-02"/> <C id="ai-knowledge-cutoff-tariffs-04"/> <C id="ai-knowledge-cutoff-tariffs-05"/> <C id="ai-knowledge-cutoff-tariffs-07"/> <C id="ai-knowledge-cutoff-tariffs-06"/> <C id="ai-knowledge-cutoff-tariffs-09"/> <C id="ai-knowledge-cutoff-tariffs-10"/> <C id="ai-knowledge-cutoff-tariffs-11"/> <C id="ai-knowledge-cutoff-tariffs-13"/>
+
+Two practical points follow. A month-level date such as "Jun 2026" does not tell you whether a change published late that month is included. And a missing cutoff is not the same as an up-to-date model; it only means you cannot date the model's knowledge from its documentation.
+
+## What changed in US import rules in 2025–2026
+
+The dates below come from the Federal Register and USITC. Compare each one with the cutoff of whatever model gave you a rate.
+
+<Timeline title="US tariff and entry changes, 2025–2026" items={[
+  {date:"2025-08-29", t:"De minimis suspended for all countries", d:"Executive Order 14324 suspended duty-free de minimis treatment for goods entered on or after this date.", claim:"ai-knowledge-cutoff-tariffs-14"},
+  {date:"2025-12-23", t:"Section 301 semiconductor action on China", d:"Effective at an initial 0 percent, rising on June 23, 2027 to a rate still to be announced.", claim:"ai-knowledge-cutoff-tariffs-15"},
+  {date:"2026-02-20", t:"IEEPA duties ordered ended", d:"Executive Order 14389, signed this date: no longer in effect and, as soon as practicable, no longer collected.", claim:"ai-knowledge-cutoff-tariffs-16"},
+  {date:"2026-02-24", t:"10% Section 122 surcharge begins", d:"Proclamation 11012, a temporary import surcharge of 10 percent ad valorem on goods entered on or after this date.", claim:"ai-knowledge-cutoff-tariffs-18"},
+  {date:"2026-04-06", t:"Section 232 metals duties on full value", d:"Proclamation 11021: duties on the full customs value regardless of metal content.", claim:"ai-knowledge-cutoff-tariffs-21"},
+  {date:"2026-06-24", t:"CBP de minimis rule for non-postal shipments", d:"Entries valued at $800 or less arriving other than by mail must use formal or informal entry.", claim:"ai-knowledge-cutoff-tariffs-22"},
+  {date:"2026-07-24", t:"Surcharge ends; forced-labor Section 301 begins", d:"The 150-day surcharge ran through 12:01 a.m. EDT on this date; the 12.5% tariff on products of China, with listed exceptions, applies to goods entered from 12:01 a.m. eastern time.", claim:"ai-knowledge-cutoff-tariffs-25"},
+  {date:"2026-10-01", t:"FY2027 customs user fees", d:"Merchandise processing fee minimum $34.58 and maximum $670.86.", claim:"ai-knowledge-cutoff-tariffs-26"},
+  {date:"2026-10-07", t:"2018 China Section 301 actions continue", d:"USTR: the July 6, 2018 action did not terminate and will remain in effect.", claim:"ai-knowledge-cutoff-tariffs-27"},
+  {date:"2026-11-09", t:"178 product exclusions run out", d:"Extended China Section 301 exclusions ran through 11:59 p.m. EDT on this date.", claim:"ai-knowledge-cutoff-tariffs-28"},
+  {date:"2026-11-10", t:"2026 HTS Revision 23 published", d:"The newest revision of the schedule, announced by USITC.", claim:"ai-knowledge-cutoff-tariffs-29"}
+]} />
+
+Read against the cutoffs above, a model with a January 2025 cutoff predates every item on this list. A model with an Apr 30, 2026 cutoff could know about the IEEPA duties ending and the Section 122 surcharge, but not the June 24 CBP rule, the July 24 switch, the FY2027 fees or the November exclusion expiry. Even a model with a Jun 2026 cutoff predates everything from July 24, 2026 on. Some of these changes also interact: Executive Order 14389 left Section 232 and Section 301 duties untouched, <C id="ai-knowledge-cutoff-tariffs-17"/> and the Section 122 surcharge did not apply on top of Section 232 tariffs. <C id="ai-knowledge-cutoff-tariffs-20"/> A model that knows one change but not the next can combine them wrongly.
+
+Some changes are also scheduled ahead. CBP states that the One Big Beautiful Bill Act terminated the de minimis exemption effective July 1, 2027, <C id="ai-knowledge-cutoff-tariffs-23"/> and the semiconductor tariff is set to rise on June 23, 2027 to a rate not yet announced. <C id="ai-knowledge-cutoff-tariffs-15"/> No model can know a rate that has not been published.
+
+## Why a chatbot answer can be out of date
+
+A model answering only from its training can reflect rules up to its cutoff and no later. That is the practical consequence, and it applies whatever the model or provider. Providers do offer live search: Anthropic says its web search tool lets Claude answer "with up-to-date information beyond its knowledge cutoff," <C id="ai-knowledge-cutoff-tariffs-03"/> OpenAI lists web search as supported for GPT-6 Astra, <C id="ai-knowledge-cutoff-tariffs-08"/> and Google lists search grounding as supported for Gemini 4 Argon. <C id="ai-knowledge-cutoff-tariffs-12"/> Moonshot AI's platform page says its models "do not directly access external resources such as the internet or databases by default." <C id="ai-knowledge-cutoff-tariffs-13"/> Whether search was used for a given answer depends on the product and settings, so look for cited sources in the answer itself. Even a searched answer can miss a Chapter 99 heading or quote a news summary instead of the notice.
+
+Tariff questions are especially exposed because the additional duty is usually not in the line an AI might quote. A heading in Chapter 99 adds to the base rate: HTSUS 9903.88.03, for covered products of China, carries "the duty provided in the applicable subheading + 25%." <C id="ai-knowledge-cutoff-tariffs-30"/> An answer that gives only the subheading rate leaves that out.
+
+<Callout type="example" title="Worked example (hypothetical): a missed additional duty">
+Inputs, all assumed for illustration: 1,000 units with a customs value of $10,000; a base subheading rate of 4%; and an additional Chapter 99 duty of 25% that the AI answer did not mention. Base duty only: $10,000 × 4% = $400, or $0.40 per unit. With the additional duty: $10,000 × (4% + 25%) = $2,900, or $2.90 per unit. The missed duty is $2,500 on the shipment, $2.50 per unit. Fees such as the merchandise processing fee are left out to keep the arithmetic to the duty itself.
+</Callout>
+
+On a product priced from the first figure, that $2.50 per unit comes straight out of margin.
+
+## How to check any AI-supplied duty rate
+
+<Steps title="Check an AI-supplied duty rate against the official sources" steps={[
+  {t:"Look up the subheading on hts.usitc.gov", d:"Search the official HTS; put words in quotes for an exact match, and read the general rate for your 8-digit subheading.", claim:"ai-knowledge-cutoff-tariffs-38"},
+  {t:"Confirm the current HTS revision", d:"Check usitc.gov for the latest revision; on Nov 11, 2026 that was 2026 Revision 23, published Nov 10, 2026.", claim:"ai-knowledge-cutoff-tariffs-29"},
+  {t:"Find any Chapter 99 heading", d:"USITC's China tariff table names the subchapter III, chapter 99 heading for each additional tariff; read that heading's duty text.", claim:"ai-knowledge-cutoff-tariffs-39"},
+  {t:"Search the Federal Register for newer actions", d:"Search federalregister.gov for your subheading or the Chapter 99 heading, newest first, for notices published after the model's cutoff and after the HTS revision date."},
+  {t:"Get a binding answer when it matters", d:"Ask a licensed customs broker, or request a CBP ruling under 19 CFR Part 177 for a prospective import.", claim:"ai-knowledge-cutoff-tariffs-35"}
+]} />
+
+USITC itself says its classification help "is not binding advice," <C id="ai-knowledge-cutoff-tariffs-33"/> that importers are ultimately responsible for knowing CBP requirements, <C id="ai-knowledge-cutoff-tariffs-31"/> and that you can request a binding electronic ruling from CBP. <C id="ai-knowledge-cutoff-tariffs-32"/> USITC's China tariff table is also not an authoritative source on its own, so read the HTS heading it points to. <C id="ai-knowledge-cutoff-tariffs-39"/> A ruling under 19 CFR Part 177 can be requested by a person with "a direct and demonstrable interest" in the question, <C id="ai-knowledge-cutoff-tariffs-34"/> generally only for prospective transactions. <C id="ai-knowledge-cutoff-tariffs-35"/> Once issued, it binds all Customs Service personnel until modified or revoked, <C id="ai-knowledge-cutoff-tariffs-36"/> but a classification ruling applies only to articles identical to the sample submitted. <C id="ai-knowledge-cutoff-tariffs-37"/> For how classification itself works, see [HTS classification basics](/guides/hts-classification-basics/).
+
+<Checklist title="Questions to ask before trusting an AI duty answer" items={[
+  "Which model answered, and what knowledge cutoff does its provider list?",
+  "Did the answer use live search, and does it cite hts.usitc.gov or federalregister.gov?",
+  "Which HTS revision does the rate come from, and is it the current one?",
+  "Does the answer give the full 10-digit number and the country of origin it assumed?",
+  "Does it name every Chapter 99 heading that applies, or only the base rate?",
+  "Was anything published in the Federal Register after the cutoff for this product or country?",
+  "Is the answer dated after scheduled changes such as exclusion end dates?",
+  "Would a wrong rate change your price or margin enough to justify a broker or a ruling?"
+]} />
+
+## Deciding what to do with the answer
+
+<Decision title="What to do with an AI-supplied duty rate" rows={[
+  {if:"The answer has no sources and the model's cutoff is before July 24, 2026", then:"Assume it predates the forced-labor Section 301 tariff and the end of the surcharge; recheck everything.", claim:"ai-knowledge-cutoff-tariffs-25"},
+  {if:"The provider publishes no cutoff for the model", then:"You cannot date its knowledge; treat the rate as unverified.", claim:"ai-knowledge-cutoff-tariffs-10"},
+  {if:"The goods are from China and the answer names no Chapter 99 heading", then:"Check the 9903.88 headings and the forced-labor tariff before pricing.", claim:"ai-knowledge-cutoff-tariffs-30"},
+  {if:"The answer relies on a China Section 301 product exclusion", then:"The 178 extended exclusions ran through November 9, 2026; confirm any later notice.", claim:"ai-knowledge-cutoff-tariffs-28"},
+  {if:"The shipment is valued at $800 or less", then:"Do not assume de minimis; CBP's June 24, 2026 rule requires formal or informal entry for non-postal shipments.", claim:"ai-knowledge-cutoff-tariffs-22"},
+  {if:"The goods contain steel, aluminum or copper", then:"Section 232 duties apply to full customs value for entries from April 6, 2026.", claim:"ai-knowledge-cutoff-tariffs-21"},
+  {if:"A wrong rate would change a sourcing or pricing decision", then:"Request a CBP ruling for the prospective import or use a licensed customs broker.", claim:"ai-knowledge-cutoff-tariffs-34"}
+]} />
+
+For how the base rate, Chapter 99 duties and fees add up on one entry, see [how import duties stack in 2026](/guides/tariff-stack-2026/). For the China-specific actions, see [Section 301 China tariffs](/guides/section-301-china-tariffs/), and for low-value shipments, [the de minimis suspension](/guides/de-minimis-suspension-2026/).
+
+<Callout type="note" title="Scope of this page">
+This page explains why an AI model's answer may lag the rules and where the current rules are published; it does not classify any product or state the duty owed on it. The rate for your goods is settled by the HTS and Federal Register text in force on your entry date, and with certainty only by a CBP ruling under 19 CFR Part 177 or the advice of a licensed customs broker.
+</Callout>
+
+## How to confirm it for your shipment
+
+Start at hts.usitc.gov for the subheading and any Chapter 99 heading, and check usitc.gov's Harmonized Tariff Information page for the current revision. Read the Federal Register documents themselves for each action: Executive Order 14389, Proclamations 11012 and 11021, CBP's June 24, 2026 interim final rule, USTR's July 28 and October 7, 2026 notices, and CBP's FY2027 user fee notice. For a model's cutoff, read its provider's own model page on the day you use it, since these listings change. Then, before you file or price, confirm with a licensed customs broker or a CBP ruling under 19 CFR Part 177 (read it on ecfr.gov).

@@ -67,3 +67,7 @@ related: ["slug", "slug"]
 
 ## 6. Verifier rules (verifiers only)
 Re-fetch every source (ask WebFetch for the verbatim passage). Set `status:"verified"`, `verified_by:"<you>"` only when the fetched text states the claim exactly (numbers, days vs business days, scope, conditions). Otherwise correct claim + sentence in place from the fetched text (keep `produced_by`, explain in `verifier_note`) or set `status:"rejected"` + note and remove the sentence and markers. Do not create new claim objects. Remove uncited factual sentences. Recompute arithmetic. Check keyFacts/FAQ answers against their claims. Write `docs/verification/<you>.md`.
+
+
+## 7. Addendum (2026-11-11): AI-for-sellers pages
+Pages in the AI-for-sellers set may name AI models and their providers (Claude/Anthropic, ChatGPT/OpenAI, Gemini/Google, Kimi/Moonshot AI) and cite those providers' own documentation, terms and privacy pages, only for facts about their own models and services (allowed hosts are listed in tools/gate-claims.mjs). Model names, versions, context windows and knowledge cutoffs must be stated "as listed on <date>" from a page fetched that day. No quality rankings or benchmark claims except as the provider's own description, labeled as such. FAQ questions must come from research/faq-bank.json or research/suggest-*.jsonl; if none fit, the page has no FAQ.

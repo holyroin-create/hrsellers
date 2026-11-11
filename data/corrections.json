@@ -52,5 +52,11 @@
   "page": "/editorial-standards/",
   "change": "\"Blogs are not cited\" now reads \"third-party blogs are not cited\" and says that a marketplace's own seller blog or announcements page counts as that marketplace's publication; the About page and home page use the same wording.",
   "why": "Some Amazon rules are published on Amazon's own seller blog (sell.amazon.com/blog), which the earlier wording appeared to exclude."
+ },
+ {
+  "date": "2026-11-11",
+  "page": "/guides/hts-classification-basics/",
+  "change": "The latest HTS revision is now 2026 HTS Revision 23, published November 10, 2026 (previously Revision 22, October 30, 2026).",
+  "why": "USITC published a new revision."
  }
 ]

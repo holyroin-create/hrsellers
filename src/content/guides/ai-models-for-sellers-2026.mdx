@@ -1,0 +1,145 @@
+---
+title: "Claude, ChatGPT, Gemini and Kimi in 2026: A Seller's Guide"
+description: "Model IDs, context windows, knowledge cutoffs, web search, PDF input and API prices from Anthropic, OpenAI, Google and Moonshot AI, as of Nov 11, 2026."
+pillar: "operations"
+type: "reference"
+published: "2026-11-11"
+modified: "2026-11-11"
+lastVerified: "2026-11-11"
+minutes: 10
+photo:
+  subject: "an open laptop with a web page and a notebook on a desk"
+  alt: "An open laptop with an out-of-focus web page on screen, behind an open notebook with a pen resting on it, next to a mug and a small vase of flowers on a wooden table by a window"
+  image: "amzscout"
+keyFacts:
+  - { label: "Claude knowledge cutoff (all current models)", value: "Jun 2026", claim: "ai-models-for-sellers-2026-03" }
+  - { label: "GPT-6 Astra knowledge cutoff", value: "Apr 30, 2026", claim: "ai-models-for-sellers-2026-16" }
+  - { label: "Gemini 4 Argon context window", value: "1,048,576 tokens", claim: "ai-models-for-sellers-2026-27" }
+  - { label: "Kimi K3 series context window", value: "1,048,576 tokens", claim: "ai-models-for-sellers-2026-37" }
+summary:
+  - "As listed on November 11, 2026, Anthropic and OpenAI suggest starting with Claude Opus 5.5 and GPT-6 Astra; Google and Moonshot list Gemini 4 Argon and kimi-k3.1-pro as flagships."
+  - "Every flagship covered here has a context window of about one million tokens, but maximum output is far smaller: 128K tokens for Claude and the OpenAI models checked, 65,536 by default for Gemini 4 Argon."
+  - "Listed knowledge cutoffs are Jun 2026 for current Claude models and Apr 30 or May 18, 2026 for the OpenAI models checked; Google's and Kimi's flagship pages state none."
+  - "A model has no built-in knowledge of fee or tariff changes after its cutoff; Anthropic, OpenAI and Google document search tools for that and price them separately."
+  - "API prices are per million tokens and output costs more than input; Anthropic offers a 50% batch discount and Kimi bills batch at 60% of standard."
+faq: []
+related: ["rufus-listing-optimization", "ai-image-tagging-rule", "seller-central-reports"]
+---
+
+If you are choosing an AI model for seller work in late 2026, the four providers' own documentation, as listed on November 11, 2026, points you to these starting models: Anthropic says to start with Claude Opus 5.5 for most workloads, <C id="ai-models-for-sellers-2026-02"/> OpenAI says to start with GPT-6 Astra, <C id="ai-models-for-sellers-2026-15"/> Google lists Gemini 4 Argon as its flagship reasoning model, <C id="ai-models-for-sellers-2026-26"/> and Moonshot AI names kimi-k3.1-pro as Kimi's flagship. <C id="ai-models-for-sellers-2026-34"/> The differences that matter for a seller are less about the names than about four documented facts: the knowledge cutoff, whether the model can search the web, whether it reads PDFs, and what each million tokens costs. This page sets those out provider by provider, then maps common seller tasks to the feature that decides them.
+
+This page covers the developer (API) documentation of each provider. "ChatGPT" in the title is used only as the familiar name for OpenAI's GPT models; everything on this page about OpenAI comes from its API documentation. ChatGPT app plans are not covered, and neither are the Claude, Gemini or Kimi consumer apps, whose features and prices are on separate pages.
+
+## The four providers side by side
+
+<Compare title="Four AI providers as listed on November 11, 2026" columns={["Anthropic (Claude)", "OpenAI (GPT)", "Google (Gemini)", "Moonshot AI (Kimi)"]} rows={[
+  {label:"Provider's suggested starting model", values:["Claude Opus 5.5 (claude-opus-5-5)", "GPT-6 Astra (gpt-6-astra)", "Gemini 4 Argon (gemini-4-argon), listed as flagship", "kimi-k3.1-pro, listed as flagship"], claim:"ai-models-for-sellers-2026-02", claims:["ai-models-for-sellers-2026-15", "ai-models-for-sellers-2026-26", "ai-models-for-sellers-2026-34"]},
+  {label:"Other current models named", values:["Fable 5.2, Sonnet 5.5, Haiku 5.5", "GPT-6.1 Sol, GPT-6.1 Terra, GPT-6 Luna", "Gemini 3.8 Flash and others", "kimi-k3.1-pro-highspeed, kimi-k3"], claim:"ai-models-for-sellers-2026-01", claims:["ai-models-for-sellers-2026-14", "ai-models-for-sellers-2026-29", "ai-models-for-sellers-2026-36", "ai-models-for-sellers-2026-41"]},
+  {label:"Web search", values:["Web search tool, $10 per 1,000 searches", "Web search tool, $10.00 per 1k calls", "Grounding with Google Search", "Standalone Web Search Basic / Pro APIs, billed per call"], claim:"ai-models-for-sellers-2026-11", claims:["ai-models-for-sellers-2026-23", "ai-models-for-sellers-2026-30", "ai-models-for-sellers-2026-39"]},
+  {label:"PDF input", values:["Up to 600 pages per request", "Files under 50 MB", "Up to 50MB or 1000 pages", "Text extraction for pdf, doc, txt"], claim:"ai-models-for-sellers-2026-12", claims:["ai-models-for-sellers-2026-25", "ai-models-for-sellers-2026-31", "ai-models-for-sellers-2026-40"]},
+  {label:"Batch pricing", values:["50% discount", "No discount stated in the pricing page text checked", "No Gemini 4 Argon price on the pricing page checked", "60% of standard price"], claim:"ai-models-for-sellers-2026-09", claims:["ai-models-for-sellers-2026-41"]}
+]} />
+
+The rows draw on each provider's own pages. Anthropic lists four current models: Claude Fable 5.2, Opus 5.5, Sonnet 5.5 and Haiku 5.5. <C id="ai-models-for-sellers-2026-01"/> OpenAI's flagship list is GPT-6 Astra, GPT-6.1 Sol, GPT-6.1 Terra and GPT-6 Luna. <C id="ai-models-for-sellers-2026-14"/> Google's model page describes Gemini 4 Argon as "our flagship reasoning model" (Google's description), <C id="ai-models-for-sellers-2026-26"/> and Moonshot's model list adds a high-speed variant of Kimi K3.1 Pro that it describes as "same intelligence, about 2-3× the speed" (Moonshot's description). <C id="ai-models-for-sellers-2026-36"/> Anthropic's web search price is $10 per 1,000 searches plus token costs, <C id="ai-models-for-sellers-2026-11"/> OpenAI lists $10.00 per 1,000 web search calls, <C id="ai-models-for-sellers-2026-23"/> and Anthropic's Batch API carries a 50 percent discount. <C id="ai-models-for-sellers-2026-09"/>
+
+## Context windows, output limits and knowledge cutoffs
+
+| Provider | Model (API ID) | Context window | Max output | Knowledge cutoff |
+|---|---|---|---|---|
+| Anthropic | Claude Opus 5.5 (claude-opus-5-5), Sonnet 5.5, Haiku 5.5, Fable 5.2 | 1M tokens | 128K tokens | Jun 2026 (listed as "reliable knowledge cutoff") |
+| OpenAI | GPT-6 Astra (gpt-6-astra) | 1,050,000 | 128,000 | Apr 30, 2026 |
+| OpenAI | GPT-6.1 Sol (gpt-6.1-sol) | 1,050,000 | 128,000 | Apr 30, 2026 |
+| OpenAI | GPT-6 Luna (gpt-6-luna) | 1,050,000 | 128,000 | May 18, 2026 |
+| Google | Gemini 4 Argon (gemini-4-argon) | 1,048,576 (unified input and output) | 65,536 default; up to 1,048,576 with long decode | Not published on the page |
+| Google | Gemini 3.8 Flash (gemini-3.8-flash) | 1,048,576 input | 65,536 | Not published on the page |
+| Moonshot AI | kimi-k3.1-pro | 1,048,576 (all K3 series) | Not published on the page | Not published on the page |
+
+*Source: Anthropic models overview; OpenAI GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna model pages; Google Gemini 4 Argon and Gemini 3.8 Flash model pages; Kimi pricing page, checked Nov 11, 2026.* <C id="ai-models-for-sellers-2026-03"/> <C id="ai-models-for-sellers-2026-16"/> <C id="ai-models-for-sellers-2026-19"/> <C id="ai-models-for-sellers-2026-21"/> <C id="ai-models-for-sellers-2026-27"/> <C id="ai-models-for-sellers-2026-29"/> <C id="ai-models-for-sellers-2026-37"/>
+
+Kimi's introduction also states the flagship's window as "up to 1M tokens." <C id="ai-models-for-sellers-2026-35"/> Two practical points come out of this table.
+
+**A context window is not an output length.** The context window is how much the model can take in; the max output is how much it can write back in one response. Every Claude and OpenAI model above reads around a million tokens but writes at most 128,000 per response, <C id="ai-models-for-sellers-2026-03"/> <C id="ai-models-for-sellers-2026-16"/> and Gemini 4 Argon defaults to 65,536 output tokens unless long decode is used. <C id="ai-models-for-sellers-2026-27"/> If you paste a 3,000-row catalog and ask for a rewritten title for every row in one reply, the output limit, not the context window, is what you hit first. Splitting the job into smaller requests avoids it.
+
+**A knowledge cutoff is a hard edge.** A model with a Jun 2026 cutoff has no built-in knowledge of a fee schedule, tariff action or marketplace policy published after that month. Anthropic says its web search tool exists to give Claude "up-to-date information beyond its knowledge cutoff," <C id="ai-models-for-sellers-2026-10"/> and Google says the same of Grounding with Google Search. <C id="ai-models-for-sellers-2026-30"/> Without a search tool or a source you supply, an answer about a recent change can only reflect what the model learned before its cutoff.
+
+<Callout type="warning" title="Fees and duties: read the source, not the model">
+Even with search turned on, a model's answer is a summary of web pages. For a referral fee, an FBA fee or a duty rate, open the cited page and confirm the number on the official source before you price a product. OpenAI's web search answers include inline citations by default, <C id="ai-models-for-sellers-2026-24"/> and Claude's responses cite the sources drawn from search results, <C id="ai-models-for-sellers-2026-10"/> so the source link is there to check.
+</Callout>
+
+## API prices per million tokens
+
+API usage is billed per token, with separate and higher rates for output than for input. These are the providers' published standard rates in US dollars per million tokens:
+
+| Model | Input | Output | Notes |
+|---|---|---|---|
+| Claude Fable 5.2 | $8 | $40 | |
+| Claude Opus 5.5 | $4 | $20 | |
+| Claude Sonnet 5.5 | $2 | $10 | |
+| Claude Haiku 5.5 | $0.10 | $0.50 | Prompts up to 100,000 tokens; $0.50 / $2.50 above that |
+| GPT-6 Astra | $10.00 | $50.00 | Cached input $1.00 |
+| GPT-6.1 Sol | $2.00 | $10.00 | Cached input $0.10 |
+| GPT-6.1 Terra | $1.00 | $5.00 | |
+| GPT-6 Luna | $0.10 | $0.50 | |
+| Gemini 4 Argon, Gemini 3.8 Flash | Not on Google's pricing page as checked | Not on Google's pricing page as checked | Not these models' prices: for reference, the same page lists a different model, Gemini 3.5 Flash, at $1.50 / $9.00 (paid tier) |
+| kimi-k3.1-pro | Not published on the page | Not published on the page | Price tables did not render when checked |
+
+*Source: Anthropic pricing page; OpenAI GPT-6 Astra and GPT-6.1 Sol model pages and pricing page; Google Gemini API pricing page; Kimi chat pricing page, checked Nov 11, 2026.* <C id="ai-models-for-sellers-2026-05"/> <C id="ai-models-for-sellers-2026-06"/> <C id="ai-models-for-sellers-2026-07"/> <C id="ai-models-for-sellers-2026-08"/> <C id="ai-models-for-sellers-2026-17"/> <C id="ai-models-for-sellers-2026-20"/> <C id="ai-models-for-sellers-2026-22"/> <C id="ai-models-for-sellers-2026-32"/>
+
+On Google's pricing page as checked, there was no section for Gemini 4 Argon or Gemini 3.8 Flash; the Gemini 3.5 Flash figures above belong to that different model and are shown only because they are rates the page did publish; do not read them as Gemini 4 Argon or Gemini 3.8 Flash prices. <C id="ai-models-for-sellers-2026-32"/> For that model, Grounding with Google Search includes 5,000 free prompts a month shared across Gemini 3, then $14 per 1,000 search queries. <C id="ai-models-for-sellers-2026-33"/> Moonshot's pricing page did state that kimi-k3.1-pro and kimi-k3 batch inference is "billed at 60% of the standard price." <C id="ai-models-for-sellers-2026-41"/>
+
+<Callout type="example" title="Worked example (hypothetical): cost of 1,000 listing drafts">
+Inputs (assumed, not provider figures): 1,000 products, each request sending 2,000 input tokens (specs, supplier notes, style rules) and receiving 500 output tokens (title, bullets, description). Total: 2,000,000 input and 500,000 output tokens. At Claude Sonnet 5.5's $2 input / $10 output per million: 2 × $2 + 0.5 × $10 = $9.00. Through Anthropic's Batch API at a 50% discount: $4.50. At GPT-6 Luna's $0.10 / $0.50: 2 × $0.10 + 0.5 × $0.50 = $0.45. Web search, if used, is billed on top per search or call.
+</Callout>
+
+The example uses the published rates for Sonnet 5.5 <C id="ai-models-for-sellers-2026-06"/> and GPT-6 Luna <C id="ai-models-for-sellers-2026-22"/> and Anthropic's batch discount. <C id="ai-models-for-sellers-2026-09"/> Note that output tokens drive the cost: in the Sonnet case, output is a fifth of the tokens but more than half of the $9.00.
+
+## Features sellers use, by provider
+
+### Reading supplier PDFs, invoices and spec sheets
+
+All four providers document a way to give the model a PDF, with different mechanics:
+
+- **Anthropic:** you can ask about "any text, pictures, charts, and tables" in a PDF, up to 600 pages per request (100 when the request's context window is under 1M tokens) and 128 MB per request on the first-party API. <C id="ai-models-for-sellers-2026-12"/> Each page is converted to an image and its text extracted alongside, <C id="ai-models-for-sellers-2026-13"/> so content that appears only as an image on a page is still part of what the model receives.
+- **OpenAI:** on vision-capable models the API "extracts both text and page images" from the PDF; each file must be under 50 MB. <C id="ai-models-for-sellers-2026-25"/> GPT-6 Astra accepts image input. <C id="ai-models-for-sellers-2026-18"/>
+- **Google:** PDFs up to 50MB or 1000 pages, with each page counted as 258 tokens. <C id="ai-models-for-sellers-2026-31"/> Gemini 4 Argon lists PDF among its inputs. <C id="ai-models-for-sellers-2026-28"/>
+- **Moonshot AI:** files go through a file interface that extracts text from pdf, doc and txt files; the extracted text is then placed in the conversation as a system prompt. <C id="ai-models-for-sellers-2026-40"/>
+
+### Images and languages
+
+All current Claude models support image input and "multilingual capabilities." <C id="ai-models-for-sellers-2026-04"/> Moonshot describes kimi-k3.1-pro as having native visual understanding. <C id="ai-models-for-sellers-2026-34"/> The OpenAI and Google model pages checked list image input <C id="ai-models-for-sellers-2026-18"/> <C id="ai-models-for-sellers-2026-29"/> but the pages fetched for this guide did not state language support, so check the provider's documentation for the languages you sell in.
+
+### Web search
+
+Claude's web search tool returns citations for its sources <C id="ai-models-for-sellers-2026-10"/> and is priced per search. <C id="ai-models-for-sellers-2026-11"/> GPT-6 Astra supports web search and file search tools in OpenAI's Responses API. <C id="ai-models-for-sellers-2026-18"/> Gemini 4 Argon supports Search grounding, URL context and file search, and its page shows a latest update of October 2026; the page states no knowledge cutoff. <C id="ai-models-for-sellers-2026-28"/> Kimi's models do not reach the internet by default, <C id="ai-models-for-sellers-2026-38"/> and search is offered as separate Web Search Basic, Web Search Pro and URL Fetch APIs billed per call. <C id="ai-models-for-sellers-2026-39"/>
+
+## Which feature matters for which seller task
+
+<Decision title="Seller task → the documented feature that decides it" rows={[
+  {if:"You need today's referral fee, a new tariff action or a policy change", then:"Turn on web search or grounding: the model's own knowledge stops at its cutoff (Jun 2026 for current Claude models), then confirm on the official page.", claim:"ai-models-for-sellers-2026-10", claims:["ai-models-for-sellers-2026-03", "ai-models-for-sellers-2026-30"]},
+  {if:"You draft the same listing in several languages", then:"Anthropic documents multilingual capabilities for all current Claude models; for other providers check the model's documentation, and review every version before upload.", claim:"ai-models-for-sellers-2026-04"},
+  {if:"You read supplier PDFs, invoices or certificates", then:"Check the PDF limits: 600 pages per request on Claude, 1000 pages or 50MB on Gemini, files under 50 MB on OpenAI.", claim:"ai-models-for-sellers-2026-12", claims:["ai-models-for-sellers-2026-31", "ai-models-for-sellers-2026-25"]},
+  {if:"You rewrite hundreds of titles in one go", then:"Plan around max output (128K tokens on Claude and OpenAI models), not the 1M context window; split the job.", claim:"ai-models-for-sellers-2026-16", claims:["ai-models-for-sellers-2026-03"]},
+  {if:"You run bulk catalog work through the API and can wait for results", then:"Use batch processing: 50% off on Anthropic, 60% of standard price on Kimi.", claim:"ai-models-for-sellers-2026-09", claims:["ai-models-for-sellers-2026-41"]},
+  {if:"You want Amazon-format drafts from a few words, an image or a URL", then:"Amazon says its own generative AI listing tools can start from these inputs.", claim:"ai-models-for-sellers-2026-43"}
+]} />
+
+## Amazon's own generative AI listing tools
+
+Amazon builds generative AI into listing creation. It says sellers can use AI to create titles, product bullet points and product descriptions, <C id="ai-models-for-sellers-2026-42"/> starting from a few words, an image or a URL from their existing website. <C id="ai-models-for-sellers-2026-43"/> Amazon attaches a condition: if you use the proposed content, you agree you have reviewed it and that it is accurate, complete and compliant with all applicable laws and Amazon policies. <C id="ai-models-for-sellers-2026-44"/> For how Amazon's shopping assistant reads the finished listing, see [Rufus, now Alexa for Shopping](/guides/rufus-listing-optimization/); for AI-generated people in images, see [the disclosure rules](/guides/ai-image-tagging-rule/).
+
+<Checklist title="Before you use any model's output on a listing" items={[
+  "Model name and ID noted, with the date you checked its page",
+  "Knowledge cutoff known; web search on for anything about fees, duties or policy",
+  "Every fee, rate or rule in the output checked on the official source",
+  "Long jobs split to stay under the model's max output",
+  "Translated versions reviewed by someone who reads the language",
+  "Final text reviewed for accuracy before upload"
+]} />
+
+## Scope of this page
+
+This is a snapshot of provider documentation on one date, not a ranking and not advice on which provider to contract with. Model lists, cutoffs and prices change often, and API terms, data-use and privacy terms are set in each provider's own agreements, which this page does not summarize. For a contract or data-protection question, the provider's published terms and your own counsel are the route.
+
+## How to confirm it before you choose a model
+
+Open each provider's own pages and read the current figures: Anthropic's models overview, pricing, web search tool and PDF support pages on platform.claude.com; OpenAI's models list, individual model pages, pricing, web search and file inputs guides on developers.openai.com; Google's Gemini models list, each model's own page (limits and capabilities), pricing, Google Search grounding and document processing pages on ai.google.dev; and Moonshot AI's introduction, model list, pricing, web search and file guides on platform.kimi.ai. If a figure you need, such as a Gemini 4 Argon price or a Kimi knowledge cutoff, is not on those pages, ask the provider rather than relying on a third-party summary. For Amazon's listing tools, read Amazon's own seller pages on sell.amazon.com, and use [Seller Central reports](/guides/seller-central-reports/) to check what your catalog actually contains before a bulk rewrite.

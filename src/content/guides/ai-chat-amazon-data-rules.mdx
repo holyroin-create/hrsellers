@@ -1,0 +1,126 @@
+---
+title: "Pasting Amazon Order Data Into AI Chats: What the Rules Say"
+description: "What Amazon's Data Protection Policy says about buyer PII, and what Claude, ChatGPT, Gemini and Kimi say about training on and keeping chats and API inputs."
+pillar: "compliance"
+type: "guide"
+published: "2026-11-11"
+modified: "2026-11-11"
+lastVerified: "2026-11-11"
+minutes: 10
+photo:
+  image: "buyer-seller-messaging"
+  subject: "two hands typing on a smartphone keyboard"
+  alt: "Close-up of two hands typing on a smartphone's on-screen keyboard against a dark background"
+keyFacts:
+  - { label: "DPP: PII retention", value: "No longer than 30 days after order delivery", claim: "ai-chat-amazon-data-rules-01" }
+  - { label: "DPP: incident notice", value: "Within 24 hours of detection", claim: "ai-chat-amazon-data-rules-09" }
+  - { label: "DPP: non-PII retention", value: "Not longer than 18 months", claim: "ai-chat-amazon-data-rules-12" }
+  - { label: "Anthropic API inputs", value: "Deleted within 30 days by default", claim: "ai-chat-amazon-data-rules-32" }
+summary:
+  - "Amazon's Data Protection Policy, as its developer documentation describes it, sets requirements for solution providers building SP-API applications, with extra rules for restricted operations that involve buyer PII."
+  - "The policy text quoted by Amazon limits PII retention to 30 days after order delivery unless law requires longer, and says PII should never be transmitted or stored unprotected."
+  - "Amazon's Orders API documentation lists buyer email, buyer name and delivery address and phone fields as customer PII."
+  - "AI providers treat consumer apps and business or API products differently: Anthropic and OpenAI state their API or business products are not used for training by default, Google says so for paid Gemini API services, and consumer apps depend on a setting."
+  - "Removing buyer names, addresses, emails and phone numbers before you paste keeps PII out of a third-party chat regardless of which setting applies."
+faq: []
+related: ["buyer-seller-messaging", "seller-central-reports", "account-suspension-appeal"]
+---
+
+If you are about to paste an order export, a buyer message or a shipping label into an AI chat, strip the buyer's name, address, email and phone first. Amazon's Orders API documentation lists those fields as customer PII, <C id="ai-chat-amazon-data-rules-18"/> and the Data Protection Policy (DPP) text Amazon quotes says that "at no point should PII be transmitted or stored unprotected." <C id="ai-chat-amazon-data-rules-03"/> The DPP is written for software that uses Amazon's Selling Partner API, so its scope matters, and so does what happens to your text after you press send: each AI provider publishes its own rules on training and retention, and those rules differ between consumer apps and business or API products. This page sets out both, with the exact wording, as checked on November 11, 2026.
+
+## What Amazon's Data Protection Policy covers
+
+Amazon's developer documentation describes the DPP as the policy "which includes requirements for all solution providers building SP-API applications." <C id="ai-chat-amazon-data-rules-04"/> A second part, Section 2, adds requirements for "performing restricted operations on SP-API that involve personally identifiable information (PII)." <C id="ai-chat-amazon-data-rules-05"/> Restricted operations are the API calls that "return customers' Personally Identifiable Information (PII)." <C id="ai-chat-amazon-data-rules-17"/>
+
+Two recent changes affect how the policy reads. Amazon updated the DPP and the Acceptable Use Policy (AUP) effective November 25, 2025, <C id="ai-chat-amazon-data-rules-14"/> and the update replaced the term "Developer" with "Solution Provider" throughout both policies. <C id="ai-chat-amazon-data-rules-16"/> Amazon's notice states that continued use of Amazon Services API after November 25, 2025 "constitutes your acceptance." <C id="ai-chat-amazon-data-rules-15"/>
+
+Keep the scope precise. The pages cited here describe obligations on solution providers that build SP-API applications. They do not say how the DPP applies to a seller who copies an order by hand from Seller Central into a chat window; the full DPP and AUP texts are linked, for each language and region, from Amazon's Policies and Agreements page, <C id="ai-chat-amazon-data-rules-22"/> and Seller Central's own rules on buyer information should be read there. What the DPP does show is how Amazon expects PII from its systems to be handled, which is a useful standard for anyone moving that data into another service.
+
+### Which order fields Amazon treats as PII
+
+Amazon's documentation for the Orders API v2026-01-01 states that "customer PII includes the following," and its list includes the buyer's email and name and the delivery address fields: recipient name, address lines, postal code and phone. <C id="ai-chat-amazon-data-rules-18"/> Fields not on that list, such as an order ID or an item total, are not named as PII on that page; whether they are personal data under a privacy law is a separate question the page does not answer.
+
+## What the DPP says about handling PII
+
+| Topic | What Amazon's documentation states |
+|---|---|
+| PII retention | Retain PII for no longer than 30 days after order delivery |
+| Longer retention | Only if required by law |
+| Unprotected data | At no point should PII be transmitted or stored unprotected |
+| Encryption at rest | Encrypt all PII at rest |
+| Encryption in transit | Encrypt all Amazon Information in transit |
+| Key strength | AES-128 or larger (AES-256 preferred) or RSA-2048 or higher for all PII |
+| Security incidents | Notify Amazon within 24 hours of detecting them |
+| Access after termination or role change | Remove access within 24 hours for employees, contractors and third parties |
+| Non-PII data | Not stored longer than 18 months unless law requires longer |
+| Vendors and subcontractors | Third-party risk assessments required |
+| Deleting data | Anonymization is not an acceptable deletion method |
+
+*Source: Amazon Selling Partner API documentation (data retention, encryption and incident response guides; DPP/AUP update notice), checked Nov 11, 2026.* <C id="ai-chat-amazon-data-rules-01"/> <C id="ai-chat-amazon-data-rules-02"/> <C id="ai-chat-amazon-data-rules-03"/> <C id="ai-chat-amazon-data-rules-06"/> <C id="ai-chat-amazon-data-rules-07"/> <C id="ai-chat-amazon-data-rules-08"/> <C id="ai-chat-amazon-data-rules-09"/> <C id="ai-chat-amazon-data-rules-11"/> <C id="ai-chat-amazon-data-rules-12"/> <C id="ai-chat-amazon-data-rules-13"/> <C id="ai-chat-amazon-data-rules-19"/>
+
+Read against an AI chat, three rows stand out. The 30-day PII limit <C id="ai-chat-amazon-data-rules-01"/> sits awkwardly beside provider retention periods that can run far longer (see the comparison below). If an SP-API application sends Amazon data to an AI service, that service is one of the application's vendors, and the November 2025 update added third-party risk assessments for vendors and subcontractors. <C id="ai-chat-amazon-data-rules-13"/> And because anonymization does not count as deletion, <C id="ai-chat-amazon-data-rules-19"/> redacting a copy is not the same as deleting the original you hold.
+
+## Buyer contact details in messaging
+
+Amazon's own messaging rules already keep contact data out of message text. For messages sent through the Messaging API, "Amazon emails a message from the seller to the buyer." <C id="ai-chat-amazon-data-rules-21"/> For a confirm-delivery-details message, "Only links related to order delivery are allowed. Do not include HTML or email addresses." <C id="ai-chat-amazon-data-rules-20"/> If you use an AI chat to draft buyer messages, the draft does not need the buyer's real name or address to be useful; a placeholder works, and you add the specifics in Seller Central. See [buyer-seller messaging](/guides/buyer-seller-messaging/) for the message types.
+
+## What each AI provider says about your chats
+
+Each provider's statements below come from its own privacy or policy pages, checked November 11, 2026. Anthropic's consumer article covers "consumer products such as Claude Free, Pro, Max," <C id="ai-chat-amazon-data-rules-23"/> and it names "Claude for Work, Anthropic API" as commercial products. <C id="ai-chat-amazon-data-rules-31"/> Google's Gemini API terms separate Unpaid Services from Paid Services. <C id="ai-chat-amazon-data-rules-47"/> <C id="ai-chat-amazon-data-rules-50"/>
+
+<Compare title="Training and retention: consumer app vs API or business (as stated Nov 11, 2026)" columns={["Consumer app", "API / business"]} rows={[
+  {label:"Anthropic: training", values:["Used if you choose to allow it to improve Claude", "Not used by default for commercial products"], claims:["ai-chat-amazon-data-rules-24", "ai-chat-amazon-data-rules-30"]},
+  {label:"Anthropic: opt-out", values:["Toggle under Help Improve our AI models in Privacy settings", "No setting needed: not used for training by default"], claims:["ai-chat-amazon-data-rules-25", "ai-chat-amazon-data-rules-26", "ai-chat-amazon-data-rules-30"]},
+  {label:"Anthropic: retention", values:["Up to 5 years de-identified if model improvement is on; deleted chats off back-end within 30 days; flagged as violating the Usage Policy up to 2 years", "API inputs and outputs deleted within 30 days by default"], claims:["ai-chat-amazon-data-rules-27", "ai-chat-amazon-data-rules-28", "ai-chat-amazon-data-rules-29", "ai-chat-amazon-data-rules-32"]},
+  {label:"OpenAI: training", values:["Trains on conversations unless you disable training", "API data not used unless you opt in; no training on business data"], claims:["ai-chat-amazon-data-rules-33", "ai-chat-amazon-data-rules-38", "ai-chat-amazon-data-rules-36"]},
+  {label:"OpenAI: opt-out", values:["Turn off Improve the model for everyone", "No setting needed: API data used only if you opt in"], claims:["ai-chat-amazon-data-rules-34", "ai-chat-amazon-data-rules-38"]},
+  {label:"OpenAI: retention", values:["Temporary Chats deleted within 30 days; other chats not stated on the page", "API abuse-monitoring logs up to 30 days by default; Enterprise controls its own retention"], claims:["ai-chat-amazon-data-rules-35", "ai-chat-amazon-data-rules-39", "ai-chat-amazon-data-rules-37"]},
+  {label:"Google: training", values:["Activity used to improve services, including training; some chats human-reviewed", "Unpaid: used to improve products, may be human-reviewed. Paid: not used to improve products"], claims:["ai-chat-amazon-data-rules-40", "ai-chat-amazon-data-rules-41", "ai-chat-amazon-data-rules-47", "ai-chat-amazon-data-rules-48", "ai-chat-amazon-data-rules-50"]},
+  {label:"Google: retention", values:["Auto-delete after 18 months by default; 72 hours with Keep Activity off; reviewed chats up to 3 years", "Paid: logged for a limited period to detect policy violations and for required legal disclosures"], claims:["ai-chat-amazon-data-rules-42", "ai-chat-amazon-data-rules-43", "ai-chat-amazon-data-rules-45", "ai-chat-amazon-data-rules-51"]},
+  {label:"Kimi: training", values:["May use de-identified information to improve products (Chinese-language agreement)", "Improvement includes training machine learning models"], claims:["ai-chat-amazon-data-rules-54", "ai-chat-amazon-data-rules-52"]},
+  {label:"Kimi: retention", values:["No retention period stated on the kimi.com agreement", "Account, input and payment information kept while the account is active"], claim:"ai-chat-amazon-data-rules-53"}
+]} />
+
+A few details matter for sellers. Turning off Anthropic's model-improvement setting stops use of "any new chats and coding sessions" for future training, <C id="ai-chat-amazon-data-rules-26"/> and OpenAI's equivalent switch means "new conversations will not be used to improve our models." <C id="ai-chat-amazon-data-rules-34"/> Both settings look forward, not back. Google says that with Keep Activity off, future chats "won't be used to train our AI models," unless you choose to send Google feedback, <C id="ai-chat-amazon-data-rules-44"/> and its privacy hub says: "Please don’t enter confidential information that you wouldn’t want a reviewer to see or Google to use to improve our services, including machine-learning technologies." <C id="ai-chat-amazon-data-rules-46"/> Its API terms go further for the free tier: "Do not submit sensitive, confidential, or personal information to the Unpaid Services." <C id="ai-chat-amazon-data-rules-49"/>
+
+## Decision table: what to paste
+
+<Decision title="Can this go into an AI chat?" rows={[
+  {if:"Buyer name, delivery address, phone or email", then:"Remove it. Amazon lists these as customer PII, and the DPP text says PII should never be transmitted unprotected.", claims:["ai-chat-amazon-data-rules-18", "ai-chat-amazon-data-rules-03"]},
+  {if:"A buyer message you want help answering", then:"Paste the question only, with the name and any contact details replaced by placeholders; Amazon's delivery message type already bars email addresses in the text.", claim:"ai-chat-amazon-data-rules-20"},
+  {if:"Order IDs", then:"Not on Amazon's Orders API PII list, but they link back to a buyer. Replace with a row number unless the task needs the ID.", claim:"ai-chat-amazon-data-rules-18"},
+  {if:"Your own sales totals, fees or ad spend with no buyer fields", then:"No buyer PII involved; the remaining question is whether the provider may train on it. Check the training setting or use a product that does not train by default.", claims:["ai-chat-amazon-data-rules-30", "ai-chat-amazon-data-rules-38"]},
+  {if:"A supplier invoice or price list", then:"Not Amazon data, so the DPP is not the rule here; your supplier terms are. Remove supplier contact details and treat prices as confidential, since Google asks Gemini users not to enter confidential information they would not want a reviewer to see.", claim:"ai-chat-amazon-data-rules-46"},
+  {if:"Anything going to a free Gemini API key", then:"Google says not to submit sensitive, confidential or personal information to the Unpaid Services.", claim:"ai-chat-amazon-data-rules-49"}
+]} />
+
+## Redact before you paste
+
+<Checklist title="Before pasting Amazon data into any AI chat" items={[
+  "Delete buyer name, email and phone columns from the export",
+  "Delete or blank every delivery address field, including postal code",
+  "Replace order IDs with row numbers unless the task needs them",
+  "Remove names, addresses and emails from pasted buyer messages",
+  "Strip supplier contact details and bank details from invoices",
+  "Check the provider's training setting for your plan before sending",
+  "Prefer a business or API product that states no training by default",
+  "Delete the local working copy when the task is done"
+]} />
+
+<Callout type="warning" title="Why this matters for account health">
+The Amazon pages checked for this guide do not list specific penalties for breaching the DPP or AUP, so this page does not claim any. What they do state: solution providers must tell Amazon within 24 hours of detecting a security incident, <C id="ai-chat-amazon-data-rules-09"/> Amazon's incident guidance describes data exposure as sensitive data "exposed to unauthorized or unintended parties," <C id="ai-chat-amazon-data-rules-10"/> and continued use of the API after November 25, 2025 counts as accepting the updated policies. <C id="ai-chat-amazon-data-rules-15"/> If your app or tool sends buyer PII to an outside service, treat it as a reportable question, not a minor one. For what to do if an account is restricted, see [account suspension appeals](/guides/account-suspension-appeal/).
+</Callout>
+
+## Scope of this page
+
+This page reports what Amazon's developer documentation and each AI provider's own pages state; it is not legal advice on privacy law. Amazon's policy pages and the provider's current terms for your plan are the authoritative texts. Whether a specific use of buyer data is lawful in your jurisdiction is a question for a privacy lawyer. For the reports these exports come from, see [Seller Central reports](/guides/seller-central-reports/).
+
+## How to confirm it before you paste
+
+- **Amazon:** open the Policies and Agreements page in the Selling Partner API documentation and follow the DPP and AUP links for your locale. <C id="ai-chat-amazon-data-rules-22"/> The data retention, encryption and incident response guides in the same documentation quote the DPP requirements used above, and the November 2025 update notice summarizes the changes.
+- **Anthropic:** privacy.claude.com, in the Consumers collection for Free, Pro and Max, and the Commercial Customers collection for Claude for Work and the API.
+- **OpenAI:** the Data Controls FAQ on help.openai.com, the Enterprise privacy page on openai.com, and the "your data" guide in the API documentation.
+- **Google:** the Gemini Apps Privacy Hub on support.google.com and the Gemini API Additional Terms of Service on ai.google.dev.
+- **Kimi:** the Kimi OpenPlatform Privacy Policy on platform.kimi.ai and the user privacy agreement on kimi.com.
+
+Provider settings and terms change; check the page for your exact plan on the day you decide.
