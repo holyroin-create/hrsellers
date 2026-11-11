@@ -33,3 +33,13 @@ Hiçbir URL, slug veya iddia (claim) değişmedi. Yeni sayfa yok. Kaynak dosyala
 ## Değiştirilen dosyalar
 
 src/pages/index.astro · about.astro · privacy.astro · cookie-policy.astro · affiliate-disclosure.astro · disclaimer.astro · editorial-standards.astro · checklists.astro · guides/index.astro · marketplaces/index.astro · reviews/index.astro · src/layouts/Article.astro · src/components/Consent.astro · src/components/Header.astro · data/corrections.json · dist/ (eşlenmiş) · docs/DEGISIKLIK_KAYDI_V7.md · docs/PROJE_DURUMU.md
+
+## 4. Ek (11 Kasım 2026, ikinci tur): tarihler
+
+| Dosya | Değişiklik |
+|---|---|
+| src/pages/articles.astro, src/styles/site.css | /articles/ artık konuya göre gruplanıyor; soldaki tarih sütunu kaldırıldı. Her satırda "Sources checked" tarihi kalıyor; makale sayfalarındaki "Updated" tarihi değişmedi. |
+| tools/git-dates.mjs (yeni), package.json (prebuild) | Build sırasında her sayfanın `modified` tarihi, dosyayı **değiştiren** son git commit'inin tarihine çekilir (dosyayı ilk ekleyen commit sayılmaz; tarih geri alınmaz, uydurulmaz). Yalnız CI'da ve tam geçmişle çalışır. |
+| .github/workflows/deploy.yml | checkout: `fetch-depth: 0` (tam git geçmişi). |
+
+Eski yayın tarihleri hiçbir kaynakta bulunamadığı için `published` tarihleri (2026-11-08) değiştirilmedi. Not: dist/ bu tur için yeniden üretilmedi; GitHub Actions kaynaktan üretir.

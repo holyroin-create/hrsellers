@@ -599,9 +599,8 @@ sup.cite a:hover { background: var(--navy-700); color: #fff; }
 .arc-month { margin-bottom: 44px; }
 .arc-h { font-size: 1.25rem; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 2px solid var(--line); }
 .arc-list { list-style: none; margin: 0; padding: 0; }
-.arc-item { display: grid; grid-template-columns: 104px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.arc-item { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
 .arc-item[hidden], .arc-month[hidden] { display: none; }
-.arc-item time { font: 600 .88rem/1.4 var(--font); color: var(--ink-3); padding-top: 4px; }
 .arc-item h3 { font-size: 1.08rem; margin: 6px 0 6px; line-height: 1.35; }
 .arc-item h3 a { color: var(--ink); text-decoration: none; }
 .arc-item h3 a:hover { color: var(--cta); text-decoration: underline; }

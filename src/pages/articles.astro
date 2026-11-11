@@ -7,16 +7,13 @@ import { PILLARS } from '../lib/pillars';
 import { fmtDate } from '../lib/claims';
 import { SITE } from '../lib/site';
 
-// Every published, indexable article, newest change first.
+// Every published, indexable article, grouped by topic; within a topic, most recently updated first.
 const all = (await allEntries())
   .filter((x) => !x.e.data.noindex)
   .map((x) => ({ ...x, date: x.e.data.modified || x.e.data.published }))
   .sort((a, b) => b.date.localeCompare(a.date) || a.e.data.title.localeCompare(b.e.data.title));
 
 const keys = (Object.keys(PILLARS) as (keyof typeof PILLARS)[]).filter((k) => all.some((x) => x.e.data.pillar === k));
-const monthKey = (d: string) => d.slice(0, 7);
-const monthName = (k: string) => new Date(`${k}-01T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
-const months = [...new Set(all.map((x) => monthKey(x.date)))];
 const kindLabel = { guides: 'Guide', marketplaces: 'Fee reference', reviews: 'Software' } as const;
 
 const jsonld = [{
@@ -31,8 +28,8 @@ const jsonld = [{
   },
 }];
 ---
-<Base title="All articles, newest first" description="Every FBA Tactics guide and fee reference in one list, newest change first, with the date each page was last updated and checked against its sources." jsonld={jsonld}>
-  <PageHero title="All articles" kicker="Archive" photo="hub-guides" lede={`${all.length} guides and fee references, newest change first. Each entry shows when the page was last updated and when its sources were last checked.`}>
+<Base title="All articles by topic" description="Every FBA Tactics guide and fee reference in one list, grouped by topic, with the date each page's sources were last checked." jsonld={jsonld}>
+  <PageHero title="All articles" kicker="Archive" photo="hub-guides" lede={`${all.length} guides and fee references, grouped by topic. Each entry shows when its sources were last checked.`}>
     <p style="margin:22px 0 0;display:flex;gap:12px;flex-wrap:wrap">
       <a class="btn btn-sm" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)" href="/guides/"><Icon name="list" />Browse by topic</a>
       <a class="btn btn-sm" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)" href="/policy-log/"><Icon name="stamp" />Policy log</a>
@@ -46,13 +43,12 @@ const jsonld = [{
     </div>
     <p class="arc-count" aria-live="polite"><span id="arc-n">{all.length}</span> articles shown</p>
 
-    {months.map((m) => (
-      <section class="arc-month" aria-labelledby={`m-${m}`}>
-        <h2 id={`m-${m}`} class="arc-h">{monthName(m)}</h2>
+    {keys.map((k) => (
+      <section class="arc-month" aria-labelledby={`t-${k}`}>
+        <h2 id={`t-${k}`} class="arc-h">{PILLARS[k].name}</h2>
         <ol class="arc-list">
-          {all.filter((x) => monthKey(x.date) === m).map((x) => (
+          {all.filter((x) => x.e.data.pillar === k).map((x) => (
             <li class="arc-item" data-p={x.e.data.pillar}>
-              <time datetime={x.date}>{fmtDate(x.date, true)}</time>
               <div>
                 <p class="arc-meta">
                   <span class="chip">{PILLARS[x.e.data.pillar].short}</span>

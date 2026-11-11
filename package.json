@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node tools/make-og.mjs",
+    "prebuild": "node tools/git-dates.mjs && node tools/make-og.mjs",
     "build": "astro build",
     "postbuild": "node tools/postbuild.mjs",
     "preview": "astro preview",
