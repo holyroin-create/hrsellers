@@ -19,7 +19,7 @@ const keys = Object.keys(PILLARS) as (keyof typeof PILLARS)[];
         <div class="sec-head" style="margin-bottom:22px"><div><span class="kicker">{PILLARS[k].short}</span><h2 id={`h-${k}`}>{PILLARS[k].name}</h2><p>{PILLARS[k].blurb}</p></div></div>
         <ul class="list-rows">{list.map((x) => (
           <li class="row-card"><div class="p"><Photo id={x.e.data.photo?.image || x.e.id} sizes="(max-width: 640px) 100vw, 200px" /></div>
-            <div><span class="chip chip-green"><Icon name="checkCircle" />Verified {fmtDate(x.e.data.lastVerified, true)}</span><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p></div></li>))}</ul>
+            <div><span class="chip chip-green"><Icon name="checkCircle" />Sources checked {fmtDate(x.e.data.lastVerified, true)}</span><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p></div></li>))}</ul>
       </section>) : null; })}
   </div>
 </Base>

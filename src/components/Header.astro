@@ -32,7 +32,7 @@ const active = (g: any) => g.base.some((b: string) => path.startsWith(b)) || g.i
   </div>
 </header>
 <script>
-  const items = [...document.querySelectorAll<HTMLElement>('.nav-item')];
+  const items = [...document.querySelectorAll<HTMLElement>('.nav-item')].filter((it) => it.querySelector('button')); // the plain Articles link has no dropdown button
   const closeAll = (except?: HTMLElement) => items.forEach((it) => { if (it !== except) { it.classList.remove('open'); it.querySelector('button')!.setAttribute('aria-expanded', 'false'); } });
   items.forEach((it) => {
     const b = it.querySelector('button')!;

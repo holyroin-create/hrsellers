@@ -30,7 +30,7 @@ const features = [
   ['/guides/', 'book', 'In-depth seller guides'],
 ];
 ---
-<Base title="Marketplace fees, import duties and seller rules — checked at the source" description="Fee tables for Amazon, Walmart, eBay, Etsy and Shopify, US import duty and customs rules, and free calculators — every figure linked to its official source." jsonld={ld} preload={hero ? `/${hero.file}-1920.webp` : undefined}>
+<Base title="Marketplace fees and US import rules, sourced" description="Fee tables for Amazon, Walmart, eBay, Etsy and Shopify, US import duty and customs rules, and free calculators — every figure linked to its official source." jsonld={ld} preload={hero ? `/${hero.file}-1920.webp` : undefined}>
   <section class="hero">
     <div class="hero-photo">{hero ? <img src={`/${hero.file}-1920.webp`} srcset={`/${hero.file}-960.webp 960w, /${hero.file}-1600.webp 1600w, /${hero.file}-1920.webp 1920w`} sizes="(max-width: 900px) 100vw, 64vw" width="1920" height={Math.round(1920 * hero.height / hero.width)} alt={hero.alt} fetchpriority="high" decoding="sync" /> : <Photo id="home-hero" eager />}</div>
     <div class="wrap">
@@ -105,7 +105,7 @@ const features = [
         <article class="acard">
           <div class="acard-photo"><span class="pchip">{PILLARS[x.e.data.pillar].short}</span><Photo id={x.e.data.photo?.image || x.e.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
           <div class="acard-body"><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p>
-            <div class="acard-meta"><span><Icon name="checkCircle" />Verified {fmtDate(x.e.data.lastVerified, true)}</span><span><Icon name="clock" />{x.e.data.minutes} min</span></div><span class="go"><Icon name="arrow" /></span></div>
+            <div class="acard-meta"><span><Icon name="checkCircle" />Sources checked {fmtDate(x.e.data.lastVerified, true)}</span><span><Icon name="clock" />{x.e.data.minutes} min</span></div><span class="go"><Icon name="arrow" /></span></div>
         </article>))}</div>
     </div>
   </section>
@@ -137,8 +137,8 @@ const features = [
     <div class="wrap">
       <div class="sec-head"><div><span class="kicker">How we check</span><h2>Every number has a source you can open</h2></div><a class="link-arrow" href="/editorial-standards/">Our sourcing policy<Icon name="arrow" /></a></div>
       <ol class="method">
-        <li><h3>Only the issuing source</h3><p>Regulations, Federal Register notices, IRS publications and each marketplace's own fee pages. No blogs, vendors or forums.</p></li>
-        <li><h3>Checked in a second pass</h3><p>Every fact is reopened against its source in a separate checking pass, independent of the drafting step. Anything the source doesn't say is cut, and a named reviewer signs off before release.</p></li>
+        <li><h3>Only the issuing source</h3><p>Regulations, Federal Register notices, IRS publications and each marketplace's own fee pages. No blogs or forums; software vendors are cited only for their own product and price.</p></li>
+        <li><h3>Checked in a second pass</h3><p>Pages are drafted with AI writing tools, and every fact is reopened against its source in a separate, automated checking pass. Anything the source doesn't say is cut. Pages the editor has read against their sources say so, with the date.</p></li>
         <li><h3>Dated and corrected in public</h3><p>Pages show when they were last verified, and every change to a published figure is logged.</p></li>
       </ol>
     </div>

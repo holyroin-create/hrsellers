@@ -12,7 +12,7 @@ const list = (await allEntries()).filter((x) => x.kind === 'reviews').sort((a, b
   <div class="wrap" style="padding:56px 24px 88px">
     {list.length > 0 && <div class="cards">{list.map((x) => (
       <article class="acard"><div class="acard-photo"><Photo id={x.e.data.photo?.image || x.e.id} sizes="(max-width: 640px) 100vw, 380px" /></div>
-        <div class="acard-body"><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p><div class="acard-meta"><span><Icon name="checkCircle" />Verified {fmtDate(x.e.data.lastVerified, true)}</span></div><span class="go"><Icon name="arrow" /></span></div></article>))}
+        <div class="acard-body"><h3><a href={x.href}>{x.e.data.title}</a></h3><p>{x.e.data.description}</p><div class="acard-meta"><span><Icon name="checkCircle" />Sources checked {fmtDate(x.e.data.lastVerified, true)}</span></div><span class="go"><Icon name="arrow" /></span></div></article>))}
     </div>}
     <div class="prose narrow" style="margin-top:48px">
       <h2>How these pages are written</h2>

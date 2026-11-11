@@ -10,3 +10,6 @@ Ayrıntılar BASVURU_ONCESI_RAPOR.md dosyasında. **Karar: MANUEL İŞLEM BEKLİ
 | Editör incelemesi | Altyapı hazır (data/editor-reviews.json, tools/log-review.mjs, kontrol betiği). Henüz 0 kayıt var. |
 | Eski URL'ler | 153 adresin 0'ı 404 veriyor. |
 | Kontroller | Hepsi 0 hata, RELEASE=1 dahil. |
+
+## v7 — 2026-11-11
+Bağımsız denetim: 1 kritik teknik hata (her sayfada JS hatası, mobil menü çalışmıyordu), 1 gerçeğe aykırı ifade (ana sayfada "named reviewer signs off"), 4 doğruluk/tutarlılık düzeltmesi, çerez bandı ve SEO meta iyileştirmeleri. Ayrıntı: DEGISIKLIK_KAYDI_V7.md. Kalan engeller değişmedi: canlı yayın + Search Console, editörün gerçek incelemesi (en az 35 öncelikli sayfa), Google CMP mesajı.

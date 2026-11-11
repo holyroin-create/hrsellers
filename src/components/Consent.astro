@@ -1,25 +1,29 @@
 ---
 // Lightweight consent banner. Stores the visitor's choice in localStorage only.
+// It opens by itself only while advertising is active; with ads off it opens only from the footer "Cookie settings" link.
 // When Google's certified CMP is active (__tcfapi present, EEA/UK/CH), Google's own message is used instead.
 import { ADS_ON } from '../lib/site';
 ---
 <div class="consent" id="consent" data-ads={ADS_ON ? '1' : '0'} role="dialog" aria-live="polite" aria-label="Cookie choices" hidden>
-  <p>We use only essential storage to run this site. If advertising is switched on, Google may use cookies to show and measure ads. Choose whether ads may be personalized. <a href="/cookie-policy/">Cookie policy</a></p>
+  {ADS_ON
+    ? <p>This site sets no cookies of its own. Ads here are served by Google, which uses cookies to show and measure them. Choose whether those ads may be personalized; non-personalized ads still use cookies for frequency capping, aggregated reporting and fraud prevention. <a href="/cookie-policy/">Cookie policy</a></p>
+    : <p>This site sets no cookies and runs no advertising or analytics code at the moment. The choice below is saved in your browser and will apply if Google ads are switched on later. <a href="/cookie-policy/">Cookie policy</a></p>}
   <div class="consent-actions">
-    <button type="button" class="btn btn-ghost-dark" data-consent="reject">Essential only</button>
-    <button type="button" class="btn btn-cta" data-consent="accept">Accept all</button>
+    <button type="button" class="btn btn-ghost-dark" data-consent="reject">Non-personalized ads</button>
+    <button type="button" class="btn btn-cta" data-consent="accept">Allow personalized ads</button>
   </div>
 </div>
 <script is:inline>
 (function () {
-  var KEY = 'fbt-consent', box = document.getElementById('consent');
+  var KEY = 'fbt-consent', box = document.getElementById('consent'), ads = box.dataset.ads === '1';
   function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} apply(v); box.hidden = true; }
-  function apply(v) { if (box.dataset.ads !== '1') return; var k = 'ads' + 'bygoogle'; window[k] = window[k] || []; window[k].requestNonPersonalizedAds = v === 'accept' ? 0 : 1; }
+  function apply(v) { if (!ads) return; var k = 'ads' + 'bygoogle'; window[k] = window[k] || []; window[k].requestNonPersonalizedAds = v === 'accept' ? 0 : 1; }
+  function cmp() { return typeof window.__tcfapi === 'function'; }
   apply(get());
-  function show() { if (typeof window.__tcfapi === 'function') return; box.hidden = false; }
-  if (!get()) setTimeout(show, 800);
+  // Auto-open only when ads are active; wait up to 3 s so Google's consent message (EEA/UK/CH) can load first.
+  if (ads && !get()) { var tries = 0; (function wait() { if (cmp()) return; if (++tries < 6) return setTimeout(wait, 500); box.hidden = false; })(); }
   box.addEventListener('click', function (e) { var b = e.target.closest('[data-consent]'); if (b) set(b.getAttribute('data-consent')); });
-  document.addEventListener('click', function (e) { if (e.target.closest('[data-consent-open]')) { if (typeof window.__tcfapi === 'function' && window.googlefc && window.googlefc.showRevocationMessage) { window.googlefc.showRevocationMessage(); } else { box.hidden = false; } } });
+  document.addEventListener('click', function (e) { if (e.target.closest('[data-consent-open]')) { if (cmp() && window.googlefc && window.googlefc.showRevocationMessage) { window.googlefc.showRevocationMessage(); } else { box.hidden = false; } } });
 })();
 </script>
