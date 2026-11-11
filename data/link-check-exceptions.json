@@ -3,5 +3,15 @@
   "url": "https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees?id=4822",
   "checked": "2026-11-11",
   "note": "Returns 404 to the automated CI link checker, but the page loads normally when opened (title 'Selling fees | eBay', canonical URL unchanged). Recheck by hand; remove this entry if the page really moves."
+ },
+ {
+  "url": "https://tax.illinois.gov/research/publications/bulletins/fy-2026-12.html",
+  "checked": "2026-11-11",
+  "note": "Returned 404 to the CI link checker on 2026-11-11, but the page loads normally when opened (title 'FY 2026-12, Destination-Based Retailers' Occupation Tax Changes'). Recheck by hand; remove this entry if the page really moves."
+ },
+ {
+  "url": "https://tax.illinois.gov/research/taxinformation/sales/rot.html",
+  "checked": "2026-11-11",
+  "note": "Returned 404 to the CI link checker on 2026-11-11, but the page loads normally when opened (title 'Sales & Use Taxes'). Recheck by hand; remove this entry if the page really moves."
  }
 ]
