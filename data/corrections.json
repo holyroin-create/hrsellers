@@ -40,5 +40,17 @@
   "page": "Whole site",
   "change": "The green \"Verified\" date label on pages now reads \"Sources checked\". The cookie banner buttons were renamed \"Allow personalized ads\" and \"Non-personalized ads\", and the privacy and cookie policies now say that non-personalized ads still use cookies for frequency capping, reporting and fraud prevention.",
   "why": "Clearer wording: the check is automated, and \"Essential only\" overstated what refusing personalization does."
+ },
+ {
+  "date": "2026-11-11",
+  "page": "/privacy/",
+  "change": "The hosting section said the site is served by GitHub Pages. It now names Cloudflare Pages (Cloudflare, Inc.), which actually hosts the site, links Cloudflare's privacy policy, and notes that Cloudflare can set a strictly necessary security cookie and hide email addresses from scrapers. The cookie policy table was updated the same way.",
+  "why": "Accuracy: the site is published through Cloudflare Pages."
+ },
+ {
+  "date": "2026-11-11",
+  "page": "/editorial-standards/",
+  "change": "\"Blogs are not cited\" now reads \"third-party blogs are not cited\" and says that a marketplace's own seller blog or announcements page counts as that marketplace's publication; the About page and home page use the same wording.",
+  "why": "Some Amazon rules are published on Amazon's own seller blog (sell.amazon.com/blog), which the earlier wording appeared to exclude."
  }
 ]

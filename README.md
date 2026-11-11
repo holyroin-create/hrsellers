@@ -1,6 +1,6 @@
 # fbatactics.com (v3)
 
-ABD'ye ithalat yapan ve pazaryerlerinde satan satıcılar için birincil kaynaklı İngilizce rehber sitesi. Astro 7 ile statik üretilir, GitHub Pages'te yayımlanır.
+ABD'ye ithalat yapan ve pazaryerlerinde satan satıcılar için birincil kaynaklı İngilizce rehber sitesi. Astro 7 ile statik üretilir, Cloudflare Pages'te yayımlanır (bu depo Cloudflare Pages'e bağlı).
 
 ## Hızlı başlangıç
 ```bash
@@ -29,12 +29,11 @@ Geliştirme bayrakları: `ALLOW_UNVERIFIED=1` (doğrulanmamış iddia), `ALLOW_P
 - **gate:html** — html-validate.
 - Lighthouse CI (deploy.yml).
 
-## Yayın (GitHub Pages)
-1. Depoyu GitHub'a gönder; Settings → Pages → Source: **GitHub Actions**.
-2. `public/CNAME` = `fbatactics.com`. DNS: apex için A kayıtları `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `www` için CNAME → `<kullanıcı>.github.io`.
-3. Pages'te "Enforce HTTPS" aç.
-4. `main`'e push → `.github/workflows/deploy.yml` kapıları `RELEASE=1` ile çalıştırır, geçerse yayımlar.
-5. ⚠ GitHub Pages koşulları siteyi ticari işletme için değil diye tanımlar; reklamlı site gri alandır. Çıktı (`dist/`) Cloudflare Pages / Netlify gibi statik barındırıcılara değişiklik yapmadan taşınabilir.
+## Yayın (Cloudflare Pages)
+1. Depo Cloudflare Pages'e bağlı: `main`'e her push'ta Cloudflare `npm run build` ile siteyi üretip fbatactics.com'da yayımlar.
+2. `.github/workflows/deploy.yml` her push'ta kalite kapılarını çalıştırır (build, html, claims, images, policy `RELEASE=1`, links, Lighthouse). Kırmızı çıkarsa Cloudflare yine yayımlar; hatayı düzeltin.
+3. GitHub Pages bu depoda açık değil; `public/CNAME` yalnız alan adı kaydı olarak duruyor.
+4. Önerilen Cloudflare ayarları: `www.fbatactics.com` → `fbatactics.com` yönlendirmesi; Scrape Shield → Email Address Obfuscation kapalı (iletişim adresi düz metin görünsün).
 
 ## Sahip bilgileri (girildi)
 Editör/yayıncı: Muhammet Ali TÜRK (Ankara, Türkiye) · iletişim: hrishesabi@outlook.com · `ownerConfirmed: true`. Yazar sayfası: /author/muhammet-ali-turk/ (yalnız CV bilgisi).
