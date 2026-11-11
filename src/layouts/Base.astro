@@ -4,8 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Consent from '../components/Consent.astro';
 import { SITE, ADS_ON } from '../lib/site';
-interface Props { title: string; description: string; og?: string; noindex?: boolean; noCanonical?: boolean; jsonld?: object[]; ads?: boolean; type?: string; preload?: string }
-const { title, description, og = '/og/default.png', noindex = false, noCanonical = false, jsonld = [], ads = false, type = 'website', preload } = Astro.props;
+interface Props { title: string; description: string; og?: string; noindex?: boolean; noCanonical?: boolean; jsonld?: object[]; ads?: boolean; type?: string; preload?: string; preloadSrcset?: string; preloadSizes?: string }
+const { title, description, og = '/og/default.png', noindex = false, noCanonical = false, jsonld = [], ads = false, type = 'website', preload, preloadSrcset, preloadSizes } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.domain).href;
 const full = Astro.url.pathname === '/' ? `${SITE.siteName}: ${title}` : title.length > 52 ? title : `${title} | ${SITE.siteName}`;
 ---
@@ -21,7 +21,7 @@ const full = Astro.url.pathname === '/' ? `${SITE.siteName}: ${title}` : title.l
   <meta name="google-adsense-account" content={SITE.adsensePublisherId} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="alternate" type="application/rss+xml" title="FBA Tactics policy log" href="/rss.xml" />
-  {preload && <link rel="preload" as="image" href={preload} fetchpriority="high" />}
+  {preload && <link rel="preload" as="image" href={preload} imagesrcset={preloadSrcset} imagesizes={preloadSizes} fetchpriority="high" />}
   <meta property="og:site_name" content={SITE.siteName} />
   <meta property="og:type" content={type} />
   <meta property="og:title" content={title} />

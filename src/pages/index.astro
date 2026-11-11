@@ -30,7 +30,7 @@ const features = [
   ['/guides/', 'book', 'In-depth seller guides'],
 ];
 ---
-<Base title="Marketplace fees and US import rules, sourced" description="Fee tables for Amazon, Walmart, eBay, Etsy and Shopify, US import duty and customs rules, and free calculators — every figure linked to its official source." jsonld={ld} preload={hero ? `/${hero.file}-1920.webp` : undefined}>
+<Base title="Marketplace fees and US import rules, sourced" description="Fee tables for Amazon, Walmart, eBay, Etsy and Shopify, US import duty and customs rules, and free calculators — every figure linked to its official source." jsonld={ld} preload={hero ? `/${hero.file}-1920.webp` : undefined} preloadSrcset={hero ? `/${hero.file}-960.webp 960w, /${hero.file}-1600.webp 1600w, /${hero.file}-1920.webp 1920w` : undefined} preloadSizes="(max-width: 900px) 100vw, 64vw">
   <section class="hero">
     <div class="hero-photo">{hero ? <img src={`/${hero.file}-1920.webp`} srcset={`/${hero.file}-960.webp 960w, /${hero.file}-1600.webp 1600w, /${hero.file}-1920.webp 1920w`} sizes="(max-width: 900px) 100vw, 64vw" width="1920" height={Math.round(1920 * hero.height / hero.width)} alt={hero.alt} fetchpriority="high" decoding="sync" /> : <Photo id="home-hero" eager />}</div>
     <div class="wrap">
