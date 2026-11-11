@@ -14,4 +14,5 @@ jobs:
       - run: node tools/weekly-recheck.mjs > recheck.md || echo "FAILED=1" >> "$GITHUB_ENV"
       - if: env.FAILED == '1'
         env: { GH_TOKEN: '${{ github.token }}' }
-        run: gh issue create --title "Weekly recheck $(date -u +%F): action needed" --body-file recheck.md
+        run: |
+          gh issue create --title "Weekly recheck $(date -u +%F): action needed" --body-file recheck.md
