@@ -1,11 +1,11 @@
 name: Build, gate and deploy
-# Every gate must pass; a failed gate stops publication.
+# Quality gates for every push. The site itself is built and published by Cloudflare Pages
+# (connected to this repository); GitHub Pages is not enabled, so no deploy job runs here.
 on:
   push: { branches: [main] }
   pull_request:
   workflow_dispatch:
 permissions: { contents: read }
-concurrency: { group: pages, cancel-in-progress: false }
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,18 +32,3 @@ jobs:
         env: { CHECK_EXTERNAL: '1' }
       - name: Gate — Lighthouse (performance, accessibility, SEO, best practices)
         run: npx --yes @lhci/cli@0.16.0 autorun
-      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        with: { path: dist }
-  deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions: { pages: write, id-token: write }
-    environment: { name: github-pages, url: '${{ steps.deployment.outputs.page_url }}' }
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
