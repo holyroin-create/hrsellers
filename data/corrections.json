@@ -58,5 +58,11 @@
   "page": "/guides/hts-classification-basics/",
   "change": "The latest HTS revision is now 2026 HTS Revision 23, published November 10, 2026 (previously Revision 22, October 30, 2026).",
   "why": "USITC published a new revision."
+ },
+ {
+  "date": "2026-11-12",
+  "page": "/guides/narf-canada-mexico/",
+  "change": "The Canada Revenue Agency page cited for the import-export (RM) program account no longer exists. The source is now the Canada Border Services Agency's current page, and the sentence follows its wording: the RM account is for businesses importing or exporting commercial goods, and registration is advised well in advance of import or export deadlines.",
+  "why": "The cited page was removed (404)."
  }
 ]

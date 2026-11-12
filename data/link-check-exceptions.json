@@ -23,10 +23,5 @@
   "url": "https://support.google.com/gemini/answer/13594961?hl=en",
   "checked": "2026-11-11",
   "note": "Returned 404 to the CI link checker on 2026-11-11, but verifier-AV4 and writers AI3/AI4 loaded it normally the same day (Gemini Apps Privacy Hub). Recheck by hand; remove this entry if the page really moves."
- },
- {
-  "url": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/import-export-program-account.html",
-  "checked": "2026-11-11",
-  "note": "Passed this same CI check earlier on 2026-11-11 (run 43029191014) and returned 404 a few hours later. NOT yet rechecked by hand: open it and remove this entry, or fix the narf-canada-mexico source, if it has really moved."
  }
 ]
